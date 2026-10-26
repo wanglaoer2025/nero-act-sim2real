@@ -1,0 +1,122 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+test_cvae_training_rejects_missing_or_nonpositive_kl_regularization (tests.test_cvae_training.CvaeTrainingTests.test_cvae_training_rejects_missing_or_nonpositive_kl_regularization) ... ok
+test_legacy_training_keeps_zero_kl_and_identical_prior_predictions (tests.test_cvae_training.CvaeTrainingTests.test_legacy_training_keeps_zero_kl_and_identical_prior_predictions) ... ok
+test_padded_future_labels_do_not_influence_training_prediction (tests.test_cvae_training.CvaeTrainingTests.test_padded_future_labels_do_not_influence_training_prediction) ... ok
+test_rebased_cvae_preserves_physical_posterior_conditioning (tests.test_cvae_training.CvaeTrainingTests.test_rebased_cvae_preserves_physical_posterior_conditioning) ... ok
+test_supervised_training_reaches_posterior_and_backpropagates_kl (tests.test_cvae_training.CvaeTrainingTests.test_supervised_training_reaches_posterior_and_backpropagates_kl) ... ok
+test_validation_predictions_ignore_future_labels_and_match_runtime (tests.test_cvae_training.CvaeTrainingTests.test_validation_predictions_ignore_future_labels_and_match_runtime) ... ok
+test_adapter_training_and_validation_use_deployed_prior_without_future_labels (tests.test_nonlinear_gripper.NonlinearGripperTests.test_adapter_training_and_validation_use_deployed_prior_without_future_labels) ... FAIL
+test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) ... 
+  test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'train_gripper_head_only': True}) ... FAIL
+  test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'reset_action_head': True}) ... FAIL
+  test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'nonlinear_gripper_head': False}) ... FAIL
+  test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'gripper_adapter_lr': 0.0}) ... FAIL
+  test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'gripper_adapter_lr': nan}) ... FAIL
+  test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'prior_gripper_loss_weight': 0.0}) ... FAIL
+test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output (tests.test_nonlinear_gripper.NonlinearGripperTests.test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output) ... FAIL
+test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs (tests.test_nonlinear_gripper.NonlinearGripperTests.test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs) ... FAIL
+
+======================================================================
+FAIL: test_adapter_training_and_validation_use_deployed_prior_without_future_labels (tests.test_nonlinear_gripper.NonlinearGripperTests.test_adapter_training_and_validation_use_deployed_prior_without_future_labels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 64, in test_adapter_training_and_validation_use_deployed_prior_without_future_labels
+    torch.testing.assert_close(a['a_hat'], b['a_hat'], rtol=0., atol=0.)
+  File "/home/user/nero/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1530, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not equal!
+
+Mismatched elements: 160 / 160 (100.0%)
+Greatest absolute difference: 0.11435212939977646 at index (0, 11, 1)
+Greatest relative difference: 17.423185348510742 at index (0, 8, 1)
+
+======================================================================
+FAIL: test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'train_gripper_head_only': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 103, in test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected
+    with self.subTest(update=update), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'reset_action_head': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 103, in test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected
+    with self.subTest(update=update), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'nonlinear_gripper_head': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 103, in test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected
+    with self.subTest(update=update), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'gripper_adapter_lr': 0.0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 103, in test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected
+    with self.subTest(update=update), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'gripper_adapter_lr': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 103, in test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected
+    with self.subTest(update=update), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected (tests.test_nonlinear_gripper.NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected) (update={'prior_gripper_loss_weight': 0.0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 103, in test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected
+    with self.subTest(update=update), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output (tests.test_nonlinear_gripper.NonlinearGripperTests.test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 77, in test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output
+    self.assertTrue(any(key.startswith('gripper_adapter.') for key in state))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs (tests.test_nonlinear_gripper.NonlinearGripperTests.test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_nonlinear_gripper_20261018/tests/test_nonlinear_gripper.py", line 45, in test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs
+    self.assertTrue(any(name.startswith('gripper_adapter.') and value.grad is not None
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.335s
+
+FAILED (failures=9)
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M

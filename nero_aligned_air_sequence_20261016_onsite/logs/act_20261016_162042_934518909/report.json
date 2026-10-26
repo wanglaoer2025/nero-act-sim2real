@@ -1,0 +1,285 @@
+{
+  "mode": "gripper_start_plan",
+  "success": true,
+  "full_execution_ready": false,
+  "execution_goal_submitted": false,
+  "sdk_connected": false,
+  "scope": "Separate known empty-gripper recovery, not ACT inference",
+  "gripper_command_sent": false,
+  "validation_service_calls": [
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 341101.708466553,
+      "duration_s": 0.0766469250083901
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 341101.891098851,
+      "duration_s": 0.0007667720201425254
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 341101.892520462,
+      "duration_s": 0.0008145060273818672
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.893698755,
+      "duration_s": 0.08325052697909996
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.977221729,
+      "duration_s": 0.0003851120127364993
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.97779181,
+      "duration_s": 0.0004252790240570903
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.978382521,
+      "duration_s": 0.0003520309692248702
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.978890375,
+      "duration_s": 0.0007363029872067273
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.979805979,
+      "duration_s": 0.00041222001891583204
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.980364816,
+      "duration_s": 0.0006349400500766933
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.981172549,
+      "duration_s": 0.00044889398850500584
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.981782931,
+      "duration_s": 0.0003983890055678785
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.982338226,
+      "duration_s": 0.0004903289955109358
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.982982307,
+      "duration_s": 0.00038914004107937217
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.983520262,
+      "duration_s": 0.000475100998301059
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.984168438,
+      "duration_s": 0.0010765579645521939
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.985405185,
+      "duration_s": 0.0005404489929787815
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.986136761,
+      "duration_s": 0.0006343649583868682
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.986932196,
+      "duration_s": 0.0004098819917999208
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.987496057,
+      "duration_s": 0.0005150350043550134
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.988159387,
+      "duration_s": 0.00033677497413009405
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.988650991,
+      "duration_s": 0.0005356380133889616
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.989340238,
+      "duration_s": 0.0004608090384863317
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.989961868,
+      "duration_s": 0.0003812120412476361
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.990493473,
+      "duration_s": 0.00037930195685476065
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.991030848,
+      "duration_s": 0.00041345099452883005
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.991600711,
+      "duration_s": 0.00039377500070258975
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.992154709,
+      "duration_s": 0.0008117289980873466
+    },
+    {
+      "service": "/check_state_validity",
+      "started_monotonic_s": 341101.993121939,
+      "duration_s": 0.0003744869609363377
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 341102.297750186,
+      "duration_s": 0.001048182020895183
+    }
+  ],
+  "actual_start": [
+    0.20746728818456597,
+    -0.12180652849668426,
+    0.1235169511636387,
+    1.5677070940188667,
+    -0.0182212373908208,
+    0.2669481090925327,
+    0.14350097109897378,
+    0.06643
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 341101.784451711,
+      "stamp": 1792138846.683613,
+      "q": [
+        0.20746728818456597,
+        -0.12180652849668426,
+        0.1235169511636387,
+        1.5677070940188667,
+        -0.0182212373908208,
+        0.2669481090925327,
+        0.14350097109897378,
+        0.06643
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 341101.784532132,
+      "stamp": 1792138846.6840394,
+      "q": [
+        0.20748241245746613,
+        -0.12182281166315079,
+        0.12360551953315735,
+        1.567737102508545,
+        -0.018222855404019356,
+        0.26695552468299866,
+        0.1434912383556366,
+        0.06646594405174255
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.0002818959765136242,
+  "execution_readiness_checks_passed": true,
+  "gripper_start_m": 0.06643,
+  "gripper_target_m": 0.060118,
+  "duration_s": 1.3,
+  "plan_complete": true,
+  "planned_monotonic_s": 341102.399787147
+}

@@ -1,0 +1,14 @@
+test_pregrasp_hold_keeps_open_reference_without_changing_act_arm (tests.test_release_hold.ReleaseHoldTests.test_pregrasp_hold_keeps_open_reference_without_changing_act_arm) ... FAIL
+
+======================================================================
+FAIL: test_pregrasp_hold_keeps_open_reference_without_changing_act_arm (tests.test_release_hold.ReleaseHoldTests.test_pregrasp_hold_keeps_open_reference_without_changing_act_arm)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_release_hold.py", line 10, in test_pregrasp_hold_keeps_open_reference_without_changing_act_arm
+    self.assertTrue(callable(getattr(release_hold,'hold_open_before_grasp_depth',None)))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

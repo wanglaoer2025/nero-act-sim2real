@@ -1,0 +1,26 @@
+/home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-xdx7wnj5 because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_finalization_requires_and_binds_preservation_assessments _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-5/test_finalization_requires_and0')
+
+    def test_finalization_requires_and_binds_preservation_assessments(tmp_path):
+        from tests.test_history_training import output_fixture
+        from training.history import finalize_history_training
+        from training.integrity import require_finalized
+        checkpoint,protected=output_fixture(tmp_path)
+        config=dict(training_budget={'kind':'updates','limit':1000},num_epochs=0,approach_preservation={'profile':'baseline_prefix_v1'})
+>       with pytest.raises(ValueError):finalize_history_training(tmp_path,config,dict(updates=1000,epochs=0),protected)
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_approach_preservation.py:105: Failed
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_preservation.py::test_finalization_requires_and_binds_preservation_assessments
+1 failed, 1 warning in 3.38s

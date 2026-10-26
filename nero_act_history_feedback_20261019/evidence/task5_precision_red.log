@@ -1,0 +1,20 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_context_records_preserve_actual_float64_hold_commands __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-131/test_context_records_preserve_0')
+
+    def test_context_records_preserve_actual_float64_hold_commands(tmp_path):
+        import inspect,h5py
+        from simulation.collect import save_records
+>       assert 'preserve_action_precision' in inspect.signature(save_records).parameters, 'Exact ACT hold precision is lost on save'
+E       AssertionError: Exact ACT hold precision is lost on save
+E       assert 'preserve_action_precision' in mappingproxy(OrderedDict({'path': <Parameter "path">, 'rows': <Parameter "rows">, 'config': <Parameter "config">, 'result': <Parameter "result">}))
+E        +  where mappingproxy(OrderedDict({'path': <Parameter "path">, 'rows': <Parameter "rows">, 'config': <Parameter "config">, 'result': <Parameter "result">})) = <Signature (path, rows, config, result)>.parameters
+E        +    where <Signature (path, rows, config, result)> = <function signature at 0x7f4496c06020>(<function save_records at 0x7f448f718cc0>)
+E        +      where <function signature at 0x7f4496c06020> = <module 'inspect' from '/usr/lib/python3.12/inspect.py'>.signature
+
+tests/test_history_teacher.py:59: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_teacher.py::test_context_records_preserve_actual_float64_hold_commands
+1 failed in 0.14s

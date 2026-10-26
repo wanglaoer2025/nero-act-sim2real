@@ -1,0 +1,47 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19616271702665178,
+  "maximum_horizontal_transfer_m": 0.13044407809262887,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 377,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 1,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5317792864223201,
+      -0.11352728837679898,
+      0.23643609783000294
+    ],
+    "tcp_xyz": [
+      -0.5338310961029235,
+      -0.11339090697857478,
+      0.2442893237471136
+    ],
+    "cup_upright": 0.9998546683901992,
+    "cup_speed": 0.022233053594047366,
+    "bilateral": true,
+    "supported": false,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07365109589667233,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": true,
+    "force": false,
+    "name": "independent_2",
+    "seed": 94102
+  },
+  "frames": 1309,
+  "queries": 120,
+  "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "post_completion_freeze_step": null,
+  "runtime_s": 12.308070997009054
+}

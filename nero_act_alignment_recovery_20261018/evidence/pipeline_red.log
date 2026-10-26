@@ -1,0 +1,14 @@
+test_reusing_a_pipeline_never_overwrites_its_existing_status (test_alignment_pipeline.AlignmentPipelineTests.test_reusing_a_pipeline_never_overwrites_its_existing_status) ... FAIL
+
+======================================================================
+FAIL: test_reusing_a_pipeline_never_overwrites_its_existing_status (test_alignment_pipeline.AlignmentPipelineTests.test_reusing_a_pipeline_never_overwrites_its_existing_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_alignment_recovery_20261018/tests/test_alignment_pipeline.py", line 24, in test_reusing_a_pipeline_never_overwrites_its_existing_status
+    self.assertEqual(status.read_bytes(),original)
+AssertionError: b'{\n  "run": "run18_alignment_recovery",\n [198 chars]1\n}' != b'{"stage":"prior_completed_run","evidence":"keep me"}\n'
+
+----------------------------------------------------------------------
+Ran 1 test in 2.306s
+
+FAILED (failures=1)

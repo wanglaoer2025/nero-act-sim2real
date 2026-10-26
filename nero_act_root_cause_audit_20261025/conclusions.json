@@ -1,0 +1,257 @@
+{
+  "complete": true,
+  "date": "2026-10-25",
+  "purpose": "Root-cause audit, no repair or training claimed",
+  "scan_summary": "/home/user/wq/nero_act_root_cause_audit_20261025/historical_scan_summary.json",
+  "claims": [
+    {
+      "id": "C1",
+      "status": "historical_mechanism_improved_by_increment_head",
+      "finding": "Absolute gripper targets oscillated across requery boundaries so only2 executed points produced nearly zero net progress.",
+      "strength": "direct_NPZ_recalculation_and_intervention_support",
+      "net_nominal_close_mm": -0.0003129243850708008,
+      "within_chunk_change_mm": -0.4111751914024353,
+      "increment_original_inputs_before_after": [
+        0,
+        3
+      ],
+      "remaining_limit": "Later arm lift and full-flow failures remain; not a current universal explanation."
+    },
+    {
+      "id": "C2",
+      "status": "active",
+      "finding": "Small shared output-layer updates alter complete approach; fixed-input preservation and local gates do not guarantee closed-loop behavior.",
+      "strength": "same_scene_paired_training_controls",
+      "restricted_before_GRASP_point": 780,
+      "restricted_after_points_without_GRASP": 2710,
+      "event_full_regression_before_after": [
+        2,
+        0
+      ],
+      "event_full_regression_total": 3
+    },
+    {
+      "id": "C3",
+      "status": "active_with_contribution_unquantified",
+      "finding": "Expert/paused-state probes do not cover stable progress through policy-visited transitions; near-identical observations can supervise waiting versus lifting.",
+      "strength": "local6of6_vs_failed_full_flow_and_near_alias_examples",
+      "prefix_full_failure_point": 818,
+      "approach_full_failure_point": 2574,
+      "not_proven": "Exact mathematical ambiguity, universal insufficient data, or history-alone remedy.",
+      "near_ambiguous_episode_count": 7,
+      "audited_episode_count": 8
+    },
+    {
+      "id": "C4",
+      "status": "active",
+      "finding": "Nominal geometry and observer validity do not match all physical/runtime states.",
+      "strength": "observed_real_contact_vs_nominal_clearance_and_FK_recalculation",
+      "nominal_real_contact_clearance_mm": [
+        7.09,
+        9.99
+      ],
+      "latest_rejection_types": [
+        "four_attached_cup_guards",
+        "one_blue_card_observer",
+        "one_unaligned_descent"
+      ]
+    },
+    {
+      "id": "C5",
+      "status": "independent_hardware_pipeline_blocker",
+      "finding": "Stale command and health gaps can stop trials independently of learned policy quality.",
+      "strength": "actual_execution_receipts_and_timestamps",
+      "latest_real_command_age_s": 0.381648,
+      "limit_s": 0.25,
+      "actual_sent_points": [
+        66,
+        319
+      ]
+    },
+    {
+      "id": "C6",
+      "status": "RGB_sensitivity_proven_latest_drop_cause_not_isolated",
+      "finding": "Frozen numeric input and CPU policy respond to RGB-source change; GPU/CPU and render confounding prevent attributing3of7 to1of7 to one backend.",
+      "strength": "new_readonly_controlled_RGB_input_probe",
+      "CPU_RGB_only_prefix2_change_rad": 0.0005218386650085449,
+      "shared_runtime_sources_unchanged": 261,
+      "not_proven": "Historical runtime first RGB not retained, teacher archive is a different source."
+    },
+    {
+      "id": "C7",
+      "status": "historical_acceptance_scope_mismatch",
+      "finding": "Earlier passed summaries track bounded loop completion, not full physical task; earlier fixed14D dual-camera coordinates differ from current15D live-relative inputs.",
+      "strength": "173_raw_summaries_and_runtime_source_review",
+      "runtime_summaries": 173,
+      "passed_loop_status": 137,
+      "fifty_step_counterexample_grasp_distance_mm": 326.84634922598104,
+      "not_proven": "Missing gripper event fields are unknown; earlier policy is not assumed to be1a28."
+    }
+  ],
+  "process_findings": [
+    "Local/teacher success and full ACT success must remain separate.",
+    "Repeated development-set repair is not independent generalization acceptance.",
+    "Several training branches start from unqualified fixed-last research initializers; hashes validate identity, not competence.",
+    "Shared preservation gradients and clipping can oppose task progress."
+  ],
+  "counterevidence": [
+    "68 HDF5/180934-frame causal previous check has0 current/future-command selections.",
+    "CVAE posterior training was fixed but nominal complete task still failed.",
+    "79 old real RGB8 records did not directly train current15D policy.",
+    "Rendering differences cannot explain older within-one-runtime training regressions.",
+    "Some nominal FK guard rejections are stricter than evidence of actual physical penetration, but removal is not justified."
+  ],
+  "evidence_sources": [
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/evidence/paired_previous_policy/report.json",
+      "sha256": "a2a5859f856974e888228fa2d76d87d3f058a3597edc8da90288ebbb8b7e8ccf"
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/evidence/frozen_heads_audit.json",
+      "sha256": "5531214530a9a69c1e9c21214d5ab39d73503ca1861ed3473b3b7d4b12469d0f"
+    },
+    {
+      "path": "/home/user/wq/nero_act_restricted_heads_20261020/evidence/before_after_comparison.json",
+      "sha256": "ece89c8b3943c48efacd78f50cb2921458f8ec24229a5631ac9c651643c37b4f"
+    },
+    {
+      "path": "/home/user/wq/nero_act_restricted_heads_20261020/evidence/restricted_training_verified.json",
+      "sha256": "1b204f4040343673ac606f21e369a869d44593f99d4f95e2768e0b87dee67aca"
+    },
+    {
+      "path": "/home/user/wq/nero_act_approach_preservation_20261021/evidence/comparison.json",
+      "sha256": "00a86664b9182a6f5733adfc99849bac3b1bb749614b886c71effdb2befa1f3a"
+    },
+    {
+      "path": "/home/user/wq/nero_act_optimizer_control_20261021/evidence/optimizer_diagnostics.json",
+      "sha256": "ae45de0c13bbbb60b779890d2a2667f122340cc9c0cdb41b3f9c1a659a56d0ed"
+    },
+    {
+      "path": "/home/user/wq/nero_act_optimizer_fixed_20261021/training/pilot_A/artifacts/approach_after.json",
+      "sha256": "ec1ce09d45b84df76b5f61287a8a21c56817142b2d51d8ac055882c780ae7050"
+    },
+    {
+      "path": "/home/user/wq/nero_act_optimizer_decay_20261021/training/pilot_A/artifacts/approach_after.json",
+      "sha256": "c25de9f0b73702a63c2bf9db23fad913fc633793c2bbcdcc005b1d2eaeff2b56"
+    },
+    {
+      "path": "/home/user/wq/nero_act_command_increment_20261021/results/qualification/input_gate.json",
+      "sha256": "5877b43c67e2df06f32a4f667e5336404cb77dc2b28365a1644d9641530a14cc"
+    },
+    {
+      "path": "/home/user/wq/nero_act_command_increment_20261021/results/qualification/summary.json",
+      "sha256": "fa317209faaf640258e45310fbcf077be7e7f7a6b0c387d30e93fdd7eb66ec61"
+    },
+    {
+      "path": "/home/user/wq/nero_act_prefix_supervision_fix_20261020/evidence/final_verification.json",
+      "sha256": "2aaef29194f69277ddef78e642c54214d9018f476cf27005027395fbf4630f48"
+    },
+    {
+      "path": "/home/user/wq/nero_act_approach_recovery_20261020/evidence/final_verification.json",
+      "sha256": "1aa60fde2b9783cb4f0b723bc51d4d036b9bd1302b7c47d164e97997a466b5b8"
+    },
+    {
+      "path": "/home/user/wq/nero_act_event_finetune_20261024/results/summary.json",
+      "sha256": "1e277cd5770d81266e29500d95a4fcdea655e7c61cfe5e636f9f7569a46b07ba"
+    },
+    {
+      "path": "/home/user/wq/nero_act_event_finetune_20261024/baseline_reproduction.json",
+      "sha256": "95c2e3b233936dc0b2b30b595c84e8abcf8fdbba9cf2aa0f638d2b259927c141"
+    },
+    {
+      "path": "/home/user/wq/nero_act_event_finetune_20261024/results.json",
+      "sha256": "d5ef6958fdb82a3788f529886bea1bd3eb203bc10f8d0a3e60ff3f7aa3aa7c46"
+    },
+    {
+      "path": "/home/user/wq/nero_act_observation_repair_20261023/transition_audit.json",
+      "sha256": "bd6ef767d36ebae62f42c4a5efa45d645b1ae43c27a71dd5af26dded1a4f1337"
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_visual_bridge_20261024/run_03/results.json",
+      "sha256": "79a4277ec9a63dd1e3c45e7f6f64e79c90b1b9f7354f54cb4094cac6321bfaa4"
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_visual_bridge_20261024/input_intervention_diagnostic.json",
+      "sha256": "3368920d13359090a4ebf2e45a3880766f6763614967d2e91fa8e24c6b241ee6"
+    },
+    {
+      "path": "/home/user/wq/nero_act_contact_escape_fix_20261023/results/summary.json",
+      "sha256": "37fc54aa6be21738e8bcf51c9eee859da45b3bd6693660d4a97afb1f22695168"
+    },
+    {
+      "path": "/home/user/wq/nero_act_full_acceptance_20261024/run_01/acceptance.json",
+      "sha256": "614152b7b8662747b4e9295ec042dd73a0e387365bd29d8c8c0f53c798e15e0f"
+    },
+    {
+      "path": "/home/user/wq/nero_act_preservation_scope_20261023/training/pilot_A/integrity.json",
+      "sha256": "a6f135f974bf8377d151f7d27a2e88351969af73e8a288ca1868e788f7ffadd1"
+    },
+    {
+      "path": "/home/user/wq/nero_act_new_handeye_policy_repair_20261023/train_adaptation.py",
+      "sha256": "6ce76708b0b972218d8d6191e9fe5e902d13c2184d160a4d85c47877358f21ed"
+    },
+    {
+      "path": "/home/user/wq/nero_act_transfer_demo_20261023/results.json",
+      "sha256": "9fcefe94847575629b4e84bf7f009c8e80e5b30450447513a635fdc0c05076ce"
+    },
+    {
+      "path": "/home/user/wq/nero_pick_place_20261016/acceptance.json",
+      "sha256": "b5493856a43fe0b783917e18b6f11fca6b7e869a1f135b33799d92c394f4f0a5"
+    },
+    {
+      "path": "/home/user/wq/nero_act_full_acceptance_20261024/historical_environment_comparison.json",
+      "sha256": "3fb053a35bdbf7eb45e9a96ea8e755e14a1329334df3b883a001a7e529ec02f0"
+    },
+    {
+      "path": "/home/user/wq/nero_act_contact_prefix_repair_20261021/evidence/posthoc_gradients.json",
+      "sha256": "07509a8ed07a09790b8fddf93d3c922dbcb998a3adbb673883ccc4a54658fda9"
+    },
+    {
+      "path": "/home/user/wq/nero_act_cvae_training_fix_20261018/evidence/completed_training_mechanism_audit.json",
+      "sha256": "ac209cea4e75ec9e626582aa47c110118bdb52bc417bba29a449807d600c0730"
+    },
+    {
+      "path": "/home/user/wq/nero_act_gripper_balanced_20261018/evaluation/run25_nominal/summary.json",
+      "sha256": "81ba821385f70e0ac5ce93cd3478246df48a1d805f63dbbfc087384c14c564b2"
+    },
+    {
+      "path": "/home/user/wq/nero_act_gripper_contact_focus_20261018/evaluation/run26_nominal/summary.json",
+      "sha256": "0dfe6b8fbe4ff7dd092e73222fb18ceae28ad41d635b1f14a1083419f23a8311"
+    },
+    {
+      "path": "/home/user/wq/nero_act_root_cause_audit_20261025/initial_image_probe.json",
+      "sha256": "2b21457dd78e0ea8457cf87dea5fc4613241c9620c79286ea94d92d7712ce109"
+    },
+    {
+      "path": "/home/user/wq/nero_act_root_cause_audit_20261025/runtime_source_comparison.json",
+      "sha256": "2e64172d26ae8bb2755fa928c335bccf5d715ef12b7a8314cdd0699251068002"
+    },
+    {
+      "path": "/home/user/wq/nero_act_root_cause_audit_20261025/training_readonly_rechecks.json",
+      "sha256": "6775429017b54490ef90e374f35bc94a10b0db6a20d03c14cbf29495427469a6"
+    },
+    {
+      "path": "/home/user/wq/nero_act_root_cause_audit_20261025/execution_visual_audit.json",
+      "sha256": "6dfbafd97f1b803d78d54cf8132c92ac432e2835dd7dcddd16b7c4f7ef9000ce"
+    },
+    {
+      "path": "/home/user/wq/nero_act_root_cause_audit_20261025/execution_latest_contact_fk.json",
+      "sha256": "7b4c26ff948e6a1b379f30e0bbce69c59297911e7a0ebc1ad961684b4b99f041"
+    },
+    {
+      "path": "/home/user/wq/nero_act_root_cause_audit_20261025/external_project_log_index.json",
+      "sha256": "e6aeffb433dd3dd19a32a24dadcfdcd9d9bcb69d1684758f95ea527bf6e7046a"
+    },
+    {
+      "path": "/home/user/wq/nero_act_root_cause_audit_20261025/external_project_acceptance_audit.json",
+      "sha256": "6f2c90e0ddd7b75bd5184f45c3878f9fc8bc232a27e17b5969908bd469d11a19"
+    }
+  ],
+  "optimizer_updates": 0,
+  "hardware_commands_sent": false,
+  "full_real_task_accepted": false,
+  "combined_log_candidates_read": 2382,
+  "combined_json_parsed": 872,
+  "combined_text_logs_scanned": 1510,
+  "external_scan_summary": "/home/user/wq/nero_act_root_cause_audit_20261025/external_scan_summary.json"
+}

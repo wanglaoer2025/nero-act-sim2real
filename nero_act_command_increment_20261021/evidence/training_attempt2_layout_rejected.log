@@ -1,0 +1,35 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+number of parameters: 12.58M
+{"stage": "caching_runtime_features", "done": 32, "total": 21042}
+{"stage": "caching_runtime_features", "done": 1056, "total": 21042}
+{"stage": "caching_runtime_features", "done": 2080, "total": 21042}
+{"stage": "caching_runtime_features", "done": 3104, "total": 21042}
+{"stage": "caching_runtime_features", "done": 4128, "total": 21042}
+{"stage": "caching_runtime_features", "done": 5152, "total": 21042}
+{"stage": "caching_runtime_features", "done": 6176, "total": 21042}
+{"stage": "caching_runtime_features", "done": 7200, "total": 21042}
+{"stage": "caching_runtime_features", "done": 8224, "total": 21042}
+{"stage": "caching_runtime_features", "done": 9248, "total": 21042}
+{"stage": "caching_runtime_features", "done": 10272, "total": 21042}
+{"stage": "caching_runtime_features", "done": 11296, "total": 21042}
+{"stage": "caching_runtime_features", "done": 12320, "total": 21042}
+{"stage": "caching_runtime_features", "done": 13344, "total": 21042}
+{"stage": "caching_runtime_features", "done": 14368, "total": 21042}
+{"stage": "caching_runtime_features", "done": 15392, "total": 21042}
+{"stage": "caching_runtime_features", "done": 16416, "total": 21042}
+{"stage": "caching_runtime_features", "done": 17440, "total": 21042}
+{"stage": "caching_runtime_features", "done": 18464, "total": 21042}
+{"stage": "caching_runtime_features", "done": 19488, "total": 21042}
+{"stage": "caching_runtime_features", "done": 20512, "total": 21042}
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_command_increment_20261021/run_training.py", line 114, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_act_command_increment_20261021/run_training.py", line 78, in main
+    caches[split]=cache_dataset(policy,dataset,stats);print(json.dumps(dict(stage='features_ready',split=split,states=len(caches[split]['current']),samples=len(dataset),maximum_delta_m=caches[split]['maximum_teacher_delta_m'])),flush=True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_command_increment_20261021/run_training.py", line 43, in cache_dataset
+    if difference>1e-5:raise ValueError('Cached ACT features differ from runtime single-input features')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Cached ACT features differ from runtime single-input features

@@ -1,0 +1,40 @@
+{
+  "current_full_flow_passed": false,
+  "current_result": {
+    "success": false,
+    "error": "RuntimeError: ACT descended below the original grasp region without confirmation",
+    "active_policy_points": 1811,
+    "queries": 1022,
+    "max_lift_m": 0.0,
+    "maximum_horizontal_transfer_m": 1.833138568752144e-08,
+    "stable_released_frames": 0,
+    "simulated_events": [],
+    "unexpected_arm_cup_contact_frames": 0,
+    "execution_contract_failures": 0,
+    "runtime_s": 47.66567131600459
+  },
+  "source_sha256": {
+    "/home/user/wq/nero_act_full_flow_repair_20261023/evaluate_repair.py": "5a7e75116c2f5b0a140cb4d5de7c05863f0f58e31e4bf9277f30f9f3ddd45f09",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/current_scene.json": "b24719cb4829700e624a61389b0aa84040c27f86dbe45110f5d56973f5ba8897",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/training/pilot_A/policy_last.ckpt": "d7ea212a49af015c581010a6b86e7c0a70e23460a89bc3d4ee599d3222afdcbd",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/training/pilot_A/integrity.json": "aa43d76f7c88f255adacf8a2b0292bc670ed3db84d6774fbb1b160b926cc1638"
+  },
+  "nominal_scene_only": true,
+  "calibration_verified": false,
+  "hardware_commands_sent": false,
+  "hardware_deployment_allowed": false,
+  "original_qualification_run": false,
+  "baseline_same_scene": {
+    "success": false,
+    "error": "ValueError: Raw prediction exceeds physical arm/gripper limits",
+    "active_policy_points": 2086,
+    "queries": 1044,
+    "max_lift_m": 0.0,
+    "maximum_horizontal_transfer_m": 1.833138568752144e-08,
+    "stable_released_frames": 0,
+    "simulated_events": [],
+    "unexpected_arm_cup_contact_frames": 0,
+    "execution_contract_failures": 1,
+    "runtime_s": 52.971496420999756
+  }
+}

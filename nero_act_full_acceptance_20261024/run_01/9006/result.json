@@ -1,0 +1,91 @@
+{
+  "success": true,
+  "physical_success": true,
+  "max_lift_m": 0.183491238582287,
+  "maximum_horizontal_transfer_m": 0.1817191636982263,
+  "stable_released_frames": 101,
+  "lift_contact_frames": 959,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5411202076826228,
+      -0.13304397881226626,
+      0.04749668781500345
+    ],
+    "tcp_xyz": [
+      -0.530816858957517,
+      -0.13155019635847073,
+      0.24601224097783267
+    ],
+    "cup_upright": 0.9999999999999764,
+    "cup_speed": 2.033190150162381e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09499999877631682,
+    "contract_valid": true
+  },
+  "scenario": {
+    "name": "cpu_full_acceptance_9006",
+    "seed": 191899,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false
+  },
+  "frames": 3316,
+  "active_policy_points": 2788,
+  "queries": 1429,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 964,
+      "active_points": 960,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1782,
+      "active_points": 1652,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 2461,
+      "active_points": 2246,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RETREAT",
+      "physics_step": 2731,
+      "active_points": 2388,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": 3215,
+  "feedback_hold_points": 4,
+  "runtime_s": 213.75987826898927,
+  "contact_arm_hold_points": 280,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": true,
+  "inference_latency_p95_ms": 34.06740120844914,
+  "guard_diagnostic": null
+}

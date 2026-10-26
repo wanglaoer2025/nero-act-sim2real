@@ -1,0 +1,16 @@
+{
+  "critical_findings": 0,
+  "important_findings": 2,
+  "resolved_at_strict_public_entry": 2,
+  "findings": [
+    "Bind incoming recovery scene digest to exact checkpoint scene before teacher use",
+    "Require nonempty provenance and actual checkpoint-path membership before historical deserialization"
+  ],
+  "fixes": [
+    "checked_runtime.require_bound_scene",
+    "checked_runtime.require_checkpoint_binding"
+  ],
+  "historical_sealed_code_preserved": true,
+  "teacher_arrays_match": true,
+  "wrong_proof_rejected_before_deserialization_tested": true
+}

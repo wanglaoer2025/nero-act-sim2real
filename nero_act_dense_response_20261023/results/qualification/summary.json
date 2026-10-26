@@ -1,0 +1,1845 @@
+{
+  "complete": true,
+  "actual_updates": 1000,
+  "formal_epochs": 0,
+  "exact_and_preservation_gate_passed": false,
+  "original_six_pass_count": 3,
+  "original_six_passed": false,
+  "records": [
+    {
+      "name": "nominal_pre_close",
+      "role": "hold_to_lift",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 2.511510841823883e-05,
+        "maximum_horizontal_transfer_m": 0.007774480056381463,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5246758295256456,
+            0.023299238186778277,
+            0.04752511510841824
+          ],
+          "tcp_xyz": [
+            -0.5245309861786145,
+            0.02327771351270731,
+            0.05749564686362455
+          ],
+          "cup_upright": 0.9999994346757001,
+          "cup_speed": 0.0037755305560187987,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07413163864571304,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "nominal_development",
+          "seed": 191899,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 149,
+        "active_policy_points": 927,
+        "queries": 73,
+        "error": "RuntimeError: Attached-cup model would cross the table",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 783,
+            "active_points": 783,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 4.525864455004921,
+        "contact_arm_hold_points": 136,
+        "resumed_partial_not_full": true,
+        "resume_policy_transition": true,
+        "new_active_points": 144,
+        "contact_state": "holding",
+        "mechanism_success": false,
+        "current_cup_lift_m": 2.511510841823883e-05,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": false,
+        "inference_latency_p95_ms": 7.418529590358957,
+        "guard_diagnostic": {
+          "step": 149,
+          "current_actual": [
+            -0.02418776096114025,
+            1.0166690182938618,
+            -0.05667411249505545,
+            1.7067515381900549,
+            -0.04038152371967502,
+            -0.056099255162247216,
+            -1.1729798330226227,
+            0.07413163864571304
+          ],
+          "previous": [
+            -0.02406400442123413,
+            1.0163577795028687,
+            -0.056748323142528534,
+            1.7071741819381714,
+            -0.040474094450473785,
+            -0.05594886839389801,
+            -1.1735681295394897,
+            0.0677233636379242
+          ],
+          "raw_prefix": [
+            [
+              -0.023492932319641113,
+              1.0167659521102905,
+              -0.05663391947746277,
+              1.7075215578079224,
+              -0.04028857499361038,
+              -0.056135907769203186,
+              -1.1737768650054932,
+              0.06746112555265427
+            ],
+            [
+              -0.023885518312454224,
+              1.0168349742889404,
+              -0.05675788223743439,
+              1.707589030265808,
+              -0.040372900664806366,
+              -0.05605281889438629,
+              -1.1731504201889038,
+              0.06736002117395401
+            ],
+            [
+              -0.02400858700275421,
+              1.0166082382202148,
+              -0.05683356523513794,
+              1.7074739933013916,
+              -0.040424756705760956,
+              -0.05602458119392395,
+              -1.1729438304901123,
+              0.06729844957590103
+            ],
+            [
+              -0.0240524560213089,
+              1.016183614730835,
+              -0.05687869340181351,
+              1.7072901725769043,
+              -0.04044979065656662,
+              -0.055995166301727295,
+              -1.173096776008606,
+              0.06723173707723618
+            ],
+            [
+              -0.02409607172012329,
+              1.015695333480835,
+              -0.056844912469387054,
+              1.707295298576355,
+              -0.04052243381738663,
+              -0.055993229150772095,
+              -1.1724209785461426,
+              0.06718439608812332
+            ],
+            [
+              -0.024077460169792175,
+              1.0149319171905518,
+              -0.05681547522544861,
+              1.7072827816009521,
+              -0.0405767485499382,
+              -0.05599634349346161,
+              -1.1719019412994385,
+              0.06713980436325073
+            ],
+            [
+              -0.0241660475730896,
+              1.0132007598876953,
+              -0.056799113750457764,
+              1.707680583000183,
+              -0.040656380355358124,
+              -0.05594310164451599,
+              -1.1706269979476929,
+              0.06711132824420929
+            ],
+            [
+              -0.02415846288204193,
+              1.011977195739746,
+              -0.05679817497730255,
+              1.7077642679214478,
+              -0.04069364815950394,
+              -0.055908337235450745,
+              -1.1701576709747314,
+              0.06707911938428879
+            ],
+            [
+              -0.0240909606218338,
+              1.010706901550293,
+              -0.05677631497383118,
+              1.7078964710235596,
+              -0.04074446111917496,
+              -0.05589023232460022,
+              -1.1695749759674072,
+              0.06705417484045029
+            ],
+            [
+              -0.023994415998458862,
+              1.0098799467086792,
+              -0.05674956738948822,
+              1.7079421281814575,
+              -0.040777407586574554,
+              -0.055896058678627014,
+              -1.169246792793274,
+              0.06703492254018784
+            ]
+          ],
+          "checked_prefix": [
+            [
+              -0.023492932319641113,
+              1.0167659521102905,
+              -0.05663391947746277,
+              1.7075215578079224,
+              -0.04028857499361038,
+              -0.056135907769203186,
+              -1.1737768650054932,
+              0.06746112555265427
+            ],
+            [
+              -0.023885518312454224,
+              1.0168349742889404,
+              -0.05675788223743439,
+              1.707589030265808,
+              -0.040372900664806366,
+              -0.05605281889438629,
+              -1.1731504201889038,
+              0.06736002117395401
+            ]
+          ],
+          "current_tcp": [
+            -0.5245309861786145,
+            0.02327771351270731,
+            0.05749564686362455
+          ],
+          "proposed_tcp": [
+            [
+              -0.524349855446944,
+              0.02290816054634799,
+              0.05736539752397405
+            ],
+            [
+              -0.5243187404841056,
+              0.02315088932939756,
+              0.0572166808235648
+            ]
+          ],
+          "predicted_cup_bottom_m": [
+            -0.0001390107166624404,
+            -0.0002895475118706366
+          ],
+          "held_center": [
+            0.15196417285966513,
+            0.009970936695533977,
+            -0.02339007175967895
+          ],
+          "held_rotation": [
+            [
+              -0.999612807367606,
+              -0.021639417837064214,
+              0.017492025106492348
+            ],
+            [
+              -0.01775493617793182,
+              0.012017753131499973,
+              -0.9997701415080307
+            ],
+            [
+              0.02142422899361327,
+              -0.99969360766454,
+              -0.012397306428654189
+            ]
+          ],
+          "actual_cup_center": [
+            -0.5246758295256456,
+            0.023299238186778277,
+            0.04752511510841824
+          ],
+          "actual_cup_rotation": [
+            [
+              0.9998752501475184,
+              0.01578296107177373,
+              0.0006182897724598067
+            ],
+            [
+              -0.015782423378291645,
+              0.9998750755700788,
+              -0.0008650815196990105
+            ],
+            [
+              -0.000631866080911777,
+              0.0008552154899476159,
+              0.9999994346757001
+            ]
+          ],
+          "measured_physics": {
+            "cup_xyz": [
+              -0.5246758295256456,
+              0.023299238186778277,
+              0.04752511510841824
+            ],
+            "tcp_xyz": [
+              -0.5245309861786145,
+              0.02327771351270731,
+              0.05749564686362455
+            ],
+            "cup_upright": 0.9999994346757001,
+            "cup_speed": 0.0037755305560187987,
+            "bilateral": true,
+            "supported": true,
+            "unexpected_contact": false,
+            "unexpected_robot_contact": false,
+            "gripper_width": 0.07413163864571304,
+            "contract_valid": true
+          },
+          "contact_width": 0.07422120465305897,
+          "actual_attached_model_bottom_m": -1.4732518482264467e-05
+        }
+      }
+    },
+    {
+      "name": "nominal_hold_to_lift",
+      "role": "hold_to_lift",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 4.9876452103039814e-05,
+        "maximum_horizontal_transfer_m": 0.008498134094042011,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5246703823498163,
+            0.02400996056317345,
+            0.04754987645210304
+          ],
+          "tcp_xyz": [
+            -0.5243056367503804,
+            0.023983486716806494,
+            0.05688491926923403
+          ],
+          "cup_upright": 0.9999983640295037,
+          "cup_speed": 0.003849859014466273,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07413413380418751,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "nominal_development",
+          "seed": 191899,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 21,
+        "active_policy_points": 1783,
+        "queries": 9,
+        "error": "RuntimeError: Attached-cup model would cross the table",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 783,
+            "active_points": 783,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 0.8132769060030114,
+        "contact_arm_hold_points": 0,
+        "resumed_partial_not_full": true,
+        "resume_policy_transition": true,
+        "new_active_points": 16,
+        "contact_state": "holding",
+        "mechanism_success": false,
+        "current_cup_lift_m": 4.9876452103039814e-05,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": false,
+        "inference_latency_p95_ms": 9.324650809867306,
+        "guard_diagnostic": {
+          "step": 21,
+          "current_actual": [
+            -0.024901097225092778,
+            1.01683757229057,
+            -0.0572472968302305,
+            1.7075412732644766,
+            -0.039466445825630816,
+            -0.05605228755323199,
+            -1.170802827352479,
+            0.07413413380418751
+          ],
+          "previous": [
+            -0.024786338210105896,
+            1.016533613204956,
+            -0.05733160674571991,
+            1.7080037593841553,
+            -0.039577119052410126,
+            -0.05589619278907776,
+            -1.171420693397522,
+            0.06769579648971558
+          ],
+          "raw_prefix": [
+            [
+              -0.024326413869857788,
+              1.0170400142669678,
+              -0.05725415050983429,
+              1.7084442377090454,
+              -0.03939231485128403,
+              -0.056104183197021484,
+              -1.1715205907821655,
+              0.06744308769702911
+            ],
+            [
+              -0.024811148643493652,
+              1.0169029235839844,
+              -0.05735372006893158,
+              1.7086600065231323,
+              -0.03950079530477524,
+              -0.05603882670402527,
+              -1.1701236963272095,
+              0.06737913936376572
+            ],
+            [
+              -0.02489207684993744,
+              1.01644766330719,
+              -0.05735774338245392,
+              1.7086461782455444,
+              -0.039561815559864044,
+              -0.05601920187473297,
+              -1.1696758270263672,
+              0.06732604652643204
+            ],
+            [
+              -0.024888738989830017,
+              1.0158227682113647,
+              -0.05738717317581177,
+              1.7085590362548828,
+              -0.03959754854440689,
+              -0.05599236488342285,
+              -1.1696079969406128,
+              0.06726330518722534
+            ],
+            [
+              -0.024975061416625977,
+              1.0141687393188477,
+              -0.057336121797561646,
+              1.7089709043502808,
+              -0.03969677537679672,
+              -0.05602565407752991,
+              -1.16818368434906,
+              0.06723302602767944
+            ],
+            [
+              -0.02497030794620514,
+              1.0126235485076904,
+              -0.05731687694787979,
+              1.7092061042785645,
+              -0.039752207696437836,
+              -0.05602593719959259,
+              -1.167356014251709,
+              0.06719061732292175
+            ],
+            [
+              -0.0250081866979599,
+              1.0100717544555664,
+              -0.057301051914691925,
+              1.709830641746521,
+              -0.03983383625745773,
+              -0.056028202176094055,
+              -1.1656092405319214,
+              0.06716958433389664
+            ],
+            [
+              -0.024954915046691895,
+              1.0086385011672974,
+              -0.057293668389320374,
+              1.7100414037704468,
+              -0.03986617177724838,
+              -0.05596815049648285,
+              -1.1649140119552612,
+              0.06714019179344177
+            ],
+            [
+              -0.024875164031982422,
+              1.0073529481887817,
+              -0.05726691335439682,
+              1.710202932357788,
+              -0.0399128720164299,
+              -0.05593131482601166,
+              -1.1642686128616333,
+              0.06711259484291077
+            ],
+            [
+              -0.0247747004032135,
+              1.0064464807510376,
+              -0.05723210424184799,
+              1.7102437019348145,
+              -0.03994911164045334,
+              -0.055942535400390625,
+              -1.1638528108596802,
+              0.06708977371454239
+            ]
+          ],
+          "checked_prefix": [
+            [
+              -0.024326413869857788,
+              1.0170400142669678,
+              -0.05725415050983429,
+              1.7084442377090454,
+              -0.03939231485128403,
+              -0.056104183197021484,
+              -1.1715205907821655,
+              0.06744308769702911
+            ],
+            [
+              -0.024811148643493652,
+              1.0169029235839844,
+              -0.05735372006893158,
+              1.7086600065231323,
+              -0.03950079530477524,
+              -0.05603882670402527,
+              -1.1701236963272095,
+              0.06737913936376572
+            ]
+          ],
+          "current_tcp": [
+            -0.5243056367503804,
+            0.023983486716806494,
+            0.05688491926923403
+          ],
+          "proposed_tcp": [
+            [
+              -0.524080444583933,
+              0.023689435948774682,
+              0.05665303123531884
+            ],
+            [
+              -0.5240287749432702,
+              0.023969469231702123,
+              0.05645624107799705
+            ]
+          ],
+          "predicted_cup_bottom_m": [
+            -0.00023814379528934223,
+            -0.00044284462630687926
+          ],
+          "held_center": [
+            0.15222437341617612,
+            0.009339004610901546,
+            -0.02340297390973635
+          ],
+          "held_rotation": [
+            [
+              -0.9996435344260803,
+              -0.02276974926877301,
+              0.013940681417070635
+            ],
+            [
+              -0.01420766543776484,
+              0.011605994753777058,
+              -0.9998317074030937
+            ],
+            [
+              0.02260412181314704,
+              -0.9996733663572386,
+              -0.01192536259590886
+            ]
+          ],
+          "actual_cup_center": [
+            -0.5246703823498163,
+            0.02400996056317345,
+            0.04754987645210304
+          ],
+          "actual_cup_rotation": [
+            [
+              0.9998216855105665,
+              0.01885250670088738,
+              0.0010863580917701819
+            ],
+            [
+              -0.018850927193812733,
+              0.999821259415662,
+              -0.0014462933359720253
+            ],
+            [
+              -0.0011134301702979195,
+              0.0014255565836198809,
+              0.9999983640295037
+            ]
+          ],
+          "measured_physics": {
+            "cup_xyz": [
+              -0.5246703823498163,
+              0.02400996056317345,
+              0.04754987645210304
+            ],
+            "tcp_xyz": [
+              -0.5243056367503804,
+              0.023983486716806494,
+              0.05688491926923403
+            ],
+            "cup_upright": 0.9999983640295037,
+            "cup_speed": 0.003849859014466273,
+            "bilateral": true,
+            "supported": true,
+            "unexpected_contact": false,
+            "unexpected_robot_contact": false,
+            "gripper_width": 0.07413413380418751,
+            "contract_valid": true
+          },
+          "contact_width": 0.07439708633611039,
+          "actual_attached_model_bottom_m": -1.787771422132842e-05
+        }
+      }
+    },
+    {
+      "name": "heldout_pre_close",
+      "role": "pre_close",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 1.1772703343918e-05,
+        "maximum_horizontal_transfer_m": 5.380831872384884e-05,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5521012030730741,
+            -0.008409185959777821,
+            0.0475086823357793
+          ],
+          "tcp_xyz": [
+            -0.5520350276784118,
+            -0.00840204678321221,
+            0.05519134852234114
+          ],
+          "cup_upright": 0.9999998954105496,
+          "cup_speed": 0.0014407737736030345,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.0737918219820542,
+          "contract_valid": true
+        },
+        "scenario": {
+          "seed": 180360,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false
+        },
+        "frames": 181,
+        "active_policy_points": 1164,
+        "queries": 71,
+        "error": "RuntimeError: Attached-cup model would cross the table",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 1024,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 4.646907454996835,
+        "contact_arm_hold_points": 136,
+        "resumed_partial_not_full": true,
+        "resume_policy_transition": true,
+        "new_active_points": 140,
+        "contact_state": "holding",
+        "mechanism_success": false,
+        "current_cup_lift_m": 8.682335779296169e-06,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": false,
+        "inference_latency_p95_ms": 8.327651492436416,
+        "guard_diagnostic": {
+          "step": 181,
+          "current_actual": [
+            0.03809792778299296,
+            1.053200164090948,
+            -0.025243502537887527,
+            1.5830452056740356,
+            0.03300819495938579,
+            -0.006401061762877943,
+            -1.064862584962335,
+            0.0737918219820542
+          ],
+          "previous": [
+            0.03809170424938202,
+            1.052952527999878,
+            -0.025433463975787163,
+            1.5836412906646729,
+            0.0329815074801445,
+            -0.006029888987541199,
+            -1.0655232667922974,
+            0.0682760551571846
+          ],
+          "raw_prefix": [
+            [
+              0.03839239478111267,
+              1.0531997680664062,
+              -0.025427384302020073,
+              1.58411705493927,
+              0.033110201358795166,
+              -0.0060921162366867065,
+              -1.0659372806549072,
+              0.06808186322450638
+            ],
+            [
+              0.03799939155578613,
+              1.0528745651245117,
+              -0.025428680703043938,
+              1.584434986114502,
+              0.03304696083068848,
+              -0.0059503912925720215,
+              -1.0642393827438354,
+              0.06803973764181137
+            ],
+            [
+              0.0379505455493927,
+              1.0520998239517212,
+              -0.025418167933821678,
+              1.5845110416412354,
+              0.032996416091918945,
+              -0.0059171319007873535,
+              -1.0637391805648804,
+              0.06799886375665665
+            ],
+            [
+              0.03794461488723755,
+              1.0509257316589355,
+              -0.02542472444474697,
+              1.584669828414917,
+              0.03293382376432419,
+              -0.005867257714271545,
+              -1.0632286071777344,
+              0.06795457750558853
+            ],
+            [
+              0.03794509172439575,
+              1.0493056774139404,
+              -0.02537681721150875,
+              1.5850794315338135,
+              0.032852038741111755,
+              -0.00583377480506897,
+              -1.0620747804641724,
+              0.06792560964822769
+            ],
+            [
+              0.03800328075885773,
+              1.0476242303848267,
+              -0.02534548006951809,
+              1.5853863954544067,
+              0.032786332070827484,
+              -0.0058220624923706055,
+              -1.0610692501068115,
+              0.0678916946053505
+            ],
+            [
+              0.03794974088668823,
+              1.0452854633331299,
+              -0.02531798742711544,
+              1.5860074758529663,
+              0.03269820660352707,
+              -0.005785927176475525,
+              -1.059388518333435,
+              0.06788108497858047
+            ],
+            [
+              0.03794848918914795,
+              1.0439053773880005,
+              -0.02530013956129551,
+              1.586295485496521,
+              0.03267589956521988,
+              -0.005686700344085693,
+              -1.0588980913162231,
+              0.06785369664430618
+            ],
+            [
+              0.037972718477249146,
+              1.0427346229553223,
+              -0.025280000641942024,
+              1.5865391492843628,
+              0.0326194167137146,
+              -0.005599066615104675,
+              -1.058444619178772,
+              0.06783036142587662
+            ],
+            [
+              0.03801122307777405,
+              1.041617512702942,
+              -0.025243641808629036,
+              1.586875081062317,
+              0.0325426384806633,
+              -0.005572989583015442,
+              -1.0577595233917236,
+              0.06781551241874695
+            ]
+          ],
+          "checked_prefix": [
+            [
+              0.03839239478111267,
+              1.0531997680664062,
+              -0.025427384302020073,
+              1.58411705493927,
+              0.033110201358795166,
+              -0.0060921162366867065,
+              -1.0659372806549072,
+              0.06808186322450638
+            ],
+            [
+              0.03799939155578613,
+              1.0528745651245117,
+              -0.025428680703043938,
+              1.584434986114502,
+              0.03304696083068848,
+              -0.0059503912925720215,
+              -1.0642393827438354,
+              0.06803973764181137
+            ]
+          ],
+          "current_tcp": [
+            -0.5520350276784118,
+            -0.00840204678321221,
+            0.05519134852234114
+          ],
+          "proposed_tcp": [
+            [
+              -0.5517807157383047,
+              -0.008451727806045254,
+              0.05505426520049179
+            ],
+            [
+              -0.5517356047935887,
+              -0.008229318570400528,
+              0.054885773425156284
+            ]
+          ],
+          "predicted_cup_bottom_m": [
+            -0.00015620580020923885,
+            -0.00035249216633669955
+          ],
+          "held_center": [
+            0.15206660915650969,
+            0.007682659488781267,
+            -0.02349018753090283
+          ],
+          "held_rotation": [
+            [
+              -0.9999998861253689,
+              -9.947327725200361e-05,
+              -0.00046674866327824424
+            ],
+            [
+              0.0004667343254818994,
+              0.00014411167195820839,
+              -0.9999998806954398
+            ],
+            [
+              9.954052931463735e-05,
+              -0.9999999846684455,
+              -0.00014406522795461522
+            ]
+          ],
+          "actual_cup_center": [
+            -0.5521012030730741,
+            -0.008409185959777821,
+            0.0475086823357793
+          ],
+          "actual_cup_rotation": [
+            [
+              0.9999998790844207,
+              0.0002713925805086505,
+              0.000410094146167203
+            ],
+            [
+              -0.0002713095583262083,
+              0.9999999426947195,
+              -0.00020248871275716749
+            ],
+            [
+              -0.00041014907660092255,
+              0.00020237742581145896,
+              0.9999998954105496
+            ]
+          ],
+          "measured_physics": {
+            "cup_xyz": [
+              -0.5521012030730741,
+              -0.008409185959777821,
+              0.0475086823357793
+            ],
+            "tcp_xyz": [
+              -0.5520350276784118,
+              -0.00840204678321221,
+              0.05519134852234114
+            ],
+            "cup_upright": 0.9999998954105496,
+            "cup_speed": 0.0014407737736030345,
+            "bilateral": true,
+            "supported": true,
+            "unexpected_contact": false,
+            "unexpected_robot_contact": false,
+            "gripper_width": 0.0737918219820542,
+            "contract_valid": true
+          },
+          "contact_width": 0.07380683105069638,
+          "actual_attached_model_bottom_m": -8.463725686655495e-06
+        }
+      }
+    },
+    {
+      "name": "heldout_hold_to_lift",
+      "role": "hold_to_lift",
+      "passed": true,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.020710864940537727,
+        "maximum_horizontal_transfer_m": 0.0014900172823533483,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5507059892563864,
+            -0.008061760333955972,
+            0.06821086494053773
+          ],
+          "tcp_xyz": [
+            -0.5507674718515667,
+            -0.008045699627234079,
+            0.07609300635557904
+          ],
+          "cup_upright": 0.9999857894314622,
+          "cup_speed": 0.013955185686659004,
+          "bilateral": true,
+          "supported": false,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07378586315787378,
+          "contract_valid": true
+        },
+        "scenario": {
+          "seed": 180360,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false
+        },
+        "frames": 53,
+        "active_policy_points": 1193,
+        "queries": 24,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 1024,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 1.292385184991872,
+        "contact_arm_hold_points": 0,
+        "resumed_partial_not_full": true,
+        "resume_policy_transition": true,
+        "new_active_points": 48,
+        "contact_state": "holding",
+        "mechanism_success": true,
+        "current_cup_lift_m": 0.020710864940537727,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": true,
+        "inference_latency_p95_ms": 7.8533408537623455,
+        "guard_diagnostic": null
+      }
+    },
+    {
+      "name": "heldout_support_release",
+      "role": "support_release",
+      "passed": true,
+      "result": {
+        "success": true,
+        "physical_success": true,
+        "max_lift_m": 0.19437494922350224,
+        "maximum_horizontal_transfer_m": 0.15615440632694247,
+        "stable_released_frames": 101,
+        "lift_contact_frames": 795,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5246751501846904,
+            -0.16184431796575124,
+            0.04749668780974979
+          ],
+          "tcp_xyz": [
+            -0.526904354279366,
+            -0.1590025098840362,
+            0.246533062332815
+          ],
+          "cup_upright": 0.9999999999999626,
+          "cup_speed": 8.125332700889094e-07,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999877544577,
+          "contract_valid": true
+        },
+        "scenario": {
+          "seed": 180360,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false
+        },
+        "frames": 727,
+        "active_policy_points": 2693,
+        "queries": 250,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 1024,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "CARRY",
+            "physics_step": 1538,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RELEASE",
+            "physics_step": 2195,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RETREAT",
+            "physics_step": 186,
+            "active_points": 2337,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": 626,
+        "feedback_hold_points": 4,
+        "runtime_s": 18.132289975997992,
+        "contact_arm_hold_points": 142,
+        "resumed_partial_not_full": true,
+        "resume_policy_transition": true,
+        "new_active_points": 498,
+        "contact_state": "released",
+        "mechanism_success": false,
+        "current_cup_lift_m": -3.31219025020979e-06,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": true,
+        "inference_latency_p95_ms": 7.714065247273537,
+        "guard_diagnostic": null
+      }
+    },
+    {
+      "name": "heldout_release_retreat",
+      "role": "release_retreat",
+      "passed": true,
+      "result": {
+        "success": true,
+        "physical_success": true,
+        "max_lift_m": 0.19437494922350224,
+        "maximum_horizontal_transfer_m": 0.15615440632694247,
+        "stable_released_frames": 101,
+        "lift_contact_frames": 795,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5246779618508667,
+            -0.16184297306411793,
+            0.04749668780689714
+          ],
+          "tcp_xyz": [
+            -0.5269188196118401,
+            -0.16056461145744688,
+            0.24628712216839294
+          ],
+          "cup_upright": 0.9999999999999661,
+          "cup_speed": 1.7208694705383279e-06,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999877596901,
+          "contract_valid": true
+        },
+        "scenario": {
+          "seed": 180360,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false
+        },
+        "frames": 457,
+        "active_policy_points": 2668,
+        "queries": 176,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 1024,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "CARRY",
+            "physics_step": 1538,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RELEASE",
+            "physics_step": 2195,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RETREAT",
+            "physics_step": 2316,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": 356,
+        "feedback_hold_points": 0,
+        "runtime_s": 11.070737838017521,
+        "contact_arm_hold_points": 0,
+        "resumed_partial_not_full": true,
+        "resume_policy_transition": true,
+        "new_active_points": 352,
+        "contact_state": "released",
+        "mechanism_success": false,
+        "current_cup_lift_m": -3.312193102858463e-06,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": true,
+        "inference_latency_p95_ms": 7.57754498772556,
+        "guard_diagnostic": null
+      }
+    }
+  ],
+  "nominal_evaluated": false,
+  "nominal": null,
+  "full_task_passed": false,
+  "independent_generalization_evaluated": false,
+  "hardware_commands_sent": false,
+  "source_sha256": {
+    "/home/user/wq/nero_act_command_increment_20261021/run_qualification.py": "d24adcf939f4b1584dca6bda23a73ac3bb9f180a17e013c7a78c32ac8f56479c",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/evidence/qualify_pilot.py": "eb91c7a950da41ac6a3c25073a6f4d87da017e03e17cd0a7effdbec9c4c38e63",
+    "/home/user/wq/nero_act_dense_response_20261023/training/pilot_A/policy_last.ckpt": "a47f5df87e1499fecd70dc9baf0ee5de869961448a394249aa6bf32a9e470ba8",
+    "/home/user/wq/nero_act_dense_response_20261023/training/pilot_A/integrity.json": "b828d1b1a5d9ca8bd7aa6d8aa928d0ef2c3e374e0177886ae8169534e5dc5454",
+    "/home/user/wq/nero_act_approach_recovery_20261020/training_data/recoveries_v5/manifest.json": "4cad4ab5dc79d3287bcd702e0056d92a4e9f28ef41886cbeb82b6c9d16e679e9",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/manifest.json": "a1cf9e237c0d058fc3b8a7f30e741018ba7299be2de59494de679fd56caeb148",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2017.hdf5": "f8c05c2ed64d9cfeb2a01fa50795b00246a7e4c7c8d53fb0207f46f628cf7d40",
+    "/home/user/wq/nero_act_contact_recovery_20261020/training_data/contact_complete_v1/episode_2018.hdf5": "5c813471dc74382f529d22c333171bebefaf981bf6f38c1ec8870f220ff606fe",
+    "/home/user/wq/nero_act_history_feedback_20261019/results/original_failure_capture/scene_configuration.json": "625d1c25b9084e424c849257db6e5b1d93258f87b10abcf86033719ebe80f8ef",
+    "/home/user/wq/nero_act_history_feedback_20261019/results/original_failure_capture/result.json": "4fc54047f76342df359ec8bb4cfcd2c39533568d9f8c542d4a235052dc18f8b9",
+    "/home/user/wq/nero_act_history_feedback_20261019/results/original_failure_capture/runtime_checkpoints.json": "0e961f1c6795cefd49ebfbba9234a6e69610a4a1e80a9f08b79ffa8a47fc0131",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_recoveries_v2/contexts/parent_36/pre_close.json": "e07d1006ab1cf2cfae2b340fe154d65d0f9042fd03d754129eb03b2d9da79db4",
+    "/home/user/wq/nero_act_generalized_pick_place_20261018/training_data/generalized_v1/episode_36.hdf5": "b760a21de7513516df49c124b9cdf1ae3ff08b7105c828fc378f463254a619c3",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_recoveries_v2/contexts/parent_36/hold_to_lift.json": "ca71f763c0626a23e9adaf1ad098114a8bd2c266ee2cb3c9db8deda6fb2df800",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_recoveries_v2/contexts/parent_36/support_release.json": "a4b502b3ae33d94e3718a295140bbe55299c12c165bf244b59b99c68ca9d5fa1",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_recoveries_v2/contexts/parent_36/release_retreat.json": "2c923add07d377f296317998f96df18a5231d64b17e7998127c8c35a907c0b93",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/policy_best_val.ckpt": "b252dd578b4bf5626566ec5b60a47be0bdcfee30e9eab990cde05ac122bdea71",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/dataset_stats.pkl": "78390f6aed2b1c7d1a7f5e466c31b5279419da57168b640a2756427fc3914597",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training_data/approach_complete_v1/dataset_stats.pkl": "e8e3cb0a294bd192e831f4cf22f0ba3f2a8fb3970172081ed7b5893d4eee335d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training_data/approach_complete_v1/scene_config.json": "594886be4d561e70c392dfe8582427619bbfa68295c87f638ea1f01a41f6da9d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/config/history_experiment.json": "798a1c82ababa75ad57ee0be17df23ca7e9588482fc471835562345149557ef7",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/history_seal.py": "dc6834a047791f8a26358e7dbe92efcd249d9dcf97befa9f5f0b788ee179d5ae",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/append_history_recovery.py": "c6685e563bde2a520431f92d16657b7f9000fb60b2a95f0489a3154e7e2ffc7e",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/command_context.py": "f781f06f6c893dcecfa593ccd25d3e7f554a214cb9787254670cc38561783d90",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/history_dataset.py": "173f15bc4db1f3ebcc731f6b2417be6255a72ab8621bc04d660a9d476b36ffbe",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/visual.py": "5ffef7ba80e2393a3c192ab230cd7bb6baab68d88d252bf9d048fc745356014d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/transition_sampling.py": "5bbf6083589539e1ed59e8a1af24dca724bec08ec1fe7464db9a224bdb618226",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/generalized.py": "e4e541624a798e5936da2e909c36ae2af564fcd8d448fdc078223fa7ab560347",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/export.py": "e9e7bc08923ae315f0abb482c0e6feb6dbb18e20337a269c9f8cbd7cde209003",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/history.py": "57320b02629f30a92e8e3bb083bf888c60e04557561cb2d75055d1a8cf2318e9",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/recoveries.py": "d19126db217accd576a605e069b31470ec56954b2d7464b2ec75ff569da337a1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/rebase_initializer.py": "cf70510e00f2014c0bd77051a96200e5c02c9997fc293917d8e82f5851d66ff0",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/history_recoveries.py": "77c53ca209f55740aa8fd9b872ac0b0c34df89c6985aec6e5d6f257563d80bbc",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/integrity.py": "fee7e85b890d462b8a1f4582b5e0d311322df184b22b95d364b9a9ee414b4408",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/visual_dataset.py": "1e813d478e213a67e602cfdeeecdf509d6ed5fc91d86e922a5a84c6b63b8944e",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/pose_objective.py": "8f4dea5e665c9a22a1d2782e0949346521ae7974fe7507e53bb0902003d3a11a",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/contact_sampling.py": "ced3e7936e92a3efe8c21daeeede1424626036a10e1fd600f0416e2018fe5da6",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/history_data.py": "07446e6e9e9b0aa95b0328b8bc79d50ae5acaf77731ea4322a2f1e400a5233b6",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/visual_gripper_repair.py": "0472d1a939774a106b0780d08796cf1b778327a24b713c2a444d25a04200e35d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/legacy_visual_data.py": "f37b3c1542fc810afd99f0b83e5b18ab8fc2b05c93c6d253b654f4783afa1863",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/train.py": "151a18734a3f378bbe6aa97921941ce7a2bddb8ec14f6b423901a6b66f4d443c",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/fixed_gate.py": "e8e065774f2ba78560b9d9c197115a1d57dcd784ba677358f1928df96fbe600f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/supervision.py": "f3fefe03b57b8da8a04f8bde8f8ece717c7a177e83bd2f6e66a7a3b6651d6861",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/policy_worker.py": "d047e1c12cb1c61d5e371e9271080d408455de815053bf73b96d9eebf3fbeed4",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/driver.py": "640a25c79a15392148b762df2f628b70652e5c9bfc4d9efde17957ddc62fd9bc",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/fixed_permission.py": "08556c98449b456191038ca91b6fdcca15cbc17eabc12d05aec7640586877a69",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/gate_health.py": "b0cc34af9a1ac3317c689e44a0d1857277c1620be491fe1f44a1bd36071ba07f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/ros_execution.py": "b94b5306c3afdfdb9d2920335a171705e69ed8d6a6f99cf9b11c0a0a82f70a8d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/model.py": "0be5d6d12b2bfa6deeec8aa5a5f0d7086844d13ea8e5d2cd7ed5e3195fe729c7",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/fixed_trial.py": "7b7a166285d3a2c22c1fe396bc35ab8a77e6e099e7cf92f485d9eef075f6cd58",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/shadow.py": "3d61940fc76a27099250a90f0df155df8b5c977381ae06d01c20d9e4b3759d3a",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/evaluation_integrity.py": "0f73fda99e97f6e08f34cde8b1fc2ff97cd7aae9eec468832d29e38a9552a76e",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/contact.py": "8f9d1885ed6d1d62bc46e29a21222bff9c8c51ef94fb409bdb1dfe159ee9cbad",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/execution_guards.py": "f1c1dedf968f031229d198dbeaba1088e982b6e4f7834ad72f6f4d76f452acd3",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/release_hold.py": "e0921d6f543845b2192932d4ad3e1def4d0817bcb575fdc5947f4cc8bd69e922",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/bundle.py": "fb91b04b7f6b36b8b0ace695ecb0bc925655211d89c84ad8a89950c5a30334d0",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/phases.py": "7d9f7be87338d91ee1a584d9507bac6c344f61b7ba8de8a02082c6bf3a55371d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/visual_observation.py": "05fcdc19b9fdb33bbcef44d9c1276b7662a874563da338b8dd03e132801c6add",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/transport.py": "c0a30bcd89d3e16700b845343193061b226a720115a443cc94392a8a6be7a570",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/history_qualification.py": "46cc797ec4a041d6d1d8bf1a9f040fad3e561f8c3bf7e2d88600bec2e1909405",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/history_shadow.py": "0e8763e11a62c0ddc0b3892cea27bae68c94717ab0aa377778571e1e36bc3709",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/contract.py": "b4f61390051c8b78d6729923380020f31c3da78ca911339250b7a87c08dee1e3",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/permission.py": "4a65d85a22daac631a77a8b243b86b7c7007301e6e84ca09ba6b58863eb204f1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/observation_history.py": "f4e1bdad7b1802c93b617ab0f332d6f97a082b967ad80c4d421e2c6463610873",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/gate.py": "8d778292a3a9242e33c370a2a44df7d0303ff5158e0de98289855a8c41ff597f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/visual_inference.py": "0f5d6484118fa6fe549415ee9b6c4da38b1014d510d17d5ca2bfdad90c0fd25e",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/visual_control.py": "ca1b8f0d11ed1cd88b097fa30458470755d3802ae30c0c102ca3512a3caf1d73",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/fixed_trial_run.py": "459978ace8057020e0865c144f3520efcae3c11d8f98d4831bc26196ebb5c29f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/visual_run.py": "451532fe10d3ba34aa6d12dfdf38880282d6f507d7c108500e51da7a24cd682f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/fixed_driver.py": "fe23678cf92c7b8fb0f73623e591f70961bc73bad29bdb1654b952238549d5de",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/runtime.py": "23def3f95921692c4b9ffdd88a30b5da7d7daba9aca9affa61ad796cdc068daf",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/virtual_bridge.py": "cb117cead61dda71d35e042dd4e7b0b6b79a6fbda9eec273fd91fe132ad56d1d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/health_trace.py": "d12fe8b91aceb75b3fba0b189fb3097ce495c2abb12791afd6827c9e11859ca1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/executor/visual_dispatch.py": "7f92bc4f76e2784c1664b2a16901c3f47928d90e9a76def6bb936ef9a390c1da",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/supervised_rollout.py": "05e55a3aeb19d8533537158855af3982159c6c9cc1828f97e3b339317d1fcf04",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/generalization.py": "444ebca99525a723d265843998aabd9794559724f2284c531dfcf5917b719a75",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/visual_suite.py": "0c2d9654f03d1a4d48d3b7b9940be85961bbe8cde170e06d4e931c7e4bb9eaca",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/history_mechanism.py": "c19007dcb2f58b06ea8205e1b1c70965e78bb5a96d21fce2983dc8a85a9eb396",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/history_capture.py": "1b042084fcc609b18bfcff974c4484c0fce95859c3149da7b295af5f9fdf75c0",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/supported_attachment.py": "7ea2941e9235608a4144fd54361e64b319368a873ce0076db8fcd5f4a1a787df",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/history_intervention.py": "1ae9835fee14359eee208569cb881a3e61a74211da32db5ada137cee0abcb44e",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/runtime_checkpoint.py": "76f4bd69c7cf13159d8fbd1cbd29884308c01067d06b91d50bb23e5b6295431f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/evaluate.py": "c6ed574ff91f2d6949db52d1cb50d921a886ff2f4cdbe876a0e98c5cd6172295",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/evaluate_generalized.py": "bb1f354522b5dca2a401aba9f0fc608bb20adebfd974361ec2b8d57153d77e10",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/refresh_observations.py": "0f8a6606b48260107b5d6fb60de7464eb2ac55b29b02bffe50b38d471b98e54f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/scene.py": "80ec8a5b98d43beed9b9e395406b692a2e5806d5e16d73f93160302babe0afb7",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/outcome.py": "d0c2eac81bef9082e914c9ff3cdb24c3dd95ef94d7cb3d46d0a11b0177869253",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/nero_scene_camera.py": "1233f272b3c97dc7aa3a4dd02c65f13a392ed02ec5aa1e6afe94d75577a04002",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/visual_evaluation.py": "9030a9a6a09cf261f20db1c2dc2af1ee5010eadcf0c150d51ca3d91b2cc206cb",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/collect_generalized.py": "64352b8d2fd6e6cb7cb97d4b45fd6dbd8580c55bcac556edd314074d20d702bf",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/collect.py": "429fdb43a9ce369dac283ed50f1f5f93111dec100655fd72364cdf48ec5c197c",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/history_teacher.py": "46519002a4d936af690093f172ea7bb39e6e62d063049cc1caeb099bafea7627",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/teacher.py": "41fe9ceb667c4907b5c7a8502d5ca9a93aab017d1b1dcbe2168d2a0c8ec2e5a5",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/nero_domain_randomization.py": "0a3e99196177663aebb5fce13986744868b7e318c7578fc15fe75507e4e2662c",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/history_observation.py": "11dbbdf2c79bee7230b0e3c5e1f739bd6676226d94089256c47353d1555453dd",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/snapshot.py": "d56c077227db6b072f1e75f8695a2a729b20c7bc508c9b2deadf994ab0a7cec4",
+    "/home/user/wq/nero_act_restricted_heads_20261020/vision/__init__.py": "968afaea0eb50609451b601073502a86ee29eecf047260db518234f0a1e255b3",
+    "/home/user/wq/nero_act_restricted_heads_20261020/vision/observation.py": "0f631b84514d70fa195b077f09dc325aa28c2e3b85ed6310c73368eaf06e22d3",
+    "/home/user/wq/nero_act_restricted_heads_20261020/vision/synchronization.py": "f503b25faec7c7affaa037f0e7c1f74e1a1ded13817fa47b632fdf008ed023b1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/calibration/bundle.py": "3a0ccce40d1a7d35c3366e3d14483789203174781f89cd59311ddce0e09d295f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/calibration/__init__.py": "6b6757b57ca64a37b0e2e5b2cd1fa422323d389617bbc83e9a1414a9e4bac554",
+    "/home/user/wq/nero_act_restricted_heads_20261020/calibration/solve.py": "36e38a0f46e57d7c71db30c243de3414d4ee7f1343db30b2f0f83be645469f85",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/__init__.py": "8304b95ea43a245d928411824f57f19a7dbd65ccc78b223dd5668800dfbf2f76",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/__init__.py": "e824b724a356717942fcc4a5591d209f866a74350479a3bc3cab465bfd9b0764",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/tests/test_act_offline_imports.py": "83e2f067f52a0f6f19318745a6f1530413c6f3634c8802b166ebd6dc69c7bed2",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/tests/test_joint_stream_offline.py": "354177a5a66c1100a4a8233556063c7cd666f84eb1126aa6f2e54ee01333b97a",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/tests/test_act_robot_wrapper.py": "de34ff7bd0ea2699c8e47c82704762f4b5ac03c0493f09717a0652304f071374",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/tests/test_act_kinematic_features.py": "0ed2278e81caffe4879bd971faef6854adf1accafa03d001c43c59cc384533ef",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/tests/test_act_shadow_capture.py": "25de467a43549c1828a88286d2f61c4c1f863a2c207e64331354bb5897e77edb",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/tests/test_act_nero_dataset.py": "5bc2e594bc491168a8913805ded11dd5a8014d94b9eb33844915daef9f11b6c7",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/__init__.py": "d782b1f5f60188e1aa3d02c7e9c97bcaace1db00c76108d2b3c018c03ef232c8",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/detr/__init__.py": "e78ac0eca34142588d25cf6b82fdd725e0ad7f0ebcaa116a8a07e7b5bf3be556",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/detr/main.py": "f3bde9d1e1c3e9a7f895433952753649155c244a42407381802a5336fe5668c8",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/detr/models/position_encoding.py": "851babd1dad8383699290163fde9049d6e30453308ac6cf84036d6fe96ef12ed",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/detr/models/detr_vae.py": "460e3bcfefa717a4d218f11eb0c02e9133fddbec3bb0b531685c70b31bcea0e0",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/detr/models/transformer.py": "75f5c4082815186b3d1dd62db805426f0406a26bf6f01199d3dd7bf886e1eeda",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/detr/models/__init__.py": "61cb75a7d8e99893e96ace4802a4c0a50181230f7f7a2c0262590cfc922007e9",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/third_party/act/detr/models/backbone.py": "04c62f58a732604cda245f94a5d91543bbc9913559395c0bc11ded281bebd464",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/demo/yolo_pick_place.py": "11a87213fe3256d9745ac5be59a456af62470f3b6951147171b59ff7eb398455",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/demo/__init__.py": "345cfcd7a7766cd8d1a8ad43d415f76f6c39c918d86fcdaf6b54db3783a87381",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/arm/__init__.py": "ddc6f003042d474d0ccfac97cae71b61d055d150244e1bef99f153f86cc4aff8",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/arm/prepare.py": "b3c1560f2edbc4efad12601963460807d372ed4824c971d910c036f7beb0d47b",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/utils/arm.py": "50b53785a56a56eb50b5b24ef4506c130e1e9d4d23935dc43125d60eb18dfec1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/utils/vision.py": "2c58da80838c2ea364694737bcd031405cc085be2e44a1180e9e3c13319cad71",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/utils/__init__.py": "041281a55fbd14e6ba3496ace2e95402c11170bcb4ff5e48ef03a95156d492a7",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/eval_saved_rollout.py": "8c35813e03109a0d3c98172f33c5531f6680f0d0782309223821bcb1d8fdd017",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/robot_wrapper.py": "c7d20f6c226c2e7a03c170ab64b59fa4c36d0b5ed994f02128fe94e2a57eda1d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/temporal_ensemble.py": "f4b8ff42423b75c10faebf09561180d2dcc0812e938f50140125c331bd456502",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/replay_episode.py": "01e8593896a616a353a0e03c41c5e25098f197c9c0c67c4f1d0755a1cf7f3df0",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/episode_io.py": "28fe0c9b92bdb17b9e7b1cb7e7de509cf14080beda1124233963abbe5256d10b",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/history_encoder.py": "ff447df0d8c917ef0ffc052b84cda55a6deaa406acf7113eab1419ea4f377455",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/episode_plot.py": "9ba3215180343a046806c99d6c3e82d514091c1e61a9916bf3d6976b5f37e4ee",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/eval_offline.py": "09dd9c53c731e2e2d0e0b9e9c4a0b8bb7896d95001a53a82cec0e7a1a1e971a8",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/adaptive_mpc.py": "47da594fe0f2918d41a729e9ba882969a48da3757ad26234c896bb36f85a7368",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/nero_policy.py": "7093b7829b99a045dc04879c3dad52ae7d17ea4dee74486382249767adbaa865",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/validate_episode.py": "7b4fb39d00fd8ae9b0b95458df4001445e43cdb2d55f5b214646bfff46abdc16",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/nero_kinematics.py": "6f6f5247a8f0e3ef378abe1d03e5498a9572c27be7b075ee0cd9ac10692e8790",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/action_safety.py": "25e735fbd31b07b7487d587295f5b1d28705430a38b6c466ac48573841f7edd5",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/episode_inspect.py": "0f7435750f7c5e513a06b04dcd48f40c7a33d4aac68cf5a10c0e4cd04ed385c1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/train_smoke_test.py": "1f3aa074b3cf24530c61465ee679e41410c8989fa4b17181d329eba787124126",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/record_yolo_episode.py": "fdc4fb252508904dfc40abc8e54811455672224f98cfefaa3840f6f0d3a69f7e",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/realtime_logger.py": "9aca4303d8758e5fa161bf28c93c6aee8e06a78f60c823cddb349c99ac6ffb8a",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/__init__.py": "5d44dc52a5f36cfb23b151b466e04ab74e3205ed4116afe68fe40018fec18db4",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/safety_filter.py": "c4267f92b287714e6bafef0b90b962a79d05472da1f0c6ba9f292d14ea928b95",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/record_episode.py": "22bb191dc4a4528ad905f85842133bc77eb387b46d80ce7ba96d65e161a4d702",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/run_act_real.py": "867e35d7d2329d7272fefb19a172555fdff169bb02851e68fbac4f0a004608a6",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/train.py": "40cac2a60e1c35c5669d80d201c4304f5f8218bc1259cb94be5a6f3cf31dcd0f",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/grasp_transition_audit.py": "faf136e4f38b65d500cfe5697718e4ce0d24b0238204c6bec85f1a5671cb8d53",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/dataset_stats.py": "4796e657895deb8e715cfb4b74636580bddf9b0fe43beca5a933b0833f0d0c47",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/run_act_shadow.py": "53f02ea237b90cfd795bcaa4b50f579ee11d0f15ff08ea75cf9ba4006a27ea98",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/policy_source/src/act/test_joint_stream.py": "cc04a01a72aa3ce868d36db4600d5b6a01d7b759d4904994ebaa499ea5558ec8",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/scene_template.xml": "8a8a54dd9289e96ba23c8ef3b0963f1add64eba5b5ec05c20d1e76c0d7de8af3",
+    "/home/user/wq/nero_act_restricted_heads_20261020/config/history_runtime_contract.json": "1d399397d3aeee4e81ff961d530c8de5fff9bcd0c8f68dac8693839ecdff86b2",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/link1.stl": "0e38bf33ce41f04d7e70e471768c00fa144ba4016a878b9a6d8303c319736e09",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/link4.stl": "47242e9b5d8b06c912261756f24dddb1e7f54ac6e718232a25889115298b966d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/gripper_link2.stl": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/link5.stl": "dc497f5a9bab2d0d314250134d4ec86617abea7205d122db41b765acdb86ae7e",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/link7.stl": "70a2f415358f9e46088673c92bfe78ca5b1072dd73b7ea24464ba3ebb4c3e647",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/gripper_link1.stl": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/gripper_base.stl": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/link3.stl": "44c70f731ad5067d608ebebc9e59f3c231988f992dfac6cb01ee7a6bb4b053f1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/flange.stl": "1ae6d1c5af001582a3328564839e8eb5f2acec02e7e2b19e65fc3c43f8a9c95a",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/link6.stl": "66417d30596e33c890f4f141781023bd3ea15709a502e7f59b30f6676f556022",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/base_link.stl": "540462fb56e52091daa3cd1ad3acc3c19a43f120b2f11bae5a69b32b08c738b6",
+    "/home/user/wq/nero_act_restricted_heads_20261020/simulation/assets/link2.stl": "fc9eb85db9fbd351c9f6e119f5fed33c6f0dd3bc3b11698a0f96aaeb2d36c721",
+    "/home/user/wq/nero_act_restricted_heads_20261020/evidence/restricted_nominal.py": "d854fefecae40dd7d199bd5140d52578b156da719d2a17908fec410c7545f564",
+    "/home/user/wq/nero_act_restricted_heads_20261020/results/nominal_before/nominal_development/rollout.npz": "80542b529e1eecf480f8c4531eae366647f758249025eab090e710a7849d11c5",
+    "/home/user/wq/nero_act_restricted_heads_20261020/results/nominal_before/nominal_development/physical_snapshots.json": "400991044fceaa2c3dd5a7d165d167226b30d370eb96d76181efae71f3068b3a",
+    "/home/user/wq/nero_act_restricted_heads_20261020/results/nominal_before/nominal_development/visual_observations.json": "8c078f91d02e4478fad0068bc13ac775b3ae7fc1535afc75a16ee32246d45d25",
+    "/home/user/wq/nero_act_restricted_heads_20261020/results/nominal_before/nominal_development/scene_configuration.json": "625d1c25b9084e424c849257db6e5b1d93258f87b10abcf86033719ebe80f8ef",
+    "/home/user/wq/nero_act_restricted_heads_20261020/results/nominal_before/summary.json": "037318f719e506e47f1e7286fc1b628e537883c783a4c3fac20c9fe5d8a9e995",
+    "/home/user/wq/nero_act_restricted_heads_20261020/results/nominal_before/bindings.json": "4b45ed449b361df2d6b04533ac0a7ef3249713929ef1b200141875abbbc5c9c1",
+    "/home/user/wq/nero_act_restricted_heads_20261020/training/pilot_A/config.json": "c62413acd19211aea00fd5808cfaa53d16f9f030ba23eb56ab673b6911444cc6",
+    "/home/user/wq/nero_act_approach_preservation_20261021/training/prepare_approach_replay.py": "0faf276ad378ceb7337bc95fdcb454118913202d3d31f90830f8e50ff2864115",
+    "/home/user/wq/nero_act_approach_preservation_20261021/training_inputs/approach_replay.npz": "3d2baf3815b61b07cece5f47b704797e4752242022365475c621e286f67588da",
+    "/home/user/wq/nero_act_approach_preservation_20261021/training_inputs/approach_replay.json": "f5905f1fcf1505548010864f8429853157c520335769db03a0ddd2f79ea1d527",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/evidence/prepare_inputs.py": "20a3e31f8c87482a4658fffa8778d92c04a5eef507c53d7f60da50285b143719",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/contact_timebase.py": "6e16f1113092548d8553d5f86ad91674a79899c3660db9f0a3cfa5d39930e9f8",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/config/history_experiment.json": "afbd5f82e63d6fe50bc19cd0b9a4d979808c060e56b2d24f9aa3f7c304ce0ba5",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/dataset_stats.pkl": "73edd23e981c48e78cc3fa1557f33c8f2c3dd1a9bdf2105c26fc7a027c2ad2fc",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_inputs/approach_replay.npz": "91433692457f13d26a118b1bb3baf2d5255382f400a4550cfa7585b3cd715868",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_inputs/approach_replay.json": "bcbfb71a4af62dd4a27358d6a46780db416e47645323c7253b285d99513d3fb2"
+  }
+}

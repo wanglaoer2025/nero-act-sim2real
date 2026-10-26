@@ -1,0 +1,22 @@
+{
+  "request": "解决还存在的问题",
+  "scope": "Fix proven training-prefix omission and late predictive safety rejection, keep15D ACT topology and all historical seals unchanged",
+  "confirmed_bug": "60 original training intervention episodes were loaded but all excluded from sampled indices in preceding repair",
+  "controlled_training": {
+    "updates": 1000,
+    "initializer_sha256": "06012db673881efc678ecdc5c4d4780f2d46c44bb52f18cbeb81b20b53d0ec47",
+    "same_initializer_and_training_math_as_preceding_trial": true,
+    "batch_size": 32,
+    "per_batch": "4 new corrections+2 retained alignment/descent+2 retained clearance+each8stages1new2old",
+    "checkpoint": "fixed_last",
+    "validation_not_optimized": true
+  },
+  "safety": {
+    "prediction_guard": "Reject proposed low descent before alignment, not only already-low measured state",
+    "no_generated_or_rewritten_motion_targets": true,
+    "thresholds_not_relaxed": true,
+    "hardware_commands": 0,
+    "calibration_not_promoted": true
+  },
+  "evaluation": "Same original response and423/3-input criteria; full current flow guarded, no hardware release from nominal simulation"
+}

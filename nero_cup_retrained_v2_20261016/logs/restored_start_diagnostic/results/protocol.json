@@ -1,0 +1,71 @@
+{
+  "checkpoint_sha256": "23bffd16e3e93c2fbb1420eedd60603575d19c794e3c9362e57411402439aec3",
+  "stats_sha256": "a327317b4398430b5c47a7b4d732717c065192e45a56117fc3c24748d95079b4",
+  "epoch": 74,
+  "teacher_free": true,
+  "runtime_geometry_closure_guard": false,
+  "control_hz": 20,
+  "chunk_size": 20,
+  "initial_qpos_or_object_reset_during_rollout": false,
+  "thresholds": {
+    "lift_m": 0.06,
+    "bilateral_frames": 10,
+    "final_xy_error_m": 0.02,
+    "upright_cosine": 0.95,
+    "final_speed": 0.05
+  },
+  "scenarios": [
+    [
+      "restored_current",
+      0,
+      10,
+      0,
+      false
+    ],
+    [
+      "restored_current_appearance",
+      0,
+      10,
+      0,
+      true
+    ],
+    [
+      "restored_preopened_counterfactual",
+      0,
+      10,
+      0,
+      false
+    ]
+  ],
+  "independent_cup_xy_jitter_m": 0.002,
+  "independent_initial_joint_jitter_rad": 0.002,
+  "feedback_noise_rad": 0.0002,
+  "real_hardware_tested": false,
+  "timing_protocol": "separate reach deadline and full100-point post-completion hold; original truncated-window results retained",
+  "validation_timing_fix_after_primary_trials": true,
+  "completion_monitor": {
+    "lift_m": 0.06,
+    "stable_grasp_seconds": 1,
+    "post_completion_frozen_goal_seconds": 5,
+    "goal_observation": "simulator cup pose/contact for evaluation termination only; not policy inputs; real monitoring not validated"
+  },
+  "diagnostic_only": true,
+  "initial_state_source": "logs/current_start_restored_live_capture/observations.npz",
+  "current_initial_state": [
+    0.1832072138786316,
+    -0.12651892006397247,
+    0.09997245669364929,
+    1.5707788467407227,
+    -0.023893557488918304,
+    0.2816786766052246,
+    0.1310742199420929,
+    2.9999999242136255e-05
+  ],
+  "cup_xy_nominal_m": [
+    -0.46764734616351816,
+    -0.0659584814585443
+  ],
+  "geometry_physically_verified": false,
+  "preopened_case_is_counterfactual_not_hardware": true,
+  "preopened_width_m": 0.06017899885773659
+}

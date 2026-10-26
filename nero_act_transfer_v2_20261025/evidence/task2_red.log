@@ -1,0 +1,68 @@
+FFFFFFFF                                                                 [100%]
+=================================== FAILURES ===================================
+______ test_previous_command_is_strictly_before_exposure_and_acknowledged ______
+
+    def test_previous_command_is_strictly_before_exposure_and_acknowledged():
+>       from contract import CommandHistory
+E       ModuleNotFoundError: No module named 'contract'
+
+tests/test_contract.py:6: ModuleNotFoundError
+_______ test_observation_has_one_causal_context_and_six_metric_features ________
+
+    def test_observation_has_one_causal_context_and_six_metric_features():
+>       from contract import make_observation
+E       ModuleNotFoundError: No module named 'contract'
+
+tests/test_contract.py:21: ModuleNotFoundError
+_____ test_measured_state_cannot_contain_a_gripper_outside_physical_range ______
+
+    def test_measured_state_cannot_contain_a_gripper_outside_physical_range():
+>       from contract import make_observation
+E       ModuleNotFoundError: No module named 'contract'
+
+tests/test_contract.py:33: ModuleNotFoundError
+_____________ test_stale_prediction_sends_nothing_and_stop_latches _____________
+
+    def test_stale_prediction_sends_nothing_and_stop_latches():
+>       from runtime import PrefixRunner
+E       ModuleNotFoundError: No module named 'runtime'
+
+tests/test_runtime.py:13: ModuleNotFoundError
+______ test_prefix_only_advances_actual_two_points_and_rechecks_each_send ______
+
+    def test_prefix_only_advances_actual_two_points_and_rechecks_each_send():
+>       from runtime import PrefixRunner
+E       ModuleNotFoundError: No module named 'runtime'
+
+tests/test_runtime.py:24: ModuleNotFoundError
+_____________ test_slow_sender_cannot_emit_a_second_expired_point ______________
+
+    def test_slow_sender_cannot_emit_a_second_expired_point():
+>       from runtime import PrefixRunner
+E       ModuleNotFoundError: No module named 'runtime'
+
+tests/test_runtime.py:34: ModuleNotFoundError
+______ test_async_logging_does_not_block_control_and_overflow_is_explicit ______
+
+    def test_async_logging_does_not_block_control_and_overflow_is_explicit():
+>       from runtime import AsyncTrace
+E       ModuleNotFoundError: No module named 'runtime'
+
+tests/test_runtime.py:43: ModuleNotFoundError
+_________________ test_failed_log_writer_prevents_further_send _________________
+
+    def test_failed_log_writer_prevents_further_send():
+>       from runtime import AsyncTrace, PrefixRunner
+E       ModuleNotFoundError: No module named 'runtime'
+
+tests/test_runtime.py:64: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_contract.py::test_previous_command_is_strictly_before_exposure_and_acknowledged
+FAILED tests/test_contract.py::test_observation_has_one_causal_context_and_six_metric_features
+FAILED tests/test_contract.py::test_measured_state_cannot_contain_a_gripper_outside_physical_range
+FAILED tests/test_runtime.py::test_stale_prediction_sends_nothing_and_stop_latches
+FAILED tests/test_runtime.py::test_prefix_only_advances_actual_two_points_and_rechecks_each_send
+FAILED tests/test_runtime.py::test_slow_sender_cannot_emit_a_second_expired_point
+FAILED tests/test_runtime.py::test_async_logging_does_not_block_control_and_overflow_is_explicit
+FAILED tests/test_runtime.py::test_failed_log_writer_prevents_further_send - ...
+8 failed in 0.10s

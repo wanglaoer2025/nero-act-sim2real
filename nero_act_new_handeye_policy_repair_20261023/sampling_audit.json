@@ -1,0 +1,42 @@
+{
+  "train_groups": [
+    "new_handeye_train_9000",
+    "new_handeye_train_9001",
+    "new_handeye_train_9002",
+    "new_handeye_train_9003",
+    "new_handeye_train_9004",
+    "new_handeye_train_9007",
+    "new_handeye_train_9008",
+    "new_handeye_train_9009"
+  ],
+  "val_groups": [
+    "new_handeye_val_9005",
+    "new_handeye_val_9006"
+  ],
+  "validation_rows_in_training": 0,
+  "training_episodes": 8,
+  "validation_episodes": 2,
+  "samples": 3554,
+  "pool_sizes": {
+    "center:approach": 59,
+    "center:descend": 42,
+    "center:close": 147,
+    "center:lift": 60,
+    "center:carry": 34,
+    "center:place": 40,
+    "center:release": 31,
+    "center:retreat": 41,
+    "other:approach": 336,
+    "other:descend": 296,
+    "other:close": 1029,
+    "other:lift": 422,
+    "other:carry": 236,
+    "other:place": 282,
+    "other:release": 217,
+    "other:retreat": 282
+  },
+  "updates": 1000,
+  "batch_size": 32,
+  "all_stage_center_fraction": 0.5,
+  "statistics_recomputed": false
+}

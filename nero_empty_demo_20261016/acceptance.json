@@ -1,0 +1,59 @@
+{
+  "updated_at": "2026-10-16T22:22:46.835910+08:00",
+  "status": "COMPLETE_EMPTY_AIR_WORKFLOW_PASSED",
+  "success": true,
+  "authorized_scope": "One physical high-air preparation followed by one complete 18-second noncontact arm/gripper sequence; lifting the cup is not required",
+  "authorization_source": "authorization.json",
+  "authorization_consumed": true,
+  "automatic_retry_or_return_performed": false,
+  "preparation": {
+    "report": "preparation_execution/report.json",
+    "duration_s": 22.55,
+    "physical_result": {
+      "success": true,
+      "actual_feedback_required": true,
+      "action_success": true,
+      "corridor_passed": true,
+      "last5_arm_error_rad": 5.2359877559804424e-05,
+      "last5_gripper_error_m": 0.00032300000000000384
+    }
+  },
+  "full_sequence": {
+    "report": "full_sequence_execution/report.json",
+    "success": true,
+    "sequence_completed": true,
+    "completed_blocks": 35,
+    "completed_trajectory_points": 350,
+    "elapsed_s": 18.30611346801743,
+    "metrics_recomputed_from_real_feedback": {
+      "endpoint_max_error_rad": 0.0012013307281660834,
+      "j1_progress_rad": 0.03881612256435385,
+      "gripper_span_m": 0.0067050000000000096,
+      "end_gripper_error_m": 2.000000000002e-06,
+      "actual_feedback_samples_after_first_submission": 3660,
+      "maximum_observation_age_at_send_s": 0.16338162997271866
+    },
+    "checkpoint_sha256": "fea6c7d33279141a0d4266d577689194416667f587c04e57c80859fba91039fb",
+    "scope": "aligned_noncontact_air_sequence"
+  },
+  "final_actual_state": [
+    0.22371630352063315,
+    -0.1171814059788993,
+    0.13442525898860327,
+    1.5637975564943993,
+    -0.014835298641951801,
+    0.2578374903971223,
+    0.15006340908647248,
+    0.060089
+  ],
+  "final_health_passed": true,
+  "receive_only_restored": true,
+  "gate_publisher_count_after": 0,
+  "can_tx_count_after_restore_and_verification": 132369,
+  "limits_or_freshness_thresholds_modified": false,
+  "original_sources_weights_or_calibration_modified": false,
+  "real_cup_grasp_verified": false,
+  "new_cup_policy_hardware_validated": false,
+  "strict_wall_clock_20hz_validated": false,
+  "shutdown_note": "Gate was closed after the final action. Its later SIGINT exit printed an already-shutdown ROS context error; gate process exited and motion driver exited cleanly. Receive-only recovery independently verified."
+}

@@ -1,0 +1,130 @@
+{
+  "checked_at": "2026-10-15T23:16:50.338774+08:00",
+  "ros_domain_id": 42,
+  "launch_pid": 394373,
+  "driver_pid": 394379,
+  "parameters": {
+    "auto_enable": false,
+    "control_enabled": false,
+    "speed_percent": 5,
+    "fw_version": "v120"
+  },
+  "nodes": [
+    [
+      "agx_arm_ctrl_single_node",
+      "/"
+    ],
+    [
+      "robot_state_publisher",
+      "/"
+    ],
+    [
+      "move_group",
+      "/"
+    ],
+    [
+      "moveit",
+      "/"
+    ],
+    [
+      "moveit_3485741140",
+      "/"
+    ],
+    [
+      "move_group_private_98113348073872",
+      "/"
+    ],
+    [
+      "transform_listener_impl_593bcc4c5720",
+      "/"
+    ],
+    [
+      "transform_listener_impl_593bd3cd1f90",
+      "/"
+    ],
+    [
+      "moveit_simple_controller_manager",
+      "/"
+    ],
+    [
+      "control_gate",
+      "/"
+    ],
+    [
+      "controller_manager",
+      "/"
+    ],
+    [
+      "fakesystem",
+      "/"
+    ],
+    [
+      "joint_state_broadcaster",
+      "/"
+    ],
+    [
+      "gripper_controller",
+      "/"
+    ],
+    [
+      "arm_controller",
+      "/"
+    ],
+    [
+      "nero_restarted_stack_verification",
+      "/"
+    ]
+  ],
+  "required_services": {
+    "/plan_kinematic_path": true,
+    "/get_planning_scene": true,
+    "/check_state_validity": true,
+    "/controller_manager/list_controllers": true
+  },
+  "controllers": [
+    {
+      "name": "arm_controller",
+      "state": "active"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active"
+    }
+  ],
+  "observed_messages": {
+    "/feedback/joint_states": 385,
+    "/control/joint_states": 384
+  },
+  "states": {
+    "/feedback/joint_states": {
+      "joint1": 0.1832595714594046,
+      "joint2": -0.1264491043069892,
+      "joint3": 0.10000736613927509,
+      "joint4": 1.571005766305136,
+      "joint5": -0.02387610416728243,
+      "joint6": 0.28167868797936485,
+      "joint7": 0.13114403999485394,
+      "gripper": 0.060118
+    },
+    "/control/joint_states": {
+      "gripper": 0.0,
+      "joint1": 0.0,
+      "joint2": 0.0,
+      "joint3": 0.0,
+      "joint4": 0.0,
+      "joint5": 0.0,
+      "joint6": 0.0,
+      "joint7": 0.0
+    }
+  },
+  "maximum_bridge_start_difference_rad_or_m": 1.571005766305136,
+  "can_holders": [
+    "agx_arm_c 394379 user   56u     sock                0,9       0t0    2915639 protocol: CAN_RAW"
+  ],
+  "motion_sent": false,
+  "execution_readiness_passed": false
+}

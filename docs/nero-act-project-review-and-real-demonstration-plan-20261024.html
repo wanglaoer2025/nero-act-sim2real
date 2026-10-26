@@ -1,0 +1,1697 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NERO ACT 仿真到真机全过程复盘与真机示教微调方案</title><style>
+:root {color-scheme: light; --ink:#182633; --muted:#536575; --line:#d4dfe7; --accent:#165b86;}
+* {box-sizing:border-box} html {scroll-behavior:smooth}
+body {margin:0;background:#eef2f5;color:var(--ink);font:16px/1.85 "Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;}
+.export-bar {max-width:1240px;margin:22px auto 0;padding:12px 24px;color:var(--muted);font-size:14px;}
+main {max-width:1240px;margin:0 auto 36px;padding:36px 54px;background:white;box-shadow:0 2px 18px #1b364014;}
+nav {padding:14px 22px;background:#f3f7fa;border:1px solid var(--line);margin-bottom:32px;}
+nav summary {cursor:pointer;font-weight:700;color:var(--accent)}
+nav ol {columns:2;column-gap:36px;padding-left:24px} nav li {break-inside:avoid;padding:3px 0;font-size:14px;}
+h1 {font-size:30px;line-height:1.5;margin:0 0 24px} h2 {font-size:23px;line-height:1.6;border-bottom:2px solid var(--line);padding-bottom:8px;margin-top:42px;scroll-margin-top:18px;}
+h3 {font-size:19px;margin-top:27px;scroll-margin-top:18px} p {margin:14px 0}
+a {color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+table {display:block;width:100%;border-collapse:collapse;font-size:14px;overflow-x:auto;margin:20px 0;}
+th,td {border:1px solid var(--line);padding:10px 12px;vertical-align:top;min-width:110px;}
+th {background:#edf3f7;text-align:left} tr:nth-child(even) {background:#fafcfd;}
+pre {padding:16px 20px;background:#f1f4f6;border:1px solid var(--line);overflow-x:auto;font-size:13px;line-height:1.7;}
+code {font-family:"Noto Sans Mono","Consolas",monospace;font-size:.9em;overflow-wrap:anywhere;background:#f1f4f6;padding:1px 4px;}
+pre code {background:none;padding:0;font-size:inherit;overflow-wrap:normal;}
+blockquote {border-left:4px solid var(--accent);margin:20px 0;padding:2px 20px;background:#f3f7fa;}
+li {margin:5px 0} strong {font-weight:700}
+@media(max-width:760px) {main {padding:24px 18px} h1 {font-size:25px} h2 {font-size:21px} nav ol {columns:1} .export-bar {padding:10px 18px}}
+@media print {@page {size:A4;margin:16mm 13mm} body {background:white;font-size:10pt;line-height:1.65} main {margin:0;padding:0;max-width:none;box-shadow:none} .export-bar,nav {display:none} h1 {font-size:19pt} h2 {font-size:15pt} h3 {font-size:12pt} h1,h2,h3 {break-after:avoid} table {font-size:8pt;overflow:visible} th,td {padding:5px 6px;min-width:0} tr {break-inside:avoid} pre {white-space:pre-wrap;overflow:visible;font-size:8pt} a {color:inherit}}
+
+img {max-width:100%;height:auto;}
+</style></head><body><div class="export-bar">核查截至 2026-10-25 · <a href="nero-act-project-review-and-real-demonstration-plan-20261024.md">Markdown 原文</a> · 可打印为PDF</div><main><nav><details open><summary>目录 · 30 节</summary><ol><li><a href="#heading-2">一 当前结论</a></li><li><a href="#heading-4">二 用户目标是怎样逐步明确的</a></li><li><a href="#heading-5">三 必须区分的三条技术路线</a></li><li><a href="#heading-10">四 硬件 环境 坐标与模型接口</a></li><li><a href="#heading-16">五 10月14日至16日 从环境和链路核对到完整教师抓放</a></li><li><a href="#heading-20">六 10月17日 完整ACT仿真与第一次在线迁移</a></li><li><a href="#heading-24">七 ACT仿真完整轨迹回放与反复杯位对齐</a></li><li><a href="#heading-25">八 10月18日 从9维上下文到非线性夹爪头</a></li><li><a href="#heading-27">九 10月19日 15维实时位置条件ACT</a></li><li><a href="#heading-29">十 短历史ACT与10月20日的局部恢复对照</a></li><li><a href="#heading-30">十一 10月21日 冻结范围 接近保持和优化控制</a></li><li><a href="#heading-35">十二 前缀修正 分组损失 命令增量头和起抬恢复</a></li><li><a href="#heading-36">十三 控制器状态 反馈来源与ROS CAN启停</a></li><li><a href="#heading-40">十四 10月22日 标定板与相机采样</a></li><li><a href="#heading-44">十五 10月22日至23日 位置条件为什么没有产生足够响应</a></li><li><a href="#heading-48">十六 10月23日 新手眼标定怎样接入</a></li><li><a href="#heading-52">十七 遮挡蓝卡与微接触检查修正后的七场景</a></li><li><a href="#heading-57">十八 观测误差 策略误差与RGB-D候选</a></li><li><a href="#heading-62">十九 最近一次真机迁移演示和命令时效停止</a></li><li><a href="#heading-65">二十 10月24日事件示教微调为什么整体退化</a></li><li><a href="#heading-70">二十一 问题与修复台账</a></li><li><a href="#heading-71">二十二 当前泛化能力不足的原因</a></li><li><a href="#heading-77">二十三 真机示教微调能改善什么 不能替代什么</a></li><li><a href="#heading-80">二十四 现有真实数据盘点与可复用性</a></li><li><a href="#heading-88">二十五 新一批真机示教的审计清单</a></li><li><a href="#heading-89">二十六 真机示教采集的最小补充链路</a></li><li><a href="#heading-94">二十七 建议的多位置真机微调试验</a></li><li><a href="#heading-99">二十八 当前未解决问题及下一步优先级</a></li><li><a href="#heading-100">二十九 复盘后的方法调整</a></li><li><a href="#heading-101">三十 主要实验与证据索引</a></li></ol></details></nav><article><h1 id="heading-1">NERO ACT 仿真到真机全过程复盘与真机示教微调方案</h1>
+<p>汇总截至2026年10月25日，文件名保留10月24日初始版本日期。任务是让NERO七轴机械臂根据当前相机和机器人反馈，将黄色空杯抓起、抬升、搬运到蓝卡、放置、松爪并退出，并在明确的工作区内适应不同杯位。</p>
+<p>本报告覆盖本轮对话、2026年10月14日至25日的主要实验，以及9月原项目的数据、运行口径补审；旧模型与当前15维模型分别记录。实验目录中的日期是版本标签，实际执行时间以各日志为准。文中“通过”都注明是软件检查、局部机制、完整仿真、真实只读还是实物动作，避免混用。</p>
+<h2 id="heading-2">一 当前结论</h2>
+<p>可以用真机示教微调ACT，而且当前值得优先补足的是<strong>真实画面、真实动作命令和反馈、真实夹持与释放、多位置及偏离状态恢复的数据</strong>。原ACT工作本身使用真实示教学习，算法没有要求每个新位置都先生成一条仿真轨迹。<a href="https://arxiv.org/abs/2304.13705">ACT原论文</a></p>
+<p>但是，本项目已有的“真机做过动作”“保存了HDF5”“真实输入能推理”，还不能等同于“有可直接微调当前模型的合格示教”。本次复盘发现，旧真实记录中存在把同帧实测关节直接作为动作标签的情况；它记录了机器人怎么动，却没有按当前模型的合同保存机器人实际收到的关节目标。这需要在使用已有数据前专门审计。</p>
+<p>当前事实如下。</p>
+<table>
+<thead>
+<tr>
+<th>能力或结果</th>
+<th>已取得的证据</th>
+<th>当前结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROS、CAN、SDK到实体机械臂的运动链路</td>
+<td>有真实七轴反馈、独立SDK交叉核对及多次实体位移</td>
+<td>基础链路实际工作过</td>
+</tr>
+<tr>
+<td>视觉定位加MoveIt的监督抓放</td>
+<td>10月16日execution_04及现场确认，有完整实物抓放</td>
+<td>物理任务成功，动作来源是教师，不算ACT成功</td>
+</tr>
+<tr>
+<td>ACT在线接收真实图像和反馈</td>
+<td>多轮shadow及真实受控接近</td>
+<td>接口接通，曾实际驱动机械臂大幅接近</td>
+</tr>
+<tr>
+<td>ACT在固定仿真场景完成完整抓放</td>
+<td>run26、transfer_resume开发场景、10月23日中心等有完整物理记录</td>
+<td>固定场景成立，不能推广成所有位置都成功</td>
+</tr>
+<tr>
+<td>历史GPU运行中1a28的七场景完整仿真</td>
+<td>3/7；当时两个新增位置0/2</td>
+<td>位置泛化不合格</td>
+</tr>
+<tr>
+<td>本轮CPU/Mesa重跑1a28完整抓放</td>
+<td>1/7；9006完整抓放通过，整套未通过</td>
+<td>开发场景回归；不计作独立泛化或真机验收</td>
+</tr>
+<tr>
+<td>最近一次ACT轨迹真机演示</td>
+<td>319点计划实际发送66点，之后命令过期拒绝</td>
+<td>已有部分动作迁移，整段及抓放未完成</td>
+</tr>
+<tr>
+<td>10月24日事件示教微调</td>
+<td>1000更新；原模型回归2/3，新模型0/3，新位置0/2</td>
+<td>本轮新权重不采用，旧模型保留为离线基线</td>
+</tr>
+<tr>
+<td>10月24日真实RGB8视觉辅助适配</td>
+<td>A/B各200次更新；B较A留出损失改善0.010631%，低于5%门槛；主模型固定输入保持通过</td>
+<td>辅助头已训练，未证明视觉迁移收益；拒绝采用B，保留1a28</td>
+</tr>
+<tr>
+<td>最新RGB-D候选</td>
+<td>噪声开发帧12/14有效，低于90%门槛；延迟未达实时要求</td>
+<td>尚未接入正式策略</td>
+</tr>
+<tr>
+<td>ACT完整真机夹杯、搬运、放置与退出</td>
+<td>本轮可核对的ACT实机记录没有取得完整成功</td>
+<td>尚未验收</td>
+</tr>
+</tbody>
+</table>
+<p>主要终态证据：<a href="../nero_pick_place_20261016/acceptance.json" title="完整教师实物抓放验收">真实教师验收</a>、<a href="../nero_act_contact_escape_fix_20261023/README.md" title="固定1a28七场景">固定候选七场景</a>、<a href="../nero_act_event_finetune_20261024/README.md" title="事件示教微调终态">事件微调结果</a>、<a href="../nero_act_real_visual_bridge_20261024/run_03/results.json" title="真实RGB8辅助A/B与主15维保持结果">真实视觉辅助对照</a>、<a href="../nero_act_transfer_demo_20261023/README.md" title="最近真机接近演示">最近真机演示</a>。</p>
+<h3 id="heading-3">1.1 10月25日历史根因核查</h3>
+<p>用户要求对比历史所有日志查根因。本轮读取工作区1,953份及原NERO仓库429份，共2,382份日志/诊断候选（872份JSON、1,510份文本），对关键训练、执行与验收链追溯原记录，并直接复算68份HDF5、180,934帧的上一命令选择、三个旧夹爪NPZ及最新四个接触拒绝。最强证据指向：<strong>局部监督和完整闭环行为脱节、共享输出更新破坏既有阶段，视觉有效域及接触几何又独立阻挡运行。</strong> 不能把全部问题归为渲染差异、少训闭爪或权重损坏。范围、反例和因果等级见<a href="../nero_act_root_cause_audit_20261025/README.md">根因核查全文</a>。<a href="../nero_act_root_cause_audit_20261025/conclusions.json" title="全历史根因结论与关键来源绑定">S71</a></p>
+<table>
+<thead>
+<tr>
+<th>已核实的问题</th>
+<th>最关键证据</th>
+<th>当前状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旧夹爪块内动作被重查询抵消</td>
+<td>块内闭合−0.411175毫米，两点相对上一命令仅−0.000312924毫米；命令增量头后原失败输入0/3→3/3</td>
+<td>历史机制已部分修复，不能继续解释所有现状</td>
+</tr>
+<tr>
+<td>输出层微调改变完整接近</td>
+<td>同场景基线780点GRASP，微调后2710点仍无GRASP；事件微调同三场景2/3→0/3</td>
+<td>真正训练退化有同环境证据，不能甩给后来渲染后端</td>
+</tr>
+<tr>
+<td>局部门槛不能代替全段</td>
+<td>六项6/6之后，完整高位仍818点碰杯或2574点无GRASP；近乎相同的闭爪/起抬观测却对应不同动作</td>
+<td>需区分覆盖、表示、联合优化和完整保持</td>
+</tr>
+<tr>
+<td>观察与几何不能覆盖运行域</td>
+<td>模型7～10毫米净空时现场仍碰杯；运行蓝卡观察器比训练前端多有效域要求</td>
+<td>尚不能隔离TCP、杯几何、定位和跟踪贡献</td>
+</tr>
+<tr>
+<td>控制时序独立中止真机</td>
+<td>命令381.648毫秒超过250毫秒，实际66/319点、夹爪0命令</td>
+<td>与是否学会闭爪分别处理</td>
+</tr>
+</tbody>
+</table>
+<p>对当前一支68份HDF5的因果选择复算为0次当前/未来命令被当作previous，最大夹爪步长约0.200003毫米；79份旧真实RGB8又没有直接训练1a28。因此不能把已修时序标签或旧真实数据直接当作当前主策略失败原因。CVAE漏训曾存在，但修复后仍有名义完整失败，也不是当前统一解释。<a href="../nero_act_root_cause_audit_20261025/training_readonly_rechecks.json" title="68份训练HDF及旧夹爪净推进独立复算">S73</a></p>
+<p>原仓库173份ACT运行摘要没有完整任务验收字段；137份<code>status=passed</code>不能视为137次抓放成功。例如50步、50命令、夹爪事件明确为空、距抓取点仍326.846毫米的一次运行也标为passed。旧14维双RGB使用启动时固定的绝对位置，与当前逐曝光15维输入不同，不能因都叫“位置条件ACT”就把数据和成绩连成一个模型。原始代码、字段口径与反例见<a href="../nero_act_root_cause_audit_20261025/external_project_acceptance_audit.json">外仓库补审</a>。<a href="../nero_act_root_cause_audit_20261025/conclusions.json" title="全历史根因结论与关键来源绑定">S71</a></p>
+<p>新只读对照固定CPU、1a28与同一15维数值输入，仅换RGB来源：平均每通道差1.085/255，首两点七轴输出最大变化0.000522 rad。它证明RGB变化可以影响动作；归档教师帧并非已证明的历史运行帧，仍不能把3/7→1/7单独归因于CPU或渲染。<a href="../nero_act_root_cause_audit_20261025/initial_image_probe.json" title="同数值输入不同RGB的冻结模型只读对照">S72</a></p>
+<p>最新四个附着杯拒绝也不同：9000和9201的模型最低杯边继续下降；9005虽然TCP升高，最低杯边仍先下降；9300全扫掠比起始浅，却因28.8纳米局部反向未满足严格单调例外。不能把它们统一认定为真实碰撞或观察器误报，更不能由此取消保护。<a href="../nero_act_root_cause_audit_20261025/execution_latest_contact_fk.json" title="最新四个接触拒绝的逐插值FK复算">S74</a></p>
+<h2 id="heading-4">二 用户目标是怎样逐步明确的</h2>
+<p>最初关注MuJoCo、MoveIt和RViz是否具备，以及新文件能否用于验收真机抓取。后续目标逐步收敛为：</p>
+<ol>
+<li>先证明真机控制链路能执行，而不是只有虚拟控制器返回成功。</li>
+<li>执行与仿真幅度一致的完整动作，不反复只做小角度测试。</li>
+<li>最初允许空载和未抓起杯子的迁移演示，随后明确要求真实夹杯、搬运、放置。</li>
+<li>明确要求ACT仿真训练迁移，不能把YOLO加MoveIt的成功当作ACT成功。</li>
+<li>在线ACT闭爪失败后，接受先用ACT在仿真中生成的完整轨迹做受保护真机回放。</li>
+<li>反复杯位对齐、下降碰杯后，进一步要求摄像头在动作过程中实时提供位置反馈，让策略适应不同杯位。</li>
+<li>接受15维视觉位置条件ACT、短历史对照和多轮限定微调，但要求异常停止、保留原保护。</li>
+<li>提供新手眼标定，希望复用已有记录，减少反复测量。</li>
+<li>最近关注微调为什么退化、为何换位不能直接执行，并提出用真机示教增强泛化。</li>
+</ol>
+<p>这些目标之间有包含关系。空载链路成功、某个固定位置成功、教师抓放成功，都是中间结果；它们不能替代最终的在线、多位置、完整ACT真机能力。</p>
+<h2 id="heading-5">三 必须区分的三条技术路线</h2>
+<h3 id="heading-6">3.1 视觉加MoveIt教师抓放</h3>
+<p>相机定位杯子和蓝卡，使用已知尺寸、桌面和TCP模型形成几何目标，再由IK、笛卡尔路径和MoveIt生成动作。它可以完成实际抓放，也可以为ACT提供示教，但现场动作并不是神经网络自主生成。</p>
+<p>10月16日的完整实物抓放属于这条路线。现场的GRASP、RELEASE和最后退出确认说明该次物理任务完成，不能据此给ACT部署标志置为通过。<a href="../nero_sim_to_real_full_process_20261017.md" title="教师抓放与早期链路总览">S01</a> <a href="../nero_pick_place_20261016/acceptance.json" title="完整教师实物抓放验收">S07</a></p>
+<h3 id="heading-7">3.2 在线ACT</h3>
+<pre><code class="language-text">当前图像 + 当前关节/夹爪反馈 + 因果命令历史 + 当前几何观测
+                         ↓
+                   ACT预测动作块
+                         ↓
+          原始动作检查、限速、碰撞与接触保护
+                         ↓
+                 执行短前缀，再重新观察
+</code></pre>
+<p>这条路线有机会适应杯位变化，因为每次重新查询时都能使用新图像和新位置。实际能否纠偏，取决于定位准确性、输入时间配对、训练覆盖、策略对位置的敏感性和闭环恢复能力。</p>
+<h3 id="heading-8">3.3 ACT仿真轨迹回放</h3>
+<pre><code class="language-text">冻结ACT在仿真中运行 → 保存实际施加过的目标 → 核对当前现场 → 真机回放
+</code></pre>
+<p>回放证明“仿真学出的动作序列能够进入真实控制链路”。回放中的相机可以用于核对和保护，但不等于在线ACT正在依据当前图像重新生成动作。杯子改变位置后，原轨迹不会自动改道；因此历史上反复要求恢复杯位，是固定参考回放的限制，不是ACT算法要求用户永远把杯子摆在一个点。<a href="../nero_act_sim_rollout_replay_20261017/README.md" title="ACT仿真轨迹回放">S10</a> <a href="../nero_act_transfer_demo_20261023/README.md" title="最近真机接近演示">S49</a></p>
+<h3 id="heading-9">3.4 MoveIt、YOLO和ACT各自承担什么</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>合理职责</th>
+<th>不能据此声称的结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MuJoCo</td>
+<td>生成物理示教、训练环境、闭环仿真、接触诊断</td>
+<td>仿真通过不等于实机几何或任务通过</td>
+</tr>
+<tr>
+<td>ACT</td>
+<td>根据观测预测七轴与夹爪的动作块</td>
+<td>加入ACT类或加载checkpoint不等于学会泛化</td>
+</tr>
+<tr>
+<td>ZED</td>
+<td>提供当前RGB、深度、置信度和设备时间</td>
+<td>画面稳定不等于独立空间精度合格</td>
+</tr>
+<tr>
+<td>YOLO及轮廓识别</td>
+<td>杯子身份、候选范围、蓝卡和场景核对</td>
+<td>检测成功不等于ACT动作成功</td>
+</tr>
+<tr>
+<td>MoveIt/几何检查</td>
+<td>教师规划，或对ACT目标做路径有效性检查</td>
+<td>教师规划不能改称ACT推理输出</td>
+</tr>
+<tr>
+<td>ROS控制器和CAN驱动</td>
+<td>传递合法目标、接收反馈、报告执行情况</td>
+<td>action服务成功不等于实体发生了预期运动</td>
+</tr>
+<tr>
+<td>RViz/MuJoCo展示窗口</td>
+<td>可视化和人工检查</td>
+<td>动画成功不等于真实硬件成功</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heading-10">四 硬件 环境 坐标与模型接口</h2>
+<h3 id="heading-11">4.1 已使用的系统</h3>
+<p>主要设备是NERO七轴机械臂、AGX夹爪、固定安装的ZED2i。CAN接口为can0，历史现场配置为1 Mbps；ROS使用Jazzy。离线完整仿真记录使用Python 3.12、MuJoCo 3.15.0、PyTorch 2.5.1+cu121和RTX4090，渲染使用EGL。不同目录是隔离实验快照，不代表所有入口都可以互换执行。<a href="../nero_real_capture_v9/README.md" title="真实只读采集">S02</a> <a href="../nero_act_full_pick_place_20261017/README.md" title="完整ACT仿真训练">S08</a></p>
+<h3 id="heading-12">4.2 8维 9维 15维及短历史</h3>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>数值输入</th>
+<th>图像及输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期8维</td>
+<td>七轴实测关节和一维夹爪总开口</td>
+<td>RGB；动作含七轴和夹爪</td>
+</tr>
+<tr>
+<td>9维上下文</td>
+<td>8维实测状态，加上一条已提交夹爪目标与当前开口的差</td>
+<td>增加因果命令上下文，减少静止接触歧义</td>
+</tr>
+<tr>
+<td>当前15维</td>
+<td>上述9维，加杯底相对TCP三维、蓝卡相对TCP三维</td>
+<td>RGB与数值位置共同输入，输出20×8</td>
+</tr>
+<tr>
+<td>短历史对照</td>
+<td>每帧仍15维，另输入最近5次有效数值观测及年龄/有效性</td>
+<td>当前RGB只编码一次，不是5张历史RGB全部输入</td>
+</tr>
+</tbody>
+</table>
+<p>当前位置特征的定义是：</p>
+<pre><code class="language-text">visual_relative = [cup_bottom_base - tcp_base,
+                   target_base     - tcp_base]
+</code></pre>
+<p>这些特征来自图像估计和机器人FK，不在正常策略中直接填仿真物体真值。仿真真值另用于任务评分、接触检查及明确标记的离线诊断。物理状态仍为8维，15维是网络的数值输入维度。<a href="../nero_act_visual_feedback_20261019/README.md" title="15维视觉位置训练">S27</a> <a href="../nero_act_grouped_gripper_20261021/executor/model.py" title="当前模型观测与读出定义">S51</a></p>
+<h3 id="heading-13">4.3 动作到底是绝对目标还是增量</h3>
+<p>硬件边界采用：</p>
+<pre><code class="language-text">[J1,J2,J3,J4,J5,J6,J7,gripper_total_width]
+ 七轴使用rad                         夹爪使用m
+</code></pre>
+<p>动作是绝对关节目标和绝对夹爪总开口，执行端不能再把它们当成增量叠加。反馈残差、tanh读出和后来的夹爪命令增量头是模型内部的表示；经过读出后仍必须转换成上述绝对目标。</p>
+<p>“上一夹爪目标”必须是曝光前已经提交并可核对的命令，不能用未来动作或当前实测开口冒充命令历史。最新实测99.42毫米开口超过ACT合法目标上限95毫米，因此不能静默裁成95毫米并声称历史正确。<a href="../nero_act_root_cause_20261021/evidence/findings.md" title="零更新根因核对">S41</a> <a href="../nero_act_new_calibration_20261023/README.md" title="新手眼接入">S46</a></p>
+<h3 id="heading-14">4.4 相机方向与仿真视角</h3>
+<p>ZED倒装后图像按180°约定转正；RGB/BGR显式转换。内参属于原始左目光学坐标，旋转后的像素要按对应映射反算，不能只转图像而继续直接套原像素坐标。</p>
+<p>仿真图形窗口使用自由观察相机，可以拖动、旋转和缩放；当前ACT训练及评估使用固定的<code>calibrated_nero_camera</code>，按相机内参、外参和图像方向构造。训练RGB渲染为320×180，再按具体模型配置预处理。固定相机的目标是匹配真实视角，但物体材质、杯把、背景、遮挡、噪声和投影精度并未因此自动一致。<a href="../nero_act_visual_feedback_20261019/README.md" title="15维视觉位置训练">S27</a> <a href="../nero_act_grouped_gripper_20261021/simulation/nero_scene_camera.py" title="固定仿真相机定义">S52</a></p>
+<h3 id="heading-15">4.5 时间与速度的区别</h3>
+<p>仿真控制周期50毫秒、积分步长2毫秒，不等于实机严格连续20Hz。还要计入收帧、反馈、推理、碰撞检查、记录、发送和确认时间。</p>
+<p>至少要区分设备曝光时间、主机接收时间、推理时间、ROS目标时间、SDK发送完成时间和反馈时间。低推理耗时不代表整条指令新鲜；记录器20Hz采样也不代表机械臂连续20Hz执行。</p>
+<h2 id="heading-16">五 10月14日至16日 从环境和链路核对到完整教师抓放</h2>
+<h3 id="heading-17">5.1 旧模型与现场起点不匹配</h3>
+<p>V9只读shadow能够加载模型并输出有限值，但若干关节和目标XY偏离示教范围。另一份原始动作检查中，第十步J3目标与实测状态差约118.88°，夹爪预测约1.49毫米。处理方法是保存真实起点和场景，重建数据、归一化及模型，不放宽门槛直接下发旧输出。<a href="../nero_act_v9_real_shadow_20261014/domain_alignment_review.json" title="V9域差异复核">S03</a> <a href="../nero_act_response_20261016_onsite/full_execution_readiness_20261016.json" title="原始动作就绪检查">S04</a></p>
+<h3 id="heading-18">5.2 先核实真正的硬件反馈</h3>
+<p>MoveIt和GenericSystem可以在实体不动时报告轨迹完成，因此先核对真实反馈发布者，并用SDK只接收观察器交叉验证。J1增加0.005 rad、至少4秒的小幅试验是控制链路测试，而不是最终抓放方案。<a href="../nero_moveit_real_test_20261015/README.md" title="MoveIt真实链路">S05</a></p>
+<p>后续完成高位准备和空中序列，再执行原幅度空载参考：1229点，名义61.45秒；实体最大行程约J2 63.591°、J4 47.876°、J7 77.959°。这轮使用示教轨迹而非在线ACT预测，且杯子已移开，不能算抓杯成功。<a href="../nero_sim_to_real_full_process_20261017.md" title="教师抓放与早期链路总览">S01</a> <a href="../nero_aligned_air_sequence_20261016_onsite/README.md" title="空中ACT与时序">S06</a></p>
+<h3 id="heading-19">5.3 名义TCP与教师抓放</h3>
+<p>历史桌面Z有0、−10、−13毫米等来源；TCP也有135毫米近似值。旧TCP在模型碰撞检查中不通过后，用户接受模型名义TCP <code>[152,0,−23.5]</code>毫米。它是link7局部偏移，不是新独立实测结果；不能把安装板链接偏移重复相加。<a href="../nero_sim_to_real_full_process_20261017.md" title="教师抓放与早期链路总览">S01</a> <a href="../nero_pick_place_20261016/acceptance.json" title="完整教师实物抓放验收">S07</a></p>
+<p>教师流程最终按高位接近、张爪、低速下降、GRASP、抬升、搬运、下降、RELEASE和垂直退出分段完成。视觉曾受YOLO框下缘漂移影响，改用杯子身份与黄色轮廓共同确定边缘；蓝卡使用唯一蓝色凸四边形。旧位置偏差约6.06毫米触发停止，修正后26帧核对通过，没有通过放宽原5毫米变化门槛接续。<a href="../nero_sim_to_real_full_process_20261017.md" title="教师抓放与早期链路总览">S01</a></p>
+<p>10月16日的监督MoveIt抓放有成功验收；它说明当时的场景和教师路线能够完成物理任务。验收明确写<code>act_policy_used_for_this_grasp=false</code>，并没有把记录独立批准为训练集。<a href="../nero_pick_place_20261016/acceptance.json" title="完整教师实物抓放验收">S07</a></p>
+<h2 id="heading-20">六 10月17日 完整ACT仿真与第一次在线迁移</h2>
+<h3 id="heading-21">6.1 完整任务数据是怎样生成的</h3>
+<p>物理教师用IK和笛卡尔插值产生目标，由带延迟的伺服模型执行；杯子靠双指接触和摩擦搬运，不通过重置杯位或加约束把杯子粘到夹爪上。每条示教要通过完整物理任务、动作前缀合同和同状态精确重放检查。<a href="../nero_act_full_pick_place_20261017/README.md" title="完整ACT仿真训练">S08</a></p>
+<p>run11使用43条资料：29训练、12验证、2开发诊断；其中完整示教和局部恢复分别统计。模型用90×160 RGB与8维状态，预测20×8，最多执行前10点再重新观察。该历史版本明确采用prior-only行为克隆、KL=0，不是已经训练CVAE后验的标准配置。<a href="../nero_act_sim_to_real_full_process_20261018.md" title="历史ACT迁移总览">S00</a> <a href="../nero_act_full_pick_place_20261017/README.md" title="完整ACT仿真训练">S08</a></p>
+<p>完整任务评价要求有夹持下抬升、至少100毫米搬运、目标附近承托释放、退出、稳定放置，并且无提前释放、意外接触和合同失败。run11严格14项为6/14；固定名义场景可以完整成功，不能说严格鲁棒性通过。</p>
+<h3 id="heading-22">6.2 第一次在线ACT真机接近</h3>
+<p>真实RGB和反馈进入冻结ACT，实际完成58块、580点；第59块因控制器确认未在原45毫秒期限内完成而停止。实体J2变化约52.62°、J7约61.72°，说明发生了大幅实际运动。580点名义29秒，实测执行约33.27秒；尚未GRASP，没有抓杯搬运。<a href="../nero_act_transfer_feasibility_20261017/README.md" title="首次在线真机迁移">S09</a></p>
+<p>之后修正停止锁存、ROS退出清理、只读保活，并记录各端时间戳。旧确认超时在隔离测试中未复现，因此不能宣称其单一根因已经确定或彻底消失。</p>
+<h3 id="heading-23">6.3 到抓取位却不闭爪</h3>
+<p>后续在线尝试到达杯旁，现场给出GRASP；255个保持块中，ACT仍预测约92.74～95毫米张开目标，实测约94.875毫米、力约0.035N，没有稳定夹持。程序停止，没有用手写闭爪命令替代ACT成功。<a href="../nero_act_transfer_completion_20261017/README.md" title="到抓取位但未闭爪的在线实验">S11</a></p>
+<p>这说明同一模型在名义仿真成功、当前真实前缀合法，仍不足以证明真实接触阶段成功。后续工作由此转向抓取状态覆盖、夹爪学习、因果上下文及视觉分布。</p>
+<h2 id="heading-24">七 ACT仿真完整轨迹回放与反复杯位对齐</h2>
+<p>用户接受先完成ACT仿真轨迹真机回放，同时要求实际夹杯搬运放置。取出的参考来自冻结ACT在仿真中实际施加的<code>sent_targets</code>，而不是直接执行网络<code>raw_chunks</code>。</p>
+<p>历史完整参考为2655点、每点50毫秒、名义132.75秒，分为接近、闭爪、抬升、搬运放置、释放、退出。参考中还包含抓前张爪保持、接触手臂保持、反馈保持和确认暂停，不能把所有点都说成未经处理的原始网络输出。<a href="../nero_act_sim_rollout_replay_20261017/README.md" title="ACT仿真轨迹回放">S10</a></p>
+<table>
+<thead>
+<tr>
+<th>回放问题</th>
+<th>当时怎样处理</th>
+<th>最终边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>起点已在杯边，不能接入完整高位参考</td>
+<td>读取真实反馈，要求恢复原起点；不直接跳到中段</td>
+<td>恢复杯位或张爪不等于恢复机械臂起点</td>
+</tr>
+<tr>
+<td>杯位与参考不一致</td>
+<td>复拍、对齐，或对已接受偏移另做物理和碰撞检查</td>
+<td>固定参考对杯位敏感，不是在线泛化</td>
+</tr>
+<tr>
+<td>用户接受约9.63毫米原偏差</td>
+<td>冻结该已接受场景，原动作不变，复核接触及路径</td>
+<td>接受一次偏差不代表后续杯子可继续随意移动</td>
+</tr>
+<tr>
+<td>接触时夹爪反馈受杯壁限制</td>
+<td>将接触开口与命令差纳入稳定夹持保护</td>
+<td>不能以SDK命令返回成功代替实际夹持</td>
+</tr>
+<tr>
+<td>阶段末门控关闭导致衔接困难</td>
+<td>保持参考、记录回执、核对重开条件和时效</td>
+<td>保持只是等待，不是额外任务进度</td>
+</tr>
+<tr>
+<td>ROS接收/确认或心跳问题</td>
+<td>修复接收器和参考衔接，保留失败及零发送证据</td>
+<td>修复软件接口不等于完整抓放成功</td>
+</tr>
+<tr>
+<td>现场杯子被推动或手工调整</td>
+<td>停止、记录前后图像、核实是机械接触还是人工改变</td>
+<td>场景已变，不能继续沿用旧碰撞结果</td>
+</tr>
+</tbody>
+</table>
+<p>后来多次接近和闭爪尝试仍在接收时效、接触、场景变化或保护处停止，没有取得本轮ACT实机完整抓放验收。用户后续要求“不要每次先仿真”和“摄像头实时调整”，正是要从这条固定参考路线转为在线策略。<a href="../nero_act_sim_to_real_full_process_20261018.md" title="历史ACT迁移总览">S00</a> <a href="../nero_act_sim_rollout_replay_20261017/README.md" title="ACT仿真轨迹回放">S10</a></p>
+<h2 id="heading-25">八 10月18日 从9维上下文到非线性夹爪头</h2>
+<p>以下各轮属于仿真训练与验证；软件测试、固定输入探针和完整任务分别说明。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>要解决的问题与实施</th>
+<th>实际结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>run14 泛化训练</td>
+<td>48条完整物理示教，36/12；源位XY各±30毫米，起点及姿态扰动；加入上一已提交夹爪命令差形成9维</td>
+<td>20轮正式训练完成，完整闭环4/16；没有完成真机示教微调</td>
+</tr>
+<tr>
+<td>run15 接触恢复</td>
+<td>从失败快照恢复，补6条起抬到退出纠正；总54条</td>
+<td>开发2/16，新独立16项0/16；局部数据增加未解决总体问题</td>
+</tr>
+<tr>
+<td>run16 视觉冻结开关</td>
+<td>修复代码无条件冻结视觉骨干；验证允许卷积层更新</td>
+<td>第1轮20/20卷积层变化；14/20轮时发现更直接采样缺口并停止，不能写成完成20轮</td>
+</tr>
+<tr>
+<td>run17 关键阶段采样</td>
+<td>闭爪、抬升、释放首态大量被每10帧采样漏掉；补首20帧高频输入及关键RGB</td>
+<td>开发与新独立各0/16；名义存在对中/姿态偏差和夹爪基座碰杯</td>
+</tr>
+<tr>
+<td>run18 下降恢复</td>
+<td>从160/120毫米高度快照补12条纠正；共66条</td>
+<td>原场景仍失败，link6碰桌；固定最佳和最后权重都未补救完整留出案例</td>
+</tr>
+<tr>
+<td>run19 FK姿态损失</td>
+<td>增加位置与旋转训练损失，降低纯关节L1对抓姿的不足</td>
+<td>原场景仍到低位后不闭爪；已有验证42完整成功</td>
+</tr>
+<tr>
+<td>run20 实际抓取状态恢复</td>
+<td>从ACT实际60/55毫米低位快照补恢复，不用理想姿态冒充失败状态</td>
+<td>原场景仍无GRASP；审计确认历史prior-only后验未训练</td>
+</tr>
+<tr>
+<td>run21 CVAE训练恢复</td>
+<td>训练时用未来动作和padding形成后验，KL=.001；推理仍零潜变量</td>
+<td>后验梯度验证通过；原场景仍失败，验证42可成功；实际失败输入夹爪限幅死梯度被定位</td>
+</tr>
+<tr>
+<td>run22 夹爪限幅前监督</td>
+<td>补限幅前夹爪L1，修正95毫米饱和时闭爪梯度为0</td>
+<td>固定输入梯度和预测改善；完整接近退化，仍失败</td>
+</tr>
+<tr>
+<td>run23 只训练夹爪输出行</td>
+<td>冻结其余参数和buffer，避免直接改变七轴</td>
+<td>原场景抓高17次查询仍全张开；冻结同输入七轴不等于闭环轨迹永远不变</td>
+</tr>
+<tr>
+<td>run24 非线性夹爪头</td>
+<td>ACT解码特征增加128→64→1残差头，仅4张量训练</td>
+<td>小样本内存probe可拟合，完整训练原场景仍失败；关键输入采样稀释</td>
+</tr>
+<tr>
+<td>run25 三类平衡采样</td>
+<td>闭爪首段、释放首段、背景各1/3</td>
+<td>原场景失败；说明只做一般阶段平衡仍不足</td>
+</tr>
+<tr>
+<td>run26 四类连续闭爪采样</td>
+<td>进一步给实际抓取恢复连续闭爪独立份额，各类1/4</td>
+<td>原场景首次完整成功：抬升189.05毫米、搬运176.25毫米、稳定104帧；开发8/16</td>
+</tr>
+<tr>
+<td>run27 固定场景头部微调</td>
+<td>只训七轴输出层和夹爪头，补延迟/释放后恢复</td>
+<td>完整14项9/14；严格同seed比较证实一部分接近行为退化</td>
+</tr>
+</tbody>
+</table>
+<p>来源按顺序见<a href="../nero_act_generalized_pick_place_20261018/README.md" title="run14位置泛化">S12</a>至<a href="../nero_act_fixed_scene_heads_20261018/README.md" title="run27固定场景头部">S25</a>。run26新独立16项当时只完成1项，该项成功，另外15项未完成，不能写成独立16/16。run26当前固定场景原14项11/14；run27的9/14使用不同种子，两个总分不能直接当逐项单因素比较，但同seed配对案例证实了退化。<a href="../nero_act_gripper_contact_focus_20261018/README.md" title="run26连续接触采样">S24</a> <a href="../nero_act_fixed_scene_heads_20261018/README.md" title="run27固定场景头部">S25</a></p>
+<h3 id="heading-26">8.1 这一阶段真正解决过什么</h3>
+<p>视觉冻结开关、关键首态漏采、CVAE后验路径、夹爪饱和死梯度，都有明确的软件或数值复现并得到修正。run26连续闭爪采样也确实让原场景完整成功。</p>
+<p>但这些修正没有共同证明“闭爪训练已经足够”“渲染是唯一问题”或“新位置已经泛化”。尤其原场景失败、另一个验证场景成功，说明状态分布和行为保持必须单独核对。</p>
+<h2 id="heading-27">九 10月19日 15维实时位置条件ACT</h2>
+<p>用户明确摄像头应在动作过程中告诉机械臂当前位置并及时调整，因此采用当前RGB、实测状态、夹爪因果上下文和6维相对位置条件。旧48条完整示教转换成16104个有效输入，36训练/12验证。<a href="../nero_act_visual_feedback_20261019/README.md" title="15维视觉位置训练">S27</a></p>
+<p>320×180和160×90两组各20轮训练完成。前者最佳第17轮，后者第18轮。9→15维初始化可保持初始输出一致，说明接口兼容；它没有自动证明位置条件已被策略有效利用。</p>
+<p>冻结15维完整16项最终5/16：包括预算耗尽、意外接触、附杯桌面保护和观测时序拒绝。该阶段从最多10点执行缩短到前2个50毫秒点，近抓取可1点；短前缀提供重新观察机会，但如果位置估计或策略响应错误，缩短前缀本身不会修好动作。<a href="../nero_act_visual_validation_20261019/README.md" title="15维完整评估">S28</a></p>
+<p>16个工况ID在训练前固定，但最后3项的数值扰动在训练后补齐，因此这组结果不属于严格在训练前冻结全部数值工况的独立部署验收。<a href="../nero_act_visual_validation_20261019/README.md" title="15维完整评估">S28</a></p>
+<h3 id="heading-28">9.1 三次接触修复</h3>
+<ol>
+<li><strong>采样修复。</strong> 原来2232个有足够夹持差的close输入只保留30个；补变化过程、合并长静止等待，重建RGB和采样。全分支训练后原场景反而接近偏差增大并碰杯。这轮优化步数也变了，不能当作等步单因素对照。<a href="../nero_act_visual_contact_fix_20261019/README.md" title="接触采样修复">S29</a></li>
+<li><strong>只调夹爪adapter。</strong> 七轴等非夹爪参数冻结，稳定双指接触终于成立，但持杯桌面保护停止。数值复核发现首目标其实向上约31微米，早期“TCP向下”的概括不准确。<a href="../nero_act_visual_gripper_fix_20261019/README.md" title="夹爪分支修复">S30</a></li>
+<li><strong>修正附着安全参考。</strong> 原安全模型按初始源位绑定杯子，实际杯已偏8.48毫米。改成使用当前杯体/法兰配对位姿，离桌前允许桌面承托柔顺，离桌后冻结相对变换。仍保持−1微米地板线；之后策略又削弱夹持，在源位被阶段保护拒绝，完整流程仍失败。<a href="../nero_act_visual_attachment_fix_20261019/README.md" title="附着参考修复">S31</a></li>
+</ol>
+<p>这里修复的是仿真安全几何的参考，并没有向ACT输入物体真值，也没有新增运行时教师动作。</p>
+<h2 id="heading-29">十 短历史ACT与10月20日的局部恢复对照</h2>
+<p>短历史试验使用A当前RGB+15维，B再加最近5次有效数值观测和GRU128。48完整与18局部恢复组成数据；A/B各1000次更新，正式20轮训练未开始。原六项均2/6，因此没有据此扩大正式预算。<a href="../nero_act_history_feedback_20261019/evidence/pilot_results.md" title="短历史A B结果">S32</a></p>
+<p>“原六项”从保存的中间快照恢复，包含抓前或已夹持后的20毫米起抬、留出后续流程、承托释放、释放后退出。它们不是六次从高位起点开始的完整任务。</p>
+<table>
+<thead>
+<tr>
+<th>修复阶段</th>
+<th>实现与直接证据</th>
+<th>原六项及完整行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>读出逆像和恢复参考</td>
+<td>修正限幅前输出错误地直接对最终动作监督；补已获权限快照的姿态保持交接</td>
+<td>A/B各3/6；旧B仅换入口也3/6，不能把该收益全归训练</td>
+</tr>
+<tr>
+<td>转移边界采样</td>
+<td>共同1000批次中关键首态曝光过少，提高恢复最早有效起点份额</td>
+<td>A/B各4/6，项目不同，不能拼成6/6</td>
+</tr>
+<tr>
+<td>失败接触状态恢复</td>
+<td>精确恢复实际闭到74.5毫米后的状态，补物理教师后续</td>
+<td>A/B各5/6；仍有附杯最低点受旋转影响下穿</td>
+</tr>
+<tr>
+<td>执行前两点监督</td>
+<td>零潜变量前2点联合七轴和夹爪，保留原后验/20点损失</td>
+<td>A5/6、B6/6；B从高位818点碰杯，完整仍失败</td>
+</tr>
+<tr>
+<td>接近恢复</td>
+<td>从完整运行的安全160毫米状态补下降恢复</td>
+<td>A6/6、B5/6；A高位2574点J7限位拒绝，无GRASP</td>
+</tr>
+</tbody>
+</table>
+<p>来源：<a href="../nero_act_contact_transition_fix_20261020/README.md" title="逆像和恢复协议">S33</a>至<a href="../nero_act_approach_recovery_20261020/README.md" title="接近快照恢复">S37</a>。这些结果证实：从某个好中间状态能继续，不保证策略自己能从高位到达该状态。加入短历史也没有在本轮得到足够改善，不能仅因为用了GRU就声称时序问题已解决。</p>
+<h2 id="heading-30">十一 10月21日 冻结范围 接近保持和优化控制</h2>
+<h3 id="heading-31">11.1 只训输出层仍可能改变接近</h3>
+<p>受限微调从共同基线开始，仅训练七轴输出行与非线性夹爪头共6个张量，其余208个摘要不变。零更新基线能够进入GRASP，但后续桌面保护失败；训练后2710点仍没有GRASP并触发关节限位。这说明共享输出层足以改变整条接近轨迹，不需要视觉骨干变化才能退化。<a href="../nero_act_restricted_heads_20261020/evidence/results.md" title="受限输出微调">S38</a></p>
+<h3 id="heading-32">11.2 接入保持损失也需要检验</h3>
+<p>保存原基线423次抓前观测和20点读出，每步增加8个参考，约束执行前2点。启动前修正GPU渲染、限幅前后比较、channels-last图像布局、批量与单帧前向差及来源绑定；423个参考在更新前输出差0。<a href="../nero_act_approach_preservation_20261021/evidence/results.md" title="接近保持">S39</a></p>
+<p>训练后夹爪漂移减小，但七轴RMS漂移从约0.247升到0.961毫弧度，最大从0.942升到3.259毫弧度；六项5/6降到4/6，高位仍碰杯。因此“加了保持损失”不能直接写成“保持改善”。</p>
+<h3 id="heading-33">11.3 梯度尺度与学习率</h3>
+<p>后续发现保持损失梯度范数约1.26万～27.44万，而普通监督约10；全局裁剪会连同夹爪学习一起压缩。另确认4组完全相同RGB+15维却有不同前两点标签，过滤较早静止等待视图，原HDF不改。</p>
+<p>七轴学习率固定1e−6和线性衰减到1e−7两组各1000更新，七轴保持RMS约0.007789/0.004840毫弧度，均通过原保持门槛；六项都仍4/6，未完成所需夹持差。相对于更早版本，这里还包含标签过滤，不能把全部变化都归为学习率。<a href="../nero_act_optimizer_control_20261021/evidence/results.md" title="学习率和优化控制">S40</a></p>
+<h3 id="heading-34">11.4 根因复核得到的数值证据</h3>
+<p>只读复核重建8个失败查询，预测最大差0。名义失败输入与训练数据可以完全或近乎完全一致，因此这部分错误在同一仿真域内已经存在，不能归因于真实画面渲染差异。<a href="../nero_act_root_cause_20261021/evidence/findings.md" title="零更新根因核对">S41</a></p>
+<p>已确认的问题包括：</p>
+<ul>
+<li>完整示教夹爪每点0.4毫米，恢复示教每点0.2毫米，输入却没有显式速度尺度条件。</li>
+<li>同一holding窗口，前2点与后18点夹爪梯度余弦约−0.96至−0.97，说明动作块监督在这个输入上互相抵消。</li>
+<li>已夹持输入曝光120次仍预测松开，故“只要多采同样的数据”不足以解释问题。</li>
+<li>接触边界样本曝光薄，但也不能把所有错误统一归为采样数量。</li>
+<li>权重、统计、源码和冻结范围一致，没有发现错误checkpoint或权重文件损坏。</li>
+</ul>
+<h2 id="heading-35">十二 前缀修正 分组损失 命令增量头和起抬恢复</h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>做过的修正</th>
+<th>实测效果与仍未解决</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接触前缀修正</td>
+<td>68条数据统一20Hz/4毫米每秒物理重生成；夹爪只监督实际执行前2点；修边界选样误用未来命令</td>
+<td>1000更新，保持通过；原失败输入0/3，六项4/6</td>
+</tr>
+<tr>
+<td>分组夹爪损失</td>
+<td>闭合、holding、张爪接近、承托释放四组配平，24项静态方向检查通过</td>
+<td>1000更新；失败输入0/3，六项降2/6；静态梯度正确不保证长期优化正确</td>
+</tr>
+<tr>
+<td>夹爪命令增量头</td>
+<td>将夹爪表示为因果上一命令加有界增量，减少块内闭合却重查询回退</td>
+<td>正式1000更新，仅新头4张量；失败输入3/3，六项5/6；七轴起抬仍被桌面保护拒绝</td>
+</tr>
+<tr>
+<td>起抬恢复与权重收缩</td>
+<td>精确失败状态生成95帧教师起抬；只调七轴输出；预定按1、1/2、1/4顺序检查，仅凭423点训练保持参考选出首个合格的1/4，先于查看六项结果</td>
+<td>名义起抬修好，六项仍5/6；留出最高177.400毫米，低于180毫米</td>
+</tr>
+</tbody>
+</table>
+<p>来源：<a href="../nero_act_contact_prefix_repair_20261021/evidence/results.md" title="接触前缀修正">S42</a>至<a href="../nero_act_transfer_resume_20261021/evidence/results.md" title="起抬修正与单场景完整开发">S45</a>。其中静态probe、缓存检查和被丢弃的临时头有独立预算，不能把所有临时更新加在某个正式模型身上；“1000次更新”也不能改称“正式20轮”。</p>
+<p>起抬恢复后，同权重在另行原场景高位开发观察中确实完整成功：抬升193.828毫米、搬运178.227毫米、稳定101帧、2637有效点。该单次成功没有覆盖原六项失败，也没有证明当前真实杯位或新位置泛化。<a href="../nero_act_transfer_resume_20261021/evidence/results.md" title="起抬修正与单场景完整开发">S45</a></p>
+<p>真实只读联调还遇到ACT和旧定位共用<code>src</code>包名冲突；将定位隔离到独立进程后恢复。冷启动10次中1次约754毫秒，被250毫秒时效拒绝；历史输入预热后，重新采集的10个新帧全部通过，约46.6～55.3毫秒。它仍只是接收时间下的诊断，不等于曝光同步和真机完整执行通过。</p>
+<h2 id="heading-36">十三 控制器状态 反馈来源与ROS CAN启停</h2>
+<h3 id="heading-37">13.1 为什么出现arm_status等问题</h3>
+<p>控制器状态、独立错误码、运动状态和电机使能不是同一个量。历史状态2由控制器真实上报，不能把软件变量改成0来当作恢复。ACT的15维数值输入不包含<code>arm_status</code>，所以可以只读分析策略预测，同时仍让运动入口保留状态检查。</p>
+<p>用户选择过“先单独分析策略输出，保留运动保护”。后来独立受限演示入口对状态0/2有明确条件允许，并同时要求错误码0、反馈新鲜、静止、实际使能、领先量和碰撞检查通过。它不是全局取消状态保护，更不代表状态2等于正常0。SDK的reset还可能实际发送急停恢复指令，不能当成普通无解状态的专用清零命令。<a href="../nero_act_start_output_review_20261021/review_01/verification.json" title="真实状态与起始预测核验">S53</a> <a href="../nero_act_transfer_demo_20261023/README.md" title="最近真机接近演示">S49</a></p>
+<h3 id="heading-38">13.2 反馈为什么必须交叉核对</h3>
+<p>用户多次恢复起点或调整模式，但有时只恢复了杯位/夹爪，没有把整臂回到原姿态。另一些时刻ROS可能来自虚拟系统或其他域。处理方法是核对发布者、真实SDK七轴和夹爪反馈、运动状态及起点差值，避免把意图当成已发生的物理状态。</p>
+<p>“姿态不同”不能自动归咎于策略。最近演示发送器停止后，后验姿态再次改变；用户确认手工移动或切换过模式，因此该变化另记为现场操作后的状态，不归入原ACT轨迹。稍后全局CAN多1包的具体发送者没有被独立确认，不能仅凭这1包猜测控制者。<a href="../nero_act_transfer_demo_20261023/README.md" title="最近真机接近演示">S49</a></p>
+<h3 id="heading-39">13.3 启停服务与授权的范围</h3>
+<p>对话中先后要求关闭、重新打开ROS和CAN。每次以当时明确要求为准，启动接收服务、启用运动发送、使能、失能和模式切换分别记录。只读观察器需要封锁SDK发送路径；ROS或相机启动本身不能计为一次任务动作。</p>
+<p>本报告整理期间只读取文件，没有重新打开相机、启动运动或切换控制模式。历史PID和CAN计数是对应日志时刻的快照，不用它们保证报告阅读时的实时硬件状态。</p>
+<h2 id="heading-40">十四 10月22日 标定板与相机采样</h2>
+<h3 id="heading-41">14.1 110毫米和95毫米是两个不同尺寸</h3>
+<p>用户最初报告板为110×110毫米；后明确黑色编码正方形外边为95×95毫米。姿态估计应使用黑色编码边长95毫米，不能把整板或白边外尺寸110毫米直接作为编码尺寸。</p>
+<p>检测字典为DICT_4X4_50，ID为0，ZED序列号39602891。倒装预览旋转180°，PnP仍使用原始光学像素；只读采样器把光学旋转0与预览180分开。<a href="../nero_act_calibration_capture_20261022/session.json" title="标定采样总记录">S54</a></p>
+<h3 id="heading-42">14.2 调整高度和自动采样做过什么</h3>
+<p>标定板最初在画面上沿被裁切，后按现场确认执行低速下降以改善完整入镜。板由两指夹住硬质板，用户确认板与夹指固定、相机未动。后续自动采样路径经过1%速度、整臂及板/支架净空复核，夹爪保持。</p>
+<p>采样期间先修正了误选标志的问题，保留了预测几何保护。阶段记录有118次采样关节提交、4个不同姿态候选；原计划15个拟合姿态及5个检查姿态未完成。出现旧模型绝对投影约12.27像素不匹配后停止，4姿态拟合没有发布为已验收标定。<a href="../nero_act_calibration_capture_20261022/automatic_sampling_01/migration_stage_status.json" title="自动采样停止状态">S55</a></p>
+<h3 id="heading-43">14.3 桌面验证和TCP尺寸</h3>
+<p>后来把标定板从夹爪取下，平放桌面并采三处位置，用户提供板面离桌8毫米。它有助于把板面距离与桌面距离区分，但不能求出夹爪夹持中心TCP。</p>
+<p>用户按参考接缝测得A=30毫米、B=94毫米，并确认两者都从夹爪后端接缝起算。它们与当时CAD解释未完全一致，因此没有把这两个数直接写成三维TCP。板夹在两指之间、板相对法兰的安装变换、夹持中心偏移也不是同一个量。</p>
+<p>用户后来明确要求停止反复测量，复用既有资料。后续因此继续使用名义TCP并保留资格限制；没有把“用户不再测量”解释成“标定已经通过”。这也是为什么真机示教有价值：它能补真实动作数据，但仍不能代替运行保护需要的几何一致性。</p>
+<h2 id="heading-44">十五 10月22日至23日 位置条件为什么没有产生足够响应</h2>
+<p>这一阶段已经在仿真内部复现位置弱响应，所以不能把问题全部推给真实渲染。</p>
+<h3 id="heading-45">15.1 同一姿态改变杯位的因果检查</h3>
+<p>固定机器人状态和上一夹爪命令，同时改变杯位对应RGB与数值位置输入；在一个约155.9毫米高度的抽查中，杯位改变40毫米，策略X响应约0.014毫米、Y约0.0036毫米，而教师约0.465/1.714毫米。说明某些姿态下策略虽然收到位置条件，实际动作响应仍很弱。<a href="../nero_act_position_response_repair_20261023/results.json" title="位置条件修复与因果证据">S56</a></p>
+<p>不能把这理解为ACT在所有位置完全忽略坐标；它是具体输入和具体前缀的证据。相对坐标输入已经存在，尚缺的是可靠利用该信息的映射及闭环覆盖。</p>
+<h3 id="heading-46">15.2 数据覆盖与保持梯度</h3>
+<p>原新增示教下降横向偏差最大约5.60毫米，实际失败偏离可到78.46毫米，教师分布没有覆盖策略实际到达的低位偏离。另一个固定批次里，保持项对几何投影列和偏置的加权梯度约186.97，七轴任务梯度约0.418，约447倍。该比例只属于该批次，不能概括所有训练步。<a href="../nero_act_position_response_repair_20261023/results.json" title="位置条件修复与因果证据">S56</a></p>
+<p>修正包括：</p>
+<ul>
+<li>从同一姿态生成不同杯位的局部物理纠偏，86条接受，60训练/26验证，另有接触等失败保留。</li>
+<li>离线教师在低位偏离时先清高、保持张爪，禁止把它接成运行时手写纠偏控制器。</li>
+<li>对实际执行前2点增加FK位置监督。</li>
+<li>限制共享保持梯度不超过任务梯度规定比例，保留原动作门槛。</li>
+</ul>
+<h3 id="heading-47">15.3 多轮训练的结果</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>更新和主要变化</th>
+<th>位置响应结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>位置响应修正</td>
+<td>单组1000更新</td>
+<td>方向及幅度1/7→2/7；最大前缀误差3.318→2.512毫米，未达0.5毫米</td>
+</tr>
+<tr>
+<td>同方案追加训练</td>
+<td>固定再加3000更新，保留最后一步，不按较好的中途结果选模型</td>
+<td>最终4/7，最大误差1.232毫米；仍未过门槛</td>
+</tr>
+<tr>
+<td>成对响应监督</td>
+<td>24对同姿态不同杯位训练输入；200步probe丢弃后，原初始化再训练2000步</td>
+<td>最终5/7，最大误差1.492毫米；局部学习机制改善但完整门槛仍失败</td>
+</tr>
+<tr>
+<td>全流程修正</td>
+<td>1条新完整教师和8条安全访问状态前缀，1000更新</td>
+<td>三个夹爪输入各自通过，但423点保持失败；高位1811点无GRASP并低位保护拒绝</td>
+</tr>
+<tr>
+<td>保持范围修正</td>
+<td>相同架构/数据/批次，仅把梯度上限落实到所有4组，1000更新</td>
+<td>最大前缀误差1.812毫米；3900点无GRASP；教师能从3个同类保存状态完成任务</td>
+</tr>
+</tbody>
+</table>
+<p>来源：<a href="../nero_act_position_response_repair_20261023/results.json" title="位置条件修复与因果证据">S56</a>至<a href="../nero_act_preservation_scope_20261023/results.json" title="所有组保持范围试验">S60</a>。这些实验没有靠更换成功阈值或把教师动作混进策略来报成功。它们也说明：有可行IK路径不等于ACT学会了该路径，局部响应变大不等于整段抓放通过。</p>
+<h2 id="heading-48">十六 10月23日 新手眼标定怎样接入</h2>
+<h3 id="heading-49">16.1 使用的新版本</h3>
+<p>新文件来自：</p>
+<pre><code class="language-text">/home/user/projects/nero/artifacts/
+  methylene_blue_recalibration_20261023.KRmPgj/
+    camera_to_base.candidate.json
+</code></pre>
+<p>本地副本SHA256为：</p>
+<pre><code class="language-text">b9874ae76258d6e804d40a3e6eca947c63ea0d33dacdd48335817b74ccbc4cb6
+</code></pre>
+<p>20组原始样本、15组有效，按原工具定义复算平移RMSE4.585845毫米、旋转RMSE0.672862°。这些是拟合一致性指标，不是独立抓取位置误差界。矩阵方向为<code>T_base_from_camera</code>，原始ZED左目光学坐标；平移由毫米换成米。<a href="../nero_act_new_calibration_20261023/README.md" title="新手眼接入">S46</a></p>
+<p>新旧估计相机原点相差约72.93毫米、旋转相差6.36°。这是两版估计差异，不能据此断定相机实体实际移动了同样距离。法兰到标志板的变换也不能当作两指夹持中心TCP。</p>
+<h3 id="heading-50">16.2 单纯更换外参为什么没有马上成功</h3>
+<p>只换新外参、保留旧世界坐标时，杯子投影越过图像边界，0动作前拒绝。用户重新放回杯子和蓝卡后，保存新图像及稳定反馈，排除工作区外显示器蓝色干扰，重新估计当前目标。这里的筛选只服务定位诊断，没有遮罩ACT的RGB来制造模型成功。<a href="../nero_act_new_calibration_20261023/README.md" title="新手眼接入">S46</a></p>
+<p>当时当前夹爪为99.42毫米，不能直接当95毫米命令历史。保留真实开口的组在初始化处拒绝；只假设已完成95毫米准备的对照虽运行3900点，仍无GRASP。这个准备仅是假设，并未在真机自动张爪。</p>
+<p>同一名义场景下，物理教师完整成功，约194.4毫米抬升、186.6毫米搬运、3002帧、精确重放误差0。它说明仿真几何里存在可行完整路径，不是ACT成功或真实精度证明。</p>
+<h3 id="heading-51">16.3 新相机数据与后续候选</h3>
+<p>旧267份视觉数据沿用旧相机分布，新标定后不能原封不动混用。重新生成新相机下的完整示教和图像，进行1000更新，得到1a28候选：</p>
+<pre><code class="language-text">1a28f4fddd3095791403028b639b99f9775b91caab45c950c2d0f518955bc0f0
+</code></pre>
+<p>第一次三场景都进入GRASP，但没有完整成功；后续再做一组接触恢复1000更新，五个场景都失去抓前净空，因此拒绝该组并回到1a28。<a href="../nero_act_new_handeye_policy_repair_20261023/results.json" title="新相机1a28训练终态">S61</a> <a href="../nero_act_new_handeye_contact_repair_20261023/results.json" title="后续接触模型拒绝终态">S62</a></p>
+<h2 id="heading-52">十七 遮挡蓝卡与微接触检查修正后的七场景</h2>
+<h3 id="heading-53">17.1 蓝卡被杯子挡成两块</h3>
+<p>原观察器把被遮挡的同一蓝卡当成多个蓝色目标。修正保留当前RGB像素，按名义100毫米正方形、当前可见边界和遮挡检查解释片段；释放时角点被遮，补三条连续直边支持的通道。完全遮挡仍拒绝，没有拿上一帧坐标或目标真值填洞。<a href="../nero_act_contact_escape_fix_20261023/README.md" title="固定1a28七场景">S47</a></p>
+<h3 id="heading-54">17.2 微接触不等于预测继续下降</h3>
+<p>原中心安全模型杯底已有约−37.739微米名义重叠，两个目标为−27.071/+2.165微米，TCP向上。早期把这一处统一描述成“策略向下”不准确。</p>
+<p>后续只在离线MuJoCo、仍受支撑、稳定双边夹持、未离桌、无异常接触且原重叠不超过100微米时，允许每个密集扫掠样本严格向上脱离。原−1微米地板线保持；加深重叠、缺失支撑、已离桌等仍拒绝。这个100微米是名义仿真接触限值，绝不是真实TCP误差界。<a href="../nero_act_contact_escape_fix_20261023/README.md" title="固定1a28七场景">S47</a></p>
+<h3 id="heading-55">17.3 固定1a28的实际七场景结果</h3>
+<table>
+<thead>
+<tr>
+<th>杯位偏移 毫米</th>
+<th>场景</th>
+<th>完整结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0,0</td>
+<td>9000</td>
+<td>通过，抬升199.79毫米，搬运190.30毫米，稳定101帧</td>
+</tr>
+<tr>
+<td>+10,+10</td>
+<td>9005</td>
+<td>起抬微接触扫掠不满足条件，停止</td>
+</tr>
+<tr>
+<td>−10,−10</td>
+<td>9006</td>
+<td>通过，抬升183.51毫米</td>
+</tr>
+<tr>
+<td>+7,−12</td>
+<td>9200</td>
+<td>通过，抬升198.16毫米</td>
+</tr>
+<tr>
+<td>−12,+7</td>
+<td>9201</td>
+<td>预测下降碰杯，停止</td>
+</tr>
+<tr>
+<td>+8,+11</td>
+<td>9300</td>
+<td>附着杯桌面保护停止</td>
+</tr>
+<tr>
+<td>−9,−11</td>
+<td>9301</td>
+<td>未对中先低位下降，停止</td>
+</tr>
+</tbody>
+</table>
+<p>结果3/7，新增位置0/2，泛化未通过。这七个场景后来都被用于诊断，已经是开发数据，不能再称为新的独立验收集。<a href="../nero_act_contact_escape_fix_20261023/README.md" title="固定1a28七场景">S47</a></p>
+<h3 id="heading-56">17.4 10月24日重新验收完整抓放</h3>
+<p>用户要求“验收完整抓放”。本轮对保留的1a28重新运行原7场景，从高位起点走完整闭环，没有加载被拒绝的真实视觉层、没有训练或下发真机。由于GPU驱动不可用，改用CPU推理和Mesa EGL llvmpipe软件渲染；设备变化与历史GPU结果分别记账。<a href="../nero_act_full_acceptance_20261024/run_01/acceptance.json" title="保留1a28的CPU/Mesa完整抓放七场景验收">S70</a></p>
+<p>完整通过1/7，整套未通过。9006（−10/−10毫米）完成抓取、抬升183.49毫米、搬运181.72毫米、放置、松爪和退出，稳定101帧；最终目标中心误差16.51毫米，符合原20毫米界限，不代表高精度。成功记录见<a href="../nero_act_full_acceptance_20261024/case9006_full_flow_simulation_2x.mp4">视频</a>和<a href="../nero_act_full_acceptance_20261024/case9006_contact_sheet.jpg">六阶段画面</a>。<a href="../nero_act_full_acceptance_20261024/run_01/acceptance.json" title="保留1a28的CPU/Mesa完整抓放七场景验收">S70</a></p>
+<p>9000、9005与9201在GRASP后由附着杯桌面保护停止；中心首目标TCP下降约15.69微米，名义杯底重叠加深，不是未闭爪。9200完成抬升、搬运后由蓝卡可见几何检查停止。完整七项记录及其他停止原因见<a href="../nero_act_full_acceptance_20261024/README.md">本轮验收报告</a>。这些拒绝均保留，未通过填旧坐标或删保护使流程继续。<a href="../nero_act_full_acceptance_20261024/run_01/acceptance.json" title="保留1a28的CPU/Mesa完整抓放七场景验收">S70</a></p>
+<p>中心首查询状态与6维位置特征跟历史相同，但七轴20点预测最大差约0.001944 rad。计算和渲染后端同时变化，缺少用于隔离的历史首帧RGB，不能单独断言CPU或渲染是原因。32项相关测试通过，逐帧观测与摘要复算一致，265项来源未变；后置审计路径错误已由独立收尾恢复，原摘要与退出错误保留，最终内存比较未完成；这些证据不把本轮1/7改成7/7，也不代表真机实时性或实物验收。<a href="../nero_act_full_acceptance_20261024/run_01/acceptance.json" title="保留1a28的CPU/Mesa完整抓放七场景验收">S70</a></p>
+<h2 id="heading-57">十八 观测误差 策略误差与RGB-D候选</h2>
+<h3 id="heading-58">18.1 杯位准确一点是否就能全部解决</h3>
+<p>固定1a28、RGB、反馈、蓝卡与全部保护，只把杯位三项替换为同曝光物理真值，五个诊断场景完整结果0/5。正常9005六类数组先完全复现，再执行对照；诊断真值没有进入正常训练或真机入口。<a href="../nero_act_observation_repair_20261023/README.md" title="观测因果与RGB D核对">S48</a></p>
+<p>这证明“只修这三项杯位特征”不足以救回该模型，不能证明视觉不重要，也不能排除旧策略和有偏观测已经耦合。还需处理蓝卡、接触状态和闭环恢复。</p>
+<h3 id="heading-59">18.2 已证实的遮挡定位误差</h3>
+<p>9005夹持遮挡后，图像估计杯底比实际高约8.06毫米，总位置误差约11.89毫米，而包围框拟合RMSE仅0.181像素。小像素残差不代表真实三维位置正确。</p>
+<p>原分辨率RGB候选的验证帧21/22有效，但只有9张在2毫米以内，最大3.27毫米，未达到全组精度要求。没有因为单元测试通过就部署该观察器。<a href="../nero_act_contact_escape_fix_20261023/README.md" title="固定1a28七场景">S47</a> <a href="../nero_act_observation_repair_20261023/README.md" title="观测因果与RGB D核对">S48</a></p>
+<h3 id="heading-60">18.3 RGB-D做了什么</h3>
+<p>利用同曝光1280×720 RGB、相机Z深度或SDK XYZ、置信度，拟合空心杯首个可见表面；仅匹配最近杯壁会混淆不可见内壁，首版遮挡误差约2.91毫米，后用射线首交点约束修正。</p>
+<p>独立审查发现有符号残差会漏检单侧异常，v2改为绝对射线残差。理想深度开发14/14、留出21/22；预设0.35毫米噪声及15%随机缺失压力下，开发仅12/14有效，85.7%低于90%门槛。更严格版本推翻了v1“机制整体通过”的早期结论。<a href="../nero_act_observation_repair_20261023/README.md" title="观测因果与RGB D核对">S48</a></p>
+<p>这里的0.35毫米噪声和15%缺失是合成压力工况，尚未证明它们与现场相机的真实噪声分布一致，不能据此直接计算现场成功率。</p>
+<p>95分位耗时约430～891毫秒，尚不满足实时闭环。当前保存的3张实景帧又在蓝卡轴对齐模型处被拒绝，所以不能用“相机有深度”替代“当前15维视觉输入已就绪”。</p>
+<h3 id="heading-61">18.4 深度稳定性与绝对精度</h3>
+<p>ZED2i、SDK5.4.1、HD720/30Hz、NEURAL_LIGHT采过20个新曝光。旧静止判据只检查ROI中心，可能漏掉轴向运动；v2加入共享XYZ时间变化。原20帧只保存了0/9/19三份原始数组，对这3份复算Z标准差95分位约0.229毫米。</p>
+<p>0.229毫米是特定静止启发式下的重复性，不是手眼、TCP、杯底绝对精度，也不能声称独立重算了全部20帧。RGB像素转180°，SDK XYZ仍保留原光学向量方向，不能再重复翻轴。<a href="../nero_act_observation_repair_20261023/README.md" title="观测因果与RGB D核对">S48</a></p>
+<h2 id="heading-62">十九 最近一次真机迁移演示和命令时效停止</h2>
+<p>用户接受“不需要每步成功，先看迁移效果”后，采用1a28在正常仿真中心生成的原始七轴接近前缀，计划319点、5%速度、夹爪保持实测99.42毫米。没有IK重算或重定位关节目标，也没有把99.42毫米伪装为95毫米命令历史。<a href="../nero_act_transfer_demo_20261023/README.md" title="最近真机接近演示">S49</a></p>
+<p>离线独立演示碰撞模型抬高桌面50毫米，杯位加直径250毫米、高250毫米包络，当前起点及1081个密集插值状态通过。候选标定下的图像投影只是法兰参考，不是独立确认整臂扫掠安全的证据。</p>
+<p>实际发送66/319个目标，第67个在发送前拒绝。独立后验反馈法兰变化约X−13.30、Y+11.20、Z−21.20毫米，空间位移27.42毫米；夹爪未收到动作命令，没有抓杯。发送器退出，恢复禁止发送的只读驱动，没有自动重试或回起点。</p>
+<h3 id="heading-63">19.1 命令时效是什么意思</h3>
+<p>“时效”是指准备发送时，距离该条ROS目标产生已经过去多久。本次上限250毫秒，拒绝点实际381.65毫秒，因此出现<code>stale_command</code>。</p>
+<p>它不是现场授权30分钟有效期，也不是轨迹单点50毫秒、模型推理耗时或3秒到位超时。它约束的是该条指令的新鲜程度，防止基于旧状态生成的动作继续发送。</p>
+<p>发送前记录与复读反馈窗口约377.97毫秒，包含日志、读取和调度；离线同报告JSON序列化约19～30毫秒，不能断言全部378毫秒就是写日志造成。后续要分段计时定位阻塞，不能简单改大250毫秒或重写时间戳来绕过。<a href="../nero_act_transfer_demo_20261023/README.md" title="最近真机接近演示">S49</a></p>
+<h3 id="heading-64">19.2 演示后状态变化怎样解释</h3>
+<p>首次后验状态0、错误0、静止，姿态符合停点。后来姿态离开停点并出现状态6，SDK定义为关节制动未释放；用户随后确认手工移动或切过模式。该变化另记，不回写成ACT继续运动。额外1包CAN的具体来源仍未独立归属。</p>
+<h2 id="heading-65">二十 10月24日事件示教微调为什么整体退化</h2>
+<h3 id="heading-66">20.1 本轮改动与训练</h3>
+<p>保留当前15维模型、原RGB观察器和配对统计，修正离线专家close/release的固定等待：连续0.5秒满足稳定条件就结束，原8秒是截止。重新生成中心和轴向±15毫米共5条完整专家，均物理成功、精确回放和前缀合同通过。</p>
+<p>对应五条旧示教在原近似判据下有4处等待/抬升冲突，新数据0处；共2321个有效视觉查询，其中2266个任务阶段查询用于训练。没有改写原目标或实际排除样本，也不据此证明全部时序歧义消失。</p>
+<p>保存当前相机下96个原模型pre-GRASP查询，逐条重建曝光、反馈和上一命令，20×8预测最大差0。单组1000次更新、学习率为原初始组值1/4，70个允许张量中52个改变，冻结参数和缓冲未变。新模型SHA为：</p>
+<pre><code class="language-text">eec22ca8066e122c2fd130ff1c2931275fd2db4b931ffdac105221f3b39330c4
+</code></pre>
+<h3 id="heading-67">20.2 同一运行时的实际完整对照</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>旧1a28</th>
+<th>本轮微调</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9000中心</td>
+<td>完整成功</td>
+<td>GRASP后附着杯底检查停止</td>
+</tr>
+<tr>
+<td>9005对角偏移</td>
+<td>抓后停止</td>
+<td>抬升205.15毫米、搬运194.93毫米，进入RELEASE后蓝卡几何拒绝，未完整退出</td>
+</tr>
+<tr>
+<td>9006对角偏移</td>
+<td>完整成功</td>
+<td>未确认抓取前低于原抓取底限</td>
+</tr>
+<tr>
+<td>9400新位置</td>
+<td>未重跑</td>
+<td>预测抓前碰杯，停止</td>
+</tr>
+<tr>
+<td>9401新位置</td>
+<td>未重跑</td>
+<td>GRASP后附杯检查停止</td>
+</tr>
+</tbody>
+</table>
+<p>旧模型回归2/3，新模型回归0/3、新位置0/2；原模型三个场景共18组数组与封存记录完全一致，基线没有变化。本轮权重拒绝采用，没有继续追加第二组训练。<a href="../nero_act_event_finetune_20261024/README.md" title="事件示教微调终态">S50</a></p>
+<h3 id="heading-68">20.3 退化原因的证据层次</h3>
+<p><strong>已经确认：</strong> 训练输入上的首起抬探针微调前后都5/5；说明原模型原本就能响应这些理想专家状态。本轮训练没有直接解决全部实际闭环失败。更新还涉及Transformer、状态输入投影和输出头，不只是改变闭爪一条数值。</p>
+<p><strong>已经确认：</strong> 保持只覆盖中心96个查询的前2点；最大关节变化约1.198毫弧度、夹爪0.0384毫米。这个局部保持结果不足以保证多个杯位的整段接近和后续接触不变。实际9006由成功变成低位预测被拒绝。</p>
+<p><strong>机制证据：</strong> 新9000实测开口73.775毫米、首目标66.233毫米，夹持差7.542毫米；首目标TCP向上0.557毫米。附着状态已冻结为airborne=true，但当前又有桌面支撑；名义杯底−23.862微米，首扫掠样本−5.312微米，仍低于−1微米线而拒绝。离线只改变airborne假设时，同一向上前缀可通过严格脱离检查；这是诊断反事实，原保护与实际结果均未改。</p>
+<p><strong>合理推测而非唯一因果证明：</strong> 用较少、较理想的新示教更新共享策略，加上保持覆盖不完整，带来行为遗忘和闭环状态漂移。新训练只使用5条完整位置示教，未重放原初始化数据中的3条恢复示教；这增加了覆盖不足的风险，但尚未用单因素对照量化各项贡献。</p>
+<p>这轮实验设计的不足，是把“示教更一致”当作训练入口，却没有建立足够强的完整行为保持门槛。不能因为数据QC或20项测试通过就采用新模型。</p>
+<h3 id="heading-69">20.4 独立复核与记录限制</h3>
+<p>一次独立只读复核无Critical/Important，7项新测试与13项原保护测试共20通过。两个Minor：评估自动结束哈希集合漏了实际13项XML/STL，作者在交付前额外全量核对这些资产未变；两个新位置协议顶层继承train元数据，但实际训练只读独立data manifest，没有样本泄漏。保留原协议和失败记录，没有在运行中改写证据。<a href="../nero_act_event_finetune_20261024/README.md" title="事件示教微调终态">S50</a></p>
+<h2 id="heading-70">二十一 问题与修复台账</h2>
+<p>“实现已修复”表示具体缺陷有复现与回归；“任务仍失败”表示该修复没有使完整抓放通过，两者可以同时成立。</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>当时采用的诊断或修复</th>
+<th>截至当前的状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>虚拟控制器成功但实体可能没动</td>
+<td>核对反馈发布者，SDK与ROS交叉验证，实际位移记录</td>
+<td>基础运动链路证实工作过，后续仍须逐次看真实反馈</td>
+</tr>
+<tr>
+<td>旧模型现场起点分布不同</td>
+<td>保存真实起点，重建场景、数据和配套统计</td>
+<td>早期大跳变不再直接下发，但新场景泛化仍不足</td>
+</tr>
+<tr>
+<td>绝对目标被当成增量</td>
+<td>明确8维动作和读出合同，禁止执行端重复累加</td>
+<td>接口已明确，各版本仍须按schema加载</td>
+</tr>
+<tr>
+<td>单指位移与两指总开口混淆</td>
+<td>统一gripper_total_width与米制单位</td>
+<td>结构检查存在，真实开度上限/命令历史仍需核对</td>
+</tr>
+<tr>
+<td>相机倒装、像素缩放和光学方向混用</td>
+<td>分开180°像素约定、K缩放、外参方向和XYZ向量</td>
+<td>数值适配已测试，独立空间精度未整体验收</td>
+</tr>
+<tr>
+<td>YOLO框边漂导致杯位变化</td>
+<td>杯身份与局部黄色真实轮廓共同定位</td>
+<td>固定场景改善，杯把/遮挡还未充分覆盖</td>
+</tr>
+<tr>
+<td>手机、显示器蓝色干扰</td>
+<td>现场移开干扰；工作区几何诊断及唯一目标检查</td>
+<td>没有无条件接受多个蓝块，复杂实景前端仍未合格</td>
+</tr>
+<tr>
+<td>同一蓝卡被遮成多块</td>
+<td>当前帧边界、名义尺寸和可见边支持解释</td>
+<td>多个仿真场景恢复，松爪阶段仍有拒绝</td>
+</tr>
+<tr>
+<td>相机或目标未在画面内</td>
+<td>拒绝截断/缺失目标，保存原图</td>
+<td>没有拿旧坐标补成当前观测</td>
+</tr>
+<tr>
+<td>每10帧采样漏掉阶段首态</td>
+<td>关键阶段首20帧补高频观测和RGB</td>
+<td>首态覆盖修复，完整任务未随之自动成功</td>
+</tr>
+<tr>
+<td>prior-only与CVAE训练描述混淆</td>
+<td>审计后验参数/KL，另行恢复后验训练对照</td>
+<td>后验路径修好；它不是所有失败的唯一解释</td>
+</tr>
+<tr>
+<td>95毫米限幅造成闭爪零梯度</td>
+<td>限幅前辅助监督和后续非线性头</td>
+<td>固定输入学习得到改善，闭环仍可能退化</td>
+</tr>
+<tr>
+<td>辅助监督坐标错误</td>
+<td>反馈tanh读出逆像与部署映射配套</td>
+<td>有直接数值复现和修复</td>
+</tr>
+<tr>
+<td>完整与恢复示教速度尺度不同</td>
+<td>统一时序/速度重新跑物理，不插值伪造标签</td>
+<td>数据一致性改善，行为仍需闭环验收</td>
+</tr>
+<tr>
+<td>前2点与后18点梯度冲突</td>
+<td>对实际执行前缀做监督，分别分析动作块</td>
+<td>特定冲突减少，不能保证所有状态兼容</td>
+</tr>
+<tr>
+<td>夹爪块内闭合，重查询却回退</td>
+<td>因果上一命令增量头，保持物理边界</td>
+<td>三失败输入与六项取得明显改善，完整泛化未通过</td>
+</tr>
+<tr>
+<td>名义保持梯度压过任务学习</td>
+<td>小学习率、梯度比例上限、分组核对</td>
+<td>保持指标改善，但不是Adam更新效果或全任务保证</td>
+</tr>
+<tr>
+<td>微调破坏接近</td>
+<td>冻结范围、保存真实单帧基线、保持参考、原场景回归</td>
+<td>反复出现，尚未建立足够强的多场景保持门槛</td>
+</tr>
+<tr>
+<td>批量与单帧/内存布局数值不同</td>
+<td>单帧部署路径复现，channels-last一致</td>
+<td>保持基线差0后才训练</td>
+</tr>
+<tr>
+<td>恢复快照丢速度/队列/参考</td>
+<td>保存完整物理状态及控制状态，精确重放</td>
+<td>恢复数据更可信，不等于高位自主任务通过</td>
+</tr>
+<tr>
+<td>初始源位附杯模型过时</td>
+<td>改用当前配对杯体/法兰位姿与离桌锁存</td>
+<td>原参考偏差修正；支撑状态切换仍需复核</td>
+</tr>
+<tr>
+<td>首目标向上仍触发桌面检查</td>
+<td>逐扫掠检查杯体最低点、姿态和附着状态</td>
+<td>不能只看TCP上升；不通过取消地板保护处理</td>
+</tr>
+<tr>
+<td>同观测静止等待与抬升标签冲突</td>
+<td>采样过滤、事件结束示教、独立近似审计</td>
+<td>原判据冲突减少，未证明所有可观测性问题解决</td>
+</tr>
+<tr>
+<td>真实图像定位与ACT包名冲突</td>
+<td>定位进程隔离，绑定帧和时间信息</td>
+<td>真实只读接口恢复，完整前端资格仍未取得</td>
+</tr>
+<tr>
+<td>冷启动/反馈就绪/确认超时</td>
+<td>预热、反馈等待、回执和时间戳审计</td>
+<td>若干具体故障修复，不能泛称所有时效已解决</td>
+</tr>
+<tr>
+<td>第67点命令过期</td>
+<td>保留250毫秒保护，记录发送前各窗口</td>
+<td>直接拒绝原因明确，偶发延迟的组件贡献仍待定位</td>
+</tr>
+<tr>
+<td>状态2及模式切换</td>
+<td>只读策略与硬件保护分开，记录真实状态</td>
+<td>不伪造状态0；模式变化需要重新核对起点</td>
+</tr>
+<tr>
+<td>反复要求杯位或尺寸恢复</td>
+<td>按旧参考核对，后转向位置条件ACT</td>
+<td>固定回放的局限明确，尚未达到换位直接在线抓放</td>
+</tr>
+<tr>
+<td>真实记录动作标签不符合当前合同</td>
+<td>检查HDF5 action、qpos及录制源码</td>
+<td>已发现，尚不能直接把旧文件作为当前目标命令监督</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heading-71">二十二 当前泛化能力不足的原因</h2>
+<h3 id="heading-72">22.1 有位置扰动数据不等于覆盖了目标工作区</h3>
+<p>项目早期确实生成过±30毫米位置及起点扰动，不能说从未做位置随机化。但旧相机数据、新外参、不同TCP假设、不同模型和协议属于不同分布；它们不能简单累加成“当前模型已经见过足够多新场景”。</p>
+<p>新相机阶段主要完整位置覆盖是中心和四个轴向±15毫米点，目的首先是恢复当前场景。二维斜向组合、起点变化、杯子朝向、蓝卡朝向和遮挡组合仍覆盖不足。后续缩小数据域继续微调，还可能遗忘原有恢复行为。</p>
+<h3 id="heading-73">22.2 输入位置不等于动作真正依赖位置</h3>
+<p>15维已经有相对TCP坐标，但模型仍可主要依赖关节姿态或图像中的阶段线索预测一条常见轨迹。同一姿态不同杯位的对照已经测出某些位置响应远小于教师。训练误差较小，并不证明策略学会了正确条件依赖。</p>
+<p>输出仍为绝对关节目标，目标移动不是给七轴统一加同一个位移。末端位置、姿态和整臂关节冗余需要共同调整；相对坐标只是提供信息，不自动赋予位置等变性。</p>
+<h3 id="heading-74">22.3 感知误差与物体变化处于同一量级</h3>
+<p>当物体只移动一厘米，而遮挡下杯底误差已达到8毫米，模型可能得到错误的对中/抓高条件。相机视角投影匹配也不能消除TCP、杯柄、杯口和桌面模型误差。</p>
+<h3 id="heading-75">22.4 理想轨迹与策略访问状态不同</h3>
+<p>教师在理想对中状态知道下一步，策略自己的前序误差会把系统带到训练覆盖之外。后续又遇到新遮挡、新夹持差和新接触，误差可能继续传播。补失败状态的专家纠正，比只重复理想成功轨迹更直接；这与模仿学习中访问状态分布变化的经典问题一致，但本项目仍需用具体对照验证。<a href="https://arxiv.org/abs/1011.0686">DAgger原论文</a></p>
+<h3 id="heading-76">22.5 失败还包含保护与观察器的拒绝</h3>
+<p>位置改变后失败可能是策略走偏，也可能是蓝卡定位拒绝，或附着支撑状态使原保护拒绝。不能把这些都记成“ACT完全没有泛化”，更不能靠忽略观察器/保护来声称泛化实现。</p>
+<p>最终目标应是：在预先明确、已验证的工作区内，当前真实图像和反馈直接进入ACT，执行短段再观察，完整抓放在未训练位置上通过。仿真用于训练、诊断和版本验收；每次现场执行不再为该杯位重新生成整条任务参考。</p>
+<h2 id="heading-77">二十三 真机示教微调能改善什么 不能替代什么</h2>
+<h3 id="heading-78">23.1 有望改善的部分</h3>
+<ul>
+<li>真实杯子材质、杯把、阴影、显示器和夹爪遮挡等图像分布。</li>
+<li>真实伺服的滞后、关节反馈与命令之间的差别。</li>
+<li>实际杯壁接触、夹爪开度与命令差、抓稳到起抬、落桌到释放的过渡。</li>
+<li>真实不同杯位下的接近路径与整臂协同，而不只模仿同一条仿真参考。</li>
+<li>策略有偏时，由操作者或教师提供正确恢复后续，补足理想轨迹之外的状态。</li>
+</ul>
+<p>这些是采用真机示教的理由，不是采集后保证成功的承诺。</p>
+<h3 id="heading-79">23.2 真机示教不会自动修好的部分</h3>
+<p>动作标签定义错误、关节顺序或单位错误、相机时间配对错误、未来命令泄漏、运行保护的状态机缺陷，不会因为数据是真实采集就消失。</p>
+<p>如果15维前端在杯被遮挡时仍输出错位或拒绝，新RGB示教也不能直接把缺失几何填出来。应该保留原始RGB-D，统一训练与推理前端；若要改成另一种观测结构，需要另做明确的模型/接口方案，而不是暗中补零或填旧杯位。</p>
+<p>真机示教可以学习实际运动，但不能把未验证的TCP/相机几何写成已测量。现有新手眼及历史样本优先复用；如后续数据审计定位到具体缺项，只补缺项，不重复整套人工测量。</p>
+<h2 id="heading-80">二十四 现有真实数据盘点与可复用性</h2>
+<p>用户随后给出“project/nero下的act中”。已定位项目为<code>/home/user/projects/nero</code>，<code>src/act</code>是代码，实际示教在下表两个data目录，共79份，与上一轮盘点的旧资料一致。已对这批文件完成本节后述的结构、标签和抽样图像审计；未发现另一批新HDF5示教。详见<a href="evidence/nero-act-review-20261024/user-specified-data-audit.md">本轮指定目录审计</a>。<a href="evidence/nero-act-review-20261024/user-specified-data-audit.json" title="用户指定目录后79份示教详细核验">S66</a></p>
+<h3 id="heading-81">24.1 已知候选数据</h3>
+<table>
+<thead>
+<tr>
+<th>资料</th>
+<th>数量与性质</th>
+<th>当前可复用范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/home/user/projects/nero/data/act_dual_fixed/</code></td>
+<td>62份真实HDF5，均标记yolo_teacher_policy</td>
+<td>真实教师图像、轨迹和夹爪事件候选</td>
+</tr>
+<tr>
+<td><code>/home/user/projects/nero/data/act_dual_fixed_destination/</code></td>
+<td>17份真实HDF5，均为同类教师；历史筛选仅0～8共9份valid</td>
+<td>可做旧场景筛选，valid不等于当前完整任务成功</td>
+</tr>
+<tr>
+<td>10月16日execution_04</td>
+<td>1份完整监督MoveIt抓放记录</td>
+<td>成功物理动作和视觉资料，不是现成合格15维目标命令监督</td>
+</tr>
+<tr>
+<td>v9及10月16日现场capture</td>
+<td>两个已知根目录共15份observations.npz，motion_sent=false</td>
+<td>静止观测、外观与时间诊断，不能当运动示教</td>
+</tr>
+<tr>
+<td>10月16日另5份短HDF5</td>
+<td>每份17～19帧，只读记录器验证</td>
+<td>文件结构与采集联调，不能计完整示教</td>
+</tr>
+<tr>
+<td>ACT执行失败日志</td>
+<td>有预测、反馈、前命令、保护后目标和部分回执</td>
+<td>失败状态定位；失败动作不能直接当正确专家标签</td>
+</tr>
+</tbody>
+</table>
+<p>79份是上述两个旧数据目录实际文件总数。joint55、merged等manifest引用已有文件，不能重复累加；部分旧manifest引用的文件已不存在。79份没有统一的逐条task_success字段，不能称为79条合格成功演示。<a href="../docs/evidence/nero-act-review-20261024/real-data-inventory.json" title="本次旧真实数据独立盘点">S26</a></p>
+<h3 id="heading-82">24.2 79份旧数据的动作语义</h3>
+<p>它们均声明<code>future_measured_qpos_plus_gripper_target</code>，而不是实际提交目标日志：</p>
+<ul>
+<li>20份使用action_lead_steps=2，即20Hz下未来100毫秒的实测关节。</li>
+<li>其余59份使用action_lead_steps=0；逐文件核对，action前七维与同帧qpos完全相同。</li>
+<li>qpos是[T,7]，夹爪实测另存[T,1]，action为[T,8]。</li>
+</ul>
+<p>录制源码先读取关节反馈，再由episode_io按前视索引拼接关节与夹爪目标。<a href="/home/user/projects/nero/src/act/record_yolo_episode.py" title="旧教师记录器标签构造">S63</a> <a href="/home/user/projects/nero/src/act/episode_io.py" title="旧HDF5动作前视定义">S64</a></p>
+<p>这种“实测轨迹模仿”可以服务另一种明确的训练定义，但不能未经转换用于当前“预测实际下发绝对目标”的任务。尤其同帧action=qpos会使关节监督指向保持当前位置；把它简单装进当前残差读出和前两点损失，会强化停滞。</p>
+<p>不能悄悄改名为submitted_absolute_target。若只能拿到实测轨迹，应明确设计未来状态标签的时间对齐、实际速度和servo跟踪目标语义，并独立检验；若能补到命令日志，优先使用实际提交/执行的命令链。</p>
+<h3 id="heading-83">24.3 10月16日成功记录为什么仍不能直接训练</h3>
+<p>该HDF5共9793帧，约489.60秒、20Hz。前七维action与同帧qpos逐元素相同，属性task_success仍为unreviewed；外部acceptance文件另行确认了物理成功，并明确ACT没有参与这次抓取、包含人工等待、独立训练QC未批准。<a href="../nero_pick_place_20261016/acceptance.json" title="完整教师实物抓放验收">S07</a> <a href="../docs/evidence/nero-act-review-20261024/real-data-inventory.json" title="本次旧真实数据独立盘点">S26</a></p>
+<p>约84.6%相邻帧的最大关节变化小于1e−4 rad，包含大量阶段等待。直接全量学习会让静止占据很大监督比例。应该保留等待和确认原始信息，训练视图再按动作、过渡和静止分组采样，不能把长时间等待当成模型必须“学会重复等待数百次”。</p>
+<p>相机记录以主机采集时间为主，并非已验证的设备曝光到机器人时钟映射。3次夹爪意图事件也不等于真正发送回执；缺少关节提交目标与夹爪回执，无法严格构造当前15维的因果命令历史。</p>
+<h3 id="heading-84">24.4 旧数据与最新相机版本</h3>
+<p>10月16日使用旧外参，新1a28阶段使用10月23日候选；旧世界坐标不能直接搬到新配置。旧640×360 RGB可以做外观审查或按约定预处理，却不能补出最新RGB-D候选需要的1280×720同曝光XYZ和置信度。</p>
+<p>旧8维文件还缺当前6维几何及有效性字段。可以在图像、内参、外参和模型假设充分可核对时离线派生，不能直接加6列零就称15维数据。当前cup/card前端若拒绝对应帧，该帧应保留并标无效，而不是填上仿真真值或历史坐标。</p>
+<h3 id="heading-85">24.5 用户指定目录后的补充核验</h3>
+<p>79份共56419帧、约49.18GB。全部数值有限、长度对齐、时间戳严格递增；每条每路首中末共474张抽查图像可以解码。各条中位采样间隔49.996～50.001毫秒，最长间隔50.860毫秒。79份均有闭爪后再张爪的目标事件，但没有逐条统一task_success验收；这些检查不等于全部图像和任务已通过。<a href="evidence/nero-act-review-20261024/user-specified-data-audit.json" title="用户指定目录后79份示教详细核验">S66</a></p>
+<p>旧加载器本来支持七轴前视，固定目标微调配置使用8帧；因此原始同帧action=qpos不等于旧训练视图一定是保持标签，也不能据此把全部历史失败归到这批数据。当前直接接入仍有合同差异：旧观测8维，可选整条固定base坐标成为14维；当前15维另需因果命令上下文和逐帧相对视觉几何。</p>
+<p>这79份没有原始深度/XYZ、设备曝光时间、提交回执或标定绑定属性。camera_0是ZED左图，camera_1是独立USB相机；元数据p95取帧主机时间差30.30～60.19毫秒，不代表曝光精确同步。原始位置标签1组52条、2组7条、未标20条，无3组标签；这提示分组不平衡，不能直接推出只有两个实物位置。</p>
+<p>7份旧manifest存在重复引用、缺失路径及不同用途的筛选；joint55与固定目标9条清单对8条destination的取舍不同，后者是固定蓝卡范围筛选，不是已证实抓取失败。本轮没有擅改旧清单，也没有启动训练。未来1/2/4/8帧反馈切片的算术探针已保存，可用于后续明确的未来状态模仿对照，不能冒充实际提交命令。<a href="evidence/nero-act-review-20261024/user-specified-data-audit.json" title="用户指定目录后79份示教详细核验">S66</a></p>
+<h3 id="heading-86">24.6 已完成现有资料的离线训练视图适配</h3>
+<p>用户随后要求“基于现有资料完成适配”。已在独立目录生成79份<code>real_rgb8_future_feedback_v1</code>视图：从原始qpos统一前视2帧，夹爪保留原意图及事件时间，删除末尾无未来反馈的行。原文件未修改，图像以VDS引用；源丢失或变化时由专用加载器拒绝。详见<a href="../nero_act_real_data_adapter_20261024/README.md">适配目录与使用说明</a>。<a href="../nero_act_real_data_adapter_20261024/results.json" title="79份真实资料离线适配实际结果">S67</a></p>
+<p>派生56,261帧，合计54,760个完整20点候选窗口；沿用旧清单37 train/10 val，32 reserve。统计只使用train，旧split为episode留出，不代表杯位独立测试。独立核对79/79关节、夹爪、状态和时间精确匹配，158对原图/VDS图像一致。真实batch经既有ACT的新初始化网络CPU前向产生[2,20,8]且loss有限；没有optimizer更新、没有加载或修改当前checkpoint。<a href="../nero_act_real_data_adapter_20261024/results.json" title="79份真实资料离线适配实际结果">S67</a></p>
+<p>这完成了可供辅助预训练/适配研究使用的<strong>8维数据准备与网络接口验证</strong>。它没有把缺失信息补造成15维，原15维审计仍拒绝；当前15维在线迁移和真机抓放仍未验收。若要用这些RGB资料影响主模型，需要明确辅助任务或有限观测适配，并验证主模型原完整行为保持，不能直接把8维batch送给1a28。<a href="../nero_act_real_data_adapter_20261024/results.json" title="79份真实资料离线适配实际结果">S67</a></p>
+<h3 id="heading-87">24.7 已完成真实视觉辅助A/B，收益不足，未采用</h3>
+<p>用户要求“继续调整”后，实现了冻结原1a28主体和夹爪增量头、零初始化视觉残差层、独立real8辅助头。真实辅助任务仅用RGB与8维实测状态预测20点未来实测七轴及原夹爪意图，不把未来反馈改称已发命令，也没有补造缺失15维输入。A只训练辅助头，B同时训练残差层。使用同初始头、同200×16批次，实际各200次更新；原模型参数及buffer更新为0。<a href="../nero_act_real_visual_bridge_20261024/run_03/results.json" title="真实RGB8辅助A/B与主15维保持结果">S68</a></p>
+<p>真实输入来自原37 train/10 val，32 reserve未用；按记录事件取370 train/100 val窗口，是episode留出，不是位置泛化验收。5条完整15维示教覆盖8阶段，原有效性过滤后取120特征保持点、120不重叠检查点，再加96个历史访问接近输入，合计216检查全部20点。GPU当前不可用，采用CPU同权重；历史CUDA与CPU微小数值差已记录，前后均按CPU基线比较。<a href="../nero_act_real_visual_bridge_20261024/run_03/results.json" title="真实RGB8辅助A/B与主15维保持结果">S68</a></p>
+<table>
+<thead>
+<tr>
+<th>第200步留出指标</th>
+<th style="text-align:right">A：辅助头</th>
+<th style="text-align:right">B：辅助头＋视觉层</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>辅助损失</td>
+<td style="text-align:right">0.127269104</td>
+<td style="text-align:right">0.127255574</td>
+</tr>
+<tr>
+<td>未来七轴状态MAE，度</td>
+<td style="text-align:right">0.564745</td>
+<td style="text-align:right">0.564778</td>
+</tr>
+<tr>
+<td>夹爪意图MAE，毫米</td>
+<td style="text-align:right">21.2082</td>
+<td style="text-align:right">21.2162</td>
+</tr>
+<tr>
+<td>相关目标点上的夹爪意图分类</td>
+<td style="text-align:right">90.55%</td>
+<td style="text-align:right">90.55%</td>
+</tr>
+</tbody>
+</table>
+<p>两者初始损失均为0.277539015，说明辅助任务可学习；但B比A仅改善<strong>0.010631%</strong>，低于预定5%。B的原15维all20最大变化为6.25844e−5 rad、1.51262e−6 m，低于本轮0.001 rad/0.001 m保持界限。保持通过不能覆盖视觉收益不通过，故<code>policy_adopted=false</code>。90.55%不是物理抓取成功率；216个固定输入的保持也不是完整闭环行为通过。<a href="../nero_act_real_visual_bridge_20261024/run_03/results.json" title="真实RGB8辅助A/B与主15维保持结果">S68</a></p>
+<p>之后只读做10次图像/状态排列：B图像错配平均损失0.128030808，较原值约增0.609%；状态条件错配为0.315226391，约增147.71%。最终投影特征空间重排的最大预测差仅4.7684e−7。这说明<strong>本轮辅助头</strong>更依赖状态，且逐点视觉变换加全局池化没有显式保留空间顺序。原ACT仍保留空间特征和位置编码，不能把该诊断写成“ACT没有视觉”或历史全部失败的根因。<a href="../nero_act_real_visual_bridge_20261024/input_intervention_diagnostic.json" title="真实辅助头只读图像、状态及空间扰动诊断">S69</a></p>
+<p>本轮还修复了两个训练前工程问题：原checkpoint为完整<code>FrozenIncrementPolicy</code>，必须连同原夹爪头严格加载；保持数据必须先按原视觉有效性过滤再抽样。两次失败均0更新，记录未删除。新增15项测试和原适配器15项回归通过，独立复核无需要修改的正确性/泄漏发现。完整代码、协议、结果、局限见<a href="../nero_act_real_visual_bridge_20261024/README.md">本轮说明</a>。下一轮优先验证保留空间位置的辅助读出，本轮没有追加预算、没有完整仿真或真机动作，原1a28未替换。</p>
+<h2 id="heading-88">二十五 新一批真机示教的审计清单</h2>
+<p>本轮已对用户指出目录完成结构、标签、时间和抽样图像检查，并生成24.6节的独立8维训练视图。逐条完整任务、可追溯标定、当前15维适配和因果历史仍未验收；后续新增资料继续按以下清单检查。</p>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>必须回答的问题</th>
+<th>不合格时怎样处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据身份</td>
+<td>哪台机械臂、哪一侧、哪个夹爪、哪个任务、由谁或哪个教师控制</td>
+<td>先分类，不混成同一任务</td>
+</tr>
+<tr>
+<td>动作来源</td>
+<td>实际下发目标、保护后目标、未来反馈，还是同帧qpos</td>
+<td>保留原语义；没有依据不改报命令日志</td>
+</tr>
+<tr>
+<td>关节顺序与单位</td>
+<td>七轴顺序、rad/deg、米/毫米、总开口/单指</td>
+<td>显式转换并保留原值和转换版本</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>设备曝光、主机接收、反馈源时间、提交与ACK时间是否可关联</td>
+<td>先保存原始流与误差，不伪装硬件同步</td>
+</tr>
+<tr>
+<td>图像</td>
+<td>RGB/BGR、分辨率、180°是否已处理、是否真实新曝光</td>
+<td>重复帧单独标记，不能冒充20Hz新画面</td>
+</tr>
+<tr>
+<td>标定</td>
+<td>相机序列号、内参、外参方向、TCP版本、桌面假设</td>
+<td>不混合不同版本的世界坐标</td>
+</tr>
+<tr>
+<td>初始历史</td>
+<td>曝光前最后确认的夹爪目标有没有回执</td>
+<td>缺历史则拒绝该上下文，不拿未来命令补</td>
+</tr>
+<tr>
+<td>成功</td>
+<td>杯是否离桌、搬到目标、由桌面承托、松开并退出</td>
+<td>失败保留，不自动计成功示教</td>
+</tr>
+<tr>
+<td>恢复片段</td>
+<td>起点是否含真实姿态、夹持和已有权限，后续是否正确</td>
+<td>未接触的偏差优先采；不要故意制造危险碰撞</td>
+</tr>
+<tr>
+<td>分组</td>
+<td>同一episode、杯位、session是否跨训练/验证</td>
+<td>按组拆分，不随机拆相邻帧</td>
+</tr>
+<tr>
+<td>覆盖</td>
+<td>位置、起点、杯把/蓝卡朝向、遮挡、速度、接触阶段是否变化</td>
+<td>补实际缺口，避免重复同一路径堆帧</td>
+</tr>
+<tr>
+<td>有效性</td>
+<td>缺图像/缺反馈/超时/定位拒绝有无明确掩码</td>
+<td>保留原始数据和拒绝原因，统计分母不删失败</td>
+</tr>
+</tbody>
+</table>
+<p>审计输出应包含：文件目录清单、每条长度与阶段、动作语义、时间质量、标定版本、重复/等待比例、成功/失败分组、适配15维的缺项，以及可以直接用、需要转换、只能诊断三类结论。</p>
+<h2 id="heading-89">二十六 真机示教采集的最小补充链路</h2>
+<p>这一节是后续方案，尚未启动新采集、训练或硬件控制。优先用用户已有资料，只在确实缺少字段时补录。</p>
+<h3 id="heading-90">26.1 优先复用现有控制者</h3>
+<p>项目存在Leader记录器和监督教师记录骨架，未发现一条已核实可直接用于本次全部功能的独立通用teleop入口。应先确认已有控制器是否能导出真正目标/回执；如果可以，让现有控制者完成动作，记录器只接收，不另造第二个CAN发送者。<a href="/home/user/projects/nero/src/act/record_episode.py" title="现有Leader示教记录入口">S65</a></p>
+<p>现有<code>record_episode.py</code>可能进入Leader/Follower并操作夹爪，它不是只读命令，不能为了看看界面就自动运行。用户本次提供的是数据位置，并不等于授权切模式或执行动作。</p>
+<p>如果由手工拖动产生示教而没有实际电机目标流，则必须选择清楚的未来状态模仿语义；它与当前命令预测模式不同，需要专门转换和对照。不要继续把同帧qpos直接称为目标命令。</p>
+<h3 id="heading-91">26.2 记录钩子应放在真正发送边界</h3>
+<p>保存教师原目标、保护后提交目标、SDK调用起止、发送端提交、控制器接收或接受ACK，以及实际执行反馈和拒绝原因。每个确认都要注明来自哪一层；SDK函数返回、发送端提交或控制器ACK均不能单独证明物理动作已经执行完成。相机线程复制qpos不能取代动作记录。被保护拒绝而未发送的目标要单独标明，不能让训练以为机器人已经执行。</p>
+<p>一次完整episode至少应包含以下信息，具体文件布局可沿用现有HDF5，不要求另造格式。</p>
+<pre><code class="language-text">metadata
+  robot_id camera_serial calibration_hash tcp_profile observer_hash
+  demonstration_mode action_semantics session_id position_group
+  task_success operator_review initial_command_receipt
+
+raw_camera_stream
+  frame_id device_exposure_timestamp host_receive_monotonic
+  raw_rgb raw_depth_or_xyz confidence intrinsics rotation_convention
+
+raw_feedback_stream
+  feedback_source_timestamp host_receive_monotonic
+  joint_positions gripper_width controller_health
+
+raw_command_stream
+  command_id teacher_target protected_submitted_target
+  send_start sdk_return transport_submit_time
+  ack_time ack_source accepted execution_feedback rejection_reason
+
+derived_training_view
+  matched_frame_id observed_state previous_confirmed_gripper_command
+  cup_and_card_relative_features visual_valid quality_reason
+  future_submitted_targets action_padding source_group
+</code></pre>
+<h3 id="heading-92">26.3 时间配对原则</h3>
+<p>先建立并保留设备时钟到主机monotonic的映射及误差，再按曝光时刻匹配反馈；若只能按接收时间配对，就明确标为接收配对，不能伪装曝光同步。</p>
+<p>上一夹爪目标选择曝光前已确认的最后命令。未来监督目标应发生在这次观测之后；动作与反馈错一帧、把尚未提交目标当过去历史，会直接改变闭合进度的含义。</p>
+<p>ZED30Hz、反馈更高频、动作20Hz可以并存。保存原始异步流再派生训练视图，比把所有流强行写成“同一时间戳”更可审计。训练时执行前2点的标签间隔应匹配未来部署的实际节拍。</p>
+<h3 id="heading-93">26.4 视觉一致性原则</h3>
+<p>当前RGB-D候选没有整体通过且延迟偏高，因此不直接作为采集时唯一在线依赖。先完整保留RGB-D原始流，离线生成特征和质量标记；训练和部署最终要使用同一已验证前端。</p>
+<p>对只有RGB的旧记录，只有所选前端存在已验证的RGB-only路径时，才可离线派生对应特征；当前需要同曝光XYZ和置信度的RGB-D候选不能直接处理这些旧RGB记录，也不能补造缺失深度。对受遮挡阶段应真实保留无效情况，用于确定需要前端修正、其他可观测线索或额外数据的具体位置。</p>
+<h2 id="heading-94">二十七 建议的多位置真机微调试验</h2>
+<p>以下数量、比例和门槛是首轮实验建议，不是已经执行的工作，也不是保证泛化的最少数据定理。</p>
+<h3 id="heading-95">27.1 第一阶段 优先审计与复用已有数据</h3>
+<ol>
+<li>已定位79份旧真实教师资料并生成上节审计清单；接着核对逐条完整任务和不同位置的分组。</li>
+<li>用少量样例同时绘制qpos、提交目标、夹爪反馈/命令、图像时间，检查因果关系和停滞标签。</li>
+<li>核对新旧相机标定及帧方向；能重新派生特征的重算，不能的保留原域标签。</li>
+<li>先建立不更新权重的基线：同一真实记录输入的旧模型动作、位置敏感性、闭合推进、起抬与释放误差。</li>
+<li>数据不符合当前动作语义时，先完成转换方案或补日志，再训练。</li>
+</ol>
+<h3 id="heading-96">27.2 第二阶段 数据覆盖建议</h3>
+<p>优先在已有净空和可达工作区内选位置，不先承诺任意桌面位置。一个可操作的首轮分组是：</p>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>建议配置</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练完整示教</td>
+<td>8个杯位，每位2次，共16次</td>
+<td>覆盖中心、轴向和斜向，不全部是一条轨迹平移</td>
+</tr>
+<tr>
+<td>开发验证</td>
+<td>4个不同杯位，每位2次，共8次</td>
+<td>整个位置/episode留出，不随机拆帧</td>
+</tr>
+<tr>
+<td>冻结后的独立测试</td>
+<td>6个未用于修复的位置，每位2次，共12次</td>
+<td>不看结果后再把同一测试集称独立；若参与修复就转为开发</td>
+</tr>
+<tr>
+<td>恢复片段</td>
+<td>10～20段</td>
+<td>安全的横向偏差、夹稳起抬、承托释放和退出；每段有正确后续</td>
+</tr>
+</tbody>
+</table>
+<p>合计建议36次完整任务及恢复片段；如果现有文件已覆盖这些条件，可直接抵扣，不要求重新采同样数量。若现场成本较高，可先用少量高质量记录验证“确实能学到所缺依赖”，再决定扩数据；不把重复帧数当成独立示教数量。</p>
+<p>第一轮可保持蓝卡位置固定、重点改变杯位，先验收杯位泛化；之后另做蓝卡位置/朝向和机械臂起点变化，避免同时变化过多而无法定位原因。杯把朝向和主要遮挡要有记录，不假装圆柱几何覆盖所有实物外观。</p>
+<h3 id="heading-97">27.3 第三阶段 低预算微调与行为保持</h3>
+<p>初始化优先选择与当前相机和接口一致、仍保留成功行为的候选，不能继续从已拒绝的eec模型盲目加步。</p>
+<p>先冻结视觉骨干、CVAE和大部分策略，用小预算检查真实数据上的闭合推进、位置响应、起抬与释放是否可学习。输出层/夹爪头优先；如果同姿态不同杯位仍完全学不会，再明确设计有限输入投影或解码层解冻对照，不直接一次开放几十个共享张量。</p>
+<p>不能承诺“只训头就一定好”：历史受限头部也曾失败。选择参数范围需要由当前真实数据的机制探针与完整回归决定。</p>
+<p>混入当前相机下已有成功接近和完整后续行为作为保持，覆盖多个杯位及多个阶段；不只保中心96个前两点。若使用旧相机数据，应区分域并验证，不把旧世界坐标与新外参混合成无标记数据。</p>
+<p>先做约200～500次更新的小预算机制试验，权重和效果单独记录；机制通过后再声明下一组训练预算。检查真实标签上的误差、因果夹爪命令推进、低位净空与位置响应，以及原完整成功场景是否保持。训练损失下降、单个输入拟合好，都不是扩大预算的充分理由。</p>
+<h3 id="heading-98">27.4 第四阶段 完整评估与真机在线运行</h3>
+<p>评估必须覆盖抓取、离桌抬升、转运、目标承托、松爪、退出；任何一阶段停滞、拒绝、滑落或提前释放都计完整失败。开发与独立位置分别统计，失败仍保留在分母。</p>
+<p>物理接触前先验证观察器、命令合同、时间、起点和所有实时保护。进入已明确工作区后，目标链路是：</p>
+<pre><code class="language-text">真实当前图像/反馈 → 同一前端15维观测 → ACT新动作块
+          → 实时检查 → 执行短段 → 新观测 → ACT继续调整
+</code></pre>
+<p>验收期间不为每个杯位重生成完整仿真参考，也不用手写IK/闭爪接管后仍计ACT成功。仿真保留为版本测试和诊断工具，实时碰撞/接触检查继续存在。</p>
+<p>首次可沿用已有关键接触确认，避免每个小角度都询问；这些是有人监督的可行性试验，不提前宣称无人自主部署。异常停止后不自动重试、回位、使能或切模式。</p>
+<p>关于成功率，可以事先约定不少于20次不同位置完整试验、至少16次成功作为一个开发目标，但样本少时仍要报告逐位置结果和失败类型。具体阈值应与任务用途、当前几何和现场条件一起确定，不能为了让结果好看而在试验后修改。</p>
+<h2 id="heading-99">二十八 当前未解决问题及下一步优先级</h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>未解决问题</th>
+<th>先做什么以及判定依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0 数据</td>
+<td>已完成79份8维视图和辅助A/B；B视觉收益不足，当前15维及逐条任务验收仍未完成</td>
+<td>保留真实标签语义；下一轮验证有空间位置的辅助读出，不把缺失因果/几何填成假值</td>
+</tr>
+<tr>
+<td>P0 视觉</td>
+<td>遮挡杯位偏差、蓝卡朝向和释放后可见性</td>
+<td>用保存原始帧复现并验证留出帧，训练/推理同前端，不填真值或旧坐标</td>
+</tr>
+<tr>
+<td>P0 接触状态</td>
+<td>曾离桌冻结但当前又支撑的附着状态与微重叠</td>
+<td>从精确保存状态核对支撑、最小杯底、冻结时刻；保留地板和滑移保护</td>
+</tr>
+<tr>
+<td>P1 策略</td>
+<td>多位置反应弱、未对中先下降、访问状态偏离</td>
+<td>同姿态不同杯位成对探针，补安全恢复专家，独立位置完整回归</td>
+</tr>
+<tr>
+<td>P1 视觉训练</td>
+<td>新辅助头对状态更敏感，全局池化未保留明确空间顺序</td>
+<td>与保留空间位置的读出做匹配对照；先证明图像/杯位变化引起正确动作响应，再谈采用</td>
+</tr>
+<tr>
+<td>P1 保持</td>
+<td>局部微调破坏已有完整接近或后续动作</td>
+<td>多场景多阶段保持，限制更新范围，原成功案例不退化才考虑推广</td>
+</tr>
+<tr>
+<td>P1 时序</td>
+<td>最近发送前382毫秒超过250毫秒</td>
+<td>分段计时日志/反馈/调度与发送，保留过期拒绝和新鲜反馈，不刷新假时间戳</td>
+</tr>
+<tr>
+<td>P1 真机数据契约</td>
+<td>旧标签与当前submitted目标不同，夹爪意图缺回执</td>
+<td>接发送边界日志；不能从同帧qpos伪造已发命令</td>
+</tr>
+<tr>
+<td>P2 几何</td>
+<td>新手眼仍为候选、TCP仍名义，真实杯把/指面未有完整误差界</td>
+<td>优先复用现有原始标定与验证样本，出现具体矛盾再补具体缺项</td>
+</tr>
+<tr>
+<td>P2 工程审计</td>
+<td>版本分散、旧入口和测试元数据仍可能误导</td>
+<td>使用当前严格入口和来源索引；原始证据只读，结果字段分清complete/passed/success</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heading-100">二十九 复盘后的方法调整</h2>
+<ol>
+<li><strong>先识别失败属于哪一层。</strong> 没有真实运动、视觉无效、策略错误、接触状态、命令过期和标签错误，处理方式不同。</li>
+<li><strong>先验证真实失败输入，再扩大训练。</strong> 专家理想输入已正确时，应优先检查策略实际访问状态和前端，不能只重复理想示教。</li>
+<li><strong>把每次训练的假设缩小。</strong> 改采样、损失、学习率、冻结范围和前端同时发生时，整体改善或退化不能归给某一项。</li>
+<li><strong>保持覆盖完整行为。</strong> 接近首两点保持只是局部约束；完整抬升、转运、释放和退出也可能被共享权重改变。</li>
+<li><strong>新增位置才是泛化测试。</strong> 用过的失败案例进入修复后就是开发数据；相邻帧随机拆分也不是位置留出。</li>
+<li><strong>复用现场资料，减少重复要求。</strong> 检索标定、已录原图和真实命令，再指出确切缺项；不重复要求用户对同一个参考点测量。</li>
+<li><strong>把进程完成与任务完成分开。</strong> error=null、complete=true、测试全绿、模型能加载、控制器ACK，都不能单独证明杯子放到了蓝卡。</li>
+<li><strong>数据真实性与语义一起审计。</strong> 真机数据比仿真更接近现场，但错误标签或错配时间也会让策略学错。</li>
+</ol>
+<p>当前最值得继续的路线是：<strong>审计用户已有真机示教 → 补足真正命令和因果时序 → 统一已验证视觉输入 → 小预算真实数据微调与完整行为保持 → 未训练位置在线完整抓放验收。</strong> 这条路线正面针对当前泛化与迁移缺口，而不是继续要求每次摆回唯一杯位。</p>
+<h2 id="heading-101">三十 主要实验与证据索引</h2>
+<p>下列入口指向原实验报告、实际结果或当前实现；原实验的原始日志、模型和数据继续保留，没有被本报告覆盖。旧日期报告有自己的截止范围，当前终态以本报告对应章节及最新结果为准。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>内容</th>
+<th>文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S00</td>
+<td>历史ACT迁移总览</td>
+<td><a href="../nero_act_sim_to_real_full_process_20261018.md">nero_act_sim_to_real_full_process_20261018.md</a></td>
+</tr>
+<tr>
+<td>S01</td>
+<td>教师抓放与早期链路总览</td>
+<td><a href="../nero_sim_to_real_full_process_20261017.md">nero_sim_to_real_full_process_20261017.md</a></td>
+</tr>
+<tr>
+<td>S02</td>
+<td>真实只读采集</td>
+<td><a href="../nero_real_capture_v9/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S03</td>
+<td>V9域差异复核</td>
+<td><a href="../nero_act_v9_real_shadow_20261014/domain_alignment_review.json">domain_alignment_review.json</a></td>
+</tr>
+<tr>
+<td>S04</td>
+<td>原始动作就绪检查</td>
+<td><a href="../nero_act_response_20261016_onsite/full_execution_readiness_20261016.json">full_execution_readiness_20261016.json</a></td>
+</tr>
+<tr>
+<td>S05</td>
+<td>MoveIt真实链路</td>
+<td><a href="../nero_moveit_real_test_20261015/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S06</td>
+<td>空中ACT与时序</td>
+<td><a href="../nero_aligned_air_sequence_20261016_onsite/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S07</td>
+<td>完整教师实物抓放验收</td>
+<td><a href="../nero_pick_place_20261016/acceptance.json">acceptance.json</a></td>
+</tr>
+<tr>
+<td>S08</td>
+<td>完整ACT仿真训练</td>
+<td><a href="../nero_act_full_pick_place_20261017/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S09</td>
+<td>首次在线真机迁移</td>
+<td><a href="../nero_act_transfer_feasibility_20261017/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S10</td>
+<td>ACT仿真轨迹回放</td>
+<td><a href="../nero_act_sim_rollout_replay_20261017/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S11</td>
+<td>到抓取位但未闭爪的在线实验</td>
+<td><a href="../nero_act_transfer_completion_20261017/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S12</td>
+<td>run14位置泛化</td>
+<td><a href="../nero_act_generalized_pick_place_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S13</td>
+<td>run15接触恢复</td>
+<td><a href="../nero_act_contact_recovery_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S14</td>
+<td>run16视觉开关</td>
+<td><a href="../nero_act_failure_fix_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S15</td>
+<td>run17关键过渡采样</td>
+<td><a href="../nero_act_transition_fix_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S16</td>
+<td>run18下降恢复</td>
+<td><a href="../nero_act_alignment_recovery_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S17</td>
+<td>run19姿态损失</td>
+<td><a href="../nero_act_pose_objective_fix_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S18</td>
+<td>run20抓取状态恢复</td>
+<td><a href="../nero_act_grasp_state_recovery_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S19</td>
+<td>run21 CVAE后验</td>
+<td><a href="../nero_act_cvae_training_fix_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S20</td>
+<td>run22死梯度</td>
+<td><a href="../nero_act_gripper_gradient_fix_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S21</td>
+<td>run23夹爪输出行</td>
+<td><a href="../nero_act_gripper_head_fix_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S22</td>
+<td>run24非线性头</td>
+<td><a href="../nero_act_nonlinear_gripper_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S23</td>
+<td>run25阶段平衡</td>
+<td><a href="../nero_act_gripper_balanced_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S24</td>
+<td>run26连续接触采样</td>
+<td><a href="../nero_act_gripper_contact_focus_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S25</td>
+<td>run27固定场景头部</td>
+<td><a href="../nero_act_fixed_scene_heads_20261018/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S26</td>
+<td>本次旧真实数据独立盘点</td>
+<td><a href="../docs/evidence/nero-act-review-20261024/real-data-inventory.json">real-data-inventory.json</a></td>
+</tr>
+<tr>
+<td>S27</td>
+<td>15维视觉位置训练</td>
+<td><a href="../nero_act_visual_feedback_20261019/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S28</td>
+<td>15维完整评估</td>
+<td><a href="../nero_act_visual_validation_20261019/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S29</td>
+<td>接触采样修复</td>
+<td><a href="../nero_act_visual_contact_fix_20261019/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S30</td>
+<td>夹爪分支修复</td>
+<td><a href="../nero_act_visual_gripper_fix_20261019/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S31</td>
+<td>附着参考修复</td>
+<td><a href="../nero_act_visual_attachment_fix_20261019/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S32</td>
+<td>短历史A B结果</td>
+<td><a href="../nero_act_history_feedback_20261019/evidence/pilot_results.md">pilot_results.md</a></td>
+</tr>
+<tr>
+<td>S33</td>
+<td>逆像和恢复协议</td>
+<td><a href="../nero_act_contact_transition_fix_20261020/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S34</td>
+<td>过渡边界采样</td>
+<td><a href="../nero_act_contact_transition_balance_20261020/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S35</td>
+<td>接触快照恢复</td>
+<td><a href="../nero_act_contact_recovery_20261020/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S36</td>
+<td>执行前缀监督</td>
+<td><a href="../nero_act_prefix_supervision_fix_20261020/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S37</td>
+<td>接近快照恢复</td>
+<td><a href="../nero_act_approach_recovery_20261020/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S38</td>
+<td>受限输出微调</td>
+<td><a href="../nero_act_restricted_heads_20261020/evidence/results.md">results.md</a></td>
+</tr>
+<tr>
+<td>S39</td>
+<td>接近保持</td>
+<td><a href="../nero_act_approach_preservation_20261021/evidence/results.md">results.md</a></td>
+</tr>
+<tr>
+<td>S40</td>
+<td>学习率和优化控制</td>
+<td><a href="../nero_act_optimizer_control_20261021/evidence/results.md">results.md</a></td>
+</tr>
+<tr>
+<td>S41</td>
+<td>零更新根因核对</td>
+<td><a href="../nero_act_root_cause_20261021/evidence/findings.md">findings.md</a></td>
+</tr>
+<tr>
+<td>S42</td>
+<td>接触前缀修正</td>
+<td><a href="../nero_act_contact_prefix_repair_20261021/evidence/results.md">results.md</a></td>
+</tr>
+<tr>
+<td>S43</td>
+<td>分组夹爪损失</td>
+<td><a href="../nero_act_grouped_gripper_20261021/evidence/results.md">results.md</a></td>
+</tr>
+<tr>
+<td>S44</td>
+<td>命令增量夹爪头</td>
+<td><a href="../nero_act_command_increment_20261021/evidence/results.md">results.md</a></td>
+</tr>
+<tr>
+<td>S45</td>
+<td>起抬修正与单场景完整开发</td>
+<td><a href="../nero_act_transfer_resume_20261021/evidence/results.md">results.md</a></td>
+</tr>
+<tr>
+<td>S46</td>
+<td>新手眼接入</td>
+<td><a href="../nero_act_new_calibration_20261023/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S47</td>
+<td>固定1a28七场景</td>
+<td><a href="../nero_act_contact_escape_fix_20261023/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S48</td>
+<td>观测因果与RGB D核对</td>
+<td><a href="../nero_act_observation_repair_20261023/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S49</td>
+<td>最近真机接近演示</td>
+<td><a href="../nero_act_transfer_demo_20261023/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S50</td>
+<td>事件示教微调终态</td>
+<td><a href="../nero_act_event_finetune_20261024/README.md">README.md</a></td>
+</tr>
+<tr>
+<td>S51</td>
+<td>当前模型观测与读出定义</td>
+<td><a href="../nero_act_grouped_gripper_20261021/executor/model.py">model.py</a></td>
+</tr>
+<tr>
+<td>S52</td>
+<td>固定仿真相机定义</td>
+<td><a href="../nero_act_grouped_gripper_20261021/simulation/nero_scene_camera.py">nero_scene_camera.py</a></td>
+</tr>
+<tr>
+<td>S53</td>
+<td>真实状态与起始预测核验</td>
+<td><a href="../nero_act_start_output_review_20261021/review_01/verification.json">verification.json</a></td>
+</tr>
+<tr>
+<td>S54</td>
+<td>标定采样总记录</td>
+<td><a href="../nero_act_calibration_capture_20261022/session.json">session.json</a></td>
+</tr>
+<tr>
+<td>S55</td>
+<td>自动采样停止状态</td>
+<td><a href="../nero_act_calibration_capture_20261022/automatic_sampling_01/migration_stage_status.json">migration_stage_status.json</a></td>
+</tr>
+<tr>
+<td>S56</td>
+<td>位置条件修复与因果证据</td>
+<td><a href="../nero_act_position_response_repair_20261023/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S57</td>
+<td>追加3000步位置响应</td>
+<td><a href="../nero_act_position_response_continuation_20261023/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S58</td>
+<td>成对位置响应监督</td>
+<td><a href="../nero_act_paired_response_20261023/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S59</td>
+<td>全流程修正失败终态</td>
+<td><a href="../nero_act_full_flow_repair_20261023/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S60</td>
+<td>所有组保持范围试验</td>
+<td><a href="../nero_act_preservation_scope_20261023/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S61</td>
+<td>新相机1a28训练终态</td>
+<td><a href="../nero_act_new_handeye_policy_repair_20261023/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S62</td>
+<td>后续接触模型拒绝终态</td>
+<td><a href="../nero_act_new_handeye_contact_repair_20261023/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S63</td>
+<td>旧教师记录器标签构造</td>
+<td><a href="/home/user/projects/nero/src/act/record_yolo_episode.py">record_yolo_episode.py</a></td>
+</tr>
+<tr>
+<td>S64</td>
+<td>旧HDF5动作前视定义</td>
+<td><a href="/home/user/projects/nero/src/act/episode_io.py">episode_io.py</a></td>
+</tr>
+<tr>
+<td>S65</td>
+<td>现有Leader示教记录入口</td>
+<td><a href="/home/user/projects/nero/src/act/record_episode.py">record_episode.py</a></td>
+</tr>
+<tr>
+<td>S66</td>
+<td>用户指定目录后79份示教详细核验</td>
+<td><a href="evidence/nero-act-review-20261024/user-specified-data-audit.json">user-specified-data-audit.json</a></td>
+</tr>
+<tr>
+<td>S67</td>
+<td>79份真实资料离线适配实际结果</td>
+<td><a href="../nero_act_real_data_adapter_20261024/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S68</td>
+<td>真实RGB8辅助A/B与主15维保持结果</td>
+<td><a href="../nero_act_real_visual_bridge_20261024/run_03/results.json">results.json</a></td>
+</tr>
+<tr>
+<td>S69</td>
+<td>真实辅助头只读图像、状态及空间扰动诊断</td>
+<td><a href="../nero_act_real_visual_bridge_20261024/input_intervention_diagnostic.json">input_intervention_diagnostic.json</a></td>
+</tr>
+<tr>
+<td>S70</td>
+<td>保留1a28的CPU/Mesa完整抓放七场景验收</td>
+<td><a href="../nero_act_full_acceptance_20261024/run_01/acceptance.json">acceptance.json</a></td>
+</tr>
+<tr>
+<td>S71</td>
+<td>全历史根因结论与关键来源绑定</td>
+<td><a href="../nero_act_root_cause_audit_20261025/conclusions.json">conclusions.json</a></td>
+</tr>
+<tr>
+<td>S72</td>
+<td>同数值输入不同RGB的冻结模型只读对照</td>
+<td><a href="../nero_act_root_cause_audit_20261025/initial_image_probe.json">initial_image_probe.json</a></td>
+</tr>
+<tr>
+<td>S73</td>
+<td>68份训练HDF及旧夹爪净推进独立复算</td>
+<td><a href="../nero_act_root_cause_audit_20261025/training_readonly_rechecks.json">training_readonly_rechecks.json</a></td>
+</tr>
+<tr>
+<td>S74</td>
+<td>最新四个接触拒绝的逐插值FK复算</td>
+<td><a href="../nero_act_root_cause_audit_20261025/execution_latest_contact_fk.json">execution_latest_contact_fk.json</a></td>
+</tr>
+</tbody>
+</table>
+</article></main></body></html>

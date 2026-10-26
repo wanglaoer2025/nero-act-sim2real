@@ -1,0 +1,72 @@
+{
+  "scope": "held-out recovery DEVELOPMENT diagnostics; used for model selection, not independent success rate",
+  "test_kind": "development_diagnostic",
+  "protocol": "experiments/nero/act/recovery_v9_development_protocol.json",
+  "checkpoint_sha256": {
+    "/home/wq/robot_learning/checkpoints/act/nero_failure_recovery_v9/policy_best_l1.ckpt": "af324b743290a5998a06ace9ee63cd5c5218ff31382aaefb9c9c3d27d1a23c09"
+  },
+  "successes": 0,
+  "scenes": 4,
+  "pilot_acceptance_passed": false,
+  "all_command_bounds_passed": true,
+  "real_transfer_verified": false,
+  "real_autonomous_cup_deployment_ready": false,
+  "results": [
+    {
+      "scene_index": 0,
+      "success": false,
+      "all_command_bounds_passed": true,
+      "max_feedback_lead_rad": 0.030000017994429085,
+      "max_target_step_rad": 0.007500052452087402,
+      "max_lift_m": 0.008354020266545123,
+      "final_xy_error_m": 0.15732255132120967,
+      "unexpected_contacts": 0,
+      "failure": null,
+      "command_hz_wall": 19.91630280313434,
+      "prediction_hold_frames": 5,
+      "report_directory": "experiments/nero/act/recovery_v9_development_async/prefix_10_scene_0"
+    },
+    {
+      "scene_index": 1,
+      "success": false,
+      "all_command_bounds_passed": true,
+      "max_feedback_lead_rad": 0.029999984896888265,
+      "max_target_step_rad": 0.007500052452087402,
+      "max_lift_m": 0.008828104750143874,
+      "final_xy_error_m": 0.13971999194464227,
+      "unexpected_contacts": 0,
+      "failure": null,
+      "command_hz_wall": 19.953979376797065,
+      "prediction_hold_frames": 4,
+      "report_directory": "experiments/nero/act/recovery_v9_development_async/prefix_10_scene_1"
+    },
+    {
+      "scene_index": 2,
+      "success": false,
+      "all_command_bounds_passed": true,
+      "max_feedback_lead_rad": 0.029999948867562853,
+      "max_target_step_rad": 0.007500052452087402,
+      "max_lift_m": 0.006751202473871974,
+      "final_xy_error_m": 0.18230472196667694,
+      "unexpected_contacts": 0,
+      "failure": null,
+      "command_hz_wall": 19.998815509029956,
+      "prediction_hold_frames": 7,
+      "report_directory": "experiments/nero/act/recovery_v9_development_async/prefix_10_scene_2"
+    },
+    {
+      "scene_index": 3,
+      "success": false,
+      "all_command_bounds_passed": true,
+      "max_feedback_lead_rad": 0.029999996722262945,
+      "max_target_step_rad": 0.007500052452087402,
+      "max_lift_m": 0.012268815388278322,
+      "final_xy_error_m": 0.1679740062950867,
+      "unexpected_contacts": 0,
+      "failure": null,
+      "command_hz_wall": 19.95464410887018,
+      "prediction_hold_frames": 5,
+      "report_directory": "experiments/nero/act/recovery_v9_development_async/prefix_10_scene_3"
+    }
+  ]
+}

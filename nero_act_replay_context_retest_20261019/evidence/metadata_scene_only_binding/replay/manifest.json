@@ -1,0 +1,63 @@
+{
+  "checkpoint_sha256": "97f329a4c2fc3661195156270afbd80dfb4d95fd14a18680ce8911575c539bd8",
+  "stats_sha256": "cfd53e90a0b1505c37f49cfbc7e6448385b12b827fa2be43d97e38b778b1effc",
+  "scene_sha256": "697324716495e821d469aabdb7dc038c5a6e33db776f416ef78e99aa09c9ea5e",
+  "training_config_sha256": "b40ed7a824842239928a5265496532abf2b040c06bb9de3ba071024bebdcddf0",
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "source_rollout": "/home/user/wq/nero_act_replay_context_retest_20261019/evidence/bound_scene_generation/current_cup_nominal/rollout.npz",
+  "source_rollout_sha256": "026b0767ac09bd3e6625ae01c966107d6c35340b7b3ffcfab9ebc926280f96f9",
+  "simulation_result_sha256": "caaffe87c17f7e1f34758a728f0505812806d7dc938709353ad9240c73f8379c",
+  "reference_points": 3724,
+  "reference_period_s": 0.05,
+  "reference_sha256": "723830e60729022568577900b69df0af592b20febea1a2fa9bd6ab4664612f6b",
+  "sources": {
+    "ACT_arm_pregrasp_open_hold": 1155,
+    "operator_pause": 320,
+    "feedback_safety_hold": 5,
+    "reference_settle": 80,
+    "ACT_gripper_feedback_arm_hold": 280,
+    "ACT": 1784,
+    "post_completion_hold": 100
+  },
+  "teacher_motion_fallback": false,
+  "phases": [
+    {
+      "name": "approach",
+      "start": 0,
+      "end": 1155
+    },
+    {
+      "name": "close",
+      "start": 1155,
+      "end": 1396
+    },
+    {
+      "name": "lift",
+      "start": 1396,
+      "end": 1946
+    },
+    {
+      "name": "carry_place",
+      "start": 1946,
+      "end": 2770
+    },
+    {
+      "name": "release",
+      "start": 2770,
+      "end": 3054
+    },
+    {
+      "name": "retreat",
+      "start": 3054,
+      "end": 3724
+    }
+  ],
+  "allowed_safety_transforms": [
+    "gripper_closure_floor_at_measured_contact_width_minus_9mm",
+    "measured_zero_motion_reference_hold_during_supported_release",
+    "bounded_reference_connection_after_retreat_clearance",
+    "stop_before_attached_cup_crosses_table"
+  ],
+  "required_real_task": "actual_empty_cup_grasp_lift_carry_supported_release_retreat",
+  "derivation": "Complete frozen context-aware run27 ACT simulation at measured current cup; trained checkpoint/statistics/config unchanged. No IK, teacher fallback or spatial rewriting."
+}

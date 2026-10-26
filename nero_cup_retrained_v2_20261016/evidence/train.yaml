@@ -1,0 +1,114 @@
+dataset_dir: /home/wq/sim2real/cup_retrain_v2_20261016/data
+manifest: /home/wq/sim2real/cup_retrain_v2_20261016/data/manifest.json
+split_file: /home/wq/sim2real/cup_retrain_v2_20261016/data/split.json
+camera_names:
+- camera_0
+state_dim: 8
+action_dim: 8
+alignment_offset: 0
+image_size:
+- 90
+- 160
+chunk_size: 20
+batch_size: 32
+eval_batch_size: 32
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.0
+kl_weight: 0.0
+gripper_bce_weight: 0.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 1.0e-05
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: false
+num_epochs: 80
+seed: 42
+val_fraction: 0.2
+fixed_val_samples_per_episode: 20
+device: cpu
+cpu_threads: 2
+checkpoint_dir: /home/wq/sim2real/cup_retrain_v2_20261016/checkpoints
+artifact_dir: /home/wq/sim2real/cup_retrain_v2_20261016/training
+training_log: /home/wq/sim2real/cup_retrain_v2_20261016/training/training.csv
+training_stride_steps: 10
+experiment_scope: Current paired-start cup pickup/hold; alternative IK branch; physical
+  perturbation correction demos; all20 query points supervised; simulation only
+terminal_padded_windows: true
+action_representation: absolute_joint_position
+execution_query_stride: 10
+training_objective: deployment_mean_weighted_l1
+near_term_steps: 10
+near_term_weight: 5
+checkpoint_include_optimizer: false
+init_checkpoint: /home/wq/sim2real/cup_retrain_v2_20261016/initialization.ckpt
+loss_prefix_steps: 20
+freeze_backbone: true
+task_scope: current_yellow_cup_pickup_hold
+real_initial_state:
+- 0.2237861156463623
+- -0.11719886213541031
+- 0.1344776153564453
+- 1.5639197826385498
+- -0.014765485189855099
+- 0.25787240266799927
+- 0.14997614920139313
+- 0.06017899885773659
+training_observation_noise_normalized:
+- 0.0030181749739092776
+- 0.0005106438360646507
+- 0.0038490226150396036
+- 0.0007201037241613751
+- 0.018744771155370155
+- 0.002461870633313276
+- 0.0004403261893995007
+- 0.005000000111758712
+joint_residual_anchor: true
+reset_initial_joint_head: true
+joint_anchor_scale:
+- 1.0037569999694824
+- 1.0044353008270264
+- 1.0034105777740479
+- 1.0016555786132812
+- 1.002973198890686
+- 1.0029114484786987
+- 1.0031071901321411
+joint_anchor_offset:
+- 0.007956164889037609
+- -0.006155619863420725
+- 0.007879097945988178
+- 0.009743839502334595
+- -0.0027722306549549103
+- 0.008637365885078907
+- -0.008452163077890873
+training_revision: v2_short_branch_physical_corrections_chunk20
+stage_sampling:
+  before_close_steps: 40
+  close_repeats: 3
+  release_repeats: 1
+  require_release: false
+tcp_position_loss_weight: 0.1
+tcp_position_loss_scale_m: 0.01
+tcp_loss_robot_xml: /home/wq/robot_learning/assets/nero_mujoco/nero_gripper.xml
+tcp_loss_action_mean:
+- 0.10559826344251633
+- 0.573329746723175
+- 0.040047746151685715
+- 1.0477393865585327
+- 0.003233375959098339
+- 0.11270250380039215
+- 0.9915686249732971
+- 0.08711813390254974
+tcp_loss_action_std:
+- 0.06601718068122864
+- 0.3899329602718353
+- 0.05178462713956833
+- 0.27727872133255005
+- 0.010638013482093811
+- 0.08100319653749466
+- 0.45280179381370544
+- 0.012659071013331413

@@ -1,0 +1,22 @@
+{
+  "parameters": {
+    "control_enabled": false,
+    "auto_enable": false,
+    "speed_percent": 0,
+    "can_port": "can0"
+  },
+  "driver_nodes": 1,
+  "control_gate_nodes": 0,
+  "feedback_publishers": [
+    {
+      "name": "agx_arm_ctrl_single_node",
+      "namespace": "/"
+    }
+  ],
+  "gated_publishers": 0,
+  "can_tx_before": 270292,
+  "can_tx_after": 270292,
+  "graph_discovery_spin_s": 2,
+  "motion_sent": false,
+  "success": true
+}

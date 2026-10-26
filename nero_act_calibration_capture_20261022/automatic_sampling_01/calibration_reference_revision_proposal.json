@@ -1,0 +1,42 @@
+{
+  "status": "not_implemented; superseded for current diagnosis by camera-only table/marker measurements",
+  "local_time": "2026-10-22T15:32:29.991589+08:00",
+  "scope": "calibration-only visual observation consistency before valid base-camera transform exists",
+  "evidence": [
+    "four_pose_diagnostic.json",
+    "relative_observation_diagnostic.json",
+    "fixed_selector_execution_01/vision_stop.json"
+  ],
+  "root_problem": "Absolute board prediction uses unverified base-camera and inferred flange-marker transforms while trying to estimate them; fixed mount report and observed small local residuals do not qualify new extrinsics.",
+  "proposal": {
+    "camera_checks": [
+      "unique complete ID0; duplicate/missing ID0 stops",
+      "fixed serial/intrinsics and native frame timestamp pairing",
+      "bounded adjacent-observation joint/image consistency; any loss or mismatch stops",
+      "raw failed frames and full health audit retained"
+    ],
+    "robot_checks_unchanged": [
+      "reviewed finite joint trajectory",
+      "1percent speed",
+      "no gripper/enable/reset/mode commands",
+      "joint bounds,feedback freshness,controller and motor health",
+      "full arm/board sweep review and current onsite clearance",
+      "no automatic retry or return"
+    ],
+    "acceptance_unchanged": [
+      "15fit plus5disjoint pose checks",
+      "robust solve,rotation/translation observability and coverage",
+      "independent absolute camera/TCP validation before ACT deployment"
+    ],
+    "implementation_before_new_motion": [
+      "offline tests using actual failure recordings and deliberate wrong/missing/duplicate/mismatched inputs",
+      "review isolated calibration gate change",
+      "recheck exact remaining path and obtain current physical conditions"
+    ]
+  },
+  "ACT_deployment_gates_unchanged": true,
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "motion_sent_for_this_proposal": false,
+  "runtime_visual_guard_unchanged": true
+}

@@ -1,0 +1,69 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.18542017812744516,
+  "maximum_horizontal_transfer_m": 0.178362306758079,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 776,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5205978625227708,
+      -0.1627129553169895,
+      0.047528151766164206
+    ],
+    "tcp_xyz": [
+      -0.5250750095443542,
+      -0.16267868949371928,
+      0.06884620475926387
+    ],
+    "cup_upright": 0.9999986093083884,
+    "cup_speed": 0.043465477956328005,
+    "bilateral": true,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07369188380047983,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 10,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false,
+    "name": "nominal",
+    "seed": 90000
+  },
+  "frames": 1985,
+  "active_policy_points": 1784,
+  "queries": 183,
+  "error": "RuntimeError: Attached-cup model would cross the table",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_feedback_contact_hold_v2",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 780,
+      "active_points": 780,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1331,
+      "active_points": 1210,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 1,
+  "runtime_s": 17.300447323999833,
+  "contact_arm_hold_points": 60
+}

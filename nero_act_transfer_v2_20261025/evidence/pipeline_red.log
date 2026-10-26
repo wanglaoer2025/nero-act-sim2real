@@ -1,0 +1,12 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__ test_pipeline_waits_for_all_qualified_data_and_does_not_retry_failed_pilot __
+
+    def test_pipeline_waits_for_all_qualified_data_and_does_not_retry_failed_pilot():
+>       from pipeline import next_stage
+E       ModuleNotFoundError: No module named 'pipeline'
+
+tests/test_pipeline.py:2: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_pipeline.py::test_pipeline_waits_for_all_qualified_data_and_does_not_retry_failed_pilot
+1 failed in 0.02s

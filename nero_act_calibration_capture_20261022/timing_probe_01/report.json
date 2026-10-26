@@ -1,0 +1,2906 @@
+{
+  "started_local": "2026-10-22T14:12:02.138433+08:00",
+  "frames": [
+    {
+      "index": 0,
+      "image_stamp_ns": 1792649524771398080,
+      "received_wall_s": 1792649524.8113854,
+      "grab_s": 0.0035224879975430667,
+      "image_age_at_receipt_ms": 39.98732566833496,
+      "native_offset_min_ms": 17.760276794433594,
+      "native_offset_max_ms": 39.84236717224121,
+      "max_pair_offset_ms": 39.84236717224121,
+      "health_before": {
+        "state": [
+          0.19364428520202637,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.807699,
+        "monotonic": 179072.455208751,
+        "feedback_timestamps": [
+          1792649524.8067093,
+          1792649524.8071587,
+          1792649524.8017585,
+          1792649524.8019588,
+          1792649524.799004,
+          1792649524.7992349,
+          1792649524.799459,
+          1792649524.8019588,
+          1792649524.8038335,
+          1792649524.8040588,
+          1792649524.799459,
+          1792649524.7891583,
+          1792649524.7893827,
+          1792649524.789604,
+          1792649524.789858,
+          1792649524.7900584,
+          1792649524.7903082,
+          1792649524.7905376,
+          1792649524.8038335
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867599999999998,
+          -0.09140999999999999,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415402937122336
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.7891583,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.7893827,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.789604,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.789858,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.7900584,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.7903082,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.7905376,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.8038335,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.004
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19364428520202637,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.8114984,
+        "monotonic": 179072.459008286,
+        "feedback_timestamps": [
+          1792649524.8112404,
+          1792649524.8071587,
+          1792649524.8076131,
+          1792649524.8081095,
+          1792649524.799004,
+          1792649524.7992349,
+          1792649524.799459,
+          1792649524.8081095,
+          1792649524.8088658,
+          1792649524.8107357,
+          1792649524.799459,
+          1792649524.8091092,
+          1792649524.8093839,
+          1792649524.8096118,
+          1792649524.8098087,
+          1792649524.8100338,
+          1792649524.810259,
+          1792649524.8105116,
+          1792649524.8088658
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867599999999998,
+          -0.09140999999999999,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415402937122336
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.8091092,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.8093839,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.8096118,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.8098087,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.8100338,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.810259,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.8105116,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.8088658,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "image_stamp_ns": 1792649524804775080,
+      "received_wall_s": 1792649524.8637338,
+      "grab_s": 0.0016008479869924486,
+      "image_age_at_receipt_ms": 58.95853042602539,
+      "native_offset_min_ms": 44.327497482299805,
+      "native_offset_max_ms": 58.78591537475586,
+      "max_pair_offset_ms": 58.78591537475586,
+      "health_before": {
+        "state": [
+          0.19364428520202637,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.8619545,
+        "monotonic": 179072.509464347,
+        "feedback_timestamps": [
+          1792649524.8612611,
+          1792649524.856805,
+          1792649524.8574858,
+          1792649524.8579605,
+          1792649524.8591359,
+          1792649524.8593855,
+          1792649524.8596036,
+          1792649524.8579605,
+          1792649524.8588662,
+          1792649524.8598363,
+          1792649524.8596036,
+          1792649524.8491027,
+          1792649524.8493848,
+          1792649524.84956,
+          1792649524.8498046,
+          1792649524.8502855,
+          1792649524.8505106,
+          1792649524.8507416,
+          1792649524.8588662
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867099999999998,
+          -0.09142199999999999,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1414879338346737
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.8491027,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.8493848,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.84956,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.8498046,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.8502855,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.8505106,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.8507416,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.8588662,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.006
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19364428520202637,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.8638337,
+        "monotonic": 179072.51134342,
+        "feedback_timestamps": [
+          1792649524.8612611,
+          1792649524.8631306,
+          1792649524.8635612,
+          1792649524.8579605,
+          1792649524.8591359,
+          1792649524.8593855,
+          1792649524.8596036,
+          1792649524.8579605,
+          1792649524.86338,
+          1792649524.8598363,
+          1792649524.8596036,
+          1792649524.8491027,
+          1792649524.8493848,
+          1792649524.84956,
+          1792649524.8498046,
+          1792649524.8502855,
+          1792649524.8505106,
+          1792649524.8507416,
+          1792649524.86338
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867099999999998,
+          -0.09142199999999999,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1414879338346737
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.8491027,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.8493848,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.84956,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.8498046,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.8502855,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.8505106,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.8507416,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.86338,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.004
+        }
+      }
+    },
+    {
+      "index": 2,
+      "image_stamp_ns": 1792649524871406080,
+      "received_wall_s": 1792649524.915415,
+      "grab_s": 0.001381165988277644,
+      "image_age_at_receipt_ms": 44.00897026062012,
+      "native_offset_min_ms": 27.65059471130371,
+      "native_offset_max_ms": 42.757272720336914,
+      "max_pair_offset_ms": 42.757272720336914,
+      "health_before": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.9138515,
+        "monotonic": 179072.561361046,
+        "feedback_timestamps": [
+          1792649524.912135,
+          1792649524.912813,
+          1792649524.9132411,
+          1792649524.913683,
+          1792649524.8990567,
+          1792649524.8993068,
+          1792649524.8995414,
+          1792649524.913683,
+          1792649524.9092815,
+          1792649524.9095316,
+          1792649524.8995414,
+          1792649524.9097621,
+          1792649524.9099925,
+          1792649524.9102354,
+          1792649524.9104316,
+          1792649524.910632,
+          1792649524.910908,
+          1792649524.911182,
+          1792649524.9092815
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867499999999998,
+          -0.09141099999999999,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415402937122336
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.9097621,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.9099925,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.9102354,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.9104316,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.910632,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.910908,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.911182,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.9092815,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.001
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.9155223,
+        "monotonic": 179072.563032096,
+        "feedback_timestamps": [
+          1792649524.912135,
+          1792649524.912813,
+          1792649524.9132411,
+          1792649524.913683,
+          1792649524.8990567,
+          1792649524.8993068,
+          1792649524.8995414,
+          1792649524.913683,
+          1792649524.9139333,
+          1792649524.9141634,
+          1792649524.8995414,
+          1792649524.9097621,
+          1792649524.9099925,
+          1792649524.9102354,
+          1792649524.9104316,
+          1792649524.910632,
+          1792649524.910908,
+          1792649524.911182,
+          1792649524.9139333
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867499999999998,
+          -0.09141099999999999,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415402937122336
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.9097621,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.9099925,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.9102354,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.9104316,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.910632,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.910908,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.911182,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.9139333,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.008
+        }
+      }
+    },
+    {
+      "index": 3,
+      "image_stamp_ns": 1792649524904800080,
+      "received_wall_s": 1792649524.9671555,
+      "grab_s": 0.0012841699935961515,
+      "image_age_at_receipt_ms": 62.35551834106445,
+      "native_offset_min_ms": 44.61359977722168,
+      "native_offset_max_ms": 62.19005584716797,
+      "max_pair_offset_ms": 62.19005584716797,
+      "health_before": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.9656851,
+        "monotonic": 179072.613194851,
+        "feedback_timestamps": [
+          1792649524.9612644,
+          1792649524.9615145,
+          1792649524.9617643,
+          1792649524.961988,
+          1792649524.959089,
+          1792649524.9593623,
+          1792649524.959559,
+          1792649524.961988,
+          1792649524.9637892,
+          1792649524.9640644,
+          1792649524.959559,
+          1792649524.9494135,
+          1792649524.9496331,
+          1792649524.949883,
+          1792649524.950114,
+          1792649524.9503384,
+          1792649524.9505644,
+          1792649524.9508138,
+          1792649524.9637892
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.9494135,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.9496331,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.949883,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.950114,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.9503384,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.9505644,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.9508138,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.9637892,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.002
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649524.9672568,
+        "monotonic": 179072.614766425,
+        "feedback_timestamps": [
+          1792649524.96624,
+          1792649524.9665098,
+          1792649524.966764,
+          1792649524.96699,
+          1792649524.959089,
+          1792649524.9593623,
+          1792649524.959559,
+          1792649524.96699,
+          1792649524.9637892,
+          1792649524.9640644,
+          1792649524.959559,
+          1792649524.9494135,
+          1792649524.9496331,
+          1792649524.949883,
+          1792649524.950114,
+          1792649524.9503384,
+          1792649524.9505644,
+          1792649524.9508138,
+          1792649524.9637892
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649524.9494135,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649524.9496331,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649524.949883,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649524.950114,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649524.9503384,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649524.9505644,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649524.9508138,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649524.9637892,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.002
+        }
+      }
+    },
+    {
+      "index": 4,
+      "image_stamp_ns": 1792649524971405080,
+      "received_wall_s": 1792649525.0187814,
+      "grab_s": 0.0011780030035879463,
+      "image_age_at_receipt_ms": 47.376394271850586,
+      "native_offset_min_ms": 27.537107467651367,
+      "native_offset_max_ms": 45.56131362915039,
+      "max_pair_offset_ms": 45.56131362915039,
+      "health_before": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.0174112,
+        "monotonic": 179072.664920911,
+        "feedback_timestamps": [
+          1792649525.016242,
+          1792649525.0165105,
+          1792649525.0167606,
+          1792649525.0169663,
+          1792649524.9989421,
+          1792649524.9991665,
+          1792649524.9993908,
+          1792649525.0169663,
+          1792649525.0138412,
+          1792649525.014066,
+          1792649524.9993908,
+          1792649525.009641,
+          1792649525.0098858,
+          1792649525.0101352,
+          1792649525.010385,
+          1792649525.0105913,
+          1792649525.0108163,
+          1792649525.011066,
+          1792649525.0138412
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.009641,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.0098858,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.0101352,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.010385,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.0105913,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.0108163,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.011066,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.0138412,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.003
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.0188758,
+        "monotonic": 179072.66638574,
+        "feedback_timestamps": [
+          1792649525.016242,
+          1792649525.0165105,
+          1792649525.0167606,
+          1792649525.0169663,
+          1792649524.9989421,
+          1792649524.9991665,
+          1792649524.9993908,
+          1792649525.0169663,
+          1792649525.0138412,
+          1792649525.014066,
+          1792649524.9993908,
+          1792649525.009641,
+          1792649525.0098858,
+          1792649525.0101352,
+          1792649525.010385,
+          1792649525.0105913,
+          1792649525.0108163,
+          1792649525.011066,
+          1792649525.0138412
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.009641,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.0098858,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.0101352,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.010385,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.0105913,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.0108163,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.011066,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.0138412,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.003
+        }
+      }
+    },
+    {
+      "index": 5,
+      "image_stamp_ns": 1792649525037908080,
+      "received_wall_s": 1792649525.0704603,
+      "grab_s": 0.0012620509951375425,
+      "image_age_at_receipt_ms": 32.552242279052734,
+      "native_offset_min_ms": 12.084007263183594,
+      "native_offset_max_ms": 32.51004219055176,
+      "max_pair_offset_ms": 32.51004219055176,
+      "health_before": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.0690222,
+        "monotonic": 179072.716531918,
+        "feedback_timestamps": [
+          1792649525.0662622,
+          1792649525.0681689,
+          1792649525.068643,
+          1792649525.068843,
+          1792649525.0590687,
+          1792649525.0592928,
+          1792649525.0595121,
+          1792649525.068843,
+          1792649525.068418,
+          1792649525.064094,
+          1792649525.0595121,
+          1792649525.049992,
+          1792649525.0502427,
+          1792649525.0504935,
+          1792649525.0507474,
+          1792649525.0509908,
+          1792649525.0512357,
+          1792649525.051495,
+          1792649525.068418
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.049992,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.0502427,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.0504935,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.0507474,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.0509908,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.0512357,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.051495,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.068418,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.002
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.070566,
+        "monotonic": 179072.718075706,
+        "feedback_timestamps": [
+          1792649525.0662622,
+          1792649525.0681689,
+          1792649525.068643,
+          1792649525.068843,
+          1792649525.0590687,
+          1792649525.0592928,
+          1792649525.0595121,
+          1792649525.068843,
+          1792649525.068418,
+          1792649525.0699189,
+          1792649525.0595121,
+          1792649525.0701935,
+          1792649525.0704181,
+          1792649525.0504935,
+          1792649525.0507474,
+          1792649525.0509908,
+          1792649525.0512357,
+          1792649525.051495,
+          1792649525.068418
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.0701935,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.0704181,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.0504935,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.0507474,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.0509908,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.0512357,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.051495,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.068418,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.002
+        }
+      }
+    },
+    {
+      "index": 6,
+      "image_stamp_ns": 1792649525071409080,
+      "received_wall_s": 1792649525.1219294,
+      "grab_s": 0.001259846001630649,
+      "image_age_at_receipt_ms": 50.52018165588379,
+      "native_offset_min_ms": 38.83934020996094,
+      "native_offset_max_ms": 50.12154579162598,
+      "max_pair_offset_ms": 50.12154579162598,
+      "health_before": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.1204877,
+        "monotonic": 179072.767997315,
+        "feedback_timestamps": [
+          1792649525.1162896,
+          1792649525.1165645,
+          1792649525.1170397,
+          1792649525.1175144,
+          1792649525.11912,
+          1792649525.119345,
+          1792649525.1195953,
+          1792649525.1175144,
+          1792649525.118895,
+          1792649525.1198208,
+          1792649525.1195953,
+          1792649525.1102486,
+          1792649525.110488,
+          1792649525.1108687,
+          1792649525.1111197,
+          1792649525.1113892,
+          1792649525.1115952,
+          1792649525.1118443,
+          1792649525.118895
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.1102486,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.110488,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.1108687,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.1111197,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.1113892,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.1115952,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.1118443,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.118895,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.004
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.05982988700270653,
+          0.2819579541683197,
+          -0.1716705858707428,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.1220233,
+        "monotonic": 179072.769533017,
+        "feedback_timestamps": [
+          1792649525.1212509,
+          1792649525.1215308,
+          1792649525.1170397,
+          1792649525.1175144,
+          1792649525.11912,
+          1792649525.119345,
+          1792649525.1195953,
+          1792649525.1175144,
+          1792649525.118895,
+          1792649525.1198208,
+          1792649525.1195953,
+          1792649525.1102486,
+          1792649525.110488,
+          1792649525.1108687,
+          1792649525.1111197,
+          1792649525.1113892,
+          1792649525.1115952,
+          1792649525.1118443,
+          1792649525.118895
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.40143399999999996,
+          -1.5707614202098568,
+          -6.981317007977319e-05,
+          -3.1415228404197135
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.1102486,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.110488,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.1108687,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.1111197,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.1113892,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.1115952,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.1118443,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.118895,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.004
+        }
+      }
+    },
+    {
+      "index": 7,
+      "image_stamp_ns": 1792649525137925080,
+      "received_wall_s": 1792649525.173461,
+      "grab_s": 0.0012926259951200336,
+      "image_age_at_receipt_ms": 35.53581237792969,
+      "native_offset_min_ms": 14.37067985534668,
+      "native_offset_max_ms": 35.34722328186035,
+      "max_pair_offset_ms": 35.34722328186035,
+      "health_before": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.059725165367126465,
+          0.2819579541683197,
+          -0.17156586050987244,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.1719978,
+        "monotonic": 179072.8195073,
+        "feedback_timestamps": [
+          1792649525.166423,
+          1792649525.1666408,
+          1792649525.1668718,
+          1792649525.167551,
+          1792649525.159097,
+          1792649525.1593235,
+          1792649525.159541,
+          1792649525.167551,
+          1792649525.1688967,
+          1792649525.1691217,
+          1792649525.159541,
+          1792649525.1708965,
+          1792649525.1711967,
+          1792649525.171442,
+          1792649525.1716657,
+          1792649525.1522958,
+          1792649525.1525316,
+          1792649525.1527524,
+          1792649525.1688967
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.401431,
+          -1.5708835932574963,
+          0.0,
+          -3.1415053871271934
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.1708965,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.1711967,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.171442,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.1716657,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.1522958,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.1525316,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.1527524,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.1688967,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.003
+        }
+      },
+      "health_after": {
+        "state": [
+          0.19366173446178436,
+          -0.12142255902290344,
+          0.09492845833301544,
+          1.8564369678497314,
+          0.059725165367126465,
+          0.2819579541683197,
+          -0.17156586050987244,
+          0.09492400288581848
+        ],
+        "timestamp": 1792649525.1735616,
+        "monotonic": 179072.821071302,
+        "feedback_timestamps": [
+          1792649525.1725972,
+          1792649525.172822,
+          1792649525.1730466,
+          1792649525.1732724,
+          1792649525.159097,
+          1792649525.1593235,
+          1792649525.159541,
+          1792649525.1732724,
+          1792649525.1688967,
+          1792649525.1691217,
+          1792649525.159541,
+          1792649525.1708965,
+          1792649525.1711967,
+          1792649525.171442,
+          1792649525.1716657,
+          1792649525.171891,
+          1792649525.1721416,
+          1792649525.1723907,
+          1792649525.1688967
+        ],
+        "feedback": {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+        "flange_pose": [
+          -0.21867399999999998,
+          -0.091414,
+          0.401431,
+          -1.5708835932574963,
+          0.0,
+          -3.1415053871271934
+        ],
+        "driver_state": [
+          "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+          "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+        ],
+        "driver_details": [
+          {
+            "joint": 1,
+            "timestamp": 1792649525.1708965,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 2,
+            "timestamp": 1792649525.1711967,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 3,
+            "timestamp": 1792649525.171442,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 4,
+            "timestamp": 1792649525.1716657,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 5,
+            "timestamp": 1792649525.171891,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 6,
+            "timestamp": 1792649525.1721416,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          },
+          {
+            "joint": 7,
+            "timestamp": 1792649525.1723907,
+            "flags": {
+              "voltage_too_low": false,
+              "motor_overheating": false,
+              "driver_overcurrent": false,
+              "driver_overheating": false,
+              "collision_status": false,
+              "driver_error_status": false,
+              "stall_status": false,
+              "driver_enable_status": true
+            }
+          }
+        ],
+        "gripper_details": {
+          "timestamp": 1792649525.1688967,
+          "flags": {
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "homing_status": false,
+            "driver_enable_status": true
+          },
+          "mode": "width",
+          "width_m": 0.094924,
+          "force_n": 0.003
+        }
+      }
+    }
+  ],
+  "can_tx_before": 1241,
+  "motion_sent": false,
+  "exposure_clock_mapping_verified": false,
+  "K": [
+    [
+      263.6944274902344,
+      0.0,
+      323.5845031738281
+    ],
+    [
+      0.0,
+      263.6944274902344,
+      179.91903686523438
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "can_tx_after": 1241
+}

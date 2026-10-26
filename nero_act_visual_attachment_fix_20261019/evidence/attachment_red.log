@@ -1,0 +1,60 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+___ test_attachment_uses_current_observed_cup_pose_instead_of_initial_source ___
+
+    def test_attachment_uses_current_observed_cup_pose_instead_of_initial_source():
+>       a=attachment();p=pose(.1);cup=np.array([.008,.009,.0475])
+
+tests/test_supported_attachment.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def attachment():
+>       from simulation.supported_attachment import SupportedAttachment
+E       ModuleNotFoundError: No module named 'simulation.supported_attachment'
+
+tests/test_supported_attachment.py:9: ModuleNotFoundError
+_ test_table_supported_compliance_updates_current_transform_without_lifting_targets _
+
+    def test_table_supported_compliance_updates_current_transform_without_lifting_targets():
+>       a=attachment();a.observe(pose(.1),np.array([0.,0.,.0475]),np.eye(3),supported=True)
+
+tests/test_supported_attachment.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def attachment():
+>       from simulation.supported_attachment import SupportedAttachment
+E       ModuleNotFoundError: No module named 'simulation.supported_attachment'
+
+tests/test_supported_attachment.py:9: ModuleNotFoundError
+_ test_first_airborne_transform_is_frozen_and_later_support_does_not_reset_slip_guard _
+
+    def test_first_airborne_transform_is_frozen_and_later_support_does_not_reset_slip_guard():
+>       a=attachment();a.observe(pose(.1),np.array([0.,0.,.0475]),np.eye(3),supported=True)
+
+tests/test_supported_attachment.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def attachment():
+>       from simulation.supported_attachment import SupportedAttachment
+E       ModuleNotFoundError: No module named 'simulation.supported_attachment'
+
+tests/test_supported_attachment.py:9: ModuleNotFoundError
+____________ test_invalid_measured_rotation_cannot_enter_attachment ____________
+
+    def test_invalid_measured_rotation_cannot_enter_attachment():
+>       a=attachment()
+
+tests/test_supported_attachment.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def attachment():
+>       from simulation.supported_attachment import SupportedAttachment
+E       ModuleNotFoundError: No module named 'simulation.supported_attachment'
+
+tests/test_supported_attachment.py:9: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_supported_attachment.py::test_attachment_uses_current_observed_cup_pose_instead_of_initial_source
+FAILED tests/test_supported_attachment.py::test_table_supported_compliance_updates_current_transform_without_lifting_targets
+FAILED tests/test_supported_attachment.py::test_first_airborne_transform_is_frozen_and_later_support_does_not_reset_slip_guard
+FAILED tests/test_supported_attachment.py::test_invalid_measured_rotation_cannot_enter_attachment
+4 failed in 0.06s

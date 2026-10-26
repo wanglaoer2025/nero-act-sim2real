@@ -1,0 +1,134 @@
+{
+  "time_local": "2026-10-22T22:09:17.733952+08:00",
+  "operator_confirmed_dimensions": {
+    "time_local": "2026-10-22T22:05:28.191769+08:00",
+    "operator_raw_reply": "30 94",
+    "interpretation": "A=30 mm, B=94 mm in requested order",
+    "reference": "Operator-identified seam R in measurement_reference.png; no independent identification of R relative to SDK/link7 or model gripper_base",
+    "A_mm": 30.0,
+    "B_mm": 94.0,
+    "span_mm": 64.0,
+    "geometric_midpoint_from_R_mm": 62.0,
+    "selected_task_TCP_equals_geometric_midpoint": null,
+    "measurement_uncertainty_mm": null,
+    "independently_verified": false,
+    "TCP_full_3D_verified": false,
+    "robot_connected": false,
+    "motion_sent": false,
+    "reference_confirmation": {
+      "time_local": "2026-10-22T22:09:17.733952+08:00",
+      "operator_reply": "两项都从图中红线①后端接缝起量，包含夹爪本体",
+      "both_measurements_include_gripper_body": true,
+      "operator_reference_confirmed": true,
+      "independent_metrology_verified": false
+    }
+  },
+  "model_mesh_bounds": {
+    "gripper_base": {
+      "bounds_in_gripper_base_mm": [
+        [
+          -42.01316833496094,
+          -82.01403170824051,
+          -0.0022205088043847354
+        ],
+        [
+          32.98286348581314,
+          82.06862211227417,
+          64.9978518486023
+        ]
+      ],
+      "mesh_sha256": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3"
+    },
+    "gripper_link1": {
+      "bounds_in_gripper_base_mm": [
+        [
+          -28.000000757087626,
+          -5.358979261061029e-07,
+          61.5000015376911
+        ],
+        [
+          28.000001748498995,
+          26.50000254073204,
+          138.0000001875643
+        ]
+      ],
+      "mesh_sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d"
+    },
+    "gripper_link2": {
+      "bounds_in_gripper_base_mm": [
+        [
+          -28.00000086426735,
+          -26.50000173688515,
+          61.5000015376911
+        ],
+        [
+          28.00000086426735,
+          5.4210108624275206e-15,
+          138.0000001875643
+        ]
+      ],
+      "mesh_sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606"
+    }
+  },
+  "confirmed_source_discrepancy": {
+    "simulation_gripper_base_mesh_matches_Piper_source": true,
+    "simulation_gripper_base_mesh_matches_Nero_source": false,
+    "interpretation": "Simulation and installed ROS Nero source use different gripper-body mesh files. This hash difference alone does not establish physical misinstallation, collision cause, or explain axial ruler values; finger meshes and nominal axial dimensions are shared."
+  },
+  "hypothetical_coordinate_conversion": {
+    "assumptions": [
+      "Measured seam R coincides with model gripper_base origin; unverified",
+      "Physical tool orientation and geometry match model; inconsistent with current axial check",
+      "Selected task TCP is the effective-region geometric midpoint; unverified"
+    ],
+    "SDK_reference_translation_mm": [
+      98.99999999891202,
+      -0.00027199999999649727,
+      -23.500272
+    ],
+    "existing_nominal_TCP_translation_mm": [
+      152,
+      0,
+      -23.5
+    ],
+    "nominal_axial_difference_mm": 53,
+    "use_as_calibration": false,
+    "reason_rejected": "Midpoint z=62 mm lies within the nominal body axial bounds up to about65 mm if R equals model base origin. A=30 mm also precedes full finger envelope at61.5 mm. R-to-model mapping and physical tool geometry remain unresolved. No independent lateral offsets, orientation, or uncertainty bounds were measured."
+  },
+  "conclusions": [
+    "Preserve operator measurements30/94 mm; do not reclassify them as finger-only measurements.",
+    "Geometric midpoint62 mm is relative to physical seam R, not an independently calibrated SDK/link7 TCP.",
+    "No actual53 mm TCP error is established by subtracting numbers from different unresolved references.",
+    "Do not replace runtime TCP or re-run physical descent using this hypothesis.",
+    "Existing photos do not resolve mounting seam position sufficiently. Independent physical-reference mapping or measurement capability is still needed; repeated captures or remounts have not been requested."
+  ],
+  "physical_root_cause_confirmed": false,
+  "calibration_verified": false,
+  "runtime_config_modified": false,
+  "motion_sent": false,
+  "source_sha256_before": {
+    "/home/user/wq/nero_pick_place_20261016/readonly_preflight/robot.urdf": "7b7824f9a22a1895ec251db9291203e766c0240c9c231079169cb7672761dcbe",
+    "/home/user/wq/nero_act_visual_feedback_20261019/simulation/scene_template.xml": "8a8a54dd9289e96ba23c8ef3b0963f1add64eba5b5ec05c20d1e76c0d7de8af3",
+    "/home/user/wq/nero_act_visual_feedback_20261019/simulation/assets/gripper_base.stl": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+    "/home/user/projects/nero_ros2_ws/src/agx_arm_ros/src/agx_arm_description/agx_arm_urdf/nero/meshes/gripper_base.stl": "041b1c8ffa29bff9a5e9350ec9d3e1a0129a5abcba1f347b29b5ad7367ba5f5a",
+    "/home/user/projects/nero_ros2_ws/src/agx_arm_ros/src/agx_arm_description/agx_arm_urdf/piper/meshes/gripper_base.stl": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+    "/home/user/zyh/data/nero-teacher/runtime-v4/config/tcp_offset.json": "cdb4befafdf10527d228d946898e95c7dbbf6e87d0d48799cd317a7669fb381f",
+    "/home/user/projects/nero/config/camera_to_base.json": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be"
+  },
+  "source_sha256_after": {
+    "/home/user/wq/nero_pick_place_20261016/readonly_preflight/robot.urdf": "7b7824f9a22a1895ec251db9291203e766c0240c9c231079169cb7672761dcbe",
+    "/home/user/wq/nero_act_visual_feedback_20261019/simulation/scene_template.xml": "8a8a54dd9289e96ba23c8ef3b0963f1add64eba5b5ec05c20d1e76c0d7de8af3",
+    "/home/user/wq/nero_act_visual_feedback_20261019/simulation/assets/gripper_base.stl": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+    "/home/user/projects/nero_ros2_ws/src/agx_arm_ros/src/agx_arm_description/agx_arm_urdf/nero/meshes/gripper_base.stl": "041b1c8ffa29bff9a5e9350ec9d3e1a0129a5abcba1f347b29b5ad7367ba5f5a",
+    "/home/user/projects/nero_ros2_ws/src/agx_arm_ros/src/agx_arm_description/agx_arm_urdf/piper/meshes/gripper_base.stl": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+    "/home/user/zyh/data/nero-teacher/runtime-v4/config/tcp_offset.json": "cdb4befafdf10527d228d946898e95c7dbbf6e87d0d48799cd317a7669fb381f",
+    "/home/user/projects/nero/config/camera_to_base.json": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be"
+  },
+  "source_files_unchanged": true,
+  "followup_mesh_transform_verification": {
+    "time_local": "2026-10-22T22:15:33.059936+08:00",
+    "report": "/home/user/wq/nero_act_calibration_capture_20261022/model_identification_review_01/model_and_gripper_crosscheck.json",
+    "geometry_equivalent_after_declared_transform": true,
+    "correction": "Raw mesh hash mismatch does not establish an assembled-geometry mismatch. Both examined model files already include the Nero-specific gripper-body compensation."
+  }
+}

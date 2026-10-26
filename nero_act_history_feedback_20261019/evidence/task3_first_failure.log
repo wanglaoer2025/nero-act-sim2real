@@ -1,0 +1,78 @@
+.............................................................F
+=================================== FAILURES ===================================
+_____ CommandContextTests.test_noise_preserves_the_same_known_past_command _____
+
+self = <tests.test_command_context.CommandContextTests testMethod=test_noise_preserves_the_same_known_past_command>
+
+    def test_noise_preserves_the_same_known_past_command(self):
+        from unittest.mock import patch
+        from training.train import FullTaskPolicy
+        from executor.model import make_policy_observation
+        config=json.loads((ROOT/'model/candidate_run12_full_contract_recovery/training_config.json').read_text())
+        config.update(profile());config.update(device='cpu',pretrained_backbone=False)
+        policy=FullTaskPolicy(config).train();stats=config['constraint_loss_stats']
+        actual=np.array(config['real_initial_state']);actual[7]=.074
+        q=torch.from_numpy(make_policy_observation(actual,stats,config,.065))[None];seen=[]
+        def predict(self,qpos,image):seen.append(qpos);return torch.zeros(1,20,8,requires_grad=True)
+        with patch('training.train.BoundedActPolicy.forward',predict):
+>           policy(q,torch.zeros(1,1,3,90,160),torch.zeros(1,20,8),torch.zeros(1,20,dtype=torch.bool))
+
+tests/test_command_context.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../nero/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../nero/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FullTaskPolicy(
+  (model): DETRVAE(
+    (transformer): Transformer(
+      (encoder): TransformerEncoder(
+        (laye...tent_out_proj): Linear(in_features=32, out_features=128, bias=True)
+    (additional_pos_embed): Embedding(2, 128)
+  )
+)
+qpos = tensor([[ 0.1402, -2.4762,  1.2344, -0.9969, -1.0037,  0.8301,  2.7843, -1.1178,
+         -0.8922]])
+image = tensor([[[[[0., 0., 0.,  ..., 0., 0., 0.],
+           [0., 0., 0.,  ..., 0., 0., 0.],
+           [0., 0., 0.,  ..., 0....., 0., 0.,  ..., 0., 0., 0.],
+           [0., 0., 0.,  ..., 0., 0., 0.],
+           [0., 0., 0.,  ..., 0., 0., 0.]]]]])
+actions = tensor([[[0., 0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0....., 0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0., 0.]]])
+is_pad = tensor([[False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False]])
+
+    def forward(self, qpos, image, actions=None, is_pad=None, *, history=None):
+        if actions is not None and self.training:
+            noise=(torch.rand_like(qpos[:,:8])*2-1)*self.noise.to(qpos.device)
+            if self.gripper_context:
+                qpos=torch.cat([qpos[:,:8]+noise,qpos[:,8:9]-noise[:,7:8]*self.feedback_qpos_std[7]/GRIPPER_CONTEXT_SCALE_M,qpos[:,9:]],dim=1)
+            else:qpos=qpos+noise
+        # Validate the deployed zero-latent path, without access to future labels.
+        posterior = (super().forward(qpos, image, actions, is_pad,history=history)
+                     if actions is not None and self.training and self.cvae_training
+                     and not (self.adapter_only or self.output_heads_only) else None)
+        prior = (super().forward(qpos, image, return_unbounded=True,history=history)
+                 if actions is not None and self.prior_gripper_weight else None)
+        prediction = (posterior['a_hat'] if posterior is not None else
+>                     prior['a_hat'] if prior is not None else super().forward(qpos, image,history=history))
+E       TypeError: CommandContextTests.test_noise_preserves_the_same_known_past_command.<locals>.predict() got an unexpected keyword argument 'history'
+
+training/train.py:191: TypeError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 12.58M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_command_context.py::CommandContextTests::test_noise_preserves_the_same_known_past_command
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 61 passed, 1 warning in 7.64s

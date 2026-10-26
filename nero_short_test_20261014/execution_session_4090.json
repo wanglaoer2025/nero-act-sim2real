@@ -1,0 +1,73 @@
+{
+  "authorized_by_user": true,
+  "authorization": "本次J1±0.005rad、20Hz、0.5秒短测试及停止ROS驱动；现场已准备",
+  "started_at_utc": "2026-10-14T14:43:49.232858+00:00",
+  "ROS_launch_pid": 135277,
+  "ROS_driver_pid": 135283,
+  "ROS_launch_argv": [
+    "/usr/bin/python3",
+    "/opt/ros/jazzy/bin/ros2",
+    "launch",
+    "agx_arm_ctrl",
+    "start_single_agx_arm_moveit.launch.py",
+    "can_port:=can0",
+    "arm_type:=nero",
+    "effector_type:=agx_gripper",
+    "gripper_default_effort:=0.8",
+    "fast_mode:=false",
+    "controller_rate_hz:=200",
+    "speed_percent:=75",
+    "auto_control_gate:=true",
+    "use_rviz:=false"
+  ],
+  "signal_sent": "SIGINT",
+  "motion_command_sent_by_shutdown_helper": false,
+  "SDK_test_started": true,
+  "ROS_launch_exited": true,
+  "ROS_driver_exited": true,
+  "other_known_motion_processes": [],
+  "SDK_preconditions_process_check_passed": true,
+  "launch_SIGINT_ignored_verified": true,
+  "child_SIGINT_targets": [
+    {
+      "pid": 135283,
+      "comm": "agx_arm_ctrl_si"
+    },
+    {
+      "pid": 135284,
+      "comm": "robot_state_pub"
+    },
+    {
+      "pid": 135285,
+      "comm": "move_group"
+    },
+    {
+      "pid": 135286,
+      "comm": "python3"
+    },
+    {
+      "pid": 135287,
+      "comm": "ros2_control_no"
+    }
+  ],
+  "remaining_original_ROS_children": [],
+  "shutdown_checked_at_utc": "2026-10-14T14:45:23.453102+00:00",
+  "onsite_confirmations_required": [
+    "SINGLE_CAN",
+    "STREAM"
+  ],
+  "agent_supplied_confirmation_tokens": false,
+  "terminal_log": "/home/user/wq/nero_short_test_20261014/terminal_execute_20261014_224705.log",
+  "test_launch_at_utc": "2026-10-14T14:47:05.112780+00:00",
+  "onsite_terminal_exit_code": 0,
+  "terminal_closed_at_utc": "2026-10-14T14:47:52.801034+00:00",
+  "test_completed": true,
+  "motion_targets_sent": 10,
+  "gripper_movement_commanded": false,
+  "ACT_policy_executed": false,
+  "additional_test_motion_sent": false,
+  "ROS_restored": false,
+  "controller_speed_restored": false,
+  "result_report": "short_test_result_4090.json",
+  "actuator_response_accepted": false
+}

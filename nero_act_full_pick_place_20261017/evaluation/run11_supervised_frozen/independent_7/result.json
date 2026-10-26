@@ -1,0 +1,76 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19717011014520908,
+  "maximum_horizontal_transfer_m": 0.1780829845824865,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 755,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5264613930475527,
+      -0.16284218065029205,
+      0.04749714444980045
+    ],
+    "tcp_xyz": [
+      -0.5241311722958378,
+      -0.1628294707438771,
+      0.060483788621003745
+    ],
+    "cup_upright": 0.9999999918744631,
+    "cup_speed": 0.00025785624304575056,
+    "bilateral": true,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07426883116497834,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": true,
+    "force": false,
+    "name": "independent_7",
+    "seed": 100107
+  },
+  "frames": 4624,
+  "active_policy_points": 4300,
+  "queries": 394,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_first_close_support_hold_v6",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 792,
+      "active_points": 792,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1375,
+      "active_points": 1254,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 2005,
+      "active_points": 1804,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 4,
+  "runtime_s": 50.32928449497558,
+  "contact_arm_hold_points": 2360
+}

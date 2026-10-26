@@ -1,0 +1,47 @@
+dataset_dir: data/act_dual_fixed
+manifest: data/act_dual_fixed/manifest.json
+split_file: data/act_dual_fixed/splits/day5_split.json
+camera_names: [camera_0, camera_1]
+overfit_episode_ids: [0, 1, 2]
+coordinate_conditioning: true
+position_group_key: position_group
+fixed_start_joints_deg: [10.5, -7.25, 5.73, 90.0, 5.73, 5.73, 30.0]
+fixed_start_tolerance_rad: 0.03
+state_dim: 14
+action_dim: 8
+alignment_offset: 0
+# 新采集从首个运动命令前开始，因此不再需要裁掉启动静止段。
+# 仅对旧 data/act_dual 训练时将此值设为 33。
+trim_start_steps: 0
+# 每隔 4 帧建立一个完整训练窗口，不再每条 episode 每轮只随机抽一帧。
+training_stride_steps: 4
+# 仅提前七个关节；夹爪事件保持采集原时序。
+joint_lookahead_steps: 8
+image_size: [180, 320]
+chunk_size: 20
+batch_size: 2
+eval_batch_size: 8
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.1
+kl_weight: 10.0
+gripper_bce_weight: 1.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 0.00001
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: true
+num_epochs: 20
+steps: 300
+seed: 42
+val_fraction: 0.2
+fixed_val_samples_per_episode: 5
+device: cuda
+cpu_threads: 4
+checkpoint_dir: checkpoints/act_dual_xyz_fixed_day5
+artifact_dir: artifacts/act_dual_xyz_fixed_day5
+training_log: logs/act_dual_xyz_fixed_day5_training.csv

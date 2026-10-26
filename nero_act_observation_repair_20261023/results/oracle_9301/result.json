@@ -1,0 +1,63 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.0,
+  "maximum_horizontal_transfer_m": 1.7755145748287864e-08,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5257678309807186,
+      0.04359806676641761,
+      0.04749668780450844
+    ],
+    "tcp_xyz": [
+      -0.5127679134137014,
+      0.06198982224937632,
+      0.12130836852055625
+    ],
+    "cup_upright": 0.9999999999999643,
+    "cup_speed": 1.1971020901887578e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09500000062236344,
+    "contract_valid": true
+  },
+  "scenario": {
+    "name": "contact_escape_9301",
+    "seed": 191899,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false,
+    "diagnostic_observation_mode": "cup_truth_diagnostic_v1"
+  },
+  "frames": 822,
+  "active_policy_points": 818,
+  "queries": 410,
+  "error": "RuntimeError: Predicted low descent before alignment; no action sent",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 0,
+  "runtime_s": 22.43523171299603,
+  "contact_arm_hold_points": 0,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": false,
+  "inference_latency_p95_ms": 6.3955982943298295,
+  "guard_diagnostic": null
+}

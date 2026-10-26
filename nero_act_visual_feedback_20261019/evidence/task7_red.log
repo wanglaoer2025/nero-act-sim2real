@@ -1,0 +1,109 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_____________ test_sim_and_real_use_identical_observation_function _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-45/test_sim_and_real_use_identica0')
+
+    def test_sim_and_real_use_identical_observation_function(tmp_path):
+>       m=api();path=episode(tmp_path/'episode_0.hdf5');c=config();stats=statistics(c)
+
+tests/test_visual_dataset.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.visual_dataset') is not None, 'Causal15D visual dataset interface missing'
+E       AssertionError: Causal15D visual dataset interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7cb1211ac5e0>('training.visual_dataset')
+E        +    where <function find_spec at 0x7cb1211ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_dataset.py:13: AssertionError
+_____________________ test_no_truth_fallback_on_occlusion ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-45/test_no_truth_fallback_on_occl0')
+
+    def test_no_truth_fallback_on_occlusion(tmp_path):
+>       m=api();path=episode(tmp_path/'episode_0.hdf5')
+
+tests/test_visual_dataset.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.visual_dataset') is not None, 'Causal15D visual dataset interface missing'
+E       AssertionError: Causal15D visual dataset interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7cb1211ac5e0>('training.visual_dataset')
+E        +    where <function find_spec at 0x7cb1211ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_dataset.py:13: AssertionError
+___________________ test_previous_command_is_last_submitted ____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-45/test_previous_command_is_last_0')
+
+    def test_previous_command_is_last_submitted(tmp_path):
+>       m=api();path=episode(tmp_path/'episode_0.hdf5');c=config();stats=statistics(c)
+
+tests/test_visual_dataset.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.visual_dataset') is not None, 'Causal15D visual dataset interface missing'
+E       AssertionError: Causal15D visual dataset interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7cb1211ac5e0>('training.visual_dataset')
+E        +    where <function find_spec at 0x7cb1211ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_dataset.py:13: AssertionError
+________________ test_real_same_frame_state_is_not_action_label ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-45/test_real_same_frame_state_is_0')
+
+    def test_real_same_frame_state_is_not_action_label(tmp_path):
+>       m=api();path=episode(tmp_path/'episode_0.hdf5',sim=False)
+
+tests/test_visual_dataset.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.visual_dataset') is not None, 'Causal15D visual dataset interface missing'
+E       AssertionError: Causal15D visual dataset interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7cb1211ac5e0>('training.visual_dataset')
+E        +    where <function find_spec at 0x7cb1211ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_dataset.py:13: AssertionError
+__________________ test_scene_groups_and_retries_cannot_leak ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-45/test_scene_groups_and_retries_0')
+
+    def test_scene_groups_and_retries_cannot_leak(tmp_path):
+>       m=api();a=episode(tmp_path/'episode_0.hdf5');b=episode(tmp_path/'episode_1.hdf5',group='train0',split='val')
+
+tests/test_visual_dataset.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.visual_dataset') is not None, 'Causal15D visual dataset interface missing'
+E       AssertionError: Causal15D visual dataset interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7cb1211ac5e0>('training.visual_dataset')
+E        +    where <function find_spec at 0x7cb1211ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_dataset.py:13: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_dataset.py::test_sim_and_real_use_identical_observation_function
+FAILED tests/test_visual_dataset.py::test_no_truth_fallback_on_occlusion - As...
+FAILED tests/test_visual_dataset.py::test_previous_command_is_last_submitted
+FAILED tests/test_visual_dataset.py::test_real_same_frame_state_is_not_action_label
+FAILED tests/test_visual_dataset.py::test_scene_groups_and_retries_cannot_leak
+5 failed, 1 warning in 1.85s

@@ -1,0 +1,96 @@
+{
+  "time_local": "2026-10-22T22:35:35.753738+08:00",
+  "user_instruction": "直接按照现有的做仿真迁移，不要再测量了。我一直在测量",
+  "additional_manual_measurements_requested": false,
+  "additional_calibration_capture_requested": false,
+  "retained_camera_and_TCP_used": true,
+  "model_checkpoint_sha256": "1953ba3567fd4eec637c975e2a5ba71229c9c60e40f87929382cb14da1b73142",
+  "model_weights_changed": false,
+  "additional_training_updates": 0,
+  "first_current_observation": {
+    "error": "RuntimeError(\"ValueError('Large blue region is not a convex quadrilateral')\")",
+    "report_preserved": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/live_preview/report.json"
+  },
+  "isolated_observation_repair": {
+    "cup_detector": "Existing generic yolov8n, confidence0.2 unchanged; not a new model or task actor",
+    "blue_selector": "Existing strict single convex quadrilateral selector applied only to forward visible nominal tabletop; rejects multiple targets and targets clipped by table mask",
+    "production_code_modified": false,
+    "regression_tests_passed": 4,
+    "regression_tests_total": 4,
+    "live_queries": 10,
+    "finite_ACT_predictions": 10,
+    "prefix_contract_passes": 10,
+    "end_to_end_ms_range": [
+      65.3466509829741,
+      96.08611898147501
+    ],
+    "qualified_live_shadow": false,
+    "exposure_timing_independently_verified": false,
+    "hypothetical_previous_gripper_target_context": true
+  },
+  "current_layout_full_simulation": {
+    "passed": false,
+    "error": "RuntimeError: ACT requested closure outside the observed grasp region",
+    "active_policy_points": 1355,
+    "frames": 1359,
+    "queries": 864,
+    "max_lift_mm": 0.0,
+    "TCP_to_cup_XY_at_rejected_closure_mm": 96.58452689237242,
+    "sim_image_estimator_terminal_XY_error_mm": 5.053006144588877,
+    "unexpected_robot_cup_contact_frames": 0,
+    "arm_range_degrees": [
+      12.340310266760248,
+      69.52293751089887,
+      9.670028147352554,
+      8.11392260567204,
+      4.254831230455164,
+      20.754068786787453,
+      74.35965339188346
+    ],
+    "is_physical_hardware_result": false
+  },
+  "controlled_reference_layout": {
+    "passed": true,
+    "only_different_scene_fields": [
+      "pick_xy_m",
+      "place_xy_m",
+      "visual_marker_xy_m"
+    ],
+    "same_live_start": true,
+    "same_retained_camera": true,
+    "same_retained_TCP": true,
+    "max_lift_mm": 194.54857335463683,
+    "horizontal_transfer_mm": 178.23310056337613,
+    "stable_released_frames": 102,
+    "active_policy_points": 2645,
+    "simulated_contact_events": [
+      "GRASP",
+      "CARRY",
+      "RELEASE",
+      "RETREAT"
+    ],
+    "is_current_layout_success": false,
+    "is_physical_hardware_result": false
+  },
+  "evidence_based_conclusion": "Same sealed ACT, live initial arm/gripper state and retained calibration complete the reference layout but fail the currently observed layout by requesting closure about96.6mm from the cup. The demonstrated immediate blocker is task-layout adaptation in this simulation; exact network/training cause is not yet isolated. This is not a proof that real TCP/camera calibration is accurate.",
+  "original_six_case_qualification_changed": false,
+  "original_six_case_result": "5/6",
+  "physical_motion": {
+    "arm_targets_sent": 0,
+    "gripper_targets_sent": 0,
+    "reset_sent": false,
+    "enable_sent": false,
+    "CAN_TX_before": 6677,
+    "CAN_TX_final": 6677,
+    "driver_readonly_retained": true
+  },
+  "next_work_without_manual_measurement": "Use these existing current-layout failure traces to repair/validate ACT position-conditioned behavior offline before considering this failed grasp path for hardware; do not replace observed targets with the training coordinates or bypass contact guard.",
+  "motion_ready": false,
+  "calibration_verified": false,
+  "evidence": {
+    "live_preview_table/report.json": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/live_preview_table/report.json",
+    "current_scene_full_summary.json": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/current_scene_full_summary.json",
+    "reference_layout_control_summary.json": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/reference_layout_control_summary.json",
+    "current_scene_stop.png": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/current_scene_stop.png"
+  }
+}

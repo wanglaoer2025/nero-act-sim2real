@@ -1,0 +1,107 @@
+{
+  "created_at": "2026-10-16T20:53:12.707090+08:00",
+  "scope": "Frozen ACT v2 grasp acceptance from operator-confirmed current start",
+  "status": "BLOCKED_CURRENT_START_SIMULATION_FAILED",
+  "user_confirmations": {
+    "operator_present_with_estop_access": true,
+    "cup_empty": true,
+    "current_pose_is_intended_start": true,
+    "source": "User reply in this conversation; no repeated confirmation requested"
+  },
+  "accepted_trial_initial_state": [
+    0.13992305099964142,
+    0.8725773692131042,
+    -0.021903881803154945,
+    1.4172247648239136,
+    0.08173377066850662,
+    0.06464699655771255,
+    -0.6932796835899353,
+    0.0949070006608963
+  ],
+  "initial_state_source": "logs/acceptance_live_capture/observations.npz, sample0; operator identified this pose as the intended start",
+  "old_paired_initial_state_is_not_the_requested_start": true,
+  "old_return_plan_executable": false,
+  "old_return_plan_scope": "superseded by user instruction; never submitted",
+  "frozen_model_sha256": "23bffd16e3e93c2fbb1420eedd60603575d19c794e3c9362e57411402439aec3",
+  "all251_manifest_entries_unchanged": true,
+  "current_start_passed": 0,
+  "current_start_diagnostics": 2,
+  "diagnostics": [
+    {
+      "scenario": "reference_start",
+      "task_passed": true,
+      "max_lift_mm": 73.55676547098533,
+      "first_unexpected_contact_control_interval_s": null,
+      "unexpected_arm_cup_contact_control_points": 0,
+      "bilateral_grip_points": 228,
+      "continuous_5_second_hold": true,
+      "runtime_exception": null,
+      "physical_hardware_tested": false
+    },
+    {
+      "scenario": "current_start",
+      "task_passed": false,
+      "max_lift_mm": 0.35629046227864114,
+      "first_unexpected_contact_control_interval_s": [
+        4.85,
+        4.9
+      ],
+      "unexpected_arm_cup_contact_control_points": 1332,
+      "bilateral_grip_points": 0,
+      "continuous_5_second_hold": false,
+      "runtime_exception": null,
+      "physical_hardware_tested": false
+    },
+    {
+      "scenario": "current_real_appearance",
+      "task_passed": false,
+      "max_lift_mm": 0.0,
+      "first_unexpected_contact_control_interval_s": [
+        5.1,
+        5.15
+      ],
+      "unexpected_arm_cup_contact_control_points": 1327,
+      "bilateral_grip_points": 0,
+      "continuous_5_second_hold": false,
+      "runtime_exception": null,
+      "physical_hardware_tested": false
+    }
+  ],
+  "diagnostic_limitations": [
+    "Current-start rendered-image rollout uses nominal package table/cup/contact/servo assumptions, not independently measured physical geometry",
+    "Current real appearance case repeats the captured image; it is appearance stress, not real camera closed loop",
+    "These tests show no supporting simulation evidence for this start; they are not physical grasp trials",
+    "Inherited simulator geometry/friction and force assumptions remain unvalidated on real hardware"
+  ],
+  "latest_ros_readonly_recheck": {
+    "nodes": [],
+    "feedback_samples": 0,
+    "latest": null,
+    "motion_sent": false
+  },
+  "physical_grasp_attempted": false,
+  "real_grasp_verified": false,
+  "motion_goal_submitted": false,
+  "gripper_goal_submitted": false,
+  "enable_or_mode_change_sent": false,
+  "robot_sdk_connected": false,
+  "hardware_deployment_metadata_modified": false,
+  "can_tx_packets_observed_before": 88420,
+  "can_tx_packets_observed_after": 88420,
+  "source_evaluator_sha256": "ef2195631c984a07285270efa7af6c0f603c20b43fe2078ecb7b11da6fd2be82",
+  "evidence_paths": {
+    "full_results": "logs/current_start_diagnostic/results/summary.json",
+    "initial_scene_render": "logs/current_start_diagnostic/initial_render.png",
+    "frozen_diagnostic_harness": "logs/current_start_diagnostic/diagnostic_evaluator.py",
+    "current_start_rollout": "logs/current_start_diagnostic/results/current_start.npz",
+    "real_appearance_rollout": "logs/current_start_diagnostic/results/current_real_appearance.npz",
+    "training_coverage": "logs/acceptance_live_inference/training_coverage.json"
+  },
+  "next_required_work": [
+    "Use this exact accepted start and freshly measured scene for matched demonstrations; do not reset to the old paired pose unless user changes the requested start",
+    "Correct and validate the policy on current start, including nonfinger-cup collision rejection and continuous five-second holding",
+    "Prepare and test the exact20x8 hardware executor and real grip/lift observer while preserving existing safety limits",
+    "Re-establish real ROS feedback and synchronize the software control bridge from actual state without moving hardware",
+    "Only after those gates pass preview noncontact approach and proceed to staged empty-cup physical acceptance"
+  ]
+}

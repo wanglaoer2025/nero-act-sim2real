@@ -1,0 +1,14 @@
+test_off_grid_critical_inputs_are_present_and_causal_wait_filters_remain (tests.test_transition_sampling.TransitionSamplingTests.test_off_grid_critical_inputs_are_present_and_causal_wait_filters_remain) ... FAIL
+
+======================================================================
+FAIL: test_off_grid_critical_inputs_are_present_and_causal_wait_filters_remain (tests.test_transition_sampling.TransitionSamplingTests.test_off_grid_critical_inputs_are_present_and_causal_wait_filters_remain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_transition_fix_20261018/tests/test_transition_sampling.py", line 7, in test_off_grid_critical_inputs_are_present_and_causal_wait_filters_remain
+    self.assertIsNotNone(importlib.util.find_spec('training.transition_sampling'),'critical first inputs must not disappear between ten-step samples')
+AssertionError: unexpectedly None : critical first inputs must not disappear between ten-step samples
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

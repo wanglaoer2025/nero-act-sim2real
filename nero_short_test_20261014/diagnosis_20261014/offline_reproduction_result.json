@@ -1,0 +1,525 @@
+{
+  "scope": "installed SDK packing and static-feedback acceptance reproduced entirely offline; not a hardware test",
+  "hardware_constructor_and_CAN_socket_guards_enabled": true,
+  "hardware_commands_sent": false,
+  "method_resolution": {
+    "set_normal_mode": {
+      "module": "pyAgxArm.protocols.can_protocol.drivers.nero.versions.v112.driver",
+      "file": "/home/user/nero/lib/python3.12/site-packages/pyAgxArm/protocols/can_protocol/drivers/nero/versions/v112/driver.py",
+      "line": 102
+    },
+    "set_follower_mode": {
+      "module": "pyAgxArm.protocols.can_protocol.drivers.nero.default.driver",
+      "file": "/home/user/nero/lib/python3.12/site-packages/pyAgxArm/protocols/can_protocol/drivers/nero/default/driver.py",
+      "line": 1219
+    },
+    "_maybe_set_motion_mode": {
+      "module": "pyAgxArm.protocols.can_protocol.drivers.nero.versions.v112.driver",
+      "file": "/home/user/nero/lib/python3.12/site-packages/pyAgxArm/protocols/can_protocol/drivers/nero/versions/v112/driver.py",
+      "line": 95
+    },
+    "move_j": {
+      "module": "pyAgxArm.protocols.can_protocol.drivers.nero.default.driver",
+      "file": "/home/user/nero/lib/python3.12/site-packages/pyAgxArm/protocols/can_protocol/drivers/nero/default/driver.py",
+      "line": 857
+    },
+    "get_joint_angles": {
+      "module": "pyAgxArm.protocols.can_protocol.drivers.nero.default.driver",
+      "file": "/home/user/nero/lib/python3.12/site-packages/pyAgxArm/protocols/can_protocol/drivers/nero/default/driver.py",
+      "line": 196
+    }
+  },
+  "normal_mode_sent_frame_count": 0,
+  "normal_mode_warning": [
+    "set_normal_mode() has no effect on Nero firmware >= 1.12 (NeroFW.V112): only leader/follower modes (Piper-aligned); default is follower with CAN push on power-up. Use set_follower_mode() or set_leader_mode()."
+  ],
+  "follower_and_speed_initial_virtual_frames": [
+    {
+      "can_id": "0x151",
+      "data_hex": "01ff320000000200",
+      "time_s": 1000.0
+    },
+    {
+      "can_id": "0x470",
+      "data_hex": "fc00000000000000",
+      "time_s": 1000.0
+    },
+    {
+      "can_id": "0x151",
+      "data_hex": "01ff050000000000",
+      "time_s": 1000.0
+    }
+  ],
+  "CSV_target_encoding_verified_steps": 10,
+  "joint_target_frames_per_step": 4,
+  "decoded_J1_target_peak_to_peak_rad": 0.009529497715889124,
+  "maximum_encoding_roundoff_rad": 8.113797413888957e-06,
+  "changing_J1_targets_survive_TX_throttle": true,
+  "warning_scope": "Frames are synthetic SDK output into a fake comm, not captured CAN TX from the real test.",
+  "frame_replay": [
+    {
+      "step": 0,
+      "qtarget_rad": [
+        -0.4744153618812561,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.4744153972770987,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x151",
+          "data_hex": "0101050000000000",
+          "time_s": 1000.1000005670008
+        },
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff95d20000af13",
+          "time_s": 1000.1000005670008
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.1000005670008
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.1000005670008
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.1000005670008
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "qtarget_rad": [
+        -0.47147151827812195,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.47146579084122825,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff967b0000af13",
+          "time_s": 1000.1500973740127
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.1500973740127
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.1500973740127
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.1500973740127
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "qtarget_rad": [
+        -0.469658762216568,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.4696506484191541,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x151",
+          "data_hex": "0101050000000000",
+          "time_s": 1000.2000690130168
+        },
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff96e30000af13",
+          "time_s": 1000.2000690130168
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.2000690130168
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.2000690130168
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.2000690130168
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "qtarget_rad": [
+        -0.4696618318557739,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.46966810171167406,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff96e20000af13",
+          "time_s": 1000.250088932016
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.250088932016
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.250088932016
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.250088932016
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "qtarget_rad": [
+        -0.471480131149292,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.47148324413374815,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x151",
+          "data_hex": "0101050000000000",
+          "time_s": 1000.3000721940131
+        },
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff967a0000af13",
+          "time_s": 1000.3000721940131
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.3000721940131
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.3000721940131
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.3000721940131
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "qtarget_rad": [
+        -0.47441962361335754,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.4744153972770987,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff95d20000af13",
+          "time_s": 1000.3500674350013
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.3500674350013
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.3500674350013
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.3500674350013
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "qtarget_rad": [
+        -0.4773581624031067,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.4773650037129691,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x151",
+          "data_hex": "0101050000000000",
+          "time_s": 1000.4000757090049
+        },
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff95290000af13",
+          "time_s": 1000.4000757090049
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.4000757090049
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.4000757090049
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.4000757090049
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "qtarget_rad": [
+        -0.4791721999645233,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.47918014613504323,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff94c10000af13",
+          "time_s": 1000.4500785780198
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.4500785780198
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.4500785780198
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.4500785780198
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "qtarget_rad": [
+        -0.47916918992996216,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.4791626928425232,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x151",
+          "data_hex": "0101050000000000",
+          "time_s": 1000.500075921003
+        },
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff94c20000af13",
+          "time_s": 1000.500075921003
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.500075921003
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.500075921003
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.500075921003
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "qtarget_rad": [
+        -0.47735124826431274,
+        0.7822391390800476,
+        -0.1293288916349411,
+        1.3979040384292603,
+        -0.2805093228816986,
+        -0.506389856338501,
+        -0.7044497728347778
+      ],
+      "decoded_target_rad": [
+        -0.47734755042044913,
+        0.7822391174513386,
+        -0.12932889757277982,
+        1.3979040110923384,
+        -0.28050931738052864,
+        -0.5063898291736347,
+        -0.7044497926899513
+      ],
+      "frames": [
+        {
+          "can_id": "0x155",
+          "data_hex": "ffff952a0000af13",
+          "time_s": 1000.5500603670022
+        },
+        {
+          "can_id": "0x156",
+          "data_hex": "ffffe30e000138de",
+          "time_s": 1000.5500603670022
+        },
+        {
+          "can_id": "0x157",
+          "data_hex": "ffffc138ffff8eaa",
+          "time_s": 1000.5500603670022
+        },
+        {
+          "can_id": "0x170",
+          "data_hex": "ffff625600000000",
+          "time_s": 1000.5500603670022
+        }
+      ]
+    }
+  ],
+  "stale_timestamp_sample_accepted_by_original_wrapper": true,
+  "cached_sample_timestamp": 1.0,
+  "cached_sample_hz": 0.0,
+  "stationary_feedback_stream_returns_normally": true,
+  "stationary_feedback_replay_frames": 10,
+  "offline_return_also_accepts_unchanged_q0": true,
+  "offline_total_targets_including_return": 11,
+  "offline_replay_csv": "diagnosis_20261014/offline_replay_logs/act_joint_stream_20261014_225905.csv",
+  "conclusion": "Coding/validation defects reproduced; exact physical reason for absent motion in prior test cannot be uniquely reconstructed without contemporaneous TX/status/feedback timestamps."
+}

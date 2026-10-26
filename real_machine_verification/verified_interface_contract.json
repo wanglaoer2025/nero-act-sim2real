@@ -1,0 +1,92 @@
+{
+  "state": {
+    "dim": 8,
+    "order": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "units": [
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "m"
+    ],
+    "gripper_semantics": "measured continuous total opening; not per-finger travel; not binary flag"
+  },
+  "backend_actions": {
+    "SDK_arm": "absolute seven-radian targets via move_j",
+    "SDK_gripper": "continuous total opening m via move_gripper_m; force N separately",
+    "ROS_arm": "named full seven-joint absolute position target; require all seven joints",
+    "ROS_gripper": "name gripper, position=total opening m, effort=force N"
+  },
+  "current_ACT_executor": {
+    "gripper_postprocessing": "binary hysteresis",
+    "open_m": 0.095,
+    "close_m": 0,
+    "close_threshold_m": 0.035,
+    "open_threshold_m": 0.06,
+    "demonstration": [
+      {
+        "predicted_total_width_m": 0,
+        "initial_measured_width_m": 0.095,
+        "executed_width_target_m": 0.0
+      },
+      {
+        "predicted_total_width_m": 0.03,
+        "initial_measured_width_m": 0.095,
+        "executed_width_target_m": 0.0
+      },
+      {
+        "predicted_total_width_m": 0.05,
+        "initial_measured_width_m": 0.095,
+        "executed_width_target_m": 0.0949999988079071
+      },
+      {
+        "predicted_total_width_m": 0.075,
+        "initial_measured_width_m": 0.095,
+        "executed_width_target_m": 0.0949999988079071
+      },
+      {
+        "predicted_total_width_m": 0.095,
+        "initial_measured_width_m": 0.095,
+        "executed_width_target_m": 0.0949999988079071
+      }
+    ],
+    "continuous_width_policy_drop_in_compatible": false,
+    "requires_choice_before_training": "Preserve existing binary action semantics in simulation targets, or explicitly adapt and test the executor for continuous commands; measured gripper state stays continuous either way."
+  },
+  "image": {
+    "camera_names": [
+      "camera_0"
+    ],
+    "shape_hw": [
+      90,
+      160
+    ],
+    "RGB": true,
+    "native_rotation_deg": 0,
+    "preprocess_rotation_deg": 180
+  },
+  "frequency": {
+    "policy_config_hz": 20,
+    "command_config_hz": 20,
+    "driver_publisher_config_hz": 200,
+    "frequency_measurements": "feedback_timing_review.json"
+  },
+  "sources": {
+    "runtime_config": "/home/user/projects/nero/configs/act_nero_day6.yaml",
+    "wrapper": "/home/user/projects/nero/src/act/robot_wrapper.py",
+    "postprocessing": "/home/user/projects/nero/src/act/safety_filter.py"
+  },
+  "ROS_partial_joint_target_behavior": "Current driver fills unspecified arm joints with zero when any arm joint is provided. Existing control_gate checks complete required joint set, while direct move_j topic can reach this behavior. Do not use partial arm vectors in an adapter. Source behavior inspected only; no message sent."
+}

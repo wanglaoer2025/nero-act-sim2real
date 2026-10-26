@@ -1,0 +1,66 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+___ test_visual_worker_binds_same_rgb_geometry_feedback_and_previous_target ____
+
+    def test_visual_worker_binds_same_rgb_geometry_feedback_and_previous_target():
+>       m=api();frame,geometry,paired,cal=valid_inputs();c=config();c['calibration_sha256']=cal['calibration_sha256']
+
+tests/test_visual_inference.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_inference') is not None, 'Same-frame15D inference worker missing'
+E       AssertionError: Same-frame15D inference worker missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x71b595fb05e0>('executor.visual_inference')
+E        +    where <function find_spec at 0x71b595fb05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_inference.py:14: AssertionError
+__________ test_worker_cannot_reuse_preconfirmation_or_occluded_frame __________
+
+    def test_worker_cannot_reuse_preconfirmation_or_occluded_frame():
+>       m=api();frame,geometry,paired,cal=valid_inputs();c=config();c['calibration_sha256']=cal['calibration_sha256']
+
+tests/test_visual_inference.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_inference') is not None, 'Same-frame15D inference worker missing'
+E       AssertionError: Same-frame15D inference worker missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x71b595fb05e0>('executor.visual_inference')
+E        +    where <function find_spec at 0x71b595fb05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_inference.py:14: AssertionError
+_ test_nominal_training_calibration_cannot_be_silently_replaced_for_live_inference _
+
+    def test_nominal_training_calibration_cannot_be_silently_replaced_for_live_inference():
+>       m=api();*_,cal=valid_inputs();c=config();c['calibration_sha256']='different_old_nominal_profile'
+
+tests/test_visual_inference.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_inference') is not None, 'Same-frame15D inference worker missing'
+E       AssertionError: Same-frame15D inference worker missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x71b595fb05e0>('executor.visual_inference')
+E        +    where <function find_spec at 0x71b595fb05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_inference.py:14: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_inference.py::test_visual_worker_binds_same_rgb_geometry_feedback_and_previous_target
+FAILED tests/test_visual_inference.py::test_worker_cannot_reuse_preconfirmation_or_occluded_frame
+FAILED tests/test_visual_inference.py::test_nominal_training_calibration_cannot_be_silently_replaced_for_live_inference
+3 failed, 1 warning in 1.82s

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/driver.py", line 86, in <module>
+    if __name__ == '__main__':main()
+                              ^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/driver.py", line 49, in main
+    from agx_arm_ctrl.agx_arm_ctrl_single_node import AgxArmRosNode
+  File "/home/user/projects/nero_ros2_ws/build/agx_arm_ctrl/agx_arm_ctrl/agx_arm_ctrl_single_node.py", line 9, in <module>
+    from pyAgxArm import (
+ImportError: cannot import name 'resolve_firmware_profile' from 'pyAgxArm' (/home/user/nero/lib/python3.12/site-packages/pyAgxArm/__init__.py)

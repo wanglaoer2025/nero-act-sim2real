@@ -1,0 +1,52 @@
+{
+  "mode": "advisory_plan_only",
+  "motion_sent": false,
+  "gripper_sent": false,
+  "enable_sent": false,
+  "executable": false,
+  "environment_collision_validation_complete": false,
+  "start": [
+    0.1399230461323854,
+    0.8725599062420452,
+    -0.02192133540504878,
+    1.4172248059119157,
+    0.0817512221634144,
+    0.06468190207890985,
+    -0.6932971387697076,
+    0.09490699999999999
+  ],
+  "target": [
+    0.2237861156463623,
+    -0.11719886213541031,
+    0.1344776153564453,
+    1.5639197826385498,
+    -0.014765485189855099,
+    0.25787240266799927,
+    0.14997614920139313,
+    0.09490699999999999
+  ],
+  "world_object_ids": [],
+  "note": "Planning against current scene only; no table/cup world objects. Never submit this advisory path. Gripper remains at actual width, not model start width.",
+  "moveit_error_code": 1,
+  "plan_generated": true,
+  "point_count": 110,
+  "start_preserved": true,
+  "endpoint_error_rad": 9.192843534984452e-05,
+  "duration_s": 10.897748078,
+  "maximum_axis_excursion_rad": [
+    0.08382005138623189,
+    0.9897748078386788,
+    0.15630773727999334,
+    0.14669374357773335,
+    0.09642477891791966,
+    0.19317543979785584,
+    0.8433644877646276
+  ],
+  "execution_blockers": [
+    "current control bridge not synchronized with actual robot",
+    "current MoveIt world has no table/cup collision geometry",
+    "physical table/TCP/contact geometry unverified",
+    "current gripper width does not match model start",
+    "existing return_start limit is 0.05 rad/axis and this return exceeds it"
+  ]
+}

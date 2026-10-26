@@ -1,0 +1,17 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+number of parameters: 12.58M
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_root_cause_20261021/evidence/probe_policy.py", line 162, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_act_root_cause_20261021/evidence/probe_policy.py", line 94, in main
+    pred=policy(q,image,return_unbounded=True);physical=physical_actions(pred['a_hat'],stats,bounded_gripper=True)[0]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: FullTaskPolicy.forward() got an unexpected keyword argument 'return_unbounded'

@@ -1,0 +1,19 @@
+{
+  "scope": "offline CVAE mechanism verification followed by a bounded matched training comparison",
+  "initializer": "/home/user/wq/nero_act_pose_objective_fix_20261018/model/run19_pose_objective/policy.ckpt",
+  "baseline": "/home/user/wq/nero_act_grasp_state_recovery_20261018/training/run20_grasp_state_recovery",
+  "epochs": 3,
+  "kl_weight": 0.001,
+  "seed": 42,
+  "data_episodes": 70,
+  "train": 50,
+  "val": 20,
+  "fresh_data": false,
+  "same_pose_objective": 0.05,
+  "same_readout_and_physics_and_guards": true,
+  "validation_and_checkpoint_selection": "zero_latent_without_future_labels",
+  "small_batch_probe_steps": 8,
+  "only_if_regressions_and_probe_pass_then_train": true,
+  "only_if_nominal_pass_then_expand_evaluation": true,
+  "hardware_connected": false
+}

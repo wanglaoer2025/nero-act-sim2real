@@ -1,0 +1,39 @@
+........F..                                                              [100%]
+=================================== FAILURES ===================================
+____________ test_enclosed_cup_colour_islands_are_one_observed_body ____________
+
+    def test_enclosed_cup_colour_islands_are_one_observed_body():
+        from pathlib import Path
+        from observer import current_cup_component
+        root=Path(__file__).resolve().parents[1]/'evidence/edge_failure_diagnosis'
+        for folder,frame in [('train_02_00',1400),('train_02_01',1313)]:
+            mask=cv2.imread(str(root/folder/f'mask_{frame}.png'),0)>0
+>           body=current_cup_component(mask)
+
+tests/test_observer.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observer.py:16: in current_cup_component
+    return NominalImageEstimator.component(connected,15)[0]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mask = array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], shape=(720, 1280), dtype=uint8)
+minimum = 15
+
+    @staticmethod
+    def component(mask, minimum):
+        count, labels, stats, centers = cv2.connectedComponentsWithStats(mask.astype(np.uint8))
+        indices = [i for i in range(1, count) if stats[i, cv2.CC_STAT_AREA] >= minimum]
+        if len(indices) != 1:
+>           raise ValueError('Unique visible cup and target required')
+E           ValueError: Unique visible cup and target required
+
+vendor/cylinder.py:46: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_observer.py::test_enclosed_cup_colour_islands_are_one_observed_body
+1 failed, 10 passed in 0.63s

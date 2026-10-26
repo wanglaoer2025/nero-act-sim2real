@@ -1,0 +1,813 @@
+{
+  "checkpoint_sha256": "98e62322d4a12c99a4059c7a41532e245ff2388dece06a471c441074130063f0",
+  "selected_epoch": 71,
+  "task_scope": "complete_pick_carry_place_retreat",
+  "source_sha256": {
+    "executor/model.py": "53eaadd9d0527ec971a93ca0c949368dabbdc9441b91dd91457656ce2aeafa6b",
+    "executor/contract.py": "ea05e05392e2cf325d58a38578e9c463c248158fe87789f6dd0ab55d8b8b1b66",
+    "simulation/evaluate.py": "d7667dcbe33f24cebaca4fd2600a31dbbfbc055de7065a3da6a3e036e7fc0ab3",
+    "simulation/scene.py": "05ff4e11d90326028fdc717dfb8569497cfd7b8f44cd6b84bbae53da9babf325",
+    "simulation/teacher.py": "f29b717805cc916ce4c7a3abf5c89622b7fc46976bbba162edf01b8f22e361c3",
+    "simulation/outcome.py": "34509d83cccfa7240cefecced226de5ebcb32fd7879abdbf9f36cccde06d78e7",
+    "scene/config.json": "bd16a93490eff3e0bc3d6727b3e21fc9acea07275e64cdb77149858ed81ca42f",
+    "policy_source/src/act/nero_policy.py": "33cdfd4dc048623664072d2d7c9ca1eda96fb9cf4474eb91a1043ba8c738bba3",
+    "policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d"
+  },
+  "scenarios": [
+    {
+      "query_stride": 10,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "nominal",
+      "seed": 91000
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_0",
+      "seed": 91100
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_1",
+      "seed": 91101
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_2",
+      "seed": 91102
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_3",
+      "seed": 91103
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_4",
+      "seed": 91104
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_5",
+      "seed": 91105
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_6",
+      "seed": 91106
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_7",
+      "seed": 91107
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.17,
+      "jitter": false,
+      "force": false,
+      "name": "cadence_11",
+      "seed": 91200
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 2,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_100ms",
+      "seed": 91201
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 10,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_500ms",
+      "seed": 91202
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_0",
+      "seed": 91300
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_1",
+      "seed": 91301
+    }
+  ],
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "reach_deadline_steps": 3200,
+  "post_completion_hold_steps": 100,
+  "observation_policy": "fresh rendered RGB and measured8D state per query",
+  "hardware_deployment_allowed": false,
+  "results": [
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19595855393488443,
+      "maximum_horizontal_transfer_m": 0.16480605498465462,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 639,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5239541861134935,
+          -0.15464498524156692,
+          0.047496687810664066
+        ],
+        "tcp_xyz": [
+          -0.5252812204629232,
+          -0.15511136246974225,
+          0.2467107825133757
+        ],
+        "cup_upright": 0.9999999999999715,
+        "cup_speed": 1.7196933380922072e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877515942,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 10,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "nominal",
+        "seed": 91000
+      },
+      "frames": 2026,
+      "queries": 193,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1925,
+      "runtime_s": 18.303511332022026
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19744742515395475,
+      "maximum_horizontal_transfer_m": 0.16464696699354958,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 650,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5257371935874456,
+          -0.15581540893613555,
+          0.04749668781119881
+        ],
+        "tcp_xyz": [
+          -0.5251489586249162,
+          -0.15794674827648014,
+          0.24695876797554325
+        ],
+        "cup_upright": 0.9999999999999792,
+        "cup_speed": 6.325474026832482e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877474596,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_0",
+        "seed": 91100
+      },
+      "frames": 1954,
+      "queries": 169,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1853,
+      "runtime_s": 17.848527977999765
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19591344291797608,
+      "maximum_horizontal_transfer_m": 0.16317394087000447,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 648,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5232911891605715,
+          -0.1535540036754228,
+          0.047496687804853985
+        ],
+        "tcp_xyz": [
+          -0.5258951046304045,
+          -0.15360044182423258,
+          0.2470741178440772
+        ],
+        "cup_upright": 0.999999999999957,
+        "cup_speed": 1.8772515850014516e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877475518,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_1",
+        "seed": 91101
+      },
+      "frames": 1943,
+      "queries": 168,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1842,
+      "runtime_s": 17.7993087930372
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19619762949238617,
+      "maximum_horizontal_transfer_m": 0.1619150284165334,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 643,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5250414050878899,
+          -0.15372288206244344,
+          0.04749668781345135
+        ],
+        "tcp_xyz": [
+          -0.5242407962677748,
+          -0.15413323441453883,
+          0.24680898468741574
+        ],
+        "cup_upright": 0.9999999999999767,
+        "cup_speed": 1.1059666251870383e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877491563,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_2",
+        "seed": 91102
+      },
+      "frames": 1995,
+      "queries": 173,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1894,
+      "runtime_s": 18.29757694801083
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.1946927784963094,
+      "maximum_horizontal_transfer_m": 0.16077148098540014,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 636,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5250841361358836,
+          -0.15329786107018364,
+          0.047496687801693166
+        ],
+        "tcp_xyz": [
+          -0.5245426105936609,
+          -0.15371962926986812,
+          0.246768535316421
+        ],
+        "cup_upright": 0.9999999999999466,
+        "cup_speed": 1.5283535191385914e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877466128,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_3",
+        "seed": 91103
+      },
+      "frames": 1944,
+      "queries": 168,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1843,
+      "runtime_s": 17.629923435975797
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19696880064089445,
+      "maximum_horizontal_transfer_m": 0.16398061162232985,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 652,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5240805513246637,
+          -0.15443659224762163,
+          0.04749668780896142
+        ],
+        "tcp_xyz": [
+          -0.5228643182828041,
+          -0.15447054571581248,
+          0.24754693753221707
+        ],
+        "cup_upright": 0.9999999999999601,
+        "cup_speed": 2.501919613904221e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877478416,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_4",
+        "seed": 91104
+      },
+      "frames": 1950,
+      "queries": 169,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1849,
+      "runtime_s": 17.702699768007733
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19620984083773246,
+      "maximum_horizontal_transfer_m": 0.16074412290028997,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 642,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5239886584240038,
+          -0.15261433895554027,
+          0.04749668780165692
+        ],
+        "tcp_xyz": [
+          -0.5256211753323602,
+          -0.1525546137778979,
+          0.24734659713395318
+        ],
+        "cup_upright": 0.9999999999999553,
+        "cup_speed": 1.451478333511575e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.094999998774804,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_5",
+        "seed": 91105
+      },
+      "frames": 1950,
+      "queries": 169,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1849,
+      "runtime_s": 17.600076468952466
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19706914462264036,
+      "maximum_horizontal_transfer_m": 0.16529952525638983,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 654,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5237896968870802,
+          -0.15461301746474518,
+          0.04749668780449634
+        ],
+        "tcp_xyz": [
+          -0.5264404965677736,
+          -0.15528691740237016,
+          0.24709863334937807
+        ],
+        "cup_upright": 0.9999999999999589,
+        "cup_speed": 1.958229604133705e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877481835,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_6",
+        "seed": 91106
+      },
+      "frames": 1945,
+      "queries": 168,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1844,
+      "runtime_s": 17.76599373400677
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19703117123284242,
+      "maximum_horizontal_transfer_m": 0.1640350672041503,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 648,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5245331845577991,
+          -0.15441397409613442,
+          0.04749668781244931
+        ],
+        "tcp_xyz": [
+          -0.5241937000761175,
+          -0.1548061976338249,
+          0.24706960789179677
+        ],
+        "cup_upright": 0.9999999999999732,
+        "cup_speed": 1.995680049554868e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.0949999987748236,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_7",
+        "seed": 91107
+      },
+      "frames": 1958,
+      "queries": 169,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1857,
+      "runtime_s": 17.772123054019175
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19761881279823995,
+      "maximum_horizontal_transfer_m": 0.16505971718239895,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 655,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5248899192203047,
+          -0.1557385130640107,
+          0.047496687804916116
+        ],
+        "tcp_xyz": [
+          -0.5250987454752727,
+          -0.15661641829522394,
+          0.24713968864119043
+        ],
+        "cup_upright": 0.9999999999999639,
+        "cup_speed": 1.4777103801339055e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877477477,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.17,
+        "jitter": false,
+        "force": false,
+        "name": "cadence_11",
+        "seed": 91200
+      },
+      "frames": 1956,
+      "queries": 169,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1855,
+      "runtime_s": 17.652924384048674
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.00016283521014438807,
+      "maximum_horizontal_transfer_m": 0.00038672324823177824,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 0,
+      "unexpected_arm_cup_contact_frames": 1,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5188085271297812,
+          0.008461521265130471,
+          0.04749665640652197
+        ],
+        "tcp_xyz": [
+          -0.5238988962013702,
+          0.00837796751599381,
+          0.04103127380409236
+        ],
+        "cup_upright": 0.9999999999999799,
+        "cup_speed": 3.589112627755147e-05,
+        "bilateral": true,
+        "supported": true,
+        "unexpected_contact": true,
+        "unexpected_robot_contact": true,
+        "gripper_width": 0.07433341861123322,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 2,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "delay_100ms",
+        "seed": 91201
+      },
+      "frames": 2670,
+      "queries": 243,
+      "error": "RuntimeError: Unexpected robot/environment/cup contact",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 29.877223139978014
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19578443866541412,
+      "maximum_horizontal_transfer_m": 0.16325830807419434,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 1256,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5228950000428902,
+          -0.15293825153094448,
+          0.04749668781264866
+        ],
+        "tcp_xyz": [
+          -0.5259419912973335,
+          -0.1533910186772811,
+          0.05805274247065277
+        ],
+        "cup_upright": 0.9999999999999729,
+        "cup_speed": 3.1395063786394267e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999642613197,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 10,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "delay_500ms",
+        "seed": 91202
+      },
+      "frames": 3200,
+      "queries": 291,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 27.090388261014596
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19632685073243228,
+      "maximum_horizontal_transfer_m": 0.16359233794457814,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 643,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5253149294908119,
+          -0.1529919664748889,
+          0.04749668780180202
+        ],
+        "tcp_xyz": [
+          -0.5257473955484933,
+          -0.1545837505730516,
+          0.246871373187393
+        ],
+        "cup_upright": 0.9999999999999594,
+        "cup_speed": 1.0261023266914315e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877342355,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": true,
+        "name": "force_0",
+        "seed": 91300
+      },
+      "frames": 1953,
+      "queries": 169,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1852,
+      "runtime_s": 17.814399602008052
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19635017712506653,
+      "maximum_horizontal_transfer_m": 0.1650479451492837,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 649,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5248425842361039,
+          -0.15578401500295655,
+          0.04749668781410292
+        ],
+        "tcp_xyz": [
+          -0.525645217258302,
+          -0.15658739999398677,
+          0.246740139648909
+        ],
+        "cup_upright": 0.999999999999976,
+        "cup_speed": 1.7848027226414398e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877496071,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": true,
+        "name": "force_1",
+        "seed": 91301
+      },
+      "frames": 1947,
+      "queries": 168,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 1846,
+      "runtime_s": 17.634850995033048
+    }
+  ],
+  "complete": true,
+  "passed": 12,
+  "total": 14
+}

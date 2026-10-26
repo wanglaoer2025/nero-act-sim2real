@@ -1,0 +1,305 @@
+{
+  "complete": true,
+  "protocol": {
+    "updates_per_variant": 200,
+    "variants": [
+      "A",
+      "B"
+    ],
+    "batch_size": 16,
+    "seed": 24,
+    "checkpoint_sha256": "1a28f4fddd3095791403028b639b99f9775b91caab45c950c2d0f518955bc0f0",
+    "compute_device": "cpu",
+    "original_config_device": "cuda",
+    "gate": {
+      "minimum_validation_gain_fraction": 0.05,
+      "maximum_arm_change_rad": 0.001,
+      "maximum_gripper_change_m": 0.001,
+      "gripper_accuracy_must_not_decrease": true
+    },
+    "real_inputs": "RGB_and_measured8_only_auxiliary",
+    "main_policy_input": "unchanged15D",
+    "full_flow_evaluation": false,
+    "hardware_commands_sent": false
+  },
+  "variants": {
+    "A": {
+      "updates": 200,
+      "initial_validation": {
+        "loss": 0.2775390148162842,
+        "joint_mae_deg": 0.7791638374328613,
+        "gripper_intent_mae_mm": 48.5679817199707,
+        "gripper_intent_accuracy": 0.5149999856948853,
+        "queries": 100
+      },
+      "train": {
+        "loss": 0.1408538967370987,
+        "joint_mae_deg": 0.5608484745025635,
+        "gripper_intent_mae_mm": 26.47970962524414,
+        "gripper_intent_accuracy": 0.8701351284980774,
+        "queries": 370
+      },
+      "validation": {
+        "loss": 0.12726910412311554,
+        "joint_mae_deg": 0.5647450089454651,
+        "gripper_intent_mae_mm": 21.208171844482422,
+        "gripper_intent_accuracy": 0.9054999947547913,
+        "queries": 100
+      },
+      "shuffled_validation": {
+        "loss": 0.12694409489631653,
+        "joint_mae_deg": 0.5648428201675415,
+        "gripper_intent_mae_mm": 21.255929946899414,
+        "gripper_intent_accuracy": 0.9070000052452087,
+        "queries": 100
+      },
+      "preservation": {
+        "maximum_arm_change_rad": 0.0,
+        "maximum_gripper_change_m": 0.0,
+        "records": [
+          {
+            "name": "multistage_current_camera",
+            "queries": 120,
+            "all20": true,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0,
+            "stages": {
+              "approach": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              },
+              "carry": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              },
+              "close": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              },
+              "descend": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              },
+              "lift": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              },
+              "place": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              },
+              "release": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              },
+              "retreat": {
+                "queries": 15,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              }
+            }
+          },
+          {
+            "name": "visited_approach96",
+            "queries": 96,
+            "all20": true,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0,
+            "stages": {
+              "visited_approach": {
+                "queries": 96,
+                "maximum_arm_change_rad": 0.0,
+                "maximum_gripper_change_m": 0.0
+              }
+            }
+          }
+        ]
+      },
+      "trainable_tensor_count": 4
+    },
+    "B": {
+      "updates": 200,
+      "initial_validation": {
+        "loss": 0.2775390148162842,
+        "joint_mae_deg": 0.7791638374328613,
+        "gripper_intent_mae_mm": 48.5679817199707,
+        "gripper_intent_accuracy": 0.5149999856948853,
+        "queries": 100
+      },
+      "train": {
+        "loss": 0.14085987210273743,
+        "joint_mae_deg": 0.5608952045440674,
+        "gripper_intent_mae_mm": 26.493207931518555,
+        "gripper_intent_accuracy": 0.8695945739746094,
+        "queries": 370
+      },
+      "validation": {
+        "loss": 0.12725557386875153,
+        "joint_mae_deg": 0.5647783279418945,
+        "gripper_intent_mae_mm": 21.216171264648438,
+        "gripper_intent_accuracy": 0.9054999947547913,
+        "queries": 100
+      },
+      "shuffled_validation": {
+        "loss": 0.12693144381046295,
+        "joint_mae_deg": 0.5648753643035889,
+        "gripper_intent_mae_mm": 21.26359748840332,
+        "gripper_intent_accuracy": 0.9070000052452087,
+        "queries": 100
+      },
+      "preservation": {
+        "maximum_arm_change_rad": 6.258441862883046e-05,
+        "maximum_gripper_change_m": 1.5126167909329524e-06,
+        "records": [
+          {
+            "name": "multistage_current_camera",
+            "queries": 120,
+            "all20": true,
+            "maximum_arm_change_rad": 6.258441862883046e-05,
+            "maximum_gripper_change_m": 1.5126167909329524e-06,
+            "stages": {
+              "approach": {
+                "queries": 15,
+                "maximum_arm_change_rad": 2.598723949631676e-05,
+                "maximum_gripper_change_m": 0.0
+              },
+              "carry": {
+                "queries": 15,
+                "maximum_arm_change_rad": 6.258441862883046e-05,
+                "maximum_gripper_change_m": 3.279158136137994e-07
+              },
+              "close": {
+                "queries": 15,
+                "maximum_arm_change_rad": 5.816317752760369e-06,
+                "maximum_gripper_change_m": 2.2365539109614474e-07
+              },
+              "descend": {
+                "queries": 15,
+                "maximum_arm_change_rad": 1.1313447430438828e-05,
+                "maximum_gripper_change_m": 4.918737204206991e-07
+              },
+              "lift": {
+                "queries": 15,
+                "maximum_arm_change_rad": 1.93717896763701e-05,
+                "maximum_gripper_change_m": 1.4293766525952378e-07
+              },
+              "place": {
+                "queries": 15,
+                "maximum_arm_change_rad": 6.300561381067382e-06,
+                "maximum_gripper_change_m": 2.387899655786896e-07
+              },
+              "release": {
+                "queries": 15,
+                "maximum_arm_change_rad": 3.780606493819505e-05,
+                "maximum_gripper_change_m": 1.5126167909329524e-06
+              },
+              "retreat": {
+                "queries": 15,
+                "maximum_arm_change_rad": 2.4680199203430675e-05,
+                "maximum_gripper_change_m": 0.0
+              }
+            }
+          },
+          {
+            "name": "visited_approach96",
+            "queries": 96,
+            "all20": true,
+            "maximum_arm_change_rad": 3.184788511134684e-05,
+            "maximum_gripper_change_m": 4.7673913172729954e-07,
+            "stages": {
+              "visited_approach": {
+                "queries": 96,
+                "maximum_arm_change_rad": 3.184788511134684e-05,
+                "maximum_gripper_change_m": 4.7673913172729954e-07
+              }
+            }
+          }
+        ]
+      },
+      "trainable_tensor_count": 8
+    }
+  },
+  "decision": {
+    "gates": {
+      "real_validation_gain": false,
+      "gripper_intent_nonregression": true,
+      "main15_all20_preserved": true
+    },
+    "real_validation_gain_fraction": 0.00010631216788424151,
+    "mechanism_gate_passed": false,
+    "policy_adopted": false,
+    "full_flow_tested": false,
+    "hardware_deployment_allowed": false
+  },
+  "real_train_queries": 370,
+  "real_validation_queries": 100,
+  "rehearsal_queries": 120,
+  "check_queries": 216,
+  "zero_identity_verified": true,
+  "original_model_changed_tensors": [],
+  "source_sha256": {
+    "/home/user/wq/nero_act_new_handeye_policy_repair_20261023/training/pilot_A/policy_last.ckpt": "1a28f4fddd3095791403028b639b99f9775b91caab45c950c2d0f518955bc0f0",
+    "/home/user/wq/nero_act_real_data_adapter_20261024/integrity.json": "ff315ab82525a3414ac7f857274fc9ffd1f94068b8ec67ecfc4f303b49440ed0",
+    "/home/user/wq/nero_act_real_data_adapter_20261024/adapter.py": "5b1881b2fc8f754f8c9a41823c8a59887ece91bfeea0a2105da48b662be247e2",
+    "/home/user/wq/nero_act_real_data_adapter_20261024/data/manifest.json": "8296bb9f67b211d9e697b754a0eb98105518b4e6ad02de07943e364aa144883a",
+    "/home/user/wq/nero_act_real_data_adapter_20261024/data/statistics.json": "d5ce052ea8671e45a6dbb6f3743f6d67ef6f5c128ed1ee2595c6a2a47f8c05c4",
+    "/home/user/wq/nero_act_command_increment_20261021/model.py": "5175bef356df0bc4ea4f1a418fcc14c604a70bcc5061f4418942ce868b563a25",
+    "/home/user/wq/docs/superpowers/specs/2026-10-24-nero-real-visual-bridge-design.md": "86d2c6dbf63118d6a71fadf2f2e402ecef37e69df8a6016abe9b453f92d3c8a1",
+    "/home/user/wq/docs/superpowers/plans/2026-10-24-nero-real-visual-bridge.md": "02d61ab37fa891d708d14a25a3b0e5cacf5de6b125948fe3b0917de1ed368b0a",
+    "/home/user/wq/nero_act_event_finetune_20261024/data/manifest.json": "624939df1fe911b9df658b3f5839757adc8aa3a23d98e6f553dfef95ff8870c2",
+    "/home/user/wq/nero_act_event_finetune_20261024/preservation/proof.json": "0890c1a89a5c5fc2fccbd4e17785edfcb7cf985c17e111bb2502f3a22499d3f4",
+    "/home/user/wq/nero_act_event_finetune_20261024/preservation/current_camera.npz": "ab634311d1c3ecbf24a931618e2812fc1c4cf52aebc267a75264d4fb7bb5f4c7",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/run_03/protocol.json": "a0adb6b5ee8931b7359b0b6e4cd267e9338c467f78785437c7b9a405226aa168",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/run_03/real_sample_index.json": "230ef0856922bae6510109a74a31b58a3d103f36beda5728f5f8c3ba2901b55a",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/run_03/preservation_index.json": "363c8ba5628c3810e955f362662320c691f6f99bbf5c8b718923982f1fd2c79c",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/run_03/batch_order.npy": "8bc5b0692f9dd1c0e36e4ef5fc422cd5503a8d8355792742e5415efad4caa5bf",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/run_03/cache.pt": "0552eadf4d8642e5372221fbfd90c2afea54cee19e29596007aa41aab8b6286c",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/run_03/initial_modules.pt": "c73837b6ca9469732050e83f89339553b53ec13fe5e909a4878c91d04fb111bb",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/bridge.py": "b4541fafa38cddd16d3d81180af02f2ba99af3324b29296cdf4df96242a23eb0",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/experiment.py": "3085507f8da678e179539d659f351141dcb019f536ec8b643cdefb6be4ab4ff7",
+    "/home/user/wq/nero_act_event_finetune_20261024/data/visual/episode_9000.hdf5": "37bf0d6e1478fbc318267d1cad7b3fe928ded52055844ba06d23872a9005bb50",
+    "/home/user/wq/nero_act_event_finetune_20261024/data/visual/episode_9001.hdf5": "f04dc750913c3876b52ce35836cc6b1b16d00ee54a3dbe57b5f665411463da7d",
+    "/home/user/wq/nero_act_event_finetune_20261024/data/visual/episode_9002.hdf5": "550e3b3c6ffb98c97ebb825d8f0b3a671347862827a61a0f9a6a6572d04cf5ae",
+    "/home/user/wq/nero_act_event_finetune_20261024/data/visual/episode_9003.hdf5": "3f07ac3fceeb447839a0685faa1eb179982a3d03806901fb164c31789fd14cc0",
+    "/home/user/wq/nero_act_event_finetune_20261024/data/visual/episode_9004.hdf5": "2706f9c09d7fad12b93198a418a56eed0b2058465cb9afa9c737cf5874981fe6",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/executor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/__init__.py": "e824b724a356717942fcc4a5591d209f866a74350479a3bc3cab465bfd9b0764",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/utils/__init__.py": "041281a55fbd14e6ba3496ace2e95402c11170bcb4ff5e48ef03a95156d492a7",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/utils/arm.py": "50b53785a56a56eb50b5b24ef4506c130e1e9d4d23935dc43125d60eb18dfec1",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/act/robot_wrapper.py": "c7d20f6c226c2e7a03c170ab64b59fa4c36d0b5ed994f02128fe94e2a57eda1d",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/act/__init__.py": "5d44dc52a5f36cfb23b151b466e04ab74e3205ed4116afe68fe40018fec18db4",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/__init__.py": "8304b95ea43a245d928411824f57f19a7dbd65ccc78b223dd5668800dfbf2f76",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/__init__.py": "d782b1f5f60188e1aa3d02c7e9c97bcaace1db00c76108d2b3c018c03ef232c8",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/__init__.py": "e78ac0eca34142588d25cf6b82fdd725e0ad7f0ebcaa116a8a07e7b5bf3be556",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/models/position_encoding.py": "851babd1dad8383699290163fde9049d6e30453308ac6cf84036d6fe96ef12ed",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/models/backbone.py": "04c62f58a732604cda245f94a5d91543bbc9913559395c0bc11ded281bebd464",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/models/transformer.py": "75f5c4082815186b3d1dd62db805426f0406a26bf6f01199d3dd7bf886e1eeda",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/models/detr_vae.py": "460e3bcfefa717a4d218f11eb0c02e9133fddbec3bb0b531685c70b31bcea0e0",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/models/__init__.py": "61cb75a7d8e99893e96ace4802a4c0a50181230f7f7a2c0262590cfc922007e9",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/main.py": "f3bde9d1e1c3e9a7f895433952753649155c244a42407381802a5336fe5668c8",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/act/nero_kinematics.py": "6f6f5247a8f0e3ef378abe1d03e5498a9572c27be7b075ee0cd9ac10692e8790",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/act/nero_policy.py": "7093b7829b99a045dc04879c3dad52ae7d17ea4dee74486382249767adbaa865",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/executor/contract.py": "b4f61390051c8b78d6729923380020f31c3da78ca911339250b7a87c08dee1e3",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/executor/model.py": "0be5d6d12b2bfa6deeec8aa5a5f0d7086844d13ea8e5d2cd7ed5e3195fe729c7",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/act/history_encoder.py": "ff447df0d8c917ef0ffc052b84cda55a6deaa406acf7113eab1419ea4f377455",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/calibration/__init__.py": "6b6757b57ca64a37b0e2e5b2cd1fa422323d389617bbc83e9a1414a9e4bac554",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/calibration/bundle.py": "3a0ccce40d1a7d35c3366e3d14483789203174781f89cd59311ddce0e09d295f",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/executor/visual_observation.py": "05fcdc19b9fdb33bbcef44d9c1276b7662a874563da338b8dd03e132801c6add",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/training/command_context.py": "f781f06f6c893dcecfa593ccd25d3e7f554a214cb9787254670cc38561783d90",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/training/visual_dataset.py": "1e813d478e213a67e602cfdeeecdf509d6ed5fc91d86e922a5a84c6b63b8944e"
+  },
+  "original_checkpoint_unchanged": true,
+  "genuine_15d_real_labels_created": false,
+  "full_task_passed": false,
+  "hardware_commands_sent": false,
+  "hardware_deployment_allowed": false
+}

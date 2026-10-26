@@ -1,0 +1,77 @@
+{
+  "timestamp_offset_min_ms": 32.51004219055176,
+  "timestamp_offset_max_ms": 62.19005584716797,
+  "frames_within_50ms": 5,
+  "frames_total": 8,
+  "marker_ids": [
+    0
+  ],
+  "candidates": [
+    {
+      "transform": [
+        [
+          0.9937575484754054,
+          -0.07352876717224022,
+          0.0839014615265086,
+          0.013176389927738699
+        ],
+        [
+          -0.02573730101553425,
+          -0.8828815287308045,
+          -0.4688899631708845,
+          0.21519921354656874
+        ],
+        [
+          0.10855195154666494,
+          0.4638035431344699,
+          -0.8792626155997549,
+          0.4292159193898423
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rmse_px": 0.2094895852598774
+    },
+    {
+      "transform": [
+        [
+          0.9877450657262429,
+          -0.07444123694014085,
+          -0.1371793985126148,
+          0.012138124847821704
+        ],
+        [
+          -0.12618984277842074,
+          -0.8981264635258677,
+          -0.42124218579586237,
+          0.21536268407580547
+        ],
+        [
+          -0.09184665869272779,
+          0.43339053722634524,
+          -0.8965137107315434,
+          0.42901755577120176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rmse_px": 0.5468167225790163
+    }
+  ],
+  "pose_candidate_separation_deg": 13.023512063204153,
+  "static_pair_accepted": false,
+  "calibration_verified": false,
+  "clock_mapping_verified": false,
+  "diagnosis": [
+    "Immediate capture is phase-dependent: native camera stamp at receipt varies~33\u201362ms; before/after SDK comparison can exceed50ms. Must acquire a new matched frame without loosening the50ms criterion.",
+    "Mounted board is nearly frontal: both planar pose branches have low reprojection error. Need oblique multi-axis poses; current pair cannot be admitted as a unique fit observation."
+  ]
+}

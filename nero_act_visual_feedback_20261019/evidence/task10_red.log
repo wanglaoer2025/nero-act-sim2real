@@ -1,0 +1,151 @@
+FFFFFFF                                                                  [100%]
+=================================== FAILURES ===================================
+_______________ test_send_two_advances_only_two_history_targets ________________
+
+    def test_send_two_advances_only_two_history_targets():
+>       core,raw,frame,geometry,paired=controller()
+
+tests/test_visual_runtime.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_visual_runtime.py:18: in controller
+    m=api();frame,geometry,paired,cal=valid_inputs()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_control') is not None, 'Fresh visual short-prefix control core missing'
+E       AssertionError: Fresh visual short-prefix control core missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x786839fac5e0>('executor.visual_control')
+E        +    where <function find_spec at 0x786839fac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_runtime.py:13: AssertionError
+_______________ test_grasp_confirmation_discards_previous_chunk ________________
+
+    def test_grasp_confirmation_discards_previous_chunk():
+>       core,raw,frame,geometry,paired=controller()
+
+tests/test_visual_runtime.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_visual_runtime.py:18: in controller
+    m=api();frame,geometry,paired,cal=valid_inputs()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_control') is not None, 'Fresh visual short-prefix control core missing'
+E       AssertionError: Fresh visual short-prefix control core missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x786839fac5e0>('executor.visual_control')
+E        +    where <function find_spec at 0x786839fac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_runtime.py:13: AssertionError
+_________________ test_camera_stall_or_occlusion_latches_stop __________________
+
+    def test_camera_stall_or_occlusion_latches_stop():
+        for invalid in ['stale','occluded']:
+>           core,raw,frame,geometry,paired=controller()
+
+tests/test_visual_runtime.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_visual_runtime.py:18: in controller
+    m=api();frame,geometry,paired,cal=valid_inputs()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_control') is not None, 'Fresh visual short-prefix control core missing'
+E       AssertionError: Fresh visual short-prefix control core missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x786839fac5e0>('executor.visual_control')
+E        +    where <function find_spec at 0x786839fac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_runtime.py:13: AssertionError
+______________ test_invalid_feedback_100_06mm_stops_before_close _______________
+
+    def test_invalid_feedback_100_06mm_stops_before_close():
+>       core,raw,frame,geometry,paired=controller();paired['state'][7]=.10006
+
+tests/test_visual_runtime.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_visual_runtime.py:18: in controller
+    m=api();frame,geometry,paired,cal=valid_inputs()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_control') is not None, 'Fresh visual short-prefix control core missing'
+E       AssertionError: Fresh visual short-prefix control core missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x786839fac5e0>('executor.visual_control')
+E        +    where <function find_spec at 0x786839fac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_runtime.py:13: AssertionError
+_____________ test_late_ack_or_changed_rows_cannot_advance_history _____________
+
+    def test_late_ack_or_changed_rows_cannot_advance_history():
+        for problem in ['late','changed']:
+>           core,raw,frame,geometry,paired=controller();before=core.history.copy()
+
+tests/test_visual_runtime.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_visual_runtime.py:18: in controller
+    m=api();frame,geometry,paired,cal=valid_inputs()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_control') is not None, 'Fresh visual short-prefix control core missing'
+E       AssertionError: Fresh visual short-prefix control core missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x786839fac5e0>('executor.visual_control')
+E        +    where <function find_spec at 0x786839fac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_runtime.py:13: AssertionError
+________ test_old_frame_and_unacknowledged_prediction_cannot_be_reused _________
+
+    def test_old_frame_and_unacknowledged_prediction_cannot_be_reused():
+>       core,raw,frame,geometry,paired=controller();packet=core.prepare(raw,frame,geometry,paired,now_s=10.02)
+
+tests/test_visual_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_visual_runtime.py:18: in controller
+    m=api();frame,geometry,paired,cal=valid_inputs()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_control') is not None, 'Fresh visual short-prefix control core missing'
+E       AssertionError: Fresh visual short-prefix control core missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x786839fac5e0>('executor.visual_control')
+E        +    where <function find_spec at 0x786839fac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_runtime.py:13: AssertionError
+___________ test_offline_entry_cannot_start_robot_or_use_old_receipt ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-47/test_offline_entry_cannot_star0')
+
+    def test_offline_entry_cannot_start_robot_or_use_old_receipt(tmp_path):
+>       assert importlib.util.find_spec('executor.visual_run') is not None, 'Offline15D readiness entry missing'
+E       AssertionError: Offline15D readiness entry missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x786839fac5e0>('executor.visual_run')
+E        +    where <function find_spec at 0x786839fac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_permission.py:8: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_runtime.py::test_send_two_advances_only_two_history_targets
+FAILED tests/test_visual_runtime.py::test_grasp_confirmation_discards_previous_chunk
+FAILED tests/test_visual_runtime.py::test_camera_stall_or_occlusion_latches_stop
+FAILED tests/test_visual_runtime.py::test_invalid_feedback_100_06mm_stops_before_close
+FAILED tests/test_visual_runtime.py::test_late_ack_or_changed_rows_cannot_advance_history
+FAILED tests/test_visual_runtime.py::test_old_frame_and_unacknowledged_prediction_cannot_be_reused
+FAILED tests/test_visual_permission.py::test_offline_entry_cannot_start_robot_or_use_old_receipt
+7 failed, 1 warning in 1.91s

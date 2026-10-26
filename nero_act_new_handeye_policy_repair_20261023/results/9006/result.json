@@ -1,0 +1,77 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.1835102532312885,
+  "maximum_horizontal_transfer_m": 0.1856397614005135,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 950,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5381671146258826,
+      -0.13667437797092521,
+      0.05175904200269431
+    ],
+    "tcp_xyz": [
+      -0.5293865903289446,
+      -0.13713721430362089,
+      0.06921070881796845
+    ],
+    "cup_upright": 0.9997252467241516,
+    "cup_speed": 0.01813085979452241,
+    "bilateral": true,
+    "supported": false,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07436554114174984,
+    "contract_valid": true
+  },
+  "scenario": {
+    "name": "new_camera_9006",
+    "seed": 191899,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false
+  },
+  "frames": 2404,
+  "active_policy_points": 2188,
+  "queries": 1127,
+  "error": "ValueError: Unique visible cup and target required",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 955,
+      "active_points": 951,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1753,
+      "active_points": 1623,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 1,
+  "runtime_s": 60.03064067201922,
+  "contact_arm_hold_points": 142,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": true,
+  "inference_latency_p95_ms": 6.3465647923294455,
+  "guard_diagnostic": null
+}

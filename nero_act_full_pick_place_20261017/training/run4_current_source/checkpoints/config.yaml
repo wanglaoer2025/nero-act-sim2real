@@ -1,0 +1,286 @@
+dataset_dir: /home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source
+manifest: /home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/manifest.json
+split_file: /home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/split.json
+camera_names:
+- camera_0
+state_dim: 8
+action_dim: 8
+alignment_offset: 0
+image_size:
+- 90
+- 160
+chunk_size: 20
+batch_size: 32
+eval_batch_size: 32
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.0
+kl_weight: 0.0
+gripper_bce_weight: 0.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 1e-05
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: false
+num_epochs: 100
+seed: 42
+val_fraction: 0.2
+fixed_val_samples_per_episode: 20
+device: cuda
+cpu_threads: 2
+checkpoint_dir: /home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/checkpoints
+artifact_dir: /home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/artifacts
+training_log: /home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/training.csv
+training_stride_steps: 10
+experiment_scope: Current paired-start cup pickup/hold; alternative IK branch; physical
+  perturbation correction demos; all20 query points supervised; simulation only
+terminal_padded_windows: true
+action_representation: absolute_joint_position
+execution_query_stride: 10
+training_objective: deployment_mean_weighted_l1
+near_term_steps: 10
+near_term_weight: 5
+checkpoint_include_optimizer: false
+init_checkpoint: /home/user/wq/nero_cup_retrained_v2_20261016/model/policy.ckpt
+loss_prefix_steps: 20
+freeze_backbone: true
+task_scope: complete_pick_carry_place_retreat
+real_initial_state:
+- 0.18325957655906677
+- -0.12651892006397247
+- 0.10002481937408447
+- 1.5707963705062866
+- -0.023858651518821716
+- 0.2816786766052246
+- 0.13098695874214172
+- 0.09438899904489517
+training_observation_noise_normalized:
+- 0.0012803602087608189
+- 0.0006551750921858967
+- 0.0031373942964001873
+- 0.0025555791806452064
+- 0.0016119201967099554
+- 0.0011649499493548055
+- 0.0006509328303738878
+- 0.009602522940702594
+joint_residual_anchor: true
+reset_initial_joint_head: true
+joint_anchor_scale:
+- 0.9982792735099792
+- 1.0073200464248657
+- 1.000589370727539
+- 0.997050940990448
+- 1.0014967918395996
+- 0.9983890056610107
+- 1.0076595544815063
+joint_anchor_offset:
+- -0.0024281777441501617
+- -0.002028626622632146
+- 0.0008337660110555589
+- 0.011673126369714737
+- -0.0029988710302859545
+- -0.0013403904158622026
+- 0.009799557738006115
+training_revision: full_task_no_stationary_contact_prefix
+stage_sampling:
+  close_repeats: 3
+  release_repeats: 3
+  settle_repeats: 3
+  corrective_repeats: 3
+tcp_position_loss_weight: 0
+tcp_position_loss_scale_m: 0.01
+tcp_loss_robot_xml: /home/wq/robot_learning/assets/nero_mujoco/nero_gripper.xml
+tcp_loss_action_mean:
+- 0.10559826344251633
+- 0.573329746723175
+- 0.040047746151685715
+- 1.0477393865585327
+- 0.003233375959098339
+- 0.11270250380039215
+- 0.9915686249732971
+- 0.08711813390254974
+tcp_loss_action_std:
+- 0.06601718068122864
+- 0.3899329602718353
+- 0.05178462713956833
+- 0.27727872133255005
+- 0.010638013482093811
+- 0.08100319653749466
+- 0.45280179381370544
+- 0.012659071013331413
+normalization_stats: /home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/training_only_stats.pkl
+reset_action_head: true
+bounded_gripper_output: true
+gripper_action_mean: 0.08189459890127182
+gripper_action_std: 0.0146112572401762
+stationary_contact_prefixes_excluded: true
+normalization_source: all_training_episodes
+scene_config:
+  robot: nero_single_arm
+  end_effector: agx_gripper
+  can_connected: false
+  cup:
+    outer_diameter_m: 0.075
+    height_m: 0.095
+    mass_kg: 0.05
+    wall_thickness_m: 0.002
+  assumptions:
+  - new arm/gripper start measured; qvel zero assumed for stationary capture
+  - object centres and retained table height are provisional ray/plane hypotheses,
+    not real metrology
+  - retained camera extrinsic plus captured intrinsics; print/handle/background remain
+    unmatched
+  - joint servo parameters are simulation assumptions; no real response calibration
+    completed
+  contact_friction:
+  - 0.6
+  - 0.005
+  - 0.0001
+  pick_xy_m:
+  - -0.5251550104962355
+  - 0.015591124486056561
+  place_xy_m:
+  - -0.5247430757905183
+  - -0.16205567896289505
+  table_top_z_m: 0.0
+  control_hz: 20
+  simulation_timestep_s: 0.002
+  arm_kp:
+  - 100
+  - 100
+  - 80
+  - 80
+  - 40
+  - 30
+  - 20
+  arm_kd:
+  - 15
+  - 15
+  - 12
+  - 12
+  - 6
+  - 5
+  - 3
+  joint_speed_limit_rad_s: 0.04
+  finger_force_limit_n: 1.0
+  lift_height_m: 0.2
+  success_position_tolerance_m: 0.02
+  source_measurements: /home/wq/sim2real/nero_act_source/task_measurements.json
+  real_task_geometry_verified: false
+  dwell_seconds:
+    recover_open: 4
+    recover_clear: 0.2
+    moving: 0.2
+    close: 4
+    release: 4
+  final_settle_seconds: 4
+  render_shadows: false
+  teacher_command_lead_limit_rad: 0.03
+  initial_robot_state:
+    qpos_rad:
+    - 0.18325957655906677
+    - -0.12651892006397247
+    - 0.10002481937408447
+    - 1.5707963705062866
+    - -0.023858651518821716
+    - 0.2816786766052246
+    - 0.13098695874214172
+    gripper_total_width_m: 0.09438899904489517
+  table_center_xy_m:
+  - -0.4
+  - -0.15
+  table_half_size_xy_m:
+  - 0.65
+  - 0.65
+  show_target_marker: true
+  camera_calibration:
+    transform_base_from_raw_optical_m:
+    - - -0.072697737738461
+      - 0.45922912341725763
+      - 0.8853381563747986
+      - -0.8889602486428704
+    - - 0.9965659610030485
+      - -0.0018341655365573496
+      - 0.08278237256116336
+      - -0.09312566151992355
+    - - 0.03963993312028583
+      - 0.8883159618301375
+      - -0.4575187730137615
+      - 0.3152114291079937
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    intrinsic_matrix:
+    - - 263.6728515625
+      - 0.0
+      - 323.58526611328125
+    - - 0.0
+      - 263.6728515625
+      - 179.9199676513672
+    - - 0.0
+      - 0.0
+      - 1.0
+    resolution_wh:
+    - 640
+    - 360
+    image_rotation_degrees: 180
+    installation_verified_on_real: false
+  initial_pose_source: evidence/current_source_capture/observations.npz
+  camera_calibrated_to_real: false
+  provisional_geometry_source: nero_act_cup_handoff_20261016
+  experiment_scope: full_ACT_pick_carry_place_retreat_simulation_not_hardware
+  hardware_deployment_allowed: false
+  appearance:
+    table_rgb:
+    - 0.9
+    - 0.9
+    - 0.9
+    cup_rgb:
+    - 0.95
+    - 0.8
+    - 0.05
+    arm_rgb:
+    - 0.16
+    - 0.16
+    - 0.18
+    background_rgb:
+    - 0.25
+    - 0.25
+    - 0.28
+    light_scale: 0.92
+  ik_goal_rotation:
+  - - -1
+    - 0
+    - 0
+  - - 0
+    - 1
+    - 0
+  - - 0
+    - 0
+    - -1
+  visual_marker_xy_m:
+  - -0.5247430757905183
+  - -0.16205567896289505
+  tcp_link7_xyz_m:
+  - 0.152
+  - 0
+  - -0.0235
+  grasp_tcp_height_m: 0.055
+  minimum_transfer_m: 0.1
+  ik_goal_rotation_link7:
+  - - -1
+    - 0
+    - 0
+  - - 0
+    - 0
+    - -1
+  - - 0
+    - -1
+    - 0
+  source_geometry_evidence: evidence/current_source_capture/targets.json
+  source_capture_sha256: 254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f

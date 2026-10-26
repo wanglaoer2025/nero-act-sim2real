@@ -1,0 +1,102 @@
+{
+  "artifact_kind": "implementation_plan_self_review_not_execution_result",
+  "review_mode": "inline_no_subagent",
+  "spec": "/home/user/wq/docs/superpowers/specs/2026-10-19-nero-act-short-history-design.md",
+  "approved_spec_before_status_edit_sha256": "52b1dbd6a092c5f5541ee151506a720e9daf561bb99161c3ca064fc5d2b2f327",
+  "spec_current_sha256": "77acf6697b49ea1490cc3db61a618e1fac84cb820168b8fc013953ec2eaeabb5",
+  "spec_approval_reply": "设计符合，生成实施计划",
+  "plan": "/home/user/wq/docs/superpowers/plans/2026-10-19-nero-act-short-history.md",
+  "plan_sha256": "a34c0fa86d15a2a03e75b1945c8c59d68b4a5961b5d811460bd1f6a18c20cb95",
+  "plan_review_pending": false,
+  "execution_method": "root_sequential",
+  "task_count": 12,
+  "unchecked_steps": 40,
+  "spec_coverage": {
+    "1_goal_and_failure": [
+      2,
+      10,
+      11
+    ],
+    "2_fair_A_B": [
+      3,
+      5,
+      6,
+      10,
+      11
+    ],
+    "3_causal_history": [
+      1,
+      4,
+      5
+    ],
+    "4_ACT_architecture": [
+      3
+    ],
+    "5_complete_checkpoint": [
+      2
+    ],
+    "6_recovery_lineage_and_images": [
+      5
+    ],
+    "7_training_and_gates": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "8_runtime_and_migration_boundaries": [
+      4,
+      9,
+      12
+    ],
+    "9_isolation_documentation": [
+      1,
+      12
+    ]
+  },
+  "review_focus_tests": {
+    "causal_immutable_confirmation_history": [
+      1,
+      4
+    ],
+    "two_step_gradient_prior_posterior": [
+      3
+    ],
+    "lineage_real_frames_common_samples": [
+      5
+    ],
+    "complete_resume_state": [
+      2
+    ],
+    "budget_profile_strictness": [
+      3,
+      6,
+      9
+    ]
+  },
+  "self_review_checks": [
+    "spec_coverage",
+    "step_scan",
+    "type_consistency",
+    "five_review_focus_tests",
+    "proportion"
+  ],
+  "inline_corrections": [
+    "runnable_pytest_commands",
+    "explicit_protocol_CLI_forwarding",
+    "exact_read_only_data_roots",
+    "all_runtime_implementation_precedes_optimization_seal"
+  ],
+  "valid_local_link_occurrences": 139,
+  "plan_lines": 235,
+  "spec_lines": 121,
+  "initializer_sha256": "b252dd578b4bf5626566ec5b60a47be0bdcfee30e9eab990cde05ac122bdea71",
+  "new_workspace_created": false,
+  "implementation_started": true,
+  "new_training_started": false,
+  "hardware_commands_sent": false,
+  "historical_design_self_review_preserved": true,
+  "plan_approval_reply": "计划符合，顺序实施"
+}

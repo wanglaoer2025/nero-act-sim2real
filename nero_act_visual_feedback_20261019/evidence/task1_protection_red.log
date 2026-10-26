@@ -1,0 +1,118 @@
+FFFFFFFF                                                                 [100%]
+=================================== FAILURES ===================================
+_ StopLatchTests.test_inflight_open_acknowledgement_cannot_reopen_stopped_latch _
+
+self = <tests.test_stop_latch.StopLatchTests testMethod=test_inflight_open_acknowledgement_cannot_reopen_stopped_latch>
+
+    def test_inflight_open_acknowledgement_cannot_reopen_stopped_latch(self):
+        latch=GateLatch();latch.acknowledge(latch.request(False),True)
+>       sequence=latch.request(True);latch.stop();latch.acknowledge(sequence,True)
+E       AttributeError: 'GateLatch' object has no attribute 'stop'
+
+tests/test_stop_latch.py:11: AttributeError
+_ StopLatchTests.test_readonly_receiver_survives_launcher_exit_in_its_own_session _
+
+self = <tests.test_stop_latch.StopLatchTests testMethod=test_readonly_receiver_survives_launcher_exit_in_its_own_session>
+
+    def test_readonly_receiver_survives_launcher_exit_in_its_own_session(self):
+        import os,signal,subprocess,sys,tempfile
+        from pathlib import Path
+        root=Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            pidpath=Path(directory)/'pid'
+            command="from executor.supervision import start_detached; import sys; p=start_detached([sys.executable,'-c','import time;time.sleep(20)'],cwd=sys.argv[1],log=open(sys.argv[2]+'.log','w'));open(sys.argv[2],'w').write(str(p.pid))"
+            parent=subprocess.run([sys.executable,'-c',command,str(root),str(pidpath)],cwd=root,capture_output=True,text=True,timeout=3)
+>           self.assertEqual(parent.returncode,0,parent.stderr);pid=int(pidpath.read_text())
+E           AssertionError: 1 != 0 : Traceback (most recent call last):
+E             File "<string>", line 1, in <module>
+E           ModuleNotFoundError: No module named 'executor.supervision'
+
+tests/test_stop_latch.py:21: AssertionError
+_ StopLatchTests.test_stop_blocks_all_future_open_requests_even_after_successful_close _
+
+self = <tests.test_stop_latch.StopLatchTests testMethod=test_stop_blocks_all_future_open_requests_even_after_successful_close>
+
+    def test_stop_blocks_all_future_open_requests_even_after_successful_close(self):
+        latch=GateLatch();latch.acknowledge(latch.request(False),True)
+        latch.acknowledge(latch.request(True),True)
+>       latch.stop();latch.acknowledge(latch.request(False),True)
+E       AttributeError: 'GateLatch' object has no attribute 'stop'
+
+tests/test_stop_latch.py:7: AttributeError
+_ GateHealthFreshnessTests.test_both_publish_and_receive_ages_obey_original150ms_without_queue_refresh _
+
+self = <tests.test_gate_health_freshness.GateHealthFreshnessTests testMethod=test_both_publish_and_receive_ages_obey_original150ms_without_queue_refresh>
+
+    def test_both_publish_and_receive_ages_obey_original150ms_without_queue_refresh(self):
+>       from executor.gate_health import require_gate_health
+E       ModuleNotFoundError: No module named 'executor.gate_health'
+
+tests/test_gate_health_freshness.py:5: ModuleNotFoundError
+_ GateHealthFreshnessTests.test_fresh_local_callback_cannot_hide_a_stale_published_message _
+
+self = <tests.test_gate_health_freshness.GateHealthFreshnessTests testMethod=test_fresh_local_callback_cannot_hide_a_stale_published_message>
+
+    def test_fresh_local_callback_cannot_hide_a_stale_published_message(self):
+>       from executor.gate_health import require_gate_health
+E       ModuleNotFoundError: No module named 'executor.gate_health'
+
+tests/test_gate_health_freshness.py:13: ModuleNotFoundError
+_ AckTraceTests.test_late_or_failed_ack_is_preserved_without_authorizing_a_goal _
+
+self = <tests.test_ack_trace.AckTraceTests testMethod=test_late_or_failed_ack_is_preserved_without_authorizing_a_goal>
+
+    def test_late_or_failed_ack_is_preserved_without_authorizing_a_goal(self):
+>       from executor.transport import track_ack
+E       ModuleNotFoundError: No module named 'executor.transport'
+
+tests/test_ack_trace.py:13: ModuleNotFoundError
+______ AckTraceTests.test_received_ack_records_group_latency_and_deadline ______
+
+self = <tests.test_ack_trace.AckTraceTests testMethod=test_received_ack_records_group_latency_and_deadline>
+
+    def test_received_ack_records_group_latency_and_deadline(self):
+>       from executor.transport import track_ack
+E       ModuleNotFoundError: No module named 'executor.transport'
+
+tests/test_ack_trace.py:7: ModuleNotFoundError
+_ SupervisorSignalTests.test_termination_and_hangup_run_cleanup_and_leave_detached_receiver_alive _
+
+self = <tests.test_supervisor_signals.SupervisorSignalTests testMethod=test_termination_and_hangup_run_cleanup_and_leave_detached_receiver_alive>
+
+        def test_termination_and_hangup_run_cleanup_and_leave_detached_receiver_alive(self):
+            root=Path(__file__).resolve().parents[1]
+            for signum in [signal.SIGHUP,signal.SIGTERM]:
+                with self.subTest(signum=signum),tempfile.TemporaryDirectory() as directory:
+                    p=Path(directory)
+                    code="""from executor.supervision import install_cleanup_signals,ignore_cleanup_signals,start_detached
+    import sys,time
+    from pathlib import Path
+    p=Path(sys.argv[1]);install_cleanup_signals()
+    try:
+     (p/'ready').write_text('ready')
+     while True:time.sleep(.02)
+    finally:
+     ignore_cleanup_signals()
+     with (p/'receiver.log').open('w') as log:
+      receiver=start_detached([sys.executable,'-c','import time;time.sleep(20)'],cwd=sys.argv[2],log=log)
+     (p/'receiver_pid').write_text(str(receiver.pid));(p/'cleaned').write_text('closed then restored')
+    """
+                    parent=subprocess.Popen([sys.executable,'-c',code,str(p),str(root)],cwd=root,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+                    receiver_pid=None
+                    try:
+                        end=time.monotonic()+3
+                        while not (p/'ready').exists() and parent.poll() is None and time.monotonic()<end:time.sleep(.01)
+>                       self.assertTrue((p/'ready').exists(),'Cleanup signal installation is missing')
+E                       AssertionError: False is not true : Cleanup signal installation is missing
+
+tests/test_supervisor_signals.py:27: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_stop_latch.py::StopLatchTests::test_inflight_open_acknowledgement_cannot_reopen_stopped_latch
+FAILED tests/test_stop_latch.py::StopLatchTests::test_readonly_receiver_survives_launcher_exit_in_its_own_session
+FAILED tests/test_stop_latch.py::StopLatchTests::test_stop_blocks_all_future_open_requests_even_after_successful_close
+FAILED tests/test_gate_health_freshness.py::GateHealthFreshnessTests::test_both_publish_and_receive_ages_obey_original150ms_without_queue_refresh
+FAILED tests/test_gate_health_freshness.py::GateHealthFreshnessTests::test_fresh_local_callback_cannot_hide_a_stale_published_message
+FAILED tests/test_ack_trace.py::AckTraceTests::test_late_or_failed_ack_is_preserved_without_authorizing_a_goal
+FAILED tests/test_ack_trace.py::AckTraceTests::test_received_ack_records_group_latency_and_deadline
+FAILED tests/test_supervisor_signals.py::SupervisorSignalTests::test_termination_and_hangup_run_cleanup_and_leave_detached_receiver_alive
+8 failed in 0.19s

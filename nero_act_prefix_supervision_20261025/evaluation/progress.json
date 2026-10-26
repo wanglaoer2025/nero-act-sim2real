@@ -1,0 +1,560 @@
+{
+  "stage": "approach",
+  "records": {
+    "source5K": {
+      "checkpoint": "/home/user/wq/nero_act_transfer_v2_20261025/training/formal/policy_5000.ckpt",
+      "deployment_metrics": {
+        "scope": "representative18episodes_stride80_not_full_task",
+        "records": {
+          "all": {
+            "samples": 668,
+            "deployment_arm20_normalized_MAE": 0.019005927747701056,
+            "deployment_prefix2_MAE_rad": 0.0033650777962037273,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021700973178748395,
+            "prefix_error_to_motion_ratio": 1.5506575527677826,
+            "gripper_prefix2_MAE_m": 6.238805613171376e-06,
+            "positive_motion_direction_fraction": 0.8341543513957307
+          },
+          "train": {
+            "samples": 445,
+            "deployment_arm20_normalized_MAE": 0.018046705864699048,
+            "deployment_prefix2_MAE_rad": 0.003230084153265957,
+            "teacher_prefix2_motion_mean_abs_rad": 0.002155775615697305,
+            "prefix_error_to_motion_ratio": 1.4983396832889573,
+            "gripper_prefix2_MAE_m": 5.701557298723802e-06,
+            "positive_motion_direction_fraction": 0.8399014778325123
+          },
+          "approach": {
+            "samples": 144,
+            "deployment_arm20_normalized_MAE": 0.021492362658064517,
+            "deployment_prefix2_MAE_rad": 0.003850349186298748,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0026808460557182865,
+            "prefix_error_to_motion_ratio": 1.4362440461979877,
+            "gripper_prefix2_MAE_m": 7.589525250330088e-07,
+            "positive_motion_direction_fraction": 0.6284722222222222
+          },
+          "descend": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.020122824218621247,
+            "deployment_prefix2_MAE_rad": 0.003749525506382741,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0019332385962621383,
+            "prefix_error_to_motion_ratio": 1.9395047841649455,
+            "gripper_prefix2_MAE_m": 5.553617273446664e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "close": {
+            "samples": 25,
+            "deployment_arm20_normalized_MAE": 0.019796499490737914,
+            "deployment_prefix2_MAE_rad": 0.0037716427072882652,
+            "teacher_prefix2_motion_mean_abs_rad": 9.34015427316938e-06,
+            "prefix_error_to_motion_ratio": 403.80946577324994,
+            "gripper_prefix2_MAE_m": 3.622122273554851e-05,
+            "positive_motion_direction_fraction": 0.9
+          },
+          "lift": {
+            "samples": 98,
+            "deployment_arm20_normalized_MAE": 0.018671178307286505,
+            "deployment_prefix2_MAE_rad": 0.0031143797031378388,
+            "teacher_prefix2_motion_mean_abs_rad": 0.001956162993244979,
+            "prefix_error_to_motion_ratio": 1.5920859938013414,
+            "gripper_prefix2_MAE_m": 8.543428799423717e-06,
+            "positive_motion_direction_fraction": 0.9489795918367347
+          },
+          "carry": {
+            "samples": 74,
+            "deployment_arm20_normalized_MAE": 0.01897775660840701,
+            "deployment_prefix2_MAE_rad": 0.0027417144072907312,
+            "teacher_prefix2_motion_mean_abs_rad": 0.003632520289523491,
+            "prefix_error_to_motion_ratio": 0.7547691929479589,
+            "gripper_prefix2_MAE_m": 8.655585588328634e-07,
+            "positive_motion_direction_fraction": 0.9527027027027027
+          },
+          "place": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.017256015922809884,
+            "deployment_prefix2_MAE_rad": 0.003337501595747106,
+            "teacher_prefix2_motion_mean_abs_rad": 0.002275534599925884,
+            "prefix_error_to_motion_ratio": 1.466689012707524,
+            "gripper_prefix2_MAE_m": 5.800384720167451e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "release": {
+            "samples": 31,
+            "deployment_arm20_normalized_MAE": 0.021476406600618142,
+            "deployment_prefix2_MAE_rad": 0.0038602192143690752,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0007895480515220747,
+            "prefix_error_to_motion_ratio": 4.889150453765826,
+            "gripper_prefix2_MAE_m": 3.105038558715023e-05,
+            "positive_motion_direction_fraction": 0.8214285714285714
+          },
+          "retreat": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.01540284645707117,
+            "deployment_prefix2_MAE_rad": 0.0029485176187271788,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021462716758719044,
+            "prefix_error_to_motion_ratio": 1.373785831436912,
+            "gripper_prefix2_MAE_m": 2.668036376328011e-06,
+            "positive_motion_direction_fraction": 0.6043956043956044
+          },
+          "settle": {
+            "samples": 23,
+            "deployment_arm20_normalized_MAE": 0.017346373553475437,
+            "deployment_prefix2_MAE_rad": 0.0025275293506265427,
+            "teacher_prefix2_motion_mean_abs_rad": 2.35324968462405e-06,
+            "prefix_error_to_motion_ratio": 1074.0591477144235,
+            "gripper_prefix2_MAE_m": 5.577224800637613e-07,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "dev": {
+            "samples": 223,
+            "deployment_arm20_normalized_MAE": 0.02091962289052189,
+            "deployment_prefix2_MAE_rad": 0.003634459729420354,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021986764993501885,
+            "prefix_error_to_motion_ratio": 1.653021592987648,
+            "gripper_prefix2_MAE_m": 7.310893056799945e-06,
+            "positive_motion_direction_fraction": 0.8226600985221675
+          }
+        },
+        "optimizer_updates": 0,
+        "hardware_commands_sent": false
+      },
+      "approach": [
+        {
+          "id": "centre_0",
+          "initial_distance_m": 0.2945683213169068,
+          "minimum_distance_m": 0.2945682342526542,
+          "final_distance_m": 0.2977810282884838,
+          "distance_reduction_m": -0.003212706971576995,
+          "endpoint_tcp_m": [
+            -0.3655078736009298,
+            -0.06644379491044922,
+            0.48114781073017443
+          ],
+          "tcp_height_range_m": 0.0021485356277722856,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        },
+        {
+          "id": "centre_1",
+          "initial_distance_m": 0.2945076975096057,
+          "minimum_distance_m": 0.2945076975096057,
+          "final_distance_m": 0.29774821373212235,
+          "distance_reduction_m": -0.003240516222516643,
+          "endpoint_tcp_m": [
+            -0.36551728291046953,
+            -0.06643074571324852,
+            0.4811178796852284
+          ],
+          "tcp_height_range_m": 0.002319816571758393,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        },
+        {
+          "id": "centre_2",
+          "initial_distance_m": 0.2944037789856224,
+          "minimum_distance_m": 0.2944037789856224,
+          "final_distance_m": 0.2977213606696031,
+          "distance_reduction_m": -0.0033175816839806638,
+          "endpoint_tcp_m": [
+            -0.36552988035014483,
+            -0.06641334911127235,
+            0.48110025782837623
+          ],
+          "tcp_height_range_m": 0.0022917518610937604,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        }
+      ],
+      "full_nominal": [],
+      "full_nominal_passed": false
+    },
+    "A": {
+      "checkpoint": "/home/user/wq/nero_act_prefix_supervision_20261025/training/A/policy_6000.ckpt",
+      "deployment_metrics": {
+        "scope": "representative18episodes_stride80_not_full_task",
+        "records": {
+          "all": {
+            "samples": 668,
+            "deployment_arm20_normalized_MAE": 0.018543726929052713,
+            "deployment_prefix2_MAE_rad": 0.003056680569520827,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021700973178748395,
+            "prefix_error_to_motion_ratio": 1.4085453884225858,
+            "gripper_prefix2_MAE_m": 6.133930556128144e-06,
+            "positive_motion_direction_fraction": 0.8899835796387521
+          },
+          "train": {
+            "samples": 445,
+            "deployment_arm20_normalized_MAE": 0.01872143485085425,
+            "deployment_prefix2_MAE_rad": 0.0030733487398377102,
+            "teacher_prefix2_motion_mean_abs_rad": 0.002155775615697305,
+            "prefix_error_to_motion_ratio": 1.4256348005140635,
+            "gripper_prefix2_MAE_m": 5.677335237433256e-06,
+            "positive_motion_direction_fraction": 0.8903940886699507
+          },
+          "approach": {
+            "samples": 144,
+            "deployment_arm20_normalized_MAE": 0.027357563116247693,
+            "deployment_prefix2_MAE_rad": 0.0044082921254263805,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0026808460557182865,
+            "prefix_error_to_motion_ratio": 1.6443660075234177,
+            "gripper_prefix2_MAE_m": 7.398480829244757e-07,
+            "positive_motion_direction_fraction": 0.7152777777777778
+          },
+          "descend": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.017604535345567076,
+            "deployment_prefix2_MAE_rad": 0.002906293422568537,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0019332385962621383,
+            "prefix_error_to_motion_ratio": 1.503328884591779,
+            "gripper_prefix2_MAE_m": 5.529490987432484e-06,
+            "positive_motion_direction_fraction": 0.8901098901098901
+          },
+          "close": {
+            "samples": 25,
+            "deployment_arm20_normalized_MAE": 0.018948350020817347,
+            "deployment_prefix2_MAE_rad": 0.0035759762887443815,
+            "teacher_prefix2_motion_mean_abs_rad": 9.34015427316938e-06,
+            "prefix_error_to_motion_ratio": 382.8605164495801,
+            "gripper_prefix2_MAE_m": 4.2520897795839116e-05,
+            "positive_motion_direction_fraction": 0.8
+          },
+          "lift": {
+            "samples": 98,
+            "deployment_arm20_normalized_MAE": 0.018726110645181582,
+            "deployment_prefix2_MAE_rad": 0.0029961853932980284,
+            "teacher_prefix2_motion_mean_abs_rad": 0.001956162993244979,
+            "prefix_error_to_motion_ratio": 1.5316644899450886,
+            "gripper_prefix2_MAE_m": 8.923185710185009e-06,
+            "positive_motion_direction_fraction": 0.9591836734693877
+          },
+          "carry": {
+            "samples": 74,
+            "deployment_arm20_normalized_MAE": 0.020448081747675494,
+            "deployment_prefix2_MAE_rad": 0.0033910985241381586,
+            "teacher_prefix2_motion_mean_abs_rad": 0.003632520289523491,
+            "prefix_error_to_motion_ratio": 0.933538770290805,
+            "gripper_prefix2_MAE_m": 9.216723165573549e-07,
+            "positive_motion_direction_fraction": 0.8851351351351351
+          },
+          "place": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.013285941690253314,
+            "deployment_prefix2_MAE_rad": 0.002003318144028986,
+            "teacher_prefix2_motion_mean_abs_rad": 0.002275534599925884,
+            "prefix_error_to_motion_ratio": 0.8803725261282493,
+            "gripper_prefix2_MAE_m": 4.4407048334790655e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "release": {
+            "samples": 31,
+            "deployment_arm20_normalized_MAE": 0.009453871255646104,
+            "deployment_prefix2_MAE_rad": 0.001927210503013178,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0007895480515220747,
+            "prefix_error_to_motion_ratio": 2.4409033741492245,
+            "gripper_prefix2_MAE_m": 2.933150403072021e-05,
+            "positive_motion_direction_fraction": 0.8214285714285714
+          },
+          "retreat": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.012962763603291294,
+            "deployment_prefix2_MAE_rad": 0.002140068879652201,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021462716758719044,
+            "prefix_error_to_motion_ratio": 0.9971099668837667,
+            "gripper_prefix2_MAE_m": 1.5974778551989462e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "settle": {
+            "samples": 23,
+            "deployment_arm20_normalized_MAE": 0.014420518652902663,
+            "deployment_prefix2_MAE_rad": 0.00312335833166697,
+            "teacher_prefix2_motion_mean_abs_rad": 2.35324968462405e-06,
+            "prefix_error_to_motion_ratio": 1327.2532668652843,
+            "gripper_prefix2_MAE_m": 1.0127896589017877e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "dev": {
+            "samples": 223,
+            "deployment_arm20_normalized_MAE": 0.018189190827636773,
+            "deployment_prefix2_MAE_rad": 0.003023418974045433,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021986764993501885,
+            "prefix_error_to_motion_ratio": 1.3751086050808268,
+            "gripper_prefix2_MAE_m": 7.0450736808780334e-06,
+            "positive_motion_direction_fraction": 0.8891625615763546
+          }
+        },
+        "optimizer_updates": 0,
+        "hardware_commands_sent": false
+      },
+      "approach": [
+        {
+          "id": "centre_0",
+          "initial_distance_m": 0.2945683213169068,
+          "minimum_distance_m": 0.2945683211981434,
+          "final_distance_m": 0.29674504072118374,
+          "distance_reduction_m": -0.002176719404276939,
+          "endpoint_tcp_m": [
+            -0.3700180735832801,
+            -0.07092874210924478,
+            0.48031122138980026
+          ],
+          "tcp_height_range_m": 0.0008854393031341723,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        },
+        {
+          "id": "centre_1",
+          "initial_distance_m": 0.2945076975096057,
+          "minimum_distance_m": 0.2945076975096057,
+          "final_distance_m": 0.296736926019196,
+          "distance_reduction_m": -0.0022292285095902864,
+          "endpoint_tcp_m": [
+            -0.37002230427739263,
+            -0.07092600337108702,
+            0.48030481531979874
+          ],
+          "tcp_height_range_m": 0.0009562137004672788,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        },
+        {
+          "id": "centre_2",
+          "initial_distance_m": 0.2944037789856224,
+          "minimum_distance_m": 0.2944037789856224,
+          "final_distance_m": 0.2967276639975784,
+          "distance_reduction_m": -0.0023238850119559618,
+          "endpoint_tcp_m": [
+            -0.3700199591831515,
+            -0.07092319592905759,
+            0.48029265334238114
+          ],
+          "tcp_height_range_m": 0.0009868329232257111,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        }
+      ],
+      "full_nominal": [],
+      "full_nominal_passed": false
+    },
+    "B": {
+      "checkpoint": "/home/user/wq/nero_act_prefix_supervision_20261025/training/B/policy_6000.ckpt",
+      "deployment_metrics": {
+        "scope": "representative18episodes_stride80_not_full_task",
+        "records": {
+          "all": {
+            "samples": 668,
+            "deployment_arm20_normalized_MAE": 0.01772314462715993,
+            "deployment_prefix2_MAE_rad": 0.0029811301467608793,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021700973178748395,
+            "prefix_error_to_motion_ratio": 1.3737310867147094,
+            "gripper_prefix2_MAE_m": 6.374888059317309e-06,
+            "positive_motion_direction_fraction": 0.8899835796387521
+          },
+          "train": {
+            "samples": 445,
+            "deployment_arm20_normalized_MAE": 0.0178111116878302,
+            "deployment_prefix2_MAE_rad": 0.002961797494423332,
+            "teacher_prefix2_motion_mean_abs_rad": 0.002155775615697305,
+            "prefix_error_to_motion_ratio": 1.373889505409083,
+            "gripper_prefix2_MAE_m": 5.857367113271366e-06,
+            "positive_motion_direction_fraction": 0.895320197044335
+          },
+          "approach": {
+            "samples": 144,
+            "deployment_arm20_normalized_MAE": 0.020297951405010527,
+            "deployment_prefix2_MAE_rad": 0.0032885212867912496,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0026808460557182865,
+            "prefix_error_to_motion_ratio": 1.2266729302776571,
+            "gripper_prefix2_MAE_m": 5.867982354005689e-07,
+            "positive_motion_direction_fraction": 0.6354166666666666
+          },
+          "descend": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.022181825912915742,
+            "deployment_prefix2_MAE_rad": 0.0038588917178205644,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0019332385962621383,
+            "prefix_error_to_motion_ratio": 1.9960762863319725,
+            "gripper_prefix2_MAE_m": 5.7487633601847565e-06,
+            "positive_motion_direction_fraction": 0.9945054945054945
+          },
+          "close": {
+            "samples": 25,
+            "deployment_arm20_normalized_MAE": 0.021355902229036605,
+            "deployment_prefix2_MAE_rad": 0.003673167313848223,
+            "teacher_prefix2_motion_mean_abs_rad": 9.34015427316938e-06,
+            "prefix_error_to_motion_ratio": 393.2662359121626,
+            "gripper_prefix2_MAE_m": 3.6750526360265214e-05,
+            "positive_motion_direction_fraction": 0.9
+          },
+          "lift": {
+            "samples": 98,
+            "deployment_arm20_normalized_MAE": 0.024544076000288694,
+            "deployment_prefix2_MAE_rad": 0.0037701861924728046,
+            "teacher_prefix2_motion_mean_abs_rad": 0.001956162993244979,
+            "prefix_error_to_motion_ratio": 1.9273374486134385,
+            "gripper_prefix2_MAE_m": 8.811068766320028e-06,
+            "positive_motion_direction_fraction": 0.8724489795918368
+          },
+          "carry": {
+            "samples": 74,
+            "deployment_arm20_normalized_MAE": 0.013959922932059608,
+            "deployment_prefix2_MAE_rad": 0.002352312741204233,
+            "teacher_prefix2_motion_mean_abs_rad": 0.003632520289523491,
+            "prefix_error_to_motion_ratio": 0.6475704342212515,
+            "gripper_prefix2_MAE_m": 1.201429471896708e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "place": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.012166530076338321,
+            "deployment_prefix2_MAE_rad": 0.0019596938388875365,
+            "teacher_prefix2_motion_mean_abs_rad": 0.002275534599925884,
+            "prefix_error_to_motion_ratio": 0.8612015123616952,
+            "gripper_prefix2_MAE_m": 5.673767546142329e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "release": {
+            "samples": 31,
+            "deployment_arm20_normalized_MAE": 0.009026848816651903,
+            "deployment_prefix2_MAE_rad": 0.001722873162804386,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0007895480515220747,
+            "prefix_error_to_motion_ratio": 2.182100455422651,
+            "gripper_prefix2_MAE_m": 3.709511891488106e-05,
+            "positive_motion_direction_fraction": 0.9285714285714286
+          },
+          "retreat": {
+            "samples": 91,
+            "deployment_arm20_normalized_MAE": 0.01179955916090326,
+            "deployment_prefix2_MAE_rad": 0.0023311009729979925,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021462716758719044,
+            "prefix_error_to_motion_ratio": 1.0861164498436586,
+            "gripper_prefix2_MAE_m": 1.0102931978673955e-06,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "settle": {
+            "samples": 23,
+            "deployment_arm20_normalized_MAE": 0.020502627041281724,
+            "deployment_prefix2_MAE_rad": 0.0038016851274123103,
+            "teacher_prefix2_motion_mean_abs_rad": 2.35324968462405e-06,
+            "prefix_error_to_motion_ratio": 1615.504360736655,
+            "gripper_prefix2_MAE_m": 9.320399503009036e-07,
+            "positive_motion_direction_fraction": 1.0
+          },
+          "dev": {
+            "samples": 223,
+            "deployment_arm20_normalized_MAE": 0.01754764598631776,
+            "deployment_prefix2_MAE_rad": 0.003019708757927733,
+            "teacher_prefix2_motion_mean_abs_rad": 0.0021986764993501885,
+            "prefix_error_to_motion_ratio": 1.3734211280377981,
+            "gripper_prefix2_MAE_m": 7.4076092296780485e-06,
+            "positive_motion_direction_fraction": 0.8793103448275862
+          }
+        },
+        "optimizer_updates": 0,
+        "hardware_commands_sent": false
+      },
+      "approach": [
+        {
+          "id": "centre_0",
+          "initial_distance_m": 0.2945683213169068,
+          "minimum_distance_m": 0.2945683211981434,
+          "final_distance_m": 0.2961660806766944,
+          "distance_reduction_m": -0.0015977593597876205,
+          "endpoint_tcp_m": [
+            -0.36794624548185534,
+            -0.06737089157494798,
+            0.4801445195135819
+          ],
+          "tcp_height_range_m": 0.0006439797572125872,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        },
+        {
+          "id": "centre_1",
+          "initial_distance_m": 0.2945076975096057,
+          "minimum_distance_m": 0.2945076975096057,
+          "final_distance_m": 0.29611618532415745,
+          "distance_reduction_m": -0.0016084878145517512,
+          "endpoint_tcp_m": [
+            -0.36795444135055466,
+            -0.06733119530165892,
+            0.48010580570693573
+          ],
+          "tcp_height_range_m": 0.0007634533840890634,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        },
+        {
+          "id": "centre_2",
+          "initial_distance_m": 0.2944037789856224,
+          "minimum_distance_m": 0.2944037789856224,
+          "final_distance_m": 0.2961673662914719,
+          "distance_reduction_m": -0.0017635873058494678,
+          "endpoint_tcp_m": [
+            -0.36792756638079577,
+            -0.06735865855660231,
+            0.48014048963181266
+          ],
+          "tcp_height_range_m": 0.0008028741919819948,
+          "approach_reached": false,
+          "eligible_for_full_nominal": false,
+          "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+          "diagnostic_cap_reached": true,
+          "simulated_events": [],
+          "full_task_test": false,
+          "full_task_passed": false,
+          "hardware_commands_sent": false
+        }
+      ],
+      "full_nominal": []
+    }
+  },
+  "hardware_commands_sent": false
+}

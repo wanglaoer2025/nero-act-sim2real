@@ -1,0 +1,14 @@
+.......F                                                                 [100%]
+=================================== FAILURES ===================================
+_ test_real_failed_sim_frame_fragment_can_join_but_separate_targets_still_reject _
+
+    def test_real_failed_sim_frame_fragment_can_join_but_separate_targets_still_reject():
+        import cv2,numpy as np,pytest
+        from pathlib import Path
+>       from observer import current_cup_component
+E       ImportError: cannot import name 'current_cup_component' from 'observer' (/home/user/wq/nero_act_transfer_v2_20261025/observer.py)
+
+tests/test_observer.py:114: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_observer.py::test_real_failed_sim_frame_fragment_can_join_but_separate_targets_still_reject
+1 failed, 7 passed in 0.56s

@@ -1,0 +1,41 @@
+{
+  "completed_at": "2026-10-23T21:31:46.365924+08:00",
+  "actual_updates": 1000,
+  "full_task_passed": false,
+  "full_task_pass_count": 0,
+  "case_count": 3,
+  "grasp_case_count": 3,
+  "carry_case_count": 1,
+  "maximum_lift_m": 0.1835102532312885,
+  "source_binding_review_issue_fixed": true,
+  "actual_evaluation_sources_bound": 257,
+  "software_tests_passed": 6,
+  "teacher_fallback": false,
+  "hardware_commands_sent": false,
+  "hardware_deployment_allowed": false,
+  "failures": [
+    {
+      "id": 9000,
+      "error": "RuntimeError: Attached-cup model would cross the table",
+      "events": [
+        "GRASP"
+      ]
+    },
+    {
+      "id": 9005,
+      "error": "RuntimeError: Attached-cup model would cross the table",
+      "events": [
+        "GRASP"
+      ]
+    },
+    {
+      "id": 9006,
+      "error": "ValueError: Unique visible cup and target required",
+      "events": [
+        "GRASP",
+        "CARRY"
+      ]
+    }
+  ],
+  "next_stage": "Exact held-grasp recovery plus image-only partially occluded card geometry; no safety-limit relaxation"
+}

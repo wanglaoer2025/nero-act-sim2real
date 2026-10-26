@@ -1,0 +1,37 @@
+....................F..                                                  [100%]
+=================================== FAILURES ===================================
+___________ test_history_dispatch_records_actual_ack_and_completion ____________
+
+    def test_history_dispatch_records_actual_ack_and_completion():
+        worker,core,port,dispatcher,now=components()
+        packet=worker.predict(previous_gripper_target_m=.095,after_s=9.9)
+>       dispatcher.dispatch_prediction(packet)
+
+tests/test_history_dispatch.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+executor/visual_dispatch.py:72: in dispatch_prediction
+    return self.dispatch(packet['raw'],packet['frame'],packet['geometry'],
+executor/visual_dispatch.py:104: in dispatch
+    self.inference_worker.prefix_completed(self.core.receipts[-1]['receipt_id'],completed_s=self.clock())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <executor.visual_inference.VisualInferenceWorker object at 0x76c45fea2540>
+receipt_id = 's:1'
+
+    def prefix_completed(self,receipt_id,*,completed_s=None):
+        completed_s=self.clock() if completed_s is None else completed_s
+        if (self.history_stopped or self.pending_receipt!=receipt_id
+                or not np.isfinite(completed_s) or completed_s<self.receipts[-1]['ack_s']
+                or completed_s>self.clock()):
+>           raise ValueError('Actual pending prefix completion required')
+E           ValueError: Actual pending prefix completion required
+
+executor/visual_inference.py:106: ValueError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_dispatch.py::test_history_dispatch_records_actual_ack_and_completion
+1 failed, 22 passed, 1 warning in 2.28s

@@ -1,0 +1,268 @@
+......................FFFFFFFFFF                                         [100%]
+=================================== FAILURES ===================================
+_____________________ test_reviewed_20mm_plan_is_arm_only ______________________
+
+    def test_reviewed_20mm_plan_is_arm_only():
+>       m=api(); p=plan()
+
+tests/test_lower_for_board.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_________ test_invalid_motion_is_rejected_before_hardware[large_step] __________
+
+fault = 'large_step'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_____________ test_invalid_motion_is_rejected_before_hardware[nan] _____________
+
+fault = 'nan'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_________ test_invalid_motion_is_rejected_before_hardware[wrong_speed] _________
+
+fault = 'wrong_speed'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+___________ test_invalid_motion_is_rejected_before_hardware[upward] ____________
+
+fault = 'upward'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+__________ test_invalid_motion_is_rejected_before_hardware[sideways] ___________
+
+fault = 'sideways'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+__________ test_invalid_motion_is_rejected_before_hardware[rotation] ___________
+
+fault = 'rotation'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+___________ test_invalid_motion_is_rejected_before_hardware[gripper] ___________
+
+fault = 'gripper'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_______ test_invalid_motion_is_rejected_before_hardware[source_changed] ________
+
+fault = 'source_changed'
+
+    @pytest.mark.parametrize('fault',['large_step','nan','wrong_speed','upward','sideways','rotation','gripper','source_changed'])
+    def test_invalid_motion_is_rejected_before_hardware(fault):
+>       m=api();p=copy.deepcopy(plan())
+
+tests/test_lower_for_board.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+________ test_feedback_drift_and_gripper_change_stop_before_next_target ________
+
+    def test_feedback_drift_and_gripper_change_stop_before_next_target():
+>       m=api();p=plan();q=np.array(p['initial_state'])
+
+tests/test_lower_for_board.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_lower_for_board.py:12: in api
+    return importlib.import_module('lower_for_board')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'lower_for_board', import_ = <function _gcd_import at 0x7ad0666cc0e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'lower_for_board'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_lower_for_board.py::test_reviewed_20mm_plan_is_arm_only - M...
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[large_step]
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[nan]
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[wrong_speed]
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[upward]
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[sideways]
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[rotation]
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[gripper]
+FAILED tests/test_lower_for_board.py::test_invalid_motion_is_rejected_before_hardware[source_changed]
+FAILED tests/test_lower_for_board.py::test_feedback_drift_and_gripper_change_stop_before_next_target
+10 failed, 22 passed in 1.37s

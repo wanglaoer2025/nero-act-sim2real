@@ -1,0 +1,39 @@
+{
+  "mode": "offline_simulation_training",
+  "hardware_access": false,
+  "stage": "training_and_evaluation_finished",
+  "started_wall_s": 1792303533.2687438,
+  "pid": 1686580,
+  "steps": [
+    {
+      "stage": "cuda_smoke_1epoch",
+      "returncode": 0,
+      "log": "training_smoke.log"
+    },
+    {
+      "stage": "formal_training_20epochs",
+      "returncode": 0,
+      "log": "run14_training.log"
+    },
+    {
+      "stage": "export_frozen_validation_selected_model",
+      "returncode": 0,
+      "log": "run14_export.log"
+    },
+    {
+      "stage": "frozen16case_online_closed_loop_evaluation",
+      "returncode": 0,
+      "log": "run14_evaluation.log"
+    }
+  ],
+  "complete_demonstrations": 48,
+  "train_scenes": 36,
+  "val_scenes": 12,
+  "manifest_sha256": "bb8227cba2a1b41c217d100516af97eb63ba7434d779df05fac0efd8c558928f",
+  "child_pid": 1706672,
+  "simulation_cases_passed": 4,
+  "simulation_cases_total": 16,
+  "hardware_authorized": false,
+  "hardware_task_verified": false,
+  "ended_wall_s": 1792305049.796582
+}

@@ -1,0 +1,24 @@
+{
+  "reviewer": "/root/contact_escape_final_review",
+  "fresh_context": true,
+  "model": "gpt-6-astra",
+  "critical_findings": 0,
+  "fixed": [
+    {
+      "finding": "Global action-integrity claim obscured retained holds",
+      "severity": "Important",
+      "test": "test_action_provenance_discloses_retained_holds_without_global_false_claim",
+      "red_green": true
+    },
+    {
+      "finding": "Floor crossing sample skipped strictly upward TCP guarantee",
+      "reviewer_severity": "Minor",
+      "parent_severity": "Important",
+      "test": "test_first_floor_crossing_still_requires_upward_tcp",
+      "red_green": true
+    }
+  ],
+  "full_bound_evaluation_repeated": true,
+  "post_review_edge_extension_independently_rereviewed": false,
+  "remaining_real_safety_and_false_positive_assessment_unqualified": true
+}

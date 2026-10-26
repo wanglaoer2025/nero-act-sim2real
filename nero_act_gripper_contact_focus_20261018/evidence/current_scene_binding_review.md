@@ -1,0 +1,7 @@
+# 当前固定场景部署包复核
+
+独立复核无 Critical 或 Important 问题。原训练证明和部署派生证明均可验证；权重张量与归一化文件保持一致，5个已保存的真实输入在原包与部署包之间的预测差均为0。13项权限、起点、模型包与评估相关检查通过。未执行新的优化步骤。
+
+部署配置仅调整当前场景，保留原始训练场景并显式记录派生关系。Minor：部署scene_config中的initial_pose_source、source_geometry_evidence和source_capture_sha256继承原训练场景字段，不能将其解释为本次采集来源。本次场景来源以training_config的deployment_scene_binding、派生完整性证明及current_scene_binding_audit.json为准；为保持正在验收的哈希冻结，未修改这些继承字段。
+
+真实起点夹爪约80.894毫米，计划起点95毫米；未完成高位张爪准备时，原起点检查会正确拒绝执行。14项仿真验收尚未全部结束时不具备运动许可。本文不构成现场授权，不发送运动、夹爪或使能命令。

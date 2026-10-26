@@ -1,0 +1,212 @@
+{
+  "scope": "Current real-camera and feedback capture followed by frozen cup ACT inference only",
+  "model_checkpoint_sha256": "23bffd16e3e93c2fbb1420eedd60603575d19c794e3c9362e57411402439aec3",
+  "model_epoch": 74,
+  "task_scope": "current_yellow_cup_pickup_hold",
+  "action_chunk_shape": [
+    20,
+    8
+  ],
+  "actual_state": [
+    0.3917565941810608,
+    0.5981941223144531,
+    0.01014036312699318,
+    1.5140208005905151,
+    0.2099980115890503,
+    0.3433062732219696,
+    -0.5791351795196533,
+    0.09431000053882599
+  ],
+  "trained_initial_state": [
+    0.2237861156463623,
+    -0.11719886213541031,
+    0.1344776153564453,
+    1.5639197826385498,
+    -0.014765485189855099,
+    0.25787240266799927,
+    0.14997614920139313,
+    0.06017899885773659
+  ],
+  "actual_minus_trained_arm_deg": [
+    9.623999502831012,
+    40.988998702245304,
+    -7.123999789001193,
+    -2.8590010733514473,
+    12.877999754033553,
+    4.895000210209501,
+    -41.77500193089156
+  ],
+  "actual_minus_trained_gripper_mm": 34.1310016810894,
+  "training_initial_min": [
+    0.22274751961231232,
+    -0.11900848895311356,
+    0.13259831070899963,
+    1.5620357990264893,
+    -0.016134120523929596,
+    0.2562386691570282,
+    0.14817574620246887
+  ],
+  "training_initial_max": [
+    0.22546282410621643,
+    -0.11542575061321259,
+    0.136036679148674,
+    1.56522536277771,
+    -0.01306232437491417,
+    0.2597983479499817,
+    0.1518416404724121
+  ],
+  "training_scene_endpoints": [
+    {
+      "episode": "episode_0.hdf5",
+      "pick_xy_m": [
+        -0.5124589093631634,
+        -0.020848633498434556
+      ],
+      "place_xy_m": [
+        -0.5124589093631634,
+        -0.020848633498434556
+      ]
+    },
+    {
+      "episode": "episode_1.hdf5",
+      "pick_xy_m": [
+        -0.514754788682892,
+        -0.02150241006305739
+      ],
+      "place_xy_m": [
+        -0.514754788682892,
+        -0.02150241006305739
+      ]
+    },
+    {
+      "episode": "episode_2.hdf5",
+      "pick_xy_m": [
+        -0.5150093358821838,
+        -0.02208190410779289
+      ],
+      "place_xy_m": [
+        -0.5150093358821838,
+        -0.02208190410779289
+      ]
+    },
+    {
+      "episode": "episode_3.hdf5",
+      "pick_xy_m": [
+        -0.5127522775640538,
+        -0.01818936084512792
+      ],
+      "place_xy_m": [
+        -0.5127522775640538,
+        -0.01818936084512792
+      ]
+    },
+    {
+      "episode": "episode_4.hdf5",
+      "pick_xy_m": [
+        -0.5107211100977292,
+        -0.021615594290491258
+      ],
+      "place_xy_m": [
+        -0.5107211100977292,
+        -0.021615594290491258
+      ]
+    },
+    {
+      "episode": "episode_5.hdf5",
+      "pick_xy_m": [
+        -0.5144703841904187,
+        -0.02055534028104507
+      ],
+      "place_xy_m": [
+        -0.5144703841904187,
+        -0.02055534028104507
+      ]
+    },
+    {
+      "episode": "episode_6.hdf5",
+      "pick_xy_m": [
+        -0.5121903044992475,
+        -0.01967582107189056
+      ],
+      "place_xy_m": [
+        -0.5121903044992475,
+        -0.01967582107189056
+      ]
+    },
+    {
+      "episode": "episode_7.hdf5",
+      "pick_xy_m": [
+        -0.5112267582406802,
+        -0.0211937836930225
+      ],
+      "place_xy_m": [
+        -0.5112267582406802,
+        -0.0211937836930225
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "sample_index": 0,
+      "inference_ms": 30.187285039573908,
+      "first_action": [
+        0.39130786061286926,
+        0.6041624546051025,
+        0.009816840291023254,
+        1.518580675125122,
+        0.20937958359718323,
+        0.3428453207015991,
+        -0.5859275460243225,
+        0.08209939301013947
+      ],
+      "first10_max_arm_gap_rad": 0.0109483003616333,
+      "first10_max_gripper_gap_m": 0.013425469398498535
+    },
+    {
+      "sample_index": 6,
+      "inference_ms": 23.25378800742328,
+      "first_action": [
+        0.39127159118652344,
+        0.6041661500930786,
+        0.009815553203225136,
+        1.5185647010803223,
+        0.20937879383563995,
+        0.3428442180156708,
+        -0.5857810378074646,
+        0.0820964127779007
+      ],
+      "first10_max_arm_gap_rad": 0.010945260524749756,
+      "first10_max_gripper_gap_m": 0.013423897325992584
+    },
+    {
+      "sample_index": 12,
+      "inference_ms": 23.500537034124136,
+      "first_action": [
+        0.39123889803886414,
+        0.604107677936554,
+        0.00981757789850235,
+        1.5185858011245728,
+        0.209380105137825,
+        0.3428459167480469,
+        -0.5858137011528015,
+        0.08208905160427094
+      ],
+      "first10_max_arm_gap_rad": 0.010957658290863037,
+      "first10_max_gripper_gap_m": 0.013437189161777496
+    }
+  ],
+  "full_pick_place_policy_available": false,
+  "legacy_air_executor_compatible": false,
+  "hardware_deployment_allowed": false,
+  "blocking_reasons": [
+    "Frozen cup checkpoint task is pickup/hold; no carry, place, release or retreat training",
+    "Current robot posture and cup destination scene differ from the training start",
+    "Existing air executor requires100x8 and noncontact air task; cup policy is20x8",
+    "Physical contact observer and force-aware ACT executor have not been validated",
+    "Simulation contact frame and TCP require alignment with the now accepted link7 model TCP"
+  ],
+  "motion_sent": false,
+  "gripper_sent": false,
+  "enable_sent": false,
+  "current_scene_capture": "current_capture/observations.npz"
+}

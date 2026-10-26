@@ -1,0 +1,62 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_____ test_formal_training_cannot_start_without_completed_pilot_mechanisms _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-148/test_formal_training_cannot_st0')
+
+    def test_formal_training_cannot_start_without_completed_pilot_mechanisms(tmp_path):
+>       m=api()
+
+tests/test_history_qualification.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.history_qualification'), 'Pilot/development qualification graph missing'
+E       AssertionError: Pilot/development qualification graph missing
+E       assert None
+E        +  where None = <function find_spec at 0x7e3c037505e0>('executor.history_qualification')
+E        +    where <function find_spec at 0x7e3c037505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_qualification.py:7: AssertionError
+____ test_independent_cases_cannot_start_without_development_qualification _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-148/test_independent_cases_cannot_0')
+
+    def test_independent_cases_cannot_start_without_development_qualification(tmp_path):
+>       m=api()
+
+tests/test_history_qualification.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.history_qualification'), 'Pilot/development qualification graph missing'
+E       AssertionError: Pilot/development qualification graph missing
+E       assert None
+E        +  where None = <function find_spec at 0x7e3c037505e0>('executor.history_qualification')
+E        +    where <function find_spec at 0x7e3c037505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_qualification.py:7: AssertionError
+_____ test_mechanism_summary_cannot_be_substituted_for_another_checkpoint ______
+
+    def test_mechanism_summary_cannot_be_substituted_for_another_checkpoint():
+>       m=api()
+
+tests/test_history_qualification.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.history_qualification'), 'Pilot/development qualification graph missing'
+E       AssertionError: Pilot/development qualification graph missing
+E       assert None
+E        +  where None = <function find_spec at 0x7e3c037505e0>('executor.history_qualification')
+E        +    where <function find_spec at 0x7e3c037505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_qualification.py:7: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_qualification.py::test_formal_training_cannot_start_without_completed_pilot_mechanisms
+FAILED tests/test_history_qualification.py::test_independent_cases_cannot_start_without_development_qualification
+FAILED tests/test_history_qualification.py::test_mechanism_summary_cannot_be_substituted_for_another_checkpoint
+3 failed in 0.02s

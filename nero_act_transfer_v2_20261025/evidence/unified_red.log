@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_unified_observer_uses_current_rgb_and_only_joint_based_tcp ________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-118/test_unified_observer_uses_cur0')
+
+    def test_unified_observer_uses_current_rgb_and_only_joint_based_tcp(tmp_path):
+>       from observer import UnifiedObserver
+E       ImportError: cannot import name 'UnifiedObserver' from 'observer' (/home/user/wq/nero_act_transfer_v2_20261025/observer.py)
+
+tests/test_observer.py:71: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_observer.py::test_unified_observer_uses_current_rgb_and_only_joint_based_tcp
+1 failed in 0.10s

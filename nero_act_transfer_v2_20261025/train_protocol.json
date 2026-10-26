@@ -1,0 +1,23 @@
+{
+  "pilot_updates": 200,
+  "pilot_initializes_formal": false,
+  "formal_updates": 20000,
+  "batch_size": 32,
+  "checkpoints": [
+    2000,
+    5000,
+    10000,
+    20000
+  ],
+  "source_initialization": "fresh_ACT_ImageNet_resnet18",
+  "loss": "arm20_masked_L1 + gripper2_increment_MSE + 10*KL",
+  "optimizer": "AdamW",
+  "main_lr": 0.0001,
+  "layer4_lr": 1e-05,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "seed": 42,
+  "automatic_budget_extension": false,
+  "real_adaptation_updates_per_arm": 3000,
+  "real_adaptation_requires_qualified_demonstrations": 12
+}

@@ -1,0 +1,202 @@
+F.FFFFFFFF                                                               [100%]
+=================================== FAILURES ===================================
+______ test_future_gripper_labels_cannot_cancel_executed_prefix_gradient _______
+
+    def test_future_gripper_labels_cannot_cancel_executed_prefix_gradient():
+        from training.history import build_history_policy
+        c,q,image,_=config();c.update(gripper_supervision_profile='deployed_first2_v1',deployed_prefix_loss_weight=.01)
+        p=build_history_policy(c).train();padding=torch.zeros(2,20,dtype=torch.bool)
+        first=torch.zeros(2,20,8);second=first.clone();first[:,2:,7]=-10.;second[:,2:,7]=10.
+        params=list(p.gripper_adapter.parameters())
+        one=gradients(p,q,image,first,padding,params);two=gradients(p,q,image,second,padding,params)
+        assert one.norm()>0
+>       torch.testing.assert_close(one,two,rtol=0,atol=0)
+E       AssertionError: Tensor-likes are not equal!
+E       
+E       Mismatched elements: 65 / 8321 (0.8%)
+E       Greatest absolute difference: 0.028491321951150894 at index (8320,)
+E       Greatest relative difference: 10.041415214538574 at index (8271,)
+
+tests/test_contact_prefix_repair.py:25: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+______ test_padded_prefix_does_not_train_gripper_from_valid_future_points ______
+
+    def test_padded_prefix_does_not_train_gripper_from_valid_future_points():
+        from training.history import build_history_policy
+        c,q,image,_=config();c.update(gripper_supervision_profile='deployed_first2_v1',deployed_prefix_loss_weight=.01)
+        p=build_history_policy(c).train();padding=torch.zeros(2,20,dtype=torch.bool);padding[:,:2]=True
+        target=torch.ones(2,20,8)*.1
+>       assert gradients(p,q,image,target,padding,list(p.gripper_adapter.parameters())).abs().sum()==0
+E       assert tensor(0.2263) == 0
+E        +  where tensor(0.2263) = <built-in method sum of Tensor object at 0x7b66972bcaf0>()
+E        +    where <built-in method sum of Tensor object at 0x7b66972bcaf0> = tensor([0.0000, 0.0000, 0.0000,  ..., 0.0163, 0.0071, 0.0171]).sum
+E        +      where tensor([0.0000, 0.0000, 0.0000,  ..., 0.0163, 0.0071, 0.0171]) = <built-in method abs of Tensor object at 0x7b66972be760>()
+E        +        where <built-in method abs of Tensor object at 0x7b66972be760> = tensor([ 0.0000,  0.0000,  0.0000,  ..., -0.0163, -0.0071, -0.0171]).abs
+E        +          where tensor([ 0.0000,  0.0000,  0.0000,  ..., -0.0163, -0.0071, -0.0171]) = gradients(FullTaskPolicy(\n  (model): DETRVAE(\n    (transformer): Transformer(\n      (encoder): TransformerEncoder(\n        (laye...tures=128, out_features=64, bias=True)\n    (1): SiLU()\n    (2): Linear(in_features=64, out_features=1, bias=True)\n  )\n), tensor([[ 0.1927,  0.1487,  0.0901, -0.2106,  0.0678, -0.1235, -0.0043, -0.1605,\n         -0.0752,  0.1649, -0.0392, -... -0.0223,  0.1717,  0.0319, -0.0425, -0.0829,\n          0.0331, -0.1558,  0.0996, -0.0880, -0.0601, -0.1274,  0.2123]]), tensor([[[[[0.0580, 0.1993, 0.4211,  ..., 0.5088, 0.9559, 0.7885],\n           [0.2089, 0.4351, 0.1314,  ..., 0.5730, 0..., 0.4962, 0.2664,  ..., 0.4598, 0.7645, 0.0318],\n           [0.6598, 0.3029, 0.2631,  ..., 0.6951, 0.1522, 0.0934]]]]]), tensor([[[0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000],\n         [0.1000, 0.1000, 0.1000, 0.1000, 0..., 0.1000, 0.1000, 0.1000, 0.1000, 0.1000],\n         [0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000]]]), tensor([[ True,  True, False, False, False, False, False, False, False, False,\n         False, False, False, False, Fa...se, False, False, False, False, False,\n         False, False, False, False, False, False, False, False, False, False]]), [Parameter containing:\ntensor([[ 0.0676,  0.0734, -0.0207,  ..., -0.0516, -0.0303, -0.0698],\n        [ 0.0741, -0.0175..., 0., 0., 0., 0., 0., 0., 0., 0.]],\n       requires_grad=True), Parameter containing:\ntensor([0.], requires_grad=True)])
+E        +            where [Parameter containing:\ntensor([[ 0.0676,  0.0734, -0.0207,  ..., -0.0516, -0.0303, -0.0698],\n        [ 0.0741, -0.0175..., 0., 0., 0., 0., 0., 0., 0., 0.]],\n       requires_grad=True), Parameter containing:\ntensor([0.], requires_grad=True)] = list(<generator object Module.parameters at 0x7b6699cc8900>)
+E        +              where <generator object Module.parameters at 0x7b6699cc8900> = <bound method Module.parameters of Sequential(\n  (0): Linear(in_features=128, out_features=64, bias=True)\n  (1): SiLU()\n  (2): Linear(in_features=64, out_features=1, bias=True)\n)>()
+E        +                where <bound method Module.parameters of Sequential(\n  (0): Linear(in_features=128, out_features=64, bias=True)\n  (1): SiLU()\n  (2): Linear(in_features=64, out_features=1, bias=True)\n)> = Sequential(\n  (0): Linear(in_features=128, out_features=64, bias=True)\n  (1): SiLU()\n  (2): Linear(in_features=64, out_features=1, bias=True)\n).parameters
+E        +                  where Sequential(\n  (0): Linear(in_features=128, out_features=64, bias=True)\n  (1): SiLU()\n  (2): Linear(in_features=64, out_features=1, bias=True)\n) = FullTaskPolicy(\n  (model): DETRVAE(\n    (transformer): Transformer(\n      (encoder): TransformerEncoder(\n        (laye...tures=128, out_features=64, bias=True)\n    (1): SiLU()\n    (2): Linear(in_features=64, out_features=1, bias=True)\n  )\n).gripper_adapter
+
+tests/test_contact_prefix_repair.py:45: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+_________________ test_unknown_gripper_supervision_is_rejected _________________
+
+    def test_unknown_gripper_supervision_is_rejected():
+        from training.history import build_history_policy
+        c,_,_,_=config()
+>       with pytest.raises(ValueError):build_history_policy(dict(c,gripper_supervision_profile='unknown'))
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_contact_prefix_repair.py:51: Failed
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+_______________ test_caller_cannot_replace_sealed_prefix_profile _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-24/test_caller_cannot_replace_sea0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7b6699ddf170>
+
+    def test_caller_cannot_replace_sealed_prefix_profile(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(gripper_supervision_profile='deployed_first2_v1')
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',dict(variant='A',stage='pilot'),tmp_path/'run')
+
+tests/test_contact_prefix_repair.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-24/test_caller_cannot_replace_sea0/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-24/test_caller_cannot_replace_sea0/initializer')
+config = {'stage': 'pilot', 'variant': 'A'}
+output = PosixPath('/tmp/pytest-of-user/pytest-24/test_caller_cannot_replace_sea0/run')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        declared=json.loads((ROOT/'config/history_experiment.json').read_text())
+        sampling_profile=declared.get('transition_sampling_profile','none')
+        scope=declared.get('adaptation_scope','full')
+        if settings.get('adaptation_scope','full')!=scope:
+            raise ValueError('Caller adaptation scope differs from the sealed declaration')
+        if settings.get('approach_preservation')!=declared.get('approach_preservation'):
+            raise ValueError('Caller approach preservation differs from the sealed declaration')
+        if settings.get('optimizer_control')!=declared.get('optimizer_control'):
+            raise ValueError('Caller differs from sealed optimizer control')
+        if settings.get('excluded_ambiguous_windows',[])!=declared.get('excluded_ambiguous_windows',[]):
+            raise ValueError('Caller ambiguous windows differ from sealed declaration')
+        if settings.get('optimizer_diagnostics_path')!=declared.get('optimizer_diagnostics_path'):
+            raise ValueError('Caller optimizer diagnostics differ from sealed declaration')
+        if scope=='output_heads_v1':
+            if stage!='pilot' or variant!='A':raise ValueError('Restricted heads are single-model A pilot only')
+            for key in ['train_arm_output_and_gripper_only','arm_output_lr','gripper_adapter_lr']:
+                if settings.get(key)!=declared.get(key):raise ValueError('Restricted setting differs from sealed declaration: '+key)
+    
+        if settings.get('deployed_prefix_loss_weight',0.)!=declared.get('deployed_prefix_loss_weight',0.):
+            raise ValueError('Caller deployed prefix weight differs from the sealed declaration')
+        additional=declared.get('additional_failure_episode_ids',[])
+        if settings.get('additional_failure_episode_ids',[])!=additional:
+            raise ValueError('Additional recovery IDs differ from the sealed experiment declaration')
+        if settings.get('transition_sampling_profile','none')!=sampling_profile:
+            raise ValueError('Caller sampling profile differs from the sealed experiment declaration')
+        if stage=='formal' and sampling_profile!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:361: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-24/test_caller_cannot_replace_sea0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7b6699ddf170>
+
+    def test_caller_cannot_replace_sealed_prefix_profile(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(gripper_supervision_profile='deployed_first2_v1')
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+>       with pytest.raises(ValueError,match='sealed'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'sealed'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_contact_prefix_repair.py:59: AssertionError
+____ test_uniform_scene_preserves_geometry_and_uses_slow_physical_commands _____
+
+    def test_uniform_scene_preserves_geometry_and_uses_slow_physical_commands():
+>       from training.contact_timebase import unified_scene
+E       ModuleNotFoundError: No module named 'training.contact_timebase'
+
+tests/test_contact_prefix_repair.py:65: ModuleNotFoundError
+_____________ test_timebase_audit_reads_actual_command_differences _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-24/test_timebase_audit_reads_actu0')
+
+    def test_timebase_audit_reads_actual_command_differences(tmp_path):
+>       from training.contact_timebase import verify_uniform_episode
+E       ModuleNotFoundError: No module named 'training.contact_timebase'
+
+tests/test_contact_prefix_repair.py:76: ModuleNotFoundError
+_ test_boundary_pool_keeps_post_start_contact_crossing_and_rejects_validation __
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-24/test_boundary_pool_keeps_post_0')
+
+    def test_boundary_pool_keeps_post_start_contact_crossing_and_rejects_validation(tmp_path):
+>       from training.contact_sampling import contact_boundary_pool
+E       ImportError: cannot import name 'contact_boundary_pool' from 'training.contact_sampling' (/home/user/wq/nero_act_contact_prefix_repair_20261021/training/contact_sampling.py)
+
+tests/test_contact_prefix_repair.py:87: ImportError
+________ test_quarter_schedule_reserves_four_slots_for_boundary_inputs _________
+
+    def test_quarter_schedule_reserves_four_slots_for_boundary_inputs():
+        from training.history import make_batch_order
+>       a=make_batch_order(100,batch_size=32,budget=dict(kind='updates',limit=1000),seed=42,critical_indices=np.arange(10),boundary_indices=np.arange(20,30))
+E       TypeError: make_batch_order() got an unexpected keyword argument 'boundary_indices'
+
+tests/test_contact_prefix_repair.py:102: TypeError
+__ test_reference_reencoding_preserves_physical_targets_and_previous_command ___
+
+    def test_reference_reencoding_preserves_physical_targets_and_previous_command():
+>       from training.contact_timebase import reencode_reference
+E       ModuleNotFoundError: No module named 'training.contact_timebase'
+
+tests/test_contact_prefix_repair.py:109: ModuleNotFoundError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_contact_prefix_repair.py::test_future_gripper_labels_cannot_cancel_executed_prefix_gradient
+FAILED tests/test_contact_prefix_repair.py::test_padded_prefix_does_not_train_gripper_from_valid_future_points
+FAILED tests/test_contact_prefix_repair.py::test_unknown_gripper_supervision_is_rejected
+FAILED tests/test_contact_prefix_repair.py::test_caller_cannot_replace_sealed_prefix_profile
+FAILED tests/test_contact_prefix_repair.py::test_uniform_scene_preserves_geometry_and_uses_slow_physical_commands
+FAILED tests/test_contact_prefix_repair.py::test_timebase_audit_reads_actual_command_differences
+FAILED tests/test_contact_prefix_repair.py::test_boundary_pool_keeps_post_start_contact_crossing_and_rejects_validation
+FAILED tests/test_contact_prefix_repair.py::test_quarter_schedule_reserves_four_slots_for_boundary_inputs
+FAILED tests/test_contact_prefix_repair.py::test_reference_reencoding_preserves_physical_targets_and_previous_command
+9 failed, 1 passed, 1 warning in 4.01s

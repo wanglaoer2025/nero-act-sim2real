@@ -1,0 +1,397 @@
+FFFFFFFFFFFFFFFF                                                         [100%]
+=================================== FAILURES ===================================
+_____________________ test_past_item_uses_its_own_receipt ______________________
+
+    def test_past_item_uses_its_own_receipt():
+>       m=api()
+
+tests/test_history_contract.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+___________________ test_history_order_span_and_confirmation ___________________
+
+    def test_history_order_span_and_confirmation():
+>       h=history();b=h.snapshot(np.full(15,4,np.float32))
+
+tests/test_history_contract.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_history_contract.py:24: in history
+    m=api();h=m.HistoryBuffer();h.clear(epoch=1, after_s=9.9)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+_______________________ test_snapshot_cannot_be_mutated ________________________
+
+    def test_snapshot_cannot_be_mutated():
+>       h=history();b=h.snapshot(np.full(15,4))
+
+tests/test_history_contract.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_history_contract.py:24: in history
+    m=api();h=m.HistoryBuffer();h.clear(epoch=1, after_s=9.9)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change0] _________________
+
+change = {'exposure_s': 10.151}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change1] _________________
+
+change = {'frame_id': 0}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change2] _________________
+
+change = {'epoch': 2}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change3] _________________
+
+change = {'camera_sha256': 'other'}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change4] _________________
+
+change = {'calibration_sha256': 'other'}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change5] _________________
+
+change = {'session_id': 'other'}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change6] _________________
+
+change = {'admission_valid': False}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change7] _________________
+
+change = {'prefix_complete': False}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change8] _________________
+
+change = {'receipt_ack_s': 10.1}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change9] _________________
+
+change = {'feedback_s': 11}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change10] ________________
+
+change = {'admitted_s': 10.0}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________________ test_invalid_admission_stops_history[change11] ________________
+
+change = {'observation': array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])}
+
+    @pytest.mark.parametrize('change',[
+        {'exposure_s':10.151}, {'frame_id':0}, {'epoch':2}, {'camera_sha256':'other'},
+        {'calibration_sha256':'other'}, {'session_id':'other'}, {'admission_valid':False},
+        {'prefix_complete':False}, {'receipt_ack_s':10.1}, {'feedback_s':11},
+        {'admitted_s':10.0}, {'observation':np.zeros(14)},
+    ])
+    def test_invalid_admission_stops_history(change):
+>       m=api();h=m.HistoryBuffer();h.clear(epoch=1,after_s=9.9);h.append(item(0))
+
+tests/test_history_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+________ test_current_mismatch_and_modified_admitted_item_are_rejected _________
+
+    def test_current_mismatch_and_modified_admitted_item_are_rejected():
+>       h=history()
+
+tests/test_history_contract.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_history_contract.py:24: in history
+    m=api();h=m.HistoryBuffer();h.clear(epoch=1, after_s=9.9)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.observation_history'), 'Causal history contract missing'
+E       AssertionError: Causal history contract missing
+E       assert None
+E        +  where None = <function find_spec at 0x7cd9b39ac5e0>('executor.observation_history')
+E        +    where <function find_spec at 0x7cd9b39ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_contract.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_contract.py::test_past_item_uses_its_own_receipt - ...
+FAILED tests/test_history_contract.py::test_history_order_span_and_confirmation
+FAILED tests/test_history_contract.py::test_snapshot_cannot_be_mutated - Asse...
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change0]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change1]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change2]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change3]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change4]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change5]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change6]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change7]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change8]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change9]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change10]
+FAILED tests/test_history_contract.py::test_invalid_admission_stops_history[change11]
+FAILED tests/test_history_contract.py::test_current_mismatch_and_modified_admitted_item_are_rejected
+16 failed in 0.12s

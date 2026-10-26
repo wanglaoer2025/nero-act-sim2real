@@ -1,0 +1,86 @@
+FFFFFFFF                                                                 [100%]
+=================================== FAILURES ===================================
+_________ test_existing_calibration_is_offline_assumption_not_verified _________
+
+    def test_existing_calibration_is_offline_assumption_not_verified():
+>       from training.legacy_visual_data import training_profile
+E       ModuleNotFoundError: No module named 'training.legacy_visual_data'
+
+tests/test_existing_calibration_training.py:17: ModuleNotFoundError
+______ test_image_estimator_tracks_lift_and_xy_without_truth_input[xyz0] _______
+
+xyz = [-0.54, -0.02, 0.0]
+
+    @pytest.mark.parametrize('xyz', [[-.54, -.02, 0.], [-.56, .02, .2], [-.52, -.16, .1]])
+    def test_image_estimator_tracks_lift_and_xy_without_truth_input(xyz):
+>       from training.legacy_visual_data import NominalImageEstimator, training_profile
+E       ModuleNotFoundError: No module named 'training.legacy_visual_data'
+
+tests/test_existing_calibration_training.py:27: ModuleNotFoundError
+______ test_image_estimator_tracks_lift_and_xy_without_truth_input[xyz1] _______
+
+xyz = [-0.56, 0.02, 0.2]
+
+    @pytest.mark.parametrize('xyz', [[-.54, -.02, 0.], [-.56, .02, .2], [-.52, -.16, .1]])
+    def test_image_estimator_tracks_lift_and_xy_without_truth_input(xyz):
+>       from training.legacy_visual_data import NominalImageEstimator, training_profile
+E       ModuleNotFoundError: No module named 'training.legacy_visual_data'
+
+tests/test_existing_calibration_training.py:27: ModuleNotFoundError
+______ test_image_estimator_tracks_lift_and_xy_without_truth_input[xyz2] _______
+
+xyz = [-0.52, -0.16, 0.1]
+
+    @pytest.mark.parametrize('xyz', [[-.54, -.02, 0.], [-.56, .02, .2], [-.52, -.16, .1]])
+    def test_image_estimator_tracks_lift_and_xy_without_truth_input(xyz):
+>       from training.legacy_visual_data import NominalImageEstimator, training_profile
+E       ModuleNotFoundError: No module named 'training.legacy_visual_data'
+
+tests/test_existing_calibration_training.py:27: ModuleNotFoundError
+_______________ test_incomplete_formal_training_cannot_finalize ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-55/test_incomplete_formal_trainin0')
+
+    def test_incomplete_formal_training_cannot_finalize(tmp_path):
+>       from training.visual import finalize_training
+E       ImportError: cannot import name 'finalize_training' from 'training.visual' (/home/user/wq/nero_act_visual_feedback_20261019/training/visual.py)
+
+tests/test_existing_calibration_training.py:44: ImportError
+_______________ test_new_statistics_and_normalization_are_bound ________________
+
+    def test_new_statistics_and_normalization_are_bound():
+>       from training.visual import initialize_visual
+E       ImportError: cannot import name 'initialize_visual' from 'training.visual' (/home/user/wq/nero_act_visual_feedback_20261019/training/visual.py)
+
+tests/test_existing_calibration_training.py:50: ImportError
+_______________ test_sampling_uses_only_fresh_valid_observations _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-55/test_sampling_uses_only_fresh_0')
+
+    def test_sampling_uses_only_fresh_valid_observations(tmp_path):
+>       from training.visual import visual_windows
+E       ImportError: cannot import name 'visual_windows' from 'training.visual' (/home/user/wq/nero_act_visual_feedback_20261019/training/visual.py)
+
+tests/test_existing_calibration_training.py:67: ImportError
+___________ test_formal_config_rejects_old_heads_only_or_wrong_input ___________
+
+    def test_formal_config_rejects_old_heads_only_or_wrong_input():
+>       from training.visual import validate_formal_config
+E       ImportError: cannot import name 'validate_formal_config' from 'training.visual' (/home/user/wq/nero_act_visual_feedback_20261019/training/visual.py)
+
+tests/test_existing_calibration_training.py:79: ImportError
+=============================== warnings summary ===============================
+tests/test_existing_calibration_training.py::test_incomplete_formal_training_cannot_finalize
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_existing_calibration_training.py::test_existing_calibration_is_offline_assumption_not_verified
+FAILED tests/test_existing_calibration_training.py::test_image_estimator_tracks_lift_and_xy_without_truth_input[xyz0]
+FAILED tests/test_existing_calibration_training.py::test_image_estimator_tracks_lift_and_xy_without_truth_input[xyz1]
+FAILED tests/test_existing_calibration_training.py::test_image_estimator_tracks_lift_and_xy_without_truth_input[xyz2]
+FAILED tests/test_existing_calibration_training.py::test_incomplete_formal_training_cannot_finalize
+FAILED tests/test_existing_calibration_training.py::test_new_statistics_and_normalization_are_bound
+FAILED tests/test_existing_calibration_training.py::test_sampling_uses_only_fresh_valid_observations
+FAILED tests/test_existing_calibration_training.py::test_formal_config_rejects_old_heads_only_or_wrong_input
+8 failed, 1 warning in 1.85s

@@ -1,0 +1,23 @@
+{
+  "objective": "Continue the existing15D ACT sim-to-real work without replacing ACT arm/gripper predictions",
+  "basis": "User requested continuing the migration after clearing the scene; previous report recommended exact-state lift recovery and restricted arm output tuning",
+  "execution": "sequential offline implementation",
+  "scope": "new isolated directory; previous experiments immutable; persistent ROS stays receive-only",
+  "steps": [
+    "Capture the cleared real scene and check the unchanged visual frontend",
+    "Reproduce the remaining failure and save its complete runtime checkpoint",
+    "Generate an exact-state physical vertical-lift teacher prefix under the existing attachment/table and contact guards",
+    "Keep the learned gripper and ACT backbone frozen; tune only seven arm output rows for at most1000 updates with existing train data and423-point approach preservation",
+    "Recompute original3 inputs and six mechanism cases; only if all pass run the original complete high-start task",
+    "Recheck current real observations read-only; preserve evidence and report the actual qualification status"
+  ],
+  "invariants": [
+    "RGB plus15 causal values to20x8 physical targets; only first2 gripper points",
+    "No runtime phase truth, hand-written grip/release or trajectory takeover",
+    "Unchanged contact, collision, table, speed, force and time guards",
+    "No controller reset or real motion; no automatic retry or return",
+    "No validation-group training or checkpoint selection",
+    "No tolerance relaxation or additional optimizer budget after a failed trial"
+  ],
+  "hardware_execution_allowed": false
+}

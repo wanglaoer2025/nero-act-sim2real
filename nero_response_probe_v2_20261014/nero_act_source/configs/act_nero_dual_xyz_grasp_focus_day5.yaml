@@ -1,0 +1,43 @@
+dataset_dir: data/act_dual_fixed
+manifest: data/act_dual_fixed/manifest_latest.json
+split_file: data/act_dual_fixed/splits/latest_day5_split.json
+camera_names: [camera_0, camera_1]
+overfit_episode_ids: [41, 42, 43]
+coordinate_conditioning: true
+state_dim: 14
+action_dim: 8
+alignment_offset: 0
+trim_start_steps: 0
+trim_after_gripper_open_steps: 20
+training_stride_steps: 4
+grasp_focus_before_close_steps: 100
+grasp_focus_repeats: 3
+joint_lookahead_steps: 8
+image_size: [180, 320]
+chunk_size: 20
+batch_size: 4
+eval_batch_size: 8
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.1
+kl_weight: 10.0
+gripper_bce_weight: 1.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 0.00001
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: true
+num_epochs: 80
+steps: 300
+seed: 374
+val_fraction: 0.2
+fixed_val_samples_per_episode: 10
+device: cuda
+cpu_threads: 4
+checkpoint_dir: checkpoints/act_dual_xyz_grasp_focus_day5
+artifact_dir: artifacts/act_dual_xyz_grasp_focus_day5
+training_log: logs/act_dual_xyz_grasp_focus_day5_training.csv

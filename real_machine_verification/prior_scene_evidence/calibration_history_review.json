@@ -1,0 +1,437 @@
+{
+  "scope": "Read-only saved calibration samples; pure offline robust AX=XB re-solve; no robot motion or live calibration writes",
+  "directories": {
+    "venv": "/home/user/nero",
+    "project": "/home/user/projects/nero",
+    "work_symlink": "/home/user/work -> /home/user/projects/nero"
+  },
+  "currently_loaded_output": "/home/user/projects/nero/config/camera_to_base.json",
+  "currently_loaded_samples_file": "calibration/auto_handeye_20260830_160801.json",
+  "linear_algebra": "Reduced SVD evaluated the existing solver without changing source; verify reproduction against the loaded August 30 output",
+  "current_fiducial_reference": {
+    "dictionary": "DICT_5X5_50",
+    "marker_size_mm": 110,
+    "marker_plane_height_above_table_mm": 20,
+    "nominal_marker_plane_base_z_mm": 7
+  },
+  "datasets": [
+    {
+      "samples_file": "/home/user/projects/nero/calibration/auto_handeye_20260830_143104.json",
+      "sample_count": 9,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "status": "insufficient_samples_for_existing_robust_solver"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/auto_handeye_20260830_143806.json",
+      "sample_count": 40,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        220.05,
+        320.031,
+        180.081
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 35,
+      "excluded_sample_indices_zero_based": [
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "translation_rmse_mm": 5.993942422494109,
+      "rotation_rmse_deg": 0.9377946864435766,
+      "current_static_marker_normal_tilt_deg": 13.34014466672517,
+      "current_static_marker_z_median_mm": -72.06316299082243,
+      "current_static_marker_z_minus_expected_mm": -79.06316299082243,
+      "candidate_camera_center_base_mm": [
+        -785.5493240832283,
+        -167.6522899889586,
+        344.3924728307388
+      ],
+      "candidate_lens_height_minus_measured_mm": 0.392472830738825,
+      "fit_passes_existing_thresholds": true,
+      "max_abs_difference_from_loaded_extrinsic": 2.181254766237373,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/auto_handeye_20260830_143806_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/auto_handeye_20260830_160801.json",
+      "sample_count": 20,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        220.032,
+        290.031,
+        165.08499999999998
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 19,
+      "excluded_sample_indices_zero_based": [
+        18
+      ],
+      "translation_rmse_mm": 6.6485506389158004,
+      "rotation_rmse_deg": 1.0792748465574231,
+      "current_static_marker_normal_tilt_deg": 13.341959622937958,
+      "current_static_marker_z_median_mm": -72.49368803112381,
+      "current_static_marker_z_minus_expected_mm": -79.49368803112381,
+      "candidate_camera_center_base_mm": [
+        -784.8249373589714,
+        -169.83354475519596,
+        343.8070025281324
+      ],
+      "candidate_lens_height_minus_measured_mm": -0.1929974718676135,
+      "fit_passes_existing_thresholds": true,
+      "max_abs_difference_from_loaded_extrinsic": 0.0,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/auto_handeye_20260830_160801_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/auto_handeye_20260928_100232.json",
+      "sample_count": 5,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "status": "insufficient_samples_for_existing_robust_solver"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/auto_handeye_20260928_101534.json",
+      "sample_count": 16,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        70.011,
+        29.998000000000005,
+        0.09399999999998299
+      ],
+      "position_coverage_passes_current_auto_guard": false,
+      "status": "recomputed",
+      "inlier_count": 16,
+      "excluded_sample_indices_zero_based": [],
+      "translation_rmse_mm": 2.2745410136259174,
+      "rotation_rmse_deg": 0.4254354661837293,
+      "current_static_marker_normal_tilt_deg": 14.158876801123993,
+      "current_static_marker_z_median_mm": -99.87041334768426,
+      "current_static_marker_z_minus_expected_mm": -106.87041334768426,
+      "candidate_camera_center_base_mm": [
+        -817.3095840452313,
+        -169.50480985259227,
+        317.7458062089486
+      ],
+      "candidate_lens_height_minus_measured_mm": -26.25419379105142,
+      "fit_passes_existing_thresholds": true,
+      "max_abs_difference_from_loaded_extrinsic": 32.48464668625991,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/auto_handeye_20260928_101534_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/auto_handeye_20260928_102354.json",
+      "sample_count": 16,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        220.007,
+        290.029,
+        95.04499999999999
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 16,
+      "excluded_sample_indices_zero_based": [],
+      "translation_rmse_mm": 5.847790407253271,
+      "rotation_rmse_deg": 0.9850444974452397,
+      "current_static_marker_normal_tilt_deg": 13.0240471246026,
+      "current_static_marker_z_median_mm": -69.14385044588829,
+      "current_static_marker_z_minus_expected_mm": -76.14385044588829,
+      "candidate_camera_center_base_mm": [
+        -794.5699491745231,
+        -167.04496571280995,
+        346.91890381198954
+      ],
+      "candidate_lens_height_minus_measured_mm": 2.918903811989537,
+      "fit_passes_existing_thresholds": true,
+      "max_abs_difference_from_loaded_extrinsic": 9.74501181555172,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/auto_handeye_20260928_102354_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260826_183736.json",
+      "sample_count": 15,
+      "marker_size_mm": 110.0,
+      "dictionary": "DICT_5X5_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        547.3875211147615,
+        674.824490153145,
+        193.17263224710047
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 14,
+      "excluded_sample_indices_zero_based": [
+        13
+      ],
+      "translation_rmse_mm": 32.06346084247206,
+      "rotation_rmse_deg": 3.597055110785937,
+      "current_static_marker_normal_tilt_deg": 9.235356141084539,
+      "current_static_marker_z_median_mm": -87.39220332974591,
+      "current_static_marker_z_minus_expected_mm": -94.39220332974591,
+      "candidate_camera_center_base_mm": [
+        -806.1387111044069,
+        -150.36892371699733,
+        302.38596039886323
+      ],
+      "candidate_lens_height_minus_measured_mm": -41.61403960113677,
+      "fit_passes_existing_thresholds": false,
+      "max_abs_difference_from_loaded_extrinsic": 41.42104212926915,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/handeye_20260826_183736_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260826_191946.json",
+      "sample_count": 19,
+      "marker_size_mm": 110.0,
+      "dictionary": "DICT_5X5_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        369.42311647534746,
+        506.9026160205732,
+        192.4740406015369
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 18,
+      "excluded_sample_indices_zero_based": [
+        15
+      ],
+      "translation_rmse_mm": 24.405679161368184,
+      "rotation_rmse_deg": 3.311337067645762,
+      "current_static_marker_normal_tilt_deg": 12.17732203149785,
+      "current_static_marker_z_median_mm": -69.61764072266803,
+      "current_static_marker_z_minus_expected_mm": -76.61764072266803,
+      "candidate_camera_center_base_mm": [
+        -801.0653031960026,
+        -162.43881516341824,
+        342.79215258446527
+      ],
+      "candidate_lens_height_minus_measured_mm": -1.2078474155347294,
+      "fit_passes_existing_thresholds": false,
+      "max_abs_difference_from_loaded_extrinsic": 16.240365837031163,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/handeye_20260826_191946_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260830_123106.json",
+      "sample_count": 32,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        450.0674497342538,
+        523.455475577521,
+        398.72547957828897
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 30,
+      "excluded_sample_indices_zero_based": [
+        9,
+        12
+      ],
+      "translation_rmse_mm": 13.858243492753965,
+      "rotation_rmse_deg": 1.8659575334001302,
+      "current_static_marker_normal_tilt_deg": 13.00170117290889,
+      "current_static_marker_z_median_mm": -72.50424143374016,
+      "current_static_marker_z_minus_expected_mm": -79.50424143374016,
+      "candidate_camera_center_base_mm": [
+        -765.4221927406279,
+        -172.80773286614604,
+        342.2336041659675
+      ],
+      "candidate_lens_height_minus_measured_mm": -1.766395834032494,
+      "fit_passes_existing_thresholds": false,
+      "max_abs_difference_from_loaded_extrinsic": 19.40274461834349,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/handeye_20260830_123106_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260830_125902.json",
+      "sample_count": 38,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        233.98499999999996,
+        332.712,
+        241.57999999999998
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 33,
+      "excluded_sample_indices_zero_based": [
+        1,
+        9,
+        10,
+        20,
+        21
+      ],
+      "translation_rmse_mm": 7.0037374492289155,
+      "rotation_rmse_deg": 0.9391224034074226,
+      "current_static_marker_normal_tilt_deg": 12.71412582146922,
+      "current_static_marker_z_median_mm": -71.46981900791985,
+      "current_static_marker_z_minus_expected_mm": -78.46981900791985,
+      "candidate_camera_center_base_mm": [
+        -784.3559900408573,
+        -172.09678537272487,
+        342.1559082790986
+      ],
+      "candidate_lens_height_minus_measured_mm": -1.8440917209014174,
+      "fit_passes_existing_thresholds": true,
+      "max_abs_difference_from_loaded_extrinsic": 2.2632406175289077,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/handeye_20260830_125902_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260830_130726.json",
+      "sample_count": 22,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        126.031,
+        416.608,
+        304.68699999999995
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 18,
+      "excluded_sample_indices_zero_based": [
+        9,
+        10,
+        17,
+        19
+      ],
+      "translation_rmse_mm": 4.941291576991542,
+      "rotation_rmse_deg": 0.7512594892056279,
+      "current_static_marker_normal_tilt_deg": 12.469973365194518,
+      "current_static_marker_z_median_mm": -69.94533710923238,
+      "current_static_marker_z_minus_expected_mm": -76.94533710923238,
+      "candidate_camera_center_base_mm": [
+        -788.6356495240033,
+        -169.2957139951572,
+        342.83649328203103
+      ],
+      "candidate_lens_height_minus_measured_mm": -1.1635067179689713,
+      "fit_passes_existing_thresholds": true,
+      "max_abs_difference_from_loaded_extrinsic": 3.810712165031873,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/handeye_20260830_130726_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260830_133547.json",
+      "sample_count": 20,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        219.88299999999998,
+        410.406,
+        363.255
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "recomputed",
+      "inlier_count": 19,
+      "excluded_sample_indices_zero_based": [
+        15
+      ],
+      "translation_rmse_mm": 11.43813091389274,
+      "rotation_rmse_deg": 1.8318764109894514,
+      "current_static_marker_normal_tilt_deg": 14.67071179882383,
+      "current_static_marker_z_median_mm": -70.11554431133044,
+      "current_static_marker_z_minus_expected_mm": -77.11554431133044,
+      "candidate_camera_center_base_mm": [
+        -787.571041380606,
+        -163.05473609187408,
+        352.44958290926775
+      ],
+      "candidate_lens_height_minus_measured_mm": 8.449582909267747,
+      "fit_passes_existing_thresholds": false,
+      "max_abs_difference_from_loaded_extrinsic": 8.64258038113536,
+      "candidate_file": "/home/user/wq/real_scene_measurements/archived_calibration_candidates/handeye_20260830_133547_candidate.json"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260830_133926.json",
+      "sample_count": 26,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        299.172,
+        513.528,
+        262.056
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "solver_rejected",
+      "reason": "离群样本过多，请检查标定板、工作区覆盖和机械臂反馈"
+    },
+    {
+      "samples_file": "/home/user/projects/nero/calibration/handeye_20260830_134809.json",
+      "sample_count": 18,
+      "marker_size_mm": 95.5,
+      "dictionary": "DICT_4X4_50",
+      "camera_serial_number": 39602891,
+      "flange_position_span_mm": [
+        411.545,
+        443.47700000000003,
+        218.72699999999998
+      ],
+      "position_coverage_passes_current_auto_guard": true,
+      "status": "solver_rejected",
+      "reason": "离群样本过多，请检查标定板、工作区覆盖和机械臂反馈"
+    }
+  ],
+  "archived_photo_check": "archived_photo_check.json",
+  "findings": {
+    "saved_full_extrinsics_exist": true,
+    "datasets_scanned": 14,
+    "offline_candidates_created": 10,
+    "loaded_transform_reproduced_from_raw_samples": true,
+    "current_fit_vs_independent_validation": "Fit on calibration samples passes saved thresholds, but current flat-board/table checks conflict with all suitable archived candidates. A passing fit does not establish current task coordinates.",
+    "september_photo_sessions": "All 37 PNGs detect the saved DICT_4X4_50 ID0. Existing code writes images only under photos_only and returns without publishing an extrinsic in that mode; session command lines were not retained.",
+    "lowest_fit_candidate": "September 28 10:15 dataset has only 70/30/0.094 mm flange position span, fails current two-axis >=100mm coverage guard, and has 26mm lens-height discrepancy; it cannot be chosen by low fit RMSE alone.",
+    "current_board_scale": "August 26 samples match current board metadata (5x5,110mm) but re-solved fits fail 10mm/2deg thresholds. August30/September28 photos use a different 4x4 marker; current-board size must not overwrite those historical measurements.",
+    "independent_reference_search": {
+      "file": "/home/user/zyh/data/stage12c/geometry-inputs/independent-references.json",
+      "camera_reference_count": 3,
+      "measured_base_coordinates_count": 0,
+      "status": "unfilled_template"
+    },
+    "additional_candidate_calibration_file": "/home/user/zyh/artifacts/stage11-analysis-accepted/candidate-calibration.json contains joint-feedback stationarity thresholds, not a camera transform.",
+    "diagnostic_limitations": [
+      "Nominal table Z=-13mm assumes SDK base origin at mounting plane; that absolute-origin assumption remains unverified.",
+      "Current board support height is approximate; its normal is compared under the reported parallel tabletop/base setup.",
+      "No independent base XY/yaw measurement is available.",
+      "These checks do not isolate camera extrinsics, physical base-frame definition or installation geometry as the sole cause."
+    ],
+    "disposition": "Do not publish any candidate or drive the robot with unverified visual target coordinates. Use existing calibration as an archived starting point for independent reference validation; decide on recalibration only after that check.",
+    "live_configuration_modified": false,
+    "robot_motion_sent": false
+  },
+  "source_sha256": {
+    "/home/user/projects/nero/config/camera_to_base.json": "8788757651734212a1559edc06af805fb71b891da991ccfce072a0a2f19f831b",
+    "/home/user/projects/nero/calibration/auto_handeye_20260830_143104.json": "44c3cdf23f0daa46aaf75e8b9748b30a9f3e4a2797529db582268b2423c7e326",
+    "/home/user/projects/nero/calibration/auto_handeye_20260830_143806.json": "6fab6d0260b7388768e009add04a804cc2600648803ec8706a75db278343b14e",
+    "/home/user/projects/nero/calibration/auto_handeye_20260830_160801.json": "e83da36363b914286a9ad3e0ef92e6a789a2b4312020b911af5bdf830ab57774",
+    "/home/user/projects/nero/calibration/auto_handeye_20260928_100232.json": "b7fb2a97b7afbd644e5878292fe48e3121c167d7abbcb7b0196e608855537b6d",
+    "/home/user/projects/nero/calibration/auto_handeye_20260928_101534.json": "eb851feab7baa8804d0f7d3d00a942ee64e3ad12402470b770a90497732e1b3d",
+    "/home/user/projects/nero/calibration/auto_handeye_20260928_102354.json": "b23661c377957d6ca7bf0955fa3a5c581e09c88e677e56b9d7df6c2d2f497e71",
+    "/home/user/projects/nero/calibration/handeye_20260826_183736.json": "ba3ccdca8bd87e46dc73ec03f6c7b95869a755a9dab106fcf9ee7ae2870cdb34",
+    "/home/user/projects/nero/calibration/handeye_20260826_191946.json": "c5352b4632a707e53b38752dba3a416fb95165e3aca21f4f9c02dc4edffac45c",
+    "/home/user/projects/nero/calibration/handeye_20260830_123106.json": "74f63359182957f56d68d0a3be2a3c504b5165e1a2991daf330ae09cf9533f75",
+    "/home/user/projects/nero/calibration/handeye_20260830_125902.json": "f1069ebb0cd536cd3e86610963bfb755869b92bb98ed1b1c012bae50fff5949d",
+    "/home/user/projects/nero/calibration/handeye_20260830_130726.json": "512cbd0e47c3aadca233c4b58ab90e1403afcee265038e9784b4ed19b2858e90",
+    "/home/user/projects/nero/calibration/handeye_20260830_133547.json": "87569cdad7a197cba9240613af79d6b5e5e9af82170f63e44a1c2cf1e6f90e2f",
+    "/home/user/projects/nero/calibration/handeye_20260830_133926.json": "9c6b98e68b716671d0156e9f7aa4095e96b403d08b963fe0b8bcda700954df00",
+    "/home/user/projects/nero/calibration/handeye_20260830_134809.json": "0449b7233eea7e88abf526165c7165da5841324fe6bb02d669564205e3a5d9c4"
+  }
+}

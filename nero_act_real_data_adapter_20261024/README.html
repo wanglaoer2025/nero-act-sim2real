@@ -1,0 +1,148 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>现有真机示教的离线训练视图适配</title><style>
+:root {color-scheme: light; --ink:#182633; --muted:#536575; --line:#d4dfe7; --accent:#165b86;}
+* {box-sizing:border-box} html {scroll-behavior:smooth}
+body {margin:0;background:#eef2f5;color:var(--ink);font:16px/1.85 "Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;}
+.export-bar {max-width:1240px;margin:22px auto 0;padding:12px 24px;color:var(--muted);font-size:14px;}
+main {max-width:1240px;margin:0 auto 36px;padding:36px 54px;background:white;box-shadow:0 2px 18px #1b364014;}
+nav {padding:14px 22px;background:#f3f7fa;border:1px solid var(--line);margin-bottom:32px;}
+nav summary {cursor:pointer;font-weight:700;color:var(--accent)}
+nav ol {columns:2;column-gap:36px;padding-left:24px} nav li {break-inside:avoid;padding:3px 0;font-size:14px;}
+h1 {font-size:30px;line-height:1.5;margin:0 0 24px} h2 {font-size:23px;line-height:1.6;border-bottom:2px solid var(--line);padding-bottom:8px;margin-top:42px;scroll-margin-top:18px;}
+h3 {font-size:19px;margin-top:27px;scroll-margin-top:18px} p {margin:14px 0}
+a {color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+table {display:block;width:100%;border-collapse:collapse;font-size:14px;overflow-x:auto;margin:20px 0;}
+th,td {border:1px solid var(--line);padding:10px 12px;vertical-align:top;min-width:110px;}
+th {background:#edf3f7;text-align:left} tr:nth-child(even) {background:#fafcfd;}
+pre {padding:16px 20px;background:#f1f4f6;border:1px solid var(--line);overflow-x:auto;font-size:13px;line-height:1.7;}
+code {font-family:"Noto Sans Mono","Consolas",monospace;font-size:.9em;overflow-wrap:anywhere;background:#f1f4f6;padding:1px 4px;}
+pre code {background:none;padding:0;font-size:inherit;overflow-wrap:normal;}
+blockquote {border-left:4px solid var(--accent);margin:20px 0;padding:2px 20px;background:#f3f7fa;}
+li {margin:5px 0} strong {font-weight:700}
+@media(max-width:760px) {main {padding:24px 18px} h1 {font-size:25px} h2 {font-size:21px} nav ol {columns:1} .export-bar {padding:10px 18px}}
+@media print {@page {size:A4;margin:16mm 13mm} body {background:white;font-size:10pt;line-height:1.65} main {margin:0;padding:0;max-width:none;box-shadow:none} .export-bar,nav {display:none} h1 {font-size:19pt} h2 {font-size:15pt} h3 {font-size:12pt} h1,h2,h3 {break-after:avoid} table {font-size:8pt;overflow:visible} th,td {padding:5px 6px;min-width:0} tr {break-inside:avoid} pre {white-space:pre-wrap;overflow:visible;font-size:8pt} a {color:inherit}}
+
+img {max-width:100%;height:auto;}
+</style></head><body><div class="export-bar">汇总截至 2026-10-24 · <a href="README.md">Markdown 原文</a> · 可使用浏览器打印为 PDF</div><main><nav aria-label="目录"><details open><summary>目录 · 7 节</summary><ol><li><a href="#heading-2">已完成的实际结果</a></li><li><a href="#heading-3">本视图的精确定义</a></li><li><a href="#heading-4">原文件和图像如何保留</a></li><li><a href="#heading-5">分组与归一化</a></li><li><a href="#heading-6">与当前15维模型的边界</a></li><li><a href="#heading-7">使用已生成的训练视图</a></li><li><a href="#heading-8">文件索引</a></li></ol></details></nav><article><h1 id="heading-1">现有真机示教的离线训练视图适配</h1>
+<p>2026-10-24。用户要求基于已有资料完成适配。本目录包含转换器、带源检查的数据集、独立核对入口、测试和实际派生数据。没有启动正式训练、更新模型或操作硬件。</p>
+<h2 id="heading-2">已完成的实际结果</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只读原始数据</td>
+<td>79份、56,419帧，约49.18GB</td>
+</tr>
+<tr>
+<td>派生数据</td>
+<td>79份、56,261帧，HDF5合计5,985,209字节；图像引用原文件</td>
+</tr>
+<tr>
+<td>完整20点窗口</td>
+<td>合计54,760个候选窗口，含reserve</td>
+</tr>
+<tr>
+<td>train</td>
+<td>37条，20,423帧，19,720个完整窗口；stride4时4,945个查询</td>
+</tr>
+<tr>
+<td>val</td>
+<td>10条，6,190帧，6,000个完整窗口；stride4时1,503个查询</td>
+</tr>
+<tr>
+<td>reserve</td>
+<td>32条，29,648帧，29,040个窗口；本轮不进入统计或模型batch</td>
+</tr>
+<tr>
+<td>独立转换核对</td>
+<td>79/79关节、夹爪、状态、时间及有效窗口精确一致</td>
+</tr>
+<tr>
+<td>VDS图像核对</td>
+<td>每条两路各首帧，共158对派生/原图逐像素一致</td>
+</tr>
+<tr>
+<td>既有ACT接口</td>
+<td>CPU真实batch：图像[2,1,3,180,320]、状态[2,8]、输出[2,20,8]，loss有限</td>
+</tr>
+<tr>
+<td>权重更新</td>
+<td>0；前向使用新初始化的既有ACT网络，未加载部署checkpoint</td>
+</tr>
+<tr>
+<td>当前15维审计</td>
+<td>原审计仍拒绝，未放宽schema或保护</td>
+</tr>
+</tbody>
+</table>
+<p>完整结果见<a href="results.json">results.json</a>。CPU前向及有限loss只证明数据接口能运行，不表示学会了抓放。本次没有完整物理任务、真实部署或位置泛化验收。</p>
+<h2 id="heading-3">本视图的精确定义</h2>
+<p>profile为<code>real_rgb8_future_feedback_v1</code>，action_semantics为<code>future_measured_qpos_plus_recorded_gripper_intent_v1</code>。</p>
+<p>对原始长度N、前视K=2：</p>
+<pre><code class="language-text">派生长度 M = N - K
+state[t] = [原始七轴qpos[t], 实测夹爪宽度[t]]
+arm_action[t] = 原始qpos[t + K]
+gripper_action[t] = 原始action[t, 7]
+图像[t] = 原始RGB[t]
+查询t的输出块 = action[t : t+20]
+</code></pre>
+<p>从原始qpos重建七轴，不再次移动旧action七轴，所以原来已有2帧前视的20份资料不会变成4帧。夹爪意图事件和对应主机录制时间保持原位；它不冒充已收到确认的下发命令。</p>
+<p>默认2帧约100毫秒，是本次接口验证的工程选择，不是已证明最优或测得的控制延迟。<code>--lead-steps</code>可显式改变；重新生成须使用新的空输出目录，不能叠加前视或覆盖现有资料。</p>
+<p>末尾缺少未来反馈的K行被移除。默认dataset只枚举完整20点窗口；显式读取尾部时，不足部分为中性归一化填充值且padding=true，不能参与loss，不复制最后状态当作有效未来动作。</p>
+<p>原始单位沿用项目定义：关节rad，夹爪米。主表是主机录制时间，未宣称设备曝光同步。两个标签分别保存<code>joint_target_feedback_timestamp</code>和<code>gripper_intent_timestamp</code>，不伪造统一的提交时间。</p>
+<h2 id="heading-4">原文件和图像如何保留</h2>
+<p>原始79份HDF5没有修改。派生文件只写小型数值数组和来源信息，RGB使用HDF5 Virtual Dataset引用原文件。</p>
+<p><strong>应通过本目录<code>FutureStateDataset</code>或<code>read_window</code>读取。</strong> 它们检查原文件存在、大小和mtime；数据集初始化还检查原数值指纹，原图文件缺失或改变会报错。HDF5底层VDS在丢源时可能返回填充值，不能绕过源检查直接使用旧加载器，把零图当作真实画面。</p>
+<p>图像未旋转、改色或重新定位；保留原RGB内容。默认只用camera_0（旧ZED左图），camera_1（独立USB相机）也保留引用。训练读取时RGB/255，双线性缩放到180×320，与旧ACT预处理一致。</p>
+<h2 id="heading-5">分组与归一化</h2>
+<p>选择来源为旧<code>manifest_compatible38.json</code>与<code>manifest_fixed_destination_9.json</code>及其各自split，合计37 train、10 val。其余32份转换后保留为reserve，未判定为物理失败。</p>
+<p>只对37条train计算状态和动作mean/std，std下限为旧接口的1e−2；清单中记录全部来源及文件哈希。同一源文件不能跨split或重复计数。<strong>这是旧episode留出，不是独立杯位留出</strong>；不能用本划分宣称位置泛化已通过。旧valid也不等于独立实物成功。</p>
+<h2 id="heading-6">与当前15维模型的边界</h2>
+<p>本次交付的是可供辅助预训练/适配研究使用的8维真实数据视图，不能当作当前15维在线迁移已经完成。现有文件没有可靠记录以下信息：</p>
+<ul>
+<li>逐帧、与观测配对的6维实时视觉相对几何；</li>
+<li>曝光前已确认的夹爪命令历史和七轴实际提交/回执；</li>
+<li>当前RGB-D前端要求的原始XYZ与置信度；</li>
+<li>设备曝光同步和可核对的标定版本绑定。</li>
+</ul>
+<p>这些信息没有补零、改名或用仿真真值替代。构造dataset时要求<code>policy_input_dim=8</code>；传15会拒绝，原15维视觉审计也独立验证仍拒绝。当前1a28和已拒绝eec权重均未改动，不能将8维batch直接用于它们的15维输入。</p>
+<p>后续如要通过这些真实RGB资料影响主模型，需要明确辅助任务或有限观测适配的训练方案，以及原15维完整行为保持与独立评估；本次不暗中改网络结构或扩大训练预算。</p>
+<h2 id="heading-7">使用已生成的训练视图</h2>
+<p>在本目录，使用已有离线环境：</p>
+<pre><code class="language-bash">cd /home/user/wq/nero_act_real_data_adapter_20261024
+/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python -m pytest -q
+</code></pre>
+<p>加载器与既有ACT五项batch接口一致：</p>
+<pre><code class="language-python">import json
+from torch.utils.data import DataLoader
+from adapter import FutureStateDataset
+
+manifest = json.load(open('data/manifest.json'))
+stats = json.load(open('data/statistics.json'))
+paths = [r['path'] for r in manifest['episodes'] if r['split'] == 'train']
+dataset = FutureStateDataset(paths, stats, stride=4)
+images, state8, actions20x8, padding20, starts = next(iter(DataLoader(dataset, batch_size=2)))
+</code></pre>
+<p>这个例子只读取数据，不训练。需要生成另一份视图或复核时，使用新的目标路径，两个入口均拒绝覆盖：</p>
+<pre><code class="language-bash">/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python prepare.py --help
+/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python preflight.py --help
+
+# 换成尚不存在的新目录/报告路径再运行
+/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python prepare.py --output /tmp/nero-real-data-new-view --lead-steps 2
+/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python preflight.py --manifest /tmp/nero-real-data-new-view/manifest.json --report /tmp/nero-real-data-new-preflight.json
+</code></pre>
+<h2 id="heading-8">文件索引</h2>
+<ul>
+<li><a href="adapter.py">adapter.py</a>：转换、源检查、归一化和ACT数据集。</li>
+<li><a href="prepare.py">prepare.py</a>：79份来源核对、旧split及派生清单。</li>
+<li><a href="preflight.py">preflight.py</a>：独立数组/图像核对，既有ACT CPU接口及原15维拒绝检查。</li>
+<li><a href="data/manifest.json">data/manifest.json</a>、<a href="data/statistics.json">statistics.json</a>、<a href="data/training_view.json">training_view.json</a>：实际生成的数据入口、train统计与配置。</li>
+<li><a href="tests/">tests</a>：索引、事件、mask、错误数据、覆盖、来源、分组及独立核对测试。</li>
+<li><a href="progress.md">progress.md</a>：实际执行与复核记录。</li>
+<li><a href="final-review.md">final-review.md</a>：独立整体复核，无待修正问题。</li>
+</ul>
+</article></main></body></html>

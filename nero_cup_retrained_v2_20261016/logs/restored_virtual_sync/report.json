@@ -1,0 +1,69 @@
+{
+  "mode": "isolated_virtual_controller_sync",
+  "physical_motion_command_sent": false,
+  "gripper_goal_to_hardware_sent": false,
+  "enable_or_mode_change_sent": false,
+  "virtual_goals": [
+    {
+      "controller": "arm_controller",
+      "status": 4,
+      "error_code": 0,
+      "target": [
+        0.1832246648743647,
+        -0.12651891747706895,
+        0.10000736613927509,
+        1.5707788735023767,
+        -0.023911010752322315,
+        0.2816961412718848,
+        0.13107422682477415
+      ]
+    },
+    {
+      "controller": "gripper_controller",
+      "status": 4,
+      "error_code": 0,
+      "target": [
+        2.9999999999999997e-05
+      ]
+    }
+  ],
+  "actual_before": [
+    0.1832246648743647,
+    -0.12651891747706895,
+    0.10000736613927509,
+    1.5707788735023767,
+    -0.023911010752322315,
+    0.2816961412718848,
+    0.13107422682477415,
+    2.9999999999999997e-05
+  ],
+  "hardware_plugin": "mock_components/GenericSystem",
+  "can_tx_before": 88420,
+  "actual_after": [
+    0.18324211816688468,
+    -0.12651891747706895,
+    0.10000736613927509,
+    1.5707788735023767,
+    -0.023911010752322315,
+    0.28166123468684495,
+    0.13107422682477415,
+    2.9999999999999997e-05
+  ],
+  "mock_after": [
+    0.1832246648743647,
+    -0.12651891747706895,
+    0.10000736613927509,
+    1.5707788735023767,
+    -0.023911010752322315,
+    0.2816961412718848,
+    0.13107422682477415,
+    2.9999999999999997e-05
+  ],
+  "arm_sync_error_rad": 3.490658503985111e-05,
+  "gripper_sync_error_m": 0.0,
+  "real_arm_change_rad": 3.490658503985111e-05,
+  "real_gripper_change_m": 0.0,
+  "can_tx_after": 88420,
+  "gated_publisher_count": 0,
+  "success": true
+}

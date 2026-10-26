@@ -1,0 +1,1391 @@
+{
+  "checkpoint_sha256": "d7942052c38f7b615abb6ba09668025feba5746105fce6d0fcbb0fc9f279a069",
+  "selected_epoch": 10,
+  "stats_sha256": "cfd53e90a0b1505c37f49cfbc7e6448385b12b827fa2be43d97e38b778b1effc",
+  "scene_sha256": "686ab26beba2e1979151cb6601b3549575ac51c6c2ea0bf0a5cdad2ce29f5352",
+  "training_config_sha256": "2f5703115072bf93f69eb9cceb90ffabf3f2fc10e7406f8c4007ce371a371a11",
+  "task_scope": "complete_pick_carry_place_retreat",
+  "source_sha256": {
+    "executor/bundle.py": "fb91b04b7f6b36b8b0ace695ecb0bc925655211d89c84ad8a89950c5a30334d0",
+    "executor/contact.py": "8f9d1885ed6d1d62bc46e29a21222bff9c8c51ef94fb409bdb1dfe159ee9cbad",
+    "executor/contract.py": "9d492db56179f3d9c73c23bf19588ecaf6c946969c12d7ee5e44a321758fcbc5",
+    "executor/evaluation_integrity.py": "5c8d8cb65102d3511913c57e975e62c172f3dbb4316fb321bef1b11f607ad8ee",
+    "executor/model.py": "22753214ec9e5c7eb9f81dd90c067970a04abd7d436244e09d1c80c73d3996ad",
+    "executor/phases.py": "7d9f7be87338d91ee1a584d9507bac6c344f61b7ba8de8a02082c6bf3a55371d",
+    "executor/policy_worker.py": "34234b2ea5f2eebc482e5b36ca058169b819d6bf0977bc50d99914949c90d983",
+    "executor/release_hold.py": "e0921d6f543845b2192932d4ad3e1def4d0817bcb575fdc5947f4cc8bd69e922",
+    "executor/ros_execution.py": "517aec8abd76cf232b4191c0735a9d7d5528b538e07a6b68aadf46ef5b275a0d",
+    "executor/runtime.py": "cd881441018903ccfb9cc31517d8cd3a26ce5d4e09827e2451f4fbafe92bb819",
+    "executor/shadow.py": "3d61940fc76a27099250a90f0df155df8b5c977381ae06d01c20d9e4b3759d3a",
+    "policy_source/src/__init__.py": "e824b724a356717942fcc4a5591d209f866a74350479a3bc3cab465bfd9b0764",
+    "policy_source/src/act/__init__.py": "5d44dc52a5f36cfb23b151b466e04ab74e3205ed4116afe68fe40018fec18db4",
+    "policy_source/src/act/action_safety.py": "25e735fbd31b07b7487d587295f5b1d28705430a38b6c466ac48573841f7edd5",
+    "policy_source/src/act/adaptive_mpc.py": "47da594fe0f2918d41a729e9ba882969a48da3757ad26234c896bb36f85a7368",
+    "policy_source/src/act/dataset_stats.py": "4796e657895deb8e715cfb4b74636580bddf9b0fe43beca5a933b0833f0d0c47",
+    "policy_source/src/act/episode_inspect.py": "0f7435750f7c5e513a06b04dcd48f40c7a33d4aac68cf5a10c0e4cd04ed385c1",
+    "policy_source/src/act/episode_io.py": "28fe0c9b92bdb17b9e7b1cb7e7de509cf14080beda1124233963abbe5256d10b",
+    "policy_source/src/act/episode_plot.py": "9ba3215180343a046806c99d6c3e82d514091c1e61a9916bf3d6976b5f37e4ee",
+    "policy_source/src/act/eval_offline.py": "09dd9c53c731e2e2d0e0b9e9c4a0b8bb7896d95001a53a82cec0e7a1a1e971a8",
+    "policy_source/src/act/eval_saved_rollout.py": "8c35813e03109a0d3c98172f33c5531f6680f0d0782309223821bcb1d8fdd017",
+    "policy_source/src/act/grasp_transition_audit.py": "faf136e4f38b65d500cfe5697718e4ce0d24b0238204c6bec85f1a5671cb8d53",
+    "policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d",
+    "policy_source/src/act/nero_kinematics.py": "6f6f5247a8f0e3ef378abe1d03e5498a9572c27be7b075ee0cd9ac10692e8790",
+    "policy_source/src/act/nero_policy.py": "33cdfd4dc048623664072d2d7c9ca1eda96fb9cf4474eb91a1043ba8c738bba3",
+    "policy_source/src/act/realtime_logger.py": "9aca4303d8758e5fa161bf28c93c6aee8e06a78f60c823cddb349c99ac6ffb8a",
+    "policy_source/src/act/record_episode.py": "22bb191dc4a4528ad905f85842133bc77eb387b46d80ce7ba96d65e161a4d702",
+    "policy_source/src/act/record_yolo_episode.py": "fdc4fb252508904dfc40abc8e54811455672224f98cfefaa3840f6f0d3a69f7e",
+    "policy_source/src/act/replay_episode.py": "01e8593896a616a353a0e03c41c5e25098f197c9c0c67c4f1d0755a1cf7f3df0",
+    "policy_source/src/act/robot_wrapper.py": "c7d20f6c226c2e7a03c170ab64b59fa4c36d0b5ed994f02128fe94e2a57eda1d",
+    "policy_source/src/act/run_act_real.py": "867e35d7d2329d7272fefb19a172555fdff169bb02851e68fbac4f0a004608a6",
+    "policy_source/src/act/run_act_shadow.py": "53f02ea237b90cfd795bcaa4b50f579ee11d0f15ff08ea75cf9ba4006a27ea98",
+    "policy_source/src/act/safety_filter.py": "c4267f92b287714e6bafef0b90b962a79d05472da1f0c6ba9f292d14ea928b95",
+    "policy_source/src/act/temporal_ensemble.py": "f4b8ff42423b75c10faebf09561180d2dcc0812e938f50140125c331bd456502",
+    "policy_source/src/act/test_joint_stream.py": "cc04a01a72aa3ce868d36db4600d5b6a01d7b759d4904994ebaa499ea5558ec8",
+    "policy_source/src/act/train.py": "40cac2a60e1c35c5669d80d201c4304f5f8218bc1259cb94be5a6f3cf31dcd0f",
+    "policy_source/src/act/train_smoke_test.py": "1f3aa074b3cf24530c61465ee679e41410c8989fa4b17181d329eba787124126",
+    "policy_source/src/act/validate_episode.py": "7b4fb39d00fd8ae9b0b95458df4001445e43cdb2d55f5b214646bfff46abdc16",
+    "policy_source/src/arm/__init__.py": "ddc6f003042d474d0ccfac97cae71b61d055d150244e1bef99f153f86cc4aff8",
+    "policy_source/src/arm/prepare.py": "b3c1560f2edbc4efad12601963460807d372ed4824c971d910c036f7beb0d47b",
+    "policy_source/src/demo/__init__.py": "345cfcd7a7766cd8d1a8ad43d415f76f6c39c918d86fcdaf6b54db3783a87381",
+    "policy_source/src/demo/yolo_pick_place.py": "11a87213fe3256d9745ac5be59a456af62470f3b6951147171b59ff7eb398455",
+    "policy_source/src/utils/__init__.py": "041281a55fbd14e6ba3496ace2e95402c11170bcb4ff5e48ef03a95156d492a7",
+    "policy_source/src/utils/arm.py": "50b53785a56a56eb50b5b24ef4506c130e1e9d4d23935dc43125d60eb18dfec1",
+    "policy_source/src/utils/vision.py": "2c58da80838c2ea364694737bcd031405cc085be2e44a1180e9e3c13319cad71",
+    "policy_source/tests/test_act_kinematic_features.py": "0ed2278e81caffe4879bd971faef6854adf1accafa03d001c43c59cc384533ef",
+    "policy_source/tests/test_act_nero_dataset.py": "5bc2e594bc491168a8913805ded11dd5a8014d94b9eb33844915daef9f11b6c7",
+    "policy_source/tests/test_act_offline_imports.py": "83e2f067f52a0f6f19318745a6f1530413c6f3634c8802b166ebd6dc69c7bed2",
+    "policy_source/tests/test_act_robot_wrapper.py": "de34ff7bd0ea2699c8e47c82704762f4b5ac03c0493f09717a0652304f071374",
+    "policy_source/tests/test_act_shadow_capture.py": "25de467a43549c1828a88286d2f61c4c1f863a2c207e64331354bb5897e77edb",
+    "policy_source/tests/test_joint_stream_offline.py": "354177a5a66c1100a4a8233556063c7cd666f84eb1126aa6f2e54ee01333b97a",
+    "policy_source/third_party/__init__.py": "8304b95ea43a245d928411824f57f19a7dbd65ccc78b223dd5668800dfbf2f76",
+    "policy_source/third_party/act/__init__.py": "d782b1f5f60188e1aa3d02c7e9c97bcaace1db00c76108d2b3c018c03ef232c8",
+    "policy_source/third_party/act/detr/__init__.py": "e78ac0eca34142588d25cf6b82fdd725e0ad7f0ebcaa116a8a07e7b5bf3be556",
+    "policy_source/third_party/act/detr/main.py": "f3bde9d1e1c3e9a7f895433952753649155c244a42407381802a5336fe5668c8",
+    "policy_source/third_party/act/detr/models/__init__.py": "61cb75a7d8e99893e96ace4802a4c0a50181230f7f7a2c0262590cfc922007e9",
+    "policy_source/third_party/act/detr/models/backbone.py": "04c62f58a732604cda245f94a5d91543bbc9913559395c0bc11ded281bebd464",
+    "policy_source/third_party/act/detr/models/detr_vae.py": "3c29f5719a80573e23662826f6db86d3b353c427c8e14b8fd692a68dc170cbda",
+    "policy_source/third_party/act/detr/models/position_encoding.py": "851babd1dad8383699290163fde9049d6e30453308ac6cf84036d6fe96ef12ed",
+    "policy_source/third_party/act/detr/models/transformer.py": "75f5c4082815186b3d1dd62db805426f0406a26bf6f01199d3dd7bf886e1eeda",
+    "scene/config.json": "bd16a93490eff3e0bc3d6727b3e21fc9acea07275e64cdb77149858ed81ca42f",
+    "simulation/assets/base_link.stl": "540462fb56e52091daa3cd1ad3acc3c19a43f120b2f11bae5a69b32b08c738b6",
+    "simulation/assets/flange.stl": "1ae6d1c5af001582a3328564839e8eb5f2acec02e7e2b19e65fc3c43f8a9c95a",
+    "simulation/assets/gripper_base.stl": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+    "simulation/assets/gripper_link1.stl": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+    "simulation/assets/gripper_link2.stl": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+    "simulation/assets/link1.stl": "0e38bf33ce41f04d7e70e471768c00fa144ba4016a878b9a6d8303c319736e09",
+    "simulation/assets/link2.stl": "fc9eb85db9fbd351c9f6e119f5fed33c6f0dd3bc3b11698a0f96aaeb2d36c721",
+    "simulation/assets/link3.stl": "44c70f731ad5067d608ebebc9e59f3c231988f992dfac6cb01ee7a6bb4b053f1",
+    "simulation/assets/link4.stl": "47242e9b5d8b06c912261756f24dddb1e7f54ac6e718232a25889115298b966d",
+    "simulation/assets/link5.stl": "dc497f5a9bab2d0d314250134d4ec86617abea7205d122db41b765acdb86ae7e",
+    "simulation/assets/link6.stl": "66417d30596e33c890f4f141781023bd3ea15709a502e7f59b30f6676f556022",
+    "simulation/assets/link7.stl": "70a2f415358f9e46088673c92bfe78ca5b1072dd73b7ea24464ba3ebb4c3e647",
+    "simulation/evaluate.py": "c6ed574ff91f2d6949db52d1cb50d921a886ff2f4cdbe876a0e98c5cd6172295",
+    "simulation/evaluate_generalized.py": "bb1f354522b5dca2a401aba9f0fc608bb20adebfd974361ec2b8d57153d77e10",
+    "simulation/generalization.py": "444ebca99525a723d265843998aabd9794559724f2284c531dfcf5917b719a75",
+    "simulation/nero_domain_randomization.py": "0a3e99196177663aebb5fce13986744868b7e318c7578fc15fe75507e4e2662c",
+    "simulation/nero_scene_camera.py": "1233f272b3c97dc7aa3a4dd02c65f13a392ed02ec5aa1e6afe94d75577a04002",
+    "simulation/outcome.py": "d0c2eac81bef9082e914c9ff3cdb24c3dd95ef94d7cb3d46d0a11b0177869253",
+    "simulation/refresh_observations.py": "0f8a6606b48260107b5d6fb60de7464eb2ac55b29b02bffe50b38d471b98e54f",
+    "simulation/scene.py": "80ec8a5b98d43beed9b9e395406b692a2e5806d5e16d73f93160302babe0afb7",
+    "simulation/scene_template.xml": "8a8a54dd9289e96ba23c8ef3b0963f1add64eba5b5ec05c20d1e76c0d7de8af3",
+    "simulation/snapshot.py": "d56c077227db6b072f1e75f8695a2a729b20c7bc508c9b2deadf994ab0a7cec4",
+    "simulation/supervised_rollout.py": "58d7005abf6125d83920b4269ec0d890ac2914dd2a7774ace8d15f1ffdafae9a",
+    "simulation/teacher.py": "e580fff50f4d4b675dca9b244183904d937b900d8835c000adc07d7332a7b2bd",
+    "training/command_context.py": "3f41d6f8c0b3eeaf1649904cf558966aae636e51d6013f8b79705162a1418c8a",
+    "training/generalized.py": "e4e541624a798e5936da2e909c36ae2af564fcd8d448fdc078223fa7ab560347",
+    "training/integrity.py": "e0dd127f976e274bf56b71d7fc98af54745b6b15d26c5476388f120bbeb9a66c",
+    "training/pose_objective.py": "8f4dea5e665c9a22a1d2782e0949346521ae7974fe7507e53bb0902003d3a11a",
+    "training/rebase_initializer.py": "ed3f1f3e56416dbbfc0fe9d02aad59b900ab3d1513feb1719a486aa70d28f9ba",
+    "training/recoveries.py": "d19126db217accd576a605e069b31470ec56954b2d7464b2ec75ff569da337a1",
+    "training/train.py": "556a862c3edb9ffb5b0ef0d8d0b3a58f6c593f0fb5d079b6503f7ef7eeb46cd5",
+    "training/transition_sampling.py": "5bbf6083589539e1ed59e8a1af24dca724bec08ec1fe7464db9a224bdb618226"
+  },
+  "scenarios": [
+    {
+      "query_stride": 10,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "nominal",
+      "seed": 350018
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_0",
+      "seed": 350118
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_1",
+      "seed": 350119
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_2",
+      "seed": 350120
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_3",
+      "seed": 350121
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_4",
+      "seed": 350122
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_5",
+      "seed": 350123
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_6",
+      "seed": 350124
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_7",
+      "seed": 350125
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.17,
+      "jitter": false,
+      "force": false,
+      "name": "cadence_11",
+      "seed": 350218
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 2,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_100ms",
+      "seed": 350219
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 10,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_500ms",
+      "seed": 350220
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_0",
+      "seed": 350318
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_1",
+      "seed": 350319
+    }
+  ],
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "reach_deadline_steps": 3900,
+  "post_completion_hold_steps": 100,
+  "observation_policy": "fresh RGB, measured8D state, and explicit causal previous gripper target when configured",
+  "policy_input_dim": 9,
+  "physical_state_dim": 8,
+  "gripper_command_context": "previous_gripper_target_delta_v1",
+  "hardware_deployment_allowed": false,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "supervision_pause_seconds": 4,
+  "feedback_reference_settle_seconds": 2,
+  "real_onsite_permissions_created": false,
+  "results": [
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18841433314459294,
+      "maximum_horizontal_transfer_m": 0.1514735770016325,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 1337,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5248667319349997,
+          -0.15640302765968386,
+          0.04749668780978869
+        ],
+        "tcp_xyz": [
+          -0.5268801227842849,
+          -0.15547008123852535,
+          0.2459209166377499
+        ],
+        "cup_upright": 0.9999999999999701,
+        "cup_speed": 4.18385728509543e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877544206,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 10,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "nominal",
+        "seed": 350018
+      },
+      "frames": 4258,
+      "active_policy_points": 3753,
+      "queries": 459,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1228,
+          "active_points": 1228,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2279,
+          "active_points": 2158,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3274,
+          "active_points": 3073,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3508,
+          "active_points": 3183,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4157,
+      "feedback_hold_points": 5,
+      "runtime_s": 39.67367814993486,
+      "contact_arm_hold_points": 260,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18920617948025426,
+      "maximum_horizontal_transfer_m": 0.1494742560400828,
+      "stable_released_frames": 107,
+      "lift_contact_frames": 1364,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5285640809262122,
+          -0.15650959908421766,
+          0.047496687806976225
+        ],
+        "tcp_xyz": [
+          -0.5267307600537792,
+          -0.1557926401716949,
+          0.24724864228790644
+        ],
+        "cup_upright": 0.9999999999999527,
+        "cup_speed": 7.83443115955132e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877535328,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_0",
+        "seed": 350118
+      },
+      "frames": 4351,
+      "active_policy_points": 3846,
+      "queries": 399,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1221,
+          "active_points": 1221,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2321,
+          "active_points": 2200,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3343,
+          "active_points": 3142,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3588,
+          "active_points": 3263,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4250,
+      "feedback_hold_points": 5,
+      "runtime_s": 40.28077771200333,
+      "contact_arm_hold_points": 280,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18831476205135167,
+      "maximum_horizontal_transfer_m": 0.15207606158649828,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 1343,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.524891329499007,
+          -0.15588175779398758,
+          0.047496687817516564
+        ],
+        "tcp_xyz": [
+          -0.5267439246988445,
+          -0.15568019983945222,
+          0.2455301160799669
+        ],
+        "cup_upright": 0.999999999999981,
+        "cup_speed": 3.6508839556658204e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877509532,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_1",
+        "seed": 350119
+      },
+      "frames": 4329,
+      "active_policy_points": 3824,
+      "queries": 394,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1257,
+          "active_points": 1257,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2313,
+          "active_points": 2192,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3332,
+          "active_points": 3131,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3577,
+          "active_points": 3252,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4228,
+      "feedback_hold_points": 5,
+      "runtime_s": 39.603731484967284,
+      "contact_arm_hold_points": 260,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18931776953393975,
+      "maximum_horizontal_transfer_m": 0.1508513206073666,
+      "stable_released_frames": 106,
+      "lift_contact_frames": 1381,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5276777031256583,
+          -0.15611728378847245,
+          0.04749668780626126
+        ],
+        "tcp_xyz": [
+          -0.5264950647771597,
+          -0.15407896583256156,
+          0.24695284923456057
+        ],
+        "cup_upright": 0.9999999999999589,
+        "cup_speed": 6.982219863254025e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.0949999987753013,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_2",
+        "seed": 350120
+      },
+      "frames": 4340,
+      "active_policy_points": 3835,
+      "queries": 396,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1226,
+          "active_points": 1226,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2315,
+          "active_points": 2194,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3343,
+          "active_points": 3142,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3588,
+          "active_points": 3263,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4239,
+      "feedback_hold_points": 5,
+      "runtime_s": 39.71305126207881,
+      "contact_arm_hold_points": 260,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.1888499933195562,
+      "maximum_horizontal_transfer_m": 0.15101645028190647,
+      "stable_released_frames": 109,
+      "lift_contact_frames": 1353,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5274253586407761,
+          -0.1560232775673158,
+          0.04749668780439307
+        ],
+        "tcp_xyz": [
+          -0.5273500030949783,
+          -0.15481994315646735,
+          0.24798205890713684
+        ],
+        "cup_upright": 0.9999999999999611,
+        "cup_speed": 9.816201722964767e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.0949999987753427,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_3",
+        "seed": 350121
+      },
+      "frames": 4357,
+      "active_policy_points": 3852,
+      "queries": 400,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1245,
+          "active_points": 1245,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2323,
+          "active_points": 2202,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3349,
+          "active_points": 3148,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3594,
+          "active_points": 3269,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4256,
+      "feedback_hold_points": 5,
+      "runtime_s": 39.98272868199274,
+      "contact_arm_hold_points": 280,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18903931094340537,
+      "maximum_horizontal_transfer_m": 0.15019964016864945,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 1369,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5284467788284098,
+          -0.15750234256417364,
+          0.047496687818738545
+        ],
+        "tcp_xyz": [
+          -0.5262033375752253,
+          -0.15672296250439222,
+          0.2456588773003519
+        ],
+        "cup_upright": 0.9999999999999838,
+        "cup_speed": 2.797263789375922e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877521714,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_4",
+        "seed": 350122
+      },
+      "frames": 4350,
+      "active_policy_points": 3845,
+      "queries": 395,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1222,
+          "active_points": 1222,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2311,
+          "active_points": 2190,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3342,
+          "active_points": 3141,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3598,
+          "active_points": 3273,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4249,
+      "feedback_hold_points": 5,
+      "runtime_s": 40.155709479004145,
+      "contact_arm_hold_points": 280,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18887425203801822,
+      "maximum_horizontal_transfer_m": 0.14984204926159406,
+      "stable_released_frames": 104,
+      "lift_contact_frames": 1357,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5255373651614311,
+          -0.1551358129288744,
+          0.04749668780592464
+        ],
+        "tcp_xyz": [
+          -0.5269396399444023,
+          -0.15385617763280987,
+          0.2462853237041854
+        ],
+        "cup_upright": 0.9999999999999558,
+        "cup_speed": 1.5537999956692117e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.0949999987752547,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_5",
+        "seed": 350123
+      },
+      "frames": 4336,
+      "active_policy_points": 3831,
+      "queries": 394,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1246,
+          "active_points": 1246,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2313,
+          "active_points": 2192,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3350,
+          "active_points": 3149,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3573,
+          "active_points": 3248,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4235,
+      "feedback_hold_points": 5,
+      "runtime_s": 39.81522963393945,
+      "contact_arm_hold_points": 240,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18938473743237905,
+      "maximum_horizontal_transfer_m": 0.15037011956449214,
+      "stable_released_frames": 111,
+      "lift_contact_frames": 1345,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5253877151492193,
+          -0.15608908874339708,
+          0.0474966878103154
+        ],
+        "tcp_xyz": [
+          -0.5270984617349069,
+          -0.1549739962063569,
+          0.2481976624022911
+        ],
+        "cup_upright": 0.99999999999997,
+        "cup_speed": 9.361784519822072e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877514073,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_6",
+        "seed": 350124
+      },
+      "frames": 4351,
+      "active_policy_points": 3846,
+      "queries": 400,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1254,
+          "active_points": 1254,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2321,
+          "active_points": 2200,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3343,
+          "active_points": 3142,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3588,
+          "active_points": 3263,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4250,
+      "feedback_hold_points": 5,
+      "runtime_s": 40.02651978493668,
+      "contact_arm_hold_points": 270,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18882365270747775,
+      "maximum_horizontal_transfer_m": 0.15189744357018026,
+      "stable_released_frames": 109,
+      "lift_contact_frames": 1352,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.524419584190688,
+          -0.1560177025604621,
+          0.04749668781489717
+        ],
+        "tcp_xyz": [
+          -0.5270648787209244,
+          -0.15428483368129167,
+          0.2479793208404181
+        ],
+        "cup_upright": 0.9999999999999782,
+        "cup_speed": 2.350387989770084e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877512635,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_7",
+        "seed": 350125
+      },
+      "frames": 4364,
+      "active_policy_points": 3859,
+      "queries": 397,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1257,
+          "active_points": 1257,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2335,
+          "active_points": 2214,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3356,
+          "active_points": 3155,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3601,
+          "active_points": 3276,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4263,
+      "feedback_hold_points": 5,
+      "runtime_s": 40.33544960594736,
+      "contact_arm_hold_points": 270,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18866629010940805,
+      "maximum_horizontal_transfer_m": 0.1512058175198869,
+      "stable_released_frames": 111,
+      "lift_contact_frames": 1355,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5255547411102172,
+          -0.156556443433562,
+          0.04749668780770022
+        ],
+        "tcp_xyz": [
+          -0.526634568617728,
+          -0.15567601244542567,
+          0.24829708049897542
+        ],
+        "cup_upright": 0.9999999999999631,
+        "cup_speed": 1.5554777370501469e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877520462,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.17,
+        "jitter": false,
+        "force": false,
+        "name": "cadence_11",
+        "seed": 350218
+      },
+      "frames": 4358,
+      "active_policy_points": 3853,
+      "queries": 400,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1252,
+          "active_points": 1252,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2330,
+          "active_points": 2209,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3350,
+          "active_points": 3149,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3595,
+          "active_points": 3270,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4257,
+      "feedback_hold_points": 5,
+      "runtime_s": 39.946394655969925,
+      "contact_arm_hold_points": 270,
+      "guard_diagnostic": null
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.18836516889007393,
+      "maximum_horizontal_transfer_m": 0.1512225326030047,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 1622,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5243118066146397,
+          -0.15572556861922665,
+          0.04749668781056462
+        ],
+        "tcp_xyz": [
+          -0.5284788311100005,
+          -0.15568380470407236,
+          0.06303768234307296
+        ],
+        "cup_upright": 0.9999999999999619,
+        "cup_speed": 3.2434087093499045e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.08147889814933051,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 2,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "delay_100ms",
+        "seed": 350219
+      },
+      "frames": 4225,
+      "active_policy_points": 3900,
+      "queries": 420,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1538,
+          "active_points": 1538,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2814,
+          "active_points": 2693,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 4036,
+          "active_points": 3835,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": null,
+      "feedback_hold_points": 5,
+      "runtime_s": 37.11699018301442,
+      "contact_arm_hold_points": 230,
+      "guard_diagnostic": null
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.12490341530430539,
+      "maximum_horizontal_transfer_m": 0.004194314807669144,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 448,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5312324970446635,
+          -0.007085060103001936,
+          0.1724034153043054
+        ],
+        "tcp_xyz": [
+          -0.5295723984797255,
+          -0.0072803905005703875,
+          0.18704040701379118
+        ],
+        "cup_upright": 0.9995904958330976,
+        "cup_speed": 0.008006535021408714,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07388255088059717,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 10,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "delay_500ms",
+        "seed": 350220
+      },
+      "frames": 4021,
+      "active_policy_points": 3900,
+      "queries": 514,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 2630,
+          "active_points": 2630,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": null,
+      "feedback_hold_points": 1,
+      "runtime_s": 41.63680145400576,
+      "contact_arm_hold_points": 380,
+      "guard_diagnostic": null
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.18873791250877398,
+      "maximum_horizontal_transfer_m": 0.15076981387393854,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 1370,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5257491707367552,
+          -0.15576003397419047,
+          0.04749668780512519
+        ],
+        "tcp_xyz": [
+          -0.5279238870006409,
+          -0.1559643366425573,
+          0.0626074917090487
+        ],
+        "cup_upright": 0.9999999999999601,
+        "cup_speed": 2.8212276398225285e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09002447439099265,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": true,
+        "name": "force_0",
+        "seed": 350318
+      },
+      "frames": 3591,
+      "active_policy_points": 3266,
+      "queries": 342,
+      "error": "RuntimeError: ACT requested another closure after the confirmed release",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 1,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1244,
+          "active_points": 1244,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2333,
+          "active_points": 2212,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3346,
+          "active_points": 3145,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": null,
+      "feedback_hold_points": 5,
+      "runtime_s": 31.68170978303533,
+      "contact_arm_hold_points": 270,
+      "guard_diagnostic": null
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18977766026849008,
+      "maximum_horizontal_transfer_m": 0.15125261881182506,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 1365,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "premature_release_before_support": false,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5250879570161251,
+          -0.15612718855576166,
+          0.04749668780709283
+        ],
+        "tcp_xyz": [
+          -0.5267170114541901,
+          -0.15498433125355857,
+          0.24543754967617878
+        ],
+        "cup_upright": 0.9999999999999684,
+        "cup_speed": 2.2528987310208648e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877523674,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": true,
+        "name": "force_1",
+        "seed": 350319
+      },
+      "frames": 4353,
+      "active_policy_points": 3849,
+      "queries": 394,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "supervision_failures": 0,
+      "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1253,
+          "active_points": 1253,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2331,
+          "active_points": 2210,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3346,
+          "active_points": 3145,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3601,
+          "active_points": 3277,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ],
+      "post_completion_freeze_step": 4252,
+      "feedback_hold_points": 4,
+      "runtime_s": 40.12144422600977,
+      "contact_arm_hold_points": 280,
+      "guard_diagnostic": null
+    }
+  ],
+  "complete": true,
+  "finalized": true,
+  "passed": 11,
+  "total": 14
+}

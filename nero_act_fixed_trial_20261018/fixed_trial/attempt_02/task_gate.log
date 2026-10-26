@@ -1,0 +1,44 @@
+[INFO] [1792338482.994915285] [control_gate]: Control gate started. status_topics=['arm_controller/follow_joint_trajectory/_action/status', 'gripper_controller/follow_joint_trajectory/_action/status'], gate_service_name=control_enable; commands remain blocked until controller state matches robot feedback
+[INFO] [1792338483.187320618] [control_gate]: Gate service is ready, forcing gate closed
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_trial_20261018/executor/gate.py", line 170, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 748, in _wait_for_ready_callbacks
+    context_stack.enter_context(waitable)
+  File "/usr/lib/python3.12/contextlib.py", line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/event_handler.py", line 129, in __enter__
+    self.__event.__enter__()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_fixed_trial_20261018/executor/fixed_gate.py", line 5, in <module>
+    if __name__=='__main__':main(permission_check=require_fixed_trial_permission)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_fixed_trial_20261018/executor/gate.py", line 173, in main
+    node._set_gate(False)
+  File "/home/user/wq/nero_act_fixed_trial_20261018/executor/gate.py", line 126, in _set_gate
+    if not self._gate_client.wait_for_service(timeout_sec=0.):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/client.py", line 191, in wait_for_service
+    return self.service_is_ready()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/client.py", line 170, in service_is_ready
+    return self.__client.service_server_is_available()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to check service availability: rcl node's context is invalid, at ./src/rcl/node.c:404

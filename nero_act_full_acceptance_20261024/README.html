@@ -1,0 +1,134 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACT完整抓放验收：1/7通过，整套未通过</title><style>
+:root {color-scheme: light; --ink:#182633; --muted:#536575; --line:#d4dfe7; --accent:#165b86;}
+* {box-sizing:border-box} html {scroll-behavior:smooth}
+body {margin:0;background:#eef2f5;color:var(--ink);font:16px/1.85 "Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;}
+.export-bar {max-width:1240px;margin:22px auto 0;padding:12px 24px;color:var(--muted);font-size:14px;}
+main {max-width:1240px;margin:0 auto 36px;padding:36px 54px;background:white;box-shadow:0 2px 18px #1b364014;}
+nav {padding:14px 22px;background:#f3f7fa;border:1px solid var(--line);margin-bottom:32px;}
+nav summary {cursor:pointer;font-weight:700;color:var(--accent)}
+nav ol {columns:2;column-gap:36px;padding-left:24px} nav li {break-inside:avoid;padding:3px 0;font-size:14px;}
+h1 {font-size:30px;line-height:1.5;margin:0 0 24px} h2 {font-size:23px;line-height:1.6;border-bottom:2px solid var(--line);padding-bottom:8px;margin-top:42px;scroll-margin-top:18px;}
+h3 {font-size:19px;margin-top:27px;scroll-margin-top:18px} p {margin:14px 0}
+a {color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+table {display:block;width:100%;border-collapse:collapse;font-size:14px;overflow-x:auto;margin:20px 0;}
+th,td {border:1px solid var(--line);padding:10px 12px;vertical-align:top;min-width:110px;}
+th {background:#edf3f7;text-align:left} tr:nth-child(even) {background:#fafcfd;}
+pre {padding:16px 20px;background:#f1f4f6;border:1px solid var(--line);overflow-x:auto;font-size:13px;line-height:1.7;}
+code {font-family:"Noto Sans Mono","Consolas",monospace;font-size:.9em;overflow-wrap:anywhere;background:#f1f4f6;padding:1px 4px;}
+pre code {background:none;padding:0;font-size:inherit;overflow-wrap:normal;}
+blockquote {border-left:4px solid var(--accent);margin:20px 0;padding:2px 20px;background:#f3f7fa;}
+li {margin:5px 0} strong {font-weight:700}
+@media(max-width:760px) {main {padding:24px 18px} h1 {font-size:25px} h2 {font-size:21px} nav ol {columns:1} .export-bar {padding:10px 18px}}
+@media print {@page {size:A4;margin:16mm 13mm} body {background:white;font-size:10pt;line-height:1.65} main {margin:0;padding:0;max-width:none;box-shadow:none} .export-bar,nav {display:none} h1 {font-size:19pt} h2 {font-size:15pt} h3 {font-size:12pt} h1,h2,h3 {break-after:avoid} table {font-size:8pt;overflow:visible} th,td {padding:5px 6px;min-width:0} tr {break-inside:avoid} pre {white-space:pre-wrap;overflow:visible;font-size:8pt} a {color:inherit}}
+
+img {max-width:100%;height:auto;}
+</style><body><div class="export-bar">2026-10-24版本 · <a href="README.md">Markdown 原文</a> · 可打印为PDF</div><main><nav><details open><summary>目录 · 6 节</summary><ol><li><a href="#heading-2">验收范围</a></li><li><a href="#heading-3">完整任务标准与结果</a></li><li><a href="#heading-4">成功场景9006的物理证据</a></li><li><a href="#heading-5">未通过原因及环境边界</a></li><li><a href="#heading-6">工程验证与复现</a></li><li><a href="#heading-7">验收结论与后续</a></li></ol></details></nav><article><h1 id="heading-1">ACT完整抓放验收：1/7通过，整套未通过</h1>
+<p>已实际重跑保留的<strong>1a28模型</strong>，7个既有位置中1个完整通过，整套验收未通过。成功场景9006完成抓取、抬升、搬运、落桌、松爪和退出；其他场景按实际停止结果记录。本轮没有训练、没有接入上一轮被拒绝的视觉层、没有真机运动。</p>
+<p><a href="run_01/acceptance.json">完整结果</a> · <a href="run_01/measurement_audit.json">逐帧物理复算</a> · <a href="case9006_full_flow_simulation_2x.mp4">成功场景视频</a> · <a href="case9006_contact_sheet.jpg">六阶段画面</a></p>
+<h2 id="heading-2">验收范围</h2>
+<p>模型SHA256为<code>1a28f4fddd3095791403028b639b99f9775b91caab45c950c2d0f518955bc0f0</code>，完整加载220个state_dict条目和配对归一化。构造后显式冻结参数并进入eval；最终内存参数/buffer比较因下述后处理错误未执行，不声称这项检查通过。checkpoint文件及265项运行来源前后SHA未变化。GPU驱动当前不可用，采用CPU推理和Mesa EGL llvmpipe软件渲染；本轮不承诺与历史GPU运行逐点一致。</p>
+<p>沿用原7个场景、RGB观察器、两点执行前缀、碰撞/接触/时限保护和完整任务标准。7个位置都已用于历史诊断，本轮是开发回归，不能计作新的位置泛化留出，也不是当前真实桌面的验收。各场景假设起点已张爪95毫米，没有实际执行真机准备动作。</p>
+<h2 id="heading-3">完整任务标准与结果</h2>
+<p>必须同时满足：杯子抬升至少180毫米、搬运超过100毫米；在目标20毫米范围内由桌面承托并松爪，末端退出高位后稳定至少100控制帧；GRASP→CARRY→RELEASE→RETREAT事件完整；无异常机械臂碰杯、无执行合同失败、无落桌前释放，活动策略点不超过3900。必须从高位起点走完整段，局部恢复片段不算通过。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>杯位偏移，毫米</th>
+<th style="text-align:right">抬升，毫米</th>
+<th style="text-align:right">搬运，毫米</th>
+<th style="text-align:right">退出后稳定帧</th>
+<th>完整通过</th>
+<th>停止原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9000</td>
+<td>+0, +0</td>
+<td style="text-align:right">0.265</td>
+<td style="text-align:right">5.736</td>
+<td style="text-align:right">0</td>
+<td>否</td>
+<td>RuntimeError: Attached-cup model would cross the table</td>
+</tr>
+<tr>
+<td>9005</td>
+<td>+10, +10</td>
+<td style="text-align:right">0.000</td>
+<td style="text-align:right">0.148</td>
+<td style="text-align:right">0</td>
+<td>否</td>
+<td>RuntimeError: Attached-cup model would cross the table</td>
+</tr>
+<tr>
+<td>9006</td>
+<td>-10, -10</td>
+<td style="text-align:right">183.491</td>
+<td style="text-align:right">181.719</td>
+<td style="text-align:right">101</td>
+<td>是</td>
+<td>无错误</td>
+</tr>
+<tr>
+<td>9200</td>
+<td>+7, -12</td>
+<td style="text-align:right">197.073</td>
+<td style="text-align:right">163.647</td>
+<td style="text-align:right">0</td>
+<td>否</td>
+<td>ValueError: Visible blue geometry does not span the nominal square card</td>
+</tr>
+<tr>
+<td>9201</td>
+<td>-12, +7</td>
+<td style="text-align:right">0.220</td>
+<td style="text-align:right">1.006</td>
+<td style="text-align:right">0</td>
+<td>否</td>
+<td>RuntimeError: Attached-cup model would cross the table</td>
+</tr>
+<tr>
+<td>9300</td>
+<td>+8, +11</td>
+<td style="text-align:right">0.006</td>
+<td style="text-align:right">1.936</td>
+<td style="text-align:right">0</td>
+<td>否</td>
+<td>RuntimeError: Attached-cup model would cross the table</td>
+</tr>
+<tr>
+<td>9301</td>
+<td>-9, -11</td>
+<td style="text-align:right">0.000</td>
+<td style="text-align:right">0.000</td>
+<td style="text-align:right">0</td>
+<td>否</td>
+<td>RuntimeError: Predicted low descent before alignment; no action sent</td>
+</tr>
+</tbody>
+</table>
+<p>“搬运”列为原监测器最大水平位移；只有完整判据全部通过才算完整搬运抓放，杯子被推动几毫米不算搬运成功。四个确认事件是仿真物理条件下的模拟确认，不是现场回执。</p>
+<h2 id="heading-4">成功场景9006的物理证据</h2>
+<ul>
+<li>杯位偏移−10/−10毫米；抬升183.491毫米、最大水平位移181.719毫米。</li>
+<li>最终目标中心误差16.512毫米，符合原20毫米界限，不能称为高精度放置。</li>
+<li>杯底相对桌面-0.003312毫米，末端高度246.012毫米；杯子由桌面支撑，两指已分离，退出后连续稳定101帧，约5秒仿真时间。</li>
+<li>无异常接触、无执行合同失败、无落桌前释放。对应状态和指标已从保存的measurements独立复算；这是同一仿真物理数据的复算，不是外部仪器验收。</li>
+</ul>
+<p><img src="case9006_contact_sheet.jpg" alt="9006的起点、抓取、搬运、放置、松爪及退出查询画面" /></p>
+<p><a href="case9006_full_flow_simulation_2x.mp4">视频</a>由本次1429个实际查询快照重新渲染，使用同一配置相机，名义2倍速；间隔按20fps取整并保持画面，没有生成新动作或重新积分物理。最后100帧稳定以原物理记录为准，视频画面不能代替数值验收。<a href="recording.json">视频元数据</a></p>
+<h2 id="heading-5">未通过原因及环境边界</h2>
+<p>中心9000、9005与9201已到GRASP，后续预测触发附着杯桌面保护。9000的双边夹持存在，但首目标TCP下降约15.69微米，名义附着杯底由−37.06微米加深到−53.59微米，不符合严格向上脱离条件；不是“没有闭爪”。该目标被拒绝，不能解释成已经发出碰撞动作。</p>
+<p>9200已抬升和转运，但后续蓝卡可见几何不满足名义正方形检查，未完成释放和退出。剩余场景以表中原始错误为准，没有取消保护或补旧坐标让流程继续。</p>
+<p><a href="historical_environment_comparison.json">环境对照</a>显示：9000首查询的机器人状态、6维位置特征及模拟曝光时间与历史记录相同，但七轴20点输出最大相差约0.001944 rad。CPU推理和渲染后端同时变化，且没有保存用于隔离的历史首帧RGB，因此不能单独归因于CPU或渲染，也不能当作权重变化的证据。历史GPU的3/7不是本轮通过数。</p>
+<p>原运行时保留接触时机械臂保持、抓取高度前张爪保持和RELEASE支撑确认等监督逻辑；仿真微接触逃离规则只在仿真有效。没有教师生成任务动作兜底，也没有刚性焊接附着。GPU不可用未通过关闭新鲜度保护来弥补；仿真按模拟时间推进，不证明CPU能满足真实20Hz或250毫秒命令时效。</p>
+<h2 id="heading-6">工程验证与复现</h2>
+<p>新入口最初发生同名<code>experiment.py</code>导入冲突，失败在进入仿真之前，记录保留于<a href="startup-failure.log">startup-failure.log</a>。<a href="test_entry.py">回归测试</a>先失败，再改为隔离名称加载原CPU模型入口；最终入口及完成性检查4项和既有接触/视觉/完整判据28项测试通过，含既有Axes3D导入警告。见<a href="final-tests.log">final-tests.log</a>、<a href="runtime-regression-tests.log">runtime-regression-tests.log</a>。</p>
+<p>七项运行完成后，原dense汇总器试图在新输出目录读取<code>contact_guard.py</code>，导致命令退出码1，原<a href="run_01/summary.json">未完成汇总</a>和日志均保留。实际guard文件已在冻结来源中绑定，未缺少运行检查。通过<a href="finalize_existing.py">独立收尾入口</a>逐一核验七份持久化结果、原完整判据和265项来源，另写<code>acceptance.json</code>；没有覆盖原始摘要或重新运行、改变结果。新增缺项/重复案例拒绝测试，且明确标记最终内存比较未完成。</p>
+<p>保存的11861帧物理观测已复算抬升、水平位移、稳定尾段和最终位姿，结果与各场景摘要一致；265项冻结来源前后SHA匹配。软件测试通过、进程完成和完整任务通过分别记录，<code>full_suite_passed=false</code>，<code>hardware_deployment_allowed=false</code>。</p>
+<p>原记录入口<a href="run.py">run.py</a>按<a href="run_01/protocol.json">协议</a>调用原封存运行时；<a href="audit_measurements.py">物理复算</a>与<a href="render_recording.py">画面导出</a>不训练模型或连接硬件。执行环境及逐场景进度见<a href="execution.log">execution.log</a>，来源见<a href="run_01/source_sha256.json">source_sha256.json</a>，交付哈希见<a href="integrity.json">integrity.json</a>。入口要求新的<code>run_01</code>目录，不可覆盖本轮证据。</p>
+<h2 id="heading-7">验收结论与后续</h2>
+<p><strong>证明了一个固定场景的完整ACT仿真抓放；没有证明七位置可靠完成、真实示教适配改善或完整真机抓放。</strong> 本轮保持上一轮视觉层拒绝采用的结论。</p>
+<p>后续先处理已记录的起抬前缀/附着杯底保护失败和放置遮挡观察失败，并对计算/渲染环境作单因素复现；保留原阈值。任何修正都须重新覆盖接近到退出全段及多位置回归。TCP/相机独立误差界和真实发送时效尚未验收，不能根据单个仿真成功自动下发真机。</p>
+</article></main></body></html>

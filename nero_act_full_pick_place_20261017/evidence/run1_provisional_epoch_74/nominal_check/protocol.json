@@ -1,0 +1,21 @@
+{
+  "checkpoint_sha256": "fe9533180b37a284ad158ff6be874b2394b5d0c0c640671b16ad102638b0d66f",
+  "selected_epoch": 74,
+  "scenarios": [
+    {
+      "query_stride": 10,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "nominal",
+      "seed": 90000
+    }
+  ],
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "reach_deadline_steps": 3200,
+  "post_completion_hold_steps": 100,
+  "observation_policy": "fresh rendered RGB and measured8D state per query",
+  "hardware_deployment_allowed": false
+}

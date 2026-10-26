@@ -1,0 +1,326 @@
+{
+  "updated_at": "2026-10-16T21:21:58.683363+08:00",
+  "requested_scope": "Real grasp acceptance; continue feedback restoration, software synchronization and noncontact preparation",
+  "status": "READONLY_STACK_RESTORED_GRASP_NOT_READY",
+  "real_grasp_verified": false,
+  "physical_grasp_attempted": false,
+  "motion_goal_submitted": false,
+  "gripper_goal_to_hardware_submitted": false,
+  "enable_or_mode_change_sent": false,
+  "user_authorization_and_onsite_confirmations_preserved": true,
+  "latest_initial_state": [
+    0.1832595714594046,
+    -0.12651891747706895,
+    0.09998991284675514,
+    1.5707788735023767,
+    -0.023893557459802373,
+    0.2817485011494446,
+    0.13107422682477415,
+    2.9e-05
+  ],
+  "latest_state_source": "logs/current_start_restored_live_capture/observations.npz and logs/restored_stack_final_verification/report.json",
+  "historical_negative_j7_start_is_not_latest_state": true,
+  "readonly_feedback_and_moveit_restored": true,
+  "transport_guard": {
+    "mode": "read_only_ros_feedback_with_transport_send_denied",
+    "send_guard": "scripts.nero_methylene_teacher.reject_sdk_send",
+    "arm_single_send_blocked": true,
+    "arm_batch_send_blocked": true,
+    "transport_send_blocked": true,
+    "guard_class_and_bound_method_self_checks_passed": true,
+    "transport_class": "CanCommImpl",
+    "auto_enable": false,
+    "control_enabled": false,
+    "speed_percent": 0,
+    "can_tx_packets": 88420,
+    "source_files_modified": false,
+    "motion_sent": false,
+    "gripper_sent": false
+  },
+  "virtual_synchronization": {
+    "mode": "isolated_virtual_controller_sync",
+    "physical_motion_command_sent": false,
+    "gripper_goal_to_hardware_sent": false,
+    "enable_or_mode_change_sent": false,
+    "virtual_goals": [
+      {
+        "controller": "arm_controller",
+        "status": 4,
+        "error_code": 0,
+        "target": [
+          0.1832246648743647,
+          -0.12651891747706895,
+          0.10000736613927509,
+          1.5707788735023767,
+          -0.023911010752322315,
+          0.2816961412718848,
+          0.13107422682477415
+        ]
+      },
+      {
+        "controller": "gripper_controller",
+        "status": 4,
+        "error_code": 0,
+        "target": [
+          2.9999999999999997e-05
+        ]
+      }
+    ],
+    "actual_before": [
+      0.1832246648743647,
+      -0.12651891747706895,
+      0.10000736613927509,
+      1.5707788735023767,
+      -0.023911010752322315,
+      0.2816961412718848,
+      0.13107422682477415,
+      2.9999999999999997e-05
+    ],
+    "hardware_plugin": "mock_components/GenericSystem",
+    "can_tx_before": 88420,
+    "actual_after": [
+      0.18324211816688468,
+      -0.12651891747706895,
+      0.10000736613927509,
+      1.5707788735023767,
+      -0.023911010752322315,
+      0.28166123468684495,
+      0.13107422682477415,
+      2.9999999999999997e-05
+    ],
+    "mock_after": [
+      0.1832246648743647,
+      -0.12651891747706895,
+      0.10000736613927509,
+      1.5707788735023767,
+      -0.023911010752322315,
+      0.2816961412718848,
+      0.13107422682477415,
+      2.9999999999999997e-05
+    ],
+    "arm_sync_error_rad": 3.490658503985111e-05,
+    "gripper_sync_error_m": 0.0,
+    "real_arm_change_rad": 3.490658503985111e-05,
+    "real_gripper_change_m": 0.0,
+    "can_tx_after": 88420,
+    "gated_publisher_count": 0,
+    "success": true
+  },
+  "current_scene_analysis": {
+    "mode": "saved_new_real_scene_localization",
+    "image_source": "/home/user/wq/nero_cup_retrained_v2_20261016/logs/current_start_restored_live_capture/camera_0_upright_rgb.png",
+    "detector_sha256": "8c7ca384ca729f57bd54975cb0a14ef80503831be76fa1a72cdc5665fef341e0",
+    "detections": [
+      {
+        "name": "red",
+        "confidence": 0.704038143157959,
+        "xyxy": [
+          579.6256103515625,
+          235.9071044921875,
+          637.8060302734375,
+          360.0
+        ]
+      },
+      {
+        "name": "box",
+        "confidence": 0.5039458274841309,
+        "xyxy": [
+          297.4788818359375,
+          171.42489624023438,
+          345.6683349609375,
+          240.87014770507812
+        ]
+      },
+      {
+        "name": "cup",
+        "confidence": 0.25194522738456726,
+        "xyxy": [
+          298.3573303222656,
+          171.14561462402344,
+          346.3938293457031,
+          241.94532775878906
+        ]
+      }
+    ],
+    "observed_cup_box": [
+      298.3573303222656,
+      171.14561462402344,
+      346.3938293457031,
+      241.94532775878906
+    ],
+    "projected_cup_box": [
+      301.81588106570877,
+      175.92412816702796,
+      343.0445908046096,
+      239.59108218765846
+    ],
+    "cup_center_visual_estimate_m": [
+      -0.46764734616351816,
+      -0.0659584814585443,
+      0.0375
+    ],
+    "cup_shift_from_bundled_scene_mm": [
+      44.81156319964524,
+      -45.10984796010975,
+      0.0
+    ],
+    "cylinder_fit_rmse_px": 3.590112670236938,
+    "table_top_z_m_assumed": -0.01,
+    "cup_diameter_m_assumed": 0.075,
+    "cup_height_m_assumed": 0.095,
+    "physical_geometry_verified": false,
+    "valid_for_motion": false,
+    "motion_sent": false,
+    "note": "Updated nominal simulation input only. Existing unvalidated external camera/table/TCP calibration retained; no hardware targets generated."
+  },
+  "latest_model_inference": {
+    "state": [
+      0.1832072138786316,
+      -0.12651892006397247,
+      0.09997245669364929,
+      1.5707788467407227,
+      -0.023893557488918304,
+      0.2816786766052246,
+      0.1310742199420929,
+      2.9999999242136255e-05
+    ],
+    "chunk_shape": [
+      20,
+      8
+    ],
+    "first_action": [
+      0.18313473463058472,
+      -0.1282024383544922,
+      0.09991085529327393,
+      1.5667393207550049,
+      -0.02392778918147087,
+      0.2818640470504761,
+      0.13632750511169434,
+      0.06441247463226318
+    ],
+    "first10_max_arm_gap_rad": 0.005525261163711548,
+    "first10_max_gripper_gap_m": 0.06438247114419937,
+    "raw_gripper_range_m": [
+      0.06428377330303192,
+      0.06463996320962906
+    ],
+    "inference_s": 0.3548689010203816,
+    "motion_sent": false,
+    "physical_grasp_verified": false,
+    "state_source": "logs/current_start_restored_live_capture/observations.npz"
+  },
+  "latest_frozen_model_diagnostics": {
+    "tests_complete": true,
+    "physical_grasp_attempted": false,
+    "geometry_scope": "nominal retained table/camera/contact parameters; not physical metrology",
+    "results": [
+      {
+        "scenario": "restored_current",
+        "task_success": false,
+        "maximum_lift_mm": 0.0,
+        "bilateral_grip_points": 0,
+        "unexpected_arm_cup_contact_points": 0,
+        "strict_block_contract_violations": 11,
+        "nearest_tcp_xy_to_cup_center_mm": 14.764882831145897,
+        "closest_step": 443,
+        "closest_tcp_m": [
+          -0.4636244112230613,
+          -0.05175184020770143,
+          0.39253212107361385
+        ],
+        "cup_center_m": [
+          -0.46764725897006815,
+          -0.06595812265674027,
+          0.037499459443714175
+        ],
+        "tcp_height_above_cup_center_at_closest_mm": 355.0326616298997,
+        "final_tcp_m": [
+          -0.5156678733166502,
+          -0.0009159257372808943,
+          0.23642870739141442
+        ],
+        "hardware_tested": false
+      },
+      {
+        "scenario": "restored_current_appearance",
+        "task_success": false,
+        "maximum_lift_mm": 0.0,
+        "bilateral_grip_points": 0,
+        "unexpected_arm_cup_contact_points": 0,
+        "strict_block_contract_violations": 12,
+        "nearest_tcp_xy_to_cup_center_mm": 14.944709894372284,
+        "closest_step": 431,
+        "closest_tcp_m": [
+          -0.46408280539323343,
+          -0.051444714252928424,
+          0.39469539695056577
+        ],
+        "cup_center_m": [
+          -0.4676472590466016,
+          -0.06595812267341805,
+          0.03749945944348601
+        ],
+        "tcp_height_above_cup_center_at_closest_mm": 357.1959375070798,
+        "final_tcp_m": [
+          -0.5186005997927114,
+          -0.0014472129324456585,
+          0.241378721596609
+        ],
+        "hardware_tested": false
+      },
+      {
+        "scenario": "restored_preopened_counterfactual",
+        "task_success": false,
+        "maximum_lift_mm": 0.0,
+        "bilateral_grip_points": 0,
+        "unexpected_arm_cup_contact_points": 0,
+        "strict_block_contract_violations": 0,
+        "nearest_tcp_xy_to_cup_center_mm": 11.909260065761927,
+        "closest_step": 306,
+        "closest_tcp_m": [
+          -0.4640927387736786,
+          -0.05459168685293909,
+          0.3838340627457242
+        ],
+        "cup_center_m": [
+          -0.4676472592360311,
+          -0.06595812251222424,
+          0.03749945944314095
+        ],
+        "tcp_height_above_cup_center_at_closest_mm": 346.3346033025833,
+        "final_tcp_m": [
+          -0.5137456322502916,
+          -0.00101713888779263,
+          0.30315839335754247
+        ],
+        "hardware_tested": false
+      }
+    ]
+  },
+  "previous_diagnostic_results_are_historical": "logs/current_start_diagnostic/results/summary.json",
+  "small_air_plan": {
+    "source": "logs/restored_small_air_plan/report.json",
+    "j1_delta_rad": 0.005,
+    "duration_s": 4,
+    "gripper_held": true,
+    "hardware_goal_submitted": false,
+    "scope": "separate control-chain test, not grasp or ACT acceptance",
+    "execution_ready": false
+  },
+  "metrology": {
+    "user_says_records_exist": true,
+    "record_path_or_values_received": false,
+    "physical_geometry_verified": false,
+    "requested_values": "tableZ relative to base and flange-to-grip-center TCP XYZ with flange-frame convention"
+  },
+  "remaining_blockers": [
+    "Awaiting path or numerical values for reported measured table/TCP records",
+    "Latest current-scene diagnostic variants did not grasp/lift/hold",
+    "Current gripper30um to predicted64mm discontinuity exceeds unchanged10mm gate",
+    "No validated20x8 contact-aware hardware executor/completion observer for this frozen model"
+  ],
+  "no_original_source_weights_limits_or_calibration_modified": true,
+  "can_tx_packets_before": 88420,
+  "can_tx_packets_after": 88420,
+  "active_process_mode": "guarded receive-only NERO ROS driver and MoveIt GenericSystem; no control_gate process or gated command publishers"
+}

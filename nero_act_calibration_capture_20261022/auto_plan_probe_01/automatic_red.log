@@ -1,0 +1,82 @@
+FFF.......................................                               [100%]
+=================================== FAILURES ===================================
+______________ test_stale_frame_is_skipped_without_relaxing_50ms _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7318df3f6ab0>
+
+    def test_stale_frame_is_skipped_without_relaxing_50ms(monkeypatch):
+>       m=api();robot=StaticRobot();K,detector=vision();payload={};reads=[]
+
+tests/test_automatic_sampling.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_automatic_sampling.py:11: in api
+    def api():return importlib.import_module('automatic_sampling')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'automatic_sampling', import_ = <function _gcd_import at 0x7318f33a40e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'automatic_sampling'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+____________ test_persistently_stale_stream_cannot_produce_a_sample ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7318dbb21b80>
+
+    def test_persistently_stale_stream_cannot_produce_a_sample(monkeypatch):
+>       m=api();robot=StaticRobot();K,detector=vision();payload={}
+
+tests/test_automatic_sampling.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_automatic_sampling.py:11: in api
+    def api():return importlib.import_module('automatic_sampling')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'automatic_sampling', import_ = <function _gcd_import at 0x7318f33a40e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'automatic_sampling'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_______ test_send_intent_is_durable_before_callback_and_return_separate ________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-81/test_send_intent_is_durable_be0')
+
+    def test_send_intent_is_durable_before_callback_and_return_separate(tmp_path):
+>       m=api();path=tmp_path/'events.jsonl'
+
+tests/test_automatic_sampling.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_automatic_sampling.py:11: in api
+    def api():return importlib.import_module('automatic_sampling')
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'automatic_sampling', import_ = <function _gcd_import at 0x7318f33a40e0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'automatic_sampling'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_automatic_sampling.py::test_stale_frame_is_skipped_without_relaxing_50ms
+FAILED tests/test_automatic_sampling.py::test_persistently_stale_stream_cannot_produce_a_sample
+FAILED tests/test_automatic_sampling.py::test_send_intent_is_durable_before_callback_and_return_separate
+3 failed, 39 passed in 2.22s

@@ -1,0 +1,40 @@
+{
+  "scope": "one_small_development_epoch_not_formal_or_task_success",
+  "image_size_hw": [
+    180,
+    320
+  ],
+  "train_samples": 64,
+  "val_samples": 64,
+  "elapsed_s": 0.4756461619399488,
+  "train": {
+    "loss": 0.019577914848923683,
+    "l1": 0.00843004253692925,
+    "kl": 0.00940806232392788,
+    "gripper_bce": 0.0,
+    "prefix_margin": 0.0,
+    "pose_position": 0.12027916684746742,
+    "pose_rotation": 0.08882160112261772,
+    "prior_gripper": 0.13668512552976608,
+    "arm_mae_rad": 0.0014223731704987586,
+    "gripper_mae_m": 0.00034381380828563124
+  },
+  "val": {
+    "loss": 0.01670943945646286,
+    "l1": 0.006515118991956115,
+    "kl": 0.0,
+    "gripper_bce": 0.0,
+    "prefix_margin": 0.0,
+    "pose_position": 0.08791546151041985,
+    "pose_rotation": 0.10531937703490257,
+    "prior_gripper": 0.10651561245322227,
+    "arm_mae_rad": 0.001145732996519655,
+    "gripper_mae_m": 0.0002357026605750434
+  },
+  "zero_latent_inference_ms": {
+    "median": 3.374747990164906,
+    "p95": 3.6033603595569734
+  },
+  "checkpoint_saved": false,
+  "hardware_connected": false
+}

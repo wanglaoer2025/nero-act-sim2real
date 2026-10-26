@@ -1,0 +1,73 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_occluded_top_edge_does_not_discard_three_visible_card_edges _______
+
+    def test_occluded_top_edge_does_not_discard_three_visible_card_edges():
+        from pathlib import Path
+        import json
+        from observer import RegisteredCardObserver
+        fixture=Path(__file__).parent/'fixtures'
+        initial=cv2.cvtColor(cv2.imread(str(fixture/'card_initial.png')),cv2.COLOR_BGR2RGB)
+        partial=cv2.cvtColor(cv2.imread(str(fixture/'card_partial.png')),cv2.COLOR_BGR2RGB)
+        ob=RegisteredCardObserver(json.loads((fixture/'card_profile.json').read_text()),initial.shape[:2])
+        ob.register([initial]*3)
+        a=ob.measure(initial,1.,1)
+>       b=ob.measure(partial,1.05,2)
+
+tests/test_observer.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <observer.RegisteredCardObserver object at 0x776d6990f980>
+rgb = array([[[63, 63, 71],
+        [63, 63, 71],
+        [63, 63, 71],
+        ...,
+        [63, 63, 71],
+        [63, 63, ...8],
+        ...,
+        [91, 91, 91],
+        [91, 91, 91],
+        [91, 91, 91]]], shape=(720, 1280, 3), dtype=uint8)
+stamp = 1.05, frame_id = 2
+
+    def measure(self,rgb,stamp,frame_id):
+        if not self.registered:
+            raise ValueError('Card registration required')
+        if (not np.isfinite(stamp) or stamp<=self.last_stamp or frame_id<=self.last_frame):
+            raise ValueError('New increasing frame and exposure required')
+        self._masks(rgb)
+        background_shift,count=self._background_check(rgb)
+        _,blue,occluder=self._masks(rgb)
+        points=self._blue_points(blue)
+        # Work with EXTERNAL visible card boundaries, not arbitrary interior
+        # blue pixels or the edge caused by a yellow/dark occluder.
+        interior=cv2.erode(blue.astype('uint8'),np.ones((3,3),np.uint8))
+        hidden=cv2.dilate(occluder.astype('uint8'),np.ones((5,5),np.uint8)).astype(bool)
+        boundary=blue&~interior.astype(bool)&~hidden
+        y,x=np.nonzero(boundary)
+        if len(x)<8:
+            raise ValueError('No visible external card edges')
+        border=self._table_points(np.c_[x,y])
+        normals=[];offsets=[];supported=[]
+        for i in range(4):
+            a,b=self.quad[i],self.quad[(i+1)%4]
+            u=(b-a)/np.linalg.norm(b-a)
+            n=np.array([-u[1],u[0]])
+            distance=(points-a)@n
+            # minAreaRect gives a cyclic convex quad, interior is to its left.
+            if distance.min()<-.006:
+                raise ValueError('Card moved outside registered envelope or extra blue object')
+            along=(border-a)@u
+            group=border[(abs((border-a)@n)<.004)&(along>=-.004)&(along<=.104)]
+            if len(group)<6 or np.ptp((group-a)@u)<.024:
+                continue
+            vx,vy,_,_=cv2.fitLine(group.astype('float32'),cv2.DIST_L2,0,.01,.01).ravel()
+            direction=np.array([vx,vy])
+            if abs(direction@u)<np.cos(np.deg2rad(2.)):
+>               raise ValueError('Current card edge orientation changed')
+E               ValueError: Current card edge orientation changed
+
+observer.py:137: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_observer.py::test_occluded_top_edge_does_not_discard_three_visible_card_edges
+1 failed in 0.47s

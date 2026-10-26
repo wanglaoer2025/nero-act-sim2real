@@ -1,0 +1,63 @@
+{
+  "mode": "plan",
+  "motion_sent": false,
+  "success": false,
+  "task_success": "unreviewed",
+  "confirmations": [],
+  "stages": [
+    {
+      "name": "pregrasp_high_pose",
+      "points": 39,
+      "duration_s": 3.791300271
+    },
+    {
+      "name": "grasp_pose",
+      "points": 116,
+      "duration_s": 11.407563862
+    },
+    {
+      "name": "lift_pose",
+      "points": 116,
+      "duration_s": 11.408983924
+    },
+    {
+      "name": "carry_pose",
+      "points": 27,
+      "duration_s": 2.579148648
+    },
+    {
+      "name": "place_pose",
+      "points": 111,
+      "duration_s": 10.992596892
+    }
+  ],
+  "actual_start": {
+    "joint1": 0.18329447804444451,
+    "joint2": -0.12651891747706895,
+    "joint3": 0.10000736613927509,
+    "joint4": 1.5707963267948966,
+    "joint5": -0.023893557459802373,
+    "joint6": 0.28164378139432494,
+    "joint7": 0.13107422682477415,
+    "gripper": 0.064985
+  },
+  "cup_sweep_checks": [
+    {
+      "stage": "lift_pose",
+      "fk_samples": 714,
+      "minimum_cup_bottom_mm": -1.0643660952602829e-07
+    },
+    {
+      "stage": "carry_pose",
+      "fk_samples": 437,
+      "minimum_cup_bottom_mm": 200.00000015967922
+    },
+    {
+      "stage": "place_pose",
+      "fk_samples": 696,
+      "minimum_cup_bottom_mm": -1.2299776475099833e-07
+    }
+  ],
+  "error": "RuntimeError: 步骤=retreat_pose；MoveIt PTP 规划失败：current=FAILURE (99999), centered=FAILURE (99999), wrist_centered=FAILURE (99999), elbow_positive=FAILURE (99999), elbow_negative=FAILURE (99999)；IK 已找到 5 种互异姿态，但均未生成轨迹；目标 base XYZ=[-391.1, -157.6, 255.0] mm，RPY=[-90.0, 0.0, 180.0]°；起点关节=[joint1=19.1°, joint2=61.6°, joint3=-0.3°, joint4=87.0°, joint5=16.5°, joint6=9.5°, joint7=-59.9°]；首个目标姿态 current=[joint1=19.9°, joint2=35.5°, joint3=-1.5°, joint4=84.6°, joint5=10.3°, joint6=15.7°, joint7=-31.4°]",
+  "finished_wall_s": 1792164357.4439425
+}

@@ -1,0 +1,100 @@
+{
+  "scope": "Independent optical-scale diagnostic using user-provided 100x100 mm blue-card size and existing raw image; not a new robot calibration",
+  "card_size_mm": [
+    100.0,
+    100.0
+  ],
+  "corner_selection": "HSV blue region quadrilateral inside the detected card ROI; physical dimensions must correspond to these blue edges, not a larger white border",
+  "raw_image_corners_pixels": [
+    [
+      552.0,
+      12.0
+    ],
+    [
+      683.0,
+      35.0
+    ],
+    [
+      657.0,
+      133.0
+    ],
+    [
+      547.0,
+      119.0
+    ]
+  ],
+  "intrinsic_matrix": [
+    [
+      527.3888549804688,
+      0.0,
+      647.1690063476562
+    ],
+    [
+      0.0,
+      527.3888549804688,
+      359.83807373046875
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "image_view": "ZED rectified LEFT, raw/unrotated; zero distortion assumed for rectified view",
+  "solutions": [
+    {
+      "camera_center_xyz_mm": [
+        -30.737575515416616,
+        -232.83801800402765,
+        439.24501533531145
+      ],
+      "base_center_xyz_mm_using_existing_extrinsics": [
+        -546.3055825658824,
+        -135.97370284056026,
+        -92.14775793232212
+      ],
+      "reprojection_rms_px": 0.8650416719654498,
+      "base_normal": [
+        -0.2129055151344811,
+        0.06303347744736114,
+        -0.9750374466379299
+      ],
+      "tilt_from_base_horizontal_plane_degrees": 12.82890890957071,
+      "center_camera_z_minus_ZED_median_mm": 17.407506180038013
+    },
+    {
+      "camera_center_xyz_mm": [
+        -30.18542698113754,
+        -233.95551331875478,
+        430.78882010706616
+      ],
+      "base_center_xyz_mm_using_existing_extrinsics": [
+        -553.9863842921047,
+        -136.3858016392854,
+        -88.4199756233491
+      ],
+      "reprojection_rms_px": 7.319172630325309,
+      "base_normal": [
+        0.9360166189206757,
+        0.0409426898407336,
+        -0.34956628163041237
+      ],
+      "tilt_from_base_horizontal_plane_degrees": 69.53921073725381,
+      "center_camera_z_minus_ZED_median_mm": 8.95131095179272
+    }
+  ],
+  "ZED_camera_surface_median_mm": [
+    -27.740690231323242,
+    -226.2694206237793,
+    421.83750915527344
+  ],
+  "mounting_plane_nominal_table_z_mm": -13.0,
+  "absolute_base_target_validated": false,
+  "limitations": [
+    "Color-edge corners have pixel uncertainty and are not a calibrated fiducial",
+    "Planar pose has ambiguity; inspect both candidates",
+    "Card coplanarity with tabletop and SDK base axes must be checked",
+    "No compensating extrinsic translation is applied"
+  ],
+  "user_reports_card_placed_on_table": true
+}

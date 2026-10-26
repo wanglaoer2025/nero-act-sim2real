@@ -1,0 +1,45 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_____________ test_selected_parameters_and_cvae_receive_gradients ______________
+
+    def test_selected_parameters_and_cvae_receive_gradients():
+>       m=api();torch.set_num_threads(1);torch.manual_seed(42)
+
+tests/test_visual_training.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.visual') is not None, 'Visual15D optimizer scope missing'
+E       AssertionError: Visual15D optimizer scope missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7c8b759ac5e0>('training.visual')
+E        +    where <function find_spec at 0x7c8b759ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_training.py:11: AssertionError
+__________ test_legacy_heads_only_mode_cannot_freeze_new_conditioning __________
+
+    def test_legacy_heads_only_mode_cannot_freeze_new_conditioning():
+>       m=api();c=config()
+
+tests/test_visual_training.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.visual') is not None, 'Visual15D optimizer scope missing'
+E       AssertionError: Visual15D optimizer scope missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7c8b759ac5e0>('training.visual')
+E        +    where <function find_spec at 0x7c8b759ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_training.py:11: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_training.py::test_selected_parameters_and_cvae_receive_gradients
+FAILED tests/test_visual_training.py::test_legacy_heads_only_mode_cannot_freeze_new_conditioning
+2 failed, 1 warning in 1.80s

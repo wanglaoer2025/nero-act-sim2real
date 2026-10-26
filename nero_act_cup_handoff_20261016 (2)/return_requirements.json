@@ -1,0 +1,28 @@
+{
+  "request_id": "nero_act_cup_handoff_20261016",
+  "return_as_one_complete_bundle": true,
+  "task": "real-image aligned yellow-cup approach and subsequent grasp, not additional air motion",
+  "required_files": {
+    "model/policy.ckpt": "new task-specific checkpoint; include SHA256 and architecture/task scope",
+    "model/dataset_stats.pkl": "exact matching training-only normalization statistics",
+    "model/training_config.json": "full model, data, image preprocessing and execution settings",
+    "model/input_action_schema.json": "every state/action component ordered with units, camera keys, coordinate frame, gripper semantics and initialization",
+    "scene/alignment.json": "applied initial state, camera pose/intrinsics/orientation, source/destination/table/TCP transforms and explicit uncertainty handling",
+    "scene/real_vs_rendered.png": "same recorded start and camera; show cup/card/robot overlays",
+    "evaluation/summary.json": "same checkpoint hash, split/scenario seeds, nominal/noisy/corrective results, all failures, latency settings, teacher_free=true",
+    "evaluation/rollouts": "states, policy predictions, sent targets, object/TCP poses, collisions/clearance and outcome evidence",
+    "preview/approach.json": "complete predicted/replayed noncontact segment with arm/gripper targets, start checks, geometric scope and stop conditions",
+    "executor/": "complete runtime + dependencies/config + default no-motion preview + explicit execute entry; preserve current ROS control_gate and freshness fixes",
+    "tests/": "meaningful offline compatibility and execution-contract checks with actual results",
+    "package_sha256.json": "checksums of all included artifacts"
+  },
+  "acceptance_notes": [
+    "300-step air trial is control-chain evidence only; it does not validate contact geometry or grasp success.",
+    "Do not export a checkpoint alone or claim re-labelling deployment flags creates a valid grasp executor.",
+    "First physical stage stops at a geometrically validated noncontact pregrasp pose; grasp closure and transport require their own observed acceptance.",
+    "If evaluation fails, return reports and the failed status; do not label the package ready for physical grasp.",
+    "Use the current paired state in simulation_request.json, not the prior air-model start or old v9 posture.",
+    "Unverified physical TCP/table/extrinsics must remain explicit. A visual estimate or low reprojection residual is not an independent coordinate survey."
+  ],
+  "no_additional_user_numeric_forms_created": true
+}

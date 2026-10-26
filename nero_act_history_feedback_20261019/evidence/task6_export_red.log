@@ -1,0 +1,35 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________________ test_formal_export_binds_the_history_profile _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-128/test_formal_export_binds_the_h0')
+
+    def test_formal_export_binds_the_history_profile(tmp_path):
+        import pickle
+        m=api();_,protected=output_fixture(tmp_path)
+        c,q,image,h=fixtures();c.update(num_epochs=20,training_budget={'kind':'epochs','limit':20},
+                                      training_integrity_required=True)
+        from executor.model import BoundedActPolicy
+        checkpoint=tmp_path/'checkpoints/policy_best_val.ckpt'
+        torch.save(dict(config=c,model=BoundedActPolicy(c).state_dict(),epoch=3),checkpoint)
+        (tmp_path/'checkpoints/dataset_stats.pkl').write_bytes(pickle.dumps(statistics(c)))
+        m.finalize_history_training(tmp_path,c,dict(updates=20,epochs=20),protected)
+        (tmp_path/'artifacts/training_summary.json').write_text(json.dumps({'last_metrics':{'epoch':20}}))
+        from training.export import export_model
+        metadata=export_model(checkpoint,tmp_path/'export')
+>       assert metadata.get('numeric_history_profile')=='causal_numeric_gru5_v1'
+E       AssertionError: assert None == 'causal_numeric_gru5_v1'
+E        +  where None = <built-in method get of dict object at 0x72cf3ff44d00>('numeric_history_profile')
+E        +    where <built-in method get of dict object at 0x72cf3ff44d00> = {'action_chunk_shape': [20, 8], 'checkpoint_sha256': '0ebc919b4b3d523f010956ddb809e98140ad96777740d06227edf624050ad326', 'declared_epochs': 20, 'hardware_deployment_allowed': False, ...}.get
+
+tests/test_history_training.py:130: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_training.py::test_formal_export_binds_the_history_profile
+1 failed, 7 deselected, 1 warning in 2.13s

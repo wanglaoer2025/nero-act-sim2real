@@ -1,0 +1,84 @@
+{
+  "scope": "fresh independent nominal simulation scenes after failed-state recovery training",
+  "training_new_seeds": [],
+  "smoke_seeds": [
+    7600,
+    7601,
+    7602,
+    7603
+  ],
+  "development_seeds": [
+    1007800,
+    1007801,
+    1007802,
+    1007803
+  ],
+  "independent_seeds": [
+    1008700,
+    1008701,
+    1008702,
+    1008703,
+    1008704,
+    1008705,
+    1008706,
+    1008707
+  ],
+  "cup_diameter_m": [
+    0.065,
+    0.085
+  ],
+  "cup_height_m": [
+    0.085,
+    0.115
+  ],
+  "mass_kg": [
+    0.04,
+    0.07
+  ],
+  "pick_xy_offset_m": 0.025,
+  "initial_joint_jitter_rad": 0.015,
+  "external_torque_pulse_nm": [
+    0.25,
+    0.75
+  ],
+  "torque_pulse_duration_s": 0.15,
+  "torque_pulse_period_s": 2.0,
+  "place_goal": "fixed",
+  "control_hz": 20,
+  "execute_steps": 10,
+  "predicted_chunk_steps": 100,
+  "async_policy": true,
+  "prefetch_steps": 2,
+  "max_prediction_age_steps": 15,
+  "max_prediction_age_wall_s": 0.75,
+  "max_velocity_rad_s": 0.15,
+  "max_command_lead_rad": 0.03,
+  "timeout_s": 25,
+  "completion": "same v5 full lift/transport/release/stable .5 s/retreat >4 cm criteria",
+  "checkpoint_selection": "minimum L1 on 12 development episodes, including 4 held-out recovery development episodes; no test-based selection",
+  "pilot_acceptance": {
+    "minimum_successes": 7,
+    "total_scenes": 8,
+    "all_executed_actions_within_limits": true
+  },
+  "baseline": "frozen v5 epoch65 may be compared on these new scenes; multiple training changes prevent causal attribution",
+  "limitations": [
+    "Only rigid cylindrical cups, not handles/taper/transparency/deformation",
+    "Synthetic camera pose unchanged; no real task geometry measurements",
+    "External joint torques are an experimental recovery perturbation, not identified hardware forces"
+  ],
+  "real_transfer_verified": false,
+  "state_dim": 14,
+  "action_dim": 8,
+  "task_observation": "initial cup centre base XYZ plus destination cup centre base XYZ, in metres; simulator geometry in simulation; measured/localized centres required on real robot",
+  "coordinate_conditioning": true,
+  "test_source": "fresh seeds not used for training or selection; aligned renderer, original state and action interface",
+  "baseline_comparison": "v5/v6 can be compared on the old v6 diagnostic scenes; v7 transfer acceptance uses the new seeds",
+  "recovery_train_count": 6,
+  "recovery_development_count": 4,
+  "training_epochs": 10,
+  "initialization": "v7 epoch33, full 14-D normalization rebased with absolute physical outputs preserved",
+  "recovery_source_semantics": "current cup centre relocalized once at new attempt start, then kept fixed; real localization adapter is required",
+  "test_kind": "independent_simulation",
+  "checkpoint_sha256": "af324b743290a5998a06ace9ee63cd5c5218ff31382aaefb9c9c3d27d1a23c09"
+}

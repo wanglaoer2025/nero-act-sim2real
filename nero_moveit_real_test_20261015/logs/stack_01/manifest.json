@@ -1,0 +1,309 @@
+{
+  "read_only": true,
+  "launch_or_motion_sent": false,
+  "workspace": "/home/user/projects/nero_ros2_ws",
+  "commands": [
+    {
+      "command": [
+        "ros2",
+        "node",
+        "list"
+      ],
+      "exit_code": 0,
+      "file": "00_node.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "service",
+        "list",
+        "-t"
+      ],
+      "exit_code": 0,
+      "file": "01_service.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "action",
+        "list",
+        "-t"
+      ],
+      "exit_code": 0,
+      "file": "02_action.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "topic",
+        "list",
+        "-t"
+      ],
+      "exit_code": 0,
+      "file": "03_topic.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "param",
+        "dump",
+        "/agx_arm_ctrl_single_node"
+      ],
+      "exit_code": 0,
+      "file": "04_param.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "param",
+        "dump",
+        "/control_gate"
+      ],
+      "exit_code": 1,
+      "file": "05_param.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "param",
+        "dump",
+        "/move_group"
+      ],
+      "exit_code": 1,
+      "file": "06_param.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "control",
+        "list_controllers"
+      ],
+      "exit_code": null,
+      "file": "07_control.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "control",
+        "list_hardware_components"
+      ],
+      "exit_code": null,
+      "file": "08_control.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "topic",
+        "info",
+        "/feedback/joint_states",
+        "-v"
+      ],
+      "exit_code": 0,
+      "file": "09_topic.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "topic",
+        "info",
+        "/control/joint_states",
+        "-v"
+      ],
+      "exit_code": 0,
+      "file": "10_topic.txt"
+    },
+    {
+      "command": [
+        "ros2",
+        "topic",
+        "info",
+        "/control/gated_joint_states",
+        "-v"
+      ],
+      "exit_code": 1,
+      "file": "11_topic.txt"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "ros_source/agx_arm_ctrl/agx_arm_ctrl/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/agx_arm_ctrl/agx_arm_ctrl_single_node.py",
+      "bytes": 45109,
+      "sha256": "24b3d4e7e45de44d1a968e6065829a900d0a8f08c8e7a9a4160bfea59260e012"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/agx_arm_ctrl/effector/__init__.py",
+      "bytes": 685,
+      "sha256": "b4926ffc442645b4bc015a8ffec4524e36fbc99df0e4b1f006e931df9a6866a5"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/agx_arm_ctrl/effector/agx_gripper.py",
+      "bytes": 7440,
+      "sha256": "1e2abe08299a5dd5c665e217a1b756c217d7413ee90efc48c39e40d88f28193a"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/agx_arm_ctrl/effector/revo2.py",
+      "bytes": 14336,
+      "sha256": "ef8324c0b00cc5476280a2f030d70b2d110f0bfc49cc52bf4008100cbb13f3eb"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/agx_arm_ctrl/effector/revo2_pro.py",
+      "bytes": 13729,
+      "sha256": "7b21a16377631b81470897db719d6957de9bd309727a7148f52753541291f08c"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/agx_arm_ctrl/effector/revo2_touch.py",
+      "bytes": 319,
+      "sha256": "1da06c1bdc61c0042b06370080817d167070e1f9b9da36d202648805e61bd32e"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/launch/start_single_agx_arm.launch.py",
+      "bytes": 6467,
+      "sha256": "1333fed4774ca53980b57bb2e6a3a80e9813b0c29eb5780a129e6bfaf7b307ca"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/launch/start_single_agx_arm_moveit.launch.py",
+      "bytes": 9241,
+      "sha256": "c7e8a94bf8548728f10bf00d16475f82084f823accdc763c7913ae464b2f38a4"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/launch/start_single_agx_arm_rviz.launch.py",
+      "bytes": 7099,
+      "sha256": "c2d3ec785ea5f5ee150237947c8d2fccd09acf4a48b81cc515352fe9c6af3930"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/package.xml",
+      "bytes": 941,
+      "sha256": "c79cdf448367733797a6bdd4749062844c9a92c54672fb16b4b18e3f4fc85527"
+    },
+    {
+      "file": "ros_source/agx_arm_ctrl/setup.py",
+      "bytes": 922,
+      "sha256": "26e60146021ecc86506c2230ed7b968ee58159b2b56b60fbd02b2e8db502799b"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/agx_arm.ros2_control.xacro",
+      "bytes": 6295,
+      "sha256": "ce846c35053787381c66fe35cb7bb2246cf301f9bcfb17ac12cc04b79c79402a"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/agx_arm.srdf",
+      "bytes": 442,
+      "sha256": "3c8043a066e7225a5191fd98abf1e2fd19a8423fa3a67d554b62846886bfd0db"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/agx_arm.srdf.xacro",
+      "bytes": 29695,
+      "sha256": "6780a019069957044dfc2e03e013b2e78885156dd43e408d5889ac48718f3d06"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/agx_arm.urdf.xacro",
+      "bytes": 2054,
+      "sha256": "ab4b8b16f8ce532a9a448f4032befc3cce85377671a55e2bc560bad74d817443"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/initial_positions.yaml",
+      "bytes": 538,
+      "sha256": "7b58ace078698e6f0fb4de7a6e74ea71fd4fa6e85e2a6d0263e54873cbbe46e5"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/joint_limits.yaml",
+      "bytes": 1070,
+      "sha256": "e88ab639f70befb7f573c426c3cb853f22889ce1c2096d385d83226bdf4a57ff"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/kinematics.yaml",
+      "bytes": 148,
+      "sha256": "45decb66f2b4b1e26378f3f1fffb4854e8acc18a929dc04602f1acefc286f394"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/moveit_controllers_gripper.yaml",
+      "bytes": 541,
+      "sha256": "a2d55027329e5d4d05b38d0820dc229fa02b701b563cf8e8d2587b29573c7192"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/moveit_controllers_none.yaml",
+      "bytes": 376,
+      "sha256": "95b895d5882291361b36574e2bf18824290d21000f2c3f64469cc71d89d7f019"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/moveit_controllers_revo2_left.yaml",
+      "bytes": 735,
+      "sha256": "32e5fc84284476e578684632574002f9f900534c02cd1a0125d41dc40a25ed50"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/moveit_controllers_revo2_right.yaml",
+      "bytes": 743,
+      "sha256": "d7458f4762fa62eaff95300d9177f4a079ea4db7417b427ab07f2929b158dd74"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/pilz_cartesian_limits.yaml",
+      "bytes": 133,
+      "sha256": "fed80b213b77f13fb7b913d703609a66caa72ccb0617b41e83d3057e31749047"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/ros2_controllers.yaml",
+      "bytes": 1838,
+      "sha256": "6726663eb55efb4685e3b43cefdbe4156a8911e845e4a8f39c31c2ce76d749b1"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/ros2_controllers_nero.yaml",
+      "bytes": 1853,
+      "sha256": "c7db7ffeec222e81f7ab9c901e3d5b9a2fd8508363b01e8f7bd5f94c3cca1012"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/config/sensors_3d.yaml",
+      "bytes": 308,
+      "sha256": "f847bb31631495d913ec41f95a736d339cc73004ae31c48669707dc5baf9b8f1"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/_moveit_config_builder.py",
+      "bytes": 4162,
+      "sha256": "22028a0705703965fb25439cc81c6e788bbf446e7dafbf733c297206912a7666"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/demo.launch.py",
+      "bytes": 11020,
+      "sha256": "e955890c8affaa62695997571623988a28a41b61072ee9a17e77a830e0dcf37c"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/move_group.launch.py",
+      "bytes": 3603,
+      "sha256": "22e077994ad9dfe3d30eaf6f41d59d7fec295b1a0ff852a3c8913613a2092d77"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/moveit_rviz.launch.py",
+      "bytes": 1388,
+      "sha256": "5b52ea10de0635fecbcb7624f451b3481690a185fef446183deb27702c355c55"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/rsp.launch.py",
+      "bytes": 1142,
+      "sha256": "59e9fc23df7d1bd0d772cabb0153f13efe5efecc2257e6540ef74aaa2a994626"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/spawn_controllers.launch.py",
+      "bytes": 592,
+      "sha256": "d8ddbf913726e4de075138a6b9975e1e1c7feaaf3206d913f61788e3855350c4"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/static_virtual_joint_tfs.launch.py",
+      "bytes": 606,
+      "sha256": "180c255437239a69a2c407dde3e83127093c5217e3ec35e98b3e5d02e97fd143"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/launch/warehouse_db.launch.py",
+      "bytes": 582,
+      "sha256": "6531907c3f49a3cf128a8cbe8c49a3ef11b61014bf1033c586148c40fbe400fb"
+    },
+    {
+      "file": "ros_source/agx_arm_moveit/package.xml",
+      "bytes": 1659,
+      "sha256": "ae2e0703bdf62c90f9ef9c1e3cacb333bbd53f397f88bfff163512241708ad98"
+    }
+  ]
+}

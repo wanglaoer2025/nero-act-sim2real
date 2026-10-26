@@ -1,0 +1,69 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+__________ test_rollout_checkpoint_resumes_the_same_next_prefix[True] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7e30ceac3680>
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-97/test_rollout_checkpoint_resume1')
+jitter = True
+
+    @pytest.mark.parametrize('jitter',[False,True])
+    def test_rollout_checkpoint_resumes_the_same_next_prefix(monkeypatch,tmp_path,jitter):
+        import inspect
+        import simulation.supervised_rollout as runtime
+        assert 'capture_control' in inspect.signature(runtime.rollout).parameters, 'Runtime capture integration missing'
+        from tests.test_visual_policy import config
+        c=config();c.pop('visual_observation_profile');c['policy_input_dim']=9
+        scene=json.loads((Path(runtime.__file__).parents[1]/'scene/center.json').read_text())
+        scenario=dict(seed=42,jitter=jitter,force=False,servo_delay_steps=0,query_stride=2,observation_age_s=.05)
+        class Renderer:
+            def __init__(self,*a,**k):pass
+            def __enter__(self):return self
+            def __exit__(self,*a):pass
+            def update_scene(self,*a,**k):pass
+            scene=type('Scene',(),{'flags':np.zeros(100,dtype=bool)})()
+            def render(self):return np.zeros((90,160,3),np.uint8)
+        monkeypatch.setattr(runtime.mujoco,'Renderer',Renderer)
+        class Policy:
+            device='cpu';bounded_gripper=False
+            def __init__(self,limit):self.config=c;self.limit=limit;self.calls=0
+            def __call__(self,qpos,image):
+                self.calls+=1
+                if self.calls>self.limit:raise RuntimeError('test_end')
+                return qpos[:,:8,None].transpose(1,2).expand(-1,20,-1).clone()
+        stats={key:np.zeros(8,np.float32) if key.endswith('mean') else np.ones(8,np.float32)
+               for key in ['qpos_mean','qpos_std','action_mean','action_std']}
+        runtime.rollout(scene,Policy(3),stats,scenario,tmp_path/'original',capture_control=True)
+        saved=json.loads((tmp_path/'original/runtime_checkpoints.json').read_text())
+        checkpoint=saved['records'][0] if not jitter else saved['named']['initial']
+        runtime.rollout(scene,Policy(1 if not jitter else 2),stats,scenario,tmp_path/'resumed',resume_context=checkpoint,capture_control=True)
+        a=np.load(tmp_path/'original/rollout.npz');b=np.load(tmp_path/'resumed/rollout.npz')
+        offset=2 if not jitter else 0
+>       np.testing.assert_array_equal(a['raw_chunks'][offset:offset+len(b['raw_chunks'])],b['raw_chunks'])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 140 / 320 (43.8%)
+E       First 5 mismatches are at indices:
+E        [1, 0, 0]: 0.18193303048610687 (ACTUAL), 0.181679829955101 (DESIRED)
+E        [1, 0, 1]: -0.12450772523880005 (ACTUAL), -0.1245737075805664 (DESIRED)
+E        [1, 0, 2]: 0.10129856318235397 (ACTUAL), 0.10101284831762314 (DESIRED)
+E        [1, 0, 3]: 1.571860671043396 (ACTUAL), 1.5717805624008179 (DESIRED)
+E        [1, 0, 4]: -0.025263188406825066 (ACTUAL), -0.02537824958562851 (DESIRED)
+E       Max absolute difference among violations: 0.00028571
+E       Max relative difference among violations: 0.00453385
+E        ACTUAL: array([[[ 0.181807, -0.124559,  0.101198,  1.571918, -0.025455,
+E                 0.281502,  0.130296,  0.094389],
+E               [ 0.181807, -0.124559,  0.101198,  1.571918, -0.025455,...
+E        DESIRED: array([[[ 0.181807, -0.124559,  0.101198,  1.571918, -0.025455,
+E                 0.281502,  0.130296,  0.094389],
+E               [ 0.181807, -0.124559,  0.101198,  1.571918, -0.025455,...
+
+tests/test_runtime_checkpoint.py:110: AssertionError
+=============================== warnings summary ===============================
+tests/test_runtime_checkpoint.py::test_rollout_checkpoint_resumes_the_same_next_prefix[False]
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_runtime_checkpoint.py::test_rollout_checkpoint_resumes_the_same_next_prefix[True]
+1 failed, 1 passed, 3 deselected, 1 warning in 4.53s

@@ -1,0 +1,178 @@
+{
+  "mode": "full_loop_execute",
+  "success": false,
+  "full_execution_ready": false,
+  "execution_goal_submitted": false,
+  "sdk_connected": false,
+  "scope": "full arm/gripper trajectory framework; no raw-action rebasing",
+  "execution_scope": "aligned_noncontact_air_sequence",
+  "trial_profile": {
+    "initial_state": [
+      0.18481291449367956,
+      -0.12836896648418294,
+      0.10992083629060287,
+      1.5715293650807343,
+      -0.022689280275926284,
+      0.2777516971623776,
+      0.13554226970987962,
+      0.060118
+    ],
+    "initial_tolerance_rad": 0.005,
+    "initial_gripper_tolerance_m": 0.004,
+    "arm_lower_rad": [
+      0.17681291449367956,
+      -0.13636896648418295,
+      0.10192083629060286,
+      1.5555293650807342,
+      -0.030689280275926285,
+      0.24975169716237755,
+      0.1275422697098796
+    ],
+    "arm_upper_rad": [
+      0.23281291449367958,
+      -0.10836896648418295,
+      0.14292083629060287,
+      1.5795293650807343,
+      -0.006689280275926284,
+      0.2857516971623776,
+      0.1585422697098796
+    ],
+    "gripper_lower_m": 0.052,
+    "gripper_upper_m": 0.078,
+    "maximum_seconds": 20,
+    "endpoint_state": [
+      0.22481291449367957,
+      -0.11636896648418295,
+      0.13492083629060286,
+      1.5635293650807343,
+      -0.014689280275926284,
+      0.25775169716237756,
+      0.1505422697098796,
+      0.060118
+    ]
+  },
+  "formal_hardware_deployment_allowed": false,
+  "experimental_air_trial_allowed": true,
+  "model_checkpoint_sha256": "fea6c7d33279141a0d4266d577689194416667f587c04e57c80859fba91039fb",
+  "actual_start": [
+    0.18324211816688468,
+    -0.12651891747706895,
+    0.09998991284675514,
+    1.5707963267948966,
+    -0.023945917337362205,
+    0.2816961412718848,
+    0.13103932023973427,
+    0.060218
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 325438.830735108,
+      "stamp": 1792123183.7287643,
+      "q": [
+        0.18324211816688468,
+        -0.12651891747706895,
+        0.09998991284675514,
+        1.5707963267948966,
+        -0.023945917337362205,
+        0.2816961412718848,
+        0.13103932023973427,
+        0.060218
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 325438.830787027,
+      "stamp": 1792123183.729027,
+      "q": [
+        0.2235901951789856,
+        -0.11716252565383911,
+        0.13432307541370392,
+        1.5638834238052368,
+        -0.014822503551840782,
+        0.2577475309371948,
+        0.15006080269813538,
+        0.06016303971409798
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.00041273701936006546,
+  "execution_readiness_checks_passed": false,
+  "execution_blocker": "Control bridge and actual robot are not synchronised",
+  "error": "RuntimeError: ROS readiness: Control bridge and actual robot are not synchronised"
+}

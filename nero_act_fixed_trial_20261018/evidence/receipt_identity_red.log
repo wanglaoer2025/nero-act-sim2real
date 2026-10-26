@@ -1,0 +1,17 @@
+test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment) ... ok
+test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation) ... ok
+test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied) ... 
+  test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied) (change={'note': 'a second receipt must not create another trial'}) ... FAIL
+
+======================================================================
+FAIL: test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied) (change={'note': 'a second receipt must not create another trial'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_trial_20261018/tests/test_fixed_trial_permission.py", line 39, in test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied
+    with self.subTest(change=change),self.assertRaises(PermissionError):
+AssertionError: PermissionError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.159s
+
+FAILED (failures=1)

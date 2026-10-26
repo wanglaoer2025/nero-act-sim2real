@@ -1,0 +1,55 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_batch_preparation_binds_actual_boundary_indices _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-26/test_batch_preparation_binds_a0')
+
+    def test_batch_preparation_binds_actual_boundary_indices(tmp_path):
+        import pickle
+        from training.history import prepare_batch_orders
+        from tests.test_visual_policy import statistics
+        c,_,_,_=config();c['transition_sampling_profile']='contact_boundary_halves_v1';stats=statistics(c)
+        path=tmp_path/'episode_2000.hdf5';n=20;starts=np.arange(4,n)
+        with h5py.File(path,'w') as f:
+            f.attrs.update(split='train',recovery_role='pre_close',initial_previous_gripper_target_m=.075)
+            f['observations/qpos']=np.zeros((n,7),np.float32);f['observations/gripper_state']=np.full((n,1),.075,np.float32)
+            f['timestamp']=np.arange(n)*.05;f['action_time_monotonic_s']=np.arange(n)*.05+.001
+            f['observations/visual_relative_m']=np.full((n,6),.2,np.float32);f['observations/visual_valid']=np.ones(n,bool)
+            f['observations/images/camera_0']=np.zeros((n,12,16,3),np.uint8)
+            actions=np.zeros((n,8));actions[:,7]=.075-np.linspace(.001,.006,n);f['action']=actions
+            f['simulation/stage']=np.array([b'close']*n)
+            f['history/indices']=np.array([np.arange(t-4,t+1) for t in starts]);f['history/start_ts']=starts
+            f['history/view_id']=np.zeros(len(starts),int);f['history/weights']=np.ones(len(starts),int)
+        (tmp_path/'manifest.json').write_text(json.dumps(dict(episodes=[dict(path=str(path),split='train')])))
+        (tmp_path/'dataset_stats.pkl').write_bytes(pickle.dumps(stats))
+>       proof=prepare_batch_orders(tmp_path,c)['pilot'];order=np.load(proof['path'])
+
+tests/test_contact_prefix_repair.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-26/test_batch_preparation_binds_a0')
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'adaptation_scope': 'output_heads_v1', 'alignment_offset': 0, ...}
+
+    def prepare_batch_orders(data_dir:Path,config:dict)->dict:
+        """Called at Task9 sealing, not by either optimizer; both variants read these files."""
+        from training.history_dataset import HistoryReferenceDataset
+        import pickle
+        data_dir=Path(data_dir);manifest=json.loads((data_dir/'manifest.json').read_text())
+        stats=pickle.loads((data_dir/'dataset_stats.pkl').read_bytes())
+        paths=[Path(r['path']) for r in manifest['episodes'] if r['split']=='train']
+        dataset=HistoryReferenceDataset(paths,stats,config,weighted=True)
+        ids_sha=hashlib.sha256(json.dumps(dataset.sample_ids,separators=(',',':')).encode()).hexdigest()
+        records={}
+        profile=config.get('transition_sampling_profile','none')
+>       if profile not in ('none','recovery_first5_quarter_v1'):raise ValueError('Unknown transition sampling profile')
+E       ValueError: Unknown transition sampling profile
+
+training/history.py:244: ValueError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_contact_prefix_repair.py::test_batch_preparation_binds_actual_boundary_indices
+1 failed, 1 warning in 2.49s

@@ -1,0 +1,160 @@
+{
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "success": false,
+  "physical_success": false,
+  "teacher_action_fallback": false,
+  "online_visual_policy": false,
+  "trace_sha256": "cf8d81b26538588ca91f3522330e17ac0872bc3ffe56fff3436c1d70242f7205",
+  "execution_goal_submitted": false,
+  "read_only_restoration_pending": true,
+  "nominal_reference_duration_s": 132.75,
+  "execution_source_xy_m": [
+    -0.5257085388738577,
+    0.005976293037109984
+  ],
+  "validation_service_calls": [
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 453531.960605582,
+      "duration_s": 0.0716830359888263
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 453532.139276466,
+      "duration_s": 0.0029606710304506123
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 453532.24693177,
+      "duration_s": 0.002190391009207815
+    }
+  ],
+  "actual_start": [
+    0.1832595714594046,
+    -0.12651891747706895,
+    0.09998991284675514,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.2816961412718848,
+    0.13107422682477415,
+    0.094875
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [
+    "act_task_cup",
+    "nero_table"
+  ],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 453532.028752209,
+      "stamp": 1792251276.9426844,
+      "q": [
+        0.1832595714594046,
+        -0.12651891747706895,
+        0.09998991284675514,
+        1.5707963267948966,
+        -0.02392846404484226,
+        0.2816961412718848,
+        0.13107422682477415,
+        0.094875
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 453532.029736513,
+      "stamp": 1792251276.95108,
+      "q": [
+        0.18324211239814758,
+        -0.12651892006397247,
+        0.10000736266374588,
+        1.5707963705062866,
+        -0.023858651518821716,
+        0.2816612422466278,
+        0.13110913336277008,
+        0.09487500041723251
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.0002885140129365027,
+  "execution_readiness_checks_passed": true,
+  "error": "RuntimeError: Live ACT gate unhealthy or stale: {'failed': False, 'driver_open': False, 'reason': None, 'receipt_valid': True, 'received': 453532.331694978}",
+  "act_stop_latched": true,
+  "cancel_requested_for_handles": 0,
+  "unresolved_goal_acknowledgements": 0,
+  "unresolved_cancellation_replies": 0,
+  "driver_gate_closed_for_abort": true
+}

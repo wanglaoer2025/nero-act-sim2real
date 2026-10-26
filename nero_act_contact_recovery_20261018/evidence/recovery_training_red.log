@@ -1,0 +1,23 @@
+test_hdf_role_and_exact_failed_snapshot_provenance_are_verified (tests.test_recovery_training.RecoveryTrainingTests.test_hdf_role_and_exact_failed_snapshot_provenance_are_verified) ... FAIL
+test_partial_corrections_have_separate_ids_and_grouped_splits (tests.test_recovery_training.RecoveryTrainingTests.test_partial_corrections_have_separate_ids_and_grouped_splits) ... FAIL
+
+======================================================================
+FAIL: test_hdf_role_and_exact_failed_snapshot_provenance_are_verified (tests.test_recovery_training.RecoveryTrainingTests.test_hdf_role_and_exact_failed_snapshot_provenance_are_verified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_contact_recovery_20261018/tests/test_recovery_training.py", line 32, in test_hdf_role_and_exact_failed_snapshot_provenance_are_verified
+    self.assertIsNotNone(importlib.util.find_spec("training.recoveries"), "verified partial-correction adapter is required")
+AssertionError: unexpectedly None : verified partial-correction adapter is required
+
+======================================================================
+FAIL: test_partial_corrections_have_separate_ids_and_grouped_splits (tests.test_recovery_training.RecoveryTrainingTests.test_partial_corrections_have_separate_ids_and_grouped_splits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_contact_recovery_20261018/tests/test_recovery_training.py", line 17, in test_partial_corrections_have_separate_ids_and_grouped_splits
+    self.assertIsNotNone(importlib.util.find_spec("training.recoveries"), "verified partial-correction adapter is required")
+AssertionError: unexpectedly None : verified partial-correction adapter is required
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

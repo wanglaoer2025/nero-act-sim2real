@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "bound_files_verified": 136,
+  "data_snapshot_paths": 177,
+  "data_proof_kind": "prior_full_SHA_plus_unchanged_metadata_continuity",
+  "frozen_core_source_sha256": "15c4b4a2ff02b611103940af91e49d568a864c925c5afb961256277f644b2557",
+  "additional_updates": 2000,
+  "matched_batches": true,
+  "all_frozen_cores_unchanged": true,
+  "records": {
+    "source20K": {
+      "approach_prefix_MAE_rad": 0.002444527370648252,
+      "dev_prefix_MAE_rad": 0.0019615798446419603,
+      "short_reached": 0,
+      "short_cases": 3,
+      "points": 600,
+      "endpoint_tcp_m": [
+        -0.3676568344830881,
+        -0.06428158723739975,
+        0.4785908836145294
+      ],
+      "last100_TCP_extent_mm": 0.0660607310564385,
+      "raw_prefix10_max_error_rad": 0.012724028283435301,
+      "raw_prefix10_offending_point_1based": 10,
+      "raw_prefix10_offending_joint_1based": 7,
+      "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+      "full_cases_started": 0
+    },
+    "A": {
+      "approach_prefix_MAE_rad": 0.0016112962034567895,
+      "dev_prefix_MAE_rad": 0.0012985309861865298,
+      "short_reached": 0,
+      "short_cases": 3,
+      "points": 14,
+      "endpoint_tcp_m": [
+        -0.376031351643183,
+        -0.06386859957259461,
+        0.4700017729978778
+      ],
+      "last100_TCP_extent_mm": 11.659009946269121,
+      "raw_prefix10_max_error_rad": 0.030486202422701156,
+      "raw_prefix10_offending_point_1based": 10,
+      "raw_prefix10_offending_joint_1based": 7,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "full_cases_started": 0
+    },
+    "B": {
+      "approach_prefix_MAE_rad": 0.0015770348099832764,
+      "dev_prefix_MAE_rad": 0.0015083968530192466,
+      "short_reached": 0,
+      "short_cases": 3,
+      "points": 600,
+      "endpoint_tcp_m": [
+        -0.37096024866087396,
+        -0.0651016310312828,
+        0.47625676554883206
+      ],
+      "last100_TCP_extent_mm": 0.10984916611838307,
+      "raw_prefix10_max_error_rad": 0.012666455898589307,
+      "raw_prefix10_offending_point_1based": 10,
+      "raw_prefix10_offending_joint_1based": 7,
+      "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+      "full_cases_started": 0
+    }
+  },
+  "independent_holdout_consumed": false,
+  "hardware_commands_sent": false
+}

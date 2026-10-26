@@ -1,0 +1,56 @@
+{
+  "status": "not_executed_user_chose_read_only_only",
+  "robot_path": "Use existing ROS CAN driver as single command owner; do not construct a second SDK robot",
+  "joint_reference_from_setup_observation_rad": [
+    -0.47439794398457874,
+    0.7821518509887389,
+    -0.12934635086529978,
+    1.397746931459659,
+    -0.2804395042104489,
+    -0.5063374692960749,
+    -0.7044323393974314
+  ],
+  "gripper_only_targets_m": [
+    0.095,
+    0.05,
+    0,
+    0.1
+  ],
+  "gripper_force_N": 0.5,
+  "gripper_measurement_notes": "At each stationary opening, independently measure inner-face spacing with caliper/ruler before the next target. Do not change homing/zero or mechanical configuration.",
+  "TCP_validation_targets_rad": {
+    "TCP_holdout_J5": [
+      -0.47439794398457874,
+      0.7821518509887389,
+      -0.12934635086529978,
+      1.397746931459659,
+      -0.22807962665061898,
+      -0.5063374692960749,
+      -0.7044323393974314
+    ],
+    "TCP_holdout_J6": [
+      -0.47439794398457874,
+      0.7821518509887389,
+      -0.12934635086529978,
+      1.397746931459659,
+      -0.2804395042104489,
+      -0.453977591736245,
+      -0.7044323393974314
+    ]
+  },
+  "TCP_steps": "One physical grip-centre base XYZ at current pose to estimate offset, then two independent base XYZ observations at the holdout poses; return to original qpos after each pose. Pose movement targets must be checked against fresh feedback and free space before execution.",
+  "response_test": "J1 only, +/-0.01 rad, five-second small sine test; log goal/feedback sensor stamps at command and observed update rates. Existing historical tests remain separate.",
+  "act_policy_executed": false,
+  "motion_permission_received": false,
+  "must_recheck_before_start": [
+    "fresh real feedback and limits",
+    "gripper is empty; fingers and arm sweep clear",
+    "no active trajectory or another motion sender",
+    "gate is closed initially and restored afterwards"
+  ],
+  "physical_coordinate_observations_available": false,
+  "all_physical_measurements_completed": false,
+  "motion_sent": false,
+  "user_instruction": "只读检查，沿用旧参数，暂不做新的运动测量",
+  "automatic_execution_allowed": false
+}

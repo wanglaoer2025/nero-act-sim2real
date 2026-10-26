@@ -1,0 +1,41 @@
+test_default_has_no_hardware_or_attempt_side_effect (test_current_replay_launcher.CurrentReplayLauncherTests.test_default_has_no_hardware_or_attempt_side_effect) ... FAIL
+test_owned_child_is_stopped (test_current_replay_launcher.CurrentReplayLauncherTests.test_owned_child_is_stopped) ... FAIL
+test_ros_environment_accepts_existing_domain_and_preserves_paths (test_current_replay_launcher.CurrentReplayLauncherTests.test_ros_environment_accepts_existing_domain_and_preserves_paths) ... FAIL
+
+======================================================================
+FAIL: test_default_has_no_hardware_or_attempt_side_effect (test_current_replay_launcher.CurrentReplayLauncherTests.test_default_has_no_hardware_or_attempt_side_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_current_scene_20261019/tests/test_current_replay_launcher.py", line 18, in test_default_has_no_hardware_or_attempt_side_effect
+    self.module();output=ROOT/'evidence/real_attempt_01';before=output.exists()
+    ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_replay_current_scene_20261019/tests/test_current_replay_launcher.py", line 12, in module
+    self.assertIsNotNone(importlib.util.find_spec('executor.current_replay_run'),
+AssertionError: unexpectedly None : current receive-only driver must have a scoped replay handoff
+
+======================================================================
+FAIL: test_owned_child_is_stopped (test_current_replay_launcher.CurrentReplayLauncherTests.test_owned_child_is_stopped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_current_scene_20261019/tests/test_current_replay_launcher.py", line 30, in test_owned_child_is_stopped
+    module=self.module()
+           ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_replay_current_scene_20261019/tests/test_current_replay_launcher.py", line 12, in module
+    self.assertIsNotNone(importlib.util.find_spec('executor.current_replay_run'),
+AssertionError: unexpectedly None : current receive-only driver must have a scoped replay handoff
+
+======================================================================
+FAIL: test_ros_environment_accepts_existing_domain_and_preserves_paths (test_current_replay_launcher.CurrentReplayLauncherTests.test_ros_environment_accepts_existing_domain_and_preserves_paths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_current_scene_20261019/tests/test_current_replay_launcher.py", line 26, in test_ros_environment_accepts_existing_domain_and_preserves_paths
+    module=self.module();env=module.trial_environment(dict(ROS_DOMAIN_ID='42',PYTHONPATH='/ros/path'))
+           ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_replay_current_scene_20261019/tests/test_current_replay_launcher.py", line 12, in module
+    self.assertIsNotNone(importlib.util.find_spec('executor.current_replay_run'),
+AssertionError: unexpectedly None : current receive-only driver must have a scoped replay handoff
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

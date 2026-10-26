@@ -1,0 +1,37 @@
+{
+  "plan": "/home/user/wq/nero_act_preservation_scope_20261023/repair_plan.json",
+  "ledger": "/home/user/wq/nero_act_preservation_scope_20261023/progress.log",
+  "no_git_repository": true,
+  "baseline": "/home/user/wq/nero_act_dense_response_20261023",
+  "scope": "One fixed1000-update comparison, all-group raw-gradient cap, preserved frozen scopes and exact batches; no hardware",
+  "files": [
+    "/home/user/wq/nero_act_preservation_scope_20261023/group_scope.py",
+    "/home/user/wq/nero_act_preservation_scope_20261023/train_scoped.py",
+    "/home/user/wq/nero_act_preservation_scope_20261023/test_group_scope.py",
+    "/home/user/wq/nero_act_preservation_scope_20261023/test_scoped_data_isolation.py",
+    "/home/user/wq/nero_act_preservation_scope_20261023/evaluate_scoped.py"
+  ],
+  "source_sha256": {
+    "/home/user/wq/nero_act_preservation_scope_20261023/group_scope.py": "e969d29e9aa2833edde0be7902d70b3bc6290272bba14778ccd8a2fc1edd244b",
+    "/home/user/wq/nero_act_preservation_scope_20261023/train_scoped.py": "971f429d9bcc6442badf58fe0e14f150cfb75e32e3fc69fcd2eb331911cd24fa",
+    "/home/user/wq/nero_act_preservation_scope_20261023/evaluate_scoped.py": "19ad4f10414bf958085c9c3b5e4dec6a430326a8bb7cd6899fb2238e3d2091d1"
+  },
+  "evidence": [
+    "/home/user/wq/nero_act_preservation_scope_20261023/tests_resumed.log",
+    "/home/user/wq/nero_act_preservation_scope_20261023/training/pilot_A/integrity.json",
+    "/home/user/wq/nero_act_preservation_scope_20261023/training/pilot_A/response_gate.json",
+    "/home/user/wq/nero_act_preservation_scope_20261023/gradient_scope_audit.json",
+    "/home/user/wq/nero_act_preservation_scope_20261023/hash_verification.json",
+    "/home/user/wq/nero_act_preservation_scope_20261023/results/full_flow_summary.json",
+    "/home/user/wq/nero_act_preservation_scope_20261023/results/qualification/input_gate.json",
+    "/home/user/wq/nero_act_preservation_scope_20261023/results/qualification/summary.json"
+  ],
+  "review_focus": [
+    "All4 group cap on raw gradients only, not an AdamW update guarantee",
+    "No historical data/audit/source overwrite; exact original batches and60+158 episodes, val0",
+    "Initializer06012,1000 actual optimizer steps,70 permitted tensors,frozen config/stats unchanged",
+    "Model failure is reported as failure: position5/7/max1.812mm; full3900 noGRASP/no lift; originalmechanisms3/6,423gatefails",
+    "Nominal offline results do not qualify camera/TCP or hardware; do not startROS/CAN"
+  ],
+  "diagnostic_note": "Zero-update3-state teacher reachability probe currently running, its source/report under diagnostics. Teacher success must never be reported as ACT success."
+}

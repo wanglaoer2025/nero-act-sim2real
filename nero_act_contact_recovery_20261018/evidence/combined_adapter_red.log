@@ -1,0 +1,20 @@
+test_combined_split_retains_base_validation_and_uses_only_training_corrections_for_stats (tests.test_recovery_training.RecoveryTrainingTests.test_combined_split_retains_base_validation_and_uses_only_training_corrections_for_stats) ... /home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-_yz1iogy because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+FAIL
+test_hdf_role_and_exact_failed_snapshot_provenance_are_verified (tests.test_recovery_training.RecoveryTrainingTests.test_hdf_role_and_exact_failed_snapshot_provenance_are_verified) ... ok
+test_partial_corrections_have_separate_ids_and_grouped_splits (tests.test_recovery_training.RecoveryTrainingTests.test_partial_corrections_have_separate_ids_and_grouped_splits) ... ok
+
+======================================================================
+FAIL: test_combined_split_retains_base_validation_and_uses_only_training_corrections_for_stats (tests.test_recovery_training.RecoveryTrainingTests.test_combined_split_retains_base_validation_and_uses_only_training_corrections_for_stats)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_contact_recovery_20261018/tests/test_recovery_training.py", line 63, in test_combined_split_retains_base_validation_and_uses_only_training_corrections_for_stats
+    self.assertTrue(hasattr(module,'combined_inputs'),'optional corrections must reach the actual training adapter')
+AssertionError: False is not true : optional corrections must reach the actual training adapter
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.030s
+
+FAILED (failures=1)

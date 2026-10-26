@@ -1,0 +1,151 @@
+..............FFFFFFF.......................................             [100%]
+=================================== FAILURES ===================================
+___ test_truncated_audit_still_closes_devices_and_preserves_motion_possible ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-88/test_truncated_audit_still_clo0')
+
+    def test_truncated_audit_still_closes_devices_and_preserves_motion_possible(tmp_path):
+        m=api();log=tmp_path/'control_events.jsonl'
+        log.write_text('{"kind":"arm","state":"attempted"}\n{"kind":"arm","state":"ret')
+        closed=[]
+        class Camera:
+            def close(self):closed.append('camera')
+        class Robot:
+            def stop_sending(self):closed.append('stop')
+            def disconnect(self):closed.append('disconnect')
+        report={}
+>       m.finish(tmp_path,report,Camera(),Robot(),log,lambda:1241)
+E       AttributeError: module 'automatic_sampling' has no attribute 'finish'
+
+tests/test_automatic_sampling.py:160: AttributeError
+____ test_deadline_crossing_before_sdk_boundary_sends_no_arm_target[camera] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-88/test_deadline_crossing_before_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x758bb36dec30>
+delay_at = 'camera'
+
+    @pytest.mark.parametrize('delay_at',['camera','final_health'])
+    def test_deadline_crossing_before_sdk_boundary_sends_no_arm_target(tmp_path,monkeypatch,delay_at):
+        m=api();p=route();clock=[0.];commands=[]
+        class SDK:
+            def set_speed_percent(self,value):pass
+            def move_j(self,q):commands.append(q)
+        class Robot:
+            allow_no_solution=True;max_age_s=.15
+            def __init__(self):self.sdk=SDK();self.calls=0
+            def read_health(self,**_):
+                self.calls+=1
+                # prepare reads twice; the next read is ControlledStart's final pre-send health.
+                if delay_at=='final_health' and self.calls==5:clock[0]=2.
+                return dict(state=p['initial_state'],feedback_timestamps=[time.time()]*19,
+                    feedback=dict(arm_status=2,err_code=0,ctrl_mode=1,motion_status=0))
+            def stop_sending(self):pass
+        robot=Robot();original=robot.sdk
+        monkeypatch.setattr(m.time,'monotonic',lambda:clock[0])
+        monkeypatch.setattr(m.time,'sleep',lambda _:None)
+        monkeypatch.setattr(m,'live_guard',lambda *_:None)
+        def camera(*_):
+            if delay_at=='camera':clock[0]=2.
+        monkeypatch.setattr(m,'observe_motion',camera)
+        stage=copy.deepcopy(p['stages'][0]);stage['waypoints_rad']=stage['waypoints_rad'][:1]
+        with pytest.raises(TimeoutError):m.drive_stage(robot,None,p,stage,tmp_path/'events.jsonl',1.)
+>       assert commands==[] and robot.sdk is original
+E       assert ([[0.193751347...5651184, ...]] == []
+E         Left contains one more item: [0.1937513476065453, -0.12008239496083199, 0.09500723507902806, 1.860765466971611, 0.061353878920448024, 0.28161518635651184, ...]
+E         Use -v to get more diff)
+
+tests/test_automatic_sampling.py:192: AssertionError
+_ test_deadline_crossing_before_sdk_boundary_sends_no_arm_target[final_health] _
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-88/test_deadline_crossing_before_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x758bcee0fe30>
+delay_at = 'final_health'
+
+    @pytest.mark.parametrize('delay_at',['camera','final_health'])
+    def test_deadline_crossing_before_sdk_boundary_sends_no_arm_target(tmp_path,monkeypatch,delay_at):
+        m=api();p=route();clock=[0.];commands=[]
+        class SDK:
+            def set_speed_percent(self,value):pass
+            def move_j(self,q):commands.append(q)
+        class Robot:
+            allow_no_solution=True;max_age_s=.15
+            def __init__(self):self.sdk=SDK();self.calls=0
+            def read_health(self,**_):
+                self.calls+=1
+                # prepare reads twice; the next read is ControlledStart's final pre-send health.
+                if delay_at=='final_health' and self.calls==5:clock[0]=2.
+                return dict(state=p['initial_state'],feedback_timestamps=[time.time()]*19,
+                    feedback=dict(arm_status=2,err_code=0,ctrl_mode=1,motion_status=0))
+            def stop_sending(self):pass
+        robot=Robot();original=robot.sdk
+        monkeypatch.setattr(m.time,'monotonic',lambda:clock[0])
+        monkeypatch.setattr(m.time,'sleep',lambda _:None)
+        monkeypatch.setattr(m,'live_guard',lambda *_:None)
+        def camera(*_):
+            if delay_at=='camera':clock[0]=2.
+        monkeypatch.setattr(m,'observe_motion',camera)
+        stage=copy.deepcopy(p['stages'][0]);stage['waypoints_rad']=stage['waypoints_rad'][:1]
+        with pytest.raises(TimeoutError):m.drive_stage(robot,None,p,stage,tmp_path/'events.jsonl',1.)
+>       assert commands==[] and robot.sdk is original
+E       assert ([[0.193751347...5651184, ...]] == []
+E         Left contains one more item: [0.1937513476065453, -0.12008239496083199, 0.09500723507902806, 1.860765466971611, 0.061353878920448024, 0.28161518635651184, ...]
+E         Use -v to get more diff)
+
+tests/test_automatic_sampling.py:192: AssertionError
+___________ test_plan_hash_matches_parsed_snapshot_when_path_changes ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-88/test_plan_hash_matches_parsed_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x758bb03968a0>
+
+    def test_plan_hash_matches_parsed_snapshot_when_path_changes(tmp_path,monkeypatch):
+        m=api();path=tmp_path/'plan.json';original=json.dumps(route()).encode();path.write_bytes(original)
+        validate=m.validate_route
+        def validation_then_external_replacement(plan):
+            validate(plan);path.write_text('{"different":"later replacement"}')
+        monkeypatch.setattr(m,'validate_route',validation_then_external_replacement)
+>       parsed,digest=m.load_route(path)
+E       AttributeError: module 'automatic_sampling' has no attribute 'load_route'
+
+tests/test_automatic_sampling.py:201: AttributeError
+_____ test_invalid_workspace_cannot_disable_guard_before_hardware[bounds0] _____
+
+bounds = [[nan, 0], [0, 1], [0, 1]]
+
+    @pytest.mark.parametrize('bounds',[[[float('nan'),0],[0,1],[0,1]],[[1,0],[0,1],[0,1]],[[0,1],[0,1]]])
+    def test_invalid_workspace_cannot_disable_guard_before_hardware(bounds):
+        p=route();p['flange_workspace_m']=bounds
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_automatic_sampling.py:210: Failed
+_____ test_invalid_workspace_cannot_disable_guard_before_hardware[bounds1] _____
+
+bounds = [[1, 0], [0, 1], [0, 1]]
+
+    @pytest.mark.parametrize('bounds',[[[float('nan'),0],[0,1],[0,1]],[[1,0],[0,1],[0,1]],[[0,1],[0,1]]])
+    def test_invalid_workspace_cannot_disable_guard_before_hardware(bounds):
+        p=route();p['flange_workspace_m']=bounds
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_automatic_sampling.py:210: Failed
+_____ test_invalid_workspace_cannot_disable_guard_before_hardware[bounds2] _____
+
+bounds = [[0, 1], [0, 1]]
+
+    @pytest.mark.parametrize('bounds',[[[float('nan'),0],[0,1],[0,1]],[[1,0],[0,1],[0,1]],[[0,1],[0,1]]])
+    def test_invalid_workspace_cannot_disable_guard_before_hardware(bounds):
+        p=route();p['flange_workspace_m']=bounds
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_automatic_sampling.py:210: Failed
+=========================== short test summary info ============================
+FAILED tests/test_automatic_sampling.py::test_truncated_audit_still_closes_devices_and_preserves_motion_possible
+FAILED tests/test_automatic_sampling.py::test_deadline_crossing_before_sdk_boundary_sends_no_arm_target[camera]
+FAILED tests/test_automatic_sampling.py::test_deadline_crossing_before_sdk_boundary_sends_no_arm_target[final_health]
+FAILED tests/test_automatic_sampling.py::test_plan_hash_matches_parsed_snapshot_when_path_changes
+FAILED tests/test_automatic_sampling.py::test_invalid_workspace_cannot_disable_guard_before_hardware[bounds0]
+FAILED tests/test_automatic_sampling.py::test_invalid_workspace_cannot_disable_guard_before_hardware[bounds1]
+FAILED tests/test_automatic_sampling.py::test_invalid_workspace_cannot_disable_guard_before_hardware[bounds2]
+7 failed, 53 passed in 2.73s

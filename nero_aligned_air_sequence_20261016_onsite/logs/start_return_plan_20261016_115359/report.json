@@ -1,0 +1,153 @@
+{
+  "mode": "known_start_return_plan_only",
+  "success": true,
+  "execution_goal_submitted": false,
+  "physical_motion_sent": false,
+  "gripper_command_sent": false,
+  "scope": "Prepare seven-arm-joint return to trained air-sequence start; hold current gripper width; no execution",
+  "actual_start": [
+    0.22354177059543373,
+    -0.11716395268637934,
+    0.13430308594096366,
+    1.5638499163719592,
+    -0.014835298641951801,
+    0.2577327706420026,
+    0.15009831567151233,
+    0.060218
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 325094.84988736,
+      "stamp": 1792122839.753557,
+      "q": [
+        0.22354177059543373,
+        -0.11716395268637934,
+        0.13430308594096366,
+        1.5638499163719592,
+        -0.014835298641951801,
+        0.2577327706420026,
+        0.15009831567151233,
+        0.060218
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 325094.849929504,
+      "stamp": 1792122839.754032,
+      "q": [
+        0.2235901951789856,
+        -0.11716252565383911,
+        0.13432307541370392,
+        1.5638834238052368,
+        -0.014822503551840782,
+        0.2577475309371948,
+        0.15006080269813538,
+        0.06016303971409798
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.000246235984377563,
+  "execution_readiness_checks_passed": true,
+  "plan_complete": true,
+  "target_rad": [
+    0.18481291449367956,
+    -0.12836896648418294,
+    0.10992083629060287,
+    1.5715293650807343,
+    -0.022689280275926284,
+    0.2777516971623776,
+    0.13554226970987962
+  ],
+  "duration_s": 15.754163487946762,
+  "checked_states": 81,
+  "planned_monotonic_s": 325095.141714323,
+  "return_target_rad": [
+    0.18481291449367956,
+    -0.12836896648418294,
+    0.10992083629060287,
+    1.5715293650807343,
+    -0.022689280275926284,
+    0.2777516971623776,
+    0.13554226970987962
+  ],
+  "held_gripper_total_width_m": 0.060218,
+  "maximum_return_displacement_rad": 0.03872885610175417,
+  "motion_not_executed": true,
+  "requires_onsite_path_review": true
+}

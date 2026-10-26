@@ -1,0 +1,22 @@
+/fakesystem
+  Subscribers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+  Service Servers:
+    /fakesystem/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /fakesystem/get_logger_levels: rcl_interfaces/srv/GetLoggerLevels
+    /fakesystem/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /fakesystem/get_parameters: rcl_interfaces/srv/GetParameters
+    /fakesystem/get_type_description: type_description_interfaces/srv/GetTypeDescription
+    /fakesystem/list_parameters: rcl_interfaces/srv/ListParameters
+    /fakesystem/set_logger_levels: rcl_interfaces/srv/SetLoggerLevels
+    /fakesystem/set_parameters: rcl_interfaces/srv/SetParameters
+    /fakesystem/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
+

@@ -1,0 +1,5143 @@
+{
+  "complete": true,
+  "finalized": true,
+  "total": 16,
+  "passed": 5,
+  "records": [
+    {
+      "name": "heldout_xy_0",
+      "passed": true,
+      "result": {
+        "success": true,
+        "physical_success": true,
+        "max_lift_m": 0.1922757474774887,
+        "maximum_horizontal_transfer_m": 0.16105336479057475,
+        "stable_released_frames": 101,
+        "lift_contact_frames": 815,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5185366121515202,
+            -0.16195718316989513,
+            0.047496687803692796
+          ],
+          "tcp_xyz": [
+            -0.5239226370025071,
+            -0.16025169592913605,
+            0.24670315051364758
+          ],
+          "cup_upright": 0.9999999999999621,
+          "cup_speed": 2.49795417530078e-07,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.0949999987735236,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_0",
+          "seed": 191900,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5451550104962355,
+              -0.0044088755139434395
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 2866,
+        "active_policy_points": 2358,
+        "queries": 1226,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 890,
+            "active_points": 890,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "CARRY",
+            "physics_step": 1504,
+            "active_points": 1382,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RELEASE",
+            "physics_step": 2179,
+            "active_points": 1976,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RETREAT",
+            "physics_step": 2383,
+            "active_points": 2056,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": 2765,
+        "feedback_hold_points": 4,
+        "runtime_s": 57.20397629099898,
+        "contact_arm_hold_points": 176,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 6.940376770216972,
+        "guard_diagnostic": null,
+        "full_task_passed": true
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 0
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_00/summary.json"
+    },
+    {
+      "name": "heldout_xy_1",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 1.9463433665818163e-07,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 1,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.545155204966368,
+            0.01559111649277493,
+            0.04749666628497581
+          ],
+          "tcp_xyz": [
+            -0.5572409032910138,
+            0.015718447641547322,
+            0.09620272948162552
+          ],
+          "cup_upright": 0.9999999999920085,
+          "cup_speed": 1.4720814542373065e-05,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": true,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999916529069,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_1",
+          "seed": 191901,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5451550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 890,
+        "active_policy_points": 889,
+        "queries": 445,
+        "error": "RuntimeError: Unexpected robot/environment/cup contact",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 20.008925255970098,
+        "contact_arm_hold_points": 0,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.086050766520201,
+        "guard_diagnostic": null,
+        "full_task_passed": false
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 1
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_01/summary.json"
+    },
+    {
+      "name": "heldout_xy_2",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 0.002402285918233138,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5449658995911213,
+            0.03798595531484345,
+            0.047496670954825515
+          ],
+          "tcp_xyz": [
+            -0.5478290463002936,
+            0.03808719024437293,
+            0.05690853453353994
+          ],
+          "cup_upright": 0.99999999964321,
+          "cup_speed": 5.306252740406815e-05,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07477348198524889,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_2",
+          "seed": 191902,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5451550104962355,
+              0.03559112448605656
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 4022,
+        "active_policy_points": 3900,
+        "queries": 2044,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 1018,
+            "active_points": 1018,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 94.94794572598767,
+        "contact_arm_hold_points": 2882,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.418945705285294,
+        "guard_diagnostic": null,
+        "full_task_passed": false,
+        "failure_reason": "declared_point_budget_exhausted_before_full_task_completion"
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 2
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_02/summary.json"
+    },
+    {
+      "name": "heldout_xy_3",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.00020443911431056172,
+        "maximum_horizontal_transfer_m": 0.009389905965988873,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.524635922781653,
+            -0.013784422537700668,
+            0.04749667930312986
+          ],
+          "tcp_xyz": [
+            -0.523635685463497,
+            -0.013874625221702318,
+            0.05690843644512673
+          ],
+          "cup_upright": 0.9999999970984398,
+          "cup_speed": 0.00019028983846427764,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.0749909687061157,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_3",
+          "seed": 191903,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              -0.0044088755139434395
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 4022,
+        "active_policy_points": 3900,
+        "queries": 2042,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 1043,
+            "active_points": 1043,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 89.9536063449923,
+        "contact_arm_hold_points": 2857,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.36978391651064,
+        "guard_diagnostic": null,
+        "full_task_passed": false,
+        "failure_reason": "declared_point_budget_exhausted_before_full_task_completion"
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 3
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_03/summary.json"
+    },
+    {
+      "name": "heldout_xy_4",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 0.008892269014914734,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5247453518429734,
+            0.02447395219019561,
+            0.04749669096100971
+          ],
+          "tcp_xyz": [
+            -0.5243015345986354,
+            0.024641458080407172,
+            0.05676208574973752
+          ],
+          "cup_upright": 0.9999999999180699,
+          "cup_speed": 3.6405689008537156e-05,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07460207107206239,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_4",
+          "seed": 191904,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 4022,
+        "active_policy_points": 3900,
+        "queries": 1985,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 781,
+            "active_points": 781,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 98.44770065601915,
+        "contact_arm_hold_points": 3119,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 6.972538772970438,
+        "guard_diagnostic": null,
+        "full_task_passed": false,
+        "failure_reason": "declared_point_budget_exhausted_before_full_task_completion"
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 4
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_04/summary.json"
+    },
+    {
+      "name": "heldout_xy_5",
+      "passed": true,
+      "result": {
+        "success": true,
+        "physical_success": true,
+        "max_lift_m": 0.1951730867992712,
+        "maximum_horizontal_transfer_m": 0.1987516223329748,
+        "stable_released_frames": 101,
+        "lift_contact_frames": 816,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5209010637963769,
+            -0.1606493201621792,
+            0.047496687804382196
+          ],
+          "tcp_xyz": [
+            -0.5235925382589999,
+            -0.15846875504421512,
+            0.2470037295933856
+          ],
+          "cup_upright": 0.9999999999999536,
+          "cup_speed": 3.883105648334846e-06,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999877391106,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_5",
+          "seed": 191905,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.03559112448605656
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 2677,
+        "active_policy_points": 2169,
+        "queries": 1114,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 778,
+            "active_points": 778,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "CARRY",
+            "physics_step": 1344,
+            "active_points": 1222,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RELEASE",
+            "physics_step": 2004,
+            "active_points": 1801,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RETREAT",
+            "physics_step": 2190,
+            "active_points": 1863,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": 2576,
+        "feedback_hold_points": 4,
+        "runtime_s": 53.20012635993771,
+        "contact_arm_hold_points": 130,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.119131233775987,
+        "guard_diagnostic": null,
+        "full_task_passed": true
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 5
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_05/summary.json"
+    },
+    {
+      "name": "heldout_xy_6",
+      "passed": true,
+      "result": {
+        "success": true,
+        "physical_success": true,
+        "max_lift_m": 0.19318593644093718,
+        "maximum_horizontal_transfer_m": 0.15895027924090324,
+        "stable_released_frames": 101,
+        "lift_contact_frames": 764,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5201329722967033,
+            -0.16021320682757192,
+            0.04749668780729391
+          ],
+          "tcp_xyz": [
+            -0.5238091483729375,
+            -0.1583104227650799,
+            0.24651992401066897
+          ],
+          "cup_upright": 0.9999999999999686,
+          "cup_speed": 1.3343395366105415e-06,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.0949999987738015,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_6",
+          "seed": 191906,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5051550104962355,
+              -0.0044088755139434395
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 2732,
+        "active_policy_points": 2224,
+        "queries": 1151,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 839,
+            "active_points": 839,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "CARRY",
+            "physics_step": 1421,
+            "active_points": 1299,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RELEASE",
+            "physics_step": 2049,
+            "active_points": 1846,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RETREAT",
+            "physics_step": 2241,
+            "active_points": 1914,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": 2631,
+        "feedback_hold_points": 4,
+        "runtime_s": 54.37933751405217,
+        "contact_arm_hold_points": 146,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.176043989602476,
+        "guard_diagnostic": null,
+        "full_task_passed": true
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 6
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_06/summary.json"
+    },
+    {
+      "name": "heldout_xy_7",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 1.9186295330741407e-08,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5051550121573624,
+            0.015591116219223999,
+            0.047496687820196816
+          ],
+          "tcp_xyz": [
+            -0.5043213101554014,
+            0.020415058444500887,
+            0.0566079440918649
+          ],
+          "cup_upright": 0.9999999999999841,
+          "cup_speed": 1.0684139421437425e-06,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999877504178,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_7",
+          "seed": 191907,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5051550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 4022,
+        "active_policy_points": 3900,
+        "queries": 1978,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 806,
+            "active_points": 806,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 88.68829727801494,
+        "contact_arm_hold_points": 3094,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.0769845508039,
+        "guard_diagnostic": null,
+        "full_task_passed": false,
+        "failure_reason": "declared_point_budget_exhausted_before_full_task_completion"
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 7
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_07/summary.json"
+    },
+    {
+      "name": "heldout_xy_8",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.00025598222590966085,
+        "maximum_horizontal_transfer_m": 0.008225912389939674,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.504494356835815,
+            0.027422182523437522,
+            0.04773740608048652
+          ],
+          "tcp_xyz": [
+            -0.4979322642925522,
+            0.027394350299422263,
+            0.053518836221012826
+          ],
+          "cup_upright": 0.9999730716697921,
+          "cup_speed": 0.000663831277875348,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07438495606904447,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_xy_8",
+          "seed": 191908,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5051550104962355,
+              0.03559112448605656
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 1028,
+        "active_policy_points": 906,
+        "queries": 482,
+        "error": "RuntimeError: Attached-cup model would cross the table",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 756,
+            "active_points": 756,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 22.657928747939877,
+        "contact_arm_hold_points": 144,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.200284610735252,
+        "guard_diagnostic": {
+          "step": 1028,
+          "current_actual": [
+            -0.02940816255139387,
+            0.9902164885982054,
+            -0.06710762067635848,
+            1.8205065923385035,
+            -0.05110976093697817,
+            -0.06188894894082526,
+            -1.245202967631946,
+            0.07438495606904447
+          ],
+          "previous": [
+            -0.029345542192459106,
+            0.9902065992355347,
+            -0.06712880730628967,
+            1.820435881614685,
+            -0.051155924797058105,
+            -0.06165577471256256,
+            -1.2453207969665527,
+            0.06992172449827194
+          ],
+          "raw_prefix": [
+            [
+              -0.029407024383544922,
+              0.9902788996696472,
+              -0.06711731106042862,
+              1.82035493850708,
+              -0.051060259342193604,
+              -0.06191140413284302,
+              -1.2454187870025635,
+              0.0699852779507637
+            ],
+            [
+              -0.029389530420303345,
+              0.990251898765564,
+              -0.06708715111017227,
+              1.8203997611999512,
+              -0.05102638900279999,
+              -0.061880528926849365,
+              -1.2454020977020264,
+              0.06958289444446564
+            ],
+            [
+              -0.02941136062145233,
+              0.9901326894760132,
+              -0.06709588319063187,
+              1.820455551147461,
+              -0.05105192959308624,
+              -0.061892956495285034,
+              -1.2453773021697998,
+              0.06919174641370773
+            ],
+            [
+              -0.029433399438858032,
+              0.9899913668632507,
+              -0.06711352616548538,
+              1.8204954862594604,
+              -0.051080793142318726,
+              -0.061910197138786316,
+              -1.2453479766845703,
+              0.06884322315454483
+            ],
+            [
+              -0.02945101261138916,
+              0.9898829460144043,
+              -0.06712823361158371,
+              1.8205246925354004,
+              -0.05111069977283478,
+              -0.061911582946777344,
+              -1.245315432548523,
+              0.06854552030563354
+            ],
+            [
+              -0.029453754425048828,
+              0.9898025989532471,
+              -0.0671316608786583,
+              1.8205609321594238,
+              -0.05113598704338074,
+              -0.06189867854118347,
+              -1.2452512979507446,
+              0.0682813972234726
+            ],
+            [
+              -0.029445648193359375,
+              0.9896863102912903,
+              -0.06712564826011658,
+              1.8205814361572266,
+              -0.051153719425201416,
+              -0.061878979206085205,
+              -1.2451632022857666,
+              0.06802003085613251
+            ],
+            [
+              -0.029431849718093872,
+              0.9895623922348022,
+              -0.06710711121559143,
+              1.8205678462982178,
+              -0.051166266202926636,
+              -0.061855703592300415,
+              -1.2450400590896606,
+              0.06776490062475204
+            ],
+            [
+              -0.029417946934700012,
+              0.9894662499427795,
+              -0.067085862159729,
+              1.8205498456954956,
+              -0.05117367208003998,
+              -0.06183589994907379,
+              -1.244934320449829,
+              0.06753700226545334
+            ],
+            [
+              -0.029422476887702942,
+              0.9893573522567749,
+              -0.06707770377397537,
+              1.8205339908599854,
+              -0.051189765334129333,
+              -0.06182670593261719,
+              -1.2448289394378662,
+              0.06734873354434967
+            ]
+          ],
+          "checked_prefix": [
+            [
+              -0.029407024383544922,
+              0.9902788996696472,
+              -0.06711731106042862,
+              1.82035493850708,
+              -0.051060259342193604,
+              -0.06191140413284302,
+              -1.2454187870025635,
+              0.0699852779507637
+            ],
+            [
+              -0.029389530420303345,
+              0.990251898765564,
+              -0.06708715111017227,
+              1.8203997611999512,
+              -0.05102638900279999,
+              -0.061880528926849365,
+              -1.2454020977020264,
+              0.06958289444446564
+            ]
+          ],
+          "current_tcp": [
+            -0.4979322642925522,
+            0.027394350299422263,
+            0.053518836221012826
+          ],
+          "proposed_tcp": [
+            [
+              -0.49796540761010816,
+              0.027403034351301144,
+              0.053557461123564416
+            ],
+            [
+              -0.49795728839718695,
+              0.027390270353261425,
+              0.05355774784807911
+            ]
+          ],
+          "predicted_cup_bottom_m": [
+            -9.290617265004136e-06,
+            -9.080088488882449e-06
+          ],
+          "held_center": [
+            0.15918591635370655,
+            0.006175027317068928,
+            -0.0318324963999135
+          ],
+          "held_rotation": [
+            [
+              -0.9999936364708522,
+              -0.0027498385014278325,
+              0.002272752960525409
+            ],
+            [
+              -0.002313047541477589,
+              0.014740086144037934,
+              -0.9998886836401037
+            ],
+            [
+              0.0027160318249932858,
+              -0.9998875778049674,
+              -0.014746352852255395
+            ]
+          ],
+          "actual_cup_center": [
+            -0.504494356835815,
+            0.027422182523437522,
+            0.04773740608048652
+          ],
+          "actual_cup_rotation": [
+            [
+              0.9998667584112337,
+              -0.016323621558646324,
+              6.930671065403862e-05
+            ],
+            [
+              0.016323690597143194,
+              0.9998398301695268,
+              -0.007338333043611079
+            ],
+            [
+              5.049256166527402e-05,
+              0.00733848661375848,
+              0.9999730716697921
+            ]
+          ],
+          "measured_physics": {
+            "cup_xyz": [
+              -0.504494356835815,
+              0.027422182523437522,
+              0.04773740608048652
+            ],
+            "tcp_xyz": [
+              -0.4979322642925522,
+              0.027394350299422263,
+              0.053518836221012826
+            ],
+            "cup_upright": 0.9999730716697921,
+            "cup_speed": 0.000663831277875348,
+            "bilateral": true,
+            "supported": true,
+            "unexpected_contact": false,
+            "unexpected_robot_contact": false,
+            "gripper_width": 0.07438495606904447,
+            "contract_valid": true
+          },
+          "contact_width": 0.07442416707060946,
+          "actual_attached_model_bottom_m": -4.5870818535012495e-05
+        },
+        "full_task_passed": false
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 8
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_08/summary.json"
+    },
+    {
+      "name": "heldout_start_0",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0006543136780373174,
+        "maximum_horizontal_transfer_m": 0.008274558508426217,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5240086206670772,
+            0.023785885548404332,
+            0.04749675229562308
+          ],
+          "tcp_xyz": [
+            -0.519964337574002,
+            0.024777634318527336,
+            0.05693498697830467
+          ],
+          "cup_upright": 0.9999999981717936,
+          "cup_speed": 8.84871448006166e-05,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07627586347761812,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_start_0",
+          "seed": 191909,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18570460027157076,
+                -0.15118562144557365,
+                0.10338141909199844,
+                1.5916934582426256,
+                -0.02280613220761351,
+                0.2873711765953711,
+                0.13495783495934882
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f",
+            "generalization": {
+              "initial_translation_m": [
+                0.008,
+                0,
+                0
+              ],
+              "initial_rotation_rad": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "frames": 4022,
+        "active_policy_points": 3900,
+        "queries": 2063,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 964,
+            "active_points": 964,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 97.0219131030608,
+        "contact_arm_hold_points": 2936,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.119511440396308,
+        "guard_diagnostic": null,
+        "full_task_passed": false,
+        "failure_reason": "declared_point_budget_exhausted_before_full_task_completion"
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 9
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_09/summary.json"
+    },
+    {
+      "name": "heldout_start_1",
+      "passed": true,
+      "result": {
+        "success": true,
+        "physical_success": true,
+        "max_lift_m": 0.1951570334341543,
+        "maximum_horizontal_transfer_m": 0.1802391213533973,
+        "stable_released_frames": 102,
+        "lift_contact_frames": 838,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5171024173137997,
+            -0.16266979207153429,
+            0.04749668781245252
+          ],
+          "tcp_xyz": [
+            -0.5232340619639856,
+            -0.16064694867055362,
+            0.24734175291965987
+          ],
+          "cup_upright": 0.9999999999999776,
+          "cup_speed": 9.820977949507512e-07,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999877340379,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_start_1",
+          "seed": 191910,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18081455284656278,
+                -0.10185221868237129,
+                0.0966682196561705,
+                1.5498992827699476,
+                -0.024911170830029923,
+                0.2759861766150781,
+                0.12701608252493463
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f",
+            "generalization": {
+              "initial_translation_m": [
+                -0.008,
+                0,
+                0
+              ],
+              "initial_rotation_rad": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "frames": 2740,
+        "active_policy_points": 2232,
+        "queries": 1152,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 763,
+            "active_points": 763,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "CARRY",
+            "physics_step": 1314,
+            "active_points": 1192,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RELEASE",
+            "physics_step": 2033,
+            "active_points": 1830,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RETREAT",
+            "physics_step": 2233,
+            "active_points": 1906,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": 2639,
+        "feedback_hold_points": 4,
+        "runtime_s": 55.12402420095168,
+        "contact_arm_hold_points": 152,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.2027825692202905,
+        "guard_diagnostic": null,
+        "full_task_passed": true
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 10
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_10/summary.json"
+    },
+    {
+      "name": "heldout_start_2",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0005117086092062892,
+        "maximum_horizontal_transfer_m": 0.004090202782489065,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 1,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5256470565418448,
+            0.01155572775397947,
+            0.04749668525530738
+          ],
+          "tcp_xyz": [
+            -0.5359288376792408,
+            0.020977146444947616,
+            0.05784334082920921
+          ],
+          "cup_upright": 0.9999999999999257,
+          "cup_speed": 1.424816862119795e-05,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": true,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.0949999987919759,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_start_2",
+          "seed": 191911,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.17163237033473844,
+                -0.13347367683102665,
+                0.08053864300878599,
+                1.5769087444069738,
+                -0.02181697181631071,
+                0.2506497592697877,
+                0.130956101392733
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f",
+            "generalization": {
+              "initial_translation_m": [
+                0,
+                0.008,
+                0
+              ],
+              "initial_rotation_rad": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "frames": 2392,
+        "active_policy_points": 2391,
+        "queries": 1977,
+        "error": "RuntimeError: Unexpected robot/environment/cup contact",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 61.8959154500626,
+        "contact_arm_hold_points": 0,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.033433811739086,
+        "guard_diagnostic": null,
+        "full_task_passed": false
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 11
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_11/summary.json"
+    },
+    {
+      "name": "heldout_start_3",
+      "passed": true,
+      "result": {
+        "success": true,
+        "physical_success": true,
+        "max_lift_m": 0.19339731135836813,
+        "maximum_horizontal_transfer_m": 0.1775000396918915,
+        "stable_released_frames": 101,
+        "lift_contact_frames": 907,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5246564436644496,
+            -0.15951973546582238,
+            0.04749668780664001
+          ],
+          "tcp_xyz": [
+            -0.5240058206981212,
+            -0.15757658919827333,
+            0.24659686474206277
+          ],
+          "cup_upright": 0.9999999999999667,
+          "cup_speed": 1.0317341409630711e-06,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999877379965,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_start_3",
+          "seed": 191912,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.19481659137721782,
+                -0.11875911704243958,
+                0.11947345287553812,
+                1.5639197020073339,
+                -0.02624865179766461,
+                0.31259683493104207,
+                0.13108341177287586
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f",
+            "generalization": {
+              "initial_translation_m": [
+                0,
+                -0.008,
+                0
+              ],
+              "initial_rotation_rad": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "frames": 2862,
+        "active_policy_points": 2353,
+        "queries": 1216,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 772,
+            "active_points": 772,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "CARRY",
+            "physics_step": 1406,
+            "active_points": 1284,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RELEASE",
+            "physics_step": 2146,
+            "active_points": 1943,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          },
+          {
+            "kind": "RETREAT",
+            "physics_step": 2333,
+            "active_points": 2005,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": 2761,
+        "feedback_hold_points": 5,
+        "runtime_s": 57.56902533699758,
+        "contact_arm_hold_points": 136,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.204735709819943,
+        "guard_diagnostic": null,
+        "full_task_passed": true
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 12
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_12/summary.json"
+    },
+    {
+      "name": "heldout_scene_match",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 0.008892269014914734,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5247453518429734,
+            0.02447395219019561,
+            0.04749669096100971
+          ],
+          "tcp_xyz": [
+            -0.5243015345986354,
+            0.024641458080407172,
+            0.05676208574973752
+          ],
+          "cup_upright": 0.9999999999180699,
+          "cup_speed": 3.6405689008537156e-05,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07460207107206239,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_scene_match",
+          "seed": 191913,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 4022,
+        "active_policy_points": 3900,
+        "queries": 1985,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 781,
+            "active_points": 781,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 94.02727981004864,
+        "contact_arm_hold_points": 3119,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 6.271146843209863,
+        "guard_diagnostic": null,
+        "full_task_passed": false,
+        "failure_reason": "declared_point_budget_exhausted_before_full_task_completion"
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 13
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_13/summary.json"
+    },
+    {
+      "name": "heldout_nominal_camera_perturbation",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 0.008897007773087436,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5247267657288152,
+            0.02447781980735319,
+            0.04749669033285767
+          ],
+          "tcp_xyz": [
+            -0.5242257171732096,
+            0.02464595759742428,
+            0.05681732865114029
+          ],
+          "cup_upright": 0.9999999999297695,
+          "cup_speed": 3.6823184624950815e-05,
+          "bilateral": true,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.07460887119602871,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_nominal_camera_perturbation",
+          "seed": 191914,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "observation_camera_translation_m": [
+            0.002,
+            0,
+            0
+          ],
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 4022,
+        "active_policy_points": 3900,
+        "queries": 1984,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [
+          {
+            "kind": "GRASP",
+            "physics_step": 781,
+            "active_points": 781,
+            "simulated_permission_only": true,
+            "real_receipt": false
+          }
+        ],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 1,
+        "runtime_s": 93.2999053139938,
+        "contact_arm_hold_points": 3119,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 6.183566531399265,
+        "guard_diagnostic": null,
+        "full_task_passed": false,
+        "failure_reason": "declared_point_budget_exhausted_before_full_task_completion"
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 14
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_14/summary.json"
+    },
+    {
+      "name": "heldout_observation_delay",
+      "passed": false,
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 1.5819101476202254e-08,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.5251550122031793,
+            0.01559111856280578,
+            0.04749668781774572
+          ],
+          "tcp_xyz": [
+            -0.5236746609797384,
+            0.02550130689881615,
+            0.08632246597478682
+          ],
+          "cup_upright": 0.9999999999999851,
+          "cup_speed": 4.848228304350877e-07,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09499999934352016,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "heldout_observation_delay",
+          "seed": 191915,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false,
+          "observation_delay_steps": 1,
+          "scene": {
+            "robot": "nero_single_arm",
+            "end_effector": "agx_gripper",
+            "can_connected": false,
+            "cup": {
+              "outer_diameter_m": 0.075,
+              "height_m": 0.095,
+              "mass_kg": 0.05,
+              "wall_thickness_m": 0.002
+            },
+            "assumptions": [
+              "new arm/gripper start measured; qvel zero assumed for stationary capture",
+              "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+              "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+              "joint servo parameters are simulation assumptions; no real response calibration completed"
+            ],
+            "contact_friction": [
+              0.6,
+              0.005,
+              0.0001
+            ],
+            "pick_xy_m": [
+              -0.5251550104962355,
+              0.015591124486056561
+            ],
+            "place_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "table_top_z_m": 0.0,
+            "control_hz": 20,
+            "simulation_timestep_s": 0.002,
+            "arm_kp": [
+              100,
+              100,
+              80,
+              80,
+              40,
+              30,
+              20
+            ],
+            "arm_kd": [
+              15,
+              15,
+              12,
+              12,
+              6,
+              5,
+              3
+            ],
+            "joint_speed_limit_rad_s": 0.04,
+            "finger_force_limit_n": 1.0,
+            "lift_height_m": 0.2,
+            "success_position_tolerance_m": 0.02,
+            "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+            "real_task_geometry_verified": false,
+            "dwell_seconds": {
+              "recover_open": 4,
+              "recover_clear": 0.2,
+              "moving": 0.2,
+              "close": 4,
+              "release": 4
+            },
+            "final_settle_seconds": 4,
+            "render_shadows": false,
+            "teacher_command_lead_limit_rad": 0.03,
+            "initial_robot_state": {
+              "qpos_rad": [
+                0.18325957655906677,
+                -0.12651892006397247,
+                0.10002481937408447,
+                1.5707963705062866,
+                -0.023858651518821716,
+                0.2816786766052246,
+                0.13098695874214172
+              ],
+              "gripper_total_width_m": 0.09438899904489517
+            },
+            "table_center_xy_m": [
+              -0.4,
+              -0.15
+            ],
+            "table_half_size_xy_m": [
+              0.65,
+              0.65
+            ],
+            "show_target_marker": true,
+            "camera_calibration": {
+              "transform_base_from_raw_optical_m": [
+                [
+                  -0.072697737738461,
+                  0.45922912341725763,
+                  0.8853381563747986,
+                  -0.8889602486428704
+                ],
+                [
+                  0.9965659610030485,
+                  -0.0018341655365573496,
+                  0.08278237256116336,
+                  -0.09312566151992355
+                ],
+                [
+                  0.03963993312028583,
+                  0.8883159618301375,
+                  -0.4575187730137615,
+                  0.3152114291079937
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "intrinsic_matrix": [
+                [
+                  263.6728515625,
+                  0.0,
+                  323.58526611328125
+                ],
+                [
+                  0.0,
+                  263.6728515625,
+                  179.9199676513672
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "resolution_wh": [
+                640,
+                360
+              ],
+              "image_rotation_degrees": 180,
+              "installation_verified_on_real": false
+            },
+            "initial_pose_source": "evidence/current_source_capture/observations.npz",
+            "camera_calibrated_to_real": false,
+            "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+            "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+            "hardware_deployment_allowed": false,
+            "appearance": {
+              "table_rgb": [
+                0.9,
+                0.9,
+                0.9
+              ],
+              "cup_rgb": [
+                0.95,
+                0.8,
+                0.05
+              ],
+              "arm_rgb": [
+                0.16,
+                0.16,
+                0.18
+              ],
+              "background_rgb": [
+                0.25,
+                0.25,
+                0.28
+              ],
+              "light_scale": 0.92
+            },
+            "ik_goal_rotation": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "visual_marker_xy_m": [
+              -0.5247430757905183,
+              -0.16205567896289505
+            ],
+            "tcp_link7_xyz_m": [
+              0.152,
+              0,
+              -0.0235
+            ],
+            "grasp_tcp_height_m": 0.055,
+            "minimum_transfer_m": 0.1,
+            "ik_goal_rotation_link7": [
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ],
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+            "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+          }
+        },
+        "frames": 881,
+        "active_policy_points": 879,
+        "queries": 440,
+        "error": "RuntimeError: Delayed exposure predates last submission/confirmation; no old prediction reused",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 20.201435138005763,
+        "contact_arm_hold_points": 0,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "inference_latency_p95_ms": 7.13856793590821,
+        "guard_diagnostic": null,
+        "full_task_passed": false
+      },
+      "provenance": {
+        "all_parameters_predeclared_before_training": false,
+        "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+        "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+        "measured_geometry": false,
+        "live_frontend_qualified": false,
+        "hardware_deployment_allowed": false,
+        "partial_suite_case_index": 15
+      },
+      "summary": "/home/user/wq/nero_act_visual_validation_20261019/results/frozen_320_suite16/case_15/summary.json"
+    }
+  ],
+  "hardware_deployment_allowed": false,
+  "assessment_scope": "retained_nominal_simulation_only_not_real_deployment_qualification",
+  "all_parameters_predeclared_before_training": false,
+  "measured_geometry": false,
+  "live_frontend_qualified": false,
+  "real_hardware_tested": false,
+  "source_and_model_unchanged": true,
+  "checkpoint_sha256": "e8fa251898a0cca0171366922f42b90657398662992e75510652d9072a133d29"
+}

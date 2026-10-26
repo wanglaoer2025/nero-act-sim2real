@@ -1,0 +1,95 @@
+ACT Day5：device=cpu epochs=40 joint target lead=recorded action steps；trim=0 stride=10；不会连接机械臂
+number of parameters: 12.59M
+已加载初始化权重：/home/wq/sim2real/nero_act_response_20261016/model/policy.ckpt
+epoch 1/40 train=0.3523/0.3523 val=0.2630/0.2630 best_loss=0.2630@1 best_l1=0.2630@1
+epoch 2/40 train=0.2336/0.2336 val=0.1849/0.1849 best_loss=0.1849@2 best_l1=0.1849@2
+epoch 4/40 train=0.1198/0.1198 val=0.0888/0.0888 best_loss=0.0888@4 best_l1=0.0888@4
+epoch 6/40 train=0.0479/0.0479 val=0.0535/0.0535 best_loss=0.0493@5 best_l1=0.0493@5
+epoch 8/40 train=0.0424/0.0424 val=0.0384/0.0384 best_loss=0.0384@8 best_l1=0.0384@8
+epoch 10/40 train=0.0340/0.0340 val=0.0260/0.0260 best_loss=0.0260@10 best_l1=0.0260@10
+epoch 12/40 train=0.0277/0.0277 val=0.0211/0.0211 best_loss=0.0211@12 best_l1=0.0211@12
+epoch 14/40 train=0.0268/0.0268 val=0.0293/0.0293 best_loss=0.0197@13 best_l1=0.0197@13
+epoch 16/40 train=0.0321/0.0321 val=0.0190/0.0190 best_loss=0.0190@16 best_l1=0.0190@16
+epoch 18/40 train=0.0265/0.0265 val=0.0209/0.0209 best_loss=0.0190@16 best_l1=0.0190@16
+epoch 20/40 train=0.0264/0.0264 val=0.0198/0.0198 best_loss=0.0189@19 best_l1=0.0189@19
+epoch 22/40 train=0.0248/0.0248 val=0.0202/0.0202 best_loss=0.0189@19 best_l1=0.0189@19
+epoch 24/40 train=0.0242/0.0242 val=0.0219/0.0219 best_loss=0.0189@19 best_l1=0.0189@19
+epoch 26/40 train=0.0242/0.0242 val=0.0171/0.0171 best_loss=0.0171@26 best_l1=0.0171@26
+epoch 28/40 train=0.0289/0.0289 val=0.0216/0.0216 best_loss=0.0171@26 best_l1=0.0171@26
+epoch 30/40 train=0.0240/0.0240 val=0.0195/0.0195 best_loss=0.0171@26 best_l1=0.0171@26
+epoch 32/40 train=0.0230/0.0230 val=0.0150/0.0150 best_loss=0.0150@32 best_l1=0.0150@32
+epoch 34/40 train=0.0226/0.0226 val=0.0227/0.0227 best_loss=0.0150@32 best_l1=0.0150@32
+epoch 36/40 train=0.0215/0.0215 val=0.0174/0.0174 best_loss=0.0147@35 best_l1=0.0147@35
+epoch 38/40 train=0.0225/0.0225 val=0.0227/0.0227 best_loss=0.0147@35 best_l1=0.0147@35
+epoch 40/40 train=0.0217/0.0217 val=0.0190/0.0190 best_loss=0.0147@35 best_l1=0.0147@35
+{
+  "best_epoch": 35,
+  "best_val_loss": 0.014680688412716756,
+  "best_l1_epoch": 35,
+  "best_val_l1": 0.014680688412716756,
+  "best_metrics": {
+    "epoch": 35,
+    "train_loss": 0.022091412916779518,
+    "train_l1": 0.022091412916779518,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.014680688412716756,
+    "val_l1": 0.014680688412716756,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 85.67792821400508
+  },
+  "last_metrics": {
+    "epoch": 40,
+    "train_loss": 0.02167373035962765,
+    "train_l1": 0.02167373035962765,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.01900148420379712,
+    "val_l1": 0.01900148420379712,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 97.06453691900242
+  },
+  "best_l1_metrics": {
+    "epoch": 35,
+    "train_loss": 0.022091412916779518,
+    "train_l1": 0.022091412916779518,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.014680688412716756,
+    "val_l1": 0.014680688412716756,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 85.67792821400508
+  },
+  "train_episodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9
+  ],
+  "val_episodes": [
+    5,
+    6
+  ],
+  "train_windows": 208,
+  "training_stride_steps": 10,
+  "trim_start_steps": 0,
+  "trim_start_steps_by_parent": null,
+  "trim_after_gripper_open_steps": null,
+  "grasp_focus_before_close_steps": 0,
+  "grasp_focus_repeats": 1,
+  "post_grasp_repeats": 1,
+  "init_checkpoint": "/home/wq/sim2real/nero_act_response_20261016/model/policy.ckpt",
+  "normalization_stats": null,
+  "joint_target_lead_steps": null,
+  "elapsed_s": 97.64850999999908
+}

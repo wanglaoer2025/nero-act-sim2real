@@ -1,0 +1,15 @@
+test_nominally_collision_free_old_approach_is_rejected_before_camera_opens (test_approach_clearance.ApproachClearanceTests.test_nominally_collision_free_old_approach_is_rejected_before_camera_opens) ... COLD_INPUTS_WARMING
+FAIL
+
+======================================================================
+FAIL: test_nominally_collision_free_old_approach_is_rejected_before_camera_opens (test_approach_clearance.ApproachClearanceTests.test_nominally_collision_free_old_approach_is_rejected_before_camera_opens)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_approach_fix_20261019/tests/test_approach_clearance.py", line 33, in test_nominally_collision_free_old_approach_is_rejected_before_camera_opens
+    self.assertIn('clearance', report['error'].lower())
+AssertionError: 'clearance' not found in 'runtimeerror: unsafe_approach_reached_camera'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.087s
+
+FAILED (failures=1)

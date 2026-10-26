@@ -1,0 +1,61 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.0005913519259231753,
+  "maximum_horizontal_transfer_m": 0.0010874266314479662,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5250644452175065,
+      0.014507475738043158,
+      0.048091351925923176
+    ],
+    "tcp_xyz": [
+      -0.5287136588010015,
+      0.013771472518450819,
+      0.06314709798408817
+    ],
+    "cup_upright": 0.9998534894101435,
+    "cup_speed": 0.015379269420500788,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07451625987888913,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 10,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false,
+    "name": "nominal",
+    "seed": 90000
+  },
+  "frames": 900,
+  "active_policy_points": 820,
+  "queries": 84,
+  "error": "RuntimeError: ACT requested lift without measured cup contact",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_feedback_release_hold_v1",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 780,
+      "active_points": 780,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 0,
+  "runtime_s": 10.066887032997329
+}

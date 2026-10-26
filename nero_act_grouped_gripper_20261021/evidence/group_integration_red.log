@@ -1,0 +1,172 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_____ test_group_weights_keep_each_present_group_mass_when_samples_repeat ______
+
+    def test_group_weights_keep_each_present_group_mass_when_samples_repeat():
+>       from training.group_loss import group_sample_weights
+E       ModuleNotFoundError: No module named 'training.group_loss'
+
+tests/test_group_loss_integration.py:12: ModuleNotFoundError
+____ test_grouped_training_preserves_all_arm_gradients_and_runtime_outputs _____
+
+    def test_grouped_training_preserves_all_arm_gradients_and_runtime_outputs():
+        from training.history import build_history_policy
+        c,q,image,_=config();c.update(gripper_supervision_profile='deployed_first2_v1',prior_gripper_target_profile='feedback_preimage_v1',deployed_prefix_loss_weight=.01)
+        old=build_history_policy(c);new=build_history_policy(dict(c,gripper_group_loss=SETTINGS));new.load_state_dict(old.state_dict())
+        old.eval();new.eval()
+        with torch.no_grad():torch.testing.assert_close(old(q,image),new(q,image),rtol=0,atol=0)
+        for p in [old,new]:p.train()
+        target=torch.ones(2,20,8)*.1;padding=torch.zeros(2,20,dtype=torch.bool)
+        results=[]
+        for p,kwargs in [(old,{}),(new,dict(gripper_groups=torch.tensor([0,3])))]:
+>           torch.manual_seed(42);loss=p(q,image,target,padding,**kwargs)['loss']
+
+tests/test_group_loss_integration.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../nero/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FullTaskPolicy(
+  (model): DETRVAE(
+    (transformer): Transformer(
+      (encoder): TransformerEncoder(
+        (laye...tures=128, out_features=64, bias=True)
+    (1): SiLU()
+    (2): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+args = (tensor([[ 0.1927,  0.1487,  0.0901, -0.2106,  0.0678, -0.1235, -0.0043, -0.1605,
+         -0.0752,  0.1649, -0.0392, ...e, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False]]))
+kwargs = {'gripper_groups': tensor([0, 3])}
+
+    def _call_impl(self, *args, **kwargs):
+        forward_call = (self._slow_forward if torch._C._get_tracing_state() else self.forward)
+        # If we don't have any hooks, we want to skip the rest of the logic in
+        # this function, and just call forward.
+        if not (self._backward_hooks or self._backward_pre_hooks or self._forward_hooks or self._forward_pre_hooks
+                or _global_backward_pre_hooks or _global_backward_hooks
+                or _global_forward_hooks or _global_forward_pre_hooks):
+>           return forward_call(*args, **kwargs)
+E           TypeError: FullTaskPolicy.forward() got an unexpected keyword argument 'gripper_groups'
+
+../../nero/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: TypeError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+number of parameters: 11.72M
+_________ test_group_settings_reject_unknown_profiles_or_dropped_roles _________
+
+    def test_group_settings_reject_unknown_profiles_or_dropped_roles():
+        from training.history import build_history_policy
+        c,_,_,_=config();c['gripper_supervision_profile']='deployed_first2_v1'
+        for bad in [dict(profile='unknown',weights=[.25]*4),dict(profile='four_phase_static_v1',weights=[0,0,0,1]),
+            dict(profile='four_phase_static_v1',weights=[.1]*4),dict(profile='four_phase_static_v1',weights=[.25]*3)]:
+>           with pytest.raises(ValueError):build_history_policy(dict(c,gripper_group_loss=bad))
+E           Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_group_loss_integration.py:47: Failed
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+_________________ test_caller_cannot_replace_sealed_group_loss _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-33/test_caller_cannot_replace_sea0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc36d5c3320>
+
+    def test_caller_cannot_replace_sealed_group_loss(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(dict(gripper_group_loss=SETTINGS)))
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'init',dict(variant='A',stage='pilot'),tmp_path/'output')
+
+tests/test_group_loss_integration.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-33/test_caller_cannot_replace_sea0/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-33/test_caller_cannot_replace_sea0/init')
+config = {'stage': 'pilot', 'variant': 'A'}
+output = PosixPath('/tmp/pytest-of-user/pytest-33/test_caller_cannot_replace_sea0/output')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        declared=json.loads((ROOT/'config/history_experiment.json').read_text())
+        sampling_profile=declared.get('transition_sampling_profile','none')
+        scope=declared.get('adaptation_scope','full')
+        if settings.get('adaptation_scope','full')!=scope:
+            raise ValueError('Caller adaptation scope differs from the sealed declaration')
+        if settings.get('approach_preservation')!=declared.get('approach_preservation'):
+            raise ValueError('Caller approach preservation differs from the sealed declaration')
+        if settings.get('optimizer_control')!=declared.get('optimizer_control'):
+            raise ValueError('Caller differs from sealed optimizer control')
+        if settings.get('excluded_ambiguous_windows',[])!=declared.get('excluded_ambiguous_windows',[]):
+            raise ValueError('Caller ambiguous windows differ from sealed declaration')
+        if settings.get('optimizer_diagnostics_path')!=declared.get('optimizer_diagnostics_path'):
+            raise ValueError('Caller optimizer diagnostics differ from sealed declaration')
+        if settings.get('gripper_supervision_profile','all20_v1')!=declared.get('gripper_supervision_profile','all20_v1'):
+            raise ValueError('Caller gripper supervision differs from sealed declaration')
+        if scope=='output_heads_v1':
+            if stage!='pilot' or variant!='A':raise ValueError('Restricted heads are single-model A pilot only')
+            for key in ['train_arm_output_and_gripper_only','arm_output_lr','gripper_adapter_lr']:
+                if settings.get(key)!=declared.get(key):raise ValueError('Restricted setting differs from sealed declaration: '+key)
+    
+        if settings.get('deployed_prefix_loss_weight',0.)!=declared.get('deployed_prefix_loss_weight',0.):
+            raise ValueError('Caller deployed prefix weight differs from the sealed declaration')
+        additional=declared.get('additional_failure_episode_ids',[])
+        if settings.get('additional_failure_episode_ids',[])!=additional:
+            raise ValueError('Additional recovery IDs differ from the sealed experiment declaration')
+        if settings.get('transition_sampling_profile','none')!=sampling_profile:
+            raise ValueError('Caller sampling profile differs from the sealed experiment declaration')
+        if stage=='formal' and sampling_profile!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:373: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-33/test_caller_cannot_replace_sea0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc36d5c3320>
+
+    def test_caller_cannot_replace_sealed_group_loss(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(dict(gripper_group_loss=SETTINGS)))
+>       with pytest.raises(ValueError,match='sealed'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'sealed'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_group_loss_integration.py:54: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_group_loss_integration.py::test_group_weights_keep_each_present_group_mass_when_samples_repeat
+FAILED tests/test_group_loss_integration.py::test_grouped_training_preserves_all_arm_gradients_and_runtime_outputs
+FAILED tests/test_group_loss_integration.py::test_group_settings_reject_unknown_profiles_or_dropped_roles
+FAILED tests/test_group_loss_integration.py::test_caller_cannot_replace_sealed_group_loss
+4 failed, 1 warning in 4.78s

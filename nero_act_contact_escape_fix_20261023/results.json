@@ -1,0 +1,197 @@
+{
+  "verified_at": "2026-10-23T22:18:07.159773+08:00",
+  "complete": true,
+  "fixed_center_simulation_passed": true,
+  "full_task_passed": false,
+  "passed_cases": 3,
+  "total_cases": 7,
+  "new_untrained_scene_passes": 0,
+  "new_untrained_scene_total": 2,
+  "generalization_qualified": false,
+  "policy_path": "/home/user/wq/nero_act_new_handeye_policy_repair_20261023/training/pilot_A/policy_last.ckpt",
+  "policy_sha256": "1a28f4fddd3095791403028b639b99f9775b91caab45c950c2d0f518955bc0f0",
+  "source_hashes_verified": 301,
+  "current_suite_checks_passed": 13,
+  "extra_updates_after_rollback": 0,
+  "second_training_candidate_rejected": true,
+  "hardware_commands_sent": false,
+  "hardware_deployment_allowed": false,
+  "actual_95mm_preparation_performed": false,
+  "contact_escape_scope": "offline_MuJoCo_only",
+  "real_calibration_and_TCP_independently_qualified": false,
+  "cases": [
+    {
+      "id": 9000,
+      "role": "regression",
+      "offset_xy_mm": [
+        0,
+        0
+      ],
+      "passed": true,
+      "events": [
+        "GRASP",
+        "CARRY",
+        "RELEASE",
+        "RETREAT"
+      ],
+      "lift_mm": 199.78969691484983,
+      "transfer_mm": 190.30209714122097,
+      "stable_released_frames": 101,
+      "error": null,
+      "target_source_counts": {
+        "history_warmup_hold": 24,
+        "ACT_arm_pregrasp_open_hold": 1021,
+        "operator_pause": 320,
+        "feedback_safety_hold": 4,
+        "reference_settle": 80,
+        "ACT_gripper_feedback_arm_hold": 254,
+        "ACT": 1603,
+        "post_completion_hold": 100
+      }
+    },
+    {
+      "id": 9005,
+      "role": "regression",
+      "offset_xy_mm": [
+        10.0,
+        10.0
+      ],
+      "passed": false,
+      "events": [
+        "GRASP"
+      ],
+      "lift_mm": 0.08397963365353034,
+      "transfer_mm": 0.15948604330145136,
+      "stable_released_frames": 0,
+      "error": "RuntimeError: Attached-cup model would cross the table",
+      "target_source_counts": {
+        "history_warmup_hold": 9,
+        "ACT_arm_pregrasp_open_hold": 1070,
+        "operator_pause": 80,
+        "feedback_safety_hold": 1,
+        "reference_settle": 40,
+        "ACT_gripper_feedback_arm_hold": 134,
+        "ACT": 5
+      }
+    },
+    {
+      "id": 9006,
+      "role": "regression",
+      "offset_xy_mm": [
+        -10.0,
+        -10.0
+      ],
+      "passed": true,
+      "events": [
+        "GRASP",
+        "CARRY",
+        "RELEASE",
+        "RETREAT"
+      ],
+      "lift_mm": 183.5102532312885,
+      "transfer_mm": 185.6397614005135,
+      "stable_released_frames": 101,
+      "error": null,
+      "target_source_counts": {
+        "history_warmup_hold": 24,
+        "ACT_arm_pregrasp_open_hold": 950,
+        "ACT": 1517,
+        "operator_pause": 320,
+        "feedback_safety_hold": 5,
+        "reference_settle": 80,
+        "ACT_gripper_feedback_arm_hold": 272,
+        "post_completion_hold": 100
+      }
+    },
+    {
+      "id": 9200,
+      "role": "regression",
+      "offset_xy_mm": [
+        7.0,
+        -12.0
+      ],
+      "passed": true,
+      "events": [
+        "GRASP",
+        "CARRY",
+        "RELEASE",
+        "RETREAT"
+      ],
+      "lift_mm": 198.16248535297188,
+      "transfer_mm": 169.4064530459838,
+      "stable_released_frames": 102,
+      "error": null,
+      "target_source_counts": {
+        "history_warmup_hold": 24,
+        "ACT_arm_pregrasp_open_hold": 926,
+        "operator_pause": 320,
+        "feedback_safety_hold": 4,
+        "reference_settle": 80,
+        "ACT_gripper_feedback_arm_hold": 290,
+        "ACT": 1650,
+        "post_completion_hold": 100
+      }
+    },
+    {
+      "id": 9201,
+      "role": "regression",
+      "offset_xy_mm": [
+        -12.0,
+        7.0
+      ],
+      "passed": false,
+      "events": [],
+      "lift_mm": 0.0,
+      "transfer_mm": 1.920432047348398e-05,
+      "stable_released_frames": 0,
+      "error": "RuntimeError: Predicted pregrasp cup contact; no ACT target sent",
+      "target_source_counts": {
+        "history_warmup_hold": 4,
+        "ACT_arm_pregrasp_open_hold": 3015
+      }
+    },
+    {
+      "id": 9300,
+      "role": "new_untrained_scene",
+      "offset_xy_mm": [
+        8.0,
+        11.0
+      ],
+      "passed": false,
+      "events": [
+        "GRASP"
+      ],
+      "lift_mm": 0.002894517688846465,
+      "transfer_mm": 0.06231371524972388,
+      "stable_released_frames": 0,
+      "error": "RuntimeError: Attached-cup model would cross the table",
+      "target_source_counts": {
+        "history_warmup_hold": 9,
+        "ACT_arm_pregrasp_open_hold": 1058,
+        "operator_pause": 80,
+        "feedback_safety_hold": 1,
+        "reference_settle": 40,
+        "ACT_gripper_feedback_arm_hold": 130,
+        "ACT": 14
+      }
+    },
+    {
+      "id": 9301,
+      "role": "new_untrained_scene",
+      "offset_xy_mm": [
+        -9.0,
+        -11.0
+      ],
+      "passed": false,
+      "events": [],
+      "lift_mm": 0.0,
+      "transfer_mm": 1.7755145748287864e-05,
+      "stable_released_frames": 0,
+      "error": "RuntimeError: Predicted low descent before alignment; no action sent",
+      "target_source_counts": {
+        "history_warmup_hold": 4,
+        "ACT_arm_pregrasp_open_hold": 818
+      }
+    }
+  ]
+}

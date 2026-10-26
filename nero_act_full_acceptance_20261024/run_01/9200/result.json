@@ -1,0 +1,77 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19707310589265803,
+  "maximum_horizontal_transfer_m": 0.16364661336195624,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 1010,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5242445993507044,
+      -0.1198358839020692,
+      0.06036503118559783
+    ],
+    "tcp_xyz": [
+      -0.531939755923833,
+      -0.11962257399622064,
+      0.07677320656305014
+    ],
+    "cup_upright": 0.9986974529131807,
+    "cup_speed": 0.025237386293707604,
+    "bilateral": true,
+    "supported": false,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07322126915431382,
+    "contract_valid": true
+  },
+  "scenario": {
+    "name": "cpu_full_acceptance_9200",
+    "seed": 191899,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false
+  },
+  "frames": 2441,
+  "active_policy_points": 2225,
+  "queries": 1144,
+  "error": "ValueError: Visible blue geometry does not span the nominal square card",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 914,
+      "active_points": 910,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1732,
+      "active_points": 1602,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 1,
+  "runtime_s": 153.8117650449858,
+  "contact_arm_hold_points": 154,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": true,
+  "inference_latency_p95_ms": 39.55129726964514,
+  "guard_diagnostic": null
+}

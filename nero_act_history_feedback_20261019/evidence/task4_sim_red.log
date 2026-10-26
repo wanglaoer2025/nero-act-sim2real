@@ -1,0 +1,71 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_A_B_share_history_warmup_and_actual_delayed_exposure ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d46290a49e0>
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-109/test_A_B_share_history_warmup_0')
+
+    def test_A_B_share_history_warmup_and_actual_delayed_exposure(monkeypatch,tmp_path):
+        import json
+        from pathlib import Path
+        import numpy as np
+        import torch
+        import simulation.supervised_rollout as runtime
+        import simulation.visual_evaluation as visual
+        from tests.test_visual_policy import config as policy_config
+        class Renderer:
+            def __init__(self,*a,**k):pass
+            def __enter__(self):return self
+            def __exit__(self,*a):pass
+            def update_scene(self,*a,**k):pass
+            scene=type('Scene',(),{'flags':np.zeros(100,dtype=bool)})()
+            def render(self):return np.zeros((180,320,3),np.uint8)
+        monkeypatch.setattr(runtime.mujoco,'Renderer',Renderer)
+        class Features:
+            def __init__(self,*a,**k):pass
+            def __call__(self,image,observed):return np.zeros(6,np.float32),{}
+        monkeypatch.setattr(visual,'ImageFeatures',Features)
+        scene=json.loads((Path(runtime.__file__).parents[1]/'scene/center.json').read_text())
+        stats={n:np.zeros(8,np.float32) if n.endswith('mean') else np.ones(8,np.float32)
+               for n in ['qpos_mean','qpos_std','action_mean','action_std']}
+        stats.update(geometry_mean=np.zeros(6,np.float32),geometry_std=np.ones(6,np.float32))
+        records=[]
+        for variant in ['A','B']:
+            class Policy:
+                device='cpu';bounded_gripper=False;calls=0
+                config=dict(policy_config(),numeric_history_profile='causal_numeric_gru5_v1' if variant=='B' else 'none',
+                            history_runtime_profile='history_common_v1')
+                def __call__(self,q,image,**kwargs):
+                    self.calls+=1
+                    if self.calls>1:raise RuntimeError('test_end')
+                    if variant=='B':
+                        assert kwargs['history']['observations'].shape==(1,5,15)
+                        torch.testing.assert_close(kwargs['history']['observations'][:,-1],q,atol=0,rtol=0)
+                    else:assert not kwargs
+                    return q[:,:8,None].transpose(1,2).expand(-1,20,-1).clone()
+>           result=runtime.rollout(scene,Policy(),stats,dict(seed=42,jitter=False,force=False,
+                servo_delay_steps=0,query_stride=2,observation_age_s=.05,observation_delay_steps=1),
+                tmp_path/variant,runtime_profile='history_common_v1',capture_control=True)
+
+tests/test_history_runtime.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+config = {'appearance': {'arm_rgb': [0.16, 0.16, 0.18], 'background_rgb': [0.25, 0.25, 0.28], 'cup_rgb': [0.95, 0.8, 0.05], 'li...d remain unmatched', 'joint servo parameters are simulation assumptions; no real response calibration completed'], ...}
+policy = <tests.test_history_runtime.test_A_B_share_history_warmup_and_actual_delayed_exposure.<locals>.Policy object at 0x7d454947a870>
+stats = {'action_mean': array([0., 0., 0., 0., 0., 0., 0., 0.], dtype=float32), 'action_std': array([1., 1., 1., 1., 1., 1., 1...': array([0., 0., 0., 0., 0., 0.], dtype=float32), 'geometry_std': array([1., 1., 1., 1., 1., 1.], dtype=float32), ...}
+scenario = {'force': False, 'jitter': False, 'observation_age_s': 0.05, 'observation_delay_steps': 1, ...}
+output = PosixPath('/tmp/pytest-of-user/pytest-109/test_A_B_share_history_warmup_0/A')
+
+    def rollout(config,policy,stats,scenario,output,*,resume_context=None,capture_control=False,runtime_profile='legacy_trace_v1'):
+>       if runtime_profile!='legacy_trace_v1':raise ValueError('Unknown runtime profile')
+E       ValueError: Unknown runtime profile
+
+simulation/supervised_rollout.py:58: ValueError
+=============================== warnings summary ===============================
+tests/test_history_runtime.py::test_A_B_share_history_warmup_and_actual_delayed_exposure
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_runtime.py::test_A_B_share_history_warmup_and_actual_delayed_exposure
+1 failed, 2 deselected, 1 warning in 2.03s

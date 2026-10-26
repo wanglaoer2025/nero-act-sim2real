@@ -1,0 +1,113 @@
+{
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "task_success": false,
+  "success": false,
+  "processes": [
+    {
+      "pid": 2275225,
+      "command": [
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/.venv/bin/python",
+        "-u",
+        "-m",
+        "executor.virtual_bridge",
+        "--synchronize-virtual",
+        "--output",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/replay_session_01/mock_sync.json"
+      ]
+    },
+    {
+      "pid": 2275255,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "executor.driver",
+        "--model",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/model/frozen_run11",
+        "--evaluation",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/final_frozen_nominal/summary.json",
+        "--receipt",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/current_replay_authorization.json",
+        "--execute",
+        "--output",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/replay_session_01/driver.json"
+      ]
+    },
+    {
+      "pid": 2275295,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "executor.gate",
+        "--model",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/model/frozen_run11",
+        "--evaluation",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/final_frozen_nominal/summary.json",
+        "--receipt",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/current_replay_authorization.json",
+        "--execute",
+        "--ros-args",
+        "-p",
+        "arm_joint_names:=[joint1,joint2,joint3,joint4,joint5,joint6,joint7]",
+        "-p",
+        "status_topics:=[arm_controller/follow_joint_trajectory/_action/status,gripper_controller/follow_joint_trajectory/_action/status]",
+        "-p",
+        "arm_sync_tolerance_rad:=0.001",
+        "-p",
+        "gripper_sync_tolerance_m:=0.0005",
+        "-p",
+        "state_timeout_s:=0.15"
+      ]
+    },
+    {
+      "pid": 2275296,
+      "command": [
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/.venv/bin/python",
+        "-u",
+        "-m",
+        "executor.replay",
+        "--model",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/model/frozen_run11",
+        "--evaluation",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/final_frozen_nominal/summary.json",
+        "--receipt",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/current_replay_authorization.json",
+        "--execute",
+        "--geometry",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/authorized_scene/geometry.json",
+        "--output",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/real_attempt_01"
+      ]
+    },
+    {
+      "pid": 2276299,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "executor.driver",
+        "--readonly",
+        "--output",
+        "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/replay_session_01/readonly_restored.json"
+      ]
+    }
+  ],
+  "automatic_retry": false,
+  "automatic_return": false,
+  "source_trace_sha256": "9a86197bf90591b5f22601d78d80ef732233cc555bd01f7265ce21d62b800f7b",
+  "can_tx_before": 626514,
+  "readonly_restored": {
+    "mode": "receive_only",
+    "pid": 2276299,
+    "interpreter": "/usr/bin/python3",
+    "auto_enable": false,
+    "control_enabled_at_start": false,
+    "speed_percent_parameter": 0,
+    "runtime_send_blocked": true,
+    "can_tx_before": 811590,
+    "can_tx_after_start": 811590,
+    "motion_submitted_by_entry": false
+  },
+  "can_tx_after": 811590
+}

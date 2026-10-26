@@ -1,0 +1,101 @@
+{
+  "actual_tcp_mm": [
+    -522.7062402426096,
+    33.610449886427276,
+    109.08336204822713
+  ],
+  "target_grasp_tcp_mm": 55.0,
+  "remaining_descent_mm": 54.08336204822713,
+  "actual_gripper_mm": 94.907,
+  "raw_gripper_range_mm": [
+    94.87321972846985,
+    94.9999988079071
+  ],
+  "protected_gripper_range_mm": [
+    94.917,
+    94.9999988079071
+  ],
+  "grasp_confirmations_requested": 0,
+  "matched_simulation": {
+    "index": 1123,
+    "tcp_mm": [
+      -538.5968320820668,
+      15.473680377673235,
+      109.0051565637847
+    ],
+    "real_minus_sim_xy_mm": [
+      15.89059183945729,
+      18.136769508754035
+    ],
+    "orientation_difference_deg": 4.280403727935339
+  },
+  "pause_preserved": true,
+  "hardware_actions_in_diagnosis": false,
+  "completed_active_points": 720,
+  "recorded_stop_reason": "RuntimeError: ACT path fails full-robot/cup state validity; no teacher fallback",
+  "confirmed_GRASP_requests": 0,
+  "predicted_first_collision": {
+    "index": 5,
+    "valid": false,
+    "state": [
+      -0.04329005479812622,
+      0.8749485801696777,
+      -0.06908879280090333,
+      1.7456810474395752,
+      -0.0255408838391304,
+      -0.14649649262428283,
+      -1.0850634168624878,
+      0.0949999988079071
+    ],
+    "tcp_xyz_m": [
+      -0.5226725619504435,
+      0.03363461999063204,
+      0.10831595527013871
+    ],
+    "contacts": [
+      {
+        "body1": "gripper_link2",
+        "body2": "act_task_cup",
+        "depth_m": 2.9884324978735932e-05,
+        "position": [
+          -0.5138900507697116,
+          -0.01660206427345315,
+          0.09497562440124639
+        ]
+      }
+    ]
+  },
+  "collision_diagnosis_CAN_TX_unchanged": true,
+  "maximum_completed_block_arm_endpoint_error_rad": 0.0011875447615659063,
+  "last_independent_gripper_feedback": {
+    "timestamp": 1792340190.830742,
+    "flags": {
+      "voltage_too_low": false,
+      "motor_overheating": false,
+      "driver_overcurrent": false,
+      "driver_overheating": false,
+      "sensor_status": false,
+      "driver_error_status": false,
+      "homing_status": false,
+      "driver_enable_status": true
+    },
+    "mode": "width",
+    "width_m": 0.09490699999999999,
+    "force_n": 0.015
+  },
+  "read_only_restore": {
+    "mode": "receive_only",
+    "pid": 2125967,
+    "interpreter": "/usr/bin/python3",
+    "auto_enable": false,
+    "control_enabled_at_start": false,
+    "speed_percent_parameter": 0,
+    "runtime_send_blocked": true,
+    "can_tx_before": 554494,
+    "can_tx_after_start": 554494,
+    "motion_submitted_by_entry": false
+  },
+  "interpretation": "Real ACT approach was stopped by predicted finger/cup collision before grasp height; raw and protected width targets stayed open. Closure execution and real grasp-state closure policy were not reached.",
+  "simulation_to_real_comparison_limit": "Nearest simulated TCP height comparison, not causal isolation of camera, control and model effects",
+  "validation_limit": "Full MuJoCo rollout and4800pregrasp MoveIt checks covered simulated targets/states, not all real-image-conditioned future ACT outputs"
+}

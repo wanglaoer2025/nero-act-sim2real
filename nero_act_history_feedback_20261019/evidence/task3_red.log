@@ -1,0 +1,70 @@
+/home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-vz60cn_g because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+____________ test_zero_history_projection_preserves_physical_policy ____________
+
+    def test_zero_history_projection_preserves_physical_policy():
+        from executor.model import BoundedActPolicy,physical_actions
+        c,q,image,h=fixtures()
+        source=BoundedActPolicy(dict(c,numeric_history_profile='none')).eval()
+        target=BoundedActPolicy(c).eval()
+>       assert hasattr(target,'history_encoder'), 'GRU history condition missing'
+E       AssertionError: GRU history condition missing
+E       assert False
+E        +  where False = hasattr(BoundedActPolicy(\n  (model): DETRVAE(\n    (transformer): Transformer(\n      (encoder): TransformerEncoder(\n        (la...tent_out_proj): Linear(in_features=32, out_features=128, bias=True)\n    (additional_pos_embed): Embedding(2, 128)\n  )\n), 'history_encoder')
+
+tests/test_history_policy.py:25: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+number of parameters: 11.72M
+_________________________ test_second_step_trains_gru __________________________
+
+    def test_second_step_trains_gru():
+        from executor.model import BoundedActPolicy
+        c,q,image,h=fixtures();p=BoundedActPolicy(c).eval()
+>       assert hasattr(p,'history_encoder'), 'GRU history condition missing'
+E       AssertionError: GRU history condition missing
+E       assert False
+E        +  where False = hasattr(BoundedActPolicy(\n  (model): DETRVAE(\n    (transformer): Transformer(\n      (encoder): TransformerEncoder(\n        (la...tent_out_proj): Linear(in_features=32, out_features=128, bias=True)\n    (additional_pos_embed): Embedding(2, 128)\n  )\n), 'history_encoder')
+
+tests/test_history_policy.py:38: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+________________ test_prior_and_posterior_both_receive_history _________________
+
+    def test_prior_and_posterior_both_receive_history():
+        from training.train import FullTaskPolicy
+        c,q,image,h=fixtures();p=FullTaskPolicy(c)
+>       assert hasattr(p,'history_encoder'), 'GRU history condition missing'
+E       AssertionError: GRU history condition missing
+E       assert False
+E        +  where False = hasattr(FullTaskPolicy(\n  (model): DETRVAE(\n    (transformer): Transformer(\n      (encoder): TransformerEncoder(\n        (laye...tent_out_proj): Linear(in_features=32, out_features=128, bias=True)\n    (additional_pos_embed): Embedding(2, 128)\n  )\n), 'history_encoder')
+
+tests/test_history_policy.py:54: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+________________ test_legacy_and_history_profile_load_strictly _________________
+
+    def test_legacy_and_history_profile_load_strictly():
+        from executor.model import BoundedActPolicy
+        c,q,image,h=fixtures();p=BoundedActPolicy(c)
+>       assert hasattr(p,'history_encoder'), 'GRU history condition missing'
+E       AssertionError: GRU history condition missing
+E       assert False
+E        +  where False = hasattr(BoundedActPolicy(\n  (model): DETRVAE(\n    (transformer): Transformer(\n      (encoder): TransformerEncoder(\n        (la...tent_out_proj): Linear(in_features=32, out_features=128, bias=True)\n    (additional_pos_embed): Embedding(2, 128)\n  )\n), 'history_encoder')
+
+tests/test_history_policy.py:75: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_policy.py::test_zero_history_projection_preserves_physical_policy
+FAILED tests/test_history_policy.py::test_second_step_trains_gru - AssertionE...
+FAILED tests/test_history_policy.py::test_prior_and_posterior_both_receive_history
+FAILED tests/test_history_policy.py::test_legacy_and_history_profile_load_strictly
+4 failed, 1 warning in 2.65s

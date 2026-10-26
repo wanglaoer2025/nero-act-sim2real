@@ -1,0 +1,83 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+ACT Day5：device=cuda epochs=1 joint target lead=recorded action steps；trim=0 stride=10；不会连接机械臂
+number of parameters: 12.58M
+已加载初始化权重：/home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/checkpoints/policy_best_val.ckpt
+epoch 1/1 train=0.0082/0.0074 val=0.0082/0.0076 best_loss=0.0082@1 best_l1=0.0076@1
+{
+  "best_epoch": 1,
+  "best_val_loss": 0.008215149126660366,
+  "best_l1_epoch": 1,
+  "best_val_l1": 0.007582490181980225,
+  "best_metrics": {
+    "epoch": 1,
+    "train_loss": 0.008171938937850221,
+    "train_l1": 0.007444732032119375,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.008215149126660366,
+    "val_l1": 0.007582490181980225,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 6.703283386013936
+  },
+  "last_metrics": {
+    "epoch": 1,
+    "train_loss": 0.008171938937850221,
+    "train_l1": 0.007444732032119375,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.008215149126660366,
+    "val_l1": 0.007582490181980225,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 6.703283386013936
+  },
+  "best_l1_metrics": {
+    "epoch": 1,
+    "train_loss": 0.008171938937850221,
+    "train_l1": 0.007444732032119375,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.008215149126660366,
+    "val_l1": 0.007582490181980225,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 6.703283386013936
+  },
+  "train_episodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    30,
+    31,
+    32,
+    33
+  ],
+  "val_episodes": [
+    8,
+    9,
+    34,
+    35
+  ],
+  "train_windows": 3495,
+  "training_stride_steps": 10,
+  "trim_start_steps": 0,
+  "trim_start_steps_by_parent": null,
+  "trim_after_gripper_open_steps": null,
+  "grasp_focus_before_close_steps": 0,
+  "grasp_focus_repeats": 1,
+  "post_grasp_repeats": 1,
+  "init_checkpoint": "/home/user/wq/nero_act_full_pick_place_20261017/training/run4_current_source/checkpoints/policy_best_val.ckpt",
+  "normalization_stats": "/home/user/wq/nero_act_full_pick_place_20261017/training/run5_margin_smoke/training_only_stats.pkl",
+  "joint_target_lead_steps": null,
+  "elapsed_s": 7.080448288994376
+}

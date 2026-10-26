@@ -1,0 +1,106 @@
+{
+  "origin": "/home/user/wq/nero_act_transition_fix_20261018/evaluation/run17_development16/cup_+0_+0",
+  "mode": "exact_recorded_action_reconstruction_no_policy_no_hardware",
+  "source_sha256": {
+    "scene_configuration.json": "625d1c25b9084e424c849257db6e5b1d93258f87b10abcf86033719ebe80f8ef",
+    "physical_snapshots.json": "5ac556fbacf78b47e85d8fee872ac6247e2ace80374afdc9c90a1170eb40e6c1",
+    "rollout.npz": "7a2204123e81f6ce32513a0d2efac44b9733ba8769c828fe47b85b9a6fdef4f8",
+    "result.json": "6ccce4ad96774e8b5a8b06a83914c41323ba08110470a9fa74878a273d04c09b"
+  },
+  "maximum_state_reconstruction_error": 0.0,
+  "first_unexpected_contact": {
+    "step": 1663,
+    "microstep": 20,
+    "time_s": 83.19199999998752,
+    "pairs": [
+      {
+        "geom": [
+          "cup_wall_0",
+          null
+        ],
+        "body": [
+          "cup",
+          "gripper_base"
+        ],
+        "distance_m": -3.187904868932368e-07
+      }
+    ],
+    "tcp_xyz": [
+      -0.5335311738834976,
+      0.004846522628991178,
+      0.0799072194947211
+    ]
+  },
+  "final_observation": {
+    "cup_xyz": [
+      -0.5251551670281825,
+      0.015590075314913694,
+      0.04749673596433752
+    ],
+    "tcp_xyz": [
+      -0.5335323623731557,
+      0.004846571670148288,
+      0.07990944826394729
+    ],
+    "cup_upright": 0.9999999999162372,
+    "cup_speed": 0.00012936669731439008,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": true,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09504303255863059,
+    "contract_valid": true
+  },
+  "final_orientation_error_deg": 12.870006349543498,
+  "final_xy_error_mm": 13.624442729285532,
+  "final_height_error_mm": 24.90944826394729,
+  "last_raw_chunk_width_mm": [
+    92.6689224243164,
+    92.3812255859375,
+    91.9903564453125,
+    91.60820770263672,
+    91.1863784790039,
+    90.79732513427734,
+    90.38243103027344,
+    89.96357727050781,
+    89.55877685546875,
+    89.16864776611328,
+    88.68221282958984,
+    88.27352142333984,
+    87.8253402709961,
+    87.35994720458984,
+    86.90914154052734,
+    86.45291900634766,
+    85.99601745605469,
+    85.57099914550781,
+    85.17485809326172,
+    84.88220977783203
+  ],
+  "last_target_source": "ACT_arm_pregrasp_open_hold",
+  "all_evaluation": {
+    "development16": {
+      "passed": 0,
+      "total": 16,
+      "errors": {
+        "RuntimeError: Unexpected robot/environment/cup contact": 8,
+        "task_budget_exhausted": 6,
+        "ValueError: Raw prediction exceeds physical arm/gripper limits": 2
+      },
+      "grasp_events": 0,
+      "carry_events": 0
+    },
+    "independent16": {
+      "passed": 0,
+      "total": 16,
+      "errors": {
+        "task_budget_exhausted": 7,
+        "RuntimeError: Unexpected robot/environment/cup contact": 8,
+        "ValueError: Raw prediction exceeds physical arm/gripper limits": 1
+      },
+      "grasp_events": 0,
+      "carry_events": 0
+    }
+  },
+  "actual_success": false,
+  "hardware_connected": false
+}

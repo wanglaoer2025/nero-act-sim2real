@@ -1,0 +1,173 @@
+{
+  "mode": "act_response_execute",
+  "success": false,
+  "preflight_complete": true,
+  "plan_complete": true,
+  "execution_goal_submitted": false,
+  "execution_goal_accepted": false,
+  "model": "simulation ACT v5; state8/action8",
+  "sdk_connected": false,
+  "enable_or_parameter_mutation": false,
+  "raw_policy_execution": false,
+  "grasp_success_claimed": false,
+  "real_cup_test": false,
+  "scope": "bounded ACT-output direction to real feedback; not original simulation trajectory replay",
+  "ros_domain_id": "42",
+  "actual_start": [
+    0.18318975828932485,
+    -0.12651891747706895,
+    0.10004227272431497,
+    1.5707963267948966,
+    -0.023893557459802373,
+    0.281626328101805,
+    0.1310916801172941,
+    0.060118
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 318684.590015827,
+      "stamp": 1792116429.4864502,
+      "q": [
+        0.18327702475192453,
+        -0.12651891747706895,
+        0.10004227272431497,
+        1.5707963267948966,
+        -0.023893557459802373,
+        0.281626328101805,
+        0.1310916801172941,
+        0.060118
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 318684.590095797,
+      "stamp": 1792116429.489028,
+      "q": [
+        0.1832595714594046,
+        -0.12651891747706895,
+        0.10000736613927509,
+        1.5707963267948966,
+        -0.023893557459802373,
+        0.28167868797936485,
+        0.13107422682477415,
+        0.060118
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "execution_readiness_checks_passed": true,
+  "camera_to_state_read_host_gap_s": 0.2267674999893643,
+  "input_pairing_scope": "host times and stationary-state check; not hardware synchronization",
+  "projection": {
+    "raw_action_index": 9,
+    "raw_displacement_rad": [
+      0.3330504538545997,
+      -0.3938169952273988,
+      2.0848121425121318,
+      0.14003483851882415,
+      0.2045711502141664,
+      -0.8055394675613619,
+      0.9350247720998079
+    ],
+    "projection_scale": 0.002398297620223547,
+    "maximum_projected_displacement_rad": 0.005,
+    "gripper_prediction_not_executed": true,
+    "raw_policy_execution": false,
+    "scope": "one bounded diagnostic displacement, not replay of the simulation trajectory"
+  },
+  "outside_demonstration_joints": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint6",
+    "joint7"
+  ],
+  "checkpoint_sha256": "f0bee48f21f019165055ddbe54cf3f3cc51e1704c6ff66cb9bbd96bef083cad3",
+  "target_rad": [
+    0.18404087227777854,
+    -0.1274634078395264,
+    0.10498991284675514,
+    1.5711321720148645,
+    -0.023402934957077345,
+    0.2797991244688761,
+    0.13333414780307115
+  ],
+  "duration_s": 4.0,
+  "checked_states": 12,
+  "planned_monotonic_s": 318688.926608051,
+  "error": "RuntimeError: confirmation expired; no goal submitted"
+}

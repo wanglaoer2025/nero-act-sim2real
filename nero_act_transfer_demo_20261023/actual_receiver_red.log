@@ -1,0 +1,21 @@
+test_actual_receiver_never_acks_reused_pre_command_feedback (test_review_fixes.ReviewFixTests.test_actual_receiver_never_acks_reused_pre_command_feedback) ... FAIL
+
+======================================================================
+FAIL: test_actual_receiver_never_acks_reused_pre_command_feedback (test_review_fixes.ReviewFixTests.test_actual_receiver_never_acks_reused_pre_command_feedback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_transfer_demo_20261023/test_review_fixes.py", line 79, in test_actual_receiver_never_acks_reused_pre_command_feedback
+    self.assertEqual(acks,[],'Frozen pre-send feedback must not advance the actual ROS receiver')
+AssertionError: Lists differ: [{'data': 3}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'data': 3}
+
+- [{'data': 3}]
++ [] : Frozen pre-send feedback must not advance the actual ROS receiver
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+FAILED (failures=1)

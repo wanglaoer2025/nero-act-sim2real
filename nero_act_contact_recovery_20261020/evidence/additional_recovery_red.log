@@ -1,0 +1,24 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+____ test_additional_failure_must_be_explicitly_declared_and_training_only _____
+
+    def test_additional_failure_must_be_explicitly_declared_and_training_only():
+        from training.history_recoveries import validate_history_manifest
+        data,split=extended()
+>       groups=validate_history_manifest(data,split,check_files=False,additional_failure_ids=[2018])
+E       TypeError: validate_history_manifest() got an unexpected keyword argument 'additional_failure_ids'
+
+tests/test_additional_contact_recovery.py:16: TypeError
+_ test_new_failure_cannot_duplicate_a_context_or_use_failed_actions_as_labels __
+
+    def test_new_failure_cannot_duplicate_a_context_or_use_failed_actions_as_labels():
+        from training.history_recoveries import validate_history_manifest
+        data,split=extended();data['episodes'][-1]['context_sha256']='context'
+>       with pytest.raises(ValueError):validate_history_manifest(data,split,check_files=False,additional_failure_ids=[2018])
+E       TypeError: validate_history_manifest() got an unexpected keyword argument 'additional_failure_ids'
+
+tests/test_additional_contact_recovery.py:26: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_additional_contact_recovery.py::test_additional_failure_must_be_explicitly_declared_and_training_only
+FAILED tests/test_additional_contact_recovery.py::test_new_failure_cannot_duplicate_a_context_or_use_failed_actions_as_labels
+2 failed in 0.07s

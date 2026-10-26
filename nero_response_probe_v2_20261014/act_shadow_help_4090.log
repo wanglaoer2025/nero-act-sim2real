@@ -1,0 +1,24 @@
+usage: run_act_shadow.py [-h] --checkpoint CHECKPOINT [--stats STATS]
+                         --capture-npz CAPTURE_NPZ --safety-summary
+                         SAFETY_SUMMARY --output OUTPUT
+                         [--device {auto,cpu,cuda}]
+                         [--sample-stride SAMPLE_STRIDE]
+                         [--task-coordinates-mm TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM]
+
+Infer from saved upright RGB/named feedback; no robot, camera or CAN
+connection. python -m src.act.run_act_shadow --checkpoint ... --capture-npz
+... --safety-summary ... --output ... [--device auto] This is a recorded-
+observation audit, never a live control loop.
+
+options:
+  -h, --help            show this help message and exit
+  --checkpoint CHECKPOINT
+  --stats STATS
+  --capture-npz CAPTURE_NPZ
+  --safety-summary SAFETY_SUMMARY
+  --output OUTPUT
+  --device {auto,cpu,cuda}
+  --sample-stride SAMPLE_STRIDE
+  --task-coordinates-mm TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM TASK_COORDINATES_MM
+                        Measured base XYZ of source and destination cup
+                        centres, for a 14-D model only

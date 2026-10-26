@@ -1,0 +1,133 @@
+{
+  "collected_at_utc": "2026-10-13T11:23:28.233017+00:00",
+  "scope": "Read-only 4090 real-machine inventory; no motion or mode-switch commands sent",
+  "user_confirmed": {
+    "simulation": "MuJoCo on another computer",
+    "real_camera": "fixed ZED only"
+  },
+  "project_paths": {
+    "ros_workspace": "/home/user/projects/nero_ros2_ws",
+    "ros_driver_source": "/home/user/projects/nero_ros2_ws/src/agx_arm_ros/src/agx_arm_ctrl",
+    "existing_act_project": "/home/user/projects/nero",
+    "local_mujoco_reference": "/home/user/csy/mujoco_nero"
+  },
+  "observed": {
+    "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB",
+    "feedback_topic": "/feedback/joint_states",
+    "feedback_joint_order": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "gripper_feedback_topic": "/feedback/gripper_status",
+    "driver_joint_command_subscription": "/control/gated_joint_states",
+    "arm_action": "/arm_controller/follow_joint_trajectory",
+    "gripper_action": "/gripper_controller/follow_joint_trajectory",
+    "ros_control_hardware_plugin": "mock_components/GenericSystem",
+    "camera_points_publisher_count": 0,
+    "live_ros_tcp_offset_m_rad": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "local_tcp_file": "/home/user/projects/nero/config/tcp_offset.json",
+    "local_tcp_method": "manual_measurement; approximate=true",
+    "local_tcp_translation_m": [
+      0.135,
+      0,
+      0
+    ],
+    "camera_calibration_file": "/home/user/projects/nero/config/camera_to_base.json",
+    "calibration_current_mount_validity": "unverified",
+    "camera_capture": {
+      "captured_at_utc": "2026-10-13T11:22:44.895988+00:00",
+      "source": "ZED SDK left camera",
+      "requested_resolution": "HD720",
+      "requested_fps": 30,
+      "status": "captured",
+      "model": "ZED 2i",
+      "native_width": 1280,
+      "native_height": 720,
+      "fps": 30.0,
+      "raw_rotation_degrees": 0,
+      "raw_image": "zed_left_raw.png"
+    },
+    "launch_processes": [
+      {
+        "pid": 38353,
+        "argv": [
+          "/usr/bin/python3",
+          "/opt/ros/jazzy/bin/ros2",
+          "launch",
+          "agx_arm_ctrl",
+          "start_single_agx_arm_moveit.launch.py",
+          "can_port:=can0",
+          "arm_type:=nero",
+          "effector_type:=agx_gripper",
+          "gripper_default_effort:=0.8",
+          "fast_mode:=false",
+          "controller_rate_hz:=200",
+          "speed_percent:=75",
+          "auto_control_gate:=true",
+          "use_rviz:=false"
+        ]
+      }
+    ]
+  },
+  "baseline_interface_to_match_on_simulator": {
+    "state": [
+      "joint1_rad",
+      "joint2_rad",
+      "joint3_rad",
+      "joint4_rad",
+      "joint5_rad",
+      "joint6_rad",
+      "joint7_rad",
+      "gripper_total_width_m"
+    ],
+    "action": "absolute joint-position targets and total gripper opening width; dimensions=8",
+    "camera_names": [
+      "camera_0"
+    ],
+    "image_format": "RGB uint8",
+    "existing_real_camera_preprocessing": {
+      "sdk": "ZED left image",
+      "requested_sensor_mode": "HD720 30 fps",
+      "rotation_degrees": 180,
+      "capture_width": 640,
+      "model_image_size": "must match exported training configuration"
+    },
+    "policy_loop_frequency_hz": 20,
+    "ros_driver_configured_pub_rate_hz": 200,
+    "policy_loop_frequency_status": "existing code/config value; not measured in this session",
+    "mujoco_gripper_mapping": "local reference converts total opening width to controlled finger displacement = width/2; remote model must be checked",
+    "hdf5_keys": {
+      "observations/qpos": "(T,7)",
+      "observations/gripper_state": "(T,1)",
+      "observations/images/camera_0": "(T,H,W,3)",
+      "action": "(T,8)",
+      "timestamp": "(T,)"
+    }
+  },
+  "execution_paths": {
+    "existing_act": "src/act/run_act_real.py -> NeroRobotWrapper -> pyAgxArm -> CAN",
+    "existing_moveit": "trajectory actions -> /control/joint_states -> control_gate -> /control/gated_joint_states -> ROS driver -> CAN",
+    "constraint": "Only one process may control CAN at a time. Do not run direct SDK ACT control concurrently with the ROS CAN driver.",
+    "current_collection": "Graph, parameters and feedback only; ACT deployment not tested"
+  },
+  "still_needed": [
+    "Remote MuJoCo project directory and relevant scene/camera/task/data-export/training configs",
+    "A complete simulated cup pick/place demonstration (the local scripted arm motion is not a cup task demonstration)",
+    "Actual cup diameter, height and empty mass; pick/place regions; table/base placement",
+    "Check current camera mount against calibration and resolve TCP-frame definitions",
+    "Nero-specific checkpoint with matching training config and normalization statistics, when training is ready"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "complete": true,
+  "results": [
+    {
+      "name": "measured_start",
+      "hypothetical_preparation": false,
+      "preparation_performed_on_robot": false,
+      "full_task_passed": false,
+      "initial_state": {
+        "qpos_rad": [
+          0.1832420974969864,
+          -0.12653636932373047,
+          0.10002481937408447,
+          1.570796251296997,
+          -0.023893557488918304,
+          0.2816634178161621,
+          0.1310829520225525
+        ],
+        "gripper_total_width_m": 0.09942000359296799
+      },
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 0.0,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": null,
+        "scenario": {
+          "name": "measured_start",
+          "seed": 191899,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false
+        },
+        "frames": 0,
+        "active_policy_points": 0,
+        "queries": 0,
+        "error": "ValueError: Actual accepted prefix receipt required",
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 1,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 0.25210928299929947,
+        "contact_arm_hold_points": 0,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": false,
+        "inference_latency_p95_ms": null,
+        "guard_diagnostic": null
+      }
+    },
+    {
+      "name": "hypothetical_95mm_start",
+      "hypothetical_preparation": true,
+      "preparation_performed_on_robot": false,
+      "full_task_passed": false,
+      "initial_state": {
+        "qpos_rad": [
+          0.1832420974969864,
+          -0.12653636932373047,
+          0.10002481937408447,
+          1.570796251296997,
+          -0.023893557488918304,
+          0.2816634178161621,
+          0.1310829520225525
+        ],
+        "gripper_total_width_m": 0.095
+      },
+      "result": {
+        "success": false,
+        "physical_success": false,
+        "max_lift_m": 0.0,
+        "maximum_horizontal_transfer_m": 1.8632494034986745e-08,
+        "stable_released_frames": 0,
+        "lift_contact_frames": 0,
+        "unexpected_arm_cup_contact_frames": 0,
+        "execution_contract_failures": 0,
+        "premature_release_before_support": false,
+        "constraint_attachment_used": false,
+        "last_observation": {
+          "cup_xyz": [
+            -0.516767832875731,
+            0.05459807093864341,
+            0.047496687816057405
+          ],
+          "tcp_xyz": [
+            0.061551784090974525,
+            0.5148010845613482,
+            0.6478579316492543
+          ],
+          "cup_upright": 0.9999999999999808,
+          "cup_speed": 4.079218844032107e-07,
+          "bilateral": false,
+          "supported": true,
+          "unexpected_contact": false,
+          "unexpected_robot_contact": false,
+          "gripper_width": 0.09500000958361547,
+          "contract_valid": true
+        },
+        "scenario": {
+          "name": "hypothetical_95mm_start",
+          "seed": 191899,
+          "query_stride": 2,
+          "servo_delay_steps": 0,
+          "observation_age_s": 0.05,
+          "jitter": false,
+          "force": false
+        },
+        "frames": 3904,
+        "active_policy_points": 3900,
+        "queries": 1950,
+        "error": null,
+        "teacher_free": true,
+        "real_hardware_tested": false,
+        "supervision_failures": 0,
+        "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+        "simulated_events": [],
+        "post_completion_freeze_step": null,
+        "feedback_hold_points": 0,
+        "runtime_s": 114.50102415902074,
+        "contact_arm_hold_points": 0,
+        "observation_schema": "visual_relative_base_v1",
+        "maximum_ACT_prefix_points": 2,
+        "geometry_truth_policy_input": false,
+        "nominal_geometry_only": true,
+        "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+        "attachment_airborne_transform_frozen": false,
+        "inference_latency_p95_ms": 6.139816463110036,
+        "guard_diagnostic": null
+      }
+    }
+  ],
+  "optimizer_updates": 0,
+  "source_sha256": {
+    "/home/user/wq/nero_act_new_calibration_20261023/evaluate_after_return.py": "62631f59c9e1a8dbe5f441fe8728ff79a33b09750997e693376548435490a34a",
+    "/home/user/wq/nero_act_new_calibration_20261023/scene_relocalized_after_return.json": "22f6894c41725452f8c9fca27c65c3b439f575b2ed9e47eb628968d676dff4b1",
+    "/home/user/wq/nero_act_new_calibration_20261023/inputs/candidate_camera_to_base.json": "b9874ae76258d6e804d40a3e6eca947c63ea0d33dacdd48335817b74ccbc4cb6",
+    "/home/user/wq/nero_act_new_calibration_20261023/scene_capture_after_return/report.json": "4d277fea1498f0e01dfa7243bd6ae8829010ed859074d5b071fd8c66428b7e1d",
+    "/home/user/wq/nero_act_new_calibration_20261023/scene_capture_after_return/feedback.json": "7e7a6dcf0366471fcea16837801c0b7aea072b66d1847d8c8c46e1840441b67e",
+    "/home/user/wq/nero_act_new_calibration_20261023/scene_capture_after_return/workspace_sensor_localization.json": "65b03ecc1e61ca5135d6beae585f0ff554c63762c4ee4e8a82b45b1ed61f94be",
+    "/home/user/wq/nero_act_new_calibration_20261023/scene_capture_after_return/upright.png": "ae40e99a6da6c207d7c1becfe21c0576790d70eb40f546513269743fc824dce8",
+    "/home/user/wq/nero_act_preservation_scope_20261023/training/pilot_A/policy_last.ckpt": "9dd36d386903e3a65198d049a9244388e819024357e9dc12d5d05a1ae575c9a3"
+  },
+  "actual_objects_relocalized": true,
+  "actual_pose_read": true,
+  "live_shadow": false,
+  "real_contact_geometry_qualified": false,
+  "hardware_commands_sent": false,
+  "hardware_deployment_allowed": false
+}

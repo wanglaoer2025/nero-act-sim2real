@@ -1,0 +1,89 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+___________________ test_parent_recovery_cannot_cross_split ____________________
+
+    def test_parent_recovery_cannot_cross_split():
+>       m=api('training.history_recoveries');records,split=manifest()
+
+tests/test_history_data.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'training.history_recoveries'
+
+    def api(name):
+>       assert importlib.util.find_spec(name), 'History data interface missing: '+name
+E       AssertionError: History data interface missing: training.history_recoveries
+E       assert None
+E        +  where None = <function find_spec at 0x745d385ac5e0>('training.history_recoveries')
+E        +    where <function find_spec at 0x745d385ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_data.py:14: AssertionError
+__________________ test_failed_actions_are_context_not_labels __________________
+
+    def test_failed_actions_are_context_not_labels():
+>       m=api('training.history_recoveries');records,split=manifest()
+
+tests/test_history_data.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'training.history_recoveries'
+
+    def api(name):
+>       assert importlib.util.find_spec(name), 'History data interface missing: '+name
+E       AssertionError: History data interface missing: training.history_recoveries
+E       assert None
+E        +  where None = <function find_spec at 0x745d385ac5e0>('training.history_recoveries')
+E        +    where <function find_spec at 0x745d385ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_data.py:14: AssertionError
+________________ test_sparse_images_are_rerendered_not_repeated ________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x745d30ec1fd0>
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-112/test_sparse_images_are_rerende0')
+
+    def test_sparse_images_are_rerendered_not_repeated(monkeypatch,tmp_path):
+>       m=api('training.history_data')
+
+tests/test_history_data.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'training.history_data'
+
+    def api(name):
+>       assert importlib.util.find_spec(name), 'History data interface missing: '+name
+E       AssertionError: History data interface missing: training.history_data
+E       assert None
+E        +  where None = <function find_spec at 0x745d385ac5e0>('training.history_data')
+E        +    where <function find_spec at 0x745d385ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_data.py:14: AssertionError
+_________________ test_statistics_use_only_37_training_groups __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-112/test_statistics_use_only_37_tr0')
+
+    def test_statistics_use_only_37_training_groups(tmp_path):
+>       m=api('training.history_data')
+
+tests/test_history_data.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'training.history_data'
+
+    def api(name):
+>       assert importlib.util.find_spec(name), 'History data interface missing: '+name
+E       AssertionError: History data interface missing: training.history_data
+E       assert None
+E        +  where None = <function find_spec at 0x745d385ac5e0>('training.history_data')
+E        +    where <function find_spec at 0x745d385ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_data.py:14: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_data.py::test_parent_recovery_cannot_cross_split - ...
+FAILED tests/test_history_data.py::test_failed_actions_are_context_not_labels
+FAILED tests/test_history_data.py::test_sparse_images_are_rerendered_not_repeated
+FAILED tests/test_history_data.py::test_statistics_use_only_37_training_groups
+4 failed in 0.08s

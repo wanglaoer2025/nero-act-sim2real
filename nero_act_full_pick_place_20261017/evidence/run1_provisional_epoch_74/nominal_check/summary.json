@@ -1,0 +1,73 @@
+{
+  "checkpoint_sha256": "fe9533180b37a284ad158ff6be874b2394b5d0c0c640671b16ad102638b0d66f",
+  "selected_epoch": 74,
+  "scenarios": [
+    {
+      "query_stride": 10,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "nominal",
+      "seed": 90000
+    }
+  ],
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "reach_deadline_steps": 3200,
+  "post_completion_hold_steps": 100,
+  "observation_policy": "fresh rendered RGB and measured8D state per query",
+  "hardware_deployment_allowed": false,
+  "results": [
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.1783830436771568,
+      "maximum_horizontal_transfer_m": 0.16945563817813328,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 604,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5227921434800535,
+          -0.16093392396627398,
+          0.04749668782061144
+        ],
+        "tcp_xyz": [
+          -0.5211023384597337,
+          -0.18434766608448763,
+          0.23207808490329093
+        ],
+        "cup_upright": 0.9999999999999849,
+        "cup_speed": 1.820118901733348e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999909978475,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 10,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "nominal",
+        "seed": 90000
+      },
+      "frames": 3200,
+      "queries": 320,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 32.393033647036646
+    }
+  ],
+  "complete": true,
+  "passed": 0,
+  "total": 1
+}

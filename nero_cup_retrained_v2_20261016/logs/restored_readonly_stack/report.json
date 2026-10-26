@@ -1,0 +1,299 @@
+{
+  "mode": "restored_readonly_stack",
+  "motion_goal_submitted": false,
+  "gripper_goal_submitted": false,
+  "control_gate_started": false,
+  "can_tx_packets_before": 88420,
+  "actual_start": [
+    0.18324211816688468,
+    -0.1265363707695889,
+    0.10000736613927509,
+    1.5707788735023767,
+    -0.023893557459802373,
+    0.28166123468684495,
+    0.13102186694721432,
+    2.9999999999999997e-05
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 0,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": []
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 358443.988215727,
+      "stamp": 1792156188.8877387,
+      "q": [
+        0.18324211816688468,
+        -0.1265363707695889,
+        0.10000736613927509,
+        1.5707788735023767,
+        -0.023893557459802373,
+        0.28166123468684495,
+        0.13114403999485394,
+        2.9999999999999997e-05
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 358443.988258133,
+      "stamp": 1792156188.8910565,
+      "q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "execution_readiness_checks_passed": false,
+  "execution_blocker": "Existing ROS driver speed_percent must be in (0,5]; script does not change it",
+  "hardware_components_response": {
+    "component": [
+      {
+        "name": "FakeSystem",
+        "type": "system",
+        "is_async": false,
+        "rw_rate": 200,
+        "class_type": "",
+        "plugin_name": "mock_components/GenericSystem",
+        "state": {
+          "id": 3,
+          "label": "active"
+        },
+        "command_interfaces": [
+          {
+            "name": "joint7/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "gripper/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint6/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint5/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint4/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint3/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint2/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint1/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          }
+        ],
+        "state_interfaces": [
+          {
+            "name": "gripper/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint1/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint7/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint7/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint3/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint6/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint4/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint1/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint2/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint3/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint4/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint5/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint2/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint5/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "gripper/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint6/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          }
+        ]
+      }
+    ]
+  },
+  "actual_after": [
+    0.18324211816688468,
+    -0.1265363707695889,
+    0.10000736613927509,
+    1.5707788735023767,
+    -0.02398082392240209,
+    0.28166123468684495,
+    0.13114403999485394,
+    2.9999999999999997e-05
+  ],
+  "active_goals": {},
+  "gated_publisher_count": 0,
+  "driver_raw_control_subscriber_count": 0,
+  "can_tx_packets_after": 88420
+}

@@ -1,0 +1,17 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_new_handeye_policy_repair_20261023/prepare.py", line 70, in <module>
+    main()
+  File "/home/user/wq/nero_act_new_handeye_policy_repair_20261023/prepare.py", line 36, in main
+    result = collect_episode(config,physical)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_grouped_gripper_20261021/simulation/collect.py", line 80, in collect_episode
+    output.with_suffix('.result.json').write_text(json.dumps(result, indent=2))
+  File "/usr/lib/python3.12/pathlib.py", line 1049, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_new_handeye_policy_repair_20261023/data/physical/episode_9000.result.json'

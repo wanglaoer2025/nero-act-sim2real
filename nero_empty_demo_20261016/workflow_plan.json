@@ -1,0 +1,69 @@
+{
+  "scope": "One complete physical noncontact air demonstration, preparation then full bounded sequence",
+  "user_requested_empty_complete_demo": true,
+  "cup_lift_required": false,
+  "stages": [
+    {
+      "name": "PREPARE_AIR",
+      "description": "Slow independent high-air preparation to exact frozen air-model start, empty gripper opening only",
+      "duration_s": 22.55,
+      "actual_start_at_preview": [
+        0.18812904007246878,
+        -0.12655382406210886,
+        0.10002481943179502,
+        1.5707090603322968,
+        -0.02368411794956305,
+        0.28166123468684495,
+        0.13110913340981403,
+        3.1e-05
+      ],
+      "target": [
+        0.18481291449367956,
+        -0.12836896648418294,
+        0.10992083629060287,
+        1.5715293650807343,
+        -0.022689280275926284,
+        0.2777516971623776,
+        0.13554226970987962,
+        0.060118
+      ],
+      "max_arm_delta_rad": 0.009896016858807852,
+      "trajectory_points_checked": 452,
+      "replan_and_recheck_before_send": true
+    },
+    {
+      "name": "ACT_AIR",
+      "description": "Existing full arm/gripper camera-feedback sequence with endpoint acceptance",
+      "entry": "/home/user/wq/nero_aligned_air_sequence_20261016_onsite/run.sh",
+      "seconds": 18,
+      "acceptance": [
+        "sequence_completion_checked=true",
+        "sequence_completed=true",
+        "real feedback endpoint and gripper span pass"
+      ],
+      "current_camera_future_start_preview_passed": true,
+      "real_camera_and_real_state_refreshed_after_preparation": true
+    }
+  ],
+  "driver_speed_percent": 5,
+  "gripper_force_n": 1,
+  "sdk_observers_receive_only": true,
+  "automatic_enable_disable_reset_or_return": false,
+  "limits_or_freshness_thresholds_modified": false,
+  "normal_stop": "Hold final target and restore receive-only ROS driver",
+  "failure_stop": "Cancel active trajectory, stop new sends; no automatic retry or return",
+  "nominal_clearance_report": "nominal_clearance.json",
+  "physical_health_report": "physical_health_preview.json",
+  "tests": {
+    "new_preparation_checks": 4,
+    "existing_runtime_checks_in_model_environment": 78
+  },
+  "state": "COMPLETED_AND_PHYSICALLY_VERIFIED",
+  "approval_requirement_source": "/home/user/zyh/AGENTS.md",
+  "required_exact_phrases": [
+    "PREPARE_AIR",
+    "ACT_AIR"
+  ],
+  "acceptance": "acceptance.json",
+  "completed_at": "2026-10-16T22:22:46.835910+08:00"
+}

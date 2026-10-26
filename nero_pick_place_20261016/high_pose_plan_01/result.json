@@ -1,0 +1,73 @@
+{
+  "mode": "plan",
+  "motion_sent": false,
+  "success": true,
+  "task_success": "unreviewed",
+  "confirmations": [],
+  "stages": [
+    {
+      "name": "pregrasp_high_pose",
+      "points": 8,
+      "duration_s": 0.635016581
+    },
+    {
+      "name": "grasp_pose",
+      "points": 121,
+      "duration_s": 11.990428852
+    },
+    {
+      "name": "lift_pose",
+      "points": 121,
+      "duration_s": 11.991884231
+    },
+    {
+      "name": "carry_pose",
+      "points": 27,
+      "duration_s": 2.597940294
+    },
+    {
+      "name": "place_pose",
+      "points": 114,
+      "duration_s": 11.232096939
+    },
+    {
+      "name": "retreat_pose",
+      "points": 122,
+      "duration_s": 12.071476492
+    }
+  ],
+  "tcp_source": "/home/user/wq/nero_pick_place_20261016/model_tcp_candidate.json",
+  "model_tcp_comparison_only": true,
+  "actual_start": {
+    "joint1": 0.07881906902006393,
+    "joint2": 0.5197939578289512,
+    "joint3": -0.13184217169565166,
+    "joint4": 1.6543452380878652,
+    "joint5": 0.03373721444105039,
+    "joint6": -0.06649704450098395,
+    "joint7": -0.5996776776927317,
+    "gripper": 0.09486499999999999
+  },
+  "cup_sweep_checks": [
+    {
+      "stage": "lift_pose",
+      "fk_samples": 744,
+      "minimum_cup_bottom_mm": -1.430282420278317e-07
+    },
+    {
+      "stage": "carry_pose",
+      "fk_samples": 442,
+      "minimum_cup_bottom_mm": 199.9999999845929
+    },
+    {
+      "stage": "place_pose",
+      "fk_samples": 705,
+      "minimum_cup_bottom_mm": -1.6988475209922527e-07
+    }
+  ],
+  "retreat_start_collision_check": {
+    "valid": true,
+    "contacts": []
+  },
+  "finished_wall_s": 1792166081.9185407
+}

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_observation_repair_20261023/capture_native_frames.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_act_observation_repair_20261023/capture_native_frames.py", line 30, in main
+    with mujoco.Renderer(model,height=720,width=1280) as renderer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_command_increment_20261021/.venv/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py", line 60, in __init__
+    raise ValueError(f"""
+ValueError: Image width 1280 > framebuffer width 640. Either reduce the image
+width or specify a larger offscreen framebuffer in the model XML using the
+clause:
+<visual>
+  <global offwidth="my_width"/>
+</visual>

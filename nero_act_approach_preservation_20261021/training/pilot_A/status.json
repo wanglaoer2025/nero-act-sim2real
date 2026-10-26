@@ -1,0 +1,47 @@
+{
+  "stage": "evaluation_complete_task_failed",
+  "complete": true,
+  "training_budget": {
+    "kind": "updates",
+    "limit": 1000
+  },
+  "actual_updates": 1000,
+  "actual_epochs": 0,
+  "selected_checkpoint": "policy_last.ckpt",
+  "last_metrics": {
+    "epoch": 0,
+    "actual_updates": 1000,
+    "train": {
+      "loss": 18.37446543926932,
+      "l1": 0.008343955585733056,
+      "kl": 0.0,
+      "gripper_bce": 0.0,
+      "prefix_margin": 0.0,
+      "pose_position": 0.13559895901009442,
+      "pose_rotation": 0.165366805203259,
+      "prior_gripper": 0.02620331327104941,
+      "deployed_prefix": 0.8003685538768768,
+      "approach_preservation": 18.342938483223318
+    },
+    "val": {
+      "loss": 0.03411301158841262,
+      "l1": 0.007667684762996661,
+      "kl": 0.0,
+      "gripper_bce": 0.0,
+      "prefix_margin": 0.0,
+      "pose_position": 0.138364608096837,
+      "pose_rotation": 0.19343081893325395,
+      "prior_gripper": 0.017044657111526664,
+      "deployed_prefix": 0.9770332121647748
+    },
+    "elapsed_s": 94.77421377699648
+  },
+  "best_zero_latent_val_loss": 0.03411301158841262,
+  "elapsed_s": 101.23020610999083,
+  "hardware_deployment_allowed": false,
+  "evaluation_complete": true,
+  "nominal_full_task_passed": false,
+  "approach_preserved": false,
+  "mechanism_passed": 4,
+  "mechanism_total": 6
+}

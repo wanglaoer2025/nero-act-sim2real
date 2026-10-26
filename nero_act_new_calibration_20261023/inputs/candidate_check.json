@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "status": "candidate_live_lock_passed_independent_position_pending",
+  "motion_authorized": false,
+  "production_code_changed": false,
+  "active_configs_modified": false,
+  "initial_live_capture_before_scene_restoration": {
+    "motion_authorized": false,
+    "candidate_calibration": "artifacts/methylene_blue_recalibration_20261023.KRmPgj/camera_to_base.candidate.json",
+    "active_configs_modified": false,
+    "frames_processed": 120,
+    "duration_s": 8.346900400996674,
+    "scene_locked": false,
+    "exit_reason": "bounded_diagnostic_capture_ended",
+    "robot_sdk_modules": []
+  },
+  "initial_live_scene_observation": "Cups clustered and overlapping at the far left; marker remained on the arm; the detector returned two boxes. Operator then explicitly confirmed restoring the four-cup scene.",
+  "live_verification_after_operator_restored_scene": {
+    "operator_confirmation": "摆好了",
+    "capture_directory": "rearranged.yaHVH7",
+    "scene_file": "rearranged.yaHVH7/capture/scene-20261023-162940-756919.json",
+    "log_file": "rearranged.yaHVH7/capture.log",
+    "diagnostic_file": "rearranged.yaHVH7/capture/diagnostics/localization-scs67b_a/localization.json",
+    "overlay_file": "rearranged.yaHVH7/capture/diagnostics/localization-scs67b_a/overlay.png",
+    "scene_locked": true,
+    "capture_process_exit_code": 0,
+    "raw_sample_frame_count": 15,
+    "synthetic": false,
+    "scene_validation_errors": [],
+    "elapsed_process_seconds": 4.7695414909976535,
+    "max_position_spread_mm": 0.776,
+    "fit_rmse_px_left_to_right_multiframe_summary": [1.9721288621343231, 7.245012925945578, 6.663868163984799, 2.3293927399999914],
+    "existing_gates_unchanged": {"stable_frames": 15, "max_spread_mm": 5.0, "max_fit_rmse_px": 15.0},
+    "robot_sdk_modules": [],
+    "camera_released": true,
+    "independent_base_position_measured": false,
+    "independent_gripper_position_acceptance": false
+  },
+  "same_current_frame_controlled_comparison": {
+    "source": "rearranged.yaHVH7/capture/diagnostics/localization-scs67b_a/localization.json",
+    "changed_variable": "transform_base_from_camera_only",
+    "old_calibration_fit_rmse_px_left_to_right": [15.218850942334145, 10.352118449276903, 14.912141163669215, 17.63449030338451],
+    "candidate_fit_rmse_px_left_to_right": [1.77455464897873, 7.194896443746277, 6.611417716989796, 2.0893068784536784],
+    "note": "Single-frame metrics are distinct from the captured 15-frame scene summary. Neither is an independently measured position error."
+  },
+  "offline_verification": {
+    "test_auto_hand_eye": {"passed": true, "test_count": 8},
+    "test_calibration_validation": {"passed": true, "test_count": 17},
+    "old_diagnostic_replay_reproduced_recorded_residuals": true,
+    "saved_scene_reparsed_and_validated": true
+  },
+  "offline_controlled_comparison": {
+    "source_diagnostic": "artifacts/methylene_blue_live_check_20261023.VuJpX7/capture/diagnostics/localization-sfixe7k1/localization.json",
+    "source_frame": "artifacts/methylene_blue_live_check_20261023.VuJpX7/capture/diagnostics/localization-sfixe7k1/frame.png",
+    "source_captured_at": "2026-10-23T15:07:54.811+08:00",
+    "candidate_file": "artifacts/methylene_blue_recalibration_20261023.KRmPgj/camera_to_base.candidate.json",
+    "candidate_sha256": "b9874ae76258d6e804d40a3e6eca947c63ea0d33dacdd48335817b74ccbc4cb6",
+    "changed_variable": "transform_base_from_camera_only",
+    "fixed_table_z_base_mm": 0.0,
+    "fixed_beaker_height_mm": 95.0,
+    "fixed_beaker_diameter_mm": 70.0,
+    "fixed_camera_matrix": [
+      [
+        527.3888549804688,
+        0.0,
+        647.1690063476562
+      ],
+      [
+        0.0,
+        527.3888549804688,
+        359.83807373046875
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "cases": {
+      "recorded_old": {
+        "fit_rmse_px_left_to_right": [
+          13.891857098067716,
+          15.711747465326965,
+          15.822499674653752,
+          19.422303050699863
+        ],
+        "all_below_unchanged_15_px_gate": false,
+        "independent_position_acceptance": false
+      },
+      "new_candidate": {
+        "fit_rmse_px_left_to_right": [
+          3.346383218287802,
+          4.108577340907159,
+          5.31798979664219,
+          1.2179108325259802
+        ],
+        "all_below_unchanged_15_px_gate": true,
+        "independent_position_acceptance": false
+      }
+    },
+    "interpretation": "Candidate substantially improves cylinder/image consistency on the saved frame. This supports calibration mismatch, but does not independently establish base coordinates or prove whether camera, base, controller reference or another physical condition changed.",
+    "comparison_image": "artifacts/methylene_blue_candidate_check_20261023.b4fvaC/comparison.png"
+  },
+  "next_required_step": "Validate independent base positions and reassess old empirical grasp offsets with the new calibration before adopting it or authorizing hovering/gripping. No ROS/CAN/arm commands were sent in this verification turn."
+}

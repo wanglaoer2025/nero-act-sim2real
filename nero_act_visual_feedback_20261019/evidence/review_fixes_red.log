@@ -1,0 +1,69 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+________ test_zero_joint_lead_cannot_replace_submitted_labels_with_qpos ________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-51/test_zero_joint_lead_cannot_re0')
+
+    def test_zero_joint_lead_cannot_replace_submitted_labels_with_qpos(tmp_path):
+        m=api();path=episode(tmp_path/'episode_0.hdf5');c=config()
+>       with pytest.raises(ValueError,match='lead|aligned'):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_visual_dataset.py:81: Failed
+_________ test_past_action_labels_cannot_be_used_as_future_supervision _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-51/test_past_action_labels_cannot0')
+
+    def test_past_action_labels_cannot_be_used_as_future_supervision(tmp_path):
+        m=api();path=episode(tmp_path/'episode_0.hdf5')
+        with h5py.File(path,'r+') as f:f['action_time_monotonic_s'][:]-=10
+>       with pytest.raises(ValueError,match='future|label|observation'):m.audit_visual_episode(path)
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_visual_dataset.py:89: Failed
+______ test_new_frame_id_cannot_hide_exposure_before_previous_submission _______
+
+    def test_new_frame_id_cannot_hide_exposure_before_previous_submission():
+        core,raw,frame,geometry,paired=controller()
+        packet=core.prepare(raw,frame,geometry,paired,now_s=10.02)
+        core.commit(packet['request_id'],packet['rows'],sent_s=10.021,ack_s=10.025,accepted=True)
+        frame.frame_id=2;frame.exposure_monotonic_s=10.01;frame.received_monotonic_s=10.03
+        geometry.frame_id=2;paired.update(frame_id=2,monotonic_s=10.014,skew_s=.004)
+>       with pytest.raises(ValueError,match='submission|fresh'):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_visual_runtime.py:83: Failed
+____________ test_observer_refuses_wrong_camera_or_intrinsics_hash _____________
+
+    def test_observer_refuses_wrong_camera_or_intrinsics_hash():
+        m=api()
+        from vision.synchronization import CameraFrame
+        frame=CameraFrame(1,np.zeros((360,640,3),np.uint8),10.,10.01,'wrong-camera-and-K',True)
+        observation=m.VisualObserver(calibration(),detector=lambda _:keypoints()).measure(frame)
+>       assert observation.valid is False and observation.cup_bottom_base_m is None
+E       AssertionError: assert (True is False)
+E        +  where True = GeometryObservation(frame_id=1, cup_bottom_base_m=[0.10000000000000027, 0.020000000000000052, 1.0000000000000027], tar...], cup_handle_yaw_rad=0.0, quality=0.99, error_bound_m=0.002, calibration_sha256='test', valid=True, invalid_reason='').valid
+
+tests/test_visual_observation.py:65: AssertionError
+________________ test_camera_metadata_binds_current_intrinsics _________________
+
+    def test_camera_metadata_binds_current_intrinsics():
+        m=module('calibration.solve');raw=samples()
+        result=m.solve_samples(raw)
+>       assert 'K' in result['camera_metadata'], 'Camera identity hash must include actual rectified intrinsics'
+E       AssertionError: Camera identity hash must include actual rectified intrinsics
+E       assert 'K' in {'image_rotation_degrees': 180, 'image_size_wh': [640, 360], 'pixel_space': 'rectified_left', 'serial': 'test-only'}
+
+tests/test_calibration.py:115: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_dataset.py::test_zero_joint_lead_cannot_replace_submitted_labels_with_qpos
+FAILED tests/test_visual_dataset.py::test_past_action_labels_cannot_be_used_as_future_supervision
+FAILED tests/test_visual_runtime.py::test_new_frame_id_cannot_hide_exposure_before_previous_submission
+FAILED tests/test_visual_observation.py::test_observer_refuses_wrong_camera_or_intrinsics_hash
+FAILED tests/test_calibration.py::test_camera_metadata_binds_current_intrinsics
+5 failed, 1 warning in 2.04s

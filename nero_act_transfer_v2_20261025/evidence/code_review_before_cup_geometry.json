@@ -1,0 +1,37 @@
+{
+  "implementation_gate_passed": true,
+  "scope": "offline_implementation_only_not_data_or_motion_admission",
+  "reviewer": "transfer_v2_whole_review",
+  "reviewer_verdict_before_fixes": "With fixes",
+  "critical": 0,
+  "important": 7,
+  "important_fixed_by_author": 7,
+  "additional_final_position_exclusion_test": true,
+  "second_review_performed": false,
+  "tests": {
+    "passed": 57,
+    "total": 57,
+    "log": "evidence/full_suite_pilot_admission.log"
+  },
+  "minor_deferred": [
+    "Nested simulation observer metadata still uses synthetic call timestamps; must pass true exposure metadata before real integration"
+  ],
+  "data_gate_passed": false,
+  "training_updates": 0,
+  "hardware_commands_sent": false,
+  "review_report": "evidence/final_review.md",
+  "created_utc": "2026-10-25T05:17:56.902817+00:00",
+  "observer_fragment_repair_validated": true,
+  "versioned_data_reobservation_validated": true,
+  "author_fix_pass_additional_scope": [
+    "exception-only enclosed-island handling",
+    "explicit120episode mechanism-only pilot admission"
+  ],
+  "whole_review_scope": "original offline implementation; subsequent author fix pass regression tested",
+  "observer_enclosed_island_local_tests_passed": true,
+  "observer_full_edge_regression_passed": false,
+  "pilot_admission_separated_from_formal": true,
+  "pilot_admission_regression": "tests/test_pilot_admission.py",
+  "current_scope": "offline mechanism pilot only;57software tests do not establish complete visibility or task success",
+  "formal_data_gate_passed": false
+}

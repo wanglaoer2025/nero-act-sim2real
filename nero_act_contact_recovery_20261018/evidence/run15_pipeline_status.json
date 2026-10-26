@@ -1,0 +1,39 @@
+{
+  "run": "run15_first_lift_recovery",
+  "stage": "training_and_evaluation_finished",
+  "hardware_connected": false,
+  "hardware_deployment_allowed": false,
+  "steps": [
+    {
+      "stage": "training",
+      "exit_code": 0,
+      "log": "/home/user/wq/nero_act_contact_recovery_20261018/evidence/run15_training.log"
+    },
+    {
+      "stage": "export",
+      "exit_code": 0,
+      "log": "/home/user/wq/nero_act_contact_recovery_20261018/evidence/run15_export.log"
+    },
+    {
+      "stage": "development16",
+      "exit_code": 0,
+      "log": "/home/user/wq/nero_act_contact_recovery_20261018/evidence/run15_development16.log"
+    },
+    {
+      "stage": "independent16",
+      "exit_code": 0,
+      "log": "/home/user/wq/nero_act_contact_recovery_20261018/evidence/run15_independent16.log"
+    }
+  ],
+  "independent_definition_sha256": "aff2bea7da167361422edad32e1056a289f430f350a6e8de3d42654acf9cc714",
+  "child_pid": 1750657,
+  "elapsed_s": 1633.5500433960115,
+  "development16": {
+    "passed": 2,
+    "total": 16
+  },
+  "independent16": {
+    "passed": 0,
+    "total": 16
+  }
+}

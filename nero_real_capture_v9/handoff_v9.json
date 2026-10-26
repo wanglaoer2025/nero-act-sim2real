@@ -1,0 +1,60 @@
+{
+  "created_at_utc": "2026-10-14T12:45:44.658910+00:00",
+  "date_local": "2026-10-14",
+  "machine": "4090 real control computer",
+  "capture_directory": "/home/user/wq/nero_real_capture_v9/capture_new",
+  "suggested_simulation_directory": "/home/wq/sim2real/capture_new",
+  "copied_to_other_computer": false,
+  "capture_command": "python capture_nero_observations.py --seconds 5 --sample-hz 20 --output capture_new",
+  "package_original_archive": "/home/user/wq/nero_real_capture_v9.tar.gz",
+  "capture_program_sha256": "c8099af146b31d0b2ec727effc1ff2da32d14c089fc3be0660a4421dccb33590",
+  "capture_succeeded": true,
+  "data_integrity_verified": true,
+  "samples": 101,
+  "achieved_sample_hz": 20.007514854645812,
+  "rejected_sample_count": 0,
+  "readiness_auditor_exit_code": 1,
+  "readiness_blockers": [
+    "gripper feedback incompatible with 0-95 mm total opening",
+    "unmeasured or invalid source_xyz_mm",
+    "unmeasured or invalid destination_xyz_mm",
+    "table height unmeasured"
+  ],
+  "coordinates_status": "User replied pending measurement; no unvalidated coordinates inserted",
+  "physical_measurement_source": "Cup dimensions/mass and support/lens height are prior user measurements; current grasp/place/table Nero-base coordinates remain null",
+  "no_robot_motion_sent": true,
+  "no_SDK_robot_connected": true,
+  "capture_code_or_audit_threshold_modified": false,
+  "hardware_synchronization_verified": false,
+  "remote_simulation_progress_user_reported": {
+    "recovery_demonstrations_added": 10,
+    "teacher_and_replay_passed": "10/10",
+    "ACT_recovery_development_test": "0/4",
+    "ACT_new_independent_grasp_scenes": "4/8",
+    "acceptance_threshold": "7/8",
+    "offline_regression_passed": 29,
+    "simulation_current_image_state_alignment_fix_reported": true,
+    "independently_rerun_on_4090": false,
+    "policy_accepted_for_autonomous_cup_grasp": false
+  },
+  "next_work": "Use the recorded observations for appearance/preprocessing and interface alignment; reconcile real ~99.832mm initial opening with V9 model/auditor contract; fill measured Nero-base task coordinates before coordinate-conditioned recorded shadow checks.",
+  "V9_policy_contract_user_reported": {
+    "state_dim": 14,
+    "composition": "8 robot-state components plus 6 source/destination coordinate components. Measurement file uses Nero-base mm; model coordinate scaling must be checked against the actual V9 model/config before inference.",
+    "action_dim": 8,
+    "policy_query_hz": 2,
+    "command_send_hz": 20,
+    "execute_prediction_first_steps": 10,
+    "refresh_period_s": 0.5,
+    "provenance": "User latest simulation-side requirements; actual V9 model and sim executor source not present in this capture-only package",
+    "legacy_executor_alignment_status": "Existing run_act_real selects chunk first action on each control cycle; matching query/send block execution requires an adapter, cannot just swap weights",
+    "model_statistics_compatibility": "14-dim coordinate-conditioned checkpoint needs its own matching normalization statistics; original 8-dim baseline statistics cannot substitute"
+  },
+  "required_passive_measurements": {
+    "source_xyz_mm": null,
+    "destination_xyz_mm": null,
+    "table_top_z_mm": null,
+    "gripper_physical_inner_spacing_mm": null,
+    "centre_height_rule": "For an upright 95mm cup on the same tabletop, both geometric centre Z values equal table_top_z_mm + 47.5mm; source/destination XY must be measured in Nero base frame."
+  }
+}

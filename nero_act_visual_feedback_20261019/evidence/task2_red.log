@@ -1,0 +1,130 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+____________________ test_tcp_recovery_and_rank_deficiency _____________________
+
+    def test_tcp_recovery_and_rank_deficiency():
+>       m = module('calibration.solve');rows = samples()['tcp']
+
+tests/test_calibration.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'calibration.solve'
+
+    def module(name):
+>       assert importlib.util.find_spec(name) is not None, f'{name}: approved offline calibration interface missing'
+E       AssertionError: calibration.solve: approved offline calibration interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x716deb7b05e0>('calibration.solve')
+E        +    where <function find_spec at 0x716deb7b05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_calibration.py:15: AssertionError
+__________________ test_camera_holdout_is_disjoint_and_metric __________________
+
+    def test_camera_holdout_is_disjoint_and_metric():
+>       m=module('calibration.solve');result,raw=solved()
+
+tests/test_calibration.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'calibration.solve'
+
+    def module(name):
+>       assert importlib.util.find_spec(name) is not None, f'{name}: approved offline calibration interface missing'
+E       AssertionError: calibration.solve: approved offline calibration interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x716deb7b05e0>('calibration.solve')
+E        +    where <function find_spec at 0x716deb7b05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_calibration.py:15: AssertionError
+___________ test_camera_rejects_coplanar_or_nonfinite_control_points ___________
+
+    def test_camera_rejects_coplanar_or_nonfinite_control_points():
+>       m=module('calibration.solve');cam=samples()['camera'];points=np.array(cam['base_points_m']);points[:,2]=0
+
+tests/test_calibration.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'calibration.solve'
+
+    def module(name):
+>       assert importlib.util.find_spec(name) is not None, f'{name}: approved offline calibration interface missing'
+E       AssertionError: calibration.solve: approved offline calibration interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x716deb7b05e0>('calibration.solve')
+E        +    where <function find_spec at 0x716deb7b05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_calibration.py:15: AssertionError
+___________________ test_approximate_bundle_cannot_authorize ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-41/test_approximate_bundle_cannot0')
+
+    def test_approximate_bundle_cannot_authorize(tmp_path):
+>       b=module('calibration.bundle');result,_=solved()
+
+tests/test_calibration.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'calibration.bundle'
+
+    def module(name):
+>       assert importlib.util.find_spec(name) is not None, f'{name}: approved offline calibration interface missing'
+E       AssertionError: calibration.bundle: approved offline calibration interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x716deb7b05e0>('calibration.bundle')
+E        +    where <function find_spec at 0x716deb7b05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_calibration.py:15: AssertionError
+_____________ test_holdout_detects_real_error_and_bundle_tampering _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-41/test_holdout_detects_real_erro0')
+
+    def test_holdout_detects_real_error_and_bundle_tampering(tmp_path):
+>       m=module('calibration.solve');b=module('calibration.bundle');result,raw=solved()
+
+tests/test_calibration.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'calibration.solve'
+
+    def module(name):
+>       assert importlib.util.find_spec(name) is not None, f'{name}: approved offline calibration interface missing'
+E       AssertionError: calibration.solve: approved offline calibration interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x716deb7b05e0>('calibration.solve')
+E        +    where <function find_spec at 0x716deb7b05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_calibration.py:15: AssertionError
+____________ test_calibration_cli_is_offline_and_refuses_overwrite _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-41/test_calibration_cli_is_offlin0')
+
+    def test_calibration_cli_is_offline_and_refuses_overwrite(tmp_path):
+>       module('calibration.solve')
+
+tests/test_calibration.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'calibration.solve'
+
+    def module(name):
+>       assert importlib.util.find_spec(name) is not None, f'{name}: approved offline calibration interface missing'
+E       AssertionError: calibration.solve: approved offline calibration interface missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x716deb7b05e0>('calibration.solve')
+E        +    where <function find_spec at 0x716deb7b05e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_calibration.py:15: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calibration.py::test_tcp_recovery_and_rank_deficiency - Ass...
+FAILED tests/test_calibration.py::test_camera_holdout_is_disjoint_and_metric
+FAILED tests/test_calibration.py::test_camera_rejects_coplanar_or_nonfinite_control_points
+FAILED tests/test_calibration.py::test_approximate_bundle_cannot_authorize - ...
+FAILED tests/test_calibration.py::test_holdout_detects_real_error_and_bundle_tampering
+FAILED tests/test_calibration.py::test_calibration_cli_is_offline_and_refuses_overwrite
+6 failed in 0.23s

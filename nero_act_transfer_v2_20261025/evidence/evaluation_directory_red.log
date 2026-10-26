@@ -1,0 +1,44 @@
+...F                                                                     [100%]
+=================================== FAILURES ===================================
+_____________________ test_rollout_owns_new_case_directory _____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-130/test_rollout_owns_new_case_dir0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x79316b4bdf70>
+
+    def test_rollout_owns_new_case_directory(tmp_path,monkeypatch):
+        import evaluate,json,h5py
+        source=tmp_path/'source.h5'
+        with h5py.File(source,'w') as f:
+            f.attrs['scene_config']=json.dumps({'pick_xy_m':[.4,0],
+                'initial_robot_state':{'qpos_rad':[0]*7}})
+        calls=[]
+        def runner(scene,policy,stats,scenario,output,**kwargs):
+            output.mkdir(exist_ok=False)
+            calls.append(output.name)
+            return good_result()
+        monkeypatch.setattr(evaluate,'load_runner',lambda:runner)
+>       report=evaluate.evaluate_development(None,None,{'source_scene':str(source)},tmp_path/'eval')
+
+tests/test_evaluate.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evaluate.py:51: in evaluate_development
+    result=rollout(scene,policy,stats,scenario,folder,runtime_profile='history_common_v1')
+tests/test_evaluate.py:45: in runner
+    output.mkdir(exist_ok=False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/tmp/pytest-of-user/pytest-130/test_rollout_owns_new_case_dir0/eval/centre_0')
+mode = 511, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/tmp/pytest-of-user/pytest-130/test_rollout_owns_new_case_dir0/eval/centre_0'
+
+/usr/lib/python3.12/pathlib.py:1313: FileExistsError
+=========================== short test summary info ============================
+FAILED tests/test_evaluate.py::test_rollout_owns_new_case_directory - FileExi...
+1 failed, 3 passed in 1.80s

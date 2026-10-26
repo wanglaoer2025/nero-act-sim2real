@@ -1,0 +1,57 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_approach_recovery_is_explicit_training_only_and_preserves_original_roles _
+
+    def test_approach_recovery_is_explicit_training_only_and_preserves_original_roles():
+        from training.history_recoveries import validate_history_manifest
+        data,split=two_additional()
+>       groups=validate_history_manifest(data,split,check_files=False,additional_failure_ids=[2018,2019])
+
+tests/test_approach_recovery.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+manifest = {'additional_failure_ids': [2018, 2019], 'base_episodes': [{'id': 0, 'source_group': 'scene_0', 'split': 'train'}, {'i... ...}, {'context_sha256': 'context', 'full_task_verified': False, 'id': 2005, 'parent_episode_id': 12, ...}, ...], ...}
+split = {'train': [0, 1, 2, 3, 4, 5, ...], 'val': [36, 37, 38, 39, 40, 41, ...]}
+
+    def validate_history_manifest(manifest:dict,split:dict,*,check_files=True,additional_failure_ids=())->dict:
+        base=manifest['base_episodes'];rows=manifest['episodes']
+        extra=set(additional_failure_ids)
+        if (tuple(additional_failure_ids) not in ((),(2018,))
+                or manifest.get('additional_failure_ids',[])!=list(additional_failure_ids)):
+>           raise ValueError('Additional failure contexts must be explicitly declared before optimization')
+E           ValueError: Additional failure contexts must be explicitly declared before optimization
+
+training/history_recoveries.py:21: ValueError
+___ test_next_extension_preserves_all67_records_and_renders_only_new_failure ___
+
+    def test_next_extension_preserves_all67_records_and_renders_only_new_failure():
+        from training.append_history_recovery import validate_parent_extension
+        parent,split=extended();data,split=two_additional()
+        base=dict(complete=True,full_demonstrations=48,partial_recoveries=19,episodes=parent['base_episodes']+parent['episodes'])
+>       assert [r['id'] for r in validate_parent_extension(base,parent,data)]==[2019]
+
+tests/test_approach_recovery.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+base = {'complete': True, 'episodes': [{'id': 0, 'source_group': 'scene_0', 'split': 'train'}, {'id': 1, 'source_group': 'sce...n'}, {'id': 5, 'source_group': 'scene_5', 'split': 'train'}, ...], 'full_demonstrations': 48, 'partial_recoveries': 19}
+parent = {'additional_failure_ids': [2018], 'base_episodes': [{'id': 0, 'source_group': 'scene_0', 'split': 'train'}, {'id': 1,... ...}, {'context_sha256': 'context', 'full_task_verified': False, 'id': 2005, 'parent_episode_id': 12, ...}, ...], ...}
+extended = {'additional_failure_ids': [2018, 2019], 'base_episodes': [{'id': 0, 'source_group': 'scene_0', 'split': 'train'}, {'i... ...}, {'context_sha256': 'context', 'full_task_verified': False, 'id': 2005, 'parent_episode_id': 12, ...}, ...], ...}
+
+    def validate_parent_extension(base,parent,extended):
+        if (base.get('complete') is not True or base.get('full_demonstrations')!=48 or base.get('partial_recoveries')!=18
+                or len(base.get('episodes',[]))!=66 or extended.get('additional_failure_ids')!=[2018]
+                or extended.get('episodes',[])[:18]!=parent.get('episodes') or len(parent.get('episodes',[]))!=18
+                or {r['id'] for r in base['episodes']}!={r['id'] for r in parent['base_episodes']+parent['episodes']}):
+>           raise ValueError('Immutable original66 and exact18 parent recoveries required')
+E           ValueError: Immutable original66 and exact18 parent recoveries required
+
+training/append_history_recovery.py:15: ValueError
+=============================== warnings summary ===============================
+tests/test_approach_recovery.py::test_next_extension_preserves_all67_records_and_renders_only_new_failure
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_recovery.py::test_approach_recovery_is_explicit_training_only_and_preserves_original_roles
+FAILED tests/test_approach_recovery.py::test_next_extension_preserves_all67_records_and_renders_only_new_failure
+2 failed, 1 warning in 2.09s

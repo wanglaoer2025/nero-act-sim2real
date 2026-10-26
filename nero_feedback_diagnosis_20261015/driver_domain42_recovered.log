@@ -1,0 +1,30 @@
+[INFO] [launch]: All log files can be found below /home/user/.ros/log/2026-10-15-21-51-34-110809-user-ThinkStation-P2-Tower-371355
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [agx_arm_ctrl_single-1]: process started with pid [371360]
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.575171926] [agx_arm_ctrl_single_node]: can_port: can0[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.575399445] [agx_arm_ctrl_single_node]: arm_type: nero[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.575581545] [agx_arm_ctrl_single_node]: auto_enable: False[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.575762756] [agx_arm_ctrl_single_node]: fast_mode: False[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.575960409] [agx_arm_ctrl_single_node]: fw_version: v120, 1.20, v120[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.576165442] [agx_arm_ctrl_single_node]: pub_rate: 200[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.576369731] [agx_arm_ctrl_single_node]: enable_timeout: 5.0[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.576575634] [agx_arm_ctrl_single_node]: effector_type: agx_gripper[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.576802896] [agx_arm_ctrl_single_node]: tcp_offset: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0][0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.577025169] [agx_arm_ctrl_single_node]: gripper_default_effort: 1.0[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.577254150] [agx_arm_ctrl_single_node]: control_enabled: False[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.683193955] [agx_arm_ctrl_single_node]: AgxGripper initialized successfully[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792072294.708624668] [agx_arm_ctrl_single_node]: Agx_arm feedback is ready, control is now enabled[0m
+[agx_arm_ctrl_single-1] Exception in thread Thread-4 (_publish_thread):
+[agx_arm_ctrl_single-1] Traceback (most recent call last):
+[agx_arm_ctrl_single-1]   File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+[agx_arm_ctrl_single-1]     self.run()
+[agx_arm_ctrl_single-1]   File "/usr/lib/python3.12/threading.py", line 1010, in run
+[agx_arm_ctrl_single-1]     self._target(*self._args, **self._kwargs)
+[agx_arm_ctrl_single-1]   File "/home/user/projects/nero_ros2_ws/build/agx_arm_ctrl/agx_arm_ctrl/agx_arm_ctrl_single_node.py", line 543, in _publish_thread
+[agx_arm_ctrl_single-1]     self._publish_arm_status()
+[agx_arm_ctrl_single-1]   File "/home/user/projects/nero_ros2_ws/build/agx_arm_ctrl/agx_arm_ctrl/agx_arm_ctrl_single_node.py", line 676, in _publish_arm_status
+[agx_arm_ctrl_single-1]     self.arm_status_pub.publish(msg)
+[agx_arm_ctrl_single-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/publisher.py", line 70, in publish
+[agx_arm_ctrl_single-1]     self.__publisher.publish(msg)
+[agx_arm_ctrl_single-1] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:423
+[INFO] [agx_arm_ctrl_single-1]: process has finished cleanly [pid 371360]

@@ -1,0 +1,100 @@
+{
+  "reviewed_at_utc": "2026-10-14T15:34:54.505028+00:00",
+  "scope": "Independent offline review of one authorized J1 response probe; no ACT/V9 execution",
+  "accepted_for_this_J1_probe": true,
+  "ready_for_v9_execution": false,
+  "trace_rows": 121,
+  "commands_sent_logged": 120,
+  "phase_counts": {
+    "baseline": 1,
+    "ramp": 20,
+    "hold": 40,
+    "return": 60
+  },
+  "observed_command_loop_hz": 19.98008025965611,
+  "sampled_command_duration_s": 5.955932030978147,
+  "positive_J1_progress_rad": 0.005131268000863387,
+  "positive_J1_progress_deg": 0.2940000000000033,
+  "final_five_hold_max_seven_joint_error_rad": 4.3264924336039456e-05,
+  "final_five_hold_errors_rad": [
+    3.4906585039906624e-05,
+    3.4906585039906624e-05,
+    4.3264924336039456e-05,
+    3.4906585039906624e-05,
+    4.3264924336039456e-05
+  ],
+  "final_five_return_max_seven_joint_error_rad": 0.00010471975511960885,
+  "final_five_return_errors_rad": [
+    0.00010471975511960885,
+    0.00010471975511960885,
+    0.00010471975511960885,
+    0.00010471975511960885,
+    0.00010471975511960885
+  ],
+  "joint_and_status_SDK_timestamps_strictly_advanced": true,
+  "all_recorded_controller_status_CAN_MOVE_J_no_fault": true,
+  "first_recorded_J1_progress_at_least_0_0005_rad_elapsed_s": 0.7013022829778492,
+  "progress_timing_scope": "First recorded position threshold crossing, not a measured command acceptance/physical latency; not comparable to old1.5-encoder-step noise threshold.",
+  "CAN_evidence": {
+    "frames": 23266,
+    "frame_counts_by_direction": {
+      "local_TX_echo": {},
+      "RX": {
+        "0x2a7": 1502,
+        "0x2a9": 1502,
+        "0x251": 1502,
+        "0x252": 1502,
+        "0x253": 1502,
+        "0x254": 1502,
+        "0x255": 1502,
+        "0x256": 1502,
+        "0x257": 1502,
+        "0x2a8": 1501,
+        "0x2a1": 1502,
+        "0x2a5": 1501,
+        "0x2a6": 1501,
+        "0x261": 374,
+        "0x262": 374,
+        "0x263": 374,
+        "0x264": 374,
+        "0x265": 374,
+        "0x266": 374,
+        "0x267": 374,
+        "0x2a2": 375,
+        "0x2a3": 375,
+        "0x2a4": 375
+      }
+    },
+    "independent_RX_J1_motion_peak_to_peak_rad": 0.005148721293383285,
+    "last_observed_RX_J1_max_distance_from_start_rad": 0.0,
+    "all_SDK_J1_samples_have_matching_nearby_independent_RX": true,
+    "match_window_s": 0.03,
+    "maximum_nearby_angle_matching_difference_rad": 0.0,
+    "status_payload_counts": {
+      "0100010000000000": 779,
+      "0100010001000000": 723
+    },
+    "local_TX_echo_frames": 0,
+    "live_CAN_TX_capture_complete": false,
+    "missing_TX_explanation": "Installed SDK config factory defaults local_loopback=False; observer received RX only. No individual target CAN TX evidence was recorded. This is not evidence that no command was sent.",
+    "acknowledgement_and_response_latency_measured": false
+  },
+  "interpretation": "同一SDK链路在v2低速缓升与保持窗口内完成了J1小幅跟随及回位；新鲜SDK状态和独立CAN RX支持本轮响应判据。旧0.5秒测试没有响应的原因仍不能唯一归因，因为v2同时改变了时长和目标曲线，且旧日志缺少反馈时间戳。",
+  "limitations": [
+    "只测试J1及当前姿态，其他关节只有保持观测，不代表逐轴运动验收。",
+    "CAN捕获为RX，SDK默认local_loopback=False，缺少同期TX与控制器目标接受证据。",
+    "SDK时间戳推进不是七轴硬件同步或绝对传感器年龄证明。",
+    "未运行ACT；没有验证V9块执行或抓杯任务。"
+  ],
+  "controller_speed_commanded_percent": 5,
+  "controller_speed_restored": false,
+  "ROS_driver_auto_restored": false,
+  "gripper_commands_requested": false,
+  "ACT_policy_used": false,
+  "additional_motion_after_probe": false,
+  "raw_sources_sha256": {
+    "trace.json": "e6907da673478a3ae790a63ec8dd4bf23c3efdc924a870c359fbfc103a4a1875",
+    "report.json": "eabfd7958ada0237c9013a36c7fbc0d27f1d632ca35528ec6cbee3a5f17a8fee",
+    "can_frames.jsonl": "a1fdf2e208df94d3eb8fbb55a13c5710ebb1837814ec65720b4f9e8e43e2e935"
+  }
+}

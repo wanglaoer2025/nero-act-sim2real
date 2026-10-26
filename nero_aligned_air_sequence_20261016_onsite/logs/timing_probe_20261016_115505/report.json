@@ -1,0 +1,173 @@
+{
+  "mode": "live_inference_and_validity_timing_only",
+  "success": true,
+  "execution_goal_submitted": false,
+  "physical_motion_sent": false,
+  "not_a_full_policy_trial": true,
+  "actual_start": [
+    0.22359413047299356,
+    -0.11711159280881951,
+    0.13430308594096366,
+    1.563919729542039,
+    -0.014817845349431858,
+    0.2577502239345226,
+    0.1500459557939525,
+    0.060218
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 325162.50434315,
+      "stamp": 1792122907.4045877,
+      "q": [
+        0.22359413047299356,
+        -0.11716395268637934,
+        0.13430308594096366,
+        1.563919729542039,
+        -0.014817845349431858,
+        0.2577502239345226,
+        0.1500459557939525,
+        0.060218
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 325162.504395172,
+      "stamp": 1792122907.4040258,
+      "q": [
+        0.2235901951789856,
+        -0.11716252565383911,
+        0.13432307541370392,
+        1.5638834238052368,
+        -0.014822503551840782,
+        0.2577475309371948,
+        0.15006080269813538,
+        0.06016303971409798
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.00040866603376343846,
+  "execution_readiness_checks_passed": true,
+  "block_attempts": [
+    {
+      "observation_step": 0,
+      "observation_wall_s": 325164.007158666,
+      "validation_started_monotonic_s": 325164.049289624,
+      "observation_age_before_validation_s": 0.0421309579978697,
+      "ready_prediction_wait_s": 0.008141114958561957,
+      "inference_ms": 23.86545401532203,
+      "pre_send_age_limit_s": 0.25,
+      "freshness_passed": true,
+      "validation_finished_monotonic_s": 325164.061937709,
+      "validation_duration_s": 0.012648085015825927,
+      "observation_age_after_validation_s": 0.05477904301369563
+    }
+  ],
+  "prediction_details": {
+    "observation_wall_s": 325164.007158666,
+    "camera_received_monotonic_s": 325164.00813166,
+    "feedback_state": [
+      0.22359413047299356,
+      -0.11716395268637934,
+      0.13430308594096366,
+      1.563919729542039,
+      -0.014817845349431858,
+      0.2577502239345226,
+      0.1501157689640323,
+      0.060218
+    ],
+    "camera_frame": "camera_frames/0001.png",
+    "inference_ms": 23.86545401532203,
+    "query_sent_monotonic_s": 325164.007264017,
+    "response_received_monotonic_s": 325164.041148509,
+    "inference_round_trip_s": 0.03388449200429022
+  },
+  "validation": {
+    "observation_step": 0,
+    "observation_wall_s": 325164.007158666,
+    "validation_started_monotonic_s": 325164.049289624,
+    "observation_age_before_validation_s": 0.0421309579978697,
+    "ready_prediction_wait_s": 0.008141114958561957,
+    "inference_ms": 23.86545401532203,
+    "pre_send_age_limit_s": 0.25,
+    "freshness_passed": true,
+    "validation_finished_monotonic_s": 325164.061937709,
+    "validation_duration_s": 0.012648085015825927,
+    "observation_age_after_validation_s": 0.05477904301369563
+  }
+}

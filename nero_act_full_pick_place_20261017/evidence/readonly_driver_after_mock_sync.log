@@ -1,0 +1,35 @@
+[INFO] [1792240549.886932765] [agx_arm_ctrl_single_node]: can_port: can0
+[INFO] [1792240549.887168629] [agx_arm_ctrl_single_node]: arm_type: nero
+[INFO] [1792240549.887352528] [agx_arm_ctrl_single_node]: auto_enable: False
+[INFO] [1792240549.887535317] [agx_arm_ctrl_single_node]: fast_mode: False
+[INFO] [1792240549.887740717] [agx_arm_ctrl_single_node]: fw_version: v120, 1.20, v120
+[INFO] [1792240549.887943504] [agx_arm_ctrl_single_node]: pub_rate: 200
+[INFO] [1792240549.888150495] [agx_arm_ctrl_single_node]: enable_timeout: 5.0
+[INFO] [1792240549.888360182] [agx_arm_ctrl_single_node]: effector_type: agx_gripper
+[INFO] [1792240549.888586371] [agx_arm_ctrl_single_node]: tcp_offset: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[INFO] [1792240549.888816857] [agx_arm_ctrl_single_node]: gripper_default_effort: 1.0
+[INFO] [1792240549.889053159] [agx_arm_ctrl_single_node]: control_enabled: False
+[INFO] [1792240549.994324527] [agx_arm_ctrl_single_node]: AgxGripper initialized successfully
+{"mode": "receive_only", "pid": 1384575, "interpreter": "/usr/bin/python3", "auto_enable": false, "control_enabled_at_start": false, "speed_percent_parameter": 0, "runtime_send_blocked": true, "can_tx_before": 240992, "can_tx_after_start": 240992, "motion_submitted_by_entry": false}
+[INFO] [1792240550.008638224] [agx_arm_ctrl_single_node]: Agx_arm feedback is ready, control is now enabled
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/driver.py", line 90, in <module>
+    if __name__ == '__main__':main()
+                              ^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/driver.py", line 83, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 781, in _wait_for_ready_callbacks
+    wait_set.wait(timeout_nsec)
+KeyboardInterrupt

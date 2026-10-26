@@ -1,0 +1,520 @@
+{
+  "commit": {
+    "sha": "5c466b47e03fdc1f8a499af5dfa3ad470f0db96f",
+    "node_id": "C_kwDOSe93JNoAKDVjNDY2YjQ3ZTAzZmRjMWY4YTQ5OWFmNWRmYTNhZDQ3MGYwZGI5NmY",
+    "commit": {
+      "author": {
+        "name": "Jixin (Kevin) Yan",
+        "email": "JixinYan2029@u.northwestern.edu",
+        "date": "2026-06-11T18:42:23Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-06-11T18:42:23Z"
+      },
+      "message": "Merge pull request #2 from volcanicbottle/fix/uv-resolver-fresh-install\n\nFix fresh install on Linux: uv build constraints + pywin32/numpy overrides",
+      "tree": {
+        "sha": "2130d7a0ee8044dfb494302619de7e69ca6ee3fe",
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/trees/2130d7a0ee8044dfb494302619de7e69ca6ee3fe"
+      },
+      "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/commits/5c466b47e03fdc1f8a499af5dfa3ad470f0db96f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/5c466b47e03fdc1f8a499af5dfa3ad470f0db96f",
+    "html_url": "https://github.com/jixinyan/OpenSO-101/commit/5c466b47e03fdc1f8a499af5dfa3ad470f0db96f",
+    "comments_url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/5c466b47e03fdc1f8a499af5dfa3ad470f0db96f/comments",
+    "author": {
+      "login": "jixinyan",
+      "id": 211204882,
+      "node_id": "U_kgDODJa7Eg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jixinyan",
+      "html_url": "https://github.com/jixinyan",
+      "followers_url": "https://api.github.com/users/jixinyan/followers",
+      "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+      "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+      "repos_url": "https://api.github.com/users/jixinyan/repos",
+      "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b52b376a50b82dd9f4c6011a94c5e0c07100b89a",
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/b52b376a50b82dd9f4c6011a94c5e0c07100b89a",
+        "html_url": "https://github.com/jixinyan/OpenSO-101/commit/b52b376a50b82dd9f4c6011a94c5e0c07100b89a"
+      },
+      {
+        "sha": "b6a752be34aaebbff79da94e74865eb87eab3aac",
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/b6a752be34aaebbff79da94e74865eb87eab3aac",
+        "html_url": "https://github.com/jixinyan/OpenSO-101/commit/b6a752be34aaebbff79da94e74865eb87eab3aac"
+      }
+    ],
+    "stats": {
+      "total": 7,
+      "additions": 7,
+      "deletions": 0
+    },
+    "files": [
+      {
+        "sha": "1800e3b58caed93495d7ba3962fd780c63fcbe3a",
+        "filename": "pyproject.toml",
+        "status": "modified",
+        "additions": 7,
+        "deletions": 0,
+        "changes": 7,
+        "blob_url": "https://github.com/jixinyan/OpenSO-101/blob/5c466b47e03fdc1f8a499af5dfa3ad470f0db96f/pyproject.toml",
+        "raw_url": "https://github.com/jixinyan/OpenSO-101/raw/5c466b47e03fdc1f8a499af5dfa3ad470f0db96f/pyproject.toml",
+        "contents_url": "https://api.github.com/repos/jixinyan/OpenSO-101/contents/pyproject.toml?ref=5c466b47e03fdc1f8a499af5dfa3ad470f0db96f",
+        "patch": "@@ -81,6 +81,13 @@ openso101 = \"openso101.cli.main:main\"\n [tool.uv]\n override-dependencies = [\n     \"packaging>=24.2,<26\",\n+    \"pywin32==306; sys_platform == 'win32'\",\n+    \"numpy>=1.26,<2\",\n+]\n+\n+[tool.uv.extra-build-dependencies]\n+flatdict = [\n+\"setuptools<81\"\n ]\n \n [tool.pytest.ini_options]"
+      }
+    ]
+  },
+  "readme_history": [
+    {
+      "sha": "c1dd339e47ee4e377cb24ea8c795ef73db088bfc",
+      "node_id": "C_kwDOSe93JNoAKGMxZGQzMzllNDdlZTRlMzc3Y2IyNGVhOGM3OTVlZjczZGIwODhiZmM",
+      "commit": {
+        "author": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T22:01:50Z"
+        },
+        "committer": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T22:01:50Z"
+        },
+        "message": "docs: add CHANGELOG, runnable examples/, and the Built With section\n\n- CHANGELOG.md: v0.1.0 release notes (features + known limitations).\n- examples/: command recipes for every workflow + a register_custom_task.py\n  extension-API example.\n- README: add the Built With section (fixes the dead table-of-contents anchor).",
+        "tree": {
+          "sha": "a1fd40d986f7a871cf43b7f949f2c6847b8a22ca",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/trees/a1fd40d986f7a871cf43b7f949f2c6847b8a22ca"
+        },
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/commits/c1dd339e47ee4e377cb24ea8c795ef73db088bfc",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/c1dd339e47ee4e377cb24ea8c795ef73db088bfc",
+      "html_url": "https://github.com/jixinyan/OpenSO-101/commit/c1dd339e47ee4e377cb24ea8c795ef73db088bfc",
+      "comments_url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/c1dd339e47ee4e377cb24ea8c795ef73db088bfc/comments",
+      "author": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "8b973239ccac76edcf46d766d7437c7c61595ae3",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/8b973239ccac76edcf46d766d7437c7c61595ae3",
+          "html_url": "https://github.com/jixinyan/OpenSO-101/commit/8b973239ccac76edcf46d766d7437c7c61595ae3"
+        }
+      ]
+    },
+    {
+      "sha": "5bff9e4e6f5bd928142a0da70e21a970875ecdd0",
+      "node_id": "C_kwDOSe93JNoAKDViZmY5ZTRlNmY1YmQ5MjgxNDJhMGRhNzBlMjFhOTcwODc1ZWNkZDA",
+      "commit": {
+        "author": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T21:32:47Z"
+        },
+        "committer": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T21:32:47Z"
+        },
+        "message": "docs(readme): stack the IL demo videos (GitHub doesn't render <video> in tables)",
+        "tree": {
+          "sha": "aca6c9643e8c3d5f80fc5e9fb970515a7ca8fb7c",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/trees/aca6c9643e8c3d5f80fc5e9fb970515a7ca8fb7c"
+        },
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/commits/5bff9e4e6f5bd928142a0da70e21a970875ecdd0",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/5bff9e4e6f5bd928142a0da70e21a970875ecdd0",
+      "html_url": "https://github.com/jixinyan/OpenSO-101/commit/5bff9e4e6f5bd928142a0da70e21a970875ecdd0",
+      "comments_url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/5bff9e4e6f5bd928142a0da70e21a970875ecdd0/comments",
+      "author": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "b3826fbddfd23a707476852ec069ecb45b8529df",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/b3826fbddfd23a707476852ec069ecb45b8529df",
+          "html_url": "https://github.com/jixinyan/OpenSO-101/commit/b3826fbddfd23a707476852ec069ecb45b8529df"
+        }
+      ]
+    },
+    {
+      "sha": "b3826fbddfd23a707476852ec069ecb45b8529df",
+      "node_id": "C_kwDOSe93JNoAKGIzODI2ZmJkZGZkMjNhNzA3NDc2ODUyZWMwNjllY2I0NWI4NTI5ZGY",
+      "commit": {
+        "author": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T21:19:49Z"
+        },
+        "committer": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T21:19:49Z"
+        },
+        "message": "docs(readme): embed demo clips via GitHub user-attachments\n\nPoint the three Demos <video> players at user-attachment URLs (served as\nreal video/mp4 from GitHub's media domain), which render as inline players on\ngithub.com \u2014 repo-raw mp4 URLs are served as octet-stream and don't play in\nthe rendered README. The media/*.mp4 sources are kept in the repo as backup.",
+        "tree": {
+          "sha": "aa967b6a1f1702adebe15a49332622fd50b7f458",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/trees/aa967b6a1f1702adebe15a49332622fd50b7f458"
+        },
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/commits/b3826fbddfd23a707476852ec069ecb45b8529df",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/b3826fbddfd23a707476852ec069ecb45b8529df",
+      "html_url": "https://github.com/jixinyan/OpenSO-101/commit/b3826fbddfd23a707476852ec069ecb45b8529df",
+      "comments_url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/b3826fbddfd23a707476852ec069ecb45b8529df/comments",
+      "author": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "ea18bafdc70b5ac0858ac2d857beeb6bf3e60384",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/ea18bafdc70b5ac0858ac2d857beeb6bf3e60384",
+          "html_url": "https://github.com/jixinyan/OpenSO-101/commit/ea18bafdc70b5ac0858ac2d857beeb6bf3e60384"
+        }
+      ]
+    },
+    {
+      "sha": "ea18bafdc70b5ac0858ac2d857beeb6bf3e60384",
+      "node_id": "C_kwDOSe93JNoAKGVhMThiYWZkYzcwYjVhYzA4NThhYzJkODU3YmVlYjZiZjNlNjAzODQ",
+      "commit": {
+        "author": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T20:57:00Z"
+        },
+        "committer": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T20:57:00Z"
+        },
+        "message": "docs(readme): use <video> players for the demo clips (revert GIF swap)\n\nRestore the mp4 demo clips and <video> embeds. Note: GitHub renders a video\nplayer only on a PUBLIC repo (embedded raw-media URLs are blocked on private\nrepos), so the players appear once the repository is made public.",
+        "tree": {
+          "sha": "d7802a03ee827969d9ba9561c4e408b6efd0460f",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/trees/d7802a03ee827969d9ba9561c4e408b6efd0460f"
+        },
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/commits/ea18bafdc70b5ac0858ac2d857beeb6bf3e60384",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/ea18bafdc70b5ac0858ac2d857beeb6bf3e60384",
+      "html_url": "https://github.com/jixinyan/OpenSO-101/commit/ea18bafdc70b5ac0858ac2d857beeb6bf3e60384",
+      "comments_url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/ea18bafdc70b5ac0858ac2d857beeb6bf3e60384/comments",
+      "author": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "d0597374546485fa7dfc9b9b08ca6a73cafd2b83",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/d0597374546485fa7dfc9b9b08ca6a73cafd2b83",
+          "html_url": "https://github.com/jixinyan/OpenSO-101/commit/d0597374546485fa7dfc9b9b08ca6a73cafd2b83"
+        }
+      ]
+    },
+    {
+      "sha": "d0597374546485fa7dfc9b9b08ca6a73cafd2b83",
+      "node_id": "C_kwDOSe93JNoAKGQwNTk3Mzc0NTQ2NDg1ZmE3ZGZjOWI5YjA4Y2E2YTczY2FmZDJiODM",
+      "commit": {
+        "author": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T20:55:10Z"
+        },
+        "committer": {
+          "name": "KevinYan-831",
+          "email": "jixinyan2029@u.northwestern.edu",
+          "date": "2026-06-09T20:55:10Z"
+        },
+        "message": "docs(readme): use autoplaying GIFs for the demo clips\n\nGitHub does not autoplay <video> tags in a README (they render at most as a\nclick-to-play player, and only on a public repo), so the embedded mp4s did\nnot play. Replace them with looping, autoplaying GIFs embedded via <img> with\nrelative media/ paths \u2014 these animate inline with no click and render even on\na private repo (same mechanism as the logo). The clips were encoded at\n480px/10fps with an optimized palette (RL 680K, ACT 1.9M, Diffusion 2.1M).",
+        "tree": {
+          "sha": "d4ddbbbe982538fbfcab54212d9771f3501ac7db",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/trees/d4ddbbbe982538fbfcab54212d9771f3501ac7db"
+        },
+        "url": "https://api.github.com/repos/jixinyan/OpenSO-101/git/commits/d0597374546485fa7dfc9b9b08ca6a73cafd2b83",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/d0597374546485fa7dfc9b9b08ca6a73cafd2b83",
+      "html_url": "https://github.com/jixinyan/OpenSO-101/commit/d0597374546485fa7dfc9b9b08ca6a73cafd2b83",
+      "comments_url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/d0597374546485fa7dfc9b9b08ca6a73cafd2b83/comments",
+      "author": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "jixinyan",
+        "id": 211204882,
+        "node_id": "U_kgDODJa7Eg",
+        "avatar_url": "https://avatars.githubusercontent.com/u/211204882?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jixinyan",
+        "html_url": "https://github.com/jixinyan",
+        "followers_url": "https://api.github.com/users/jixinyan/followers",
+        "following_url": "https://api.github.com/users/jixinyan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jixinyan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jixinyan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jixinyan/subscriptions",
+        "organizations_url": "https://api.github.com/users/jixinyan/orgs",
+        "repos_url": "https://api.github.com/users/jixinyan/repos",
+        "events_url": "https://api.github.com/users/jixinyan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jixinyan/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "cc37e720d6438b86c5dd9fe7ebb4bac518514af5",
+          "url": "https://api.github.com/repos/jixinyan/OpenSO-101/commits/cc37e720d6438b86c5dd9fe7ebb4bac518514af5",
+          "html_url": "https://github.com/jixinyan/OpenSO-101/commit/cc37e720d6438b86c5dd9fe7ebb4bac518514af5"
+        }
+      ]
+    }
+  ]
+}

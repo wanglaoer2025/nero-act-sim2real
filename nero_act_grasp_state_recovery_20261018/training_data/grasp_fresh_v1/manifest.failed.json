@@ -1,0 +1,124 @@
+{
+  "complete": false,
+  "episodes": [
+    {
+      "id": 3001,
+      "path": "/home/user/wq/nero_act_grasp_state_recovery_20261018/training_data/grasp_fresh_v1/episode_3001.hdf5",
+      "sha256": "d0330ce85f2211b0eb7fc01c32cd53e45dfec17d66791017afd93e54b9cfc5ad",
+      "status": "valid",
+      "split": "train",
+      "source_group": "run19_low_grasp_cup_+0_+0",
+      "teacher_success": true,
+      "full_task_verified": false,
+      "correction_verified": true,
+      "task": "descend_to_retreat_correction",
+      "origin": "/home/user/wq/nero_act_grasp_state_recovery_20261018/evaluation/run19_grasp_sources/cup_+0_+0",
+      "query_step": 1105,
+      "snapshot_sha256": "38136c01f699ead54ed0e7eac01573bd4189553cf100f3e44e354db3e2ec7660",
+      "scene_sha256": "625d1c25b9084e424c849257db6e5b1d93258f87b10abcf86033719ebe80f8ef",
+      "replay": {
+        "frames": 2794,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 280
+      },
+      "observation_derivation": {
+        "source": "/home/user/wq/nero_act_grasp_state_recovery_20261018/training_data/grasp_raw_v1/episode_3001.hdf5",
+        "source_sha256": "2f1b4dc8a3d93631b16aeae000bf2e8c90429e4c5720eb145c2afe38c167f408",
+        "target": "/home/user/wq/nero_act_grasp_state_recovery_20261018/training_data/grasp_fresh_v1/episode_3001.hdf5",
+        "target_sha256": "d0330ce85f2211b0eb7fc01c32cd53e45dfec17d66791017afd93e54b9cfc5ad",
+        "fresh_critical_frames": 183,
+        "identical_anchor_frames": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100,
+          110,
+          120,
+          130,
+          140,
+          290,
+          300,
+          1940,
+          1950
+        ],
+        "physical_arrays_and_original_attributes_identical": true
+      }
+    },
+    {
+      "id": 3002,
+      "path": "/home/user/wq/nero_act_grasp_state_recovery_20261018/training_data/grasp_fresh_v1/episode_3002.hdf5",
+      "sha256": "665deb3f8d50acf01d16366df346a76522980fc8b0233f989d60af0024aa4fa2",
+      "status": "valid",
+      "split": "train",
+      "source_group": "run19_low_grasp_cup_+0_+0",
+      "teacher_success": true,
+      "full_task_verified": false,
+      "correction_verified": true,
+      "task": "descend_to_retreat_correction",
+      "origin": "/home/user/wq/nero_act_grasp_state_recovery_20261018/evaluation/run19_grasp_sources/cup_+0_+0",
+      "query_step": 1118,
+      "snapshot_sha256": "38136c01f699ead54ed0e7eac01573bd4189553cf100f3e44e354db3e2ec7660",
+      "scene_sha256": "625d1c25b9084e424c849257db6e5b1d93258f87b10abcf86033719ebe80f8ef",
+      "replay": {
+        "frames": 2785,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 279
+      },
+      "observation_derivation": {
+        "source": "/home/user/wq/nero_act_grasp_state_recovery_20261018/training_data/grasp_raw_v1/episode_3002.hdf5",
+        "source_sha256": "e7efb1468fdfbf80ba0fb3899916f07f8bfbcc99056b3001269c30657a09281e",
+        "target": "/home/user/wq/nero_act_grasp_state_recovery_20261018/training_data/grasp_fresh_v1/episode_3002.hdf5",
+        "target_sha256": "665deb3f8d50acf01d16366df346a76522980fc8b0233f989d60af0024aa4fa2",
+        "fresh_critical_frames": 174,
+        "identical_anchor_frames": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100,
+          110,
+          120,
+          130,
+          280,
+          290,
+          1930,
+          1940
+        ],
+        "physical_arrays_and_original_attributes_identical": true
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "case": "validation41_grasp",
+      "height": 0.06,
+      "error": "No matching ACT-visited correction height"
+    }
+  ],
+  "source_evaluation": "/home/user/wq/nero_act_grasp_state_recovery_20261018/evaluation/run19_grasp_sources",
+  "source_protocol_sha256": "3023eed36bcefe0cb4d1ae5c4871b6d5a5613b579f93895750b3790355e63d47",
+  "source_checkpoint_sha256": "15254f4eeec0c5dc890a5aa8356c42f9a5d82eecd68715816a887cda186cf9e0",
+  "original_16_cases_now_development_only": true,
+  "role": "partial_descent_alignment_recoveries"
+}

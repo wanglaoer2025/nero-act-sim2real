@@ -1,0 +1,69 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+___________ test_history_dispatch_records_actual_ack_and_completion ____________
+
+    def test_history_dispatch_records_actual_ack_and_completion():
+>       worker,core,port,dispatcher,now=components()
+
+tests/test_history_dispatch.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def components():
+        import inspect
+        from executor.visual_control import VisualControlCore
+>       assert "initial_receipt" in inspect.signature(VisualControlCore).parameters, "History dispatch receipt binding missing"
+E       AssertionError: History dispatch receipt binding missing
+E       assert 'initial_receipt' in mappingproxy(OrderedDict({'config': <Parameter "config">, 'calibration': <Parameter "calibration">, 'initial_target': <Parameter "initial_target">}))
+E        +  where mappingproxy(OrderedDict({'config': <Parameter "config">, 'calibration': <Parameter "calibration">, 'initial_target': <Parameter "initial_target">})) = <Signature (config, calibration, initial_target)>.parameters
+E        +    where <Signature (config, calibration, initial_target)> = <function signature at 0x7f7a17f06020>(<class 'executor.visual_control.VisualControlCore'>)
+E        +      where <function signature at 0x7f7a17f06020> = <module 'inspect' from '/usr/lib/python3.12/inspect.py'>.signature
+
+tests/test_history_dispatch.py:11: AssertionError
+_________ test_collision_time_mutation_is_rechecked_before_submission __________
+
+    def test_collision_time_mutation_is_rechecked_before_submission():
+>       worker,core,port,dispatcher,now=components()
+
+tests/test_history_dispatch.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def components():
+        import inspect
+        from executor.visual_control import VisualControlCore
+>       assert "initial_receipt" in inspect.signature(VisualControlCore).parameters, "History dispatch receipt binding missing"
+E       AssertionError: History dispatch receipt binding missing
+E       assert 'initial_receipt' in mappingproxy(OrderedDict({'config': <Parameter "config">, 'calibration': <Parameter "calibration">, 'initial_target': <Parameter "initial_target">}))
+E        +  where mappingproxy(OrderedDict({'config': <Parameter "config">, 'calibration': <Parameter "calibration">, 'initial_target': <Parameter "initial_target">})) = <Signature (config, calibration, initial_target)>.parameters
+E        +    where <Signature (config, calibration, initial_target)> = <function signature at 0x7f7a17f06020>(<class 'executor.visual_control.VisualControlCore'>)
+E        +      where <function signature at 0x7f7a17f06020> = <module 'inspect' from '/usr/lib/python3.12/inspect.py'>.signature
+
+tests/test_history_dispatch.py:11: AssertionError
+_________ test_history_runtime_cannot_bypass_packet_with_raw_dispatch __________
+
+    def test_history_runtime_cannot_bypass_packet_with_raw_dispatch():
+>       worker,core,port,dispatcher,now=components()
+
+tests/test_history_dispatch.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def components():
+        import inspect
+        from executor.visual_control import VisualControlCore
+>       assert "initial_receipt" in inspect.signature(VisualControlCore).parameters, "History dispatch receipt binding missing"
+E       AssertionError: History dispatch receipt binding missing
+E       assert 'initial_receipt' in mappingproxy(OrderedDict({'config': <Parameter "config">, 'calibration': <Parameter "calibration">, 'initial_target': <Parameter "initial_target">}))
+E        +  where mappingproxy(OrderedDict({'config': <Parameter "config">, 'calibration': <Parameter "calibration">, 'initial_target': <Parameter "initial_target">})) = <Signature (config, calibration, initial_target)>.parameters
+E        +    where <Signature (config, calibration, initial_target)> = <function signature at 0x7f7a17f06020>(<class 'executor.visual_control.VisualControlCore'>)
+E        +      where <function signature at 0x7f7a17f06020> = <module 'inspect' from '/usr/lib/python3.12/inspect.py'>.signature
+
+tests/test_history_dispatch.py:11: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_dispatch.py::test_history_dispatch_records_actual_ack_and_completion
+FAILED tests/test_history_dispatch.py::test_collision_time_mutation_is_rechecked_before_submission
+FAILED tests/test_history_dispatch.py::test_history_runtime_cannot_bypass_packet_with_raw_dispatch
+3 failed, 1 warning in 1.79s

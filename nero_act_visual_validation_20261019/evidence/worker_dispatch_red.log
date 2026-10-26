@@ -1,0 +1,37 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___ test_visual_worker_binds_same_rgb_geometry_feedback_and_previous_target ____
+
+    def test_visual_worker_binds_same_rgb_geometry_feedback_and_previous_target():
+        m=api();frame,geometry,paired,cal=valid_inputs();c=config();c['calibration_sha256']=cal['calibration_sha256']
+        stats=statistics(c);received=[]
+        def predict(rgb,state,previous,*,geometry_features_m):
+            received.append((rgb.copy(),state.copy(),previous,geometry_features_m.copy()))
+            return np.tile(state,(20,1))
+        policy=SimpleNamespace(config=c,stats=stats,metadata=dict(checkpoint_sha256='fixture'),predict=predict)
+        observer=SimpleNamespace(measure=lambda _:geometry)
+        robot=SimpleNamespace(pose=lambda _:dict(tcp=np.array([0.,0.,.1])))
+        worker=m.VisualInferenceWorker(policy,cal,observer,robot,capture=lambda:frame,
+            feedback=lambda:[dict(monotonic_s=paired['monotonic_s'],position=paired['state'])],clock=lambda:10.02)
+        packet=worker.predict(previous_gripper_target_m=.09,after_s=9.9)
+        assert packet['details']['policy_input_dim']==15
+        assert packet['details']['previous_gripper_target_m']==.09
+        np.testing.assert_allclose(received[0][3],[.1,.2,-.1,.3,.4,-.1])
+        np.testing.assert_array_equal(received[0][0],frame.rgb)
+        m.verify_prediction_packet(packet)
+        from executor.visual_control import VisualControlCore
+        from executor.visual_dispatch import VisualDispatcher
+        from tests.test_visual_dispatch import Transport
+        core=VisualControlCore(c,cal,paired['state']);clock=[10.02];port=Transport(clock)
+>       VisualDispatcher(core,port,clock=lambda:clock[0]).dispatch_prediction(packet)
+E       AttributeError: 'VisualDispatcher' object has no attribute 'dispatch_prediction'
+
+tests/test_visual_inference.py:40: AttributeError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_inference.py::test_visual_worker_binds_same_rgb_geometry_feedback_and_previous_target
+1 failed, 2 deselected, 1 warning in 2.00s

@@ -1,0 +1,29 @@
+test_simulated_confirmation_cannot_accept_source_or_airborne_cup (tests.test_supervised_rollout.SupervisedRolloutTests.test_simulated_confirmation_cannot_accept_source_or_airborne_cup) ... ok
+test_simulated_contact_keeps_the_real_width_and_slip_limits (tests.test_supervised_rollout.SupervisedRolloutTests.test_simulated_contact_keeps_the_real_width_and_slip_limits) ... FAIL
+test_evaluated_statistics_scene_and_config_must_match_runtime_and_receipt (tests.test_permission.PermissionTests.test_evaluated_statistics_scene_and_config_must_match_runtime_and_receipt) ... ok
+test_incomplete_integrity_and_missing_physical_evidence_cannot_authorize (tests.test_permission.PermissionTests.test_incomplete_integrity_and_missing_physical_evidence_cannot_authorize) ... FAIL
+test_user_token_cannot_override_failed_or_wrong_model_evaluation (tests.test_permission.PermissionTests.test_user_token_cannot_override_failed_or_wrong_model_evaluation) ... ok
+
+======================================================================
+FAIL: test_simulated_contact_keeps_the_real_width_and_slip_limits (tests.test_supervised_rollout.SupervisedRolloutTests.test_simulated_contact_keeps_the_real_width_and_slip_limits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_supervised_rollout.py", line 11, in test_simulated_contact_keeps_the_real_width_and_slip_limits
+    self.assertEqual(contact.state,'open','95mm cannot be an accepted held-cup width')
+AssertionError: 'holding' != 'open'
+- holding
++ open
+ : 95mm cannot be an accepted held-cup width
+
+======================================================================
+FAIL: test_incomplete_integrity_and_missing_physical_evidence_cannot_authorize (tests.test_permission.PermissionTests.test_incomplete_integrity_and_missing_physical_evidence_cannot_authorize)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_permission.py", line 53, in test_incomplete_integrity_and_missing_physical_evidence_cannot_authorize
+    with self.assertRaises(PermissionError):
+AssertionError: PermissionError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.598s
+
+FAILED (failures=2)

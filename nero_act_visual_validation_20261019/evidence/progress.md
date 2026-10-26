@@ -1,0 +1,15 @@
+# SDD ledger — plan: /home/user/wq/docs/superpowers/plans/2026-10-19-nero-act-live-visual-feedback.md
+
+Continuation tasks9/10 and consolidated troubleshooting document, user explicitly authorized.
+Ruling: keep trained source unchanged and work in another non-Git isolated directory, following approved hash-ledger workflow; no Git history recovery.
+Ruling: offline training used retained nominal calibration; evaluation can only certify that nominal simulation domain. Live geometry and frontend gates remain unchanged; simulation success cannot qualify the physical TCP.
+Ruling: sixteen case IDs/seed were frozen before training, but the three last cases lacked numeric perturbation parameters. Complete their definitions now, preserve original protocol digest, and label exact-parameter declaration as post-training; do not misreport independent real deployment qualification.
+
+Task9 nominal development:320x180 0/1 and160x90 0/1, both onlyGRASP,3900active points, no lift/transfer. Detailed evidence retained; no model or safety thresholds modified.
+Task10 implementation started: same-frame qualified-input worker, packet content/time/history bindings, asynchronous health supervision,1/2-point ROS transport,45ms ACK and750ms result checks, latched stop/cancel/read-only callback. No assembled qualified camera/phase runner or execution launcher; original CLI remains offline-only.
+Final review:3 Important,0 Critical/Minor. RED3 reproduced fake observation delay, missing suite geometry binding, completed-future health/deadline bypass. One fix pass: actual historical physics exposure/state/context with confirmation reset; shared complete XML/asset/stat dependencies plus child-parent equality; completion health/deadline checks on every success path. Review-green scoped26 passed.
+Ruling: review declined real metrology/live semantic frontend/ROS/CAN timing/readonly effectiveness/full phase launcher and real task outcome. Keep them explicitly unqualified; unit tests demonstrate component contracts only. Cost: these components cannot yet complete physical deployment.
+Ruling: full suite baseline initially had6 failures from omitted small legacy test fixtures, not new behavior; copied5 exact source fixtures (no receipts) and reran. Cost: legacy fixture imports remain historical tests.
+Independent reviewer also declined full16 outcomes and documentation; both are verified separately by actual suite results and local source/link audit.
+Final assessment:16/16 case processes completed,5 full successes;7 point-budget stalls,2 unexpected contacts,1 held-cup/table guard,1 truly delayed-exposure freshness stop. Full frozen physical dependency set131 verified unchanged; child manifests match parent. Model/old trained sources unchanged. Not deployment qualified.
+Final code regression after freeze:280 passed,5 skipped,1 preexisting warning. Original source 111 files unchanged and both training finalization checks pass. Successful recorded-query video1425frames@20fps2x exported/readback verified. Full issue/solution document54 material issues written; no motion.

@@ -1,0 +1,116 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+{
+  "complete": true,
+  "gate": "stop",
+  "results": [
+    {
+      "variant": "A",
+      "name": "nominal_pre_close",
+      "role": "hold_to_lift",
+      "passed": false,
+      "lift_mm": -0.0038019575407041706,
+      "new_active_points": 400,
+      "error": null
+    },
+    {
+      "variant": "A",
+      "name": "nominal_hold_to_lift",
+      "role": "hold_to_lift",
+      "passed": false,
+      "lift_mm": -0.0033860603937882483,
+      "new_active_points": 4,
+      "error": "RuntimeError: ACT requested opening outside supported-placement region"
+    },
+    {
+      "variant": "A",
+      "name": "heldout_pre_close",
+      "role": "pre_close",
+      "passed": false,
+      "lift_mm": 0.001529226959284813,
+      "new_active_points": 2876,
+      "error": null
+    },
+    {
+      "variant": "A",
+      "name": "heldout_hold_to_lift",
+      "role": "hold_to_lift",
+      "passed": true,
+      "lift_mm": 20.931657896306646,
+      "new_active_points": 46,
+      "error": null
+    },
+    {
+      "variant": "A",
+      "name": "heldout_support_release",
+      "role": "support_release",
+      "passed": false,
+      "lift_mm": -0.004711645843751,
+      "new_active_points": 19,
+      "error": "RuntimeError: Arm left the3mm supported-release envelope"
+    },
+    {
+      "variant": "A",
+      "name": "heldout_release_retreat",
+      "role": "release_retreat",
+      "passed": true,
+      "lift_mm": -0.003312193322328738,
+      "new_active_points": 336,
+      "error": null
+    },
+    {
+      "variant": "B",
+      "name": "nominal_pre_close",
+      "role": "hold_to_lift",
+      "passed": false,
+      "lift_mm": -0.003938549837025074,
+      "new_active_points": 400,
+      "error": null
+    },
+    {
+      "variant": "B",
+      "name": "nominal_hold_to_lift",
+      "role": "hold_to_lift",
+      "passed": false,
+      "lift_mm": -0.003348712322048808,
+      "new_active_points": 6,
+      "error": "RuntimeError: ACT requested opening outside supported-placement region"
+    },
+    {
+      "variant": "B",
+      "name": "heldout_pre_close",
+      "role": "pre_close",
+      "passed": false,
+      "lift_mm": -0.003308509662174053,
+      "new_active_points": 2876,
+      "error": null
+    },
+    {
+      "variant": "B",
+      "name": "heldout_hold_to_lift",
+      "role": "hold_to_lift",
+      "passed": true,
+      "lift_mm": 20.63447783638149,
+      "new_active_points": 46,
+      "error": null
+    },
+    {
+      "variant": "B",
+      "name": "heldout_support_release",
+      "role": "support_release",
+      "passed": false,
+      "lift_mm": -0.004615243645110512,
+      "new_active_points": 17,
+      "error": "RuntimeError: Arm left the3mm supported-release envelope"
+    },
+    {
+      "variant": "B",
+      "name": "heldout_release_retreat",
+      "role": "release_retreat",
+      "passed": true,
+      "lift_mm": -0.003312189879846328,
+      "new_active_points": 330,
+      "error": null
+    }
+  ]
+}

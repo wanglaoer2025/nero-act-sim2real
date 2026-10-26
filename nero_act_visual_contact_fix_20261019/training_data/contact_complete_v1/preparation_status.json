@@ -1,0 +1,68 @@
+{
+  "completed": 48,
+  "total": 48,
+  "latest": {
+    "id": 47,
+    "path": "/home/user/wq/nero_act_visual_contact_fix_20261019/training_data/contact_complete_v1/episode_47.hdf5",
+    "status": "valid",
+    "teacher_success": true,
+    "full_task_verified": true,
+    "split": "val",
+    "source_group": "scene_47",
+    "frames": 2988,
+    "replay": {
+      "frames": 2988,
+      "maximum_qpos_error": 0.0,
+      "passed": true
+    },
+    "prefix_contract_audit": {
+      "passed": true,
+      "windows": 299
+    },
+    "sha256": "aa20591838b151877682150d46f70bf0766bdde059f1898e7faa33ec6423e522",
+    "scenario": {
+      "index": 47,
+      "split": "val",
+      "source_group": "scene_47",
+      "seed": 180470,
+      "attempt": 0,
+      "source_offset_m": [
+        0.027,
+        0.024
+      ],
+      "initial_translation_m": [
+        -0.014754779747531446,
+        0.007702964998470341,
+        -0.002507675255506721
+      ],
+      "initial_rotation_rad": [
+        -0.019963440989654496,
+        0.035904353149504395,
+        -0.04031879923304384
+      ],
+      "training_envelope_only": true
+    },
+    "elapsed_s": 36.127790087950416,
+    "requested": 440,
+    "valid": 440,
+    "rejected": {},
+    "stages_valid": {
+      "approach": 60,
+      "descend": 44,
+      "close": 121,
+      "lift": 63,
+      "carry": 36,
+      "place": 39,
+      "release": 27,
+      "retreat": 39,
+      "settle": 11
+    },
+    "image_estimator_error_m": {
+      "median": 0.009771294681078117,
+      "p95": 0.009772902051330905,
+      "max": 0.0121108811605287
+    },
+    "truth_used_as_policy_input": false,
+    "physical_labels_unchanged": true
+  }
+}

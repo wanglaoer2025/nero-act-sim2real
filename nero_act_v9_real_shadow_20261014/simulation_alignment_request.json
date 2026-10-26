@@ -1,0 +1,47 @@
+{
+  "initial_q_rad": [
+    -0.4744153916835785,
+    0.7821518778800964,
+    -0.1293288916349411,
+    1.397729516029358,
+    -0.28040459752082825,
+    -0.5063374638557434,
+    -0.7044323682785034
+  ],
+  "initial_gripper_total_width_m": 0.09983199834823608,
+  "source_cup_centre_nero_base_mm": [
+    -523.6328770877162,
+    73.93982104009312,
+    37.5
+  ],
+  "destination_cup_centre_nero_base_mm": [
+    -515.9092259086017,
+    -117.49644438829995,
+    37.5
+  ],
+  "nominal_table_z_nero_base_mm": -10,
+  "cup_diameter_mm": 75,
+  "cup_height_mm": 95,
+  "cup_empty_mass_g": 50,
+  "camera_calibration_file": "calibration/camera_to_base.json",
+  "camera_transform_translation_unit": "mm",
+  "policy_image_orientation": "upright RGB; captured images already rotated180deg; avoid another rotation",
+  "model_image_size": [
+    90,
+    160
+  ],
+  "action_order": "joint1..joint7 radians + gripper total width metres",
+  "scene_parameter_provenance": "measurements_used.json",
+  "request": "Reconstruct real starting pose, fixed ZED observation and task geometry in simulation, export corresponding demonstrations and independently evaluate retrained policy before physical grasp tests.",
+  "scene_is_provisional": true,
+  "physical_coordinate_independent_survey": false,
+  "simulation_verified_after_applying_these_parameters": false,
+  "real_checkpoint_sha256": "872b747f45ca02f5484df2b8cf7ae5955c7de765a689e3887328222975005191",
+  "requested_execution_contract": {
+    "query_hz": 2,
+    "command_hz": 20,
+    "predicted_chunk_steps": 100,
+    "execute_first_steps": 10
+  },
+  "capture_and_coordinates_paired": true
+}

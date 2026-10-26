@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-15T23:22:33.121971+08:00",
+  "status": "moveit_restarted_plan_ready_waiting_onsite_MOVEIT",
+  "ros_domain_id": 42,
+  "driver_pid": 394379,
+  "launch_pid": 394373,
+  "original_package_unmodified": true,
+  "local_test_fix_sha256": "f8b738609b4d8ad2004f5835ecee6799d128cbc6798ac5ab0722479518d7a57f",
+  "local_test_fix_changes": [
+    "accept seven-arm or one-gripper gated telemetry while retaining eight-axis actual feedback validation",
+    "require idle-closed startup control config and verify real driver is subscribed only to gated commands"
+  ],
+  "offline_regression_tests_passed": 10,
+  "current_can_controllers": 1,
+  "driver_speed_percent": 5,
+  "auto_enable": false,
+  "idle_control_gate_closed": true,
+  "mock_state_synchronized_without_can_tx": true,
+  "plan_complete": true,
+  "execution_readiness_checks_passed": true,
+  "planned_j1_delta_rad": 0.005,
+  "planned_duration_s": 4.0,
+  "physical_motion_goal_submitted": false,
+  "onsite_confirmation_pending": true,
+  "no_automatic_return": true,
+  "gripper_target_sent_to_hardware": false,
+  "collision_scope": "current MoveIt model only; operator clearance confirmation required",
+  "files": {
+    "motor_enable_readonly_check.json": "cb99a76addd52f70f2d91280d0c244a221d2b20752fe171124a8dc2bfd09996b",
+    "onsite_changes.patch": "cea49460d791f2f4923d8ebe4d3264e8953b6501c43f070da02b9e5c39449326",
+    "mock_initialization_verification.json": "eb93934d43f7980eae898ac4dca9c26538d96088517a16c6bde0396b3617add0",
+    "nero_moveit_real_test.py": "f8b738609b4d8ad2004f5835ecee6799d128cbc6798ac5ab0722479518d7a57f",
+    "test_onsite.py": "cfaaff21adedbb53e892f310acf245d3fd89ccb9057dcca02fdb2cc3775d2594"
+  }
+}

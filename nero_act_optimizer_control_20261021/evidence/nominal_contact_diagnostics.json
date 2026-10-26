@@ -1,0 +1,131 @@
+{
+  "complete": true,
+  "unchanged_holding_margin_mm": [
+    3,
+    12
+  ],
+  "required_stable_seconds": 0.5,
+  "rows": [
+    {
+      "arm": "fixed",
+      "case": "nominal_pre_close",
+      "contact_state": "open",
+      "new_points": 400,
+      "error": null,
+      "raw_prefix_width_mm": [
+        72.48978424072266,
+        94.50023651123047
+      ],
+      "raw_query_closing_margin_mm": [
+        0.499762561325362,
+        2.040384734787015
+      ],
+      "executed_closing_margin_mm": [
+        -3.337449760998368e-08,
+        2.061860121289394
+      ],
+      "final_executed_closing_margin_mm": 1.932751087719467,
+      "final_measured_width_mm": 74.57436963754323,
+      "last_raw_prefix_mm": [
+        73.05692291259766,
+        72.64161682128906
+      ],
+      "last_feedback_width_mm": 74.5526538745622
+    },
+    {
+      "arm": "fixed",
+      "case": "nominal_hold_to_lift",
+      "contact_state": "holding",
+      "new_points": 2,
+      "error": "RuntimeError: ACT requested opening outside supported-placement region",
+      "raw_prefix_width_mm": [
+        70.95768737792969,
+        71.44586944580078
+      ],
+      "raw_query_closing_margin_mm": [
+        2.919242613386497,
+        3.4080196307053887
+      ],
+      "executed_closing_margin_mm": [
+        3.0124832079758965,
+        3.501254595686204
+      ],
+      "final_executed_closing_margin_mm": 3.4329833913932797,
+      "final_measured_width_mm": 74.3906738687645,
+      "last_raw_prefix_mm": [
+        71.44586944580078,
+        71.04731750488281
+      ],
+      "last_feedback_width_mm": 74.36511003262936
+    },
+    {
+      "arm": "decay",
+      "case": "nominal_pre_close",
+      "contact_state": "open",
+      "new_points": 400,
+      "error": null,
+      "raw_prefix_width_mm": [
+        72.16151428222656,
+        94.2817611694336
+      ],
+      "raw_query_closing_margin_mm": [
+        0.7182359361689594,
+        2.3323435954762384
+      ],
+      "executed_closing_margin_mm": [
+        -3.337449760998368e-08,
+        2.353304180961413
+      ],
+      "final_executed_closing_margin_mm": 2.260351463812177,
+      "final_measured_width_mm": 74.5321976986106,
+      "last_raw_prefix_mm": [
+        72.680908203125,
+        72.27184295654297
+      ],
+      "last_feedback_width_mm": 74.51092147916584
+    },
+    {
+      "arm": "decay",
+      "case": "nominal_hold_to_lift",
+      "contact_state": "holding",
+      "new_points": 4,
+      "error": "RuntimeError: Physical held contact/slip contract failed",
+      "raw_prefix_width_mm": [
+        70.899169921875,
+        71.38395690917969
+      ],
+      "raw_query_closing_margin_mm": [
+        2.971144877862264,
+        3.4665364907136285
+      ],
+      "executed_closing_margin_mm": [
+        2.971144877862264,
+        3.501254595686204
+      ],
+      "final_executed_closing_margin_mm": 2.971144877862264,
+      "final_measured_width_mm": 74.35509797234468,
+      "last_raw_prefix_mm": [
+        71.38395690917969,
+        70.9806137084961
+      ],
+      "last_feedback_width_mm": 74.35509797234468
+    }
+  ],
+  "gap_is_contact_proxy_not_TCP_error_or_force_calibration": true,
+  "hardware_commands_sent": false,
+  "source_sha256": {
+    "/home/user/wq/nero_act_optimizer_control_20261021/evidence/analyze_contact.py": "916c65221d22df937999593695945abdd0cb847c1817bf622854ec97e79f2711",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/executor/phases.py": "7d9f7be87338d91ee1a584d9507bac6c344f61b7ba8de8a02082c6bf3a55371d",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/simulation/supervised_rollout.py": "05e55a3aeb19d8533537158855af3982159c6c9cc1828f97e3b339317d1fcf04",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/results/mechanism/nominal_pre_close/result.json": "191fcbfbc525b500caed3b178acdff3de0ccb4033435734ef1428b68dbcda397",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/results/mechanism/nominal_pre_close/rollout.npz": "d62a758069cafd2a691f57c67d7c23837c7cc32e14485e3e25b9c1a15e073a7e",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/results/mechanism/nominal_hold_to_lift/result.json": "9aeaf71fca35aaba25f296a773f9ce858b26b89e30d5bd5509b3a82b20f81c81",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/results/mechanism/nominal_hold_to_lift/rollout.npz": "48d340624aa1534dc455460914c148d2bd805d9c2c0b07f4f507713d2bcfe000",
+    "/home/user/wq/nero_act_optimizer_decay_20261021/executor/phases.py": "7d9f7be87338d91ee1a584d9507bac6c344f61b7ba8de8a02082c6bf3a55371d",
+    "/home/user/wq/nero_act_optimizer_decay_20261021/simulation/supervised_rollout.py": "05e55a3aeb19d8533537158855af3982159c6c9cc1828f97e3b339317d1fcf04",
+    "/home/user/wq/nero_act_optimizer_decay_20261021/results/mechanism/nominal_pre_close/result.json": "a0fc04ddc25181b99a59c97ea7c38a1899c1abea8064e8e286f4f444cd4cfb6d",
+    "/home/user/wq/nero_act_optimizer_decay_20261021/results/mechanism/nominal_pre_close/rollout.npz": "9adb4fdc4118e1d416c591d801953c35153f11de67183d974a4f0260b8645df6",
+    "/home/user/wq/nero_act_optimizer_decay_20261021/results/mechanism/nominal_hold_to_lift/result.json": "7136dc5579fe023e0ba10cadfec21a467bf58cdeb2322c9493858d1bd189f69d",
+    "/home/user/wq/nero_act_optimizer_decay_20261021/results/mechanism/nominal_hold_to_lift/rollout.npz": "738f2af24e343451a75e28393fbd5538aa590abc877c9a6d2bf2909db37a739b"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "proposal_only_not_authorization",
+  "scope": "one_current_fixed_scene_supervised_ACT_trial",
+  "candidate_model": "/home/user/wq/nero_act_fixed_scene_heads_20261018/model/run27_fixed_heads",
+  "checkpoint_sha256": "97f329a4c2fc3661195156270afbd80dfb4d95fd14a18680ce8911575c539bd8",
+  "stats_sha256": "cfd53e90a0b1505c37f49cfbc7e6448385b12b827fa2be43d97e38b778b1effc",
+  "scene_sha256": "686ab26beba2e1979151cb6601b3549575ac51c6c2ea0bf0a5cdad2ce29f5352",
+  "training_config_sha256": "b40ed7a824842239928a5265496532abf2b040c06bb9de3ba071024bebdcddf0",
+  "evaluation_sha256": "e2bcef25031bf9aafcea4b7064a2d1b2459f851aad1a8ab0d740677cb48d5339",
+  "complete_evaluation_passed": 9,
+  "complete_evaluation_total": 14,
+  "overall_deployment_acceptance_passed": false,
+  "known_failures": [
+    "independent_0/1/2/7: stalled above grasp depth",
+    "delay_500ms: incomplete carry within3900active points"
+  ],
+  "proposed_actions": [
+    "fresh image/ROS/independent receive-only SDK health and geometry checks",
+    "verify one sender, controllers, isolated closed gate, frozen package",
+    "high empty-gripper opening80.894to95mm; seven arm targets held; approx5.3s",
+    "online ACT approach/grasp/lift/carry/supported-place/open/retreat; full amplitude"
+  ],
+  "task_motion_source": "ACT online real image/state inference; no YOLO/MoveIt task takeover",
+  "retained_protections": [
+    "existing physical joint/gripper bounds",
+    "maximum2mrad arm and0.5mm gripper per50ms point",
+    "actual feedback lead and observation-age limits",
+    "full-robot/table/cup collision validation",
+    "measured contact/low-force/slip protection",
+    "original3900active-point limit",
+    "four onsite stage confirmations",
+    "abort and close gate on abnormality; no automatic retries or return"
+  ],
+  "proposed_speed_percent": 5,
+  "gripper_force_limit_n": 1.0,
+  "preparation_gripper_target_mm": 95,
+  "operator_confirmations_required": [
+    "at physical emergency stop throughout trial",
+    "empty yellow cup at source, blue card unchanged",
+    "swept volume clear and no other controller"
+  ],
+  "general14of14_gate_to_remain_unchanged": true,
+  "new_trial_entry_not_implemented": true,
+  "fresh_trial_specific_authorization_required": true,
+  "authorization_received": false,
+  "hardware_motion_sent": false,
+  "gripper_sent": false,
+  "enable_sent": false
+}

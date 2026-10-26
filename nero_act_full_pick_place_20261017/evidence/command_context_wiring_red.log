@@ -1,0 +1,76 @@
+test_command_context_can_learn_the_release_deadband_progress (tests.test_command_context.CommandContextTests.test_command_context_can_learn_the_release_deadband_progress) ... /home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+FAIL
+test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels (tests.test_command_context.CommandContextTests.test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels) ... ok
+test_frozen_worker_builds_the_same_nine_dimensional_observation (tests.test_command_context.CommandContextTests.test_frozen_worker_builds_the_same_nine_dimensional_observation) ... ERROR
+test_initialization_only_weights_can_never_be_exported (tests.test_command_context.CommandContextTests.test_initialization_only_weights_can_never_be_exported) ... ERROR
+test_live_worker_uses_submitted_reference_instead_of_measured_opening (tests.test_command_context.CommandContextTests.test_live_worker_uses_submitted_reference_instead_of_measured_opening) ... ERROR
+test_nine_model_features_never_change_eight_dimensional_physical_contract (tests.test_command_context.CommandContextTests.test_nine_model_features_never_change_eight_dimensional_physical_contract) ... ok
+test_noise_preserves_the_same_known_past_command (tests.test_command_context.CommandContextTests.test_noise_preserves_the_same_known_past_command) ... ERROR
+test_observation_keeps_actual_width_and_requires_real_past_command (tests.test_command_context.CommandContextTests.test_observation_keeps_actual_width_and_requires_real_past_command) ... ok
+test_state_projection_expansion_preserves_legacy_prediction_and_learns_context (tests.test_command_context.CommandContextTests.test_state_projection_expansion_preserves_legacy_prediction_and_learns_context) ... ok
+
+======================================================================
+ERROR: test_frozen_worker_builds_the_same_nine_dimensional_observation (tests.test_command_context.CommandContextTests.test_frozen_worker_builds_the_same_nine_dimensional_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 94, in test_frozen_worker_builds_the_same_nine_dimensional_observation
+    worker.predict(np.zeros((90,160,3),np.uint8),np.r_[np.zeros(7),.074],previous_gripper_target_m=.065)
+TypeError: FrozenAct.predict() got an unexpected keyword argument 'previous_gripper_target_m'
+
+======================================================================
+ERROR: test_initialization_only_weights_can_never_be_exported (tests.test_command_context.CommandContextTests.test_initialization_only_weights_can_never_be_exported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 128, in test_initialization_only_weights_can_never_be_exported
+    with self.assertRaisesRegex(ValueError,'initializer'):export_model(path,Path(directory)/'bad_model')
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/training/export.py", line 20, in export_model
+    with (checkpoint.parent/'dataset_stats.pkl').open('rb') as stream:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmp58brmd3u/dataset_stats.pkl'
+
+======================================================================
+ERROR: test_live_worker_uses_submitted_reference_instead_of_measured_opening (tests.test_command_context.CommandContextTests.test_live_worker_uses_submitted_reference_instead_of_measured_opening)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 84, in test_live_worker_uses_submitted_reference_instead_of_measured_opening
+    self.assertEqual(request['previous_gripper_target_m'],.065)
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'previous_gripper_target_m'
+
+======================================================================
+ERROR: test_noise_preserves_the_same_known_past_command (tests.test_command_context.CommandContextTests.test_noise_preserves_the_same_known_past_command)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 109, in test_noise_preserves_the_same_known_past_command
+    policy(q,torch.zeros(1,1,3,90,160),torch.zeros(1,20,8),torch.zeros(1,20,dtype=torch.bool))
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/training/train.py", line 107, in forward
+    qpos = qpos+(torch.rand_like(qpos)*2-1)*self.noise.to(qpos.device)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~~~~~~~~~~~~~
+RuntimeError: The size of tensor a (9) must match the size of tensor b (8) at non-singleton dimension 1
+
+======================================================================
+FAIL: test_command_context_can_learn_the_release_deadband_progress (tests.test_command_context.CommandContextTests.test_command_context_can_learn_the_release_deadband_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 121, in test_command_context_can_learn_the_release_deadband_progress
+    self.assertIn((0,0),complete_windows([path],20,command_context=True))
+AssertionError: (0, 0) not found in [(0, 40), (0, 40), (0, 40)]
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.437s
+
+FAILED (failures=1, errors=4)
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M

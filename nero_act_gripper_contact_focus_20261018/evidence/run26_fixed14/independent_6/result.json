@@ -1,0 +1,77 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19059337257808717,
+  "maximum_horizontal_transfer_m": 0.1755677747596182,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 1428,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5239484437556237,
+      -0.15629008556541238,
+      0.047496687817610996
+    ],
+    "tcp_xyz": [
+      -0.5280786587296573,
+      -0.15629555406159587,
+      0.06221842699879606
+    ],
+    "cup_upright": 0.9999999999999842,
+    "cup_speed": 4.490495416257992e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09015303754892302,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": true,
+    "force": false,
+    "name": "independent_6",
+    "seed": 90106
+  },
+  "frames": 3660,
+  "active_policy_points": 3335,
+  "queries": 348,
+  "error": "RuntimeError: ACT requested another closure after the confirmed release",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 1253,
+      "active_points": 1253,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 2320,
+      "active_points": 2199,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 3393,
+      "active_points": 3192,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 5,
+  "runtime_s": 31.306279965909198,
+  "contact_arm_hold_points": 260,
+  "guard_diagnostic": null
+}

@@ -1,0 +1,44 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+test_axial_surface_motion_cannot_be_called_static_from_unchanged_roi (test_review_regressions.ReviewRegressions.test_axial_surface_motion_cannot_be_called_static_from_unchanged_roi) ... FAIL
+test_lateral_surface_motion_is_also_rejected_when_roi_stays_the_same (test_review_regressions.ReviewRegressions.test_lateral_surface_motion_is_also_rejected_when_roi_stays_the_same) ... FAIL
+test_one_sided_depth_outliers_cannot_pass_unsigned_quality_gate (test_review_regressions.ReviewRegressions.test_one_sided_depth_outliers_cannot_pass_unsigned_quality_gate) ... FAIL
+test_small_static_depth_jitter_stays_a_repeatability_measure_only (test_review_regressions.ReviewRegressions.test_small_static_depth_jitter_stays_a_repeatability_measure_only) ... ERROR
+
+======================================================================
+ERROR: test_small_static_depth_jitter_stays_a_repeatability_measure_only (test_review_regressions.ReviewRegressions.test_small_static_depth_jitter_stays_a_repeatability_measure_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_observation_repair_20261023/test_review_regressions.py", line 66, in test_small_static_depth_jitter_stays_a_repeatability_measure_only
+    self.assertFalse(result['stationary_scene_verified'])
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'stationary_scene_verified'
+
+======================================================================
+FAIL: test_axial_surface_motion_cannot_be_called_static_from_unchanged_roi (test_review_regressions.ReviewRegressions.test_axial_surface_motion_cannot_be_called_static_from_unchanged_roi)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_observation_repair_20261023/test_review_regressions.py", line 45, in test_axial_surface_motion_cannot_be_called_static_from_unchanged_roi
+    self.assertFalse(result['static_repeatability_valid'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_lateral_surface_motion_is_also_rejected_when_roi_stays_the_same (test_review_regressions.ReviewRegressions.test_lateral_surface_motion_is_also_rejected_when_roi_stays_the_same)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_observation_repair_20261023/test_review_regressions.py", line 54, in test_lateral_surface_motion_is_also_rejected_when_roi_stays_the_same
+    self.assertFalse(m.sequence_quality(samples)['static_repeatability_valid'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_one_sided_depth_outliers_cannot_pass_unsigned_quality_gate (test_review_regressions.ReviewRegressions.test_one_sided_depth_outliers_cannot_pass_unsigned_quality_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_observation_repair_20261023/test_review_regressions.py", line 35, in test_one_sided_depth_outliers_cannot_pass_unsigned_quality_gate
+    with self.assertRaisesRegex(ValueError,'RGB-D fit rejected'):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.490s
+
+FAILED (failures=3, errors=1)

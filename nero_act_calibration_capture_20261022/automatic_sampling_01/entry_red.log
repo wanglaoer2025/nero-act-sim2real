@@ -1,0 +1,89 @@
+...........FFF.......................................                    [100%]
+=================================== FAILURES ===================================
+___ test_motion_stage_is_arm_only_and_missing_marker_sends_no_target[False] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-85/test_motion_stage_is_arm_only_0')
+camera_lost = False
+
+    @pytest.mark.parametrize('camera_lost',[False,True])
+    def test_motion_stage_is_arm_only_and_missing_marker_sends_no_target(tmp_path,camera_lost):
+        m=api();p=route();commands=[]
+        class Robot:
+            def __init__(self):
+                self.state=np.array(p['initial_state']);self.allow_no_solution=True;self.max_age_s=.15;self.sdk=self
+            def read_health(self,**_):
+                T=m.flange_fk(self.state[:7]);pose=np.r_[T[:3,3],Rotation.from_matrix(T[:3,:3]).as_euler('xyz')]
+                return dict(state=self.state.tolist(),flange_pose=pose.tolist(),feedback_timestamps=[time.time()]*19,
+                    feedback=dict(arm_status=2,err_code=0,ctrl_mode=1,motion_status=0))
+            def set_speed_percent(self,value):assert value==1
+            def move_j(self,q):commands.append(q);self.state[:7]=q
+            def stop_sending(self):pass
+        robot=Robot()
+        class Camera:
+            K=np.array([[263.7,0.,323.58],[0.,263.7,179.92],[0.,0.,1.]])
+            def read(self):return np.zeros((360,640,3),np.uint8),int(time.time()*1e9)
+            def show(self,*_):pass
+            def corners(self,image):
+                if camera_lost:return None
+                CM=np.linalg.inv(p['provisional_camera_base'])@m.flange_fk(robot.state[:7])@p['provisional_mount_hypotheses'][0]
+                h=.095/2;obj=np.array([[-h,h,0],[h,h,0],[h,-h,0],[-h,-h,0]])
+                return cv2.projectPoints(obj,Rotation.from_matrix(CM[:3,:3]).as_rotvec(),CM[:3,3],self.K,None)[0].reshape(4,2)
+        stage=copy.deepcopy(p['stages'][0]);stage['waypoints_rad']=stage['waypoints_rad'][:2]
+        if camera_lost:
+            with pytest.raises(RuntimeError):m.drive_stage(robot,Camera(),p,stage,tmp_path/'events.jsonl',time.monotonic()+10)
+            assert commands==[]
+        else:
+>           m.drive_stage(robot,Camera(),p,stage,tmp_path/'events.jsonl',time.monotonic()+10)
+E           AttributeError: module 'automatic_sampling' has no attribute 'drive_stage'
+
+tests/test_automatic_sampling.py:138: AttributeError
+____ test_motion_stage_is_arm_only_and_missing_marker_sends_no_target[True] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-85/test_motion_stage_is_arm_only_1')
+camera_lost = True
+
+    @pytest.mark.parametrize('camera_lost',[False,True])
+    def test_motion_stage_is_arm_only_and_missing_marker_sends_no_target(tmp_path,camera_lost):
+        m=api();p=route();commands=[]
+        class Robot:
+            def __init__(self):
+                self.state=np.array(p['initial_state']);self.allow_no_solution=True;self.max_age_s=.15;self.sdk=self
+            def read_health(self,**_):
+                T=m.flange_fk(self.state[:7]);pose=np.r_[T[:3,3],Rotation.from_matrix(T[:3,:3]).as_euler('xyz')]
+                return dict(state=self.state.tolist(),flange_pose=pose.tolist(),feedback_timestamps=[time.time()]*19,
+                    feedback=dict(arm_status=2,err_code=0,ctrl_mode=1,motion_status=0))
+            def set_speed_percent(self,value):assert value==1
+            def move_j(self,q):commands.append(q);self.state[:7]=q
+            def stop_sending(self):pass
+        robot=Robot()
+        class Camera:
+            K=np.array([[263.7,0.,323.58],[0.,263.7,179.92],[0.,0.,1.]])
+            def read(self):return np.zeros((360,640,3),np.uint8),int(time.time()*1e9)
+            def show(self,*_):pass
+            def corners(self,image):
+                if camera_lost:return None
+                CM=np.linalg.inv(p['provisional_camera_base'])@m.flange_fk(robot.state[:7])@p['provisional_mount_hypotheses'][0]
+                h=.095/2;obj=np.array([[-h,h,0],[h,h,0],[h,-h,0],[-h,-h,0]])
+                return cv2.projectPoints(obj,Rotation.from_matrix(CM[:3,:3]).as_rotvec(),CM[:3,3],self.K,None)[0].reshape(4,2)
+        stage=copy.deepcopy(p['stages'][0]);stage['waypoints_rad']=stage['waypoints_rad'][:2]
+        if camera_lost:
+>           with pytest.raises(RuntimeError):m.drive_stage(robot,Camera(),p,stage,tmp_path/'events.jsonl',time.monotonic()+10)
+E           AttributeError: module 'automatic_sampling' has no attribute 'drive_stage'
+
+tests/test_automatic_sampling.py:135: AttributeError
+______________ test_auto_entry_help_has_no_hardware_side_effects _______________
+
+    def test_auto_entry_help_has_no_hardware_side_effects():
+        script=Path(api().__file__)
+        r=subprocess.run([sys.executable,str(script),'--help'],capture_output=True,text=True)
+>       assert r.returncode==0 and '--execute' in r.stdout and '--capture-current' in r.stdout
+E       AssertionError: assert (0 == 0 and '--execute' in '')
+E        +  where 0 = CompletedProcess(args=['/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python', '/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling.py', '--help'], returncode=0, stdout='', stderr='').returncode
+E        +  and   '' = CompletedProcess(args=['/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python', '/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling.py', '--help'], returncode=0, stdout='', stderr='').stdout
+
+tests/test_automatic_sampling.py:146: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_automatic_sampling.py::test_motion_stage_is_arm_only_and_missing_marker_sends_no_target[False]
+FAILED tests/test_automatic_sampling.py::test_motion_stage_is_arm_only_and_missing_marker_sends_no_target[True]
+FAILED tests/test_automatic_sampling.py::test_auto_entry_help_has_no_hardware_side_effects
+3 failed, 50 passed in 2.25s

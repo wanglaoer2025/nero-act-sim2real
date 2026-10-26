@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-15T22:59:43.438995+08:00",
+  "mode": "read_only_plan_attempt_and_stack_capture",
+  "ros_domain_id": 42,
+  "plan_complete": false,
+  "execution_readiness_checks_passed": false,
+  "execution_goal_submitted": false,
+  "actual_feedback_samples_recorded": 29,
+  "initial_blocker": "RuntimeError: Service unavailable: /move_group/get_parameters",
+  "missing_runtime_components": [
+    "move_group",
+    "control_gate",
+    "controller_manager"
+  ],
+  "current_driver": {
+    "auto_enable": false,
+    "control_enabled": false,
+    "speed_percent_parameter": 0,
+    "speed_parameter_meaning": "0 leaves hardware speed unchanged; this is not the required <=5 percent motion configuration"
+  },
+  "compatibility_issues": [
+    {
+      "issue": "gated arm telemetry incorrectly required to have gripper",
+      "evidence": "stack_01/offline_compatibility_reproduction.json",
+      "fix_needed": "validate actual feedback as eight joints; parse arm-only and gripper-only gated messages according to their contents without invalidating actual feedback"
+    },
+    {
+      "issue": "closed-at-idle gate conflicts with pre-execution requirement control_enabled=True",
+      "evidence": "stack_01/supplemental_source/scripts/agx_arm_control_gate and original test ready()",
+      "fix_needed": "define an activation handshake compatible with idle-closed gating; do not force gate open to satisfy preflight"
+    }
+  ],
+  "source_files_from_original_collector": 36,
+  "supplemental_installed_gate_and_offline_tests_included": true,
+  "test_package_sources_modified": false,
+  "motion_sent": false,
+  "act_test_performed": false,
+  "driver_left_read_only": true
+}

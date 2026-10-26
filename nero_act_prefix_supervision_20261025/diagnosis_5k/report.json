@@ -1,0 +1,186 @@
+{
+  "checkpoint": "/home/user/wq/nero_act_transfer_v2_20261025/training/formal/policy_5000.ckpt",
+  "updates": 5000,
+  "scope": "frozen5Kdiagnosis only; representative18episodes stride80; posterior has labels and is not deployment",
+  "actual_initial_prediction_replay_max_error": 0.0,
+  "normalization_max_abs_difference": 4.76837158203125e-07,
+  "preprocess_max_pixel_difference": 0.0019608139991760254,
+  "preprocess_and_counterfactual_sensitivity": {
+    "zero_RGB": {
+      "max_prefix_arm_delta_rad": 0.1576826572418213
+    },
+    "CV2_RGB": {
+      "max_prefix_arm_delta_rad": 0.00034177303314208984
+    },
+    "cup_X_plus20mm": {
+      "max_prefix_arm_delta_rad": 0.000689387321472168
+    },
+    "cup_Y_plus20mm": {
+      "max_prefix_arm_delta_rad": 0.0004937648773193359
+    }
+  },
+  "initial_movement": {
+    "initial_tcp_m": [
+      -0.3706256875824249,
+      -0.06792231110404554,
+      0.479503268741971
+    ],
+    "approach_goal_m": [
+      -0.5167678268557342,
+      0.05459807822381106,
+      0.255
+    ],
+    "initial_distance_m": 0.2945683084587657,
+    "raw_prefix_tcp_m": [
+      [
+        -0.36628705566700215,
+        -0.06758984887850993,
+        0.4818047736155752
+      ],
+      [
+        -0.3659642359066551,
+        -0.06753251569405828,
+        0.48192221854315925
+      ]
+    ],
+    "sent_prefix_tcp_m": [
+      [
+        -0.3698649562937396,
+        -0.06836147757802816,
+        0.4791076912244417
+      ],
+      [
+        -0.36929023678615813,
+        -0.06815534368731017,
+        0.47872673981332214
+      ]
+    ],
+    "raw_prefix_distance_m": [
+      0.29835341017311995,
+      0.2985821466237022
+    ],
+    "sent_prefix_distance_m": [
+      0.2948283619468952,
+      0.2947400486379779
+    ]
+  },
+  "execution": {
+    "max_replayed_arm_submission_error_rad": 0.0,
+    "queries": 1950,
+    "max_tcp_displacement_m": 0.005588083800838329,
+    "tcp_height_range_m": 0.0021485356277722856,
+    "final_tcp_m": [
+      -0.3655563273547624,
+      -0.0663959480512918,
+      0.48105865266477815
+    ],
+    "last500_raw_sent_arm_max_error_rad": 0.000304881811141966,
+    "last1000_tracking_mean_abs_rad": 0.00029736820541928494,
+    "source_counts": {
+      "ACT_arm_pregrasp_open_hold": 3900,
+      "history_warmup_hold": 4
+    }
+  },
+  "representative_data_comparison": {
+    "all": {
+      "samples": 668,
+      "deployment_arm20_normalized_MAE": 0.019005927747701056,
+      "posterior_arm20_normalized_MAE": 0.018965791644514715,
+      "copy_state_arm20_normalized_MAE": 0.032851198125297555,
+      "deployment_prefix2_MAE_rad": 0.0033650777962037273,
+      "teacher_prefix2_motion_mean_abs_rad": 0.002170097309657077
+    },
+    "train": {
+      "samples": 445,
+      "deployment_arm20_normalized_MAE": 0.018046705864699048,
+      "posterior_arm20_normalized_MAE": 0.018009076691427553,
+      "copy_state_arm20_normalized_MAE": 0.032694180420074985,
+      "deployment_prefix2_MAE_rad": 0.003230084153265957,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0021557756675850883
+    },
+    "approach": {
+      "samples": 144,
+      "deployment_arm20_normalized_MAE": 0.021492362658064517,
+      "posterior_arm20_normalized_MAE": 0.02153846670592588,
+      "copy_state_arm20_normalized_MAE": 0.048391445927203645,
+      "deployment_prefix2_MAE_rad": 0.003850349186298748,
+      "teacher_prefix2_motion_mean_abs_rad": 0.002680846445155256
+    },
+    "descend": {
+      "samples": 91,
+      "deployment_arm20_normalized_MAE": 0.020122824218621247,
+      "posterior_arm20_normalized_MAE": 0.02006193348901051,
+      "copy_state_arm20_normalized_MAE": 0.024537408071185582,
+      "deployment_prefix2_MAE_rad": 0.003749525506382741,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0019332387936381941
+    },
+    "close": {
+      "samples": 25,
+      "deployment_arm20_normalized_MAE": 0.019796499490737914,
+      "posterior_arm20_normalized_MAE": 0.01979599744932992,
+      "copy_state_arm20_normalized_MAE": 0.000756454689162118,
+      "deployment_prefix2_MAE_rad": 0.0037716427072882652,
+      "teacher_prefix2_motion_mean_abs_rad": 9.34033867353991e-06
+    },
+    "lift": {
+      "samples": 98,
+      "deployment_arm20_normalized_MAE": 0.018671178307286505,
+      "posterior_arm20_normalized_MAE": 0.01855936145773782,
+      "copy_state_arm20_normalized_MAE": 0.026335413984237537,
+      "deployment_prefix2_MAE_rad": 0.0031143797031378388,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0019561620082966876
+    },
+    "carry": {
+      "samples": 74,
+      "deployment_arm20_normalized_MAE": 0.01897775660840701,
+      "posterior_arm20_normalized_MAE": 0.018889686304169734,
+      "copy_state_arm20_normalized_MAE": 0.06350157629108798,
+      "deployment_prefix2_MAE_rad": 0.0027417144072907312,
+      "teacher_prefix2_motion_mean_abs_rad": 0.003632520677874217
+    },
+    "place": {
+      "samples": 91,
+      "deployment_arm20_normalized_MAE": 0.017256015922809884,
+      "posterior_arm20_normalized_MAE": 0.017154195413484678,
+      "copy_state_arm20_normalized_MAE": 0.028303799206271088,
+      "deployment_prefix2_MAE_rad": 0.003337501595747106,
+      "teacher_prefix2_motion_mean_abs_rad": 0.002275534526823641
+    },
+    "release": {
+      "samples": 31,
+      "deployment_arm20_normalized_MAE": 0.021476406600618142,
+      "posterior_arm20_normalized_MAE": 0.021471846048733055,
+      "copy_state_arm20_normalized_MAE": 0.00545018605098197,
+      "deployment_prefix2_MAE_rad": 0.0038602192143690752,
+      "teacher_prefix2_motion_mean_abs_rad": 0.000789548176700828
+    },
+    "retreat": {
+      "samples": 91,
+      "deployment_arm20_normalized_MAE": 0.01540284645707117,
+      "posterior_arm20_normalized_MAE": 0.015383243004044334,
+      "copy_state_arm20_normalized_MAE": 0.028762880468293672,
+      "deployment_prefix2_MAE_rad": 0.0029485176187271788,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0021462715289363964
+    },
+    "settle": {
+      "samples": 23,
+      "deployment_arm20_normalized_MAE": 0.017346373553475437,
+      "posterior_arm20_normalized_MAE": 0.017388825227574605,
+      "copy_state_arm20_normalized_MAE": 1.355137559179645e-05,
+      "deployment_prefix2_MAE_rad": 0.0025275293506265427,
+      "teacher_prefix2_motion_mean_abs_rad": 2.353240565210751e-06
+    },
+    "dev": {
+      "samples": 223,
+      "deployment_arm20_normalized_MAE": 0.02091962289052189,
+      "posterior_arm20_normalized_MAE": 0.02087448533804999,
+      "copy_state_arm20_normalized_MAE": 0.03316445622037029,
+      "deployment_prefix2_MAE_rad": 0.003634459729420354,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0021986763711908663
+    }
+  },
+  "source_initialization": "fresh_no_previous_ACT_checkpoint",
+  "optimizer_updates": 0,
+  "training_process_changed": false,
+  "hardware_commands_sent": false
+}

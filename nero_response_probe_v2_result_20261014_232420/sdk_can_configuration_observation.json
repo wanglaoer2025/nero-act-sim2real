@@ -1,0 +1,17 @@
+{
+  "scope": "offline config factory only; no robot creation or connection",
+  "comm_config": {
+    "type": "can",
+    "can": {
+      "channel": "can0",
+      "interface": "socketcan",
+      "bitrate": 1000000,
+      "enable_check_can": true,
+      "auto_connect": true,
+      "timeout": 1.0,
+      "receive_own_messages": false,
+      "local_loopback": false
+    }
+  },
+  "local_loopback_explains_missing_TX_echo": true
+}

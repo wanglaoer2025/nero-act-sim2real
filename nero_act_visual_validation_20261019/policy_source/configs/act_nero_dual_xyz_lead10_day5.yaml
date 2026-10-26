@@ -1,0 +1,39 @@
+dataset_dir: data/act_dual
+manifest: data/act_dual/manifest.json
+split_file: data/act_dual/splits/day5_split.json
+camera_names: [camera_0, camera_1]
+overfit_episode_ids: [0, 1, 2]
+coordinate_conditioning: true
+state_dim: 14
+action_dim: 8
+alignment_offset: 0
+# 录制数据已有 2 帧前视；再前移 8 帧，关节总前视约 0.5 s。夹爪不前移。
+joint_lookahead_steps: 8
+image_size: [180, 320]
+chunk_size: 20
+batch_size: 2
+eval_batch_size: 8
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.1
+kl_weight: 10.0
+gripper_bce_weight: 1.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 0.00001
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: true
+num_epochs: 300
+steps: 300
+seed: 42
+val_fraction: 0.2
+fixed_val_samples_per_episode: 5
+device: cuda
+cpu_threads: 4
+checkpoint_dir: checkpoints/act_dual_xyz_lead10_day5
+artifact_dir: artifacts/act_dual_xyz_lead10_day5
+training_log: logs/act_dual_xyz_lead10_day5_training.csv

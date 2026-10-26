@@ -1,0 +1,143 @@
+{
+  "request": "修正当前布局ACT未正确完成抓放的问题",
+  "current_scope": "Offline ACT correction, existing calibration, no new manual measurements",
+  "hardware_commands_sent": false,
+  "production_sources_modified": false,
+  "interface": "RGB plus15D to20x8 absolute joint/gripper targets unchanged",
+  "confirmed_causes": {
+    "scope": "Why ACT fails in the saved current nominal-calibration simulation layout",
+    "confirmed_facts": [
+      "Same candidate and start completes the old reference layout; current layout requests closure at96.5845mm XY error.",
+      "Current cup is78.4404mm from nearest of36 original train source positions; card target is111.2008mm from the sole trained target.",
+      "All four current-layout endpoints converge under the unchanged nominal FK/IK; endpoint reachability is not the observed failure.",
+      "15D inputs and paired normalization are present; original formal training recorded nonzero geometry-projection gradients.",
+      "Later increment wrapper intentionally freezes/detaches base features. Re-enabling requires_grad alone does not reopen position learning.",
+      "Regression assertion reproduced missing position gradient; isolated gradient-enabled equivalent computation passes three integration tests."
+    ],
+    "conclusion": "Demonstrated current-layout policy adaptation failure outside its training coverage; existing frozen-head training cannot teach the position branch new layouts.",
+    "not_proven": [
+      "No proof that rendering-domain gap is absent in real hardware",
+      "No proof that nominal camera/TCP coordinates match physical cup coordinates",
+      "No proof that a1000-update position pilot will complete the task or generalize"
+    ],
+    "existing_calibration_caveat": "Archived board-plane hypotheses imply about100mm changes of cup coordinates; not a validated replacement. No silent production calibration replacement or new measurement request.",
+    "correction": "Full accepted physical demonstrations across current and bridge layouts; same15D ACT topology with differentiable position/action path, old-data and approach retention, fixed1000-update offline pilot.",
+    "runtime_guards": "Unchanged",
+    "hardware_commands_sent": false
+  },
+  "implemented": [
+    "Differentiable position projection/action transformer training with unchanged deployed readout",
+    "11 complete physical scene demonstrations:8 train,3 validation, plus original train replay",
+    "4 full current-development ACT-visited-state recoveries and2 explicit partial reference-placement recoveries",
+    "Correct exact previous submitted command for interrupted episodes",
+    "Retain visual/CVAE weights and original contact, speed, collision,3900-point and original six/423 gates"
+  ],
+  "training": {
+    "first_pilot_updates": 1000,
+    "second_pilot_updates": 1000,
+    "cumulative_new_optimizer_updates": 2000,
+    "fixed_last_checkpoint": "/home/user/wq/nero_act_position_recovery_20261022/training/pilot_A/policy_last.ckpt",
+    "checkpoint_sha256": "5bc9f0237a08ce1b2ce9719b5b7a125b6e2e5c503bf7a195ab4a26b462973ed9"
+  },
+  "verification": {
+    "learning_integration_tests_passed": 3,
+    "physical_demonstrations_complete": 15,
+    "physical_corrections_partial": 2,
+    "inherited_validation_scene_groups": 3,
+    "source_integrity": "verified",
+    "final_full_task_status": "FAILED_0_OF_5_NOT_PROMOTED"
+  },
+  "limitations": [
+    "Nominal TCP/camera geometry was retained, not newly independently verified",
+    "Teacher success is not ACT success; partial recovery is not full task success",
+    "Saved current-layout positions are development evidence, not current hardware dispatch preflight"
+  ],
+  "pilot_results": [
+    {
+      "pilot": "position_learning",
+      "actual_updates": 1000,
+      "full_cases_passed": 0,
+      "full_cases_total": 5,
+      "current": {
+        "passed": false,
+        "error": null,
+        "active_points": 3900,
+        "tcp_to_cup_xy_mm": 62.01466658715101,
+        "max_lift_m": 3.688771198312457e-05
+      },
+      "original_six_pass_count": 5,
+      "original_six_total": 6,
+      "input_and_approach_preservation_gate_passed": false,
+      "validation_after": {
+        "total": 0.38370037224382497,
+        "arm": 0.3478779992882621,
+        "gripper": 0.0358223719212074,
+        "samples": 983
+      },
+      "frozen_parameters_unchanged": true
+    },
+    {
+      "pilot": "closed_loop_recovery",
+      "actual_updates": 1000,
+      "full_cases_passed": 0,
+      "full_cases_total": 5,
+      "current": {
+        "passed": false,
+        "error": "RuntimeError: ACT requested closure outside the observed grasp region",
+        "active_points": 1192,
+        "tcp_to_cup_xy_mm": 78.46102938992992,
+        "max_lift_m": 0.0
+      },
+      "original_six_pass_count": 5,
+      "original_six_total": 6,
+      "input_and_approach_preservation_gate_passed": false,
+      "validation_after": {
+        "total": 0.35120521854165854,
+        "arm": 0.31983182007031913,
+        "gripper": 0.03137339910801163,
+        "samples": 983
+      },
+      "frozen_parameters_unchanged": true
+    }
+  ],
+  "candidate_status": {
+    "promoted": false,
+    "hardware_execution_allowed": false,
+    "reason": "Complete closed-loop0/5 and original qualification/preservation not passed",
+    "original_runtime_checkpoint_unchanged": true
+  },
+  "remaining_observed_failure": "Position-conditioned approach still diverges; final candidate requests closure78.461mm from cup. No claim of complete repair.",
+  "next_investigation": "Validate directional response to cup/target counterfactuals at identical RGB/joint states, then qualify approach behavior before another complete-task training budget. No more training started in this turn.",
+  "numerical_diagnostic": {
+    "mode": "read_only_numerical_consistency_diagnostic",
+    "samples": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1089
+      ],
+      [
+        0,
+        1460
+      ],
+      [
+        0,
+        2790
+      ]
+    ],
+    "errors": {
+      "batch32_vs_single": {
+        "maximum_arm_difference_rad": 3.0242695174820255e-06,
+        "maximum_gripper_difference_m": 2.2281458456063774e-08
+      },
+      "training_layout_vs_runtime_layout": {
+        "maximum_arm_difference_rad": 0.0,
+        "maximum_gripper_difference_m": 0.0
+      }
+    },
+    "hardware_commands_sent": false
+  }
+}

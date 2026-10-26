@@ -1,0 +1,81 @@
+{
+  "status": "visual_region_measurements_collected; absolute base coordinates need independent validation",
+  "cup": {
+    "description": "Yellow cup shown in the ZED reference image",
+    "outer_diameter_mm": 75.0,
+    "height_mm": 95.0,
+    "empty_mass_g": 50.0,
+    "source": "user-provided in this conversation"
+  },
+  "placement": {
+    "coordinate_frame": "nero_base; confirm before filling",
+    "position_unit": "mm",
+    "pick_cup_center_xyz_mm": null,
+    "place_cup_center_xyz_mm": null,
+    "table_height_base_mm": null,
+    "pick_region_bounds_mm": null,
+    "place_region_bounds_mm": null,
+    "photo_annotations": "sim2real_inventory/zed_left_raw.png from the earlier inventory",
+    "pick_region_description": "Yellow cup region in the ZED reference image",
+    "place_region_description": "Blue card region in the ZED reference image",
+    "table_relative_base_mounting_plane_mm": -10,
+    "table_mounting_relation_source": "2026-10-14 user confirmed bottom mounting plane raised 1cm=10mm; supersedes previous 13mm",
+    "provisional_visual_surface_points_base_mm": {
+      "cup": [
+        -577.5607918861876,
+        23.954471614265643,
+        4.766183691855986
+      ],
+      "blue": [
+        -557.3442886150938,
+        -135.41803907037792,
+        -76.89505729043381
+      ]
+    },
+    "visual_point_semantics": {
+      "cup": "visible surface; not cup-axis or grasp-TCP",
+      "blue": "card surface center; not place-TCP"
+    },
+    "height_consistency": "Blue-card surface Z=-76.895 mm via existing extrinsics; nominal mounting-plane-relative table height -13 mm leaves -63.895 mm residual if SDK base origin coincides with mounting plane. No correction applied.",
+    "base_support_height_mm": 10,
+    "mounting_height_update": {
+      "updated_at_utc": "2026-10-13T12:27:49.048906+00:00",
+      "base_support_height_mm": 13.0,
+      "source": "user clarification: base has a 1.3 cm support",
+      "interpretation": "Assume support raises the robot mounting plane 13 mm above the work surface; base-origin-to-mounting-plane relationship still unverified",
+      "previous_reported_mounting_height_difference_mm": 0.0
+    },
+    "destination_card": {
+      "length_mm": 100.0,
+      "width_mm": 100.0,
+      "source": "user reported 10x10 cm",
+      "dimension_boundary_confirmation": "pending: colored region versus full card including white border",
+      "coplanar_with_table_confirmation": "user reports card is placed on tabletop; flatness not instrumentally checked"
+    },
+    "base_installation_plane_parallel_to_table": true,
+    "current_destination_location_verified": false,
+    "latest_scene_note": "Card was moved during measuring; previous coordinate samples are historical and must be recollected for the final fixed task scene.",
+    "table_mounting_relation_mm": null
+  },
+  "calibration_confirmation": {
+    "joint_zero_verified": null,
+    "tcp_definition_confirmed": false,
+    "current_ZED_mount_matches_existing_calibration": "user reports unchanged; independent point validation pending",
+    "robot_base_mount_unchanged": true,
+    "gripper_mount_unchanged": true,
+    "camera_lens_height_above_table_mm": 357.0,
+    "camera_height_matches_existing_extrinsic_under_mounting_assumption": true,
+    "full_current_camera_to_base_transform_validated": false,
+    "visual_coordinate_consistency_check": "failed: correctly scaled static fiducial normal/height inconsistent with legacy extrinsic; known base reference required",
+    "current_static_marker": {
+      "dictionary": "DICT_5X5_50",
+      "id": 0,
+      "black_square_side_mm": 110.0,
+      "board_surface_above_table_mm": 20.0,
+      "geometry_source": "user measurements; support height approximately 20 mm"
+    },
+    "legacy_marker_metadata_matches_current_board": false,
+    "independent_fiducial_depth_center_consistency_mm": 2.087020501277814
+  },
+  "notes": "Yellow cup to blue card; cup diameter 75 mm, height 95 mm, empty mass 50 g. User clarified a 13 mm base support, superseding the earlier coplanar report. Table nominally -13 mm relative to mounting plane, assuming support rests on the same table. Exact base origin, target coordinates and independent visual calibration accuracy remain unverified."
+}

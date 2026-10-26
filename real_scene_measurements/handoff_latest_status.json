@@ -1,0 +1,105 @@
+{
+  "updated_at_utc": "2026-10-13T14:55:51.294763+00:00",
+  "simulation_progress_provenance": "Latest section of user-pasted remote-machine report; remote datasets/logs not accessible or independently rerun on this 4090",
+  "simulation_latest_report": {
+    "dataset": "datasets/shared/nero_act_sim_provisional_v1",
+    "episodes": 3,
+    "frames_per_episode": 299,
+    "total_frames": 897,
+    "frequency_hz": 20,
+    "teacher_task_passed": true,
+    "independent_exported_action_replay_passed": true,
+    "replay_placement_error_mm_range": [
+      0.659,
+      0.745
+    ],
+    "maximum_complete_state_replay_difference": 1.68e-05,
+    "ACT_forward_shape": [
+      1,
+      20,
+      8
+    ],
+    "training_smoke_updates": 20,
+    "training_smoke_checkpoint_exists": true,
+    "training_error_improvement_observed": false,
+    "formal_training_completed": false,
+    "ACT_no_teacher_closed_loop_task_evaluated": false,
+    "real_camera_and_geometry_matched": false
+  },
+  "real_scene_confirmed": {
+    "cup_outer_diameter_mm": 75,
+    "cup_height_mm": 95,
+    "cup_empty_mass_g": 50,
+    "task": "yellow cup -> blue card",
+    "blue_card_size_mm": [
+      100,
+      100
+    ],
+    "base_support_height_mm": 13,
+    "support_parallel_to_table": true,
+    "left_lens_height_above_table_mm": 357,
+    "nominal_table_z_base_mm": -13,
+    "base_origin_matches_mounting_plane": "assumption still requiring reference validation"
+  },
+  "fiducial_actual_geometry": {
+    "dictionary": "DICT_5X5_50",
+    "id": 0,
+    "black_square_side_mm": 110.0,
+    "board_surface_above_table_mm": 20.0,
+    "geometry_source": "user measurements; support height approximately 20 mm"
+  },
+  "fiducial_diagnostics": {
+    "accepted_frames": 8,
+    "max_reprojection_rms_px": 0.6203855276107788,
+    "optical_vs_depth_center_distance_median_mm": 2.087020501277814,
+    "normal_tilt_using_old_extrinsic_deg": 13.346135025124234,
+    "nominal_marker_z_base_mm": 7.0,
+    "old_extrinsic_marker_z_base_mm": -72.49368803112381,
+    "replacement_extrinsic_created": false
+  },
+  "current_bottleneck": "Verified full camera-to-base transform and current target coordinates, not source code or basic data/model connectivity",
+  "next_required_input": "Independent base-frame reference verification for existing calibration; no need to resend historical calibration or source files. Full camera transform cannot be validated from tabletop normal/lens height alone.",
+  "coordinate_calibration_notes": [
+    "Table normal and lens height do not determine camera yaw or XY translation",
+    "Do not reuse the legacy 95.5 mm / DICT_4X4_50 marker metadata for the observed 110 mm / DICT_5X5_50 board",
+    "Current board surface is approximately 20 mm above table; account for it when defining reference-point Z",
+    "Robot base axes/origin must be physically identified for ruler measurements",
+    "Existing point-correspondence solver output fit fields differ from the runtime calibration quality schema; validate/adapt candidate schema before using it in the live pipeline",
+    "Current 110mm/5x5 board differs from September archived 4x4 marker confirmed in all 37 images; retain each historical session geometry."
+  ],
+  "next_simulation_work_after_verified_geometry": [
+    "Update full camera pose and target geometry; match final RGB orientation/preprocessing",
+    "Recollect task demonstrations for the verified scene and independent validation placements",
+    "Train a separate Nero ACT policy and assess closed-loop task success without teacher control"
+  ],
+  "historical_report_statements_superseded": [
+    "Missing ACT source or pyAgxArm offline-import blocker",
+    "No Nero simulation dataset or smoke weights generated",
+    "Cup dimensions and mounting height all unknown",
+    "Model image size unknown: single-camera reference is 90x160"
+  ],
+  "latest_raw_target_locations_validated": false,
+  "robot_motion_command_sent_by_assistant": false,
+  "calibration_archive_review": {
+    "report": "calibration_history_review.json",
+    "saved_full_extrinsics_exist": true,
+    "raw_datasets_checked": 14,
+    "candidates_recomputed": 10,
+    "historical_photos_checked": 37,
+    "active_transform_reproduced": true,
+    "suitable_archived_candidate_resolves_current_plane_check": false,
+    "candidate_transform_files_created_offline": true,
+    "replacement_extrinsic_applied": false,
+    "independent_survey_file_contains_measured_coordinates": false
+  },
+  "real_machine_readonly_verification": {
+    "report": "/home/user/wq/real_machine_verification/verification_report.json",
+    "parameters_read": 503,
+    "offline_tests_passed": 39,
+    "observation_20hz_measured": 19.998754901776014,
+    "image_joint_timestamp_skew_p95_ms": 54.69627380371093,
+    "current_ACT_gripper_executor": "binary 0/.095m hysteresis; underlying SDK and measured state continuous",
+    "previous_real_grasp_success_reported_by_user": true,
+    "live_configuration_modified": false
+  }
+}

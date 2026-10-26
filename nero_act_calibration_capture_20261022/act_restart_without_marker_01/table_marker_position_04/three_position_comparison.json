@@ -1,0 +1,179 @@
+{
+  "time_local": "2026-10-22T20:58:49.634081+08:00",
+  "mode": "three_flat_tabletop_marker_positions_diagnostic_only",
+  "independent_physical_positions": 3,
+  "valid_repeated_frames": 72,
+  "raw_report_sha256": {
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/report.json": "599ed1cc86a9ab8bca75616f1abc203682a14d24424ac809fb8d55598a6de7b4",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/report.json": "8a131c24c28d5a606f8284f5f18240390bceb77eb741629a0f2a20df2c556e1b",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/report.json": "738e5fd6dfa58553ed84b699a8925deaaac7cdc96069a95609681194519e33da"
+  },
+  "raw_images_and_capture_sources_sha256_verified": true,
+  "per_position": [
+    {
+      "source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/report.json",
+      "qualified_frames": 24,
+      "board_distance_mm": 357.9833418294451,
+      "within_position_distance_peak_to_peak_mm": 1.775178226376184,
+      "maximum_normal_deviation_deg": 0.09584697317518666,
+      "median_reprojection_rmse_px": 0.19059021908164045,
+      "optical_center_m": [
+        -0.0879584840298913,
+        -0.1246298501553835,
+        0.6484342338970794
+      ],
+      "optical_normal": [
+        0.0008129846982303647,
+        0.9275152981870485,
+        -0.37378431037815246
+      ],
+      "per_open_native_K": [
+        [
+          527.3888549804688,
+          0.0,
+          647.1690063476562
+        ],
+        [
+          0.0,
+          527.3888549804688,
+          359.83807373046875
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "can_tx": [
+        6677,
+        6677
+      ]
+    },
+    {
+      "source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/report.json",
+      "qualified_frames": 24,
+      "board_distance_mm": 363.349894921805,
+      "within_position_distance_peak_to_peak_mm": 1.6685109693014288,
+      "maximum_normal_deviation_deg": 0.08949819064720894,
+      "median_reprojection_rmse_px": 0.039473276463441176,
+      "optical_center_m": [
+        -0.19197563098370676,
+        -0.12623230971597352,
+        0.6532183117780009
+      ],
+      "optical_normal": [
+        0.0022515703318510094,
+        0.9263745536821725,
+        -0.37659675612144694
+      ],
+      "per_open_native_K": [
+        [
+          527.434326171875,
+          0.0,
+          647.1671142578125
+        ],
+        [
+          0.0,
+          527.434326171875,
+          359.8357238769531
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "can_tx": [
+        6677,
+        6677
+      ]
+    },
+    {
+      "source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/report.json",
+      "qualified_frames": 24,
+      "board_distance_mm": 357.44677230255337,
+      "within_position_distance_peak_to_peak_mm": 2.031355066683005,
+      "maximum_normal_deviation_deg": 0.08951601961058873,
+      "median_reprojection_rmse_px": 0.12102031668377697,
+      "optical_center_m": [
+        -0.19257524139519117,
+        -0.08538735841315608,
+        0.7503589609463321
+      ],
+      "optical_normal": [
+        -0.0019270346343906047,
+        0.9285635930936623,
+        -0.3711683447150438
+      ],
+      "per_open_native_K": [
+        [
+          527.3888549804688,
+          0.0,
+          647.1690063476562
+        ],
+        [
+          0.0,
+          527.3888549804688,
+          359.83807373046875
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "can_tx": [
+        6677,
+        6677
+      ]
+    }
+  ],
+  "cross_position_board_distance_span_mm": 5.903122619251633,
+  "maximum_pairwise_normal_difference_deg": 0.41205388796006526,
+  "successive_center_movements_mm": [
+    104.13943603758227,
+    105.3801466141507
+  ],
+  "center_triangle_area_mm2": 5482.257430138102,
+  "exact_three_center_plane_diagnostic": {
+    "normal_optical": [
+      -0.032018688882327284,
+      0.9212833149072064,
+      -0.38757174463039235
+    ],
+    "distance_mm": 363.3178734623889,
+    "angle_vs_marker_normals_deg": [
+      2.071376824548027,
+      2.082421517066526,
+      2.007566961953812
+    ],
+    "independent_holdout_validation": false,
+    "caution": "Three centers always define an exact plane; zero residual is not independent accuracy evidence."
+  },
+  "old_nominal_table_plane_distance_mm": 315.2114291079937,
+  "board_distance_minus_old_table_plane_mm": [
+    42.77191272145142,
+    48.138465813811315,
+    42.23534319455968
+  ],
+  "marker_normal_difference_vs_old_deg": [
+    5.747888404050098,
+    5.55564743377351,
+    5.958161219136533
+  ],
+  "board_thickness_mm": null,
+  "camera_to_table_plane_m": null,
+  "interpretation": [
+    "Three distinct positions captured successfully with72 valid repeated frames; these are3 positions, not72 independent metrology samples.",
+    "Board-top distance357.447..363.350mm differs from old nominal table distance315.211mm. Old camera/table geometry is inconsistent with current measured-marker observations and should not be reused for contact descent.",
+    "Cross-position distance disagreement5.903mm remains despite stable repeated frames. Static repeatability must not be reported as2mm absolute localization accuracy.",
+    "Board thickness is unknown. Keep actual table distance null; do not assume zero thickness or average these into a verified table calibration.",
+    "A plane observation cannot determine all six base/camera extrinsic coordinates. Base translation within plane, yaw, TCP and independent holdout evidence remain incomplete.",
+    "No production camera/TCP/ACT configuration modified and no robot/gripper control sent."
+  ],
+  "pending": "Measure actual vertical height from tabletop to black printed board surface. No further board translation requested now. After that, independently establish base/camera and TCP geometry before contact ACT deployment.",
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "robot_connected": false,
+  "motion_sent": false
+}

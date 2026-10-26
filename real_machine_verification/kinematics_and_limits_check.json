@@ -1,0 +1,192 @@
+{
+  "scope": "Pure offline FK on freshly subscribed feedback; no SDK robot object created",
+  "matched_pose_samples": 990,
+  "pose_joint_max_timestamp_difference_ms": 5.3997039794921875,
+  "reported_tcp_is_flange_in_current_zero_offset_config": true,
+  "firmware_flange_vs_SDK_FK": {
+    "max_position_error_mm": 0.01373146885421294,
+    "max_rotation_error_deg": 0.0007882166663194019
+  },
+  "URDF_link7_vs_SDK_flange": {
+    "max_position_error_mm": 3.730727811424271e-05,
+    "max_rotation_error_deg": 8.18910913293408e-06
+  },
+  "joint_limits": [
+    {
+      "joint": "joint1",
+      "SDK_rad": [
+        -2.705261,
+        2.705261
+      ],
+      "URDF_rad": [
+        -2.705261,
+        2.705261
+      ],
+      "ACT_rad": [
+        -2.705261,
+        2.705261
+      ],
+      "all_configuration_limits_match": true,
+      "URDF_velocity_rad_s": 5.0,
+      "physical_limit_verified": false
+    },
+    {
+      "joint": "joint2",
+      "SDK_rad": [
+        -1.74533,
+        1.74533
+      ],
+      "URDF_rad": [
+        -1.74533,
+        1.74533
+      ],
+      "ACT_rad": [
+        -1.74533,
+        1.74533
+      ],
+      "all_configuration_limits_match": true,
+      "URDF_velocity_rad_s": 5.0,
+      "physical_limit_verified": false
+    },
+    {
+      "joint": "joint3",
+      "SDK_rad": [
+        -2.757621,
+        2.757621
+      ],
+      "URDF_rad": [
+        -2.757621,
+        2.757621
+      ],
+      "ACT_rad": [
+        -2.757621,
+        2.757621
+      ],
+      "all_configuration_limits_match": true,
+      "URDF_velocity_rad_s": 5.0,
+      "physical_limit_verified": false
+    },
+    {
+      "joint": "joint4",
+      "SDK_rad": [
+        -1.012291,
+        2.146755
+      ],
+      "URDF_rad": [
+        -1.012291,
+        2.146755
+      ],
+      "ACT_rad": [
+        -1.012291,
+        2.146755
+      ],
+      "all_configuration_limits_match": true,
+      "URDF_velocity_rad_s": 5.0,
+      "physical_limit_verified": false
+    },
+    {
+      "joint": "joint5",
+      "SDK_rad": [
+        -2.757621,
+        2.757621
+      ],
+      "URDF_rad": [
+        -2.757621,
+        2.757621
+      ],
+      "ACT_rad": [
+        -2.757621,
+        2.757621
+      ],
+      "all_configuration_limits_match": true,
+      "URDF_velocity_rad_s": 5.0,
+      "physical_limit_verified": false
+    },
+    {
+      "joint": "joint6",
+      "SDK_rad": [
+        -0.733039,
+        0.959932
+      ],
+      "URDF_rad": [
+        -0.733039,
+        0.959932
+      ],
+      "ACT_rad": [
+        -0.733039,
+        0.959932
+      ],
+      "all_configuration_limits_match": true,
+      "URDF_velocity_rad_s": 5.0,
+      "physical_limit_verified": false
+    },
+    {
+      "joint": "joint7",
+      "SDK_rad": [
+        -1.570797,
+        1.570797
+      ],
+      "URDF_rad": [
+        -1.570797,
+        1.570797
+      ],
+      "ACT_rad": [
+        -1.570797,
+        1.570797
+      ],
+      "all_configuration_limits_match": true,
+      "URDF_velocity_rad_s": 5.0,
+      "physical_limit_verified": false
+    }
+  ],
+  "TCP": {
+    "SDK_manual_flange_offset_m": [
+      0.135,
+      0.0,
+      0.0
+    ],
+    "live_ROS_tcp_offset_m_rad": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "URDF_link7_to_gripper_base": [
+      [
+        -3.673205103346574e-06,
+        -3.6732051033217936e-06,
+        0.9999999999865075,
+        0.03699999999991904
+      ],
+      [
+        -0.9999999999932537,
+        1.3492435731251315e-11,
+        -3.6732051033217936e-06,
+        -2.2039230619930762e-08
+      ],
+      [
+        0.0,
+        -0.9999999999932537,
+        -3.673205103346574e-06,
+        -0.02350002203923062
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "provisional_remote_sim_gripper_base_z_m": 0.115,
+    "provisional_offset_expressed_in_SDK_flange_m": [
+      0.15199999999836739,
+      -4.444578175019371e-07,
+      -0.023500444457817505
+    ],
+    "difference_from_manual_TCP_mm": 29.004670138737985,
+    "note": "Remote 0.115m assumption was reported by user; calculation uses local live URDF, not a verified remote model. Actual grasp TCP has not been physically validated."
+  },
+  "base_origin": "ROS world_to_base_link is identity; SDK MDH starts first joint at base Z=0.138m. This checks software conventions, not the physical mounting-plane origin or joint-zero calibration."
+}

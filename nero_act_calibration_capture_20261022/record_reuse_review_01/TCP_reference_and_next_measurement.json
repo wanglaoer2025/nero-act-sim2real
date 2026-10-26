@@ -1,0 +1,135 @@
+{
+  "time_local": "2026-10-22T21:49:42.229365+08:00",
+  "mode": "nominal_frame_definition_audit_and_next_measurement",
+  "model_source": "/home/user/wq/nero_act_calibration_capture_20261022/auto_plan_probe_01/model.xml",
+  "model_sha256": "a63e7a10d9f6e8969e023b863bc2ef3f0efc958a0a172f221ccf2eac96d3aeed",
+  "transform_SDK_reference_from_physical_flange_model": [
+    [
+      -3.999999999920734e-06,
+      -3.999999999948489e-06,
+      0.9999999999840001,
+      0.031
+    ],
+    [
+      -0.9999999999920002,
+      7.999906292965875e-12,
+      -3.999999999948489e-06,
+      0.0
+    ],
+    [
+      8.000045070843953e-12,
+      -0.9999999999920002,
+      -3.999999999976245e-06,
+      -0.0235
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "transform_physical_flange_from_grasp_TCP_model": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      -4.44458e-07
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      -4.44458e-07
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.12100000000000001
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "transform_SDK_reference_from_grasp_TCP_model": [
+    [
+      -3.999999999920734e-06,
+      -3.999999999948489e-06,
+      0.9999999999840001,
+      0.15200000000161967
+    ],
+    [
+      -0.9999999999920002,
+      7.999906292965875e-12,
+      -3.999999999948489e-06,
+      -3.954200000087845e-08
+    ],
+    [
+      8.000045070843953e-12,
+      -0.9999999999920002,
+      -3.999999999976245e-06,
+      -0.023500039542000004
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "agrees_with_previous_three_pose_FK_diagnostic": true,
+  "physical_metrology_performed": false,
+  "interpretation": "SDK/link7 reference and physical flange mounting face are distinct frames. Nominal135/152mm values cannot be interpreted as ruler distances from an unspecified external face. This is a naming/reference risk, not proof of actual TCP error.",
+  "next_operator_measurement": {
+    "mode": "static_external_ruler_dimensions_no_new_photographs",
+    "reference": "Physical plane where the gripper attaches to the arm flange; not outside of gripper motor housing",
+    "measurements_mm": [
+      "A: axial distance from flange mounting plane to proximal edge of finger inner effective contact area",
+      "B: axial distance from the same flange plane to distal edge of that same effective contact area"
+    ],
+    "axis": "Along tool extension, independent of whether world vertical or horizontal",
+    "new_measured_axial_center_formula": "(A+B)/2",
+    "reference_unclear_action": "Report reference cannot be identified; no disassembly or guessed number",
+    "independent_full_TCP_acceptance": false
+  },
+  "remaining_sequence": [
+    "Use actual measured contact geometry and reference-frame transform for coarse TCP consistency check.",
+    "Independently validate3D TCP and current camera/base coordinates; current ruler check is not a substitute for the approved6fit+3TCP holdout and absolute-camera holdouts.",
+    "Validate complete ACT task with the measured geometry, then current read-only observation/prefix/stop behavior.",
+    "Prepare exact complete contact path and current onsite conditions before actual cup grasp/transport/place."
+  ],
+  "historical_photos_reused": true,
+  "calibration_verified": false,
+  "live_config_modified": false,
+  "robot_connected": false,
+  "motion_sent": false,
+  "reference_clarification_after_operator_reply": {
+    "time_local": "2026-10-22T21:59:32.469403+08:00",
+    "operator_reply": "参考点不清楚",
+    "status": "A_B_measurement_paused",
+    "guide": "/home/user/wq/nero_act_calibration_capture_20261022/tcp_reference_guide_01/measurement_reference.png",
+    "correction": "Earlier transform fields labelled physical_flange are model flange coordinate transforms only. They do not locate a measured physical mating face. Observable rear seam R must first be identified and its relation to the model datum established before converting ruler measurements to TCP coordinates.",
+    "actual_physical_mating_face_verified": false,
+    "next_action": "Identify the red seam R only; no measurements yet."
+  },
+  "latest_operator_dimensions_and_reference_confirmation": {
+    "time_local": "2026-10-22T22:09:17.733952+08:00",
+    "A_mm": 30,
+    "B_mm": 94,
+    "includes_gripper_body": true,
+    "audit": "/home/user/wq/nero_act_calibration_capture_20261022/tcp_reference_guide_01/confirmed_dimensions_and_model_audit.json",
+    "calibration_verified": false,
+    "next_action": "Resolve physical seam-to-model frame and installed tool geometry; do not request A/B reference confirmation again."
+  },
+  "latest_user_instruction_supersedes_measurement_requests": {
+    "time_local": "2026-10-22T22:35:35.753738+08:00",
+    "additional_manual_measurements_requested": false,
+    "measurement_requests_withdrawn": true,
+    "instruction": "直接按照现有的做仿真迁移，不要再测量了",
+    "continued_execution_results": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/execution_results.json"
+  }
+}

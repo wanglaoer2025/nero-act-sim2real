@@ -1,0 +1,32 @@
+{
+  "request": "给出下一步方案并执行",
+  "scope": "Bounded offline objective correction within approved15D ACT; no architecture, runtime policy, calibration or guard change",
+  "initializer_sha256": "3dfc6e47244ab2df1b361b43b071f68a39ae0d3467c23dc56e43a41a360a3db3",
+  "hypothesis": "Pointwise mean imitation permits weak conditional response and masks the worst correction prefix; explicit same-pose paired response supervision should teach the missing dependence without a runtime substitute controller",
+  "data": "Existing audited training prefixes only; pairs share exact robot state and previous gripper command, differ along one cup-position axis, and use fresh paired RGB plus image-derived15D observations. No validation rows in optimization",
+  "objectives": {
+    "existing_executable_first2": true,
+    "paired_cartesian_response_weight": 5.0,
+    "paired_response_normalization_floor_m": 0.00005,
+    "worst_prefix_position_unit_m": 0.0001,
+    "worst_prefix_position_weight": 1.0,
+    "shared_preservation_gradient_fraction_maximum": 0.5
+  },
+  "learnability_probe": {
+    "updates": 200,
+    "train_only_cases": ["current_0: cupY-30/+30mm atX0", "current_800: cupX-30/+30mm atY0"],
+    "optimizer": "Fresh AdamW for a disposable learning probe; weights discarded",
+    "pass": "Both response axes correct and >=25% teacher; maximum first2 Cartesian error <=0.5mm"
+  },
+  "candidate": {
+    "updates": 2000,
+    "requires_probe_pass": true,
+    "initializer": "Reload original declared fixed-last weights, never probe weights",
+    "optimizer": "Restore declared checkpoint AdamW moments; original group initial rates restart and decay linearly to10%",
+    "batch": "Original32 pointwise samples plus8 train-only counterfactual pairs",
+    "checkpoint_selection": "fixed_last2000; no validation-based choice"
+  },
+  "evaluation": "Unchanged position-response gate; only a passed fixed-last candidate proceeds to original five complete cases, six mechanisms and423 preservation inputs. Local offset gate is development evidence, not independent full-task generalization",
+  "hardware_commands_sent": false,
+  "additional_manual_measurements": false
+}

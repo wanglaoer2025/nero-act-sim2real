@@ -1,0 +1,33 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+test_gripper_only_adaptation_cannot_reset_the_arm_head (tests.test_gripper_head.GripperHeadTests.test_gripper_only_adaptation_cannot_reset_the_arm_head) ... FAIL
+test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers (tests.test_gripper_head.GripperHeadTests.test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers) ... FAIL
+
+======================================================================
+FAIL: test_gripper_only_adaptation_cannot_reset_the_arm_head (tests.test_gripper_head.GripperHeadTests.test_gripper_only_adaptation_cannot_reset_the_arm_head)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_head_fix_20261018/tests/test_gripper_head.py", line 47, in test_gripper_only_adaptation_cannot_reset_the_arm_head
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers (tests.test_gripper_head.GripperHeadTests.test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_head_fix_20261018/tests/test_gripper_head.py", line 37, in test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers
+    torch.testing.assert_close(policy(q, image)[..., :7], before_prediction[..., :7], rtol=0., atol=0.)
+  File "/home/user/nero/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1530, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not equal!
+
+Mismatched elements: 140 / 140 (100.0%)
+Greatest absolute difference: 0.9526994228363037 at index (0, 18, 2)
+Greatest relative difference: 2.787125825881958 at index (0, 11, 6)
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.290s
+
+FAILED (failures=2)
+number of parameters: 12.58M
+number of parameters: 12.58M

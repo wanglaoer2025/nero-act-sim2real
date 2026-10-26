@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______ test_group_gate_requires_exact_calibration_and_unchanged_evidence _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-39/test_group_gate_requires_exact0')
+
+    def test_group_gate_requires_exact_calibration_and_unchanged_evidence(tmp_path):
+>       from training.group_loss import require_group_diagnostics
+E       ImportError: cannot import name 'require_group_diagnostics' from 'training.group_loss' (/home/user/wq/nero_act_grouped_gripper_20261021/training/group_loss.py)
+
+tests/test_group_gate.py:7: ImportError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_group_gate.py::test_group_gate_requires_exact_calibration_and_unchanged_evidence
+1 failed, 1 warning in 1.96s

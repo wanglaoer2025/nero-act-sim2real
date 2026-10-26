@@ -1,0 +1,1066 @@
+{
+  "complete": true,
+  "profile": "real_rgb8_future_feedback_v1",
+  "action_semantics": "future_measured_qpos_plus_recorded_gripper_intent_v1",
+  "original_audit_path": "/home/user/wq/docs/evidence/nero-act-review-20261024/user-specified-data-audit.json",
+  "original_audit_sha256": "29bb89a2dff2c46ec38f5ef5917b65e779c8feb5a99c48b6ba58077adfda9df0",
+  "selection_provenance": [
+    {
+      "path": "/home/user/projects/nero/data/act_dual_fixed/manifest_compatible38.json",
+      "sha256": "683cce18fa9a489f009bd230a612e78d5d3aab65d184be6cf282334b9ac39431"
+    },
+    {
+      "path": "/home/user/projects/nero/data/act_dual_fixed/splits/compatible38_day5_split.json",
+      "sha256": "dd6c0e00b84f4f8707f6ec92770ee03a618a422b8f2345a9ea36b95b920c22d4"
+    },
+    {
+      "path": "/home/user/projects/nero/data/act_dual_fixed_destination/manifest_fixed_destination_9.json",
+      "sha256": "43bf55a8202d833b6ab49406d6b9cc3e2d07c4a607f7646b64234974be220ac4"
+    },
+    {
+      "path": "/home/user/projects/nero/data/act_dual_fixed_destination/splits/fixed_destination_9_split.json",
+      "sha256": "08ca52a6f860acb171007d3b59d50fea6abc386791bf72bac43c3c8b01be2416"
+    }
+  ],
+  "lead_steps": 2,
+  "split_counts": {
+    "reserve": 32,
+    "val": 10,
+    "train": 37
+  },
+  "evaluation_scope": "legacy_episode_holdout_not_position_generalization",
+  "independent_position_holdout": false,
+  "physical_task_acceptance": "not_independently_reviewed",
+  "current_visual15_compatible": false,
+  "deployment_authorized": false,
+  "training_started": false,
+  "episodes": [
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_0.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_0.hdf5",
+      "source_id": "act_dual_fixed/episode_0.hdf5",
+      "split": "reserve",
+      "frames": 1076,
+      "full_chunk_queries": 1057,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 959959081,
+        "mtime_ns": 1789034048782725253
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_1.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_1.hdf5",
+      "source_id": "act_dual_fixed/episode_1.hdf5",
+      "split": "reserve",
+      "frames": 952,
+      "full_chunk_queries": 933,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 841976508,
+        "mtime_ns": 1789034173305612653
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_10.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_10.hdf5",
+      "source_id": "act_dual_fixed/episode_10.hdf5",
+      "split": "reserve",
+      "frames": 817,
+      "full_chunk_queries": 798,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 718930336,
+        "mtime_ns": 1789041139085908136
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_11.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_11.hdf5",
+      "source_id": "act_dual_fixed/episode_11.hdf5",
+      "split": "reserve",
+      "frames": 746,
+      "full_chunk_queries": 727,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 653842264,
+        "mtime_ns": 1789041213711985009
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_12.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_12.hdf5",
+      "source_id": "act_dual_fixed/episode_12.hdf5",
+      "split": "reserve",
+      "frames": 781,
+      "full_chunk_queries": 762,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 688781184,
+        "mtime_ns": 1789041283870054183
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_13.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_13.hdf5",
+      "source_id": "act_dual_fixed/episode_13.hdf5",
+      "split": "reserve",
+      "frames": 791,
+      "full_chunk_queries": 772,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 691161152,
+        "mtime_ns": 1789041365252387399
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_14.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_14.hdf5",
+      "source_id": "act_dual_fixed/episode_14.hdf5",
+      "split": "reserve",
+      "frames": 775,
+      "full_chunk_queries": 756,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 682895862,
+        "mtime_ns": 1789041437767751787
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_15.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_15.hdf5",
+      "source_id": "act_dual_fixed/episode_15.hdf5",
+      "split": "reserve",
+      "frames": 763,
+      "full_chunk_queries": 744,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 669133805,
+        "mtime_ns": 1789041510031497947
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_16.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_16.hdf5",
+      "source_id": "act_dual_fixed/episode_16.hdf5",
+      "split": "reserve",
+      "frames": 768,
+      "full_chunk_queries": 749,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 672625479,
+        "mtime_ns": 1789041589027282093
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_17.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_17.hdf5",
+      "source_id": "act_dual_fixed/episode_17.hdf5",
+      "split": "reserve",
+      "frames": 789,
+      "full_chunk_queries": 770,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 688253107,
+        "mtime_ns": 1789041660930582472
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_18.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_18.hdf5",
+      "source_id": "act_dual_fixed/episode_18.hdf5",
+      "split": "reserve",
+      "frames": 789,
+      "full_chunk_queries": 770,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 690599067,
+        "mtime_ns": 1789041735841581763
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_19.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_19.hdf5",
+      "source_id": "act_dual_fixed/episode_19.hdf5",
+      "split": "reserve",
+      "frames": 810,
+      "full_chunk_queries": 791,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 709602170,
+        "mtime_ns": 1789041811434269280
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_2.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_2.hdf5",
+      "source_id": "act_dual_fixed/episode_2.hdf5",
+      "split": "reserve",
+      "frames": 678,
+      "full_chunk_queries": 659,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 600857025,
+        "mtime_ns": 1789034518071470735
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_20.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_20.hdf5",
+      "source_id": "act_dual_fixed/episode_20.hdf5",
+      "split": "reserve",
+      "frames": 1242,
+      "full_chunk_queries": 1223,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1111507674,
+        "mtime_ns": 1789438711800060011
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_21.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_21.hdf5",
+      "source_id": "act_dual_fixed/episode_21.hdf5",
+      "split": "reserve",
+      "frames": 1425,
+      "full_chunk_queries": 1406,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1301937968,
+        "mtime_ns": 1789438840151589748
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_22.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_22.hdf5",
+      "source_id": "act_dual_fixed/episode_22.hdf5",
+      "split": "reserve",
+      "frames": 1195,
+      "full_chunk_queries": 1176,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1073561131,
+        "mtime_ns": 1789438952063955902
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_23.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_23.hdf5",
+      "source_id": "act_dual_fixed/episode_23.hdf5",
+      "split": "val",
+      "frames": 435,
+      "full_chunk_queries": 416,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 398732369,
+        "mtime_ns": 1789439094863453473
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_24.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_24.hdf5",
+      "source_id": "act_dual_fixed/episode_24.hdf5",
+      "split": "train",
+      "frames": 435,
+      "full_chunk_queries": 416,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 393668457,
+        "mtime_ns": 1789439157135018416
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_25.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_25.hdf5",
+      "source_id": "act_dual_fixed/episode_25.hdf5",
+      "split": "train",
+      "frames": 423,
+      "full_chunk_queries": 404,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 378607386,
+        "mtime_ns": 1789439236834166072
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_26.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_26.hdf5",
+      "source_id": "act_dual_fixed/episode_26.hdf5",
+      "split": "train",
+      "frames": 445,
+      "full_chunk_queries": 426,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 406302460,
+        "mtime_ns": 1789439304693653532
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_27.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_27.hdf5",
+      "source_id": "act_dual_fixed/episode_27.hdf5",
+      "split": "train",
+      "frames": 456,
+      "full_chunk_queries": 437,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 408692056,
+        "mtime_ns": 1789439736544063019
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_28.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_28.hdf5",
+      "source_id": "act_dual_fixed/episode_28.hdf5",
+      "split": "val",
+      "frames": 562,
+      "full_chunk_queries": 543,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 496408601,
+        "mtime_ns": 1789439811595713044
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_29.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_29.hdf5",
+      "source_id": "act_dual_fixed/episode_29.hdf5",
+      "split": "train",
+      "frames": 424,
+      "full_chunk_queries": 405,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 387491573,
+        "mtime_ns": 1789439862971596224
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_3.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_3.hdf5",
+      "source_id": "act_dual_fixed/episode_3.hdf5",
+      "split": "reserve",
+      "frames": 835,
+      "full_chunk_queries": 816,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 754870050,
+        "mtime_ns": 1789034948448883335
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_30.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_30.hdf5",
+      "source_id": "act_dual_fixed/episode_30.hdf5",
+      "split": "train",
+      "frames": 467,
+      "full_chunk_queries": 448,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 421460220,
+        "mtime_ns": 1789439928462971102
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_31.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_31.hdf5",
+      "source_id": "act_dual_fixed/episode_31.hdf5",
+      "split": "train",
+      "frames": 434,
+      "full_chunk_queries": 415,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 390919763,
+        "mtime_ns": 1789439985665768729
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_32.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_32.hdf5",
+      "source_id": "act_dual_fixed/episode_32.hdf5",
+      "split": "train",
+      "frames": 469,
+      "full_chunk_queries": 450,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 409759559,
+        "mtime_ns": 1789440046086904953
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_33.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_33.hdf5",
+      "source_id": "act_dual_fixed/episode_33.hdf5",
+      "split": "val",
+      "frames": 499,
+      "full_chunk_queries": 480,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 431668192,
+        "mtime_ns": 1789440110489537362
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_34.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_34.hdf5",
+      "source_id": "act_dual_fixed/episode_34.hdf5",
+      "split": "train",
+      "frames": 459,
+      "full_chunk_queries": 440,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 405016602,
+        "mtime_ns": 1789440174449503233
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_35.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_35.hdf5",
+      "source_id": "act_dual_fixed/episode_35.hdf5",
+      "split": "train",
+      "frames": 470,
+      "full_chunk_queries": 451,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 411597020,
+        "mtime_ns": 1789440238330357651
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_36.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_36.hdf5",
+      "source_id": "act_dual_fixed/episode_36.hdf5",
+      "split": "train",
+      "frames": 432,
+      "full_chunk_queries": 413,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 377722208,
+        "mtime_ns": 1789440295096412826
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_37.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_37.hdf5",
+      "source_id": "act_dual_fixed/episode_37.hdf5",
+      "split": "train",
+      "frames": 456,
+      "full_chunk_queries": 437,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 394857841,
+        "mtime_ns": 1789440352335678570
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_38.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_38.hdf5",
+      "source_id": "act_dual_fixed/episode_38.hdf5",
+      "split": "train",
+      "frames": 493,
+      "full_chunk_queries": 474,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 427638826,
+        "mtime_ns": 1789440424761993699
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_39.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_39.hdf5",
+      "source_id": "act_dual_fixed/episode_39.hdf5",
+      "split": "train",
+      "frames": 423,
+      "full_chunk_queries": 404,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 374174319,
+        "mtime_ns": 1789440493506977966
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_4.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_4.hdf5",
+      "source_id": "act_dual_fixed/episode_4.hdf5",
+      "split": "reserve",
+      "frames": 762,
+      "full_chunk_queries": 743,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 686538502,
+        "mtime_ns": 1789035040266106359
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_40.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_40.hdf5",
+      "source_id": "act_dual_fixed/episode_40.hdf5",
+      "split": "train",
+      "frames": 411,
+      "full_chunk_queries": 392,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 360818383,
+        "mtime_ns": 1789440731966441050
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_41.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_41.hdf5",
+      "source_id": "act_dual_fixed/episode_41.hdf5",
+      "split": "val",
+      "frames": 412,
+      "full_chunk_queries": 393,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 358067176,
+        "mtime_ns": 1789458400705692549
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_42.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_42.hdf5",
+      "source_id": "act_dual_fixed/episode_42.hdf5",
+      "split": "train",
+      "frames": 380,
+      "full_chunk_queries": 361,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 331352186,
+        "mtime_ns": 1789458622096590543
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_43.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_43.hdf5",
+      "source_id": "act_dual_fixed/episode_43.hdf5",
+      "split": "train",
+      "frames": 391,
+      "full_chunk_queries": 372,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 331477749,
+        "mtime_ns": 1789458700728016714
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_44.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_44.hdf5",
+      "source_id": "act_dual_fixed/episode_44.hdf5",
+      "split": "train",
+      "frames": 410,
+      "full_chunk_queries": 391,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 349071760,
+        "mtime_ns": 1789458821620988616
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_45.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_45.hdf5",
+      "source_id": "act_dual_fixed/episode_45.hdf5",
+      "split": "train",
+      "frames": 432,
+      "full_chunk_queries": 413,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 384039799,
+        "mtime_ns": 1789458927447243593
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_46.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_46.hdf5",
+      "source_id": "act_dual_fixed/episode_46.hdf5",
+      "split": "train",
+      "frames": 398,
+      "full_chunk_queries": 379,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 336330653,
+        "mtime_ns": 1789458990477555425
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_47.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_47.hdf5",
+      "source_id": "act_dual_fixed/episode_47.hdf5",
+      "split": "train",
+      "frames": 409,
+      "full_chunk_queries": 390,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 344138784,
+        "mtime_ns": 1789459047545017246
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_48.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_48.hdf5",
+      "source_id": "act_dual_fixed/episode_48.hdf5",
+      "split": "train",
+      "frames": 441,
+      "full_chunk_queries": 422,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 388859711,
+        "mtime_ns": 1789459116312660743
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_49.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_49.hdf5",
+      "source_id": "act_dual_fixed/episode_49.hdf5",
+      "split": "reserve",
+      "frames": 447,
+      "full_chunk_queries": 428,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 376306549,
+        "mtime_ns": 1789459180377073546
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_5.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_5.hdf5",
+      "source_id": "act_dual_fixed/episode_5.hdf5",
+      "split": "reserve",
+      "frames": 735,
+      "full_chunk_queries": 716,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 656734837,
+        "mtime_ns": 1789035224433054752
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_50.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_50.hdf5",
+      "source_id": "act_dual_fixed/episode_50.hdf5",
+      "split": "val",
+      "frames": 390,
+      "full_chunk_queries": 371,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 328867911,
+        "mtime_ns": 1789459237148205387
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_51.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_51.hdf5",
+      "source_id": "act_dual_fixed/episode_51.hdf5",
+      "split": "train",
+      "frames": 449,
+      "full_chunk_queries": 430,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 382800974,
+        "mtime_ns": 1789459291375200725
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_52.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_52.hdf5",
+      "source_id": "act_dual_fixed/episode_52.hdf5",
+      "split": "val",
+      "frames": 442,
+      "full_chunk_queries": 423,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 376187447,
+        "mtime_ns": 1789459350118591836
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_53.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_53.hdf5",
+      "source_id": "act_dual_fixed/episode_53.hdf5",
+      "split": "train",
+      "frames": 392,
+      "full_chunk_queries": 373,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 330776494,
+        "mtime_ns": 1789459445167737475
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_54.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_54.hdf5",
+      "source_id": "act_dual_fixed/episode_54.hdf5",
+      "split": "train",
+      "frames": 423,
+      "full_chunk_queries": 404,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 360994372,
+        "mtime_ns": 1789459499463464461
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_55.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_55.hdf5",
+      "source_id": "act_dual_fixed/episode_55.hdf5",
+      "split": "train",
+      "frames": 420,
+      "full_chunk_queries": 401,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 361361921,
+        "mtime_ns": 1789459587328111898
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_56.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_56.hdf5",
+      "source_id": "act_dual_fixed/episode_56.hdf5",
+      "split": "train",
+      "frames": 424,
+      "full_chunk_queries": 405,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 358066950,
+        "mtime_ns": 1789459697263827369
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_57.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_57.hdf5",
+      "source_id": "act_dual_fixed/episode_57.hdf5",
+      "split": "val",
+      "frames": 430,
+      "full_chunk_queries": 411,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 362039768,
+        "mtime_ns": 1789459760275240251
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_58.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_58.hdf5",
+      "source_id": "act_dual_fixed/episode_58.hdf5",
+      "split": "train",
+      "frames": 431,
+      "full_chunk_queries": 412,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 368864358,
+        "mtime_ns": 1789459852813622991
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_59.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_59.hdf5",
+      "source_id": "act_dual_fixed/episode_59.hdf5",
+      "split": "train",
+      "frames": 468,
+      "full_chunk_queries": 449,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 397356687,
+        "mtime_ns": 1789459931673795770
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_6.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_6.hdf5",
+      "source_id": "act_dual_fixed/episode_6.hdf5",
+      "split": "reserve",
+      "frames": 714,
+      "full_chunk_queries": 695,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 639969405,
+        "mtime_ns": 1789039512791538527
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_60.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_60.hdf5",
+      "source_id": "act_dual_fixed/episode_60.hdf5",
+      "split": "train",
+      "frames": 453,
+      "full_chunk_queries": 434,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 381921451,
+        "mtime_ns": 1789459996563222132
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_61.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_61.hdf5",
+      "source_id": "act_dual_fixed/episode_61.hdf5",
+      "split": "val",
+      "frames": 446,
+      "full_chunk_queries": 427,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 390715801,
+        "mtime_ns": 1789460059555220155
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_7.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_7.hdf5",
+      "source_id": "act_dual_fixed/episode_7.hdf5",
+      "split": "reserve",
+      "frames": 789,
+      "full_chunk_queries": 770,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 693400618,
+        "mtime_ns": 1789039608507489694
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_8.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_8.hdf5",
+      "source_id": "act_dual_fixed/episode_8.hdf5",
+      "split": "reserve",
+      "frames": 841,
+      "full_chunk_queries": 822,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 740431268,
+        "mtime_ns": 1789040995640309085
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed/episode_9.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed/episode_9.hdf5",
+      "source_id": "act_dual_fixed/episode_9.hdf5",
+      "split": "reserve",
+      "frames": 767,
+      "full_chunk_queries": 748,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 674742840,
+        "mtime_ns": 1789041064728766804
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_0.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_0.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_0.hdf5",
+      "split": "train",
+      "frames": 1011,
+      "full_chunk_queries": 992,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 865746731,
+        "mtime_ns": 1789527772876405509
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_1.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_1.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_1.hdf5",
+      "split": "train",
+      "frames": 1085,
+      "full_chunk_queries": 1066,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 934672979,
+        "mtime_ns": 1789527928419936994
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_10.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_10.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_10.hdf5",
+      "split": "reserve",
+      "frames": 1217,
+      "full_chunk_queries": 1198,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1054750333,
+        "mtime_ns": 1789563542343408596
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_11.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_11.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_11.hdf5",
+      "split": "reserve",
+      "frames": 1082,
+      "full_chunk_queries": 1063,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 934336362,
+        "mtime_ns": 1789563997203850516
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_12.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_12.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_12.hdf5",
+      "split": "reserve",
+      "frames": 1249,
+      "full_chunk_queries": 1230,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1083941549,
+        "mtime_ns": 1789564204686105680
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_13.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_13.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_13.hdf5",
+      "split": "reserve",
+      "frames": 1042,
+      "full_chunk_queries": 1023,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 888923462,
+        "mtime_ns": 1789564323315180089
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_14.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_14.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_14.hdf5",
+      "split": "reserve",
+      "frames": 1221,
+      "full_chunk_queries": 1202,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1042732516,
+        "mtime_ns": 1789564565892403092
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_15.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_15.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_15.hdf5",
+      "split": "reserve",
+      "frames": 1060,
+      "full_chunk_queries": 1041,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 922354473,
+        "mtime_ns": 1789564723984618818
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_16.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_16.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_16.hdf5",
+      "split": "reserve",
+      "frames": 1145,
+      "full_chunk_queries": 1126,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 978445283,
+        "mtime_ns": 1789564910527249105
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_2.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_2.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_2.hdf5",
+      "split": "val",
+      "frames": 1256,
+      "full_chunk_queries": 1237,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1083229513,
+        "mtime_ns": 1789528087945267323
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_3.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_3.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_3.hdf5",
+      "split": "train",
+      "frames": 1137,
+      "full_chunk_queries": 1118,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 986896644,
+        "mtime_ns": 1789528179632180031
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_4.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_4.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_4.hdf5",
+      "split": "train",
+      "frames": 1096,
+      "full_chunk_queries": 1077,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 950418086,
+        "mtime_ns": 1789528272336242899
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_5.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_5.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_5.hdf5",
+      "split": "train",
+      "frames": 1063,
+      "full_chunk_queries": 1044,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 925876173,
+        "mtime_ns": 1789528367028956975
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_6.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_6.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_6.hdf5",
+      "split": "train",
+      "frames": 1057,
+      "full_chunk_queries": 1038,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 918615933,
+        "mtime_ns": 1789528454951297021
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_7.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_7.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_7.hdf5",
+      "split": "val",
+      "frames": 1318,
+      "full_chunk_queries": 1299,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1143655838,
+        "mtime_ns": 1789528559771775276
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_8.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_8.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_8.hdf5",
+      "split": "train",
+      "frames": 956,
+      "full_chunk_queries": 937,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 819719168,
+        "mtime_ns": 1789528646103445458
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_real_data_adapter_20261024/data/episodes/act_dual_fixed_destination/episode_9.hdf5",
+      "source_path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_9.hdf5",
+      "source_id": "act_dual_fixed_destination/episode_9.hdf5",
+      "split": "reserve",
+      "frames": 1345,
+      "full_chunk_queries": 1326,
+      "lead_steps": 2,
+      "source_snapshot": {
+        "size": 1170520793,
+        "mtime_ns": 1789528754503624016
+      }
+    }
+  ]
+}

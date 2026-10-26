@@ -1,0 +1,1478 @@
+{
+  "motion_sent": false,
+  "actual_start": [
+    0.20746728818456597,
+    -0.12180652849668426,
+    0.12360421762623841,
+    1.5677245473113866,
+    -0.0182212373908208,
+    0.2669306558000128,
+    0.14339625134385411,
+    0.06643
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "_NODE_NAME_UNKNOWN_",
+        "namespace": "_NODE_NAMESPACE_UNKNOWN_"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/control/joint_states": {
+      "receipt": 340902.926997366,
+      "stamp": 1792138647.824088,
+      "q": [
+        0.20748241245746613,
+        -0.12182281166315079,
+        0.12360551953315735,
+        1.567737102508545,
+        -0.018222855404019356,
+        0.26695552468299866,
+        0.1434912383556366,
+        0.06646594405174255
+      ]
+    },
+    "/feedback/joint_states": {
+      "receipt": 340902.926920742,
+      "stamp": 1792138647.823167,
+      "q": [
+        0.20753710135464573,
+        -0.12180652849668426,
+        0.12360421762623841,
+        1.5677245473113866,
+        -0.0182212373908208,
+        0.2669306558000128,
+        0.14350097109897378,
+        0.06643
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.05065768404165283,
+  "execution_readiness_checks_passed": false,
+  "execution_blocker": "Expected the existing control_gate as the sole gated publisher",
+  "block_validation_ms": [
+    109.04216900235042,
+    21.871597971767187,
+    20.076749031431973,
+    20.584281999617815,
+    19.727275997865945,
+    180.9654320240952,
+    17.145293997600675,
+    262.2414759825915,
+    182.61657102266327,
+    16.37080096406862,
+    16.458992031402886,
+    17.45034899795428,
+    18.918293004389852,
+    17.194080050103366,
+    18.424879002850503,
+    16.74655795795843,
+    180.16562302364036,
+    26.206355018075556,
+    352.8243529726751,
+    30.853215022943914,
+    20.357593952212483,
+    25.91985702747479,
+    106.56376101542264,
+    23.8791560404934,
+    185.75116602005437,
+    20.155361969955266,
+    20.190590992569923,
+    28.901071986183524,
+    21.504968986846507,
+    20.737684972118586
+  ],
+  "service_calls": [
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 3.62379098078236
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 3.192506032064557
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.294026024173945
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 83.45469500636682
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.131144981831312
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.136480004992336
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8078549765050411
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.1700100041925907
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.099593995604664
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.6063419645652175
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9069809932261705
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.7018749970011413
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7072029877454042
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.831904985010624
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.197285008151084
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5533660189248621
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7838540370576084
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0630330070853233
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8710209988057613
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7875980120152235
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4415630139410496
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7005630070343614
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.1709559950977564
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7190490034408867
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5916640404611826
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4107449678704143
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6252979985438287
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4778219629079103
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0757819982245564
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.3412989685311913
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1735960142686963
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0933179873973131
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.224893949460238
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.960526035167277
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.149956999346614
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.728144008666277
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4018230140209198
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.340816030278802
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3285370077937841
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1501650442369282
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4587169862352312
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4527520397678018
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4543170109391212
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9655629876069725
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.1346069988794625
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.7408820460550487
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4271939871832728
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.208977995906025
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.396833045873791
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2917299754917622
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3543689856305718
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2277700006961823
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0861700284294784
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3249240000732243
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2145410291850567
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.7890440067276359
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4598060515709221
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4525519800372422
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6714030061848462
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4824229874648154
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 81.92952699027956
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.141221018973738
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7846370465122163
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3124169781804085
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3586109853349626
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.28819299256429
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.1455130190588534
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6118650091812015
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3990820152685046
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1919859680347145
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0678420076146722
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3824370107613504
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1307289823889732
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2187159736640751
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3645029976032674
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3158870278857648
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2211439898237586
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.9061100319959223
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.176971010863781
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.65729702543467
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5154119464568794
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1917969677597284
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.98689301591367
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.460086030419916
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4141079736873507
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.56337401131168
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.42117497138679
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.528248016256839
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.9702109857462347
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 83.43643095577136
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9642510451376438
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8691869918256998
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3746469630859792
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3376050046645105
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6426009824499488
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.241288031451404
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3083589728921652
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.38828298635781
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5928089851513505
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.8757819780148566
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2462540180422366
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1956389644183218
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2928760261274874
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2093140394426882
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1090749758295715
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2801939737983048
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3462069910019636
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.191693008877337
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.340140006504953
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1456439970061183
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.5915980329737067
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2865779572166502
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3333450187928975
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1877689976245165
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2518049916252494
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2819370022043586
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4630960067734122
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.08046003151685
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.248711021617055
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1645229533314705
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4630219666287303
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.6859389725141227
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2686140253208578
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2883649906143546
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2523210025392473
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5315169584937394
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.317050016950816
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3147490099072456
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5016969991847873
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3930790009908378
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1206180206499994
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4846259728074074
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.7405690159648657
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7268669907934964
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6882360214367509
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2631340068764985
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2886819895356894
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.1899259882047772
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3297789846546948
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4775230083614588
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5238249907270074
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2484880280680954
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.215797965414822
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.9870619871653616
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.197568024508655
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1863569961860776
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3023570063523948
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.45810900721699
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0802880278788507
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1564790038391948
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.256228017155081
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4181120204739273
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3320230063982308
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.756663026753813
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.5216689789667726
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 4.278975015040487
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.443693006876856
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3131200103089213
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0573109611868858
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0393289849162102
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.215978991240263
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2665649992413819
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.044053991790861
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.0554490145295858
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1138500412926078
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.7249660450033844
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5492259990423918
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.534965995233506
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3482969952747226
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2596150045283139
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3225789880380034
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.245418970938772
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1484299902804196
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1770319542847574
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.254695001989603
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.111282967031002
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.6192730399779975
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.67394796712324
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2937629944644868
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3772189849987626
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4286389923654497
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.335248991381377
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3411929830908775
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.396302948705852
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.243598002474755
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.2166939615272
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.1206210367381573
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.8015170246362686
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8020200077444315
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.415922994259745
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.205485012382269
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.093876013532281
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.150963991880417
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8762259860523045
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9322580192238092
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9013300188817084
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8786339787766337
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8906240002252162
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 83.42560898745432
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.333323995117098
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.2720660199411213
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.42131501901895
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 3.9479859988205135
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.2753599914722145
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.084132982417941
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.219718007836491
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.56321999942884
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 83.15321803092957
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.844314032699913
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 3.5070570302195847
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.673916984349489
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.5733819929882884
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.522367984056473
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.522554015740752
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.2295599919743836
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.7876339736394584
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.508452977053821
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.3942890111356974
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.428861043881625
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9412669935263693
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.7002639835700393
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.666427997406572
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5101479948498309
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9364449544809759
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2098040315322578
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4004740514792502
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9312450313009322
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.191238989122212
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9243440474383533
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4282609918154776
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.338539004791528
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.5238500093109906
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.932022045366466
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.074659976642579
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7988639883697033
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.887883001472801
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.2732269717380404
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.83202198240906
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.855068956501782
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.7799810050055385
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.2229659953154624
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.083193976432085
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.7400950202718377
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.93803897686303
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.5044700014404953
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.2204419947229326
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.848170009907335
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.0084059797227383
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.84095703298226
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8740560044534504
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.805426029022783
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.068818954285234
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8667689873836935
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.1758769871667027
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.8796609840355814
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9088800181634724
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.0793750300072134
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6951720463111997
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6944990493357182
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7827030387707055
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.494012016337365
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.684625050984323
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8302469979971647
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7785789677873254
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.3762600030750036
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.2714880178682506
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.48930901754647
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.5916100130416453
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9452020060271025
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.982951012905687
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.451606978662312
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.1517509701661766
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6345829935744405
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 82.74852501926944
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.3848030250519514
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.7284969799220562
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.603820943273604
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.339962997008115
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.161728985607624
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6489289700984955
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.446567999664694
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.2977619771845639
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8327420111745596
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8946650088764727
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8629070254974067
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.9645799766294658
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 1.9197710207663476
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6917469911277294
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6357259592041373
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4901040121912956
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6535029863007367
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6633469494991004
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5426040044985712
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.537768985144794
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7622750019654632
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5403970028273761
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4036220381967723
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.109564025886357
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.991758996155113
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5565360081382096
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.8058780115097761
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5665360260754824
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6549989813938737
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.249091980047524
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 5.200651008635759
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 4.8881410039030015
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.691974001005292
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.756013953126967
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.1596220321953297
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.1495800465345383
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.77549704676494
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.0787340472452343
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.5210849815048277
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4359800261445343
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.613399013876915
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.563522033393383
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.434203004464507
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.6153180040419102
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7111549968831241
+    },
+    {
+      "service": "/get_planning_scene",
+      "duration_ms": 2.593300014268607
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 2.041944011580199
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.742693013511598
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.7821189831010997
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.4422159874811769
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.539121032692492
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.566549006383866
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.367019023746252
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3451589620672166
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3561859959736466
+    },
+    {
+      "service": "/check_state_validity",
+      "duration_ms": 1.3380260206758976
+    }
+  ],
+  "maximum_arm_drift_rad": 0.00012217304763961767
+}

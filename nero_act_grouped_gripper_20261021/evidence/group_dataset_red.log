@@ -1,0 +1,38 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_dataset_groups_reach_only_training_kwargs_and_leave_observations_identical _
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-35/test_dataset_groups_reach_only0')
+
+    def test_dataset_groups_reach_only_training_kwargs_and_leave_observations_identical(tmp_path):
+        import h5py
+        from training.history_dataset import HistoryReferenceDataset
+        from training.history import _batch_to_device
+        from tests.test_visual_policy import statistics
+        from torch.utils.data import default_collate
+        c,_,_,_=config();stats=statistics(c);path=tmp_path/'episode_2000.hdf5';n=20;starts=np.arange(4,n)
+        with h5py.File(path,'w') as f:
+            f.attrs.update(split='train',initial_previous_gripper_target_m=.075)
+            f['observations/qpos']=np.zeros((n,7),np.float32);f['observations/gripper_state']=np.full((n,1),.075,np.float32)
+            f['timestamp']=np.arange(n)*.05;f['action_time_monotonic_s']=np.arange(n)*.05+.001
+            f['observations/visual_relative_m']=np.full((n,6),.2,np.float32);f['observations/visual_valid']=np.ones(n,bool)
+            f['observations/images/camera_0']=np.zeros((n,12,16,3),np.uint8)
+            f['action']=np.c_[np.zeros((n,7)),.075-np.arange(n)*.0002]
+            f['simulation/stage']=np.array([b'close']*10+[b'release']*10)
+            f['history/indices']=np.array([np.arange(t-4,t+1) for t in starts]);f['history/start_ts']=starts
+            f['history/view_id']=np.zeros(len(starts),int);f['history/weights']=np.ones(len(starts),int)
+        old=HistoryReferenceDataset([path],stats,c)
+        new=HistoryReferenceDataset([path],stats,dict(c,gripper_group_loss=SETTINGS))
+        assert old.sample_ids==new.sample_ids
+>       assert 'gripper_group' not in old[0] and new[0]['gripper_group'].item()==0
+E       KeyError: 'gripper_group'
+
+tests/test_group_loss_integration.py:79: KeyError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_group_loss_integration.py::test_dataset_groups_reach_only_training_kwargs_and_leave_observations_identical
+1 failed, 4 deselected, 1 warning in 3.25s

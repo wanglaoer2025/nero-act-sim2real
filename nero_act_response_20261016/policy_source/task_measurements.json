@@ -1,0 +1,32 @@
+{
+  "status": "task_regions_and_mounting_relation_confirmed; base_coordinates_and_independent_calibration_validation_pending",
+  "cup": {
+    "description": "Yellow cup shown in the ZED reference image",
+    "outer_diameter_mm": 75.0,
+    "height_mm": 95.0,
+    "empty_mass_g": 50.0,
+    "source": "user-provided in this conversation"
+  },
+  "placement": {
+    "coordinate_frame": "nero_base; confirm before filling",
+    "position_unit": "mm",
+    "pick_cup_center_xyz_mm": null,
+    "place_cup_center_xyz_mm": null,
+    "table_height_base_mm": null,
+    "pick_region_bounds_mm": null,
+    "place_region_bounds_mm": null,
+    "photo_annotations": "sim2real_inventory/zed_left_raw.png from the earlier inventory",
+    "pick_region_description": "Yellow cup region in the ZED reference image",
+    "place_region_description": "Blue card region in the ZED reference image",
+    "table_relative_base_mounting_plane_mm": 0.0,
+    "table_mounting_relation_source": "user measurement: same height"
+  },
+  "calibration_confirmation": {
+    "joint_zero_verified": null,
+    "tcp_definition_confirmed": false,
+    "current_ZED_mount_matches_existing_calibration": "user reports unchanged; independent point validation pending",
+    "robot_base_mount_unchanged": true,
+    "gripper_mount_unchanged": true
+  },
+  "notes": "75 mm outer diameter, 95 mm height, 50 g empty mass; yellow cup to blue card area. Table/base mounting planes are coplanar per user. Exact pick/place base coordinates and table height relative to SDK base origin remain unverified; no motion was issued."
+}

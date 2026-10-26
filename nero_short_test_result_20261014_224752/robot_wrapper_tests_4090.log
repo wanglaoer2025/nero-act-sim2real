@@ -1,0 +1,24 @@
+test_bad_feedback_shape_is_rejected (test_act_robot_wrapper.NeroRobotWrapperTest.test_bad_feedback_shape_is_rejected) ... ok
+test_connect_accepts_stale_recoverable_planning_status (test_act_robot_wrapper.NeroRobotWrapperTest.test_connect_accepts_stale_recoverable_planning_status) ... ok
+test_connect_waits_for_can_initialization_before_enable (test_act_robot_wrapper.NeroRobotWrapperTest.test_connect_waits_for_can_initialization_before_enable) ... ok
+test_emergency_stop_and_disconnect_have_distinct_semantics (test_act_robot_wrapper.NeroRobotWrapperTest.test_emergency_stop_and_disconnect_have_distinct_semantics) ... ok
+test_emergency_stop_is_reported_before_enable (test_act_robot_wrapper.NeroRobotWrapperTest.test_emergency_stop_is_reported_before_enable) ... ok
+test_gripper_state_and_commands (test_act_robot_wrapper.NeroRobotWrapperTest.test_gripper_state_and_commands) ... ok
+test_hold_current_position_sends_measured_pose_once (test_act_robot_wrapper.NeroRobotWrapperTest.test_hold_current_position_sends_measured_pose_once) ... ok
+test_initializes_gripper_before_connect_and_reads_qpos (test_act_robot_wrapper.NeroRobotWrapperTest.test_initializes_gripper_before_connect_and_reads_qpos) ... ok
+test_joint_stream_speed_percent_is_bounded (test_act_robot_wrapper.NeroRobotWrapperTest.test_joint_stream_speed_percent_is_bounded) ... usage: test_joint_stream [-h] [--dry-run | --execute] [--read-hardware]
+                         [--joint-index JOINT_INDEX] [--frequency FREQUENCY]
+                         [--duration DURATION] [--amplitude-rad AMPLITUDE_RAD]
+                         [--speed-percent SPEED_PERCENT] [--log-dir LOG_DIR]
+test_joint_stream: error: speed-percent 必须在 1..100 范围内
+ok
+test_leader_mode_and_feedback (test_act_robot_wrapper.NeroRobotWrapperTest.test_leader_mode_and_feedback) ... ok
+test_missing_feedback_times_out_clearly (test_act_robot_wrapper.NeroRobotWrapperTest.test_missing_feedback_times_out_clearly) ... ok
+test_return_to_start_sends_one_target_then_only_polls (test_act_robot_wrapper.NeroRobotWrapperTest.test_return_to_start_sends_one_target_then_only_polls) ... ok
+test_send_qpos_validates_shape_and_finite_values (test_act_robot_wrapper.NeroRobotWrapperTest.test_send_qpos_validates_shape_and_finite_values) ... ok
+test_speed_setting_waits_for_controller_mode_frame (test_act_robot_wrapper.NeroRobotWrapperTest.test_speed_setting_waits_for_controller_mode_frame) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.073s
+
+OK

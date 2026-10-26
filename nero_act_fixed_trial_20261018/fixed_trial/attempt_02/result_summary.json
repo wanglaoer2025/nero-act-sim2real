@@ -1,0 +1,74 @@
+{
+  "scope": "single_current_fixed_scene_real_online_ACT_trial",
+  "success": false,
+  "model": "run27_fixed_heads",
+  "evaluation_passed": 9,
+  "evaluation_total": 14,
+  "act_targets_generated_online_from_actual_camera_and_feedback": true,
+  "teacher_action_fallback": false,
+  "submitted_active_points": 710,
+  "completed_stages": [
+    "high_air_empty_gripper_open",
+    "ACT_approach",
+    "partial_ACT_descent"
+  ],
+  "incomplete_stages": [
+    "grasp",
+    "lift",
+    "carry",
+    "supported_place",
+    "release",
+    "retreat"
+  ],
+  "arm_excursion_deg": [
+    12.806000000000001,
+    55.51,
+    9.556000000000001,
+    9.864000000000013,
+    2.62,
+    24.544,
+    67.864
+  ],
+  "stop_reason": "RuntimeError: ACT path fails full-robot/cup state validity; no teacher fallback",
+  "rejected_future_contact": [
+    {
+      "body1": "gripper_link2",
+      "body2": "act_task_cup",
+      "depth_m": 8.383971870041302e-05,
+      "position": [
+        -0.49183370413587807,
+        -0.0190696452553386,
+        0.0949326313118793
+      ]
+    }
+  ],
+  "rejected_tcp_xyz_mm": [
+    -524.302429095298,
+    31.761802038991615,
+    115.5601240091158
+  ],
+  "current_gripper_open": true,
+  "automatic_retry": false,
+  "automatic_return": false,
+  "driver_gate_close_acknowledged": true,
+  "read_only_restored": {
+    "mode": "receive_only",
+    "pid": 2116790,
+    "interpreter": "/usr/bin/python3",
+    "auto_enable": false,
+    "control_enabled_at_start": false,
+    "speed_percent_parameter": 0,
+    "runtime_send_blocked": true,
+    "can_tx_before": 514120,
+    "can_tx_after_start": 514120,
+    "motion_submitted_by_entry": false
+  },
+  "failed_block_was_not_submitted": true,
+  "next_required_work": "Correct ACT pregrasp alignment and validate full approach against the same real MoveIt contact contract before another physical trial",
+  "evidence": {
+    "task_report": "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_02/task/report.json",
+    "collision_report": "/home/user/wq/nero_act_fixed_trial_20261018/evidence/attempt02_collision_diagnosis.json",
+    "actual_feedback": "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_02/task/actual_feedback.json",
+    "final_inference_image": "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_02/task/camera_inputs/camera_00079.png"
+  }
+}

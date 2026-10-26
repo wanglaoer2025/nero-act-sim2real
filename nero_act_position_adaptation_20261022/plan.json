@@ -1,0 +1,65 @@
+{
+  "request": "Fix current-layout premature closure using existing approved15D ACT route",
+  "scope": "isolated_offline_position_learning_pilot",
+  "immutable_sources": true,
+  "additional_manual_measurements": false,
+  "hardware_commands_sent": false,
+  "geometry": "Existing nominal calibration unchanged and not newly qualified",
+  "data": {
+    "new_physical_complete_scenes": 11,
+    "new_train_groups": 8,
+    "new_validation_groups": 3,
+    "current_scene_role": "development_targeted_not_independent_generalization",
+    "retained_training_groups": "all original train groups only; val excluded",
+    "labels": "Accepted physical complete teacher actions, verified replay and original contract; RGB-only visual features",
+    "mix": "Each batch half new/half retained, eight task stages sampled evenly; stage only offline sampler",
+    "approach_preservation": {
+      "replay": "original423_preGRASP",
+      "weight": 0.01,
+      "batch_size": 4,
+      "arm_unit_rad": 0.0001,
+      "gripper_unit_m": 0.0005,
+      "evaluation_thresholds": "original_unchanged"
+    }
+  },
+  "model": {
+    "interface": "current_RGB_plus15D_to20x8",
+    "trainable": [
+      "state_position_projection",
+      "visual_action_transformer",
+      "arm_output",
+      "existing_increment_gripper_head"
+    ],
+    "frozen": [
+      "visual_backbone",
+      "visual_input_projection",
+      "CVAE_posterior",
+      "latent_projection",
+      "query_embeddings",
+      "base_gripper_adapter"
+    ],
+    "stats": "Retain paired original statistics without refitting; avoid zero-update policy change",
+    "computation": "Remove no_grad/detach for isolated training only; deployed math and original protections unchanged"
+  },
+  "budget": {
+    "optimizer_updates": 1000,
+    "batch_size": 32,
+    "formal_epochs": 0,
+    "selection": "fixed_last"
+  },
+  "verification": [
+    "gradient and zero-update output checks",
+    "heldout supervised prefix error before/after",
+    "current-layout full closed loop",
+    "original-layout full closed loop",
+    "nearby-unseen complete closed loops",
+    "original six mechanism cases and original approach-preservation gate, unchanged thresholds"
+  ],
+  "stop_rules": [
+    "No failed demonstration labels",
+    "No training until all teacher/replay/visual audits pass",
+    "No extra updates/checkpoint cherry picking",
+    "No hardware execution from this pilot",
+    "Do not weaken closure-region, collision, speed, lift or timeout guards"
+  ]
+}

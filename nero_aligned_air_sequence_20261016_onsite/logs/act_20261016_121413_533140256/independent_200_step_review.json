@@ -1,0 +1,36 @@
+{
+  "source_report_sha256": "f319d3de57791dbdc8374228465736afb2de4735b1f89d1fa06aa1e4558ea07b",
+  "source_report_unmodified": true,
+  "requested_steps": 200,
+  "submitted_points_per_group": 60,
+  "completed_points_per_group": 60,
+  "completed_blocks": 6,
+  "failed_block_not_sent": true,
+  "all_sent_blocks_fresh": true,
+  "failed_validation_duration_ms": 101.15288197994232,
+  "failed_observation_age_before_validation_ms": 152.4063569959253,
+  "failed_observation_age_after_validation_ms": 253.55923897586763,
+  "failed_inference_ms": 25.22585797123611,
+  "previous_validation_duration_ms_min_max": [
+    14.955765975173563,
+    22.876981005538255
+  ],
+  "maximum_actual_joint_displacement_rad": [
+    0.02265437369088641,
+    0.006422811647339141,
+    0.013735741213195374,
+    0.004345869837466099,
+    0.004572762640225145,
+    0.01087340123992464,
+    0.00787143492649442
+  ],
+  "actual_gripper_min_max_mm": [
+    60.102999999999994,
+    66.43199999999999
+  ],
+  "all_sent_targets_within_air_envelope": true,
+  "execution_success": false,
+  "evidence_supported_cause": "State/collision validation took 101 ms instead of prior 15-23 ms, exhausting remaining observation freshness budget. Individual service calls/OS scheduling were not instrumented, so the underlying delay cause is not uniquely established.",
+  "next_run_requires": "Restore and verify both trained arm start and gripper opening; do not continue remaining points from this intermediate state.",
+  "runtime_sha256": "d5d5b35d41bac6caee18aad84dc7211b64c497543883b01ddeb06ee2f78e2bb0"
+}

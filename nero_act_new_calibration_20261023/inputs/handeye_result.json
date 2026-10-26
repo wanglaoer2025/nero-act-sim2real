@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "candidate_saved_pending_independent_validation",
+  "workflow": "src.calibration.auto_hand_eye",
+  "operator_confirmation": "AUTO",
+  "hardware_motion_performed": true,
+  "speed_percent": 5,
+  "waypoints_attempted": 40,
+  "controller_unreachable_skipped": 20,
+  "raw_sample_count": 20,
+  "fit_sample_count": 15,
+  "excluded_sample_indices_one_based": [14, 15, 16, 17, 19],
+  "raw_flange_position_span_mm": [220.02000000000004, 290.02099999999996, 165.073],
+  "inlier_flange_position_span_mm": [190.008, 290.021, 165.073],
+  "fit": {
+    "translation_rmse_mm": 4.5858453402331945,
+    "translation_max_mm": 7.962232070014553,
+    "rotation_rmse_deg": 0.6728617839143588,
+    "rotation_max_deg": 0.9884587765020505,
+    "existing_translation_rmse_limit_mm": 10.0,
+    "existing_rotation_rmse_limit_deg": 2.0,
+    "passed_existing_gates": true
+  },
+  "candidate": "artifacts/methylene_blue_recalibration_20261023.KRmPgj/camera_to_base.candidate.json",
+  "candidate_sha256": "b9874ae76258d6e804d40a3e6eca947c63ea0d33dacdd48335817b74ccbc4cb6",
+  "samples_file": "calibration/auto_handeye_20261023_161905.json",
+  "samples_sha256": "752385ca22aa6f27435fe7d4b82a4cbc7d709d6845afbf724b6b95d5a559e002",
+  "log": "artifacts/methylene_blue_recalibration_20261023.KRmPgj/auto_calibration.log",
+  "candidate_vs_active_old_calibration": {
+    "camera_origin_translation_delta_xyz_mm": [8.70686835253889, 25.068956400222447, 67.93113522375364],
+    "camera_origin_translation_delta_norm_mm": 72.93079777633451,
+    "rotation_delta_deg": 6.362077089662333,
+    "interpretation": "Difference between two estimated transforms; not proof of physical camera displacement or an independently measured correction."
+  },
+  "retrospective_table_marker_cross_check": {
+    "source": "artifacts/methylene_blue_marker_check_20261023.L6meL3/marker_analysis.json",
+    "observation_count": 6,
+    "old_base_marker_xyz_median_mm": [-481.12069331070956, 37.590531646141514, -81.8201124373424],
+    "candidate_base_marker_xyz_median_mm": [-446.77515454743127, 7.188960900940046, -0.8990834653418744],
+    "candidate_marker_normal_tilt_median_deg": 3.093165233426741,
+    "independent_base_xyz_measured": false,
+    "independent_position_acceptance_passed": false,
+    "limitations": "Retrospective replay assumes camera and robot base were not moved between captures. Board height was estimated about 10 mm, table-to-base height is unresolved, and board flatness was not confirmed. Improved Z consistency is supporting evidence, not a motion authorization."
+  },
+  "active_configs_replaced": false,
+  "active_config_hashes_unchanged": {
+    "config/camera_to_base.json": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be",
+    "config/tcp_offset.json": "cdb4befafdf10527d228d946898e95c7dbbf6e87d0d48799cd317a7669fb381f",
+    "config/transparent_pouring.json": "928d2571492694b73e5592549942d61650e64292014b037d87818eb6bb4c4108",
+    "config/methylene_blue_experiment.local.json": "a60349660b8654342d41992d15f6c0d13a8dfb35db8de0178d2807a00736bb6e"
+  },
+  "calibration_process_exit_code": 0,
+  "return_to_reference_failure_reported": false,
+  "camera_and_sdk_connections_released": true,
+  "moveit_restarted": false,
+  "offline_verification": {
+    "test_auto_hand_eye": {"test_count": 8, "passed": true},
+    "test_calibration_validation": {"test_count": 17, "passed": true},
+    "candidate_rigid_transform_valid": true,
+    "candidate_fit_quality_valid": true
+  },
+  "next_required_step": "Independent read-only reference/geometry validation with the candidate; do not run gripping or pouring solely on fitting residuals."
+}

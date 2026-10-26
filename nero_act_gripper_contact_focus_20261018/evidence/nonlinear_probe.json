@@ -1,0 +1,1055 @@
+{
+  "passed": true,
+  "probe_only_not_task_success": true,
+  "weights_saved": false,
+  "training_windows": 57,
+  "optimization_steps": 1000,
+  "future_labels_only_in_loss": true,
+  "all_windows_from_training_groups": true,
+  "unchanged_arm_output_max": 0.0,
+  "changed_parameters": [
+    "gripper_adapter.0.weight",
+    "gripper_adapter.0.bias",
+    "gripper_adapter.2.weight",
+    "gripper_adapter.2.bias"
+  ],
+  "frozen_base_passed": true,
+  "initial_raw_l1": 0.09692157059907913,
+  "final_raw_l1": 0.004122497513890266,
+  "worst_raw_mae_mm_by_role": {
+    "actual_failed_grasp": 0.050641223788261414,
+    "close": 0.13796165585517883,
+    "initial_open": 0.1434367150068283,
+    "lift": 0.0367533415555954,
+    "release": 0.1473706215620041
+  },
+  "records": [
+    {
+      "role": "actual_failed_grasp",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_fresh_v1/episode_4001.hdf5",
+      "bounded_first10_mm": [
+        94.73628234863281,
+        94.5831069946289,
+        94.40998840332031,
+        94.27400970458984,
+        94.03616333007812,
+        93.81562042236328,
+        93.59446716308594,
+        93.35086059570312,
+        93.12127685546875,
+        92.9054946899414
+      ],
+      "raw_mae_mm": 0.050641223788261414
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_0.hdf5",
+      "bounded_first10_mm": [
+        94.13722229003906,
+        94.4659194946289,
+        94.75350952148438,
+        94.87086486816406,
+        94.86079406738281,
+        94.86357116699219,
+        94.87294006347656,
+        94.87327575683594,
+        94.87434387207031,
+        94.88532257080078
+      ],
+      "raw_mae_mm": 0.11690594255924225
+    },
+    {
+      "role": "close",
+      "start": 982,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_0.hdf5",
+      "bounded_first10_mm": [
+        94.5500717163086,
+        94.2667007446289,
+        93.89425659179688,
+        93.4492416381836,
+        93.00287628173828,
+        92.56864929199219,
+        92.17418670654297,
+        91.79622650146484,
+        91.45394897460938,
+        91.11141204833984
+      ],
+      "raw_mae_mm": 0.06701759994029999
+    },
+    {
+      "role": "close",
+      "start": 992,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_0.hdf5",
+      "bounded_first10_mm": [
+        90.5321273803711,
+        90.1731948852539,
+        89.81053161621094,
+        89.43094635009766,
+        89.080078125,
+        88.69410705566406,
+        88.29705047607422,
+        87.91766357421875,
+        87.53018188476562,
+        87.15849304199219
+      ],
+      "raw_mae_mm": 0.04119798541069031
+    },
+    {
+      "role": "lift",
+      "start": 1103,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_0.hdf5",
+      "bounded_first10_mm": [
+        67.25981140136719,
+        67.25943756103516,
+        67.25676727294922,
+        67.25213623046875,
+        67.24896240234375,
+        67.25117492675781,
+        67.25594329833984,
+        67.26317596435547,
+        67.27168273925781,
+        67.27191162109375
+      ],
+      "raw_mae_mm": 0.010982528328895569
+    },
+    {
+      "role": "lift",
+      "start": 1113,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_0.hdf5",
+      "bounded_first10_mm": [
+        67.26210021972656,
+        67.26712799072266,
+        67.26583862304688,
+        67.26158142089844,
+        67.26612091064453,
+        67.27362060546875,
+        67.27771759033203,
+        67.27114868164062,
+        67.26609802246094,
+        67.25518035888672
+      ],
+      "raw_mae_mm": 0.013430416584014893
+    },
+    {
+      "role": "release",
+      "start": 2142,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_0.hdf5",
+      "bounded_first10_mm": [
+        67.44868469238281,
+        67.65495300292969,
+        67.8967056274414,
+        68.14012908935547,
+        68.403564453125,
+        68.68350982666016,
+        68.9681167602539,
+        69.26831817626953,
+        69.57255554199219,
+        69.85685729980469
+      ],
+      "raw_mae_mm": 0.1473706215620041
+    },
+    {
+      "role": "release",
+      "start": 2152,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_0.hdf5",
+      "bounded_first10_mm": [
+        70.36235046386719,
+        70.7320327758789,
+        71.0824966430664,
+        71.47057342529297,
+        71.85629272460938,
+        72.25184631347656,
+        72.64189910888672,
+        73.02872467041016,
+        73.43741607666016,
+        73.766357421875
+      ],
+      "raw_mae_mm": 0.029669329524040222
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_1.hdf5",
+      "bounded_first10_mm": [
+        94.72888946533203,
+        94.65015411376953,
+        94.72117614746094,
+        94.744140625,
+        94.71429443359375,
+        94.73300170898438,
+        94.77884674072266,
+        94.81690216064453,
+        94.82835388183594,
+        94.84921264648438
+      ],
+      "raw_mae_mm": 0.07912218570709229
+    },
+    {
+      "role": "close",
+      "start": 1016,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_1.hdf5",
+      "bounded_first10_mm": [
+        94.70681762695312,
+        94.43766784667969,
+        94.0573501586914,
+        93.6153335571289,
+        93.16828155517578,
+        92.73849487304688,
+        92.31290435791016,
+        91.9293212890625,
+        91.55862426757812,
+        91.17460632324219
+      ],
+      "raw_mae_mm": 0.09495504200458527
+    },
+    {
+      "role": "close",
+      "start": 1026,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_1.hdf5",
+      "bounded_first10_mm": [
+        90.7187728881836,
+        90.36111450195312,
+        89.97676849365234,
+        89.58306884765625,
+        89.22959899902344,
+        88.81182098388672,
+        88.38556671142578,
+        88.01461791992188,
+        87.5982894897461,
+        87.18057250976562
+      ],
+      "raw_mae_mm": 0.08536167442798615
+    },
+    {
+      "role": "lift",
+      "start": 1137,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_1.hdf5",
+      "bounded_first10_mm": [
+        67.29917907714844,
+        67.28466033935547,
+        67.27645874023438,
+        67.27042388916016,
+        67.2677993774414,
+        67.2679443359375,
+        67.26619720458984,
+        67.2647933959961,
+        67.2645263671875,
+        67.25041198730469
+      ],
+      "raw_mae_mm": 0.01855790615081787
+    },
+    {
+      "role": "lift",
+      "start": 1147,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_1.hdf5",
+      "bounded_first10_mm": [
+        67.27596282958984,
+        67.27821350097656,
+        67.27666473388672,
+        67.27590942382812,
+        67.27599334716797,
+        67.27495574951172,
+        67.27112579345703,
+        67.26264953613281,
+        67.2508773803711,
+        67.23668670654297
+      ],
+      "raw_mae_mm": 0.01774318516254425
+    },
+    {
+      "role": "release",
+      "start": 2204,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_1.hdf5",
+      "bounded_first10_mm": [
+        67.56970977783203,
+        67.79750061035156,
+        68.02711486816406,
+        68.27645874023438,
+        68.55577087402344,
+        68.8289794921875,
+        69.11311340332031,
+        69.40972137451172,
+        69.7348403930664,
+        70.04289245605469
+      ],
+      "raw_mae_mm": 0.07603242993354797
+    },
+    {
+      "role": "release",
+      "start": 2214,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_1.hdf5",
+      "bounded_first10_mm": [
+        70.41935729980469,
+        70.8329086303711,
+        71.19747924804688,
+        71.57378387451172,
+        71.9596176147461,
+        72.3468017578125,
+        72.73311614990234,
+        73.11178588867188,
+        73.5046615600586,
+        73.8858871459961
+      ],
+      "raw_mae_mm": 0.07681511342525482
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_2.hdf5",
+      "bounded_first10_mm": [
+        94.005615234375,
+        94.08792114257812,
+        94.27210998535156,
+        94.4151382446289,
+        94.47676849365234,
+        94.52336120605469,
+        94.5621566772461,
+        94.59178161621094,
+        94.59170532226562,
+        94.6018295288086
+      ],
+      "raw_mae_mm": 0.08622929453849792
+    },
+    {
+      "role": "close",
+      "start": 1033,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_2.hdf5",
+      "bounded_first10_mm": [
+        94.52753448486328,
+        94.25532531738281,
+        93.86213684082031,
+        93.42315673828125,
+        93.00556182861328,
+        92.58680725097656,
+        92.17726135253906,
+        91.81316375732422,
+        91.4554672241211,
+        91.0767593383789
+      ],
+      "raw_mae_mm": 0.08995607495307922
+    },
+    {
+      "role": "close",
+      "start": 1043,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_2.hdf5",
+      "bounded_first10_mm": [
+        90.6291732788086,
+        90.2311019897461,
+        89.85752868652344,
+        89.49144744873047,
+        89.16126251220703,
+        88.77001953125,
+        88.37686920166016,
+        88.0201644897461,
+        87.60279083251953,
+        87.19556427001953
+      ],
+      "raw_mae_mm": 0.07375180721282959
+    },
+    {
+      "role": "lift",
+      "start": 1154,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_2.hdf5",
+      "bounded_first10_mm": [
+        67.29068756103516,
+        67.27510070800781,
+        67.26309204101562,
+        67.25926971435547,
+        67.25643157958984,
+        67.25645446777344,
+        67.25662994384766,
+        67.25548553466797,
+        67.2575912475586,
+        67.2455062866211
+      ],
+      "raw_mae_mm": 0.018923357129096985
+    },
+    {
+      "role": "lift",
+      "start": 1164,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_2.hdf5",
+      "bounded_first10_mm": [
+        67.27932739257812,
+        67.2750473022461,
+        67.2695541381836,
+        67.26893615722656,
+        67.26521301269531,
+        67.25996398925781,
+        67.2564468383789,
+        67.25218200683594,
+        67.24751281738281,
+        67.23458099365234
+      ],
+      "raw_mae_mm": 0.02353861927986145
+    },
+    {
+      "role": "release",
+      "start": 2229,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_2.hdf5",
+      "bounded_first10_mm": [
+        67.5323257446289,
+        67.75508117675781,
+        67.98500061035156,
+        68.24185180664062,
+        68.51638793945312,
+        68.79780578613281,
+        69.09447479248047,
+        69.40421295166016,
+        69.74137878417969,
+        70.06570434570312
+      ],
+      "raw_mae_mm": 0.036939606070518494
+    },
+    {
+      "role": "release",
+      "start": 2239,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_2.hdf5",
+      "bounded_first10_mm": [
+        70.29263305664062,
+        70.6882095336914,
+        71.0570297241211,
+        71.46209716796875,
+        71.86226654052734,
+        72.25529479980469,
+        72.64692687988281,
+        73.03282928466797,
+        73.45325469970703,
+        73.86414337158203
+      ],
+      "raw_mae_mm": 0.04202127456665039
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_3.hdf5",
+      "bounded_first10_mm": [
+        90.7464828491211,
+        91.0562744140625,
+        91.37703704833984,
+        91.92699432373047,
+        92.31784057617188,
+        92.6070556640625,
+        92.921142578125,
+        93.08122253417969,
+        93.21443939208984,
+        93.34774017333984
+      ],
+      "raw_mae_mm": 0.1434367150068283
+    },
+    {
+      "role": "close",
+      "start": 1014,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_3.hdf5",
+      "bounded_first10_mm": [
+        94.53019714355469,
+        94.26177215576172,
+        93.92475891113281,
+        93.53300476074219,
+        93.16065979003906,
+        92.78288269042969,
+        92.4350357055664,
+        92.0961685180664,
+        91.77476501464844,
+        91.46710205078125
+      ],
+      "raw_mae_mm": 0.13796165585517883
+    },
+    {
+      "role": "close",
+      "start": 1024,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_3.hdf5",
+      "bounded_first10_mm": [
+        90.39583587646484,
+        90.01485443115234,
+        89.70848846435547,
+        89.37803649902344,
+        89.07367706298828,
+        88.70813751220703,
+        88.3213119506836,
+        87.96139526367188,
+        87.56940460205078,
+        87.20356750488281
+      ],
+      "raw_mae_mm": 0.13051442801952362
+    },
+    {
+      "role": "lift",
+      "start": 1135,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_3.hdf5",
+      "bounded_first10_mm": [
+        67.2961196899414,
+        67.2896728515625,
+        67.27892303466797,
+        67.27020263671875,
+        67.26933288574219,
+        67.27220916748047,
+        67.2869873046875,
+        67.3086929321289,
+        67.31591796875,
+        67.31137084960938
+      ],
+      "raw_mae_mm": 0.02793632447719574
+    },
+    {
+      "role": "lift",
+      "start": 1145,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_3.hdf5",
+      "bounded_first10_mm": [
+        67.25990295410156,
+        67.26408386230469,
+        67.26583862304688,
+        67.26510620117188,
+        67.2702407836914,
+        67.27252960205078,
+        67.27362060546875,
+        67.27537536621094,
+        67.27799224853516,
+        67.27396392822266
+      ],
+      "raw_mae_mm": 0.011539831757545471
+    },
+    {
+      "role": "release",
+      "start": 2217,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_3.hdf5",
+      "bounded_first10_mm": [
+        67.46131896972656,
+        67.67682647705078,
+        67.9258041381836,
+        68.16777038574219,
+        68.43710327148438,
+        68.72598266601562,
+        69.02217102050781,
+        69.32457733154297,
+        69.62664031982422,
+        69.9251480102539
+      ],
+      "raw_mae_mm": 0.04744380712509155
+    },
+    {
+      "role": "release",
+      "start": 2227,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_3.hdf5",
+      "bounded_first10_mm": [
+        70.3556137084961,
+        70.70069885253906,
+        71.03218841552734,
+        71.42343139648438,
+        71.8056640625,
+        72.19674682617188,
+        72.58000183105469,
+        72.94601440429688,
+        73.34827423095703,
+        73.67182922363281
+      ],
+      "raw_mae_mm": 0.03682263195514679
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_4.hdf5",
+      "bounded_first10_mm": [
+        90.85586547851562,
+        91.23219299316406,
+        91.52476501464844,
+        92.02039337158203,
+        92.3995361328125,
+        92.70114135742188,
+        93.08462524414062,
+        93.27043151855469,
+        93.42806243896484,
+        93.54398345947266
+      ],
+      "raw_mae_mm": 0.062420591711997986
+    },
+    {
+      "role": "close",
+      "start": 1053,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_4.hdf5",
+      "bounded_first10_mm": [
+        94.41522979736328,
+        94.09308624267578,
+        93.70093536376953,
+        93.27159881591797,
+        92.8934326171875,
+        92.51988983154297,
+        92.1500244140625,
+        91.80119323730469,
+        91.45735168457031,
+        91.12769317626953
+      ],
+      "raw_mae_mm": 0.1204565167427063
+    },
+    {
+      "role": "close",
+      "start": 1063,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_4.hdf5",
+      "bounded_first10_mm": [
+        90.47872161865234,
+        90.07230377197266,
+        89.75772094726562,
+        89.43070983886719,
+        89.12364959716797,
+        88.75225067138672,
+        88.3968734741211,
+        88.05179595947266,
+        87.66468811035156,
+        87.2889633178711
+      ],
+      "raw_mae_mm": 0.10158494114875793
+    },
+    {
+      "role": "lift",
+      "start": 1174,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_4.hdf5",
+      "bounded_first10_mm": [
+        67.23770904541016,
+        67.22926330566406,
+        67.22306823730469,
+        67.21687316894531,
+        67.2156982421875,
+        67.21788024902344,
+        67.22863006591797,
+        67.24571228027344,
+        67.25381469726562,
+        67.24695587158203
+      ],
+      "raw_mae_mm": 0.0367533415555954
+    },
+    {
+      "role": "lift",
+      "start": 1184,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_4.hdf5",
+      "bounded_first10_mm": [
+        67.24919891357422,
+        67.25086212158203,
+        67.24424743652344,
+        67.24147033691406,
+        67.24508666992188,
+        67.24420166015625,
+        67.24485778808594,
+        67.25393676757812,
+        67.25214385986328,
+        67.24391174316406
+      ],
+      "raw_mae_mm": 0.02375170588493347
+    },
+    {
+      "role": "release",
+      "start": 2265,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_4.hdf5",
+      "bounded_first10_mm": [
+        67.53640747070312,
+        67.75187683105469,
+        67.98888397216797,
+        68.24137115478516,
+        68.51554870605469,
+        68.80266571044922,
+        69.10364532470703,
+        69.41493225097656,
+        69.739990234375,
+        70.0494613647461
+      ],
+      "raw_mae_mm": 0.020942091941833496
+    },
+    {
+      "role": "release",
+      "start": 2275,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_4.hdf5",
+      "bounded_first10_mm": [
+        70.34098052978516,
+        70.70696258544922,
+        71.0555648803711,
+        71.45378875732422,
+        71.84542846679688,
+        72.23908233642578,
+        72.63446044921875,
+        73.01477813720703,
+        73.42314147949219,
+        73.78145599365234
+      ],
+      "raw_mae_mm": 0.03727637231349945
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_5.hdf5",
+      "bounded_first10_mm": [
+        91.36278533935547,
+        91.6723403930664,
+        92.01609802246094,
+        92.60369873046875,
+        93.01586151123047,
+        93.2413101196289,
+        93.50908660888672,
+        93.6572265625,
+        93.77391815185547,
+        93.86691284179688
+      ],
+      "raw_mae_mm": 0.10230503976345062
+    },
+    {
+      "role": "close",
+      "start": 1072,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_5.hdf5",
+      "bounded_first10_mm": [
+        94.55359649658203,
+        94.16045379638672,
+        93.75425720214844,
+        93.37165069580078,
+        93.01773071289062,
+        92.67357635498047,
+        92.30729675292969,
+        91.9445571899414,
+        91.61656188964844,
+        91.2838134765625
+      ],
+      "raw_mae_mm": 0.04935823380947113
+    },
+    {
+      "role": "close",
+      "start": 1082,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_5.hdf5",
+      "bounded_first10_mm": [
+        90.65087127685547,
+        90.19852447509766,
+        89.89051055908203,
+        89.54769897460938,
+        89.20033264160156,
+        88.81678771972656,
+        88.43854522705078,
+        88.0582504272461,
+        87.67935180664062,
+        87.2901611328125
+      ],
+      "raw_mae_mm": 0.07346346974372864
+    },
+    {
+      "role": "lift",
+      "start": 1193,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_5.hdf5",
+      "bounded_first10_mm": [
+        67.27507781982422,
+        67.27140808105469,
+        67.26329803466797,
+        67.26087188720703,
+        67.26333618164062,
+        67.26709747314453,
+        67.27619934082031,
+        67.27831268310547,
+        67.26905822753906,
+        67.26456451416016
+      ],
+      "raw_mae_mm": 0.014536455273628235
+    },
+    {
+      "role": "lift",
+      "start": 1203,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_5.hdf5",
+      "bounded_first10_mm": [
+        67.26942443847656,
+        67.26969909667969,
+        67.26407623291016,
+        67.25904083251953,
+        67.25984954833984,
+        67.26203918457031,
+        67.26847076416016,
+        67.27875518798828,
+        67.28167724609375,
+        67.27598571777344
+      ],
+      "raw_mae_mm": 0.016731396317481995
+    },
+    {
+      "role": "release",
+      "start": 2305,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_5.hdf5",
+      "bounded_first10_mm": [
+        67.48419189453125,
+        67.72281646728516,
+        67.97036743164062,
+        68.2171859741211,
+        68.4974136352539,
+        68.80086517333984,
+        69.11568450927734,
+        69.42694854736328,
+        69.73323059082031,
+        70.0512924194336
+      ],
+      "raw_mae_mm": 0.06540752947330475
+    },
+    {
+      "role": "release",
+      "start": 2315,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_5.hdf5",
+      "bounded_first10_mm": [
+        70.34165954589844,
+        70.6712417602539,
+        70.99137878417969,
+        71.39259338378906,
+        71.78362274169922,
+        72.186279296875,
+        72.57999420166016,
+        72.94734191894531,
+        73.35272979736328,
+        73.72944641113281
+      ],
+      "raw_mae_mm": 0.06971955299377441
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_6.hdf5",
+      "bounded_first10_mm": [
+        93.87688446044922,
+        94.08537292480469,
+        94.33379364013672,
+        94.51759338378906,
+        94.55852508544922,
+        94.60022735595703,
+        94.65275573730469,
+        94.68482971191406,
+        94.71260070800781,
+        94.7303237915039
+      ],
+      "raw_mae_mm": 0.1241389662027359
+    },
+    {
+      "role": "close",
+      "start": 987,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_6.hdf5",
+      "bounded_first10_mm": [
+        94.3648681640625,
+        94.10957336425781,
+        93.75125885009766,
+        93.33827209472656,
+        92.94026947021484,
+        92.54136657714844,
+        92.17780303955078,
+        91.81636047363281,
+        91.48503875732422,
+        91.15596771240234
+      ],
+      "raw_mae_mm": 0.0758785754442215
+    },
+    {
+      "role": "close",
+      "start": 997,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_6.hdf5",
+      "bounded_first10_mm": [
+        90.34294128417969,
+        90.0199203491211,
+        89.6712417602539,
+        89.30616760253906,
+        88.98067474365234,
+        88.61752319335938,
+        88.25868225097656,
+        87.9029541015625,
+        87.54826354980469,
+        87.17984771728516
+      ],
+      "raw_mae_mm": 0.08062347769737244
+    },
+    {
+      "role": "lift",
+      "start": 1108,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_6.hdf5",
+      "bounded_first10_mm": [
+        67.24486541748047,
+        67.2450942993164,
+        67.24482727050781,
+        67.24454498291016,
+        67.24409484863281,
+        67.2479019165039,
+        67.25285339355469,
+        67.26214599609375,
+        67.26988983154297,
+        67.27290344238281
+      ],
+      "raw_mae_mm": 0.03483779728412628
+    },
+    {
+      "role": "lift",
+      "start": 1118,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_6.hdf5",
+      "bounded_first10_mm": [
+        67.24566650390625,
+        67.2569351196289,
+        67.2545394897461,
+        67.2551040649414,
+        67.26312255859375,
+        67.27322387695312,
+        67.27743530273438,
+        67.27641296386719,
+        67.27074432373047,
+        67.25846862792969
+      ],
+      "raw_mae_mm": 0.015599653124809265
+    },
+    {
+      "role": "release",
+      "start": 2166,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_6.hdf5",
+      "bounded_first10_mm": [
+        67.48571014404297,
+        67.71849060058594,
+        67.97676086425781,
+        68.22432708740234,
+        68.49885559082031,
+        68.79212188720703,
+        69.09251403808594,
+        69.39496612548828,
+        69.70182037353516,
+        70.00652313232422
+      ],
+      "raw_mae_mm": 0.04214346408843994
+    },
+    {
+      "role": "release",
+      "start": 2176,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_6.hdf5",
+      "bounded_first10_mm": [
+        70.37040710449219,
+        70.7194595336914,
+        71.04997253417969,
+        71.44055938720703,
+        71.82444763183594,
+        72.21773529052734,
+        72.59730529785156,
+        72.96019744873047,
+        73.35997772216797,
+        73.68681335449219
+      ],
+      "raw_mae_mm": 0.0402744859457016
+    },
+    {
+      "role": "initial_open",
+      "start": 0,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_7.hdf5",
+      "bounded_first10_mm": [
+        93.96846771240234,
+        94.26073455810547,
+        94.43577575683594,
+        94.52422332763672,
+        94.50965118408203,
+        94.51384735107422,
+        94.53848266601562,
+        94.54280090332031,
+        94.55622863769531,
+        94.56253814697266
+      ],
+      "raw_mae_mm": 0.11465363204479218
+    },
+    {
+      "role": "close",
+      "start": 1004,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_7.hdf5",
+      "bounded_first10_mm": [
+        94.49811553955078,
+        94.23889923095703,
+        93.86740112304688,
+        93.45140838623047,
+        93.03607177734375,
+        92.64179229736328,
+        92.25159454345703,
+        91.88013458251953,
+        91.51708221435547,
+        91.14449310302734
+      ],
+      "raw_mae_mm": 0.03912001848220825
+    },
+    {
+      "role": "close",
+      "start": 1014,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_7.hdf5",
+      "bounded_first10_mm": [
+        90.45989990234375,
+        90.12385559082031,
+        89.76708221435547,
+        89.38139343261719,
+        89.04652404785156,
+        88.66952514648438,
+        88.2809066772461,
+        87.92523956298828,
+        87.5438461303711,
+        87.15836334228516
+      ],
+      "raw_mae_mm": 0.07186904549598694
+    },
+    {
+      "role": "lift",
+      "start": 1125,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_7.hdf5",
+      "bounded_first10_mm": [
+        67.27295684814453,
+        67.26786041259766,
+        67.25983428955078,
+        67.25460052490234,
+        67.25083923339844,
+        67.2507553100586,
+        67.25360870361328,
+        67.26123809814453,
+        67.27030181884766,
+        67.26686096191406
+      ],
+      "raw_mae_mm": 0.019066408276557922
+    },
+    {
+      "role": "lift",
+      "start": 1135,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_7.hdf5",
+      "bounded_first10_mm": [
+        67.25896453857422,
+        67.26513671875,
+        67.26451110839844,
+        67.26541137695312,
+        67.26876831054688,
+        67.27145385742188,
+        67.27046203613281,
+        67.26882934570312,
+        67.2606430053711,
+        67.24889373779297
+      ],
+      "raw_mae_mm": 0.009397044777870178
+    },
+    {
+      "role": "release",
+      "start": 2206,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_7.hdf5",
+      "bounded_first10_mm": [
+        67.52791595458984,
+        67.7575912475586,
+        68.005126953125,
+        68.24927520751953,
+        68.52323150634766,
+        68.81005859375,
+        69.10449981689453,
+        69.40845489501953,
+        69.7217025756836,
+        70.01910400390625
+      ],
+      "raw_mae_mm": 0.02260841429233551
+    },
+    {
+      "role": "release",
+      "start": 2216,
+      "path": "/home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1/episode_7.hdf5",
+      "bounded_first10_mm": [
+        70.37500762939453,
+        70.76319885253906,
+        71.12738037109375,
+        71.52108001708984,
+        71.90811920166016,
+        72.3008804321289,
+        72.69066619873047,
+        73.06689453125,
+        73.46037292480469,
+        73.79987335205078
+      ],
+      "raw_mae_mm": 0.03782585263252258
+    }
+  ],
+  "hardware_connected": false
+}

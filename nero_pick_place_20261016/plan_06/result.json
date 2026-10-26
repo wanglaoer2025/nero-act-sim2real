@@ -1,0 +1,83 @@
+{
+  "mode": "plan",
+  "motion_sent": false,
+  "success": false,
+  "task_success": "unreviewed",
+  "confirmations": [],
+  "stages": [
+    {
+      "name": "pregrasp_high_pose",
+      "points": 39,
+      "duration_s": 3.79142899
+    },
+    {
+      "name": "grasp_pose",
+      "points": 116,
+      "duration_s": 11.407563989
+    },
+    {
+      "name": "lift_pose",
+      "points": 116,
+      "duration_s": 11.408982535
+    },
+    {
+      "name": "carry_pose",
+      "points": 27,
+      "duration_s": 2.5791498170000002
+    },
+    {
+      "name": "place_pose",
+      "points": 111,
+      "duration_s": 10.992674895
+    }
+  ],
+  "actual_start": {
+    "joint1": 0.18320721158184478,
+    "joint2": -0.12655382406210886,
+    "joint3": 0.10002481943179502,
+    "joint4": 1.5707963267948966,
+    "joint5": -0.024015730507441976,
+    "joint6": 0.2816961412718848,
+    "joint7": 0.13107422682477415,
+    "gripper": 0.064985
+  },
+  "cup_sweep_checks": [
+    {
+      "stage": "lift_pose",
+      "fk_samples": 714,
+      "minimum_cup_bottom_mm": -1.0643492337480964e-07
+    },
+    {
+      "stage": "carry_pose",
+      "fk_samples": 437,
+      "minimum_cup_bottom_mm": 200.00000015967206
+    },
+    {
+      "stage": "place_pose",
+      "fk_samples": 696,
+      "minimum_cup_bottom_mm": -1.230062232626672e-07
+    }
+  ],
+  "retreat_start_collision_check": {
+    "valid": false,
+    "contacts": [
+      {
+        "body1": "base_link",
+        "body2": "nero_table",
+        "penetration_m": 1.2415397860140698e-16
+      },
+      {
+        "body1": "gripper_base",
+        "body2": "nero_beaker_teacher_destination",
+        "penetration_m": 0.0030244010278590214
+      },
+      {
+        "body1": "gripper_link2",
+        "body2": "nero_beaker_teacher_destination",
+        "penetration_m": 0.00431619411713826
+      }
+    ]
+  },
+  "error": "RuntimeError: 退让起点碰撞：{'valid': False, 'contacts': [{'body1': 'base_link', 'body2': 'nero_table', 'penetration_m': 1.2415397860140698e-16}, {'body1': 'gripper_base', 'body2': 'nero_beaker_teacher_destination', 'penetration_m': 0.0030244010278590214}, {'body1': 'gripper_link2', 'body2': 'nero_beaker_teacher_destination', 'penetration_m': 0.00431619411713826}]}",
+  "finished_wall_s": 1792164407.5975015
+}

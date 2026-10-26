@@ -1,0 +1,17 @@
+test_explicit_visual_training_updates_backbone_and_preserves_default_freeze (tests.test_visual_learning.VisualLearningTests.test_explicit_visual_training_updates_backbone_and_preserves_default_freeze) ... /home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+FAIL
+
+======================================================================
+FAIL: test_explicit_visual_training_updates_backbone_and_preserves_default_freeze (tests.test_visual_learning.VisualLearningTests.test_explicit_visual_training_updates_backbone_and_preserves_default_freeze)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_failure_fix_20261018/tests/test_visual_learning.py", line 14, in test_explicit_visual_training_updates_backbone_and_preserves_default_freeze
+    self.assertTrue(any(p.requires_grad for p in backbone),'freeze_backbone=False must enable visual learning')
+AssertionError: False is not true : freeze_backbone=False must enable visual learning
+
+----------------------------------------------------------------------
+Ran 1 test in 0.964s
+
+FAILED (failures=1)
+number of parameters: 12.58M

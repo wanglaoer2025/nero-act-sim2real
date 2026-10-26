@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_failed_physical_teacher_cannot_publish_qualified_episode _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-124/test_failed_physical_teacher_c0')
+
+    def test_failed_physical_teacher_cannot_publish_qualified_episode(tmp_path):
+>       from collect_sim import acceptance_record
+E       ModuleNotFoundError: No module named 'collect_sim'
+
+tests/test_collection.py:6: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_collection.py::test_failed_physical_teacher_cannot_publish_qualified_episode
+1 failed in 0.10s

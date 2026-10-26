@@ -1,0 +1,84 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19082864600288824,
+  "maximum_horizontal_transfer_m": 0.17804840533794025,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 1445,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5261763563854669,
+      -0.1556507292907383,
+      0.04749668780202183
+    ],
+    "tcp_xyz": [
+      -0.5262829899359063,
+      -0.15548579571726487,
+      0.231951340498192
+    ],
+    "cup_upright": 0.9999999999999497,
+    "cup_speed": 1.706395335021048e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09500000018801985,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": true,
+    "force": false,
+    "name": "independent_3",
+    "seed": 90103
+  },
+  "frames": 4305,
+  "active_policy_points": 3900,
+  "queries": 404,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 1276,
+      "active_points": 1276,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 2365,
+      "active_points": 2244,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 3446,
+      "active_points": 3245,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RETREAT",
+      "physics_step": 3702,
+      "active_points": 3377,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 5,
+  "runtime_s": 38.385541070019826,
+  "contact_arm_hold_points": 260,
+  "guard_diagnostic": null
+}

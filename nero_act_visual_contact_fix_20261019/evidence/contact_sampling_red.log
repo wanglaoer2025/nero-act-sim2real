@@ -1,0 +1,73 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+__ test_stable_close_history_targets_are_retained_without_handwritten_closure __
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-76/test_stable_close_history_targ0')
+
+    def test_stable_close_history_targets_are_retained_without_handwritten_closure(tmp_path):
+        from training.visual import visual_windows
+        p=episode(tmp_path/'episode_0.hdf5')
+        with h5py.File(p,'r+') as f:
+            f['simulation/stage']=np.array(['close']*25,dtype='S8')
+            f['action'][:,7]=.065
+            original=f['action'][:].copy()
+        samples=visual_windows([p])
+>       assert {t for _,t in samples}==set(range(25)), 'Stable3..12mm close frames must not be discarded'
+E       AssertionError: Stable3..12mm close frames must not be discarded
+E       assert {0, 1, 2, 3, 4, 5, ...} == {0, 1, 2, 3, 4, 5, ...}
+E         Extra items in the right set:
+E         24
+E         21
+E         22
+E         23
+E         Use -v to get more diff
+
+tests/test_visual_contact_sampling.py:18: AssertionError
+____ test_sampling_excludes_invalid_rgb_and_preserves_full_task_background _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-76/test_sampling_excludes_invalid0')
+
+    def test_sampling_excludes_invalid_rgb_and_preserves_full_task_background(tmp_path):
+        from training.visual import visual_windows
+        p=episode(tmp_path/'episode_0.hdf5')
+        with h5py.File(p,'r+') as f:
+            f['simulation/stage']=np.array(['approach']*10+['close']*15,dtype='S8')
+            f['action'][:,7]=.065;f['observations/visual_valid'][15]=False
+        samples=visual_windows([p])
+>       assert (0,0) in samples and (0,10) in samples and (0,24) in samples
+E       assert ((0, 0) in [(0, 0), (0, 10), (0, 10), (0, 10), (0, 11), (0, 12), ...] and (0, 10) in [(0, 0), (0, 10), (0, 10), (0, 10), (0, 11), (0, 12), ...] and (0, 24) in [(0, 0), (0, 10), (0, 10), (0, 10), (0, 11), (0, 12), ...])
+
+tests/test_visual_contact_sampling.py:30: AssertionError
+__________ test_data_producer_and_trainer_use_the_same_close_windows ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-76/test_data_producer_and_trainer0')
+
+    def test_data_producer_and_trainer_use_the_same_close_windows(tmp_path):
+        import training.legacy_visual_data as producer
+>       assert hasattr(producer,'visual_sampling_windows'), 'Data producer still uses filtered legacy sampler'
+E       AssertionError: Data producer still uses filtered legacy sampler
+E       assert False
+E        +  where False = hasattr(<module 'training.legacy_visual_data' from '/home/user/wq/nero_act_visual_contact_fix_20261019/training/legacy_visual_data.py'>, 'visual_sampling_windows')
+
+tests/test_visual_contact_sampling.py:36: AssertionError
+______ test_fresh_resolved_cases_require_exact_pretraining_source_binding ______
+
+    def test_fresh_resolved_cases_require_exact_pretraining_source_binding():
+        import simulation.visual_evaluation as m
+>       assert hasattr(m,'resolved_case_provenance'), 'Exact numeric independent-case binding missing'
+E       AssertionError: Exact numeric independent-case binding missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.visual_evaluation' from '/home/user/wq/nero_act_visual_contact_fix_20261019/simulation/visual_evaluation.py'>, 'resolved_case_provenance')
+
+tests/test_visual_contact_sampling.py:48: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_contact_sampling.py::test_stable_close_history_targets_are_retained_without_handwritten_closure
+FAILED tests/test_visual_contact_sampling.py::test_sampling_excludes_invalid_rgb_and_preserves_full_task_background
+FAILED tests/test_visual_contact_sampling.py::test_data_producer_and_trainer_use_the_same_close_windows
+FAILED tests/test_visual_contact_sampling.py::test_fresh_resolved_cases_require_exact_pretraining_source_binding
+4 failed, 1 warning in 2.24s

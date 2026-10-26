@@ -1,0 +1,39 @@
+{
+  "started_epoch_s": 1792771876.2523272,
+  "old_receive_only_pid": 630956,
+  "command": [
+    "/usr/bin/python3",
+    "-u",
+    "/home/user/wq/nero_act_transfer_demo_20261023/runtime_entry.py",
+    "--execute",
+    "--review",
+    "/home/user/wq/nero_act_transfer_demo_20261023/review.json",
+    "--onsite",
+    "/home/user/wq/nero_act_transfer_demo_20261023/onsite.json",
+    "--output",
+    "/home/user/wq/nero_act_transfer_demo_20261023/execution_01"
+  ],
+  "plan_sha256": "37e5d6ca03430d13ef72101718f65912ffdd69125836d65ff94d6ec6e3d984be",
+  "automatic_retry": false,
+  "automatic_return": false,
+  "stages": [
+    "owned_receive_only_stopped",
+    "motion_entry_exited"
+  ],
+  "motion_process_pid": 633918,
+  "motion_process_exit_code": 1,
+  "restored_receiver_pid": 633962,
+  "read_only_restored": {
+    "mode": "receive_only",
+    "pid": 633962,
+    "interpreter": "/usr/bin/python3",
+    "auto_enable": false,
+    "control_enabled_at_start": false,
+    "speed_percent_parameter": 0,
+    "runtime_send_blocked": true,
+    "can_tx_before": 226399,
+    "can_tx_after_start": 226399,
+    "motion_submitted_by_entry": false
+  },
+  "finished_epoch_s": 1792771895.0061922
+}

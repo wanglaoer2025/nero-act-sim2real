@@ -1,0 +1,388 @@
+{
+  "domain_id": 42,
+  "nodes": [
+    [
+      "act_readonly_joint_status_preflight",
+      "/"
+    ],
+    [
+      "agx_arm_ctrl_single_node",
+      "/"
+    ]
+  ],
+  "topics": [
+    [
+      "/control/gated_joint_states",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/control/move_c",
+      [
+        "geometry_msgs/msg/PoseArray"
+      ]
+    ],
+    [
+      "/control/move_cpv",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/control/move_j",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/control/move_js",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/control/move_l",
+      [
+        "geometry_msgs/msg/PoseStamped"
+      ]
+    ],
+    [
+      "/control/move_mit",
+      [
+        "agx_arm_msgs/msg/MoveMITMsg"
+      ]
+    ],
+    [
+      "/control/move_p",
+      [
+        "geometry_msgs/msg/PoseStamped"
+      ]
+    ],
+    [
+      "/feedback/arm_status",
+      [
+        "agx_arm_msgs/msg/AgxArmStatus"
+      ]
+    ],
+    [
+      "/feedback/gripper_status",
+      [
+        "agx_arm_msgs/msg/GripperStatus"
+      ]
+    ],
+    [
+      "/feedback/joint_states",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/feedback/leader_joint_states",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/feedback/tcp_pose",
+      [
+        "geometry_msgs/msg/PoseStamped"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ]
+  ],
+  "received": {
+    "/feedback/arm_status": {
+      "count": 409,
+      "last": [
+        {
+          "received_monotonic_s": 299603.363646218,
+          "message": {
+            "ctrl_mode": 1,
+            "arm_status": 0,
+            "mode_feedback": 1,
+            "teach_status": 0,
+            "motion_status": 0,
+            "trajectory_num": 0,
+            "err_status": 0,
+            "joint_angle_limit": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "communication_status_joint": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        },
+        {
+          "received_monotonic_s": 299603.368553136,
+          "message": {
+            "ctrl_mode": 1,
+            "arm_status": 0,
+            "mode_feedback": 1,
+            "teach_status": 0,
+            "motion_status": 0,
+            "trajectory_num": 0,
+            "err_status": 0,
+            "joint_angle_limit": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "communication_status_joint": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      ]
+    },
+    "/feedback/gripper_status": {
+      "count": 408,
+      "last": [
+        {
+          "received_monotonic_s": 299603.363810973,
+          "message": {
+            "header": {
+              "stamp": {
+                "sec": 1792770055,
+                "nanosec": 710904598
+              },
+              "frame_id": ""
+            },
+            "width": 0.09942,
+            "force": 0.022,
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "driver_enable_status": true,
+            "homing_status": false
+          }
+        },
+        {
+          "received_monotonic_s": 299603.368720333,
+          "message": {
+            "header": {
+              "stamp": {
+                "sec": 1792770055,
+                "nanosec": 715854883
+              },
+              "frame_id": ""
+            },
+            "width": 0.09942,
+            "force": 0.026000000000000002,
+            "voltage_too_low": false,
+            "motor_overheating": false,
+            "driver_overcurrent": false,
+            "driver_overheating": false,
+            "sensor_status": false,
+            "driver_error_status": false,
+            "driver_enable_status": true,
+            "homing_status": false
+          }
+        }
+      ]
+    },
+    "/feedback/joint_states": {
+      "count": 407,
+      "last": [
+        {
+          "received_monotonic_s": 299603.36806242,
+          "message": {
+            "header": {
+              "stamp": {
+                "sec": 1792770055,
+                "nanosec": 715631723
+              },
+              "frame_id": ""
+            },
+            "name": [
+              "joint1",
+              "joint2",
+              "joint3",
+              "joint4",
+              "joint5",
+              "joint6",
+              "joint7",
+              "gripper"
+            ],
+            "position": [
+              0.18324211816688468,
+              -0.12651891747706895,
+              0.10000736613927509,
+              1.5707963267948966,
+              -0.02387610416728243,
+              0.28166123468684495,
+              0.13102186694721432,
+              0.09942
+            ],
+            "velocity": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "effort": [
+              0.28354257359999996,
+              -2.8559507440464,
+              -0.18074018000000003,
+              -3.3494454000000005,
+              -0.105431727156,
+              -0.0052715863578,
+              -0.3552584411712,
+              0.026000000000000002
+            ]
+          }
+        },
+        {
+          "received_monotonic_s": 299603.373042163,
+          "message": {
+            "header": {
+              "stamp": {
+                "sec": 1792770055,
+                "nanosec": 719154834
+              },
+              "frame_id": ""
+            },
+            "name": [
+              "joint1",
+              "joint2",
+              "joint3",
+              "joint4",
+              "joint5",
+              "joint6",
+              "joint7",
+              "gripper"
+            ],
+            "position": [
+              0.18324211816688468,
+              -0.12651891747706895,
+              0.10000736613927509,
+              1.5707963267948966,
+              -0.02387610416728243,
+              0.28166123468684495,
+              0.13102186694721432,
+              0.09942
+            ],
+            "velocity": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "effort": [
+              0.30244541183999996,
+              -2.8323087676884,
+              -0.18074018000000003,
+              -3.3284589,
+              -0.105431727156,
+              0.0105431727156,
+              -0.3650812552128,
+              0.026000000000000002
+            ]
+          }
+        }
+      ]
+    },
+    "/feedback/tcp_pose": {
+      "count": 399,
+      "last": [
+        {
+          "received_monotonic_s": 299603.363983846,
+          "message": {
+            "header": {
+              "stamp": {
+                "sec": 1792770055,
+                "nanosec": 701555490
+              },
+              "frame_id": ""
+            },
+            "pose": {
+              "position": {
+                "x": -0.218659,
+                "y": -0.091443,
+                "z": 0.479425
+              },
+              "orientation": {
+                "x": -4.936471973133742e-05,
+                "y": 0.7070882672088205,
+                "z": -0.7071252925256268,
+                "w": 2.468397535850234e-05
+              }
+            }
+          }
+        },
+        {
+          "received_monotonic_s": 299603.368895814,
+          "message": {
+            "header": {
+              "stamp": {
+                "sec": 1792770055,
+                "nanosec": 701555490
+              },
+              "frame_id": ""
+            },
+            "pose": {
+              "position": {
+                "x": -0.218659,
+                "y": -0.091443,
+                "z": 0.479425
+              },
+              "orientation": {
+                "x": -4.936471973133742e-05,
+                "y": 0.7070882672088205,
+                "z": -0.7071252925256268,
+                "w": 2.468397535850234e-05
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "read_only": true,
+  "hardware_commands_sent": false,
+  "can_tx_after": 226068
+}

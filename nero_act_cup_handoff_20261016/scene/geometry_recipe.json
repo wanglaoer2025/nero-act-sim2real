@@ -1,0 +1,44 @@
+{
+  "input": "scene/current_capture/camera_0_upright_rgb.png",
+  "cup_detector": "perception/cup_blue_detector.pt",
+  "cup_detector_sha256": "8c7ca384ca729f57bd54975cb0a14ef80503831be76fa1a72cdc5665fef341e0",
+  "cup_detection_configuration": {
+    "device": "cpu",
+    "confidence_threshold": 0.2,
+    "required_target_class": "cup",
+    "selected_cup_count": 1
+  },
+  "geometry_source": "geometry_reference/src/utils/methylene_grasp_geometry.py",
+  "cup_model_mm": {
+    "outer_diameter": 75,
+    "height": 95
+  },
+  "table_z_mm_retained_assumption": -10,
+  "intrinsics_scaling": "native HD720 fx/fy/cx/cy divided by2 for SDK 640x360 image; no reapplication of rectification distortion",
+  "intrinsics_pixel_centre_resampling_not_independently_verified": true,
+  "blue_method": {
+    "color_space": "OpenCV HSV on BGR-decoded upright PNG",
+    "inRange_lower": [
+      90,
+      90,
+      50
+    ],
+    "inRange_upper": [
+      130,
+      255,
+      255
+    ],
+    "external_contour_minimum_area_px": 300,
+    "qualifying_contours": 1,
+    "polygon_epsilon_fraction_of_perimeter": 0.02,
+    "quadrilateral_vertices": 4,
+    "coordinate_estimate": "intersect all corner rays with retained horizontal plane and average corners; not an independent physical measurement"
+  },
+  "pnp_diagnostic": {
+    "square_side_mm": 100,
+    "solver": "OpenCV SOLVEPNP_IPPE; both solutions retained",
+    "zero_distortion_on_rectified_image": true,
+    "not_an_automatic_calibration_or_table_correction": true
+  },
+  "no_hardware_calls": true
+}

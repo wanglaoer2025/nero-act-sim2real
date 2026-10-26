@@ -1,0 +1,91 @@
+{
+  "outcomes": {
+    "nominal": {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.0,
+      "maximum_horizontal_transfer_m": 1.6889477678599397e-08,
+      "stable_released_frames": 0,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "error": "RuntimeError: ACT descended below the original grasp region without confirmation",
+      "simulated_events": []
+    },
+    "validation42": {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19255139834374085,
+      "maximum_horizontal_transfer_m": 0.17651606831660746,
+      "stable_released_frames": 110,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "error": null,
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1023,
+          "active_points": 1023,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 1705,
+          "active_points": 1584,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 2386,
+          "active_points": 2185,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 2569,
+          "active_points": 2245,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ]
+    }
+  },
+  "nominal_diagnosis": {
+    "closest_grasp_query": {
+      "query": 216,
+      "step": 1260,
+      "tcp_m": [
+        -0.5249590055151233,
+        0.018218075291151492,
+        0.05512536476471182
+      ],
+      "rotation_error_deg": 3.451808592831821,
+      "source_xy_error_m": 0.0026342529273039985,
+      "bounded_width_first10_mm": [
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0
+      ]
+    },
+    "queries_in_unchanged_grasp_depth": 17,
+    "bounded_width_min_in_depth_mm": 95.0,
+    "bounded_width_max_in_depth_mm": 95.0,
+    "fk_independent_mujoco_error_m": 2.220446049250313e-16,
+    "recorded_chunks_are_bounded_physical_predictions": true
+  }
+}

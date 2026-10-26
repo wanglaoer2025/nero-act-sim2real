@@ -1,0 +1,273 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+______ test_caller_cannot_replace_the_sealed_restricted_profile[change0] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a8f744ad0>
+change = {'adaptation_scope': 'full'}
+
+    @pytest.mark.parametrize('change',[{'adaptation_scope':'full'}, {'arm_output_lr':.1},
+                                       {'train_arm_output_and_gripper_only':False}])
+    def test_caller_cannot_replace_the_sealed_restricted_profile(tmp_path,monkeypatch,change):
+        import json
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(adaptation_scope='output_heads_v1',
+            train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003)
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=dict(declared,variant='A',stage='pilot');caller.update(change)
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',caller,tmp_path/'output')
+
+tests/test_restricted_history_heads.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the0/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the0/initializer')
+config = {'adaptation_scope': 'full', 'arm_output_lr': 0.0001, 'gripper_adapter_lr': 0.0003, 'stage': 'pilot', ...}
+output = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the0/output')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        declared=json.loads((ROOT/'config/history_experiment.json').read_text())
+        sampling_profile=declared.get('transition_sampling_profile','none')
+        if settings.get('deployed_prefix_loss_weight',0.)!=declared.get('deployed_prefix_loss_weight',0.):
+            raise ValueError('Caller deployed prefix weight differs from the sealed declaration')
+        additional=declared.get('additional_failure_episode_ids',[])
+        if settings.get('additional_failure_episode_ids',[])!=additional:
+            raise ValueError('Additional recovery IDs differ from the sealed experiment declaration')
+        if settings.get('transition_sampling_profile','none')!=sampling_profile:
+            raise ValueError('Caller sampling profile differs from the sealed experiment declaration')
+        if stage=='formal' and sampling_profile!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:296: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a8f744ad0>
+change = {'adaptation_scope': 'full'}
+
+    @pytest.mark.parametrize('change',[{'adaptation_scope':'full'}, {'arm_output_lr':.1},
+                                       {'train_arm_output_and_gripper_only':False}])
+    def test_caller_cannot_replace_the_sealed_restricted_profile(tmp_path,monkeypatch,change):
+        import json
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(adaptation_scope='output_heads_v1',
+            train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003)
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=dict(declared,variant='A',stage='pilot');caller.update(change)
+>       with pytest.raises(ValueError,match='sealed'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'sealed'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_restricted_history_heads.py:55: AssertionError
+______ test_caller_cannot_replace_the_sealed_restricted_profile[change1] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a7ae2e6c0>
+change = {'arm_output_lr': 0.1}
+
+    @pytest.mark.parametrize('change',[{'adaptation_scope':'full'}, {'arm_output_lr':.1},
+                                       {'train_arm_output_and_gripper_only':False}])
+    def test_caller_cannot_replace_the_sealed_restricted_profile(tmp_path,monkeypatch,change):
+        import json
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(adaptation_scope='output_heads_v1',
+            train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003)
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=dict(declared,variant='A',stage='pilot');caller.update(change)
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',caller,tmp_path/'output')
+
+tests/test_restricted_history_heads.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the1/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the1/initializer')
+config = {'adaptation_scope': 'output_heads_v1', 'arm_output_lr': 0.1, 'gripper_adapter_lr': 0.0003, 'stage': 'pilot', ...}
+output = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the1/output')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        declared=json.loads((ROOT/'config/history_experiment.json').read_text())
+        sampling_profile=declared.get('transition_sampling_profile','none')
+        if settings.get('deployed_prefix_loss_weight',0.)!=declared.get('deployed_prefix_loss_weight',0.):
+            raise ValueError('Caller deployed prefix weight differs from the sealed declaration')
+        additional=declared.get('additional_failure_episode_ids',[])
+        if settings.get('additional_failure_episode_ids',[])!=additional:
+            raise ValueError('Additional recovery IDs differ from the sealed experiment declaration')
+        if settings.get('transition_sampling_profile','none')!=sampling_profile:
+            raise ValueError('Caller sampling profile differs from the sealed experiment declaration')
+        if stage=='formal' and sampling_profile!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:296: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a7ae2e6c0>
+change = {'arm_output_lr': 0.1}
+
+    @pytest.mark.parametrize('change',[{'adaptation_scope':'full'}, {'arm_output_lr':.1},
+                                       {'train_arm_output_and_gripper_only':False}])
+    def test_caller_cannot_replace_the_sealed_restricted_profile(tmp_path,monkeypatch,change):
+        import json
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(adaptation_scope='output_heads_v1',
+            train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003)
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=dict(declared,variant='A',stage='pilot');caller.update(change)
+>       with pytest.raises(ValueError,match='sealed'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'sealed'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_restricted_history_heads.py:55: AssertionError
+______ test_caller_cannot_replace_the_sealed_restricted_profile[change2] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a7aacfd10>
+change = {'train_arm_output_and_gripper_only': False}
+
+    @pytest.mark.parametrize('change',[{'adaptation_scope':'full'}, {'arm_output_lr':.1},
+                                       {'train_arm_output_and_gripper_only':False}])
+    def test_caller_cannot_replace_the_sealed_restricted_profile(tmp_path,monkeypatch,change):
+        import json
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(adaptation_scope='output_heads_v1',
+            train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003)
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=dict(declared,variant='A',stage='pilot');caller.update(change)
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',caller,tmp_path/'output')
+
+tests/test_restricted_history_heads.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the2/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the2/initializer')
+config = {'adaptation_scope': 'output_heads_v1', 'arm_output_lr': 0.0001, 'gripper_adapter_lr': 0.0003, 'stage': 'pilot', ...}
+output = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the2/output')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        declared=json.loads((ROOT/'config/history_experiment.json').read_text())
+        sampling_profile=declared.get('transition_sampling_profile','none')
+        if settings.get('deployed_prefix_loss_weight',0.)!=declared.get('deployed_prefix_loss_weight',0.):
+            raise ValueError('Caller deployed prefix weight differs from the sealed declaration')
+        additional=declared.get('additional_failure_episode_ids',[])
+        if settings.get('additional_failure_episode_ids',[])!=additional:
+            raise ValueError('Additional recovery IDs differ from the sealed experiment declaration')
+        if settings.get('transition_sampling_profile','none')!=sampling_profile:
+            raise ValueError('Caller sampling profile differs from the sealed experiment declaration')
+        if stage=='formal' and sampling_profile!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:296: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-172/test_caller_cannot_replace_the2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1a7aacfd10>
+change = {'train_arm_output_and_gripper_only': False}
+
+    @pytest.mark.parametrize('change',[{'adaptation_scope':'full'}, {'arm_output_lr':.1},
+                                       {'train_arm_output_and_gripper_only':False}])
+    def test_caller_cannot_replace_the_sealed_restricted_profile(tmp_path,monkeypatch,change):
+        import json
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();declared=dict(adaptation_scope='output_heads_v1',
+            train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003)
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=dict(declared,variant='A',stage='pilot');caller.update(change)
+>       with pytest.raises(ValueError,match='sealed'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'sealed'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_restricted_history_heads.py:55: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_restricted_history_heads.py::test_caller_cannot_replace_the_sealed_restricted_profile[change0]
+FAILED tests/test_restricted_history_heads.py::test_caller_cannot_replace_the_sealed_restricted_profile[change1]
+FAILED tests/test_restricted_history_heads.py::test_caller_cannot_replace_the_sealed_restricted_profile[change2]
+3 failed, 3 deselected, 1 warning in 2.20s

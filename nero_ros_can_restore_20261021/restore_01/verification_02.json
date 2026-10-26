@@ -1,0 +1,241 @@
+{
+  "checked_at": "2026-10-21T18:09:46.715269+08:00",
+  "ros_domain_id": 42,
+  "driver_start": {
+    "mode": "receive_only",
+    "pid": 304265,
+    "interpreter": "/usr/bin/python3",
+    "auto_enable": false,
+    "control_enabled_at_start": false,
+    "speed_percent_parameter": 0,
+    "runtime_send_blocked": true,
+    "can_tx_before": 478,
+    "can_tx_after_start": 478,
+    "motion_submitted_by_entry": false
+  },
+  "parameters": {
+    "can_port": "can0",
+    "arm_type": "nero",
+    "fw_version": "v120",
+    "auto_enable": false,
+    "control_enabled": false,
+    "speed_percent": 0,
+    "pub_rate": 200
+  },
+  "nodes": [
+    [
+      "nero_ros_can_restore_check",
+      "/"
+    ],
+    [
+      "agx_arm_ctrl_single_node",
+      "/"
+    ]
+  ],
+  "feedback_publishers": 1,
+  "feedback_samples": 621,
+  "feedback_hz": 206.49179152141477,
+  "eight_joint_names_and_values_valid": true,
+  "ros_stamp_advances": true,
+  "feedback_age_s": 0.006033182144165039,
+  "latest_feedback": {
+    "header": {
+      "stamp": {
+        "sec": 1792577386,
+        "nanosec": 710016965
+      },
+      "frame_id": ""
+    },
+    "name": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "position": [
+      -0.30550243226908746,
+      0.3592411199379929,
+      -0.040020399748229976,
+      1.779363172408219,
+      -0.37179003725983206,
+      -0.38474038030963004,
+      0.028763026072866554,
+      0.09491899999999999
+    ],
+    "velocity": [
+      0.035,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "effort": [
+      -0.009451419119999999,
+      -7.0027533972396006,
+      -0.81543244,
+      -2.5015908000000002,
+      0.0843453817248,
+      0.1300324634924,
+      -0.5287948225728,
+      0.016
+    ]
+  },
+  "arm_status_samples": 620,
+  "latest_arm_status": {
+    "ctrl_mode": 1,
+    "arm_status": 2,
+    "mode_feedback": 1,
+    "teach_status": 0,
+    "motion_status": 0,
+    "trajectory_num": 0,
+    "err_status": 0,
+    "joint_angle_limit": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "communication_status_joint": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "gripper_status_samples": 620,
+  "latest_gripper_status": {
+    "header": {
+      "stamp": {
+        "sec": 1792577386,
+        "nanosec": 705142259
+      },
+      "frame_id": ""
+    },
+    "width": 0.09491899999999999,
+    "force": 0.012,
+    "voltage_too_low": false,
+    "motor_overheating": false,
+    "driver_overcurrent": false,
+    "driver_overheating": false,
+    "sensor_status": false,
+    "driver_error_status": false,
+    "driver_enable_status": true,
+    "homing_status": false
+  },
+  "can_interface": {
+    "ifindex": 3,
+    "ifname": "can0",
+    "flags": [
+      "NOARP",
+      "UP",
+      "LOWER_UP",
+      "ECHO"
+    ],
+    "mtu": 16,
+    "qdisc": "pfifo_fast",
+    "operstate": "UP",
+    "linkmode": "DEFAULT",
+    "group": "default",
+    "txqlen": 10,
+    "link_type": "can",
+    "promiscuity": 0,
+    "allmulti": 0,
+    "min_mtu": 0,
+    "max_mtu": 0,
+    "linkinfo": {
+      "info_kind": "can",
+      "info_data": {
+        "ctrlmode_supported": [
+          "LOOPBACK",
+          "LISTEN-ONLY",
+          "CC-LEN8-DLC"
+        ],
+        "state": "ERROR-ACTIVE",
+        "restart_ms": 0,
+        "bittiming": {
+          "bitrate": 1000000,
+          "sample_point": "0.750",
+          "tq": 62,
+          "prop_seg": 5,
+          "phase_seg1": 6,
+          "phase_seg2": 4,
+          "sjw": 2,
+          "brp": 3
+        },
+        "bittiming_const": {
+          "name": "gs_usb",
+          "tseg1": {
+            "min": 1,
+            "max": 16
+          },
+          "tseg2": {
+            "min": 1,
+            "max": 8
+          },
+          "sjw": {
+            "min": 1,
+            "max": 4
+          },
+          "brp": {
+            "min": 1,
+            "max": 1024
+          },
+          "brp_inc": 1
+        },
+        "clock": 48000000
+      },
+      "info_xstats": {
+        "restarts": 0,
+        "bus_error": 0,
+        "arbitration_lost": 0,
+        "error_warning": 0,
+        "error_passive": 0,
+        "bus_off": 0
+      }
+    },
+    "num_tx_queues": 1,
+    "num_rx_queues": 1,
+    "gso_max_size": 65536,
+    "gso_max_segs": 65535,
+    "tso_max_size": 65536,
+    "tso_max_segs": 65535,
+    "gro_max_size": 65536,
+    "parentbus": "usb",
+    "parentdev": "1-6:1.0",
+    "stats64": {
+      "rx": {
+        "bytes": 2597552912,
+        "packets": 324694114,
+        "errors": 0,
+        "dropped": 0,
+        "over_errors": 0,
+        "multicast": 0
+      },
+      "tx": {
+        "bytes": 0,
+        "packets": 478,
+        "errors": 0,
+        "dropped": 0,
+        "carrier_errors": 0,
+        "collisions": 0
+      }
+    }
+  },
+  "can_tx_after_verification": 478,
+  "can_tx_unchanged": true,
+  "motion_sent": false,
+  "restore_verified": true
+}

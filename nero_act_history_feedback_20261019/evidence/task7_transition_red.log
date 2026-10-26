@@ -1,0 +1,165 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_A_B_share_history_warmup_and_actual_delayed_exposure ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7da0fa972540>
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-137/test_A_B_share_history_warmup_0')
+
+    def test_A_B_share_history_warmup_and_actual_delayed_exposure(monkeypatch,tmp_path):
+        import json
+        from pathlib import Path
+        import numpy as np
+        import torch
+        import simulation.supervised_rollout as runtime
+        import simulation.visual_evaluation as visual
+        from tests.test_visual_policy import config as policy_config
+        class Renderer:
+            def __init__(self,*a,**k):pass
+            def __enter__(self):return self
+            def __exit__(self,*a):pass
+            def update_scene(self,*a,**k):pass
+            scene=type('Scene',(),{'flags':np.zeros(100,dtype=bool)})()
+            def render(self):return np.zeros((180,320,3),np.uint8)
+        monkeypatch.setattr(runtime.mujoco,'Renderer',Renderer)
+        class Features:
+            def __init__(self,*a,**k):pass
+            def __call__(self,image,observed):return np.zeros(6,np.float32),{}
+        monkeypatch.setattr(visual,'ImageFeatures',Features)
+        scene=json.loads((Path(runtime.__file__).parents[1]/'scene/center.json').read_text())
+        stats={n:np.zeros(8,np.float32) if n.endswith('mean') else np.ones(8,np.float32)
+               for n in ['qpos_mean','qpos_std','action_mean','action_std']}
+        stats.update(geometry_mean=np.zeros(6,np.float32),geometry_std=np.ones(6,np.float32))
+        records=[]
+        for variant in ['A','B']:
+            class Policy:
+                device='cpu';bounded_gripper=False;calls=0
+                config=dict(policy_config(),numeric_history_profile='causal_numeric_gru5_v1' if variant=='B' else 'none',
+                            history_runtime_profile='history_common_v1')
+                def __call__(self,q,image,**kwargs):
+                    self.calls+=1
+                    if self.calls>1:raise RuntimeError('test_end')
+                    if variant=='B':
+                        assert kwargs['history']['observations'].shape==(1,5,15)
+                        torch.testing.assert_close(kwargs['history']['observations'][:,-1],q,atol=0,rtol=0)
+                    else:assert not kwargs
+                    return q[:,:8,None].transpose(1,2).expand(-1,20,-1).clone()
+            result=runtime.rollout(scene,Policy(),stats,dict(seed=42,jitter=False,force=False,
+                servo_delay_steps=0,query_stride=2,observation_age_s=.05,observation_delay_steps=1),
+                tmp_path/variant,runtime_profile='history_common_v1',capture_control=True)
+            assert result['active_policy_points']==2, result['error']
+            saved=np.load(tmp_path/variant/'rollout.npz');obs=json.loads((tmp_path/variant/'visual_observations.json').read_text())
+            assert obs[0]['consumed_simulation_s']-obs[0]['exposure_simulation_s']==pytest.approx(.05)
+            assert saved['query_simulation_time_s'][0]>=.2
+            records.append((saved['raw_chunks'],saved['query_simulation_time_s']))
+            if variant=='B':
+                import hashlib
+                checkpoint=json.loads((tmp_path/variant/'runtime_checkpoints.json').read_text())['named']['initial']
+                checkpoint['bindings']=dict(scope='offline_simulation',source_kind='teacher_interruption',parent_source_sha256='verified-parent')
+                checkpoint['observation'].update(exposures=None,history=None,pending=None)
+                unsigned={k:v for k,v in checkpoint.items() if k!='sha256'}
+                checkpoint['sha256']=hashlib.sha256(json.dumps(unsigned,sort_keys=True,allow_nan=False).encode()).hexdigest()
+>               resumed=runtime.rollout(scene,Policy(),stats,dict(seed=42,jitter=False,force=False,
+                    servo_delay_steps=0,query_stride=2,observation_age_s=.05,observation_delay_steps=1),
+                    tmp_path/'teacher_resume',runtime_profile='history_common_v1',resume_context=checkpoint,
+                    resume_policy_transition=True,expected_parent_source_sha256='verified-parent')
+
+tests/test_history_runtime.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+config = {'action_delay_steps': 0, 'appearance': {'arm_rgb': [0.16, 0.16, 0.18], 'background_rgb': [0.25, 0.25, 0.28], 'cup_rgb....05], 'light_scale': 0.92, ...}, 'arm_kd': [15, 15, 12, 12, 6, 5, ...], 'arm_kp': [100, 100, 80, 80, 40, 30, ...], ...}
+policy = <tests.test_history_runtime.test_A_B_share_history_warmup_and_actual_delayed_exposure.<locals>.Policy object at 0x7da01b140170>
+stats = {'action_mean': array([0., 0., 0., 0., 0., 0., 0., 0.], dtype=float32), 'action_std': array([1., 1., 1., 1., 1., 1., 1...': array([0., 0., 0., 0., 0., 0.], dtype=float32), 'geometry_std': array([1., 1., 1., 1., 1., 1.], dtype=float32), ...}
+scenario = {'force': False, 'jitter': False, 'observation_age_s': 0.05, 'observation_delay_steps': 1, ...}
+output = PosixPath('/tmp/pytest-of-user/pytest-137/test_A_B_share_history_warmup_0/teacher_resume')
+
+    def rollout(config,policy,stats,scenario,output,*,resume_context=None,capture_control=False,runtime_profile='legacy_trace_v1',
+                resume_policy_transition=False,expected_parent_source_sha256=None,mechanism_role=None):
+        if runtime_profile not in ('legacy_trace_v1','history_common_v1'):raise ValueError('Unknown runtime profile')
+        common_history=runtime_profile=='history_common_v1'
+        if mechanism_role not in (None,'hold_to_lift') or (mechanism_role is not None and (resume_context is None or not common_history)):
+            raise ValueError('Lift mechanism is only a bounded offline resumed history experiment')
+        config=copy.deepcopy(config);rng=np.random.default_rng(scenario['seed'])
+        if scenario['jitter']:
+            for key in ['pick_xy_m','place_xy_m']:
+                config[key]=(np.asarray(config[key])+rng.uniform(-.002,.002,2)).tolist()
+            config['initial_robot_state']['qpos_rad']=(np.asarray(config['initial_robot_state']['qpos_rad'])+
+                rng.uniform(-.002,.002,7)).tolist()
+        config['action_delay_steps']=scenario['servo_delay_steps']
+        if scenario['force']:
+            config['arm_disturbance']=dict(seed=scenario['seed'],max_torque_nm=.15,
+                period_steps=47,duration_steps=3,start_step=90)
+        model=build_scene(config);data=mujoco.MjData(model)
+        data.qpos[:7]=config['initial_robot_state']['qpos_rad'];width=config['initial_robot_state']['gripper_total_width_m']
+        data.qpos[7:9]=[width/2,-width/2];mujoco.mj_forward(model,data)
+        servo=NeroServo(model,data,config);geometry=RobotGeometry(config);guard=FullTaskContract(policy.config)
+        contact=PhysicsContact();phases=PhaseGuard(config['pick_xy_m'],config['place_xy_m'],config['table_top_z_m']+config['grasp_tcp_height_m'])
+        monitor=OutcomeMonitor(config['pick_xy_m'],config['place_xy_m'],config['table_top_z_m'])
+        previous=np.r_[data.qpos[:7],data.qpos[7]-data.qpos[8]]
+        states=[];targets=[];sources=[];measures=[];queries=[];query_steps=[];query_states=[];snapshots=[];events=[]
+        active=0;rejections=0;failure=None;support_pose=None;guard_diagnostic=None
+        attachment=SupportedAttachment(radius=config['cup']['outer_diameter_m']/2,half_height=config['cup']['height_m']/2)
+        cup_id=mujoco.mj_name2id(model,mujoco.mjtObj.mjOBJ_BODY,'cup')
+        flange_id=mujoco.mj_name2id(model,mujoco.mjtObj.mjOBJ_BODY,'link7')
+        visual=policy.config.get('visual_observation_profile')=='visual_relative_base_v1'
+        reach=min(policy.config.get('reach_deadline_steps',3200),3900) if visual else policy.config.get('reach_deadline_steps',3200)
+        started=time.monotonic();freeze_step=None
+        visual_inputs=[];visual_records=[];query_times=[];inference_times=[]
+        visual_observer=None
+        exposures=None;last_submission_sim_s=float('-inf');confirmed_sim_s=float('-inf')
+        if visual:
+            from simulation.visual_evaluation import ImageFeatures,ExposureHistory
+            visual_observer=ImageFeatures(config,(180,320),camera_translation_m=scenario.get('observation_camera_translation_m'))
+            exposures=ExposureHistory(scenario.get('observation_delay_steps',0))
+        history_manager=None
+        if common_history:
+            from simulation.history_observation import SimulationHistory
+            if not visual:raise ValueError('Common history requires visual15D observation')
+            history_manager=SimulationHistory(policy.config,stats,scenario,rng,previous)
+            history_manager.capture_eligible(data)
+        if type(reach) is not int or not 3200<=reach<=6000:raise ValueError('Invalid declared task budget')
+        physical_offset=0;pending_observation=None
+        runtime_records=deque(maxlen=2);named_contexts={}
+        from simulation.runtime_checkpoint import capture_runtime,restore_runtime,resume_bindings
+        runtime_bindings=None
+        if capture_control or resume_context is not None:
+            def hashed(value):
+                return hashlib.sha256(json.dumps(value,sort_keys=True,default=lambda a:np.asarray(a).tolist()).encode()).hexdigest()
+            weight_digest=hashlib.sha256()
+            if hasattr(policy,'state_dict'):
+                for key,value in policy.state_dict().items():
+                    weight_digest.update(key.encode());weight_digest.update(value.detach().cpu().contiguous().numpy().tobytes())
+            runtime_bindings=dict(scope='offline_simulation',scene_sha256=hashed(config),policy_config_sha256=hashed(policy.config),
+                stats_sha256=hashed(stats),scenario_sha256=hashed(scenario),weights_sha256=weight_digest.hexdigest(),runtime_profile=runtime_profile)
+        if resume_context is not None:
+            expected=resume_bindings(runtime_bindings,resume_context['bindings'],allow_policy_transition=resume_policy_transition,
+                                     expected_parent_source_sha256=expected_parent_source_sha256)
+            previous,restored,observation=restore_runtime(model,data,servo,resume_context,expected_bindings=expected)
+            for obj,key in [(contact,'contact'),(phases,'phases'),(monitor,'monitor'),(attachment,'attachment')]:
+                obj.__dict__.clear();obj.__dict__.update(restored[key])
+            support_pose=restored['support_pose'];active=restored['active_points'];physical_offset=restored['global_physics_points']
+            events=restored['events'];rejections=restored['rejections'];guard_diagnostic=restored['guard_diagnostic']
+            last_submission_sim_s=restored['last_submission_sim_s'];confirmed_sim_s=restored['confirmed_sim_s']
+            rng.bit_generator.state=restored['scenario_rng_state'];pending_observation=observation['pending']
+            if common_history:
+                if resume_policy_transition:
+                    history_manager=SimulationHistory(policy.config,stats,scenario,rng,previous)
+                    history_manager.epoch=observation['history_epoch']+1
+                    history_manager.buffer.clear(epoch=history_manager.epoch,after_s=float(data.time))
+                    for key in ['sent_s','ack_s']:history_manager.receipts[0][key]=float(data.time)-.05
+                    pending_observation=None
+                else:
+                    if observation['history'] is None:raise ValueError('Full history runtime state required')
+                    history_manager.restore(observation['history'])
+            if exposures is not None:
+>               if observation['exposures']['required']!=exposures.required:raise ValueError('Exposure delay checkpoint mismatch')
+E               TypeError: 'NoneType' object is not subscriptable
+
+simulation/supervised_rollout.py:136: TypeError
+=============================== warnings summary ===============================
+tests/test_history_runtime.py::test_A_B_share_history_warmup_and_actual_delayed_exposure
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_runtime.py::test_A_B_share_history_warmup_and_actual_delayed_exposure
+1 failed, 2 deselected, 1 warning in 3.15s

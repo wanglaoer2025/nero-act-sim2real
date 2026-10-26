@@ -1,0 +1,63 @@
+{
+  "checkpoint_sha256": "19eea8cab0923cd178d2107d1e5d2f19ca18a3ebc199624e5857a0c5b04d4ee5",
+  "stats_sha256": "be90d06e25f8b32e2978bcf8cb9276263c73914dcbddda0e19b500b703bfc22b",
+  "scene_sha256": "d3f9aa1922e2cb0de743b443126108152a4fb97944d411aa04103db069e7ad45",
+  "training_config_sha256": "33e2142b7cfe36807653871628b914c8293478cf8274c27454b78390a13d5f24",
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "source_rollout": "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/bound_scene_generation/recorded_post_stop_source/rollout.npz",
+  "source_rollout_sha256": "9a86197bf90591b5f22601d78d80ef732233cc555bd01f7265ce21d62b800f7b",
+  "simulation_result_sha256": "3b59545e0be8b48e0fea88ee468c66a075ffed2dcdb63cddb2a4ebdfa5078531",
+  "reference_points": 3073,
+  "reference_period_s": 0.05,
+  "reference_sha256": "9ad3ca7a2057ba88d849231d30d86747cc0efde706adfee4ce37b1bad829fe67",
+  "sources": {
+    "ACT": 1530,
+    "ACT_arm_pregrasp_open_hold": 850,
+    "ACT_gripper_feedback_arm_hold": 190,
+    "feedback_safety_hold": 3,
+    "operator_pause": 320,
+    "post_completion_hold": 100,
+    "reference_settle": 80
+  },
+  "teacher_motion_fallback": false,
+  "phases": [
+    {
+      "name": "approach",
+      "start": 0,
+      "end": 850
+    },
+    {
+      "name": "close",
+      "start": 850,
+      "end": 1071
+    },
+    {
+      "name": "lift",
+      "start": 1071,
+      "end": 1441
+    },
+    {
+      "name": "carry_place",
+      "start": 1441,
+      "end": 2181
+    },
+    {
+      "name": "release",
+      "start": 2181,
+      "end": 2393
+    },
+    {
+      "name": "retreat",
+      "start": 2393,
+      "end": 3073
+    }
+  ],
+  "allowed_safety_transforms": [
+    "gripper_closure_floor_at_measured_contact_width_minus_9mm",
+    "measured_zero_motion_reference_hold_during_supported_release",
+    "bounded_reference_connection_after_retreat_clearance",
+    "stop_before_attached_cup_crosses_table"
+  ],
+  "required_real_task": "actual_empty_cup_grasp_lift_carry_supported_release_retreat",
+  "derivation": "Fresh full frozen ACT simulation from current-scene-bound run11. All learned tensors unchanged. No IK/teacher/trajectory spatial rewriting."
+}

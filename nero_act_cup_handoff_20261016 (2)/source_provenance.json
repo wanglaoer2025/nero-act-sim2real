@@ -1,0 +1,26 @@
+{
+  "robot_baseline": {
+    "source_directory": "/home/user/csy/mujoco_nero/models/nero",
+    "included_model": "nero.xml and its meshes only; not the alternative nero_arm.xml with different limits",
+    "upstream_repository": "https://github.com/agilexrobotics/agx_arm_sim",
+    "upstream_commit_from_source_README": "f8cd8b147c75d59e14f90fb0646770eefa268ed0",
+    "license_statement_from_source_README": "upstream project identified as MIT",
+    "local_mujoco_version_observed": "3.15.0",
+    "static_asset_reference_only": true
+  },
+  "geometry_functions": {
+    "source_directory": "/home/user/zyh/data/nero-teacher/runtime-v4/src/utils",
+    "files": [
+      "methylene_grasp_geometry.py",
+      "pouring.py",
+      "vision.py"
+    ],
+    "invoked_only_pure_geometry_functions": true,
+    "did_not_run_nero_methylene_teacher_or_change_its_project": true
+  },
+  "runtime_tests": {
+    "historical_complete_4090_distribution_tests_passed": 78,
+    "scope": "full 4090 onsite distribution before real300 run; not a claim that weight-dependent artifact tests can pass in this source-only handoff",
+    "model_weights_not_in_runtime_reference": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "success": false,
+  "completed": [
+    "approach"
+  ],
+  "grasp_confirmation_received": true,
+  "close_goal_submitted": false,
+  "stop_reason": "RuntimeError: Cup moved during GRASP confirmation",
+  "source_offset_after_approach_mm_range": [
+    6.63078,
+    8.32872
+  ],
+  "unchanged_source_guard_mm": 5,
+  "cup_face_saved_image_translation_px": [
+    6,
+    0
+  ],
+  "cup_face_correlation": 0.8534057140350342,
+  "interpretation": "Both source localization and printed cup-face comparison indicate an image position change after approach. Physical cup displacement versus occlusion/pose/segmentation effects is not independently resolved. No protection was relaxed.",
+  "actual_gripper_width_mm": 94.952,
+  "remaining_actions_not_executed": [
+    "close",
+    "lift",
+    "carry_place",
+    "release",
+    "retreat"
+  ],
+  "readonly_driver_pid": 2258076,
+  "readonly_verified_alive": true,
+  "can_tx_packets_after_restoration": 626505,
+  "can_tx_packets_at_final_check": 626505,
+  "automatic_retry": false,
+  "automatic_return": false
+}

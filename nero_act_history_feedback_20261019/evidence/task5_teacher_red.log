@@ -1,0 +1,27 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__ test_partial_teacher_keeps_the_original_monitor_instead_of_erasing_failure __
+
+    def test_partial_teacher_keeps_the_original_monitor_instead_of_erasing_failure():
+        import simulation.teacher as teacher
+>       assert hasattr(teacher,'resume_teacher_supervision'), 'Full partial-teacher monitor restoration missing'
+E       AssertionError: Full partial-teacher monitor restoration missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.teacher' from '/home/user/wq/nero_act_history_feedback_20261019/simulation/teacher.py'>, 'resume_teacher_supervision')
+
+tests/test_history_teacher.py:9: AssertionError
+____ test_interruption_capture_has_no_invented_ACT_failure_or_future_frames ____
+
+    def test_interruption_capture_has_no_invented_ACT_failure_or_future_frames():
+>       assert importlib.util.find_spec('simulation.history_teacher'), 'Teacher-context generator missing'
+E       AssertionError: Teacher-context generator missing
+E       assert None
+E        +  where None = <function find_spec at 0x77a51798c5e0>('simulation.history_teacher')
+E        +    where <function find_spec at 0x77a51798c5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_teacher.py:23: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_teacher.py::test_partial_teacher_keeps_the_original_monitor_instead_of_erasing_failure
+FAILED tests/test_history_teacher.py::test_interruption_capture_has_no_invented_ACT_failure_or_future_frames
+2 failed in 0.12s

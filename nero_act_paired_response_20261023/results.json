@@ -1,0 +1,173 @@
+{
+  "request": "给出下一步方案并执行",
+  "status": "方案已执行；训练样本机制验证通过，最终开发门禁仍未通过，完整抓放尚未验证",
+  "plan": {
+    "request": "给出下一步方案并执行",
+    "scope": "Bounded offline objective correction within approved15D ACT; no architecture, runtime policy, calibration or guard change",
+    "initializer_sha256": "3dfc6e47244ab2df1b361b43b071f68a39ae0d3467c23dc56e43a41a360a3db3",
+    "hypothesis": "Pointwise mean imitation permits weak conditional response and masks the worst correction prefix; explicit same-pose paired response supervision should teach the missing dependence without a runtime substitute controller",
+    "data": "Existing audited training prefixes only; pairs share exact robot state and previous gripper command, differ along one cup-position axis, and use fresh paired RGB plus image-derived15D observations. No validation rows in optimization",
+    "objectives": {
+      "existing_executable_first2": true,
+      "paired_cartesian_response_weight": 5.0,
+      "paired_response_normalization_floor_m": 5e-05,
+      "worst_prefix_position_unit_m": 0.0001,
+      "worst_prefix_position_weight": 1.0,
+      "shared_preservation_gradient_fraction_maximum": 0.5
+    },
+    "learnability_probe": {
+      "updates": 200,
+      "train_only_cases": [
+        "current_0: cupY-30/+30mm atX0",
+        "current_800: cupX-30/+30mm atY0"
+      ],
+      "optimizer": "Fresh AdamW for a disposable learning probe; weights discarded",
+      "pass": "Both response axes correct and >=25% teacher; maximum first2 Cartesian error <=0.5mm"
+    },
+    "candidate": {
+      "updates": 2000,
+      "requires_probe_pass": true,
+      "initializer": "Reload original declared fixed-last weights, never probe weights",
+      "optimizer": "Restore declared checkpoint AdamW moments; original group initial rates restart and decay linearly to10%",
+      "batch": "Original32 pointwise samples plus8 train-only counterfactual pairs",
+      "checkpoint_selection": "fixed_last2000; no validation-based choice"
+    },
+    "evaluation": "Unchanged position-response gate; only a passed fixed-last candidate proceeds to original five complete cases, six mechanisms and423 preservation inputs. Local offset gate is development evidence, not independent full-task generalization",
+    "hardware_commands_sent": false,
+    "additional_manual_measurements": false
+  },
+  "executed": {
+    "training_pairs": 24,
+    "probe_updates": 200,
+    "probe_passed": true,
+    "probe_maximum_prefix_error_before_mm": 0.6351557094603777,
+    "probe_maximum_prefix_error_after_mm": 0.3033542598132044,
+    "candidate_updates": 2000,
+    "probe_weights_discarded": true,
+    "optimizer_restored": true,
+    "new_tests_passed": 4,
+    "inherited_tests_passed": 6
+  },
+  "before": {
+    "direction_and_magnitude_pass_count": 4,
+    "direction_and_magnitude_total": 7,
+    "maximum_prefix_error_mm": 1.231661764537926,
+    "guard_rejections": 0,
+    "clearance_pass_count": 10,
+    "clearance_total": 11,
+    "gate_passed": false
+  },
+  "after": {
+    "direction_and_magnitude_pass_count": 5,
+    "direction_and_magnitude_total": 7,
+    "maximum_prefix_error_mm": 1.4919660267935846,
+    "guard_rejections": 0,
+    "clearance_pass_count": 9,
+    "clearance_total": 11,
+    "gate_passed": false
+  },
+  "remaining_response_failures": [
+    {
+      "pose_key": "current_0",
+      "axis": 1,
+      "teacher_response_m": 5.098441849566565e-05,
+      "actor_response_m": -8.884951788303702e-05,
+      "passed": false
+    },
+    {
+      "pose_key": "current_800",
+      "axis": 0,
+      "teacher_response_m": 0.0004545493552297608,
+      "actor_response_m": -2.8001429688395696e-05,
+      "passed": false
+    }
+  ],
+  "remaining_clearance_failures": [
+    {
+      "id": 3050,
+      "split": "val",
+      "pose_key": "current_880",
+      "role": "clearance",
+      "offset_xy_m": [
+        -0.015,
+        0.015
+      ],
+      "maximum_prefix_position_error_m": 0.000941688943631853,
+      "actor_delta_m": [
+        -0.00013718662431516648,
+        0.0003163518590053177,
+        -4.051939270555138e-05
+      ],
+      "teacher_delta_m": [
+        4.022858257624051e-07,
+        2.4010518868272657e-08,
+        0.0006193753616111908
+      ],
+      "clearance_passed": false,
+      "guard_error": null
+    },
+    {
+      "id": 3052,
+      "split": "val",
+      "pose_key": "current_880",
+      "role": "clearance",
+      "offset_xy_m": [
+        0.015,
+        0.015
+      ],
+      "maximum_prefix_position_error_m": 0.0014919660267935847,
+      "actor_delta_m": [
+        -0.000171331556519716,
+        0.0005957379420052436,
+        -0.0005108009713997441
+      ],
+      "teacher_delta_m": [
+        4.022858257624051e-07,
+        2.4010518868272657e-08,
+        0.0006193753616111908
+      ],
+      "clearance_passed": false,
+      "guard_error": null
+    }
+  ],
+  "raw_vs_protected": {
+    "maximum_raw_error_mm": 1.4919660267935846,
+    "maximum_protected_error_mm": 1.4919660267935846,
+    "clipped_cases": 11,
+    "samples": 26,
+    "conclusion": "当前最大误差在限速前后相同，失败清高输入的原始预测已经向下；不能把主要误差归因于保护限速"
+  },
+  "full_evaluation": {
+    "full_task_evaluated": false,
+    "full_task_passed": false,
+    "reason": "Original position-response gate failed",
+    "hardware_commands_sent": false
+  },
+  "verification": {
+    "verified": true,
+    "actual_candidate_updates": 2000,
+    "diagnostic_updates": 200,
+    "cumulative_lineage_updates": 8000,
+    "source_hashes_verified": 548,
+    "checkpoint_sha256": "06012db673881efc678ecdc5c4d4780f2d46c44bb52f18cbeb81b20b53d0ec47",
+    "optimizer_restored": true,
+    "optimizer_step_counts": [
+      5000.0
+    ],
+    "frozen_parameters_independently_verified": true,
+    "fresh_response_exactly_matches": true,
+    "position_response_gate_passed": false,
+    "failed_candidate_rejected_for_complete_evaluation": true,
+    "hardware_commands_sent": false,
+    "hardware_deployment_allowed": false
+  },
+  "checkpoint": "/home/user/wq/nero_act_paired_response_20261023/training/pilot_A/policy_last.ckpt",
+  "interpretation": "成对目标可在两个训练杯位对上学会响应，但开发偏移上的动作方向及绝对精度仍不稳定；不能据此认定完整迁移问题解决",
+  "next_recommendation": "优先做更密集训练偏移的受控数据对照，分别检查位置插值与低位恢复；例如用±10/±20mm训练偏移检验未见±15mm，而非仅继续重复当前±30/0网格。该建议尚未执行，不能保证有效。",
+  "limitations": [
+    "开发门禁反复使用，不能当作独立泛化验收",
+    "本轮损失两项联合变化，不能单独归因每一项的效果",
+    "候选精度比续训起点退化，因此不推广",
+    "未更改原保护和模型接口，未替换现用模型，未新增现场测量，未下发真机指令"
+  ]
+}

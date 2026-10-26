@@ -1,0 +1,281 @@
+{
+  "mode": "fixed_trial_high_empty_gripper_preparation",
+  "success": true,
+  "execution_goal_submitted": true,
+  "arm_targets_held": true,
+  "force_limit_n": 1.0,
+  "automatic_retry": false,
+  "automatic_return": false,
+  "validation_service_calls": [
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 540722.120512127,
+      "duration_s": 0.05971296108327806
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 540722.286427869,
+      "duration_s": 0.0022005289793014526
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 540722.394321036,
+      "duration_s": 0.0023010530276224017
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 540729.173208866,
+      "duration_s": 0.00527022301685065
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 540729.180254176,
+      "duration_s": 0.002240238944068551
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 540729.185816078,
+      "duration_s": 0.0022631570464000106
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 540729.330066314,
+      "duration_s": 0.0023806149838492274
+    }
+  ],
+  "actual_start": [
+    0.1832595714594046,
+    -0.12655382406210886,
+    0.0999724595542352,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.2816961412718848,
+    0.13103932023973427,
+    0.094875
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [
+    "act_task_cup",
+    "nero_table"
+  ],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 540722.178865451,
+      "stamp": 1792338467.0984316,
+      "q": [
+        0.1832595714594046,
+        -0.12655382406210886,
+        0.0999724595542352,
+        1.5707963267948966,
+        -0.02392846404484226,
+        0.2816961412718848,
+        0.13103932023973427,
+        0.094875
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 540722.179637436,
+      "stamp": 1792338467.1010547,
+      "q": [
+        0.1832072138786316,
+        -0.12653636932373047,
+        0.09997245669364929,
+        1.5707265138626099,
+        -0.023858651518821716,
+        0.2816612422466278,
+        0.1310742199420929,
+        0.09487500041723251
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.0004342949250712991,
+  "execution_readiness_checks_passed": true,
+  "initial_scene": {
+    "capture_wall_s": 1792338473.5974784,
+    "geometry_fit_passed": true,
+    "table_z_base_mm": 0.0,
+    "targets": {
+      "source_bottom_mm": [
+        -528.1434741495702,
+        -9.916777678895137,
+        0.0
+      ],
+      "destination_mm": [
+        -524.7430757905182,
+        -162.05567896289506,
+        0.0
+      ]
+    },
+    "observations": [
+      {
+        "cup_xyz": [
+          -0.5281434741495702,
+          -0.009916777678895138,
+          0.0
+        ],
+        "target_xyz": [
+          -0.5247430757905183,
+          -0.16205567896289505,
+          0.0
+        ],
+        "camera_monotonic_s": 540727.033440422,
+        "frame": "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_02/prepare/camera_inputs/camera_00000.png",
+        "fit_rmse_px": 1.5402132888303754
+      },
+      {
+        "cup_xyz": [
+          -0.5281434741495702,
+          -0.009916777678895138,
+          0.0
+        ],
+        "target_xyz": [
+          -0.5247430757905183,
+          -0.16205567896289505,
+          0.0
+        ],
+        "camera_monotonic_s": 540728.175051061,
+        "frame": "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_02/prepare/camera_inputs/camera_00001.png",
+        "fit_rmse_px": 1.5402132888303754
+      },
+      {
+        "cup_xyz": [
+          -0.5281434741495702,
+          -0.009916777678895138,
+          0.0
+        ],
+        "target_xyz": [
+          -0.5247430757905183,
+          -0.16205567896289505,
+          0.0
+        ],
+        "camera_monotonic_s": 540728.675876693,
+        "frame": "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_02/prepare/camera_inputs/camera_00002.png",
+        "fit_rmse_px": 1.5402132888303754
+      }
+    ],
+    "geometry_source": "current camera fit to accepted approximate table/TCP model"
+  },
+  "collision_check_counts": [
+    80
+  ],
+  "start": [
+    0.1832595714594046,
+    -0.12655382406210886,
+    0.0999724595542352,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.2816961412718848,
+    0.13103932023973427,
+    0.094875
+  ],
+  "target": [
+    0.1832595714594046,
+    -0.12655382406210886,
+    0.0999724595542352,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.2816961412718848,
+    0.13103932023973427,
+    0.095
+  ],
+  "duration_s": 4.0,
+  "physical_result": {
+    "success": true,
+    "actual_feedback_required": true,
+    "action_success": true,
+    "corridor_passed": true,
+    "last5_arm_error_rad": 5.23598775598183e-05,
+    "last5_gripper_error_m": 8.700000000000374e-05
+  },
+  "planned_gate_handoff_allowed": true,
+  "final_actual": [
+    0.1832246648743647,
+    -0.12657127735462878,
+    0.10002481943179502,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.28167868797936485,
+    0.13102186694721432,
+    0.094913
+  ],
+  "finished_wall_s": 1792338480.8629959,
+  "cancel_requested_for_handles": 2,
+  "unresolved_goal_acknowledgements": 0,
+  "unresolved_cancellation_replies": 0,
+  "driver_gate_closed_for_abort": true
+}

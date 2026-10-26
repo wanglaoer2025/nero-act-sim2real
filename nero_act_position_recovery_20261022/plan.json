@@ -1,0 +1,73 @@
+{
+  "request": "Fix current-layout premature closure using existing approved15D ACT route",
+  "scope": "second_isolated_offline_closed_loop_recovery_pilot",
+  "immutable_sources": true,
+  "additional_manual_measurements": false,
+  "hardware_commands_sent": false,
+  "geometry": "Existing nominal calibration unchanged and not newly qualified",
+  "data": {
+    "new_physical_complete_scenes": 11,
+    "new_train_groups": 8,
+    "new_validation_groups": 3,
+    "current_scene_role": "development_targeted_not_independent_generalization",
+    "retained_training_groups": "all original train groups only; val excluded",
+    "labels": "Accepted physical complete teacher actions, verified replay and original contract; RGB-only visual features",
+    "mix": "8 new complete +8 retained +16 development-recovery samples per32-batch across eight stages",
+    "approach_preservation": {
+      "replay": "original423_preGRASP",
+      "weight": 0.1,
+      "batch_size": 4,
+      "arm_unit_rad": 0.0001,
+      "gripper_unit_m": 0.0005,
+      "evaluation_thresholds": "original_unchanged"
+    },
+    "added_current_training_recoveries": 4,
+    "added_reference_development_place_recoveries": 2,
+    "heldout_layouts": "same original3; never collect or train on them"
+  },
+  "model": {
+    "interface": "current_RGB_plus15D_to20x8",
+    "trainable": [
+      "state_position_projection",
+      "visual_action_transformer",
+      "arm_output",
+      "existing_increment_gripper_head"
+    ],
+    "frozen": [
+      "visual_backbone",
+      "visual_input_projection",
+      "CVAE_posterior",
+      "latent_projection",
+      "query_embeddings",
+      "base_gripper_adapter"
+    ],
+    "stats": "Retain paired original statistics without refitting; avoid zero-update policy change",
+    "computation": "Remove no_grad/detach for isolated training only; deployed math and original protections unchanged"
+  },
+  "budget": {
+    "optimizer_updates": 1000,
+    "batch_size": 32,
+    "formal_epochs": 0,
+    "selection": "fixed_last",
+    "initializer": "first_pilot_fixed_last",
+    "initializer_updates": 1000,
+    "cumulative_new_optimizer_updates": 2000
+  },
+  "verification": [
+    "gradient and zero-update output checks",
+    "heldout supervised prefix error before/after",
+    "current-layout full closed loop",
+    "original-layout full closed loop",
+    "nearby-unseen complete closed loops",
+    "original six mechanism cases and original approach-preservation gate, unchanged thresholds"
+  ],
+  "stop_rules": [
+    "No failed demonstration labels",
+    "No training until all teacher/replay/visual audits pass",
+    "No extra updates/checkpoint cherry picking",
+    "No hardware execution from this pilot",
+    "Do not weaken closure-region, collision, speed, lift or timeout guards",
+    "No further optimizer round after this pilot without reporting its actual result"
+  ],
+  "basis": "First fixed1000-update pilot improved supervised loss but failed5/5 complete cases; correction labels needed at ACT-visited states, not failed ACT actions."
+}

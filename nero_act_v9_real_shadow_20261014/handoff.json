@@ -1,0 +1,41 @@
+{
+  "purpose": "Real recorded-input ACT v9 shadow results plus exact scene alignment request; no hardware execution",
+  "shadow_passed": false,
+  "shadow_exit_code": 1,
+  "model_forward_finite": true,
+  "capture_samples": 101,
+  "policy_queries": 11,
+  "checkpoint_sha256": "872b747f45ca02f5484df2b8cf7ae5955c7de765a689e3887328222975005191",
+  "checkpoint_weights_included": false,
+  "model_replay_requirement": "Reuse the exact user-provided shadow model package with checkpoint hash above; matching statistics/config included here.",
+  "saved_real_input": "capture_used/observations.npz",
+  "measurements": "measurements_used.json",
+  "task_coordinate_provenance": "retained visual estimates + confirmed10mm support/model datum, not an independent physical survey",
+  "predictions": "shadow_recorded/predictions.npz",
+  "trace": "shadow_recorded/trace.json",
+  "primary_review": "domain_alignment_review.json",
+  "simulation_next_request": "simulation_alignment_request.json",
+  "camera_calibration": "calibration/camera_to_base.json",
+  "TCP_parameters": "calibration/tcp_offset.json",
+  "joints_outside_demonstration_initial_range": [
+    "J1",
+    "J2",
+    "J3",
+    "J5",
+    "J7"
+  ],
+  "single_step_hardware_limit_errors": 0,
+  "delta_clamps_per_query": 4,
+  "training_range_anomalies_per_query": 5,
+  "gripper_first_prediction_mm_range": [
+    29.64065968990326,
+    29.659906402230263
+  ],
+  "original_input_state_and_images_unmodified": true,
+  "original_model_source_limits_and_deployment_flag_unmodified": true,
+  "camera_or_robot_connected_for_shadow": false,
+  "motion_sent": false,
+  "ready_for_real_grasp": false,
+  "copied_to_other_computer": false,
+  "no_new_numeric_measurement_requests": true
+}

@@ -1,0 +1,164 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+________________ test_A_B_share_warmup_and_submission_receipts _________________
+
+    def test_A_B_share_warmup_and_submission_receipts():
+        for variant in ['A','B']:
+>           worker,seen,now,index=make_worker(variant)
+
+tests/test_history_inference.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+variant = 'A'
+
+    def make_worker(variant='B'):
+        from executor.visual_inference import VisualInferenceWorker
+        f,g,p,cal=valid_inputs();c=config()
+        c.update(calibration_sha256=cal['calibration_sha256'],history_runtime_profile='history_common_v1',
+                 numeric_history_profile='causal_numeric_gru5_v1' if variant=='B' else 'none',session_id='s')
+        now=[10.02];index=[0];seen=[]
+        def capture():
+            frame=copy.copy(f);frame.frame_id=100+index[0];frame.exposure_monotonic_s=10+index[0]*.05
+            frame.received_monotonic_s=frame.exposure_monotonic_s+.01
+            now[0]=frame.exposure_monotonic_s+.02;index[0]+=1;return frame
+        def measure(frame):
+            geometry=copy.copy(g);geometry.frame_id=frame.frame_id;return geometry
+        def feedback():return [dict(monotonic_s=now[0]-.02,position=p['state'])]
+        def predict(rgb,state,previous,**kwargs):
+            seen.append(kwargs);return np.tile(state,(20,1))
+        policy=SimpleNamespace(config=c,stats=statistics(c),metadata={},predict=predict)
+>       worker=VisualInferenceWorker(policy,cal,SimpleNamespace(measure=measure),
+            SimpleNamespace(pose=lambda _:dict(tcp=np.array([0,0,.1]))),capture=capture,feedback=feedback,
+            clock=lambda:now[0],health=lambda:None,spin=lambda dt:now.__setitem__(0,now[0]+dt))
+E       TypeError: VisualInferenceWorker.__init__() got an unexpected keyword argument 'health'
+
+tests/test_history_inference.py:26: TypeError
+__________ test_confirmation_discards_old_history_and_pending_prefix ___________
+
+    def test_confirmation_discards_old_history_and_pending_prefix():
+>       worker,seen,now,index=make_worker()
+
+tests/test_history_inference.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+variant = 'B'
+
+    def make_worker(variant='B'):
+        from executor.visual_inference import VisualInferenceWorker
+        f,g,p,cal=valid_inputs();c=config()
+        c.update(calibration_sha256=cal['calibration_sha256'],history_runtime_profile='history_common_v1',
+                 numeric_history_profile='causal_numeric_gru5_v1' if variant=='B' else 'none',session_id='s')
+        now=[10.02];index=[0];seen=[]
+        def capture():
+            frame=copy.copy(f);frame.frame_id=100+index[0];frame.exposure_monotonic_s=10+index[0]*.05
+            frame.received_monotonic_s=frame.exposure_monotonic_s+.01
+            now[0]=frame.exposure_monotonic_s+.02;index[0]+=1;return frame
+        def measure(frame):
+            geometry=copy.copy(g);geometry.frame_id=frame.frame_id;return geometry
+        def feedback():return [dict(monotonic_s=now[0]-.02,position=p['state'])]
+        def predict(rgb,state,previous,**kwargs):
+            seen.append(kwargs);return np.tile(state,(20,1))
+        policy=SimpleNamespace(config=c,stats=statistics(c),metadata={},predict=predict)
+>       worker=VisualInferenceWorker(policy,cal,SimpleNamespace(measure=measure),
+            SimpleNamespace(pose=lambda _:dict(tcp=np.array([0,0,.1]))),capture=capture,feedback=feedback,
+            clock=lambda:now[0],health=lambda:None,spin=lambda dt:now.__setitem__(0,now[0]+dt))
+E       TypeError: VisualInferenceWorker.__init__() got an unexpected keyword argument 'health'
+
+tests/test_history_inference.py:26: TypeError
+____________________ test_packet_detects_mutated_past_frame ____________________
+
+    def test_packet_detects_mutated_past_frame():
+        from executor.visual_inference import verify_prediction_packet
+>       worker,*_=make_worker();packet=worker.predict(previous_gripper_target_m=.095,after_s=9.9)
+
+tests/test_history_inference.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+variant = 'B'
+
+    def make_worker(variant='B'):
+        from executor.visual_inference import VisualInferenceWorker
+        f,g,p,cal=valid_inputs();c=config()
+        c.update(calibration_sha256=cal['calibration_sha256'],history_runtime_profile='history_common_v1',
+                 numeric_history_profile='causal_numeric_gru5_v1' if variant=='B' else 'none',session_id='s')
+        now=[10.02];index=[0];seen=[]
+        def capture():
+            frame=copy.copy(f);frame.frame_id=100+index[0];frame.exposure_monotonic_s=10+index[0]*.05
+            frame.received_monotonic_s=frame.exposure_monotonic_s+.01
+            now[0]=frame.exposure_monotonic_s+.02;index[0]+=1;return frame
+        def measure(frame):
+            geometry=copy.copy(g);geometry.frame_id=frame.frame_id;return geometry
+        def feedback():return [dict(monotonic_s=now[0]-.02,position=p['state'])]
+        def predict(rgb,state,previous,**kwargs):
+            seen.append(kwargs);return np.tile(state,(20,1))
+        policy=SimpleNamespace(config=c,stats=statistics(c),metadata={},predict=predict)
+>       worker=VisualInferenceWorker(policy,cal,SimpleNamespace(measure=measure),
+            SimpleNamespace(pose=lambda _:dict(tcp=np.array([0,0,.1]))),capture=capture,feedback=feedback,
+            clock=lambda:now[0],health=lambda:None,spin=lambda dt:now.__setitem__(0,now[0]+dt))
+E       TypeError: VisualInferenceWorker.__init__() got an unexpected keyword argument 'health'
+
+tests/test_history_inference.py:26: TypeError
+___________ test_history_is_not_admitted_during_an_unfinished_prefix ___________
+
+    def test_history_is_not_admitted_during_an_unfinished_prefix():
+>       worker,seen,now,index=make_worker()
+
+tests/test_history_inference.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+variant = 'B'
+
+    def make_worker(variant='B'):
+        from executor.visual_inference import VisualInferenceWorker
+        f,g,p,cal=valid_inputs();c=config()
+        c.update(calibration_sha256=cal['calibration_sha256'],history_runtime_profile='history_common_v1',
+                 numeric_history_profile='causal_numeric_gru5_v1' if variant=='B' else 'none',session_id='s')
+        now=[10.02];index=[0];seen=[]
+        def capture():
+            frame=copy.copy(f);frame.frame_id=100+index[0];frame.exposure_monotonic_s=10+index[0]*.05
+            frame.received_monotonic_s=frame.exposure_monotonic_s+.01
+            now[0]=frame.exposure_monotonic_s+.02;index[0]+=1;return frame
+        def measure(frame):
+            geometry=copy.copy(g);geometry.frame_id=frame.frame_id;return geometry
+        def feedback():return [dict(monotonic_s=now[0]-.02,position=p['state'])]
+        def predict(rgb,state,previous,**kwargs):
+            seen.append(kwargs);return np.tile(state,(20,1))
+        policy=SimpleNamespace(config=c,stats=statistics(c),metadata={},predict=predict)
+>       worker=VisualInferenceWorker(policy,cal,SimpleNamespace(measure=measure),
+            SimpleNamespace(pose=lambda _:dict(tcp=np.array([0,0,.1]))),capture=capture,feedback=feedback,
+            clock=lambda:now[0],health=lambda:None,spin=lambda dt:now.__setitem__(0,now[0]+dt))
+E       TypeError: VisualInferenceWorker.__init__() got an unexpected keyword argument 'health'
+
+tests/test_history_inference.py:26: TypeError
+__________ test_wait_100ms_checks_health_and_never_reuses_prediction ___________
+
+    def test_wait_100ms_checks_health_and_never_reuses_prediction():
+        m=importlib.import_module('executor.visual_inference')
+>       assert hasattr(m,'await_fresh_observation'), 'Bounded fresh observation wait missing'
+E       AssertionError: Bounded fresh observation wait missing
+E       assert False
+E        +  where False = hasattr(<module 'executor.visual_inference' from '/home/user/wq/nero_act_history_feedback_20261019/executor/visual_inference.py'>, 'await_fresh_observation')
+
+tests/test_history_runtime.py:7: AssertionError
+_______________ test_wait_propagates_independent_health_failure ________________
+
+    def test_wait_propagates_independent_health_failure():
+        m=importlib.import_module('executor.visual_inference')
+>       assert hasattr(m,'await_fresh_observation')
+E       AssertionError: assert False
+E        +  where False = hasattr(<module 'executor.visual_inference' from '/home/user/wq/nero_act_history_feedback_20261019/executor/visual_inference.py'>, 'await_fresh_observation')
+
+tests/test_history_runtime.py:21: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_inference.py::test_A_B_share_warmup_and_submission_receipts
+FAILED tests/test_history_inference.py::test_confirmation_discards_old_history_and_pending_prefix
+FAILED tests/test_history_inference.py::test_packet_detects_mutated_past_frame
+FAILED tests/test_history_inference.py::test_history_is_not_admitted_during_an_unfinished_prefix
+FAILED tests/test_history_runtime.py::test_wait_100ms_checks_health_and_never_reuses_prediction
+FAILED tests/test_history_runtime.py::test_wait_propagates_independent_health_failure
+6 failed, 1 warning in 2.03s

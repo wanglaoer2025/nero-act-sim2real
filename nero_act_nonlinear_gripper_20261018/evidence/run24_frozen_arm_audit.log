@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "checkpoints": [
+    {
+      "checkpoint": "/home/user/wq/nero_act_nonlinear_gripper_20261018/training/run24_nonlinear_gripper/checkpoints/policy_best_l1.ckpt",
+      "epoch": 3,
+      "changed_parameters": [
+        "gripper_adapter.0.weight",
+        "gripper_adapter.0.bias",
+        "gripper_adapter.2.weight",
+        "gripper_adapter.2.bias"
+      ],
+      "all_pretrained_parameters_and_buffers_identical": true
+    },
+    {
+      "checkpoint": "/home/user/wq/nero_act_nonlinear_gripper_20261018/training/run24_nonlinear_gripper/checkpoints/policy_best_val.ckpt",
+      "epoch": 3,
+      "changed_parameters": [
+        "gripper_adapter.0.weight",
+        "gripper_adapter.0.bias",
+        "gripper_adapter.2.weight",
+        "gripper_adapter.2.bias"
+      ],
+      "all_pretrained_parameters_and_buffers_identical": true
+    },
+    {
+      "checkpoint": "/home/user/wq/nero_act_nonlinear_gripper_20261018/training/run24_nonlinear_gripper/checkpoints/policy_last.ckpt",
+      "epoch": 5,
+      "changed_parameters": [
+        "gripper_adapter.0.weight",
+        "gripper_adapter.0.bias",
+        "gripper_adapter.2.weight",
+        "gripper_adapter.2.bias"
+      ],
+      "all_pretrained_parameters_and_buffers_identical": true
+    }
+  ],
+  "hardware_connected": false,
+  "comparison": "all saved checkpoints vs paired zero-residual initializer"
+}

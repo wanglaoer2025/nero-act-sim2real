@@ -1,0 +1,154 @@
+{
+  "processes": [
+    {
+      "pid": 371355,
+      "comm": "ros2",
+      "domain": "42",
+      "parameters": {},
+      "programs": [
+        "/usr/bin/python3",
+        "/opt/ros/jazzy/bin/ros2",
+        "launch",
+        "agx_arm_ctrl"
+      ]
+    },
+    {
+      "pid": 371360,
+      "comm": "agx_arm_ctrl_si",
+      "domain": "42",
+      "parameters": {
+        "auto_enable": "false",
+        "can_port": "can0",
+        "control_enabled": "false",
+        "fw_version": "v120",
+        "speed_percent": "0"
+      },
+      "programs": [
+        "/usr/bin/python3",
+        "/home/user/projects/nero_ros2_ws/install/agx_arm_ctrl/lib/agx_arm_ctrl/agx_arm_ctrl_single",
+        "--ros-args",
+        "--log-level"
+      ]
+    },
+    {
+      "pid": 391567,
+      "comm": "ros2",
+      "domain": "0",
+      "parameters": {},
+      "programs": [
+        "/usr/bin/python3",
+        "/opt/ros/jazzy/bin/ros2",
+        "launch",
+        "agx_arm_ctrl"
+      ]
+    },
+    {
+      "pid": 391573,
+      "comm": "agx_arm_ctrl_si",
+      "domain": "0",
+      "parameters": {
+        "auto_enable": "true",
+        "can_port": "can0",
+        "control_enabled": "false",
+        "fw_version": "''",
+        "speed_percent": "75"
+      },
+      "programs": [
+        "/usr/bin/python3",
+        "/home/user/projects/nero_ros2_ws/install/agx_arm_ctrl/lib/agx_arm_ctrl/agx_arm_ctrl_single",
+        "--ros-args",
+        "--log-level"
+      ]
+    },
+    {
+      "pid": 391575,
+      "comm": "move_group",
+      "domain": "0",
+      "parameters": {},
+      "programs": [
+        "/opt/ros/jazzy/lib/moveit_ros_move_group/move_group",
+        "--ros-args",
+        "-r",
+        "__ns:=/"
+      ]
+    },
+    {
+      "pid": 391576,
+      "comm": "python3",
+      "domain": "0",
+      "parameters": {
+        "control_topic": "control/joint_states",
+        "gated_control_topic": "control/gated_joint_states"
+      },
+      "programs": [
+        "python3",
+        "/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/lib/agx_arm_moveit/agx_arm_control_gate",
+        "--ros-args",
+        "-r"
+      ]
+    },
+    {
+      "pid": 391577,
+      "comm": "ros2_control_no",
+      "domain": "0",
+      "parameters": {},
+      "programs": [
+        "/opt/ros/jazzy/lib/controller_manager/ros2_control_node",
+        "--ros-args",
+        "-r",
+        "__ns:=/"
+      ]
+    }
+  ],
+  "nodes": [
+    [
+      "nero_user_started_moveit_check",
+      "/"
+    ],
+    [
+      "agx_arm_ctrl_single_node",
+      "/"
+    ]
+  ],
+  "parameters": {
+    "/agx_arm_ctrl_single_node": {
+      "auto_enable": false,
+      "control_enabled": false,
+      "speed_percent": 0,
+      "arm_type": "nero",
+      "fw_version": "v120"
+    }
+  },
+  "states": {
+    "/feedback/joint_states": {
+      "names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "gripper"
+      ],
+      "positions": [
+        0.1832595714594046,
+        -0.1264491043069892,
+        0.10000736613927509,
+        1.571005766305136,
+        -0.02387610416728243,
+        0.28167868797936485,
+        0.13114403999485394,
+        0.060118
+      ],
+      "receipt": 279258.007234517,
+      "stamp_s": 1792077002.923026
+    }
+  },
+  "services": {
+    "/plan_kinematic_path": false,
+    "/get_planning_scene": false,
+    "/check_state_validity": false,
+    "/controller_manager/list_controllers": false
+  }
+}

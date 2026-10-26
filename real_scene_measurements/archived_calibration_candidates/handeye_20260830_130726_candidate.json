@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "method": "offline_recomputed_eye_to_hand_from_archived_samples",
+  "source_coordinate_system": "zed_camera_image",
+  "target_coordinate_system": "nero_base",
+  "translation_unit": "millimeter",
+  "transform_base_from_camera": [
+    [
+      -0.0549635238370817,
+      0.5384932494271659,
+      0.8408353176269325,
+      -788.6356495240033
+    ],
+    [
+      0.993572942869347,
+      -0.053959444746975525,
+      0.09950470099721137,
+      -169.2957139951572
+    ],
+    [
+      0.09895361663606275,
+      0.840900350008234,
+      -0.53206652132104,
+      342.83649328203103
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "flange_from_marker_m": [
+    [
+      0.04789698482190191,
+      0.9690612756319862,
+      0.24212831911091626,
+      0.1588737385172481
+    ],
+    [
+      0.006775655207884057,
+      -0.242716172452086,
+      0.97007368283379,
+      0.023231560769776095
+    ],
+    [
+      0.998829299400791,
+      -0.044823026456455944,
+      -0.018191397906962076,
+      -0.02445544131914526
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "marker": {
+    "dictionary": "DICT_4X4_50",
+    "id": 0,
+    "size_mm": 95.5
+  },
+  "samples_file": "/home/user/projects/nero/calibration/handeye_20260830_130726.json",
+  "fit": {
+    "sample_count": 18,
+    "total_sample_count": 22,
+    "translation_rmse_mm": 4.941291576991542,
+    "rotation_rmse_deg": 0.7512594892056279,
+    "translation_max_mm": 8.04822821845687,
+    "rotation_max_deg": 1.252699303945615
+  },
+  "validation": {
+    "candidate_only": true,
+    "live_configuration_modified": false,
+    "current_fiducial_normal_tilt_deg": 12.469973365194518,
+    "current_fiducial_z_error_mm": -76.94533710923238,
+    "camera_height_error_mm": -1.1635067179689713,
+    "independent_XY_validation": false
+  }
+}

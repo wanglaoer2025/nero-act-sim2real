@@ -1,0 +1,244 @@
+{
+  "schema": "optimizer_diagnostics_v1",
+  "complete": true,
+  "actual_optimizer_updates": 0,
+  "model_states_unchanged": true,
+  "exact_teacher_conflict_groups_after_filter": 0,
+  "excluded_ambiguous_windows": [
+    "episode_8:2280",
+    "episode_11:2390",
+    "episode_23:2500",
+    "episode_35:2510"
+  ],
+  "gradient_records": [
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 0,
+      "ordinary_loss": 0.021125804632902145,
+      "preservation_loss": 0.0,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 5.922021865844727,
+          "second_norm": 0.0,
+          "cosine": null
+        },
+        "gripper_adapter": {
+          "first_norm": 0.03619900718331337,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 5.92213249206543,
+      "global_clip_multiplier": 0.016885806463832944,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 24,
+      "ordinary_loss": 0.012040091678500175,
+      "preservation_loss": 0.0,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 9.584193229675293,
+          "second_norm": 0.0,
+          "cosine": null
+        },
+        "gripper_adapter": {
+          "first_norm": 0.017220210283994675,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 9.584209442138672,
+      "global_clip_multiplier": 0.010433827658909947,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 99,
+      "ordinary_loss": 0.019008982926607132,
+      "preservation_loss": 0.0,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 9.094472885131836,
+          "second_norm": 0.0,
+          "cosine": null
+        },
+        "gripper_adapter": {
+          "first_norm": 0.01826917752623558,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 9.094491958618164,
+      "global_clip_multiplier": 0.010995665228949082,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 499,
+      "ordinary_loss": 0.015709703788161278,
+      "preservation_loss": 0.0,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 8.200285911560059,
+          "second_norm": 0.0,
+          "cosine": null
+        },
+        "gripper_adapter": {
+          "first_norm": 0.029806707054376602,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 8.200340270996094,
+      "global_clip_multiplier": 0.012194614430705642,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 0,
+      "ordinary_loss": 0.0405723936855793,
+      "preservation_loss": 279.0243225097656,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 9.85983657836914,
+          "second_norm": 274429.5,
+          "cosine": 0.3593579828739166
+        },
+        "gripper_adapter": {
+          "first_norm": 0.0284320916980505,
+          "second_norm": 0.027074886485934258,
+          "cosine": -0.49102267622947693
+        }
+      },
+      "total_gradient_norm": 274433.03125,
+      "global_clip_multiplier": 3.643876232542092e-07,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 24,
+      "ordinary_loss": 0.03533410280942917,
+      "preservation_loss": 38.457603454589844,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 10.563352584838867,
+          "second_norm": 105650.859375,
+          "cosine": 0.39636749029159546
+        },
+        "gripper_adapter": {
+          "first_norm": 0.013940739445388317,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 105655.0546875,
+      "global_clip_multiplier": 9.464762504248127e-07,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 99,
+      "ordinary_loss": 0.038056932389736176,
+      "preservation_loss": 1.0150164365768433,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 10.287324905395508,
+          "second_norm": 12587.689453125,
+          "cosine": 0.3703742027282715
+        },
+        "gripper_adapter": {
+          "first_norm": 0.00813046470284462,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 12591.5029296875,
+      "global_clip_multiplier": 7.941863695737548e-06,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 499,
+      "ordinary_loss": 0.03858869895339012,
+      "preservation_loss": 40.868465423583984,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 10.809065818786621,
+          "second_norm": 110318.2890625,
+          "cosine": 0.5534666776657104
+        },
+        "gripper_adapter": {
+          "first_norm": 0.016249673441052437,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 110324.265625,
+      "global_clip_multiplier": 9.064189046043658e-07,
+      "optimizer_steps": 0
+    }
+  ],
+  "initial_replay_assessment": {
+    "samples": 423,
+    "maximum_arm_prefix_change_rad": 0.0,
+    "rms_arm_prefix_change_rad": 0.0,
+    "maximum_gripper_prefix_change_m": 0.0,
+    "training_replay_not_independent_validation": true
+  },
+  "model_states": [
+    {
+      "policy": "zero_update_baseline",
+      "before_sha256": "6d9a6750356fc58dc47a4e0e382835539ae88a97feeb6935281409b98ec8db47",
+      "after_sha256": "6d9a6750356fc58dc47a4e0e382835539ae88a97feeb6935281409b98ec8db47",
+      "optimizer_state_entries": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "before_sha256": "2142041de40ab06528a0546a4f994b27d81bdf46507df01574be3213434ad46f",
+      "after_sha256": "2142041de40ab06528a0546a4f994b27d81bdf46507df01574be3213434ad46f",
+      "optimizer_state_entries": 0
+    }
+  ],
+  "source_sha256": {
+    "/home/user/wq/nero_act_optimizer_control_20261021/evidence/diagnose_gradients.py": "1184b9d92275ad0c72db2b215ed5e37af53469b526359d110d89b1104ccd1e69",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/policy_best_val.ckpt": "b252dd578b4bf5626566ec5b60a47be0bdcfee30e9eab990cde05ac122bdea71",
+    "/home/user/wq/nero_act_approach_preservation_20261021/training/pilot_A/checkpoints/policy_last.ckpt": "380cca3a2e6699c4185c5b97d4dac5383cd772243efe82df5c3e77f1f020f537",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/dataset_stats.pkl": "78390f6aed2b1c7d1a7f5e466c31b5279419da57168b640a2756427fc3914597",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/dataset_stats.pkl": "e8e3cb0a294bd192e831f4cf22f0ba3f2a8fb3970172081ed7b5893d4eee335d",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/manifest.json": "a1cf9e237c0d058fc3b8a7f30e741018ba7299be2de59494de679fd56caeb148",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/batch_order_pilot.npy": "d9a40473fdda605a39bac4e5e9213481b5b468470e219dac02a11b92e3df3940",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/batch_order_manifest.json": "05c8b886beca19fb7f0005639d27f406962425b697e9517abdc20abd6c046eb0",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/sampling_resolution.json": "b1f05a2b3f9639786c7b045eb0ef75089a07a8077086c570c49aea243bdd3890",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/config/history_experiment.json": "66b94ee2f3b2f551ea3e37f8735dd54ab769237c9e16495406709b348a831f57",
+    "/home/user/wq/nero_act_optimizer_control_20261021/evidence/supervision_scan.json": "7b1ffff1b250cde3b642327ce1885648d4b877ba9c8896d7524b83566ee48b4d",
+    "/home/user/wq/nero_act_optimizer_control_20261021/evidence/supervision_scan_filtered.json": "dd977869d2fb77b9164e60795c12f50d057a1e187eae9b6a690c57a2f6b86b1e",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/history_seal.py": "646060092611389de1deacc673580e3891e2a1042ffed4c12a8940e196dc6ffc",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/append_history_recovery.py": "c6685e563bde2a520431f92d16657b7f9000fb60b2a95f0489a3154e7e2ffc7e",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/command_context.py": "f781f06f6c893dcecfa593ccd25d3e7f554a214cb9787254670cc38561783d90",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/history_dataset.py": "d30fc94b84fe97f5d5e24517952519bf1e9d00f0c2fa6e1567fc249f33667da3",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/visual.py": "5ffef7ba80e2393a3c192ab230cd7bb6baab68d88d252bf9d048fc745356014d",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/transition_sampling.py": "5bbf6083589539e1ed59e8a1af24dca724bec08ec1fe7464db9a224bdb618226",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/generalized.py": "e4e541624a798e5936da2e909c36ae2af564fcd8d448fdc078223fa7ab560347",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/export.py": "e9e7bc08923ae315f0abb482c0e6feb6dbb18e20337a269c9f8cbd7cde209003",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/history.py": "20d86c3537908353d98d9928e8610b7522967461bdf40c351e4cf356adfe5d61",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/prepare_approach_replay.py": "0faf276ad378ceb7337bc95fdcb454118913202d3d31f90830f8e50ff2864115",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/optimizer_control.py": "154973478302aaecdac6b34b4fca72f9c843915187821b459d3506357e04fb35",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/recoveries.py": "d19126db217accd576a605e069b31470ec56954b2d7464b2ec75ff569da337a1",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/rebase_initializer.py": "cf70510e00f2014c0bd77051a96200e5c02c9997fc293917d8e82f5851d66ff0",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/history_recoveries.py": "77c53ca209f55740aa8fd9b872ac0b0c34df89c6985aec6e5d6f257563d80bbc",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/integrity.py": "fee7e85b890d462b8a1f4582b5e0d311322df184b22b95d364b9a9ee414b4408",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/visual_dataset.py": "1e813d478e213a67e602cfdeeecdf509d6ed5fc91d86e922a5a84c6b63b8944e",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/pose_objective.py": "8f4dea5e665c9a22a1d2782e0949346521ae7974fe7507e53bb0902003d3a11a",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/contact_sampling.py": "ced3e7936e92a3efe8c21daeeede1424626036a10e1fd600f0416e2018fe5da6",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/history_data.py": "07446e6e9e9b0aa95b0328b8bc79d50ae5acaf77731ea4322a2f1e400a5233b6",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/visual_gripper_repair.py": "0472d1a939774a106b0780d08796cf1b778327a24b713c2a444d25a04200e35d",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/legacy_visual_data.py": "f37b3c1542fc810afd99f0b83e5b18ab8fc2b05c93c6d253b654f4783afa1863",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/train.py": "151a18734a3f378bbe6aa97921941ce7a2bddb8ec14f6b423901a6b66f4d443c",
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/approach_preservation.py": "4ba08a06f5f94398cf24563b934f739d25aca83f73e2c4a6106d0ba5904f9446",
+    "/home/user/wq/nero_act_optimizer_decay_20261021/config/history_experiment.json": "aefcc868eb4fbe789a628aea5ed64e7fda0f93b47d1e39f2245790b91aa241fc"
+  },
+  "hardware_commands_sent": false
+}

@@ -1,0 +1,80 @@
+{
+  "episodes": [
+    {
+      "path": "/home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source/episode_106.hdf5",
+      "status": "valid",
+      "task_role": "retreat_correction",
+      "full_task_verified": false,
+      "correction_verified": true,
+      "split": "train",
+      "frames": 378,
+      "origin": {
+        "origin": "/home/user/wq/nero_act_full_pick_place_20261017/evaluation/run8_feedback_tanh_v2_frozen/delay_500ms",
+        "query_step": 4290,
+        "split": "train",
+        "role": "partial_not_full",
+        "reason": "delayed target overshoot or stalled retreat"
+      },
+      "replay": {
+        "frames": 378,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 38
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source/episode_107.hdf5",
+      "status": "valid",
+      "task_role": "retreat_correction",
+      "full_task_verified": false,
+      "correction_verified": true,
+      "split": "val",
+      "frames": 508,
+      "origin": {
+        "origin": "/home/user/wq/nero_act_full_pick_place_20261017/evaluation/run8_feedback_tanh_v2_frozen/independent_0",
+        "query_step": 2134,
+        "split": "val",
+        "role": "partial_not_full",
+        "reason": "delayed target overshoot or stalled retreat"
+      },
+      "replay": {
+        "frames": 508,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 51
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source/episode_108.hdf5",
+      "status": "valid",
+      "task_role": "carry_to_retreat_correction",
+      "full_task_verified": false,
+      "correction_verified": true,
+      "split": "train",
+      "frames": 1721,
+      "origin": {
+        "origin": "/home/user/wq/nero_act_full_pick_place_20261017/evaluation/run8_feedback_tanh_v2_frozen/delay_100ms",
+        "query_step": 1936,
+        "split": "train",
+        "role": "partial_not_full",
+        "reason": "delayed target overshoot or stalled retreat"
+      },
+      "replay": {
+        "frames": 1721,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 173
+      }
+    }
+  ],
+  "rejected": []
+}

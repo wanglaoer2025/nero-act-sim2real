@@ -1,0 +1,99 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+number of parameters: 12.58M
+已加载初始化权重：/home/user/wq/nero_act_gripper_contact_focus_20261018/model/run26_current_fixed_scene/policy.ckpt
+epoch 1/20 train=0.0153/0.0071 val=0.0147/0.0068 best_loss=0.0147@1 best_l1=0.0068@1
+epoch 2/20 train=0.0137/0.0064 val=0.0148/0.0068 best_loss=0.0147@1 best_l1=0.0068@2
+epoch 3/20 train=0.0136/0.0063 val=0.0142/0.0066 best_loss=0.0142@3 best_l1=0.0066@3
+epoch 4/20 train=0.0135/0.0063 val=0.0145/0.0066 best_loss=0.0142@3 best_l1=0.0066@4
+epoch 5/20 train=0.0133/0.0062 val=0.0144/0.0066 best_loss=0.0142@3 best_l1=0.0066@4
+epoch 6/20 train=0.0133/0.0062 val=0.0141/0.0065 best_loss=0.0141@6 best_l1=0.0065@6
+epoch 7/20 train=0.0132/0.0062 val=0.0142/0.0065 best_loss=0.0141@6 best_l1=0.0065@6
+epoch 8/20 train=0.0133/0.0062 val=0.0140/0.0065 best_loss=0.0140@8 best_l1=0.0065@8
+epoch 9/20 train=0.0132/0.0061 val=0.0138/0.0065 best_loss=0.0138@9 best_l1=0.0065@8
+epoch 10/20 train=0.0131/0.0062 val=0.0138/0.0064 best_loss=0.0138@9 best_l1=0.0064@10
+epoch 11/20 train=0.0131/0.0061 val=0.0139/0.0064 best_loss=0.0138@9 best_l1=0.0064@10
+epoch 12/20 train=0.0131/0.0061 val=0.0138/0.0064 best_loss=0.0138@12 best_l1=0.0064@12
+epoch 13/20 train=0.0130/0.0061 val=0.0138/0.0064 best_loss=0.0138@12 best_l1=0.0064@13
+epoch 14/20 train=0.0131/0.0061 val=0.0145/0.0064 best_loss=0.0138@12 best_l1=0.0064@13
+epoch 15/20 train=0.0131/0.0061 val=0.0140/0.0065 best_loss=0.0138@12 best_l1=0.0064@13
+epoch 16/20 train=0.0130/0.0061 val=0.0136/0.0064 best_loss=0.0136@16 best_l1=0.0064@16
+epoch 17/20 train=0.0130/0.0061 val=0.0135/0.0064 best_loss=0.0135@17 best_l1=0.0064@16
+epoch 18/20 train=0.0130/0.0061 val=0.0138/0.0064 best_loss=0.0135@17 best_l1=0.0064@16
+epoch 19/20 train=0.0129/0.0060 val=0.0138/0.0064 best_loss=0.0135@17 best_l1=0.0064@16
+epoch 20/20 train=0.0131/0.0061 val=0.0138/0.0064 best_loss=0.0135@17 best_l1=0.0064@16
+{
+  "best_epoch": 17,
+  "best_val_loss": 0.013525867462763831,
+  "best_l1_epoch": 16,
+  "best_val_l1": 0.00635951908316727,
+  "best_metrics": {
+    "epoch": 17,
+    "train_loss": 0.013002887424762863,
+    "train_l1": 0.006080576472866218,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.013525867462763831,
+    "val_l1": 0.006367689446106047,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 210.11852909100708
+  },
+  "last_metrics": {
+    "epoch": 20,
+    "train_loss": 0.013078693494163,
+    "train_l1": 0.006068107706422,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.013803849986355988,
+    "val_l1": 0.006395122847274871,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 246.08538797905203
+  },
+  "best_l1_metrics": {
+    "epoch": 16,
+    "train_loss": 0.013015633035037253,
+    "train_l1": 0.006094849996237898,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.013633100222190574,
+    "val_l1": 0.00635951908316727,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 197.90302787499968
+  },
+  "train_episodes": [
+    5000,
+    5001,
+    5003,
+    5004,
+    5006,
+    5007,
+    5009,
+    5010,
+    5100
+  ],
+  "val_episodes": [
+    5002,
+    5005,
+    5008,
+    5011,
+    5101
+  ],
+  "train_windows": 4347,
+  "training_stride_steps": 10,
+  "trim_start_steps": 0,
+  "trim_start_steps_by_parent": null,
+  "trim_after_gripper_open_steps": null,
+  "grasp_focus_before_close_steps": 0,
+  "grasp_focus_repeats": 1,
+  "post_grasp_repeats": 1,
+  "init_checkpoint": "/home/user/wq/nero_act_gripper_contact_focus_20261018/model/run26_current_fixed_scene/policy.ckpt",
+  "normalization_stats": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training/run27_fixed_heads/frozen_pretraining_stats.pkl",
+  "joint_target_lead_steps": null,
+  "elapsed_s": 246.4200914130779
+}

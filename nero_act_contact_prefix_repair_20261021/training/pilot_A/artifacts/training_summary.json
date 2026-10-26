@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "training_budget": {
+    "kind": "updates",
+    "limit": 1000
+  },
+  "actual_updates": 1000,
+  "actual_epochs": 0,
+  "selected_checkpoint": "policy_last.ckpt",
+  "last_metrics": {
+    "epoch": 0,
+    "actual_updates": 1000,
+    "train": {
+      "loss": 0.01331397904176265,
+      "l1": 0.003185859925695695,
+      "kl": 0.0,
+      "gripper_bce": 0.0,
+      "prefix_margin": 0.0,
+      "pose_position": 0.062281822856515644,
+      "pose_rotation": 0.04247914014291018,
+      "prior_gripper": 0.022437048975378276,
+      "deployed_prefix": 0.3242357018887997,
+      "approach_preservation": 0.0015355286974026968
+    },
+    "val": {
+      "loss": 0.012231317780393288,
+      "l1": 0.0032531090417400248,
+      "kl": 0.0,
+      "gripper_bce": 0.0,
+      "prefix_margin": 0.0,
+      "pose_position": 0.06534191671231372,
+      "pose_rotation": 0.0292202855665856,
+      "prior_gripper": 0.022519317104685004,
+      "deployed_prefix": 0.4137502078773016
+    },
+    "elapsed_s": 95.28534546299488
+  },
+  "best_zero_latent_val_loss": 0.012231317780393288,
+  "elapsed_s": 102.58656833499845,
+  "hardware_deployment_allowed": false
+}

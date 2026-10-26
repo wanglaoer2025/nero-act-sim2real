@@ -1,0 +1,81 @@
+{
+  "completed_at": "2026-10-23T20:50:13.311953+08:00",
+  "scope": "New handeye + returned original cup/card: offline ACT transfer readiness check",
+  "current_objects_present": true,
+  "current_objects_relocalized": true,
+  "localization_runtime_qualified": false,
+  "actual_feedback_read_only": true,
+  "controller_arm_status": 0,
+  "controller_error_code": 0,
+  "geometry": {
+    "source_bottom_mm": [
+      -516.7678268557341,
+      54.59807822381106,
+      0.0
+    ],
+    "destination_mm": [
+      -524.6546553369415,
+      -131.80778658855485,
+      0.0
+    ],
+    "distance_source_to_target_mm": 186.57263598914506,
+    "displacement_from_previous_world_cup_mm": 137.91460313112103,
+    "displacement_from_previous_world_target_mm": 125.98321292998912,
+    "measured_gripper_width_mm": 99.42000359296799,
+    "ACT_maximum_target_width_mm": 95,
+    "measured_gripper_matches_ACT_initial_history": false,
+    "hardware_commands_sent": false,
+    "current_pose_read": true,
+    "current_objects_relocalized": true,
+    "geometric_accuracy_independently_validated": false,
+    "image_and_feedback_hardware_synchronized": false
+  },
+  "saved_frame_ACT_prediction_generated": false,
+  "saved_frame_input_error": "Previous gripper target is not a valid physical command",
+  "saved_frame_structural_contract_check_executed": false,
+  "measured_start": {
+    "full_task_passed": false,
+    "queries": 0,
+    "active_policy_points": 0,
+    "error": "ValueError: Actual accepted prefix receipt required"
+  },
+  "hypothetical_95mm_start": {
+    "full_task_passed": false,
+    "simulated_policy_window_s": 195,
+    "queries": 1950,
+    "active_policy_points": 3900,
+    "grasp_events": [],
+    "max_lift_m": 0,
+    "closest_cup_xy_error_mm": 56.53891128406152,
+    "final_cup_xy_error_mm": 738.698533697516,
+    "failure_classification": "budget_exhausted_without_GRASP_or_lift; approach drifts away"
+  },
+  "conditional_teacher_diagnostic": {
+    "full_task_passed": true,
+    "hypothetical_95mm_preparation": true,
+    "max_lift_m": 0.19437914105706156,
+    "frames": 3002,
+    "exact_replay_passed": true,
+    "action_contract_passed": true,
+    "ACT_success_claimed": false,
+    "used_for_training": false
+  },
+  "software_tests_passed": 5,
+  "optimizer_updates": 0,
+  "hardware_commands_sent": false,
+  "ROS_started": false,
+  "hardware_deployment_allowed": false,
+  "real_contact_geometry_qualified": false,
+  "next_required_work": [
+    "Explicit legal gripper reference initialization after controlled preparation",
+    "Repair and validate ACT approach under new-camera/current-target conditions using complete recovery demonstrations",
+    "Recheck complete policy flow and fresh read-only observation before hardware execution"
+  ],
+  "review": {
+    "reviewer": "/root/new_scene_act_review",
+    "critical": 0,
+    "important": 0,
+    "scope": "current scene, runner, protected inputs and distinction between hypothetical/offline/real execution",
+    "teacher_diagnostic_reviewed": false
+  }
+}

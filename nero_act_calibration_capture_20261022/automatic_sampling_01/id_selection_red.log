@@ -1,0 +1,45 @@
+......................F................F......................           [100%]
+=================================== FAILURES ===================================
+________ test_real_stop_frame_keeps_valid_id0_when_background_has_id17 _________
+
+    def test_real_stop_frame_keeps_valid_id0_when_background_has_id17():
+        m=api();root=Path(__file__).resolve().parents[1]
+        folder=root/'automatic_sampling_01/remainder_execution_01'
+        failure=json.loads((folder/'vision_stop.json').read_text())
+        frame=cv2.imread(str(folder/'vision_stop_optical.png'))
+        camera=m.Camera.__new__(m.Camera)
+        params=cv2.aruco.DetectorParameters();params.cornerRefinementMethod=cv2.aruco.CORNER_REFINE_SUBPIX
+        camera.detector=cv2.aruco.ArucoDetector(cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50),params)
+        pixels=camera.corners(frame)
+>       assert pixels is not None
+E       assert None is not None
+
+tests/test_automatic_sampling.py:237: AssertionError
+________________ test_only_single_requested_marker_is_selected _________________
+
+    def test_only_single_requested_marker_is_selected():
+        m = api(); _, pixels, _, _ = inputs()
+        assert m.marker_pixels([pixels], np.array([[1]])) is None
+        assert m.marker_pixels([pixels, pixels], np.array([[0], [0]])) is None
+>       np.testing.assert_array_equal(m.marker_pixels([pixels, pixels+20], np.array([[0], [1]])), pixels)
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 8 / 8 (100%)
+E       First 5 mismatches are at indices:
+E        [0, 0]: None (ACTUAL), 294.03038477655724 (DESIRED)
+E        [0, 1]: None (ACTUAL), 118.7522540077455 (DESIRED)
+E        [1, 0]: None (ACTUAL), 383.6789805914051 (DESIRED)
+E        [1, 1]: None (ACTUAL), 125.9461791416672 (DESIRED)
+E        [2, 0]: None (ACTUAL), 370.2150047345527 (DESIRED)
+E        ACTUAL: array(None, dtype=object)
+E        DESIRED: array([[294.030385, 118.752254],
+E              [383.678981, 125.946179],
+E              [370.215005, 206.116098],
+E              [273.650739, 195.74784 ]])
+
+tests/test_capture.py:135: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_automatic_sampling.py::test_real_stop_frame_keeps_valid_id0_when_background_has_id17
+FAILED tests/test_capture.py::test_only_single_requested_marker_is_selected
+2 failed, 60 passed in 2.53s

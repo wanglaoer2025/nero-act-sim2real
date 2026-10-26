@@ -1,0 +1,320 @@
+{
+  "updated_at_utc": "2026-10-13T14:55:51.285755+00:00",
+  "date_local": "2026-10-13",
+  "timezone": "Asia/Shanghai",
+  "scope": "4090真机电脑；工程配置、全部可读取ROS参数与接口、实时反馈、相机输入、时序及已有现场证据的只读核验",
+  "overall_status": "只读可验证部分完成；新ACT部署的一致性尚未全部通过；保留既有成功抓取基线",
+  "previous_real_grasp": {
+    "source": "用户本轮回复",
+    "statement": "一切都是正常的，之前也做过真机抓取都没有问题",
+    "independent_retest_in_this_audit": false,
+    "controller_policy_or_task_of_previous_success": "未指定，不能认定为本次仿真ACT自主成功"
+  },
+  "counts": {
+    "observed_ROS_nodes": 15,
+    "parameter_nodes": 11,
+    "read_parameters": 503,
+    "unresponsive_parameter_nodes": [
+      "/moveit",
+      "/moveit_2586935727"
+    ],
+    "offline_tests_passed": 39,
+    "combined_observation_cycles": 100,
+    "checks": 40
+  },
+  "checks": [
+    {
+      "category": "平台",
+      "item": "Ubuntu / ROS / GPU",
+      "status": "已读取",
+      "observation": "Ubuntu24.04.4、ROS Jazzy、RTX4090 24564MiB；NVIDIA驱动535.288.01",
+      "evidence": "platform_and_CAN_check.json"
+    },
+    {
+      "category": "平台",
+      "item": "Python与关键依赖",
+      "status": "已读取",
+      "observation": "Python3.12环境；pyAgxArm1.0.0、Torch2.5.1+cu121、OpenCV5.0.0.93等版本已保存",
+      "evidence": "platform_and_CAN_check.json"
+    },
+    {
+      "category": "链路",
+      "item": "CAN通信",
+      "status": "本次只读观察通过",
+      "observation": "can0 1Mbps，ERROR-ACTIVE；约1s窗口RX+3108、TX+0、新增丢包/错误0；历史累计丢包需与本次增量区别",
+      "evidence": "platform_and_CAN_check.json"
+    },
+    {
+      "category": "链路",
+      "item": "固件版本",
+      "status": "启动日志已确认",
+      "observation": "当前运行驱动启动时检测v120/1.20；实机未重新发送固件查询；ACT包装器默认V120一致",
+      "evidence": "platform_and_CAN_check.json"
+    },
+    {
+      "category": "链路",
+      "item": "真实驱动在线",
+      "status": "已实测",
+      "observation": "驱动进程在线、真实反馈持续发布；短时CLI发现不完整，持续DDS发现确认15节点",
+      "evidence": "ros_graph.json"
+    },
+    {
+      "category": "ROS",
+      "item": "全部可读取参数",
+      "status": "部分节点完成",
+      "observation": "11节点503项参数已读取；2个MoveIt内部节点ListParameters响应超时，未声称全节点参数均可取",
+      "evidence": "ros_parameters.json"
+    },
+    {
+      "category": "ROS",
+      "item": "话题/服务/action/QoS",
+      "status": "接口已枚举",
+      "observation": "接口类型与发布/订阅端已保存；只调用List/Get只读服务，未发送action goal",
+      "evidence": "ros_graph.json;ros_actions.json"
+    },
+    {
+      "category": "ROS",
+      "item": "当前控制门状态",
+      "status": "已实测",
+      "observation": "control_enabled=false，采样期间gated话题收到0条；保留当前状态",
+      "evidence": "feedback_timing_review.json"
+    },
+    {
+      "category": "ROS",
+      "item": "控制器与真实驱动分工",
+      "status": "已确认",
+      "observation": "controller_manager硬件是mock_components/GenericSystem，真实反馈来自独立CAN驱动；action成功不等于真机运动成功",
+      "evidence": "ros_readonly_service_results.json"
+    },
+    {
+      "category": "ROS",
+      "item": "控制器/真机起点同步",
+      "status": "当前未同步",
+      "observation": "模拟控制器全零，真机最大关节差1.571rad、夹爪差约94.92mm，超过控制门同步阈值；未调整控制器或发送目标",
+      "evidence": "feedback_timing_review.json"
+    },
+    {
+      "category": "ROS",
+      "item": "ROS与SDK控制权",
+      "status": "部署前需选定",
+      "observation": "当前ROS驱动持有CAN；现有ACT入口使用直接SDK，应选定单一控制路线后部署",
+      "evidence": "verified_interface_contract.json"
+    },
+    {
+      "category": "状态",
+      "item": "八维状态和单位",
+      "status": "已实测",
+      "observation": "joint1至joint7弧度＋gripper总开口米；当前位置有限；命令与反馈JointState名称顺序不同，应按名字映射",
+      "evidence": "verified_interface_contract.json;feedback_timing_review.json"
+    },
+    {
+      "category": "状态",
+      "item": "反馈频率与新鲜度",
+      "status": "已实测",
+      "observation": "发布约200Hz；独立关节时间戳约168Hz，末端50Hz，夹爪198Hz；时间戳无倒退",
+      "evidence": "feedback_timing_review.json"
+    },
+    {
+      "category": "状态",
+      "item": "故障状态字段",
+      "status": "本次未见上报故障",
+      "observation": "arm_status/err_status及关节限位/通信错误布尔位无故障，夹爪错误位无故障；不能据此证明机械零位和TCP标定",
+      "evidence": "ros_feedback_capture.json"
+    },
+    {
+      "category": "状态",
+      "item": "夹爪反馈开口",
+      "status": "已读反馈，实物未独立复测",
+      "observation": "约94.92mm；用户表示既往真实抓取正常，未提供尺测值；未执行开闭或归零",
+      "evidence": "feedback_timing_review.json"
+    },
+    {
+      "category": "运动学",
+      "item": "SDK、URDF与控制器法兰位姿",
+      "status": "当前静止姿态软件一致",
+      "observation": "990条配对样本；SDK FK与反馈位置最大差0.01373mm；URDF link7与SDK最大差0.0000373mm；不等于物理TCP精度",
+      "evidence": "kinematics_and_limits_check.json"
+    },
+    {
+      "category": "运动学",
+      "item": "七轴软件位置限位",
+      "status": "配置一致",
+      "observation": "SDK、运行URDF与ACT配置的七轴上下限逐项一致；物理限位与运动方向未用动作测试",
+      "evidence": "kinematics_and_limits_check.json"
+    },
+    {
+      "category": "运动学",
+      "item": "速度/加速度/力矩配置",
+      "status": "已读取配置",
+      "observation": "URDF/MoveIt名义速度上限与ACT安全速度0.4rad/s分属不同层；ROS speed75%，ACT执行配置10%；未测试实际极限",
+      "evidence": "ros_parameters.json;robot_model_inventory.json;baseline_configuration/act_nero_day6.yaml"
+    },
+    {
+      "category": "运动学",
+      "item": "TCP参考与工具安装变换",
+      "status": "定义尚未统一",
+      "observation": "当前ROS tcp_link偏移0；SDK手工TCP为法兰+X135mm；按本机安装变换换算仿真+Z115mm假设，相差约29.00mm；远端模型与实物尚未独立验收",
+      "evidence": "kinematics_and_limits_check.json"
+    },
+    {
+      "category": "实物",
+      "item": "关节零位",
+      "status": "既有运行经验支持，未独立复核",
+      "observation": "用户报告之前实机抓取正常；没有把该回复等同于厂家零位校准记录",
+      "evidence": "verification_report.json"
+    },
+    {
+      "category": "实物",
+      "item": "机器人模型质量/惯量/碰撞几何",
+      "status": "模型已读取，实物未测",
+      "observation": "运行URDF全部链接、惯量和关节信息保存；未独立测量机械臂惯量、负载或动力学",
+      "evidence": "robot_model_inventory.json"
+    },
+    {
+      "category": "相机",
+      "item": "型号/序列号/分辨率",
+      "status": "已实测",
+      "observation": "固定ZED2i，SN39602891，HD720@30；ACT以SDK直接读取，depth_mode=NONE",
+      "evidence": "camera_pipeline_check.json"
+    },
+    {
+      "category": "相机",
+      "item": "RGB朝向与预处理",
+      "status": "已实测通过",
+      "observation": "640×360 RGBuint8、旋转180°、float/255后bilinear align_corners=False缩放90×160，再ImageNet归一化；真实帧独立重构一致",
+      "evidence": "camera_pipeline_check.json;zed_act_model_input.npz"
+    },
+    {
+      "category": "相机",
+      "item": "原始图像采集频率",
+      "status": "已实测",
+      "observation": "40帧连续采样约29.25Hz；不能与20Hz策略循环混淆",
+      "evidence": "camera_pipeline_check.json"
+    },
+    {
+      "category": "相机",
+      "item": "ROS点云输入",
+      "status": "当前无发布者",
+      "observation": "/camera/depth/color/points只有订阅端；实时点云障碍物感知未验证；ACT采用SDK RGB路径",
+      "evidence": "ros_graph.json"
+    },
+    {
+      "category": "时序",
+      "item": "20Hz图像＋状态采集",
+      "status": "100周期实测通过",
+      "observation": "实际19.9988Hz，准备耗时P95约6.93ms、最大30.56ms；未包含策略推理或执行",
+      "evidence": "joint_camera_timing_check.json"
+    },
+    {
+      "category": "时序",
+      "item": "图像/关节时间对齐",
+      "status": "已测，动态一致性待验收",
+      "observation": "图像与最新反馈时间戳差P95约54.70ms、最大59.05ms；本次静止观察，不代表运动中同帧同步通过",
+      "evidence": "joint_camera_timing_check.json"
+    },
+    {
+      "category": "ACT",
+      "item": "模型输入/训练配置",
+      "status": "源码与配置已确认",
+      "observation": "基础单相机state8/action8、90×160、20步、ResNet18、隐藏128；其他双相机/14维实验不能混用",
+      "evidence": "baseline_configuration/act_nero_day5.yaml;verified_interface_contract.json"
+    },
+    {
+      "category": "ACT",
+      "item": "SDK关节与夹爪命令参数",
+      "status": "源码已确认",
+      "observation": "move_j七轴绝对弧度；move_gripper_m总开口米＋单独力N；本次未实际发送",
+      "evidence": "verified_interface_contract.json"
+    },
+    {
+      "category": "ACT",
+      "item": "夹爪动作编码",
+      "status": "新仿真接入必须匹配",
+      "observation": "测量状态和SDK能力为连续宽度，现有SafetyFilter执行0/95mm二值迟滞：<=35mm闭，>=60mm开；75mm预测会被映射95mm",
+      "evidence": "verified_interface_contract.json"
+    },
+    {
+      "category": "ACT",
+      "item": "ROS部分关节命令",
+      "status": "源码确认边界",
+      "observation": "直接move_j消息若只提供部分关节，驱动对缺失轴填0；适配器必须发送完整七轴，不能将部分目标当保持其他轴",
+      "evidence": "verified_interface_contract.json"
+    },
+    {
+      "category": "ACT",
+      "item": "SDK读反馈时间戳检查",
+      "status": "源码限制已记录",
+      "observation": "包装器等待有限值反馈，但未显式检查反馈原始时间戳年龄；当前ROS新鲜度通过不等于SDK断链保护验收",
+      "evidence": "verified_interface_contract.json"
+    },
+    {
+      "category": "ACT",
+      "item": "旧dry-run入口硬件影响",
+      "status": "源码已确认",
+      "observation": "现有run_act_real --dry-run仍connect/enable/follower，本次未运行该入口；使用相机＋ROS订阅的独立只读检查",
+      "evidence": "verification_report.json"
+    },
+    {
+      "category": "ACT",
+      "item": "离线接口/数据/推理循环测试",
+      "status": "39项通过",
+      "observation": "真机工厂create_arm被禁止；使用FakeRobot/FakeCamera测试，不作为真实任务成功证据",
+      "evidence": "offline_tests.txt"
+    },
+    {
+      "category": "场景",
+      "item": "杯子、桌面、支架、相机高度",
+      "status": "用户实测信息已收录",
+      "observation": "杯75×95mm/50g；平行支架13mm；左目桌高357mm；蓝卡100×100mm；板110mm/底托约20mm",
+      "evidence": "prior_scene_evidence/task_measurements.json"
+    },
+    {
+      "category": "场景",
+      "item": "相机外参当前几何一致性",
+      "status": "前轮检查尚未通过",
+      "observation": "保存外参可复现；当前板平面约13°差，名义板Z约79mm差含基座原点假设；既往成功抓取不自动消除该场景检查差异",
+      "evidence": "prior_scene_evidence/calibration_history_review.json"
+    },
+    {
+      "category": "场景",
+      "item": "当前抓取/放置坐标",
+      "status": "待核实",
+      "observation": "黄色杯→蓝卡已指定；先前蓝卡已移动；当前准确基座坐标、桌面基座Z与工具中心尚未确认",
+      "evidence": "prior_scene_evidence/task_measurements.json"
+    },
+    {
+      "category": "实机验收",
+      "item": "既往成功抓取",
+      "status": "用户报告，保留既有基线",
+      "observation": "用户明确表示之前真机抓取无问题；未自行推断该成功属于本次Nero仿真ACT权重",
+      "evidence": "verification_report.json"
+    },
+    {
+      "category": "实机验收",
+      "item": "实际运动/限位/夹爪力/碰撞/闭环任务",
+      "status": "本次未执行",
+      "observation": "本次仅只读核验；运行配置、CAN控制权、速度、使能、控制门和实机标定均未修改",
+      "evidence": "verification_report.json"
+    },
+    {
+      "category": "相机",
+      "item": "当前任务画面可见性",
+      "status": "诊断场景已观察，最终任务画面待确认",
+      "observation": "当前图像偏暗，杯子/蓝卡部分位于画面边缘，标定板与测尺仍在任务区；记录现状，未调整相机设置或任务位置",
+      "evidence": "current_scene_image_review.json;zed_act_rgb.png"
+    }
+  ],
+  "deployment_relevant_items": [
+    "明确夹爪action末维为命令目标，保留现有二值模式或另行适配连续模式；state末维始终为实测总开口。",
+    "统一手工TCP、ROS与仿真工具参考，并验收当前真实相机与任务坐标。",
+    "按实际时间戳检查动态图像/状态同步；当前采集达到20Hz不代表整个策略闭环达到20Hz。",
+    "部署前选定唯一CAN控制路线；ROS模拟控制器起点需正常同步，不能绕过控制门。"
+  ],
+  "not_claimed": [
+    "没有宣称所有物理参数、厂家零位、动力学、夹爪力或碰撞安全均已验证。",
+    "没有运行旧ACT硬件dry-run或下发任何运动目标。",
+    "没有修改项目源文件、驱动参数、标定、使能、速度或控制门。",
+    "没有验证远端仿真数据、Nero新权重的当前实机自主任务成功。"
+  ],
+  "archive": "/home/user/wq/nero-real-machine-verification.zip"
+}

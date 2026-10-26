@@ -1,0 +1,32 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_boundary_pool_keeps_post_start_contact_crossing_and_rejects_validation __
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-29/test_boundary_pool_keeps_post_0')
+
+    def test_boundary_pool_keeps_post_start_contact_crossing_and_rejects_validation(tmp_path):
+        from training.contact_sampling import contact_boundary_pool
+        path=tmp_path/'episode.hdf5';starts=np.arange(5,15)
+        with h5py.File(path,'w') as f:
+            f.attrs.update(recovery_role='pre_close',split='train',initial_previous_gripper_target_m=.075)
+            f['timestamp']=np.arange(15)*.05
+            f['action_time_monotonic_s']=np.arange(15)*.05+.001
+            f['simulation/stage']=np.array([b'close']*15)
+            f['observations/gripper_state']=np.full((15,1),.075)
+            actions=np.zeros((15,8));actions[:,7]=.075
+            actions[starts-1,7]=.075-np.array([.002,.0024,.0027,.0029,.0031,.0035,.0042,.0045,.0048,.008]);f['action']=actions
+        ds=SimpleNamespace(paths=[path],cache=[dict(starts=starts)],samples=[(0,j) for j in range(10)])
+>       assert contact_boundary_pool(ds).tolist()==list(range(2,8))
+E       assert [1, 2, 3, 4, 5, 6] == [2, 3, 4, 5, 6, 7]
+E         At index 0 diff: 1 != 2
+E         Use -v to get more diff
+
+tests/test_contact_prefix_repair.py:98: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_contact_prefix_repair.py::test_boundary_pool_keeps_post_start_contact_crossing_and_rejects_validation
+1 failed, 10 deselected, 1 warning in 2.03s

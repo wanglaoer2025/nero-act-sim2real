@@ -1,0 +1,21 @@
+{
+  "scope": "Why ACT fails in the saved current nominal-calibration simulation layout",
+  "confirmed_facts": [
+    "Same candidate and start completes the old reference layout; current layout requests closure at96.5845mm XY error.",
+    "Current cup is78.4404mm from nearest of36 original train source positions; card target is111.2008mm from the sole trained target.",
+    "All four current-layout endpoints converge under the unchanged nominal FK/IK; endpoint reachability is not the observed failure.",
+    "15D inputs and paired normalization are present; original formal training recorded nonzero geometry-projection gradients.",
+    "Later increment wrapper intentionally freezes/detaches base features. Re-enabling requires_grad alone does not reopen position learning.",
+    "Regression assertion reproduced missing position gradient; isolated gradient-enabled equivalent computation passes three integration tests."
+  ],
+  "conclusion": "Demonstrated current-layout policy adaptation failure outside its training coverage; existing frozen-head training cannot teach the position branch new layouts.",
+  "not_proven": [
+    "No proof that rendering-domain gap is absent in real hardware",
+    "No proof that nominal camera/TCP coordinates match physical cup coordinates",
+    "No proof that a1000-update position pilot will complete the task or generalize"
+  ],
+  "existing_calibration_caveat": "Archived board-plane hypotheses imply about100mm changes of cup coordinates; not a validated replacement. No silent production calibration replacement or new measurement request.",
+  "correction": "Full accepted physical demonstrations across current and bridge layouts; same15D ACT topology with differentiable position/action path, old-data and approach retention, fixed1000-update offline pilot.",
+  "runtime_guards": "Unchanged",
+  "hardware_commands_sent": false
+}

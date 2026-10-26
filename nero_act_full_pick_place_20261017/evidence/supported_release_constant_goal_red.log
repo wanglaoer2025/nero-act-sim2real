@@ -1,0 +1,16 @@
+test_measured_support_pose_drift_is_still_rejected (tests.test_release_hold.ReleaseHoldTests.test_measured_support_pose_drift_is_still_rejected) ... ok
+test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged (tests.test_release_hold.ReleaseHoldTests.test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged) ... ERROR
+
+======================================================================
+ERROR: test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged (tests.test_release_hold.ReleaseHoldTests.test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_release_hold.py", line 13, in test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged
+    result=hold_act_arm_during_release(rows,history)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: hold_act_arm_during_release() missing 2 required positional arguments: 'reference' and 'fk'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (errors=1)

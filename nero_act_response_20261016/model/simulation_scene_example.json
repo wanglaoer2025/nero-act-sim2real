@@ -1,0 +1,174 @@
+{
+  "robot": "nero_single_arm",
+  "end_effector": "agx_gripper",
+  "can_connected": false,
+  "cup": {
+    "outer_diameter_m": 0.075,
+    "height_m": 0.095,
+    "mass_kg": 0.05,
+    "wall_thickness_m": 0.002
+  },
+  "assumptions": [
+    "Cup diameter, height and mass from uploaded task_measurements.json",
+    "Wall thickness, friction and servo gains remain assumptions",
+    "Pick/place coordinates and table height remain simulation-only placeholders",
+    "Rigid plastic cup; deformation not modeled"
+  ],
+  "contact_friction": [
+    0.6,
+    0.005,
+    0.0001
+  ],
+  "pick_xy_m": [
+    0.3571257488409871,
+    -0.0792580743093797
+  ],
+  "place_xy_m": [
+    0.35,
+    0.08
+  ],
+  "table_top_z_m": 0.0,
+  "control_hz": 20,
+  "simulation_timestep_s": 0.002,
+  "arm_kp": [
+    100.0,
+    100.0,
+    80.0,
+    80.0,
+    40.0,
+    30.0,
+    20.0
+  ],
+  "arm_kd": [
+    15.0,
+    15.0,
+    12.0,
+    12.0,
+    6.0,
+    5.0,
+    3.0
+  ],
+  "joint_speed_limit_rad_s": 0.15,
+  "finger_force_limit_n": 5.0,
+  "lift_height_m": 0.1,
+  "success_position_tolerance_m": 0.02,
+  "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+  "real_task_geometry_verified": false,
+  "ik_seed": [
+    0.3983573615550995,
+    -0.4896089434623718,
+    2.25274395942688,
+    1.6050080060958862,
+    0.19271942973136902,
+    -0.530234158039093,
+    1.1827417612075806
+  ],
+  "dwell_seconds": {
+    "moving": 0.2,
+    "close": 0.2,
+    "release": 0.2
+  },
+  "final_settle_seconds": 0.5,
+  "render_shadows": false,
+  "teacher_command_lead_limit_rad": 0.03,
+  "action_delay_steps": 0,
+  "appearance": {
+    "table_rgb": [
+      0.7065079210341236,
+      0.5957284008285233,
+      0.5228100864433386
+    ],
+    "cup_rgb": [
+      0.5812439066449165,
+      0.3441145801707892,
+      0.22832471943103216
+    ],
+    "arm_rgb": [
+      0.24215030508605392,
+      0.2952963461332019,
+      0.25126972908148926
+    ],
+    "background_rgb": [
+      0.18018186008733633,
+      0.3103694161664955,
+      0.1599712818814078
+    ],
+    "light_scale": 0.9412951460626049
+  },
+  "camera": {
+    "lookat": [
+      0.3,
+      0,
+      0.2
+    ],
+    "distance": 1.1,
+    "azimuth": 90.0,
+    "elevation": -45.0
+  },
+  "image_noise_std_uint8": 0.8157318475721682,
+  "initial_joint_offset_rad": [
+    -8.337758750755903e-05,
+    -0.0022954252531627874,
+    -0.0009660942995922761,
+    0.0033798184833420406,
+    -0.0012283241062588236,
+    -0.001096660040271986,
+    0.0008046559109608862
+  ],
+  "domain_randomization": {
+    "seed": 5400,
+    "ranges": {
+      "status": "stage 1 experimental collection ranges; not measured real uncertainty",
+      "pick_offset_m": 0.015,
+      "initial_joint_jitter_rad": 0.005,
+      "cup_mass_scale": [
+        1.0,
+        1.0
+      ],
+      "sliding_friction": [
+        0.6,
+        0.6
+      ],
+      "servo_gain_scale": [
+        1.0,
+        1.0
+      ],
+      "finger_force_n": [
+        5.0,
+        5.0
+      ],
+      "action_delay_steps": [
+        0,
+        0
+      ],
+      "camera_azimuth_offset_deg": [
+        0.0,
+        0.0
+      ],
+      "camera_elevation_offset_deg": [
+        0.0,
+        0.0
+      ],
+      "camera_distance_scale": [
+        1.0,
+        1.0
+      ],
+      "light_scale": [
+        0.65,
+        1.2
+      ],
+      "image_noise_std_uint8": [
+        0.0,
+        1.0
+      ],
+      "notes": [
+        "Stage 1 varies pick XY, small independent initial joint offsets, colors, background and lighting",
+        "Cup has no handle and is rotationally symmetric; handle orientation is not modeled",
+        "Keep camera baseline and dynamics fixed for the first training experiment",
+        "Regenerate successful teacher actions in each scene; never relabel an unchanged fixed trajectory",
+        "Real installation was confirmed unchanged by the user; synthetic camera baseline is still unmatched"
+      ]
+    },
+    "real_parameters_identified": false
+  }
+}

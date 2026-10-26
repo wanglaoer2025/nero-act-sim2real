@@ -1,0 +1,36 @@
+/agx_arm_ctrl_single_node
+  Subscribers:
+    /control/gated_joint_states: sensor_msgs/msg/JointState
+    /control/move_c: geometry_msgs/msg/PoseArray
+    /control/move_cpv: sensor_msgs/msg/JointState
+    /control/move_j: sensor_msgs/msg/JointState
+    /control/move_js: sensor_msgs/msg/JointState
+    /control/move_l: geometry_msgs/msg/PoseStamped
+    /control/move_mit: agx_arm_msgs/msg/MoveMITMsg
+    /control/move_p: geometry_msgs/msg/PoseStamped
+  Publishers:
+    /feedback/arm_status: agx_arm_msgs/msg/AgxArmStatus
+    /feedback/gripper_status: agx_arm_msgs/msg/GripperStatus
+    /feedback/joint_states: sensor_msgs/msg/JointState
+    /feedback/leader_joint_states: sensor_msgs/msg/JointState
+    /feedback/tcp_pose: geometry_msgs/msg/PoseStamped
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+  Service Servers:
+    /agx_arm_ctrl_single_node/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /agx_arm_ctrl_single_node/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /agx_arm_ctrl_single_node/get_parameters: rcl_interfaces/srv/GetParameters
+    /agx_arm_ctrl_single_node/get_type_description: type_description_interfaces/srv/GetTypeDescription
+    /agx_arm_ctrl_single_node/list_parameters: rcl_interfaces/srv/ListParameters
+    /agx_arm_ctrl_single_node/set_parameters: rcl_interfaces/srv/SetParameters
+    /agx_arm_ctrl_single_node/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+    /control_enable: std_srvs/srv/SetBool
+    /emergency_stop: std_srvs/srv/Empty
+    /enable_agx_arm: std_srvs/srv/SetBool
+    /move_home: std_srvs/srv/Empty
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
+

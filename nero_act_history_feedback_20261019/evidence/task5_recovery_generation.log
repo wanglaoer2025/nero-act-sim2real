@@ -1,0 +1,33 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+{"completed": 1, "total": 18, "id": 2000, "role": "pre_close", "source_kind": "teacher_interruption", "frames": 2553}
+{"completed": 2, "total": 18, "id": 2001, "role": "hold_to_lift", "source_kind": "teacher_interruption", "frames": 2394}
+{"completed": 3, "total": 18, "id": 2002, "role": "support_release", "source_kind": "teacher_interruption", "frames": 868}
+{"completed": 4, "total": 18, "id": 2003, "role": "release_retreat", "source_kind": "teacher_interruption", "frames": 701}
+{"completed": 5, "total": 18, "id": 2004, "role": "pre_close", "source_kind": "teacher_interruption", "frames": 2626}
+{"completed": 6, "total": 18, "id": 2005, "role": "hold_to_lift", "source_kind": "teacher_interruption", "frames": 2466}
+{"completed": 7, "total": 18, "id": 2006, "role": "support_release", "source_kind": "teacher_interruption", "frames": 866}
+{"completed": 8, "total": 18, "id": 2007, "role": "release_retreat", "source_kind": "teacher_interruption", "frames": 699}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_history_feedback_20261019/training/history_recoveries.py", line 127, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/home/user/wq/nero_act_history_feedback_20261019/training/history_recoveries.py", line 124, in main
+    args=parser.parse_args();prepare_recoveries(args.base_data,args.captures,args.output);return 0
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_history_feedback_20261019/training/history_recoveries.py", line 104, in prepare_recoveries
+    for role in ROLES:generate(scene,parent,row['source_group'],row['split'],role,contexts[role],'teacher_interruption')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_history_feedback_20261019/training/history_recoveries.py", line 93, in generate
+    report=collect_partial(scene,context,role,path,parent_group=group,split=partition)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_history_feedback_20261019/simulation/history_teacher.py", line 114, in collect_partial
+    result=run_teacher(config,record,runtime_control_state=control)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_history_feedback_20261019/simulation/teacher.py", line 237, in run_teacher
+    tick(target, grip, stage)
+  File "/home/user/wq/nero_act_history_feedback_20261019/simulation/teacher.py", line 212, in tick
+    mujoco.mj_step(model, data)
+KeyboardInterrupt

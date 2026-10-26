@@ -1,0 +1,34 @@
+{
+  "epochs": 3,
+  "primary_source_model": "run19_pose_objective",
+  "new_sources": [
+    "cup_+0_+0 train",
+    "validation42_grasp val"
+  ],
+  "requested_low_heights_m": [
+    0.06,
+    0.055
+  ],
+  "maximum_height_deviation_m": 0.0025,
+  "only_pregrasp_open_snapshots": true,
+  "new_corrections": 4,
+  "source_groups": 2,
+  "train_new": 2,
+  "val_new": 2,
+  "keep_prior66": true,
+  "all_production_sources_bit_identical_to_run19": true,
+  "no_gripper_override": true,
+  "independent_v4_still_unexecuted": true,
+  "hardware": false,
+  "total_episodes": 70,
+  "previous_attempt": "run20_pipeline_status.json",
+  "exclusion": {
+    "source": "validation41_grasp",
+    "reason": "ACT source did not reach requested 60/55 mm states before stopping; no synthetic states or relaxed tolerance"
+  },
+  "reused_verified_rows": [
+    3001,
+    3002
+  ],
+  "production_code_changed": false
+}

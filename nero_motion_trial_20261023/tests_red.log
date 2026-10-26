@@ -1,0 +1,108 @@
+test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) ... 
+  test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='tracking') ... FAIL
+  test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='height') ... FAIL
+  test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='error') ... FAIL
+  test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='gripper') ... FAIL
+test_joint_jump_or_gripper_motion_is_rejected (test_air_trial.AirTrialBoundaryTests.test_joint_jump_or_gripper_motion_is_rejected) ... 
+  test_joint_jump_or_gripper_motion_is_rejected (test_air_trial.AirTrialBoundaryTests.test_joint_jump_or_gripper_motion_is_rejected) (column=1) ... FAIL
+  test_joint_jump_or_gripper_motion_is_rejected (test_air_trial.AirTrialBoundaryTests.test_joint_jump_or_gripper_motion_is_rejected) (column=7) ... FAIL
+test_low_flange_path_is_rejected (test_air_trial.AirTrialBoundaryTests.test_low_flange_path_is_rejected) ... FAIL
+test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) ... 
+  test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='speed_percent') ... FAIL
+  test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='gripper_commands') ... FAIL
+  test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='enable_commands') ... FAIL
+  test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='complete_task_not_released') ... FAIL
+test_status2_alone_does_not_remove_other_protections (test_air_trial.AirTrialBoundaryTests.test_status2_alone_does_not_remove_other_protections) ... ok
+
+======================================================================
+FAIL: test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='tracking')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 39, in test_current_tracking_height_and_error_guards_remain_active
+    with self.subTest(kind=kind),self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='height')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 39, in test_current_tracking_height_and_error_guards_remain_active
+    with self.subTest(kind=kind),self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 39, in test_current_tracking_height_and_error_guards_remain_active
+    with self.subTest(kind=kind),self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) (kind='gripper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 39, in test_current_tracking_height_and_error_guards_remain_active
+    with self.subTest(kind=kind),self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_joint_jump_or_gripper_motion_is_rejected (test_air_trial.AirTrialBoundaryTests.test_joint_jump_or_gripper_motion_is_rejected) (column=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 30, in test_joint_jump_or_gripper_motion_is_rejected
+    with self.subTest(column=column),self.assertRaises(ValueError):validate_plan(self.plan,bad)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_joint_jump_or_gripper_motion_is_rejected (test_air_trial.AirTrialBoundaryTests.test_joint_jump_or_gripper_motion_is_rejected) (column=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 30, in test_joint_jump_or_gripper_motion_is_rejected
+    with self.subTest(column=column),self.assertRaises(ValueError):validate_plan(self.plan,bad)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_low_flange_path_is_rejected (test_air_trial.AirTrialBoundaryTests.test_low_flange_path_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 25, in test_low_flange_path_is_rejected
+    with self.assertRaises(ValueError):validate_plan(bad,self.rows)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='speed_percent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 21, in test_model_path_is_admitted_only_inside_the_high_arm_scope
+    with self.subTest(field=field),self.assertRaises(ValueError):validate_plan(bad,self.rows)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='gripper_commands')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 21, in test_model_path_is_admitted_only_inside_the_high_arm_scope
+    with self.subTest(field=field),self.assertRaises(ValueError):validate_plan(bad,self.rows)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='enable_commands')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 21, in test_model_path_is_admitted_only_inside_the_high_arm_scope
+    with self.subTest(field=field),self.assertRaises(ValueError):validate_plan(bad,self.rows)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) (field='complete_task_not_released')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 21, in test_model_path_is_admitted_only_inside_the_high_arm_scope
+    with self.subTest(field=field),self.assertRaises(ValueError):validate_plan(bad,self.rows)
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+FAILED (failures=11)

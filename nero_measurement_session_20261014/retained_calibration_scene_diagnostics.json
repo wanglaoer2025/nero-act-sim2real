@@ -1,0 +1,53 @@
+{
+  "scope": "Offline diagnostic on current recorded RGB-D using retained existing extrinsic; not independent physical coordinates or a commanded target",
+  "base_support_height_mm_user_confirmed": 10,
+  "nominal_table_z_base_mm": -10,
+  "expected_upright_cup_geometric_centre_z_mm": 37.5,
+  "datum_basis": "User says installation face 10mm above table; local CAD bottom installation plane Z=0. This uses retained model datum, not an independent physical coordinate survey.",
+  "cup": {
+    "semantics": "median visible surface, not geometric cup centre",
+    "box_upright_px": [
+      429.540771484375,
+      378.350830078125,
+      543.7159423828125,
+      525.79736328125
+    ],
+    "camera_xyz_mm": [
+      115.98619842529297,
+      -74.87139129638672,
+      423.71971130371094
+    ],
+    "estimated_base_xyz_mm": [
+      -556.6400782460543,
+      57.67608530511113,
+      59.439939866019074
+    ]
+  },
+  "blue_card": {
+    "semantics": "median blue surface; not place-cup-centre Z",
+    "box_upright_px": [
+      643,
+      449,
+      762,
+      522
+    ],
+    "camera_xyz_mm": [
+      -64.15597534179688,
+      -114.33783721923828,
+      475.4051208496094
+    ],
+    "estimated_base_xyz_mm": [
+      -515.9092259086017,
+      -117.49644438829995,
+      -6.406602882379445
+    ],
+    "surface_z_minus_nominal_table_z_mm": 3.5933971176205546
+  },
+  "physical_gripper_gap_measured": false,
+  "physical_TCP_independently_verified": false,
+  "independent_camera_base_points_received": false,
+  "source_geometric_centre_XY_independently_measured": false,
+  "destination_geometric_centre_XY_independently_measured": false,
+  "live_calibration_updated": false,
+  "motion_sent": false
+}

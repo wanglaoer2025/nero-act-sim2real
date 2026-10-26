@@ -1,0 +1,47 @@
+{
+  "diagnostic_only": true,
+  "complete_task_qualification": false,
+  "full_flow_in_this_nominal_case_passed": false,
+  "source_real_capture_time": "2026-10-23T09:59:10.404405+08:00",
+  "camera_live_during_simulation": false,
+  "initial_state": [
+    0.17863444983959198,
+    -0.099675752222538,
+    0.0904604122042656,
+    1.5743567943572998,
+    -0.016004668548703194,
+    0.27064821124076843,
+    0.09709266573190689,
+    0.09492599964141846
+  ],
+  "checkpoint_sha256": "06012db673881efc678ecdc5c4d4780f2d46c44bb52f18cbeb81b20b53d0ec47",
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "hardware_connected": false,
+  "hardware_commands_sent": false,
+  "source_sha256": {
+    "/home/user/wq/nero_motion_trial_20261023/assess_full_flow.py": "ef5ba067f047c6642eb93e2245c6d3002423a911fffa1f111a92539c750461ac",
+    "/home/user/wq/nero_motion_trial_20261023/postflight_02/preflight_01/report.json": "f559d591bf59159563b19015268475a9cbc296993b34af70c0dd4d1bd444dfa1",
+    "/home/user/wq/nero_motion_trial_20261023/postflight_02/preflight_01/camera_000.png": "d629b309ab8836d07acdb94f993361c1465e6b444eb654fd60d3129366e7c236",
+    "/home/user/wq/nero_motion_trial_20261023/preparation_01/ACT_source/scene_configuration.json": "f930c250d62b0507ca0281e1abf719cdf7eaab1d81cf3dc85633b87442f3257b",
+    "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/perception_worker_table.py": "6173dda174da55a79be1e8ea9dfa54bb51deab029ed73e6230d0c1518c115d17",
+    "/home/user/wq/nero_act_paired_response_20261023/training/pilot_A/policy_last.ckpt": "06012db673881efc678ecdc5c4d4780f2d46c44bb52f18cbeb81b20b53d0ec47",
+    "/home/user/wq/nero_act_paired_response_20261023/training/pilot_A/integrity.json": "680231160fda95a17b1595bd77c24ee891464dda6bbf04bf83a1dd566a11be85",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/simulation/supervised_rollout.py": "05e55a3aeb19d8533537158855af3982159c6c9cc1828f97e3b339317d1fcf04"
+  },
+  "result": {
+    "success": false,
+    "error": "ValueError: Raw prediction exceeds physical arm/gripper limits",
+    "frames": 2100,
+    "active_policy_points": 2096,
+    "queries": 1049,
+    "max_lift_m": 0.0,
+    "maximum_horizontal_transfer_m": 1.833138568752144e-08,
+    "stable_released_frames": 0,
+    "unexpected_arm_cup_contact_frames": 0,
+    "execution_contract_failures": 1,
+    "premature_release_before_support": false,
+    "simulated_events": [],
+    "runtime_s": 53.87914576299954
+  }
+}

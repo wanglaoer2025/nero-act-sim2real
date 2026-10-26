@@ -1,0 +1,24 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_preservation_uses_the_same_final_gripper_clamp_as_runtime ________
+
+    def test_preservation_uses_the_same_final_gripper_clamp_as_runtime():
+        from training.approach_preservation import prefix_preservation_loss
+        prediction=torch.zeros(1,20,8,requires_grad=True);reference=torch.zeros_like(prediction)
+        with torch.no_grad():prediction[...,7]=.0953;reference[...,7]=.095
+        loss=prefix_preservation_loss(prediction,reference,{'action_std':[1.]*8,'action_mean':[0.]*8},arm_unit_rad=.0001,gripper_unit_m=.0005)
+>       assert float(loss.detach())==pytest.approx(0.,abs=1e-12)
+E       assert 0.04499928653240204 == 0.0 ± 1.0e-12
+E         comparison failed
+E         Obtained: 0.04499928653240204
+E         Expected: 0.0 ± 1.0e-12
+
+tests/test_approach_preservation.py:31: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_preservation.py::test_preservation_uses_the_same_final_gripper_clamp_as_runtime
+1 failed, 1 warning in 2.42s

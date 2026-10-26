@@ -1,0 +1,52 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+__ test_restricted_builder_changes_only_seven_output_rows_and_gripper_adapter __
+
+    def test_restricted_builder_changes_only_seven_output_rows_and_gripper_adapter():
+>       from training.history import build_history_policy,frozen_output_head_state,require_frozen_output_head_state
+E       ImportError: cannot import name 'frozen_output_head_state' from 'training.history' (/home/user/wq/nero_act_restricted_heads_20261020/training/history.py)
+
+tests/test_restricted_history_heads.py:17: ImportError
+___________ test_restricted_scope_rejects_history_and_formal_budgets ___________
+
+    def test_restricted_scope_rejects_history_and_formal_budgets():
+        from training.history import build_history_policy
+        c,q,image,h=config()
+        for updates in [dict(variant='B'),dict(numeric_history_profile='causal_numeric_gru5_v1'),
+                        dict(training_budget={'kind':'epochs','limit':20}),dict(train_arm_output_and_gripper_only=False)]:
+            bad=copy.deepcopy(c);bad.update(updates)
+>           with pytest.raises(ValueError):build_history_policy(bad)
+E           Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_restricted_history_heads.py:34: Failed
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+_________ test_restricted_scope_preserves_initial_runtime_predictions __________
+
+    def test_restricted_scope_preserves_initial_runtime_predictions():
+        from training.history import build_history_policy
+        from executor.model import BoundedActPolicy
+>       c,q,image,h=config();torch.manual_seed(42);p=build_history_policy(c).eval()
+
+tests/test_restricted_history_heads.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'adaptation_scope': 'output_heads_v1', 'alignment_offset': 0, ...}
+
+    def build_history_policy(config):
+        if (config.get('policy_input_dim')!=15 or config.get('cvae_training') is not True
+                or any(config.get(k) for k in ['train_nonlinear_gripper_only','train_arm_output_and_gripper_only','train_gripper_head_only'])):
+>           raise ValueError('Joint ACT/CVAE/arm/gripper training required')
+E           ValueError: Joint ACT/CVAE/arm/gripper training required
+
+training/history.py:94: ValueError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_restricted_history_heads.py::test_restricted_builder_changes_only_seven_output_rows_and_gripper_adapter
+FAILED tests/test_restricted_history_heads.py::test_restricted_scope_rejects_history_and_formal_budgets
+FAILED tests/test_restricted_history_heads.py::test_restricted_scope_preserves_initial_runtime_predictions
+3 failed, 1 warning in 2.35s

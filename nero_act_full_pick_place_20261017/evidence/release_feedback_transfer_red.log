@@ -1,0 +1,16 @@
+test_feedback_reference_transfer_preserves_step_and_holds_gripper (tests.test_release_hold.ReleaseHoldTests.test_feedback_reference_transfer_preserves_step_and_holds_gripper) ... FAIL
+test_measured_support_pose_drift_is_still_rejected (tests.test_release_hold.ReleaseHoldTests.test_measured_support_pose_drift_is_still_rejected) ... ok
+test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged (tests.test_release_hold.ReleaseHoldTests.test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged) ... ok
+
+======================================================================
+FAIL: test_feedback_reference_transfer_preserves_step_and_holds_gripper (tests.test_release_hold.ReleaseHoldTests.test_feedback_reference_transfer_preserves_step_and_holds_gripper)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_release_hold.py", line 27, in test_feedback_reference_transfer_preserves_step_and_holds_gripper
+    self.assertTrue(callable(getattr(release_hold,'release_reference_transfer',None)))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.029s
+
+FAILED (failures=1)

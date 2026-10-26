@@ -1,0 +1,32 @@
+{
+  "stage": "evaluation_partial_success_not_qualified",
+  "complete": true,
+  "actual_updates": 1000,
+  "formal_epochs": 0,
+  "elapsed_training_s": 11.535063336996245,
+  "metrics": {
+    "train": {
+      "maximum_prefix_error_mm": 0.3871247172355652,
+      "rms_prefix_error_mm": 0.05737171660515383,
+      "unique_states": 21042
+    },
+    "val": {
+      "maximum_prefix_error_mm": 0.4200786352157593,
+      "rms_prefix_error_mm": 0.06793737306911121,
+      "unique_states": 6426
+    }
+  },
+  "arm_reference": {
+    "samples": 423,
+    "maximum_arm_prefix_change_rad": 2.384185791015625e-07,
+    "rms_arm_prefix_change_rad": 2.8612286442776187e-08,
+    "maximum_gripper_prefix_change_m": 0.0008438751101493835,
+    "training_replay_not_independent_validation": true
+  },
+  "head_only": true,
+  "hardware_deployment_allowed": false,
+  "original_six_pass_count": 5,
+  "original_six_total": 6,
+  "exact_input_gate_passed": true,
+  "full_task_passed": false
+}

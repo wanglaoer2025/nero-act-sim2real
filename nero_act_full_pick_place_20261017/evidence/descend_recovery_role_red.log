@@ -1,0 +1,29 @@
+test_contact_aware_expert_width_reserves_raw_prefix_margin (tests.test_teacher.TeacherTests.test_contact_aware_expert_width_reserves_raw_prefix_margin) ... ok
+test_continuation_does_not_relabel_full_grasp_data (tests.test_teacher.TeacherTests.test_continuation_does_not_relabel_full_grasp_data) ... ok
+test_delayed_expert_gripper_can_use_slower_rate_with_same_full_opening (tests.test_teacher.TeacherTests.test_delayed_expert_gripper_can_use_slower_rate_with_same_full_opening) ... ok
+test_lift_path_keeps_orientation_and_vertical_tcp (tests.test_teacher.TeacherTests.test_lift_path_keeps_orientation_and_vertical_tcp) ... ok
+test_low_force_full_physical_transfer (tests.test_teacher.TeacherTests.test_low_force_full_physical_transfer) ... skipped 'full physical rollout opt-in'
+test_plan_contains_actual_transfer_release_and_retreat (tests.test_teacher.TeacherTests.test_plan_contains_actual_transfer_release_and_retreat) ... ok
+test_release_teacher_refuses_unsupported_cup (tests.test_teacher.TeacherTests.test_release_teacher_refuses_unsupported_cup) ... ok
+test_retreat_correction_is_explicitly_partial_and_preserves_supported_cup (tests.test_teacher.TeacherTests.test_retreat_correction_is_explicitly_partial_and_preserves_supported_cup) ... skipped 'physical correction rollout opt-in'
+test_retreat_requires_actual_open_fingers (tests.test_teacher.TeacherTests.test_retreat_requires_actual_open_fingers) ... ok
+test_robot_table_collision_is_not_hidden_by_valid_cup_contacts (tests.test_teacher.TeacherTests.test_robot_table_collision_is_not_hidden_by_valid_cup_contacts) ... ok
+test_snapshot_corrections_have_explicit_partial_start_stages (tests.test_teacher.TeacherTests.test_snapshot_corrections_have_explicit_partial_start_stages) ... ERROR
+test_teacher_uses_tighter_configured_lead_without_rebasing_history (tests.test_teacher.TeacherTests.test_teacher_uses_tighter_configured_lead_without_rebasing_history) ... ok
+test_unreachable_or_invalid_opening_is_rejected (tests.test_teacher.TeacherTests.test_unreachable_or_invalid_opening_is_rejected) ... ok
+
+======================================================================
+ERROR: test_snapshot_corrections_have_explicit_partial_start_stages (tests.test_teacher.TeacherTests.test_snapshot_corrections_have_explicit_partial_start_stages)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_teacher.py", line 39, in test_snapshot_corrections_have_explicit_partial_start_stages
+    self.assertEqual(self.waypoints(config)[0][0], first)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/simulation/teacher.py", line 30, in task_waypoints
+    raise ValueError('Unknown explicitly labeled simulation continuation')
+ValueError: Unknown explicitly labeled simulation continuation
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.512s
+
+FAILED (errors=1, skipped=2)

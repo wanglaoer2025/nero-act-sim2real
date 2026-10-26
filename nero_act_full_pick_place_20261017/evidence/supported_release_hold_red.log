@@ -1,0 +1,23 @@
+test_measured_support_pose_drift_is_still_rejected (tests.test_release_hold.ReleaseHoldTests.test_measured_support_pose_drift_is_still_rejected) ... FAIL
+test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged (tests.test_release_hold.ReleaseHoldTests.test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged) ... FAIL
+
+======================================================================
+FAIL: test_measured_support_pose_drift_is_still_rejected (tests.test_release_hold.ReleaseHoldTests.test_measured_support_pose_drift_is_still_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_release_hold.py", line 20, in test_measured_support_pose_drift_is_still_rejected
+    self.assertIsNotNone(importlib.util.find_spec('executor.release_hold'))
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged (tests.test_release_hold.ReleaseHoldTests.test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_release_hold.py", line 8, in test_only_past_act_arm_target_is_held_gripper_predictions_are_unchanged
+    self.assertIsNotNone(importlib.util.find_spec('executor.release_hold'))
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=2)

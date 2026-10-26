@@ -1,0 +1,14 @@
+{"reproduced": true, "index": 1299, "stage": "lift", "error": "Unique visible cup and target required", "components": [{"area": 13529, "bounds_xywh": [395, 382, 115, 154], "centre": [453.5590952768128, 457.16475718826223]}, {"area": 20, "bounds_xywh": [509, 484, 2, 18], "centre": [509.5, 492.5]}], "source": "data/v2_complete/train_04_09.hdf5", "diagnostic_only": true, "qualified_training_episode_created": false, "hardware_commands_sent": false}
+Traceback (most recent call last):
+  File "<stdin>", line 36, in <module>
+  File "/home/user/wq/nero_act_transfer_v2_20261025/vendor/simulation/teacher.py", line 234, in run_teacher
+    tick(start+(target-start)*(index+1)/count, grip, stage)
+  File "/home/user/wq/nero_act_transfer_v2_20261025/vendor/simulation/teacher.py", line 206, in tick
+    record(model, data, action, stage)
+  File "<stdin>", line 27, in capture
+  File "/home/user/wq/nero_act_transfer_v2_20261025/observer.py", line 175, in measure
+    mask,_=self.cylinder.component((hsv[:,:,0]>=15)&(hsv[:,:,0]<=45)&
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_transfer_v2_20261025/vendor/cylinder.py", line 46, in component
+    raise ValueError('Unique visible cup and target required')
+ValueError: Unique visible cup and target required

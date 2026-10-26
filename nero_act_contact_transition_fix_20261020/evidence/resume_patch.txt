@@ -1,0 +1,6 @@
+            # Teacher interruptions already carry permission, so the ordinary
+            # GRASP/RELEASE event cannot perform its measured-reference handoff.
+            if (resume_context is not None and resume_policy_transition
+                    and resume_context['bindings'].get('source_kind')=='teacher_interruption'
+                    and contact_hold_required(contact)):
+                prepare_posture_hold()

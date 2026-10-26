@@ -1,0 +1,69 @@
+{
+  "controller_status_policy_updated": true,
+  "checks": {
+    "verified_real_calibration": {
+      "passed": false,
+      "error": "Explicit metric calibration v1 required; nominal/approximate TCP is not calibration"
+    },
+    "visual_deployment_gate": {
+      "passed": false,
+      "error": "Independent real calibration required; nominal training is insufficient"
+    },
+    "current_controller_health": {
+      "passed": true,
+      "accepted_arm_statuses": [
+        0,
+        2
+      ],
+      "raw_states": [
+        {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        },
+        {
+          "arm_status": 2,
+          "motion_status": 0,
+          "ctrl_mode": 1,
+          "err_code": 0
+        }
+      ],
+      "evidence": "/home/user/wq/nero_act_transfer_resume_20261021/evidence/hardware_requests/20261021_203800/status2_policy_health.json"
+    },
+    "original_six": {
+      "passed": false,
+      "passed_count": 5,
+      "total": 6
+    },
+    "qualified_live_observation": {
+      "passed": false,
+      "camera_exposure_clock_verified": false,
+      "geometry_verified": false
+    },
+    "qualified_motion_entry": {
+      "passed": false,
+      "entry": "/home/user/wq/nero_act_grouped_gripper_20261021/executor/visual_run.py",
+      "note": "Visual transport/core components exist; current CLI still rejects --execute; legacy fixed trial is bound to run27, not this15D checkpoint"
+    }
+  },
+  "execution_ready": false,
+  "motion_sent": false,
+  "controller_reset_sent": false,
+  "status2_alone_is_not_a_blocker": true,
+  "guards_other_than_status2_unchanged": true,
+  "source_sha256": {
+    "/home/user/wq/nero_act_transfer_resume_20261021/robot_health.py": "8dddedb530df7d452c8b6432c732dec94329dc2327b7481398948b211cdc886e",
+    "/home/user/wq/nero_act_transfer_resume_20261021/tests/test_robot_health.py": "5a41d6cee1c827c1a010e090241bf5ea9bf86529b4233326ff1e60b8fb933ae2",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/config/retained_nominal_training_calibration.json": "d2a63855708dce1ad4eaafb34b79f215c63ca8a8d6fd44d74d9c90a9ec645bde",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/executor/visual_run.py": "451532fe10d3ba34aa6d12dfdf38880282d6f507d7c108500e51da7a24cd682f",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/executor/visual_dispatch.py": "7f92bc4f76e2784c1664b2a16901c3f47928d90e9a76def6bb936ef9a390c1da",
+    "/home/user/wq/nero_act_transfer_resume_20261021/evidence/hardware_requests/20261021_203800/status2_policy_health.json": "916ab0df6fdce7470d9ed9e0992fb60723cfa03a6e6b6d479d9e061e5952d619"
+  }
+}

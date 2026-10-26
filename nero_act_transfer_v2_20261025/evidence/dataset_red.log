@@ -1,0 +1,55 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+______ test_last_window_masks_missing_future_instead_of_repeating_target _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-122/test_last_window_masks_missing0')
+
+    def test_last_window_masks_missing_future_instead_of_repeating_target(tmp_path):
+>       from dataset import V2Dataset,fit_statistics
+E       ModuleNotFoundError: No module named 'dataset'
+
+tests/test_dataset.py:7: ModuleNotFoundError
+________ test_dataset_rejects_changed_source_and_future_feedback_proxy _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-122/test_dataset_rejects_changed_s0')
+
+    def test_dataset_rejects_changed_source_and_future_feedback_proxy(tmp_path):
+        import h5py
+>       from dataset import V2Dataset,fit_statistics
+E       ModuleNotFoundError: No module named 'dataset'
+
+tests/test_dataset.py:19: ModuleNotFoundError
+______________ test_statistics_are_from_explicit_train_paths_only ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-122/test_statistics_are_from_expli0')
+
+    def test_statistics_are_from_explicit_train_paths_only(tmp_path):
+>       from dataset import fit_statistics
+E       ModuleNotFoundError: No module named 'dataset'
+
+tests/test_dataset.py:29: ModuleNotFoundError
+______ test_preflight_does_not_allow_missing_data_or_cpu_formal_training _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-122/test_preflight_does_not_allow_0')
+
+    def test_preflight_does_not_allow_missing_data_or_cpu_formal_training(tmp_path):
+>       from train import preflight
+E       ModuleNotFoundError: No module named 'train'
+
+tests/test_training_entry.py:5: ModuleNotFoundError
+___________________ test_training_cli_defaults_to_check_only ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-122/test_training_cli_defaults_to_0')
+
+    def test_training_cli_defaults_to_check_only(tmp_path):
+>       from train import parse_arguments
+E       ModuleNotFoundError: No module named 'train'
+
+tests/test_training_entry.py:12: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_dataset.py::test_last_window_masks_missing_future_instead_of_repeating_target
+FAILED tests/test_dataset.py::test_dataset_rejects_changed_source_and_future_feedback_proxy
+FAILED tests/test_dataset.py::test_statistics_are_from_explicit_train_paths_only
+FAILED tests/test_training_entry.py::test_preflight_does_not_allow_missing_data_or_cpu_formal_training
+FAILED tests/test_training_entry.py::test_training_cli_defaults_to_check_only
+5 failed in 0.12s

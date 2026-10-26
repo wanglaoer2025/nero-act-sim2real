@@ -1,0 +1,30 @@
+{
+  "run": "run18_alignment_recovery",
+  "stage": "nominal_failed_no_deployment",
+  "hardware_connected": false,
+  "hardware_deployment_allowed": false,
+  "steps": [
+    {
+      "stage": "training",
+      "exit_code": 0,
+      "log": "/home/user/wq/nero_act_alignment_recovery_20261018/evidence/run18_training.log"
+    },
+    {
+      "stage": "export",
+      "exit_code": 0,
+      "log": "/home/user/wq/nero_act_alignment_recovery_20261018/evidence/run18_export.log"
+    },
+    {
+      "stage": "nominal",
+      "exit_code": 0,
+      "log": "/home/user/wq/nero_act_alignment_recovery_20261018/evidence/run18_nominal.log"
+    }
+  ],
+  "independent_definition_sha256": "83ce2c3db1f019e9518d0178be03acc869b0e93fd93c3fad9a67ac39556c8413",
+  "elapsed_s": 1446.308114993968,
+  "child_pid": 1879382,
+  "nominal": {
+    "passed": 0,
+    "total": 1
+  }
+}

@@ -1,0 +1,980 @@
+{
+  "complete": true,
+  "optimizer_updates": 0,
+  "training_episodes": 52,
+  "weighted_training_rows": 68025,
+  "ordinary_sample_visits": 32000,
+  "visits_by_recovery_role_and_stage": {
+    "base": {
+      "approach": 1582,
+      "descend": 1060,
+      "close": 5655,
+      "lift": 2482,
+      "carry": 778,
+      "place": 1004,
+      "release": 998,
+      "retreat": 1028,
+      "settle": 836
+    },
+    "pre_close": {
+      "close": 3469,
+      "lift": 872,
+      "carry": 463,
+      "place": 618,
+      "release": 189,
+      "retreat": 618,
+      "settle": 126
+    },
+    "hold_to_lift": {
+      "lift": 4013,
+      "carry": 382,
+      "place": 478,
+      "release": 141,
+      "retreat": 500,
+      "settle": 85
+    },
+    "support_release": {
+      "release": 537,
+      "retreat": 366,
+      "settle": 72
+    },
+    "release_retreat": {
+      "retreat": 2254,
+      "settle": 61
+    },
+    "approach": {
+      "descend": 440,
+      "close": 318,
+      "lift": 168,
+      "carry": 93,
+      "place": 131,
+      "release": 39,
+      "retreat": 124,
+      "settle": 20
+    }
+  },
+  "selected_teacher_windows": [
+    {
+      "episode": "episode_2016",
+      "start": 5,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58760,
+      "weighted_rows": 3,
+      "training_visits": 61,
+      "width_mm": 94.9999988079071,
+      "previous_mm": 94.9999988079071,
+      "label_prefix_mm": [
+        94.79999542236328,
+        94.59999203681946
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.20000338554382324,
+        0.4000067710876465
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 6,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58763,
+      "weighted_rows": 3,
+      "training_visits": 52,
+      "width_mm": 94.79675441980362,
+      "previous_mm": 94.79999542236328,
+      "label_prefix_mm": [
+        94.59999203681946,
+        94.39998865127563
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.19676238298416138,
+        0.3967657685279846
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 7,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58766,
+      "weighted_rows": 3,
+      "training_visits": 59,
+      "width_mm": 94.59654986858368,
+      "previous_mm": 94.59999203681946,
+      "label_prefix_mm": [
+        94.39998865127563,
+        94.19998526573181
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.19656121730804443,
+        0.3965646028518677
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 8,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58769,
+      "weighted_rows": 6,
+      "training_visits": 142,
+      "width_mm": 94.44580227136612,
+      "previous_mm": 94.39998865127563,
+      "label_prefix_mm": [
+        94.19998526573181,
+        93.99998188018799
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.24581700563430786,
+        0.4458203911781311
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 9,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58775,
+      "weighted_rows": 6,
+      "training_visits": 111,
+      "width_mm": 94.30116415023804,
+      "previous_mm": 94.19998526573181,
+      "label_prefix_mm": [
+        93.99998188018799,
+        93.79997849464417
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.30118227005004883,
+        0.5011856555938721
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 10,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58781,
+      "weighted_rows": 6,
+      "training_visits": 1,
+      "width_mm": 94.130739569664,
+      "previous_mm": 93.99998188018799,
+      "label_prefix_mm": [
+        93.79997849464417,
+        93.59997510910034
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.3307610750198364,
+        0.5307644605636597
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 15,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58811,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 93.30262988805771,
+      "previous_mm": 92.99996495246887,
+      "label_prefix_mm": [
+        92.79996156692505,
+        92.59995818138123
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.5026683211326599,
+        0.7026717066764832
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 20,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58841,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 92.47677773237228,
+      "previous_mm": 91.99994802474976,
+      "label_prefix_mm": [
+        91.79994463920593,
+        91.59994125366211
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.6768330931663513,
+        0.8768364787101746
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 30,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 58901,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 90.63467383384705,
+      "previous_mm": 89.99991416931152,
+      "label_prefix_mm": [
+        89.7999107837677,
+        89.59990739822388
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.8347630500793457,
+        1.034766435623169
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 50,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 59021,
+      "weighted_rows": 6,
+      "training_visits": 0,
+      "width_mm": 86.73887699842453,
+      "previous_mm": 85.99984645843506,
+      "label_prefix_mm": [
+        85.79984307289124,
+        85.59983968734741
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.9390339255332947,
+        1.139037311077118
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 100,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 59321,
+      "weighted_rows": 6,
+      "training_visits": 1,
+      "width_mm": 76.95562392473221,
+      "previous_mm": 75.9996771812439,
+      "label_prefix_mm": [
+        75.79967379570007,
+        75.59967041015625
+      ],
+      "label_prefix_closing_margin_mm": [
+        1.155950129032135,
+        1.3559535145759583
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 120,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 59441,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 74.47443902492523,
+      "previous_mm": 71.99960947036743,
+      "label_prefix_mm": [
+        71.79960608482361,
+        71.59960269927979
+      ],
+      "label_prefix_closing_margin_mm": [
+        2.6748329401016235,
+        2.8748363256454468
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2016",
+      "start": 130,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 59501,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 74.2730125784874,
+      "previous_mm": 69.9995756149292,
+      "label_prefix_mm": [
+        69.79957222938538,
+        69.59956884384155
+      ],
+      "label_prefix_closing_margin_mm": [
+        4.47344034910202,
+        4.6734437346458435
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 5,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61261,
+      "weighted_rows": 6,
+      "training_visits": 120,
+      "width_mm": 74.36571270227432,
+      "previous_mm": 70.87405771017075,
+      "label_prefix_mm": [
+        70.67405432462692,
+        70.4740509390831
+      ],
+      "label_prefix_closing_margin_mm": [
+        3.6916583776474,
+        3.891661763191223
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 6,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61267,
+      "weighted_rows": 6,
+      "training_visits": 138,
+      "width_mm": 74.35040175914764,
+      "previous_mm": 70.67405432462692,
+      "label_prefix_mm": [
+        70.4740509390831,
+        70.27404755353928
+      ],
+      "label_prefix_closing_margin_mm": [
+        3.8763508200645447,
+        4.076354205608368
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 7,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61273,
+      "weighted_rows": 6,
+      "training_visits": 127,
+      "width_mm": 74.33001697063446,
+      "previous_mm": 70.4740509390831,
+      "label_prefix_mm": [
+        70.27404755353928,
+        70.07404416799545
+      ],
+      "label_prefix_closing_margin_mm": [
+        4.055969417095184,
+        4.255972802639008
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 8,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61279,
+      "weighted_rows": 12,
+      "training_visits": 216,
+      "width_mm": 74.30676370859146,
+      "previous_mm": 70.27404755353928,
+      "label_prefix_mm": [
+        70.07404416799545,
+        69.87404078245163
+      ],
+      "label_prefix_closing_margin_mm": [
+        4.232719540596008,
+        4.4327229261398315
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 9,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61291,
+      "weighted_rows": 12,
+      "training_visits": 239,
+      "width_mm": 74.28517192602158,
+      "previous_mm": 70.07404416799545,
+      "label_prefix_mm": [
+        69.87404078245163,
+        69.6740373969078
+      ],
+      "label_prefix_closing_margin_mm": [
+        4.411131143569946,
+        4.6111345291137695
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 10,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61303,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 74.26285743713379,
+      "previous_mm": 69.87404078245163,
+      "label_prefix_mm": [
+        69.6740373969078,
+        69.47403401136398
+      ],
+      "label_prefix_closing_margin_mm": [
+        4.588820040225983,
+        4.788823425769806
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 15,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61325,
+      "weighted_rows": 4,
+      "training_visits": 0,
+      "width_mm": 74.1579458117485,
+      "previous_mm": 68.87402385473251,
+      "label_prefix_mm": [
+        68.67402046918869,
+        68.47401708364487
+      ],
+      "label_prefix_closing_margin_mm": [
+        5.4839253425598145,
+        5.683928728103638
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2017",
+      "start": 20,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61345,
+      "weighted_rows": 6,
+      "training_visits": 6,
+      "width_mm": 74.06336069107056,
+      "previous_mm": 67.87400722503662,
+      "label_prefix_mm": [
+        67.67400354146957,
+        67.47400015592575
+      ],
+      "label_prefix_closing_margin_mm": [
+        6.389357149600983,
+        6.589360535144806
+      ],
+      "label_next_command_change_mm": -0.4000070691108637
+    },
+    {
+      "episode": "episode_2017",
+      "start": 30,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61367,
+      "weighted_rows": 6,
+      "training_visits": 3,
+      "width_mm": 73.92118871212006,
+      "previous_mm": 65.93085825443268,
+      "label_prefix_mm": [
+        65.92118740081787,
+        65.89775532484055
+      ],
+      "label_prefix_closing_margin_mm": [
+        8.000001311302185,
+        8.02343338727951
+      ],
+      "label_next_command_change_mm": -0.03310292959213257
+    },
+    {
+      "episode": "episode_2017",
+      "start": 50,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61379,
+      "weighted_rows": 6,
+      "training_visits": 4,
+      "width_mm": 73.81939888000488,
+      "previous_mm": 65.81959843635559,
+      "label_prefix_mm": [
+        65.8193975687027,
+        65.81920385360718
+      ],
+      "label_prefix_closing_margin_mm": [
+        8.000001311302185,
+        8.000195026397705
+      ],
+      "label_next_command_change_mm": -0.0003945827484197473
+    },
+    {
+      "episode": "episode_2017",
+      "start": 100,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61409,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 73.81381839513779,
+      "previous_mm": 65.81389874219894,
+      "label_prefix_mm": [
+        65.8138245344162,
+        65.81374257802963
+      ],
+      "label_prefix_closing_margin_mm": [
+        7.999993860721588,
+        8.000075817108154
+      ],
+      "label_next_command_change_mm": -0.00015616416931818478
+    },
+    {
+      "episode": "episode_2017",
+      "start": 120,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61421,
+      "weighted_rows": 6,
+      "training_visits": 3,
+      "width_mm": 73.81235063076019,
+      "previous_mm": 65.81242382526398,
+      "label_prefix_mm": [
+        65.81234931945801,
+        65.81228226423264
+      ],
+      "label_prefix_closing_margin_mm": [
+        8.000001311302185,
+        8.000068366527557
+      ],
+      "label_next_command_change_mm": -0.00014156103134155273
+    },
+    {
+      "episode": "episode_2017",
+      "start": 130,
+      "stage": "lift",
+      "role": "hold_to_lift",
+      "example_index": 61427,
+      "weighted_rows": 6,
+      "training_visits": 1,
+      "width_mm": 73.81167262792587,
+      "previous_mm": 65.81173092126846,
+      "label_prefix_mm": [
+        65.81167131662369,
+        65.81160426139832
+      ],
+      "label_prefix_closing_margin_mm": [
+        8.000001311302185,
+        8.000068366527557
+      ],
+      "label_next_command_change_mm": -0.00012665987014770508
+    },
+    {
+      "episode": "episode_2018",
+      "start": 5,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62885,
+      "weighted_rows": 3,
+      "training_visits": 74,
+      "width_mm": 74.50731843709946,
+      "previous_mm": 72.50694185495377,
+      "label_prefix_mm": [
+        72.30693846940994,
+        72.10693508386612
+      ],
+      "label_prefix_closing_margin_mm": [
+        2.200379967689514,
+        2.4003833532333374
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 6,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62888,
+      "weighted_rows": 3,
+      "training_visits": 64,
+      "width_mm": 74.48593527078629,
+      "previous_mm": 72.30693846940994,
+      "label_prefix_mm": [
+        72.10693508386612,
+        71.9069316983223
+      ],
+      "label_prefix_closing_margin_mm": [
+        2.379000186920166,
+        2.5790035724639893
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 7,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62891,
+      "weighted_rows": 3,
+      "training_visits": 55,
+      "width_mm": 74.45447891950607,
+      "previous_mm": 72.10693508386612,
+      "label_prefix_mm": [
+        71.9069316983223,
+        71.70692831277847
+      ],
+      "label_prefix_closing_margin_mm": [
+        2.547547221183777,
+        2.7475506067276
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 8,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62894,
+      "weighted_rows": 6,
+      "training_visits": 118,
+      "width_mm": 74.4268000125885,
+      "previous_mm": 71.9069316983223,
+      "label_prefix_mm": [
+        71.70692831277847,
+        71.50692492723465
+      ],
+      "label_prefix_closing_margin_mm": [
+        2.719871699810028,
+        2.9198750853538513
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 9,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62900,
+      "weighted_rows": 6,
+      "training_visits": 114,
+      "width_mm": 74.40395653247833,
+      "previous_mm": 71.70692831277847,
+      "label_prefix_mm": [
+        71.50692492723465,
+        71.30692154169083
+      ],
+      "label_prefix_closing_margin_mm": [
+        2.897031605243683,
+        3.097034990787506
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 10,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62906,
+      "weighted_rows": 6,
+      "training_visits": 1,
+      "width_mm": 74.38261061906815,
+      "previous_mm": 71.50692492723465,
+      "label_prefix_mm": [
+        71.30692154169083,
+        71.106918156147
+      ],
+      "label_prefix_closing_margin_mm": [
+        3.0756890773773193,
+        3.2756924629211426
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 15,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62936,
+      "weighted_rows": 6,
+      "training_visits": 4,
+      "width_mm": 74.2795541882515,
+      "previous_mm": 70.50690799951553,
+      "label_prefix_mm": [
+        70.30690461397171,
+        70.10690122842789
+      ],
+      "label_prefix_closing_margin_mm": [
+        3.972649574279785,
+        4.172652959823608
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 20,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 62966,
+      "weighted_rows": 6,
+      "training_visits": 2,
+      "width_mm": 74.18101280927658,
+      "previous_mm": 69.50689107179642,
+      "label_prefix_mm": [
+        69.3068876862526,
+        69.10688430070877
+      ],
+      "label_prefix_closing_margin_mm": [
+        4.874125123023987,
+        5.07412850856781
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2018",
+      "start": 30,
+      "stage": "close",
+      "role": "pre_close",
+      "example_index": 63026,
+      "weighted_rows": 6,
+      "training_visits": 3,
+      "width_mm": 74.11613315343857,
+      "previous_mm": 67.50685721635818,
+      "label_prefix_mm": [
+        67.30685383081436,
+        67.10685044527054
+      ],
+      "label_prefix_closing_margin_mm": [
+        6.8092793226242065,
+        7.00928270816803
+      ],
+      "label_next_command_change_mm": -0.4000067710876465
+    },
+    {
+      "episode": "episode_2019",
+      "start": 5,
+      "stage": "descend",
+      "role": "approach",
+      "example_index": 64720,
+      "weighted_rows": 1,
+      "training_visits": 18,
+      "width_mm": 94.9999988079071,
+      "previous_mm": 94.9999988079071,
+      "label_prefix_mm": [
+        94.9999988079071,
+        94.9999988079071
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.0,
+        0.0
+      ],
+      "label_next_command_change_mm": 0.0
+    },
+    {
+      "episode": "episode_2019",
+      "start": 6,
+      "stage": "descend",
+      "role": "approach",
+      "example_index": 64721,
+      "weighted_rows": 1,
+      "training_visits": 27,
+      "width_mm": 94.9999988079071,
+      "previous_mm": 94.9999988079071,
+      "label_prefix_mm": [
+        94.9999988079071,
+        94.9999988079071
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.0,
+        0.0
+      ],
+      "label_next_command_change_mm": 0.0
+    },
+    {
+      "episode": "episode_2019",
+      "start": 7,
+      "stage": "descend",
+      "role": "approach",
+      "example_index": 64722,
+      "weighted_rows": 1,
+      "training_visits": 17,
+      "width_mm": 94.9999988079071,
+      "previous_mm": 94.9999988079071,
+      "label_prefix_mm": [
+        94.9999988079071,
+        94.9999988079071
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.0,
+        0.0
+      ],
+      "label_next_command_change_mm": 0.0
+    },
+    {
+      "episode": "episode_2019",
+      "start": 8,
+      "stage": "descend",
+      "role": "approach",
+      "example_index": 64723,
+      "weighted_rows": 2,
+      "training_visits": 56,
+      "width_mm": 94.9999988079071,
+      "previous_mm": 94.9999988079071,
+      "label_prefix_mm": [
+        94.9999988079071,
+        94.9999988079071
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.0,
+        0.0
+      ],
+      "label_next_command_change_mm": 0.0
+    },
+    {
+      "episode": "episode_2019",
+      "start": 9,
+      "stage": "descend",
+      "role": "approach",
+      "example_index": 64725,
+      "weighted_rows": 2,
+      "training_visits": 38,
+      "width_mm": 94.9999988079071,
+      "previous_mm": 94.9999988079071,
+      "label_prefix_mm": [
+        94.9999988079071,
+        94.9999988079071
+      ],
+      "label_prefix_closing_margin_mm": [
+        0.0,
+        0.0
+      ],
+      "label_next_command_change_mm": 0.0
+    }
+  ],
+  "nearest_training_inputs": [
+    {
+      "case": "nominal_pre_close",
+      "query": 0,
+      "nearest_episode": "episode_2016",
+      "nearest_start": 5,
+      "example_index": 58760,
+      "normalized_max_difference": 0.0,
+      "normalized_L2_difference": 0.0,
+      "current_width_mm": 94.9999988079071,
+      "current_previous_mm": 94.9999988079071,
+      "nearest_label_prefix_mm": [
+        94.79999542236328,
+        94.59999203681946
+      ]
+    },
+    {
+      "case": "nominal_pre_close",
+      "query": 199,
+      "nearest_episode": "episode_2018",
+      "nearest_start": 5,
+      "example_index": 62885,
+      "normalized_max_difference": 0.009251385927200317,
+      "normalized_L2_difference": 0.015024934895336628,
+      "current_width_mm": 74.55265522003174,
+      "current_previous_mm": 72.64479249715805,
+      "nearest_label_prefix_mm": [
+        72.30693846940994,
+        72.10693508386612
+      ]
+    },
+    {
+      "case": "nominal_hold_to_lift",
+      "query": 0,
+      "nearest_episode": "episode_2017",
+      "nearest_start": 5,
+      "example_index": 61261,
+      "normalized_max_difference": 2.086162567138672e-07,
+      "normalized_L2_difference": 3.024605348400655e-07,
+      "current_width_mm": 74.36571270227432,
+      "current_previous_mm": 70.87405771017075,
+      "nearest_label_prefix_mm": [
+        70.67405432462692,
+        70.4740509390831
+      ]
+    },
+    {
+      "case": "nominal_hold_to_lift",
+      "query": 1,
+      "nearest_episode": "episode_2017",
+      "nearest_start": 5,
+      "example_index": 61261,
+      "normalized_max_difference": 0.00842362642288208,
+      "normalized_L2_difference": 0.010385158471763134,
+      "current_width_mm": 74.36510920524597,
+      "current_previous_mm": 70.95769047737122,
+      "nearest_label_prefix_mm": [
+        70.67405432462692,
+        70.4740509390831
+      ]
+    }
+  ],
+  "source_sha256": {
+    "/home/user/wq/nero_act_optimizer_fixed_20261021/training/pilot_A/config.json": "dd5efa6f0f80d1cf5125568dea56ab85130b87661380e470ef43cb0bf66b9d33",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/dataset_stats.pkl": "e8e3cb0a294bd192e831f4cf22f0ba3f2a8fb3970172081ed7b5893d4eee335d",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/manifest.json": "a1cf9e237c0d058fc3b8a7f30e741018ba7299be2de59494de679fd56caeb148",
+    "/home/user/wq/nero_act_optimizer_control_20261021/training_data/filtered_v1/batch_order_pilot.npy": "d9a40473fdda605a39bac4e5e9213481b5b468470e219dac02a11b92e3df3940",
+    "/home/user/wq/nero_act_root_cause_20261021/evidence/audit_training.py": "9d8c0211332477c275f9f2e755015f1702485bf19df3ce56260445e2fbb4df7a",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_0.hdf5": "71590fe7b7c909a33c8100010bd2b19752082f96a8702eb7d5528b9cc93a48af",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_1.hdf5": "6911ab339bd484c95bcfcaae2840adcca723e4933753fde72c4384172a590ba3",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2.hdf5": "df3cee145eb6b2cc4ae5d061f87344c0d667f3d19187b8a40b5b01b8709ad9b5",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_3.hdf5": "1ffcec8e706a066038b61bac5c0285713b71e7d29ea09695f7f41dc8bd88d184",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_4.hdf5": "1fd02d689bb7868af70ecc9b9381b3b33336d610ddae1a3da0c4b1b95551a5f6",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_5.hdf5": "b2f0ad8a1689f913ce4affe9595f0d7ab4c1110fcc01e06e89e4a5d3be9e43ba",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_6.hdf5": "47552cffc50af4f3c4f43aebd135cacb12ea785f046e9c2410574af7f10f1895",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_7.hdf5": "ac0a6b88a50b7f041c1ebd0e0ed9d5f7d749493ac9fefd9dd4f29e9964f43b3e",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_8.hdf5": "e6dee913c206cbd5b38424f8d6a698e229f4c99b028ee216fc14909c4d47a710",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_9.hdf5": "42f3ae52b76329622702bb83a71306b3c96fbf2f91ba243dbf8c77be93aa7fbf",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_10.hdf5": "f9552f8aa55107546df40e61d59e594b4b3020756100d015d749f2bda4001cc3",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_11.hdf5": "c932cfef50ba2700ba4c450ffc8a80c816fdceb132ed95ffba9013cc52fa35d7",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_12.hdf5": "ffe3a8b11ed4326dbe936e7d6c2176f788a6a0dd5e63c41f845ceacc1fe5057c",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_13.hdf5": "6b2004ac825f87ea1601a3a7f6dc255131cd50b374bed717a9193f6ccee0bc13",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_14.hdf5": "dc5ec2000a6340768da2d05caf224fcdf46bef50f17af7bdf1c7f554a042a8f8",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_15.hdf5": "b71ce11ce3891ab426a6f7fa0a4403688a63d128fddffbde8aadafe606765968",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_16.hdf5": "4a9cc71360b5ab3c05941663dc0f1c47e988fb948c71bc432a660c3e9017cd0c",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_17.hdf5": "e1b662073a7ea33963455189156a874b979ebd8a83bf9ab42d7524bd8e4dc760",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_18.hdf5": "d2e5844996048a1cb6239ad0698aeb4ccb56618e2abfdcb20935ada8c8e880b3",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_19.hdf5": "ef8b0e5038bbbed269293213c85513ac9d466f805da493219a3ea134aac8b70a",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_20.hdf5": "7466d3e432f15964ce06f0d75c683c43858984635f473dde68f89e011deb5569",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_21.hdf5": "22b36889b5328bf87f1aa8044ee18e5cbb8da5a5542c66e211ef28e8e69f8971",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_22.hdf5": "b6f6b0fb1cca317aa03832ffa33cc3ce3c4e6a38dd0c230ace77c1d6b2e0879e",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_23.hdf5": "3f631317af585f4c1980a63951e7dfdc112a0758d40629c90fa49a9c0c1b1768",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_24.hdf5": "2b9ac2a97f99627d018dc54c6f97a57c28b2c1b96b51bc72343409d9adea12a8",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_25.hdf5": "8a131ac74a714fcd977716eb3acb2bc35ff666b5ee83fe33bc2d34bea8d3244b",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_26.hdf5": "68287ecbc7ae84f63675bbb083c75f2a28184c63d37bb501d4b5f11d2803d06c",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_27.hdf5": "5d55317481002ffeda5ac996cea45a53142e46e059032e658f3e410e37b5dafe",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_28.hdf5": "618f7654db9943b41462dc6679b328767eb52df5a598ffef76d9ad9750c02909",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_29.hdf5": "f0752a4495faf1b307dcb54c6e3dece59be097cb883ab8ef59c8fbd053c2517a",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_30.hdf5": "d2021fa8d723429767f613b944b65880ee49f59150a3c6a943f8d3b262ed4b39",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_31.hdf5": "2fff2767173b3d1b200e695c19a470aa61617d8fd95d51bf148076f687e24c50",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_32.hdf5": "ee675de35b9b6f5da6eff8b8e75fb70f58948c73b8679eac0ab712402e16a062",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_33.hdf5": "a3dc1f1fd8a946f49aeed104c84900da35ab911da569838308b40bafe956c536",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_34.hdf5": "2d740ffe1a351ec80a60e0ce5c695ad59ede00e49aa600a89d8b218d7fe6a133",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_35.hdf5": "4da81cdc336d89b584dc8ceef2511b8e59e10da414856fd0010c39fcb22cb472",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2000.hdf5": "ff4a84e8d138d3bcf9b8b6c3ef966d888cfc4643975c012579d28356041ddac1",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2001.hdf5": "646701cb21e049cb0cfd0dea39fcac7a78b4609e6b5ec9e84ebeb06e59bf0496",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2002.hdf5": "088a778ca56ae716892b698ec27ef593aef7e4f921e2a19e6dd5e20f9b237364",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2003.hdf5": "0b04547d8438ac2c1443c1622a621d87fadae1ade88c50b8fcd828d5300453e0",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2004.hdf5": "142c1ab9ddc729447f6190aa35949cb57d0371be08e9522a2af2fcae0afbf896",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2005.hdf5": "423b6a39654c8bd023584c2d587a2617cf02aa943e7ed5057fc40b539f5227e2",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2006.hdf5": "ae14fc86d89ee58589a61b2131248df2adddb6559735cbee3a9c9dc62dcbc012",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2007.hdf5": "4e8182c0e3ba9be16deebc50c5df62449ab584de21495db9f5e6ad2256bcc563",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2008.hdf5": "cfe4acd7a49608b66806e0b848a4002624108f723966a6c86ecc9f312be72e57",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2009.hdf5": "5078d3802a7f9a2245c408e47072d3535226d1094b6a045bde07778552cac2e2",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2010.hdf5": "c2264d0330ae627c98c957fd6084a0b7e803b1eb61a9d061d392e653eb6f83c6",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2011.hdf5": "05d3d9ddd13a4601c1d94e8ef9ad43412c8017da9055d7baf6a3e8b65c8568fd",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2016.hdf5": "5833e41bac4dd3309351fec0849249669a1486b8db0769db86666a91135d6532",
+    "/home/user/wq/nero_act_history_feedback_20261019/training_data/history_complete_v1/episode_2017.hdf5": "f8c05c2ed64d9cfeb2a01fa50795b00246a7e4c7c8d53fb0207f46f628cf7d40",
+    "/home/user/wq/nero_act_contact_recovery_20261020/training_data/contact_complete_v1/episode_2018.hdf5": "5c813471dc74382f529d22c333171bebefaf981bf6f38c1ec8870f220ff606fe",
+    "/home/user/wq/nero_act_approach_recovery_20261020/training_data/approach_complete_v1/episode_2019.hdf5": "2c19b1389f0a8beb682bac591ca0a0e052382c7b925abe873796dcb7a9fd24cc"
+  },
+  "hardware_commands_sent": false
+}

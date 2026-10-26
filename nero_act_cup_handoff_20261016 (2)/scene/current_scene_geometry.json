@@ -1,0 +1,111 @@
+{
+  "motion_sent": false,
+  "robot_sdk_connected": false,
+  "input_frame": "RGB upright 640x360; already rotated180 exactly once",
+  "camera_K_native_scaled_to_640": [
+    [
+      263.6944274902344,
+      0.0,
+      323.5845031738281
+    ],
+    [
+      0.0,
+      263.6944274902344,
+      179.91903686523438
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "base_from_camera": [
+    [
+      -0.072697737738461,
+      0.45922912341725763,
+      0.8853381563747986,
+      -888.9602486428704
+    ],
+    [
+      0.9965659610030485,
+      -0.0018341655365573496,
+      0.08278237256116336,
+      -93.12566151992355
+    ],
+    [
+      0.03963993312028583,
+      0.8883159618301375,
+      -0.4575187730137615,
+      315.2114291079937
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "calibration_file": "/home/user/projects/nero/config/camera_to_base.json",
+  "calibration_sha256": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be",
+  "calibration_independently_validated": false,
+  "table_top_z_mm": -10.0,
+  "table_z_provenance": "retained user10mm base mounting support; base datum assumption, not fresh independent survey",
+  "cup_dimensions_mm": {
+    "diameter": 75.0,
+    "height": 95.0
+  },
+  "cup_mass_g": 50.0,
+  "current_state": [
+    0.2238210290670395,
+    -0.11719886213541031,
+    0.1344776153564453,
+    1.5640244483947754,
+    -0.01473057921975851,
+    0.25787240266799927,
+    0.15002849698066711,
+    0.06011199951171875
+  ],
+  "recorded_state_span": [
+    0.0001919865608215332,
+    0.0,
+    0.0,
+    0.00010466575622558594,
+    6.981287151575089e-05,
+    0.00012218952178955078,
+    0.00012217462062835693,
+    0.00011199712753295898
+  ],
+  "cup_detections": 1,
+  "blue_detections": 0,
+  "geometry_valid_for_motion": false,
+  "source_bottom_visual_estimate_mm": [
+    -512.4589093631635,
+    -20.848633498434555,
+    -10.0
+  ],
+  "source_cup_centre_visual_estimate_mm": [
+    -512.4589093631635,
+    -20.848633498434555,
+    37.5
+  ],
+  "cylinder_fit_rmse_px": 2.594689209560364,
+  "observed_cup_box": [
+    268.91595458984375,
+    184.62283325195312,
+    321.78863525390625,
+    257.2774658203125
+  ],
+  "projected_cup_box": [
+    271.9548389546243,
+    187.08912399492667,
+    318.5022650563657,
+    256.37634924063565
+  ],
+  "status": "provisional_scene_alignment_only; absolute base geometry not independently verified",
+  "destination_cup_centre_visual_estimate_mm": [
+    -514.6247758930626,
+    -218.71507264613905,
+    37.499999999999986
+  ],
+  "destination_localization_method": "HSV blue quadrilateral/table-plane ray intersection; provisional only"
+}

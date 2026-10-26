@@ -1,0 +1,41 @@
+test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact (tests.test_generalization.GeneralizationTests.test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact) ... FAIL
+test_scene_groups_cover_centimetres_without_train_validation_duplicates (tests.test_generalization.GeneralizationTests.test_scene_groups_cover_centimetres_without_train_validation_duplicates) ... FAIL
+test_manifest_requires_complete_verified_unique_groups_and36_12_split (tests.test_generalized_training.GeneralizedTrainingTests.test_manifest_requires_complete_verified_unique_groups_and36_12_split) ... FAIL
+test_rebased_context_model_preserves_physical_predictions_with_new_statistics (tests.test_generalized_training.GeneralizedTrainingTests.test_rebased_context_model_preserves_physical_predictions_with_new_statistics) ... FAIL
+
+======================================================================
+FAIL: test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact (tests.test_generalization.GeneralizationTests.test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_generalization.py", line 28, in test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact
+    self.assertIsNotNone(importlib.util.find_spec('simulation.generalization'))
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_scene_groups_cover_centimetres_without_train_validation_duplicates (tests.test_generalization.GeneralizationTests.test_scene_groups_cover_centimetres_without_train_validation_duplicates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_generalization.py", line 11, in test_scene_groups_cover_centimetres_without_train_validation_duplicates
+    self.assertIsNotNone(importlib.util.find_spec('simulation.generalization'))
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_manifest_requires_complete_verified_unique_groups_and36_12_split (tests.test_generalized_training.GeneralizedTrainingTests.test_manifest_requires_complete_verified_unique_groups_and36_12_split)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_generalized_training.py", line 36, in test_manifest_requires_complete_verified_unique_groups_and36_12_split
+    self.assertIsNotNone(importlib.util.find_spec('training.generalized'))
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_rebased_context_model_preserves_physical_predictions_with_new_statistics (tests.test_generalized_training.GeneralizedTrainingTests.test_rebased_context_model_preserves_physical_predictions_with_new_statistics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_generalized_training.py", line 11, in test_rebased_context_model_preserves_physical_predictions_with_new_statistics
+    self.assertIsNotNone(importlib.util.find_spec('training.rebase_initializer'))
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=4)

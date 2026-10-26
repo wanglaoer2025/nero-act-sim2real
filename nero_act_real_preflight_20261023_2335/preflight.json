@@ -1,0 +1,63 @@
+{
+  "verified_utc": "2026-10-23T15:42:39.672025+00:00",
+  "request": "下发ACT真机抓放",
+  "status": "blocked_before_motion",
+  "readonly_ROS_CAN_feedback_restored": true,
+  "driver_pid": 630956,
+  "ros_domain_id": 42,
+  "driver_runtime_CAN_send_blocked": true,
+  "control_enabled_at_driver_start": false,
+  "physical_arm_status": 0,
+  "physical_error_code": 0,
+  "physical_motion_status": 0,
+  "measured_joint_names": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "joint7",
+    "gripper"
+  ],
+  "measured_joint_positions_rad_and_gripper_m": [
+    0.18324211816688468,
+    -0.12651891747706895,
+    0.10000736613927509,
+    1.5707963267948966,
+    -0.02387610416728243,
+    0.28166123468684495,
+    0.13102186694721432,
+    0.09942
+  ],
+  "gripper_width_m": 0.09942,
+  "can_tx_before": 226068,
+  "can_tx_after_feedback": 226068,
+  "camera_fresh_exposures": 20,
+  "current_full_observation_valid": 0,
+  "current_full_observation_checked": 3,
+  "blockers": [
+    "Current RGB-D cup+target frontend rejects all3 native real frames at current card geometry check",
+    "Final RGB-D mechanism stress group12/14 remains below90percent acceptance",
+    "Frozen policy exact-cup diagnostic completes0/5 full flows; verified pick/place target sequence unavailable",
+    "Actual99.42mm opening is outside legal previous command range0..95mm; no actual95mm preparation or paired command context recorded"
+  ],
+  "observation_action_clock_paired": false,
+  "human_onsite_conditions_reconfirmed": false,
+  "hardware_deployment_allowed": false,
+  "hardware_motion_commands_sent": 0,
+  "hardware_gripper_commands_sent": 0,
+  "hardware_enable_reset_commands_sent": 0,
+  "receiver_left_running": true,
+  "source_sha256": {
+    "/home/user/wq/nero_act_real_preflight_20261023_2335/readonly_driver.json": "190af77a6f3876be30a32da387f5de7e4fec5514c03d1265a1d777794e8d62a2",
+    "/home/user/wq/nero_act_real_preflight_20261023_2335/readonly_driver_lifecycle.json": "0164abc0229b130689843c57c7e57d9d383a0726196223147a1f5e29fe3d3cf2",
+    "/home/user/wq/nero_act_real_preflight_20261023_2335/fresh_feedback.json": "e7481df540fb11d60f15c8c3f04553d4c547feae79d5c233e8c0c67a7bd61638",
+    "/home/user/wq/nero_act_real_preflight_20261023_2335/current_observation_check.json": "4840212cb918cf6d9b0c7d96a913e469214a3fac600e90b36b11f1f40f80494a",
+    "/home/user/wq/nero_act_real_preflight_20261023_2335/camera/report.json": "66b65085f419ecbc756e34bb504ef91c51978d03b7fa1973aeb8c5c79debf247",
+    "/home/user/wq/nero_act_observation_repair_20261023/verification.json": "9da4d48c58716c4773681a603d71a2bf20b2e71dd35163ff71499503b95a3bb4",
+    "/home/user/wq/nero_act_observation_repair_20261023/rgbd_observer_results_v2.json": "69d9ec90522401a3a1286477f2f5756a7cbcb1d369a810a46edbc6f997051327",
+    "/home/user/wq/nero_act_observation_repair_20261023/results/summary.json": "66997361b0f8c230a0bab2b424a093ca5888f3de2bb25f4af0318534682166db",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/executor/driver.py": "640a25c79a15392148b762df2f628b70652e5c9bfc4d9efde17957ddc62fd9bc"
+  }
+}

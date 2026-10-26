@@ -1,0 +1,74 @@
+{
+  "request": "查找现在存在的问题并且修正",
+  "status": "已修正数据覆盖及损失配平缺陷；ACT位置反馈机制仍不合格，完整抓放尚未解决",
+  "confirmed_evidence": [
+    {
+      "problem": "位置输入尚未形成可靠纠偏",
+      "evidence": "保持关节姿态，同时改变RGB杯位和数值特征；155.9mm高度处40mm杯位变化，策略X响应0.014mm/Y响应0.0036mm，教师0.465mm/1.714mm",
+      "path": "/home/user/wq/nero_act_position_causality_20261022/coupled_scene_response.json"
+    },
+    {
+      "problem": "下降偏离状态的数据缺口",
+      "evidence": "原新增示教下降段横向误差最大5.60mm，前轮恢复示教最大5.11mm；实际策略失败偏离78.46mm、TCP高度56.96mm",
+      "path": "/home/user/wq/nero_act_position_causality_20261022/relative_error_coverage.json"
+    },
+    {
+      "problem": "旧动作保持项可能压过位置学习",
+      "evidence": "抽查固定批次中，加权保持项对几何投影列及偏置的梯度范数186.97，七轴任务项0.418，约447倍；仅代表该抽查批次",
+      "path": "/home/user/wq/nero_act_position_causality_20261022/shared_gradient_probe.json"
+    }
+  ],
+  "implemented_repairs": [
+    "补充同一姿态多杯位的86条局部物理纠偏前缀：60训练、26验证；另5条接触等检查拒绝。所有前缀明确不代表完整任务成功",
+    "离线教师在低位偏离时先垂直清高，恢复过程保持张爪；不添加运行时手工轨迹控制器",
+    "仅监督真机接口实际执行的前两点，并加入同一标签的可微FK损失",
+    "共享输入投影上的加权保持梯度范数最多为主任务的0.5倍，原423/6项验收和保护阈值保持",
+    "同一RGB+15D/20x8 ACT模型限定1000步训练，视觉和CVAE冻结参数逐项验证未变"
+  ],
+  "evaluation": {
+    "optimizer_updates": 1000,
+    "checkpoint_selection": "fixed_last",
+    "direction_before": {
+      "passed": 1,
+      "total": 7
+    },
+    "direction_after": {
+      "passed": 2,
+      "total": 7
+    },
+    "maximum_prefix_error_before_mm": 3.318033729100854,
+    "maximum_prefix_error_after_mm": 2.5119852065197756,
+    "required_maximum_prefix_error_mm": 0.5,
+    "required_direction_fraction": 0.8,
+    "response_gate_passed": false,
+    "full_task_evaluated": false,
+    "full_task_passed": false,
+    "remaining_failures": [
+      "参考姿态reference_789的4个验证偏移仍下降，没有学会先清高",
+      "actual_low_failure已开始抬高，但3个开发/验证输入仍输出提前闭爪，均由原PhaseGuard拒绝",
+      "当前场景current_710/current_800的杯位响应仍不足教师的25%"
+    ],
+    "fresh_verification": {
+      "source_hashes_verified": 538,
+      "checkpoint_sha256": "519641725f0b22eb70549a154786be3e4c330986ab7f616c76850ce5d3c5b9ab",
+      "actual_updates": 1000,
+      "fresh_response_exactly_matches": true,
+      "response_gate_passed": false,
+      "full_task_evaluated": false,
+      "full_task_passed": false,
+      "hardware_commands_sent": false,
+      "hardware_deployment_allowed": false,
+      "unit_tests_passed": 6,
+      "frozen_parameters_unchanged": true
+    },
+    "direction_metric_definition": "同一姿态改变杯位，方向正确且响应幅度至少为教师响应的25%，两者同时满足才记为达标"
+  },
+  "limits": [
+    "组合修正改善不等于已单独证明每个修改的独立因果贡献",
+    "局部验证共享父姿态，只隔离偏移组；不能声称独立完整任务泛化",
+    "相机/TCP沿用现有名义参数，没有重新验收；本轮证据已在仿真内复现策略弱响应",
+    "未替换现用模型、未下发硬件指令、未放宽保护、未要求新增人工测量"
+  ],
+  "next_focus": "需要重新审查ACT位置条件与动作输出的耦合，分别验证横向响应、低位清高和开爪保持，再进行完整抓放；不得把当前模型升级为真机可用。",
+  "post_training_review": "独立只读复核确认checkpoint与538项源码/数据哈希一致；结果声明及失败后跳过完整评估一致，未发现必须修正的证据错误"
+}

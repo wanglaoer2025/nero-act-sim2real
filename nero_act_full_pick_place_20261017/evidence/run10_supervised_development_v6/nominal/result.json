@@ -1,0 +1,76 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19266551217452482,
+  "maximum_horizontal_transfer_m": 0.17884749792107044,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 736,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5214199666854079,
+      -0.163065636860906,
+      0.04815752428654545
+    ],
+    "tcp_xyz": [
+      -0.5229927983067602,
+      -0.1628721788281008,
+      0.060796328963440435
+    ],
+    "cup_upright": 0.9998137572926936,
+    "cup_speed": 0.0006483402912558876,
+    "bilateral": true,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07394740347663982,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 10,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false,
+    "name": "nominal",
+    "seed": 90000
+  },
+  "frames": 4624,
+  "active_policy_points": 4300,
+  "queries": 433,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_first_close_support_hold_v6",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 780,
+      "active_points": 780,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1341,
+      "active_points": 1220,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 1951,
+      "active_points": 1750,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 4,
+  "runtime_s": 35.4001178489998,
+  "contact_arm_hold_points": 2650
+}

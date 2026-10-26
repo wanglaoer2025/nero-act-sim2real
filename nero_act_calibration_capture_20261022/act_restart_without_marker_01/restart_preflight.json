@@ -1,0 +1,112 @@
+{
+  "time_local": "2026-10-22T21:17:18.226146+08:00",
+  "operator_restored_high_start": true,
+  "operator_removed_marker": true,
+  "SDK_health_source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/robot_health.json",
+  "live_ACT_source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/live_ACT_preview/report.json",
+  "geometry_frontend_passed": false,
+  "completed_live_predictions": 0,
+  "blocking_error": "RuntimeError(\"GeometryMismatch('几何不匹配（不是帧间抖动）：RMSE=9.63px；检测宽高=[54.0, 85.0]px，圆柱预测宽高=[69.3, 106.3]px；杯高/径=95/75mm，桌面base Z=0mm。核对杯形、尺寸、桌高和外参。')\")",
+  "can_tx_start": 2587,
+  "can_tx_end": 2587,
+  "motion_sent": false,
+  "old_nominal_cup_height_mm": 95,
+  "old_nominal_cup_diameter_mm": 75,
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "raw_status2_not_the_blocker": true,
+  "pending": "Reuse existing mounted-board photos,4 current paired observations,15 archived raw datasets and3 tabletop positions first. No remount or repeat-photo request is pending. Current independent TCP/base validation gap remains explicit; do not declare deployment calibrated.",
+  "operator_reports_cup_dimensions_unchanged": true,
+  "cup_dimension_source": "Historical95/75mm retained; no new independent size metrology supplied",
+  "camera_table_depth_diagnostic": {
+    "old_distance_mm": 315.2114291079937,
+    "observed_distance_mm": [
+      382.8779218360901,
+      384.843015803931,
+      378.72056562933363
+    ],
+    "normal_deviation_deg": [
+      4.231172364221436,
+      4.238449583416874,
+      4.918062821506219
+    ],
+    "pointcloud_contains_outliers": true
+  },
+  "single_variable_geometry_replay": [
+    {
+      "name": "old_nominal",
+      "rmse_px": 9.632382081707883,
+      "passed": false
+    },
+    {
+      "name": "depth_plane_frame_0",
+      "rmse_px": 1.2084539766140323,
+      "passed": true
+    },
+    {
+      "name": "depth_plane_frame_1",
+      "rmse_px": 1.294891069117765,
+      "passed": true
+    },
+    {
+      "name": "depth_plane_frame_2",
+      "rmse_px": 1.0214633976181966,
+      "passed": true
+    }
+  ],
+  "table_marker_tool": "/home/user/wq/nero_act_calibration_capture_20261022/table_marker_capture.py",
+  "table_marker_offline_verification": "67passed; CLI help verified without opening devices",
+  "can_tx_latest": 6677,
+  "evidence_sha256": {
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/geometry_replay.json": "e4190cf2ac12c103b1fbb367e87b15cfadb47ecda042cc4367f26e45bf2e60f3",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/stereo_table/report.json": "75c425e691508e80ba887b4c05a211c94c143a83f81d189acadae7f447f7ef60",
+    "/home/user/wq/nero_act_calibration_capture_20261022/table_marker_capture.py": "65ea0e7e6d9e8854610693a787db82ca2bc1380d47191b39548ac8b432bdbdf8",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_suite_final.log": "20bd5990c7bdb43b0fa808b5e5362e176416ac3f80429b4824a4365c2c027105",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_01/report.json": "0143bef6afa640f327537bfa9349f9f0d03b4d785740ed7c38acd6f573672da0",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/report.json": "599ed1cc86a9ab8bca75616f1abc203682a14d24424ac809fb8d55598a6de7b4",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/plane_comparison.json": "047fc6a32cd1d89e3bf95cb8db50b3351103930c646e478e94a685eefc4a9d43",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/report.json": "8a131c24c28d5a606f8284f5f18240390bceb77eb741629a0f2a20df2c556e1b",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/two_position_comparison.json": "4a7d2b861668130095532e51e81e7034f3cdfdd17148152f4dbbf43a1a323f96",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/report.json": "738e5fd6dfa58553ed84b699a8925deaaac7cdc96069a95609681194519e33da",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/three_position_comparison.json": "7a17b8f8df2a80decd6b9bbfba6ad91eb8d0a592ce81e2490941dff7dc1f0bfd",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_plane_8mm_derivation.json": "bc408beedb9522c09edc92589ad52bae7ab58bc5853afbb63a9ba548dbf107d2",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/available_tools_camera_sampling_checkpoint.json": "96cb429e412528494691a4684a43de1dd707abcb73c1ba025c1a626231f35625",
+    "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/record_reuse_audit.json": "d2649def11d74afb9e071b4e82220e3d546c6c529fe757ce33e7a5dd2b60f5da",
+    "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/recomputed_20261014_handeye.json": "bad3d0608651d35fd3c3c947d15a98663c3c5749e793d683308e95184b80041b",
+    "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/reused_current_handeye_pairs.json": "fe9659638b46eb185f065bce54a23f9827830b8ea1ac97e6608dea81df6fb546"
+  },
+  "global_CAN_delta_after_completed_readonly_diagnostics": 171,
+  "CAN_attribution_note": "Global counter increased after completed receive-only probes; source not attributed. These probes contain no control transport and reported2587to2587. Refresh state/exclusivity before any future execution.",
+  "latest_table_marker_capture": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/report.json",
+  "table_marker_capture_qualified_frames": 24,
+  "table_board_thickness_mm": 8.0,
+  "latest_table_marker_capture_CAN": [
+    6677,
+    6677
+  ],
+  "table_marker_result": "Three positions72 valid repeated frames. With8mm operator height, table-normal distance365.447..371.350mm vs old315.211mm; cross-position5.903mm discrepancy persists. Camera/base and TCP unverified.",
+  "accepted_table_marker_distinct_positions": 3,
+  "latest_table_marker_comparison": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/three_position_comparison.json",
+  "table_marker_valid_repeated_frames_total": 72,
+  "table_marker_three_position_capture_complete": true,
+  "table_board_thickness_source": "Operator tabletop-to-black-surface height report:8mm; uncertainty unknown",
+  "latest_table_plane_thickness_derivation": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_plane_8mm_derivation.json",
+  "table_plane_distance_estimates_mm": [
+    365.9833418294451,
+    371.34989492180506,
+    365.4467723025534
+  ],
+  "available_calibration_tools_latest_report": "只有标定板、尺子和普通夹具",
+  "tcp_center_reference_fixture_available": false,
+  "latest_calibration_tools_checkpoint": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/available_tools_camera_sampling_checkpoint.json",
+  "user_requires_existing_records_before_any_new_capture": true,
+  "previous_static_remount_request_withdrawn": true,
+  "latest_record_reuse_review": "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/record_reuse_audit.json",
+  "historical_mount_photos_found": [
+    "/home/user/wq/nero_act_calibration_capture_20261022/framing_complete/verified_upright.png",
+    "/home/user/wq/nero_act_calibration_capture_20261022/mount_check_01/latest_upright.png",
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/fixed_selector_execution_01/attempt_000/optical.png"
+  ],
+  "current_handeye_reused_pair_count": 4,
+  "archived_handeye_datasets_found": 15
+}

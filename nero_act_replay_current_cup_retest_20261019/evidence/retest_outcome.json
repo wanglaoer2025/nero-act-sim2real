@@ -1,0 +1,39 @@
+{
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "full_task_success": false,
+  "actual_completed_phases": [
+    "approach"
+  ],
+  "operator_GRASP_received_in_chat": true,
+  "GRASP_recorded_by_runtime": false,
+  "close_goal_submitted": false,
+  "lift_or_carry_or_place_submitted": false,
+  "direct_stop_reason": "ACT heartbeat age exceeded150ms while waiting for operator confirmation",
+  "runtime_error": "RuntimeError: Live ACT gate unhealthy or stale: {'failed': True, 'driver_open': False, 'reason': '{\"finite\": true, \"heartbeat_age\": 0.15085774497129023, \"feedback_age\": 0.001495545031502843, \"control_age\": 3.440072759985924e-07, \"feedback_advance_age\": 0.0014992249198257923, \"ros_age\": 0.0022585391998291016, \"force\": 0.005, \"receipt_valid\": true}', 'receipt_valid': True, 'published_monotonic_s': 581003.208074396, 'received': 581003.218880441}",
+  "maximum_independent_health_sample_gap_s": 0.19090205105021596,
+  "causal_scope": "Health publication is coupled to synchronous health validation in executor/ros_execution.py; a190.9ms health-sample gap overlaps the heartbeat failure. Scheduling, SDK blocking or GC contribution is not independently resolved.",
+  "post_stop_source_offset_mm": 19.350614597418314,
+  "user_explanation_of_cup_change": "手动调整过杯子",
+  "cup_change_attributed_to_robot": false,
+  "post_stop_gripper_width_mm": "94.943",
+  "readonly_restored": {
+    "mode": "receive_only",
+    "pid": 2276299,
+    "interpreter": "/usr/bin/python3",
+    "auto_enable": false,
+    "control_enabled_at_start": false,
+    "speed_percent_parameter": 0,
+    "runtime_send_blocked": true,
+    "can_tx_before": 811590,
+    "can_tx_after_start": 811590,
+    "motion_submitted_by_entry": false
+  },
+  "automatic_retry": false,
+  "automatic_return": false,
+  "recorded_wall_s": 1792378958.2725105,
+  "remaining": [
+    "Repair and reproduce confirmation-wait heartbeat scheduling while preserving150ms freshness protection",
+    "Any manually adjusted cup position requires renewed geometry/path validation; do not reuse the stale source scene",
+    "This attempt is stopped and its authorization consumed; do not resume by replaying the late GRASP token"
+  ]
+}

@@ -1,0 +1,14 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+________ test_pipeline_can_wait_for_the_versioned_requalified_manifest _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-143/test_pipeline_can_wait_for_the0')
+
+    def test_pipeline_can_wait_for_the_versioned_requalified_manifest(tmp_path):
+>       from pipeline import parse_arguments
+E       ImportError: cannot import name 'parse_arguments' from 'pipeline' (/home/user/wq/nero_act_transfer_v2_20261025/pipeline.py)
+
+tests/test_pipeline.py:11: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_pipeline.py::test_pipeline_can_wait_for_the_versioned_requalified_manifest
+1 failed, 1 passed in 0.02s

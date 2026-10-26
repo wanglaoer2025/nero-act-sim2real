@@ -1,0 +1,22 @@
+/home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-ah6jqfl6 because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______ test_seal_rejects_stale_replay_proof_and_changed_reference_source _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-4/test_seal_rejects_stale_replay0')
+
+    def test_seal_rejects_stale_replay_proof_and_changed_reference_source(tmp_path):
+        import hashlib
+>       from training.approach_preservation import validate_approach_replay
+E       ImportError: cannot import name 'validate_approach_replay' from 'training.approach_preservation' (/home/user/wq/nero_act_approach_preservation_20261021/training/approach_preservation.py)
+
+tests/test_approach_preservation.py:79: ImportError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_preservation.py::test_seal_rejects_stale_replay_proof_and_changed_reference_source
+1 failed, 1 warning in 3.18s

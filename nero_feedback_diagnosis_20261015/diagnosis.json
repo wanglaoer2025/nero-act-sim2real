@@ -1,0 +1,325 @@
+{
+  "updated_at": "2026-10-15T21:59:22.029617+08:00",
+  "task": "restore existing Nero ROS feedback for formal-start read-only capture",
+  "status": "observation_chain_restored_clean_start_captured_and_packaged",
+  "driver_launch_pid": 371355,
+  "driver_node_pid": 371360,
+  "driver_node_alive": true,
+  "launch_arguments": {
+    "can_port": "can0",
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "fw_version": "v120",
+    "auto_enable": false,
+    "control_enabled": false,
+    "fast_mode": false,
+    "speed_percent": 0,
+    "pub_rate": 200
+  },
+  "confirmed_findings": [
+    "USB-CAN disconnected and reconnected at 2026-10-15 20:43:27 local time; serial unchanged from previously working adapter",
+    "can0 initially DOWN; now UP at 1000000 bit/s",
+    "automatic firmware detection fails and exits driver",
+    "explicit previously confirmed V120 profile allows ROS driver to stay running",
+    "SDK and ROS bypassed by one independently verified firmware query 0x4AF/01; send accepted into socket but no response or own-socket completion echo observed",
+    "five-second simultaneous passive CAN and ROS monitoring observed zero frames and zero joint feedback samples",
+    "ROS graph advertises one feedback publisher; publisher existence is not valid robot feedback"
+  ],
+  "latest_verification": {
+    "checked_at": "2026-10-15T21:11:39.673474+08:00",
+    "driver_parameters": {
+      "auto_enable": false,
+      "control_enabled": false,
+      "fw_version": "v120",
+      "speed_percent": 0,
+      "can_port": "can0"
+    },
+    "feedback_publishers": 1,
+    "feedback_samples": 0,
+    "can_frames_during_5s": 0,
+    "can_ids": {},
+    "first_feedback": null,
+    "latest_feedback": null,
+    "motion_sent": false,
+    "formal_capture_complete": false
+  },
+  "unresolved": [
+    "exact physical USB/cable/adapter cause was not uniquely identified; normal CAN reception recovered after operator USB reconnect and reinitialization",
+    "ACT autonomous real-grasp acceptance remains outside this read-only communication recovery"
+  ],
+  "not_done": [
+    "no enable, disable, reset, emergency stop, mode change, gripper or arm motion commands",
+    "no ACT model loaded or executed",
+    "no formal-start capture generated or old capture substituted",
+    "no SDK source or calibration files modified"
+  ],
+  "artifacts": [
+    "driver_reproduction.log",
+    "driver_v120.log",
+    "firmware_query.json",
+    "sdk_comparison.json",
+    "ros_verification.json"
+  ],
+  "ros_domain_id": 42,
+  "latest_isolation_verification": {
+    "checked_at": "2026-10-15T21:16:55.019244+08:00",
+    "domain_id": 42,
+    "driver_pid": 364437,
+    "launch_pid": 364433,
+    "domain42_nodes": [
+      [
+        "nero_domain42_verification",
+        "/"
+      ],
+      [
+        "agx_arm_ctrl_single_node",
+        "/"
+      ]
+    ],
+    "domain0_graph": {
+      "nodes": [
+        [
+          "nero_domain0_verification",
+          "/"
+        ],
+        [
+          "_ros2cli_daemon_0_8f65278b9196472099038a5a09200245",
+          "/"
+        ]
+      ],
+      "feedback_publishers": 0
+    },
+    "parameters": {
+      "auto_enable": false,
+      "control_enabled": false,
+      "fw_version": "v120",
+      "can_port": "can0"
+    },
+    "feedback_publishers_domain42": 1,
+    "feedback_samples_in_3s": 0,
+    "can_frames_in_3s": 0,
+    "can_holders_after_observer_closed": [
+      "agx_arm_c 364437 user   57u     sock                0,9       0t0    2786315 protocol: CAN_RAW"
+    ],
+    "latest_feedback": null,
+    "motion_sent": false,
+    "formal_capture_complete": false
+  },
+  "pending_adapter_recovery": {
+    "checked_at": "2026-10-15T21:28:41.934638+08:00",
+    "status": "awaiting_local_administrator_adapter_recovery",
+    "can_frames_in_1s": 0,
+    "driver_pid_stopped": 364437,
+    "can_holders": [],
+    "motion_sent": false,
+    "required_local_command": "sudo bash /home/user/wq/nero_feedback_diagnosis_20261015/recover_usb_can.sh"
+  },
+  "recovery_script_issue": {
+    "cause": "sudo standard PATH does not include VS Code bundled rg; old script exited during required-command checks before creating a run directory",
+    "user_attempts_confirmed_local": [
+      "2026-10-15 21:32:44",
+      "2026-10-15 21:32:55"
+    ],
+    "fix": "replace rg with system grep; create terminal log before dependency checks; add explicit missing-command errors",
+    "verification": "standard admin PATH dependencies, bash syntax and non-root refusal verified",
+    "hardware_recovery_executed": false
+  },
+  "latest_adapter_recovery": {
+    "checked_at": "2026-10-15T21:39:48.906822+08:00",
+    "status": "usb_can_software_reset_failed_normal_mode_not_restored",
+    "latest_run": "adapter_recovery_20261015_213716_365923",
+    "observed": [
+      "usbreset reported success",
+      "internal loopback capture contained zero frames",
+      "normal-mode configuration returned RTNETLINK Protocol error twice",
+      "can0 is DOWN / STOPPED with no loopback or listen-only flag shown",
+      "CAN interface index changed from 8 to 9 during USB reset",
+      "no CAN socket holder or ROS arm driver remains"
+    ],
+    "limits": [
+      "one failed software-reset loopback test does not establish that robot hardware is faulty",
+      "usb xmit fail N records report cancelled/failed URB contexts during reset, not an independent identification of the physical cause",
+      "USB link/adapter firmware/driver reinitialization and physical wiring/power are not yet independently separated"
+    ],
+    "next_action": "physically disconnect only USB-CAN host USB for 5 seconds, reconnect directly to a host USB port, initialize normal 1 Mbps mode; do not rerun the software-reset loopback script",
+    "source": "https://cdn.kernel.org/doc/html/latest/driver-api/usb/error-codes.html",
+    "robot_motion_sent": false,
+    "robot_enable_sent": false,
+    "formal_capture_complete": false
+  },
+  "recovery_evidence": {
+    "checked_at": "2026-10-15T21:51:57.055563+08:00",
+    "ros_domain_id": 42,
+    "driver_pid": 371360,
+    "launch_pid": 371355,
+    "parameters": {
+      "auto_enable": false,
+      "control_enabled": false,
+      "fw_version": "v120",
+      "speed_percent": 0,
+      "can_port": "can0"
+    },
+    "feedback_publishers": 1,
+    "feedback_samples": 606,
+    "eight_joint_names_and_values_valid": true,
+    "feedback_hz": 201.56015757719805,
+    "ros_stamp_advances": true,
+    "latest_feedback": {
+      "receipt": 274572.131812024,
+      "stamp": 1792072317.047796,
+      "names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "gripper"
+      ],
+      "position": [
+        0.1832595714594046,
+        -0.12651891747706895,
+        0.09998991284675514,
+        1.5707788735023767,
+        -0.02392846404484226,
+        0.2816961412718848,
+        0.13107422682477415,
+        0.060118
+      ]
+    },
+    "motion_sent": false
+  },
+  "current_interface": {
+    "ifindex": 11,
+    "ifname": "can0",
+    "flags": [
+      "NOARP",
+      "UP",
+      "LOWER_UP",
+      "ECHO"
+    ],
+    "mtu": 16,
+    "qdisc": "pfifo_fast",
+    "operstate": "UP",
+    "linkmode": "DEFAULT",
+    "group": "default",
+    "txqlen": 10,
+    "link_type": "can",
+    "promiscuity": 0,
+    "allmulti": 0,
+    "min_mtu": 0,
+    "max_mtu": 0,
+    "linkinfo": {
+      "info_kind": "can",
+      "info_data": {
+        "ctrlmode_supported": [
+          "LOOPBACK",
+          "LISTEN-ONLY",
+          "CC-LEN8-DLC"
+        ],
+        "state": "ERROR-ACTIVE",
+        "restart_ms": 0,
+        "bittiming": {
+          "bitrate": 1000000,
+          "sample_point": "0.750",
+          "tq": 62,
+          "prop_seg": 5,
+          "phase_seg1": 6,
+          "phase_seg2": 4,
+          "sjw": 2,
+          "brp": 3
+        },
+        "bittiming_const": {
+          "name": "gs_usb",
+          "tseg1": {
+            "min": 1,
+            "max": 16
+          },
+          "tseg2": {
+            "min": 1,
+            "max": 8
+          },
+          "sjw": {
+            "min": 1,
+            "max": 4
+          },
+          "brp": {
+            "min": 1,
+            "max": 1024
+          },
+          "brp_inc": 1
+        },
+        "clock": 48000000
+      },
+      "info_xstats": {
+        "restarts": 0,
+        "bus_error": 0,
+        "arbitration_lost": 0,
+        "error_warning": 0,
+        "error_passive": 0,
+        "bus_off": 0
+      }
+    },
+    "num_tx_queues": 1,
+    "num_rx_queues": 1,
+    "gso_max_size": 65536,
+    "gso_max_segs": 65535,
+    "tso_max_size": 65536,
+    "tso_max_segs": 65535,
+    "gro_max_size": 65536,
+    "parentbus": "usb",
+    "parentdev": "1-6:1.0",
+    "stats64": {
+      "rx": {
+        "bytes": 4740696,
+        "packets": 592587,
+        "errors": 0,
+        "dropped": 0,
+        "over_errors": 0,
+        "multicast": 0
+      },
+      "tx": {
+        "bytes": 0,
+        "packets": 0,
+        "errors": 0,
+        "dropped": 0,
+        "carrier_errors": 0,
+        "collisions": 0
+      }
+    }
+  },
+  "can_holders": [
+    "agx_arm_c 371360 user   57u     sock                0,9       0t0    2853601 protocol: CAN_RAW"
+  ],
+  "formal_capture_directory": "/home/user/wq/nero_act_formal_start_capture_20261015/formal_start_capture_20261015",
+  "hardware_synchronized": false,
+  "motion_sent": false,
+  "formal_start_scene_confirmed": false,
+  "handoff": {
+    "archive": "/home/user/wq/nero-formal-start-observations-20261015-return.tar.gz",
+    "bytes": 41742399,
+    "sha256": "ce795e7df89d9107d008112ea672a1030c9fa47d84e1bfce65b1dfbb61f2cec4",
+    "files_verified": 9,
+    "entire_capture_directory_included": true,
+    "remote_transfer_performed": false,
+    "technical_capture_valid": true,
+    "formal_start_scene_confirmed": false,
+    "motion_sent": false
+  },
+  "latest_capture_directory": "/home/user/wq/nero_act_formal_start_capture_20261015/formal_start_capture_20261015_clean",
+  "latest_handoff": {
+    "archive": "/home/user/wq/nero-formal-start-clean-20261015-return.tar.gz",
+    "capture_directory": "/home/user/wq/nero_act_formal_start_capture_20261015/formal_start_capture_20261015_clean",
+    "bytes": 37085767,
+    "sha256": "f28ce1c40f377de7af1e1de4b33ab4140a22990a971e9f1e5222138416f06790",
+    "all_archive_files_verified": true,
+    "files": 10,
+    "technical_capture_passed": true,
+    "visual_scene_review_passed": true,
+    "policy_acceptance_performed": false,
+    "remote_transfer_performed": false,
+    "motion_sent": false,
+    "supersedes_archive": "nero-formal-start-observations-20261015-return.tar.gz"
+  }
+}

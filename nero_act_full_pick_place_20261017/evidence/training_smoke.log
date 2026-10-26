@@ -1,0 +1,77 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+ACT Day5：device=cuda epochs=1 joint target lead=recorded action steps；trim=0 stride=10；不会连接机械臂
+number of parameters: 12.58M
+已加载初始化权重：/home/user/wq/nero_cup_retrained_v2_20261016/model/policy.ckpt
+epoch 1/1 train=0.1043/0.1043 val=0.0587/0.0587 best_loss=0.0587@1 best_l1=0.0587@1
+{
+  "best_epoch": 1,
+  "best_val_loss": 0.05867497686936398,
+  "best_l1_epoch": 1,
+  "best_val_l1": 0.05867497686936398,
+  "best_metrics": {
+    "epoch": 1,
+    "train_loss": 0.1042869392796599,
+    "train_l1": 0.1042869392796599,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.05867497686936398,
+    "val_l1": 0.05867497686936398,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 4.333067202998791
+  },
+  "last_metrics": {
+    "epoch": 1,
+    "train_loss": 0.1042869392796599,
+    "train_l1": 0.1042869392796599,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.05867497686936398,
+    "val_l1": 0.05867497686936398,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 4.333067202998791
+  },
+  "best_l1_metrics": {
+    "epoch": 1,
+    "train_loss": 0.1042869392796599,
+    "train_l1": 0.1042869392796599,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.05867497686936398,
+    "val_l1": 0.05867497686936398,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 4.333067202998791
+  },
+  "train_episodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "val_episodes": [
+    8,
+    9
+  ],
+  "train_windows": 1843,
+  "training_stride_steps": 10,
+  "trim_start_steps": 0,
+  "trim_start_steps_by_parent": null,
+  "trim_after_gripper_open_steps": null,
+  "grasp_focus_before_close_steps": 0,
+  "grasp_focus_repeats": 1,
+  "post_grasp_repeats": 1,
+  "init_checkpoint": "/home/user/wq/nero_cup_retrained_v2_20261016/model/policy.ckpt",
+  "normalization_stats": "/home/user/wq/nero_act_full_pick_place_20261017/training/smoke/training_only_stats.pkl",
+  "joint_target_lead_steps": null,
+  "elapsed_s": 4.782064041995909
+}

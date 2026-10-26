@@ -1,0 +1,17 @@
+Runtime ready: NumPy 2.5.3, MuJoCo 3.15.0; hardware not connected yet
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_transfer_demo_20261023/runtime_entry.py", line 17, in <module>
+    runpy.run_path(str(Path(__file__).with_name('entry.py')),run_name='__main__')
+  File "<frozen runpy>", line 286, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_transfer_demo_20261023/entry.py", line 252, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_act_transfer_demo_20261023/entry.py", line 236, in main
+    if driver.failure is not None:raise driver.failure
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_transfer_demo_20261023/entry.py", line 198, in receive
+    if rejected:raise ValueError('ROS pre-send guard: '+','.join(rejected))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: ROS pre-send guard: stale_command

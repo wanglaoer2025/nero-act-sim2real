@@ -1,0 +1,144 @@
+{
+  "success": true,
+  "physical_success": true,
+  "max_lift_m": 0.19313275158967075,
+  "maximum_horizontal_transfer_m": 0.15087131714834884,
+  "stable_released_frames": 145,
+  "lift_contact_frames": 1152,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5246728650258233,
+      -0.16186270663946178,
+      0.04749668780968296
+    ],
+    "tcp_xyz": [
+      -0.5247133045355368,
+      -0.16203845215371318,
+      0.25500756946606645
+    ],
+    "cup_upright": 0.9999999999999751,
+    "cup_speed": 1.2819657292602706e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09499999877504958,
+    "contract_valid": true
+  },
+  "stages": [
+    {
+      "stage": "lift",
+      "cup_xyz": [
+        -0.5547733443026815,
+        -0.014427045954845338,
+        0.2405429302580207
+      ],
+      "tcp_xyz": [
+        -0.5550978091779166,
+        -0.01441181620877808,
+        0.25192770169049855
+      ],
+      "cup_upright": 0.9999434552821147,
+      "cup_speed": 0.001640795073901278,
+      "bilateral": true,
+      "supported": false,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.07375716724593134,
+      "contract_valid": true
+    },
+    {
+      "stage": "carry",
+      "cup_xyz": [
+        -0.5241961287382984,
+        -0.1619452576623655,
+        0.23815867106625274
+      ],
+      "tcp_xyz": [
+        -0.524718831649878,
+        -0.16192027144594684,
+        0.25206824562567404
+      ],
+      "cup_upright": 0.9998203796458851,
+      "cup_speed": 0.0018319701238491098,
+      "bilateral": true,
+      "supported": false,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.07373380686052429,
+      "contract_valid": true
+    },
+    {
+      "stage": "place",
+      "cup_xyz": [
+        -0.5246775357794088,
+        -0.1618580210198989,
+        0.04748860450302613
+      ],
+      "tcp_xyz": [
+        -0.5262291445148073,
+        -0.16197185997321548,
+        0.061271369166734944
+      ],
+      "cup_upright": 0.9999999984546643,
+      "cup_speed": 0.00021150897718882276,
+      "bilateral": true,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.07377130778663778,
+      "contract_valid": true
+    },
+    {
+      "stage": "release",
+      "cup_xyz": [
+        -0.5246728647220867,
+        -0.16186270959272014,
+        0.04749668779922777
+      ],
+      "tcp_xyz": [
+        -0.5247130707171946,
+        -0.16204274064483215,
+        0.054995458107455084
+      ],
+      "cup_upright": 0.9999999999999615,
+      "cup_speed": 5.344708511398675e-06,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.0949999987750492,
+      "contract_valid": true
+    },
+    {
+      "stage": "retreat",
+      "cup_xyz": [
+        -0.5246728653701687,
+        -0.16186271093000934,
+        0.04749668780187671
+      ],
+      "tcp_xyz": [
+        -0.5247088108665766,
+        -0.16204296468468823,
+        0.2548946227609367
+      ],
+      "cup_upright": 0.9999999999999507,
+      "cup_speed": 3.178159440737289e-06,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.09499999863300723,
+      "contract_valid": true
+    }
+  ],
+  "frames": 2389,
+  "error": null,
+  "real_hardware_tested": false,
+  "task": "lift_to_retreat_correction",
+  "full_task_verified": false
+}

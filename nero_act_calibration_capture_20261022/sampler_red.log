@@ -1,0 +1,226 @@
+FFFFFFFFFFF                                                              [100%]
+=================================== FAILURES ===================================
+_______________ test_measured95mm_pose_and_raw_status_preserved ________________
+
+    def test_measured95mm_pose_and_raw_status_preserved():
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+___________ test_unstable_or_unhealthy_pairs_rejected[short_window] ____________
+
+problem = 'short_window'
+
+    @pytest.mark.parametrize('problem', ['short_window', 'moving', 'camera_skew', 'nonzero_error',
+                                          'wrong_mode', 'unknown_status'])
+    def test_unstable_or_unhealthy_pairs_rejected(problem):
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+______________ test_unstable_or_unhealthy_pairs_rejected[moving] _______________
+
+problem = 'moving'
+
+    @pytest.mark.parametrize('problem', ['short_window', 'moving', 'camera_skew', 'nonzero_error',
+                                          'wrong_mode', 'unknown_status'])
+    def test_unstable_or_unhealthy_pairs_rejected(problem):
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+____________ test_unstable_or_unhealthy_pairs_rejected[camera_skew] ____________
+
+problem = 'camera_skew'
+
+    @pytest.mark.parametrize('problem', ['short_window', 'moving', 'camera_skew', 'nonzero_error',
+                                          'wrong_mode', 'unknown_status'])
+    def test_unstable_or_unhealthy_pairs_rejected(problem):
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+___________ test_unstable_or_unhealthy_pairs_rejected[nonzero_error] ___________
+
+problem = 'nonzero_error'
+
+    @pytest.mark.parametrize('problem', ['short_window', 'moving', 'camera_skew', 'nonzero_error',
+                                          'wrong_mode', 'unknown_status'])
+    def test_unstable_or_unhealthy_pairs_rejected(problem):
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+____________ test_unstable_or_unhealthy_pairs_rejected[wrong_mode] _____________
+
+problem = 'wrong_mode'
+
+    @pytest.mark.parametrize('problem', ['short_window', 'moving', 'camera_skew', 'nonzero_error',
+                                          'wrong_mode', 'unknown_status'])
+    def test_unstable_or_unhealthy_pairs_rejected(problem):
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+__________ test_unstable_or_unhealthy_pairs_rejected[unknown_status] ___________
+
+problem = 'unknown_status'
+
+    @pytest.mark.parametrize('problem', ['short_window', 'moving', 'camera_skew', 'nonzero_error',
+                                          'wrong_mode', 'unknown_status'])
+    def test_unstable_or_unhealthy_pairs_rejected(problem):
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+_______________ test_kept_out_pose_is_not_independent_metrology ________________
+
+    def test_kept_out_pose_is_not_independent_metrology():
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+_____________ test_missing_or_multiple_markers_cannot_save_a_pose ______________
+
+    def test_missing_or_multiple_markers_cannot_save_a_pose():
+>       m = api(); K, pixels, window, after = inputs()
+
+tests/test_capture.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+____________________ test_sdk_fixed_xyz_rotation_convention ____________________
+
+    def test_sdk_fixed_xyz_rotation_convention():
+>       T = api().flange_transform([.1, .2, .3, np.pi/2, 0, 0])
+
+tests/test_capture.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+___________________ test_help_opens_neither_camera_nor_robot ___________________
+
+    def test_help_opens_neither_camera_nor_robot():
+>       module = api()
+
+tests/test_capture.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('capture') is not None, 'Passive calibration sampler missing'
+E       AssertionError: Passive calibration sampler missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7519fc5ac5e0>('capture')
+E        +    where <function find_spec at 0x7519fc5ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_capture.py:15: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_capture.py::test_measured95mm_pose_and_raw_status_preserved
+FAILED tests/test_capture.py::test_unstable_or_unhealthy_pairs_rejected[short_window]
+FAILED tests/test_capture.py::test_unstable_or_unhealthy_pairs_rejected[moving]
+FAILED tests/test_capture.py::test_unstable_or_unhealthy_pairs_rejected[camera_skew]
+FAILED tests/test_capture.py::test_unstable_or_unhealthy_pairs_rejected[nonzero_error]
+FAILED tests/test_capture.py::test_unstable_or_unhealthy_pairs_rejected[wrong_mode]
+FAILED tests/test_capture.py::test_unstable_or_unhealthy_pairs_rejected[unknown_status]
+FAILED tests/test_capture.py::test_kept_out_pose_is_not_independent_metrology
+FAILED tests/test_capture.py::test_missing_or_multiple_markers_cannot_save_a_pose
+FAILED tests/test_capture.py::test_sdk_fixed_xyz_rotation_convention - Assert...
+FAILED tests/test_capture.py::test_help_opens_neither_camera_nor_robot - Asse...
+11 failed in 0.30s

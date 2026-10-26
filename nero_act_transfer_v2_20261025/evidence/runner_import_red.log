@@ -1,0 +1,13 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_protected_runner_import_does_not_require_robot_sdk ____________
+
+    def test_protected_runner_import_does_not_require_robot_sdk():
+        import sys
+>       from evaluate import load_runner
+E       ImportError: cannot import name 'load_runner' from 'evaluate' (/home/user/wq/nero_act_transfer_v2_20261025/evaluate.py)
+
+tests/test_evaluate.py:31: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_evaluate.py::test_protected_runner_import_does_not_require_robot_sdk
+1 failed in 0.93s

@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-10-14T14:40:22.660087+00:00",
+  "scope": "4090 offline preview and read-only preflight; no hardware movement",
+  "dry_run_exit_code": 0,
+  "dry_run_log": "dry_run_4090.log",
+  "plain_dry_run_robot_factory_guard_test": "1 test passed",
+  "robot_wrapper_tests_exit_code": 0,
+  "robot_wrapper_tests_log": "robot_wrapper_tests_4090.log",
+  "source_matches_supplied_archive_sha256": {
+    "run_short_test.py": "36cd676c1fcf28c9c82c3128d28f18dded1c5e6c2b420214093e0237443f38f4",
+    "nero_act_source/src/act/test_joint_stream.py": "cc04a01a72aa3ce868d36db4600d5b6a01d7b759d4904994ebaa499ea5558ec8",
+    "nero_act_source/src/act/robot_wrapper.py": "c7d20f6c226c2e7a03c170ab64b59fa4c36d0b5ed994f02128fe94e2a57eda1d",
+    "nero_act_source/src/utils/arm.py": "50b53785a56a56eb50b5b24ef4506c130e1e9d4d23935dc43125d60eb18dfec1"
+  },
+  "readonly_precheck": "readonly_precheck_4090.json",
+  "ROS_CAN_driver_still_running": true,
+  "single_CAN_command_owner_ready_for_SDK_test": false,
+  "previous_user_scope": "read_only_checks_retain_parameters_no_new_motor_measurements",
+  "execute_invoked": false,
+  "motion_sent": false,
+  "ROS_driver_stopped": false,
+  "limitations": [
+    "Default dry-run previews around zero without reading live qpos. Current qpos limits were checked separately via ROS subscription; physical clearance not confirmed.",
+    "Return tolerance 0.01rad is larger than test amplitude 0.005rad. Return-to-start success does not by itself prove motion tracking or exact return.",
+    "CSV command/feedback call times do not measure physical command-to-response latency; sensor timestamps absent.",
+    "A send_arm_qpos exception before CSV write can lose buffered rows; terminal output must be preserved.",
+    "Execution enables/follower mode, sets persistent speed5%, and exceptions/Ctrl-C request electronic emergency stop. No controller state was changed in this review."
+  ],
+  "next_step": "Explicitly confirm change from prior read-only scope and physical readiness before SDK execution. Stop existing ROS/CAN owner only after that confirmation; operator enters SINGLE_CAN and STREAM on site."
+}

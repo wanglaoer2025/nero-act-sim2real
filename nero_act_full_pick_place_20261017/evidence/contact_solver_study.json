@@ -1,0 +1,56 @@
+{
+  "source": "https://mujoco.readthedocs.io/en/stable/modeling.html",
+  "cup_mass_kg": 0.05,
+  "sliding_friction": 0.6,
+  "per_finger_force_limit_n": 1.0,
+  "results": [
+    {
+      "trial": "baseline01",
+      "success": false,
+      "max_lift_m": 0.1445611901702567,
+      "maximum_horizontal_transfer_m": 0.02441329324641853,
+      "stable_released_frames": 0,
+      "error": null
+    },
+    {
+      "trial": "baseline02",
+      "success": false,
+      "max_lift_m": 0.11537193031565819,
+      "maximum_horizontal_transfer_m": 0.033491736056642796,
+      "stable_released_frames": 0,
+      "error": null
+    },
+    {
+      "trial": "solver_impratio_10",
+      "success": false,
+      "max_lift_m": 0.18861438178148587,
+      "maximum_horizontal_transfer_m": 0.1662075103878111,
+      "stable_released_frames": 0,
+      "error": "Unexpected robot/cup contact in place"
+    },
+    {
+      "trial": "solver_impratio_100",
+      "success": false,
+      "max_lift_m": 0.19433293057251588,
+      "maximum_horizontal_transfer_m": 0.1661396386281359,
+      "stable_released_frames": 0,
+      "error": "Unexpected robot/cup contact in place"
+    },
+    {
+      "trial": "elliptic_10",
+      "success": true,
+      "max_lift_m": 0.19507411093927834,
+      "maximum_horizontal_transfer_m": 0.16623327077343267,
+      "stable_released_frames": 128,
+      "error": null
+    },
+    {
+      "trial": "elliptic_100",
+      "success": true,
+      "max_lift_m": 0.19708591182210577,
+      "maximum_horizontal_transfer_m": 0.16623797452443317,
+      "stable_released_frames": 128,
+      "error": null
+    }
+  ]
+}

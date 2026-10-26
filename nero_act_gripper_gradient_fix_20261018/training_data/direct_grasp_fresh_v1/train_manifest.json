@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "rejected": [],
+  "episodes": [
+    {
+      "id": 4001,
+      "path": "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_fresh_v1/episode_4001.hdf5",
+      "sha256": "56104c2452d3aa9da5444cfe9250f7660af74c532c0b7a1b265a8c3090aea5fc",
+      "status": "valid",
+      "split": "train",
+      "source_group": "run21_direct_grasp_cup_+0_+0",
+      "teacher_success": true,
+      "full_task_verified": false,
+      "correction_verified": true,
+      "task": "grasp_to_retreat_correction",
+      "origin": "/home/user/wq/nero_act_cvae_training_fix_20261018/evaluation/run21_nominal/cup_+0_+0",
+      "query_step": 1260,
+      "snapshot_sha256": "8933bbd153deedf84fc7c65033be5fbff7725215293eea47a8b17a8184366132",
+      "scene_sha256": "625d1c25b9084e424c849257db6e5b1d93258f87b10abcf86033719ebe80f8ef",
+      "replay": {
+        "frames": 2724,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 273
+      },
+      "observation_derivation": {
+        "source": "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_raw_v1/episode_4001.hdf5",
+        "source_sha256": "e6c8dc0f38cf73c0fc7f36bc890049cce7fb530edc840bcde850427f4434d551",
+        "target": "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_fresh_v1/episode_4001.hdf5",
+        "target_sha256": "56104c2452d3aa9da5444cfe9250f7660af74c532c0b7a1b265a8c3090aea5fc",
+        "fresh_critical_frames": 60,
+        "identical_anchor_frames": [
+          0,
+          10,
+          170,
+          180,
+          1870,
+          1880
+        ],
+        "physical_arrays_and_original_attributes_identical": true
+      }
+    }
+  ],
+  "source_evaluation": "/home/user/wq/nero_act_cvae_training_fix_20261018/evaluation/run21_nominal",
+  "source_protocol_sha256": "09bc66ae932145121c12a2c49d2bc5d9a9ba0d93801fbf5a15872eb52760d44f",
+  "source_checkpoint_sha256": "1a4de8b44492a6a6da9217eb86041ba6714f208d9ecc2034a31ced468bd61310"
+}

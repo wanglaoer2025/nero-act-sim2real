@@ -1,0 +1,43 @@
+{
+  "verified_utc": "2026-10-25T13:17:46.372061+00:00",
+  "checkpoint": "training/formal/policy_2000.ckpt",
+  "checkpoint_sha256": "e212f8ab5fc7e61d730c36647dc820bfaef63627f5d062f129a4a2c397d1c4ab",
+  "confirmed_failure": "closed-loop approach stalls near initial high pose before GRASP",
+  "confirmed_reset": "fresh_no_previous_ACT_checkpoint",
+  "approach_prefix_error_to_teacher_motion_ratio": 2.3721487841537847,
+  "initial_image_cup_localization_error_mm": 0.17753462689653335,
+  "old_nominal_tcp_height_m": 0.05759146089643505,
+  "old_full_success_count": 1,
+  "old_full_cases": 7,
+  "old_comparison_scope": "saved historical nominal behavior; not a fresh matched old-model rerun",
+  "posterior_prior_arm20_error_difference": 1.2684565405738507e-05,
+  "resize_control": "paired600point runs remain high with both Torch and training CV2 preprocessing",
+  "initialization_effect": "old approach weights were not inherited; sufficiency of later training unproven",
+  "not_established": [
+    "final20Kperformance",
+    "sim-to-real rendering gap as current in-simulation stall cause",
+    "globally pure identity-copy strategy",
+    "global CVAE failure",
+    "gripper dynamic skill at real contact"
+  ],
+  "implementation_changed_files": [],
+  "optimizer_updates_by_diagnosis": 0,
+  "training_process_modified": false,
+  "latest_formal_updates_at_snapshot": 4000,
+  "hardware_commands_sent": false,
+  "final2Kscore": {
+    "passed": 0,
+    "total": 44
+  },
+  "evidence": [
+    "report.json",
+    "resize_control/comparison.json",
+    "../../../nero_act_full_acceptance_20261024/run_01/acceptance.json"
+  ],
+  "historical_9006_comparison": {
+    "same_scene_configuration": true,
+    "old_full_task_passed": true,
+    "current_2K_full_task_passed": false,
+    "renderer_and_observer_not_controlled_between_historical_runs": true
+  }
+}

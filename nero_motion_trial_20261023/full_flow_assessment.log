@@ -1,0 +1,68 @@
+/home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-b6dy6kew because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+number of parameters: 12.58M
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/assess_full_flow.py", line 80, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_motion_trial_20261023/assess_full_flow.py", line 62, in main
+    policy,stats,_,_=load_latest();policy.load_state_dict(payload['model'],strict=True);policy.requires_grad_(False).eval()
+                     ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_paired_response_20261023/experiment.py", line 38, in load_latest
+    policy,stats,groups=load_previous_initial()
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_position_response_continuation_20261023/resume.py", line 27, in load_initial
+    policy,stats,groups=prior.load_for_learning()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_position_response_repair_20261023/learning.py", line 23, in load_for_learning
+    policy,stats,groups=sealed.load_for_learning()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_position_recovery_20261022/learning.py", line 51, in load_for_learning
+    original, stats = load_projected()
+                      ^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_position_recovery_20261022/learning.py", line 23, in load_projected
+    original, stats = load_original_projected()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_transfer_resume_20261021/checked_runtime.py", line 38, in load_projected
+    return historical_loader()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_transfer_resume_20261021/arm_projection.py", line 46, in load_projected
+    policy, stats = load_tuned()
+                    ^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_transfer_resume_20261021/arm_tuning.py", line 65, in load_tuned
+    policy, stats = load_policy()
+                    ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_command_increment_20261021/pipeline.py", line 84, in load_policy
+    policy,stats=build_policy()
+                 ^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_command_increment_20261021/pipeline.py", line 31, in build_policy
+    base=BoundedActPolicy(dict(config,device='cuda',pretrained_backbone=False)).cuda().eval();base.load_state_dict(weights,strict=True);base.config=config
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_grouped_gripper_20261021/executor/model.py", line 137, in __init__
+    super().__init__(base_config)
+  File "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/src/act/nero_policy.py", line 54, in __init__
+    self.model, self.optimizer = build_ACT_model_and_optimizer(args)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_grouped_gripper_20261021/policy_source/third_party/act/detr/main.py", line 74, in build_ACT_model_and_optimizer
+    model.to(args.device)
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1340, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  [Previous line repeated 3 more times]
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 927, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1326, in convert
+    return t.to(
+           ^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/cuda/__init__.py", line 319, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available

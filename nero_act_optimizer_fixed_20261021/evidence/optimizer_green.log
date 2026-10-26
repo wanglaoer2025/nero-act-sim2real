@@ -1,0 +1,44 @@
+.F...                                                                    [100%]
+=================================== FAILURES ===================================
+_________ test_schedule_updates_only_arm_group_and_checks_its_identity _________
+
+    def test_schedule_updates_only_arm_group_and_checks_its_identity():
+        from training.history import build_history_policy
+        from training.optimizer_control import apply_arm_rate
+        c,_,_,_=config();c.update(arm_output_lr=1e-6,optimizer_control=control('linear'))
+>       p=build_history_policy(c);gripper_lr=p.optimizer.param_groups[1]['lr']
+
+tests/test_optimizer_control.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'adaptation_scope': 'output_heads_v1', 'alignment_offset': 0, ...}
+
+    def build_history_policy(config):
+        scope=config.get('adaptation_scope','full')
+        if config.get('approach_preservation') and scope!='output_heads_v1':
+            raise ValueError('Approach preservation is restricted-output pilot only')
+        if scope=='output_heads_v1':
+            if (config.get('policy_input_dim')!=15 or config.get('cvae_training') is not True
+                    or config.get('variant')!='A' or config.get('numeric_history_profile','none')!='none'
+                    or config.get('training_budget')!={'kind':'updates','limit':1000}
+                    or config.get('num_epochs')!=0 or not config.get('train_arm_output_and_gripper_only')):
+                raise ValueError('Restricted output heads require single-frame A and exactly1000 offline updates')
+            policy=FullTaskPolicy(dict(config,freeze_backbone=True))
+            if config.get('optimizer_control'):
+                from training.optimizer_control import arm_rate
+                control=copy.deepcopy(config['optimizer_control']);arm_rate(control,1)
+                if config.get('arm_output_lr')!=control['initial_lr'] or not config.get('approach_preservation'):
+>                   raise ValueError('Optimizer control requires paired rate and approach preservation')
+E                   ValueError: Optimizer control requires paired rate and approach preservation
+
+training/history.py:143: ValueError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_optimizer_control.py::test_schedule_updates_only_arm_group_and_checks_its_identity
+1 failed, 4 passed, 1 warning in 2.97s

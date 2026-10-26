@@ -1,0 +1,138 @@
+{
+  "request": "继续训练",
+  "status": "已完成追加3000步；原位置响应门禁仍未通过",
+  "actual_additional_updates": 3000,
+  "initialization": "精确加载上一轮最新权重；旧checkpoint未含优化器，因此本轮如实重建AdamW并重新线性衰减学习率",
+  "unchanged": [
+    "RGB+15D/20x8 ACT结构",
+    "训练/验证划分",
+    "原数据和损失",
+    "视觉/CVAE冻结范围",
+    "原位置响应门槛及完整评估判定"
+  ],
+  "evaluations": [
+    {
+      "added_updates": 0,
+      "gate_passed": false,
+      "direction_and_magnitude_pass_count": 2,
+      "direction_and_magnitude_total": 7,
+      "maximum_prefix_error_mm": 2.5119852065197756,
+      "guard_rejections": 3,
+      "clearance_pass_count": 4,
+      "clearance_total": 11
+    },
+    {
+      "added_updates": 1000,
+      "gate_passed": false,
+      "direction_and_magnitude_pass_count": 3,
+      "direction_and_magnitude_total": 7,
+      "maximum_prefix_error_mm": 1.796105887841752,
+      "guard_rejections": 1,
+      "clearance_pass_count": 8,
+      "clearance_total": 11
+    },
+    {
+      "added_updates": 2000,
+      "gate_passed": false,
+      "direction_and_magnitude_pass_count": 4,
+      "direction_and_magnitude_total": 7,
+      "maximum_prefix_error_mm": 1.0336039098142378,
+      "guard_rejections": 0,
+      "clearance_pass_count": 11,
+      "clearance_total": 11
+    },
+    {
+      "added_updates": 3000,
+      "gate_passed": false,
+      "direction_and_magnitude_pass_count": 4,
+      "direction_and_magnitude_total": 7,
+      "maximum_prefix_error_mm": 1.231661764537926,
+      "guard_rejections": 0,
+      "clearance_pass_count": 10,
+      "clearance_total": 11
+    }
+  ],
+  "fixed_final_checkpoint": "/home/user/wq/nero_act_position_response_continuation_20261023/training/pilot_A/policy_last.ckpt",
+  "optimizer_state_saved": true,
+  "checkpoint_selection": "仅使用最后3000步；2000步虽有较低误差，未据验证结果换选模型",
+  "remaining_failed_response_cases": [
+    {
+      "pose_key": "current_0",
+      "axis": 1,
+      "teacher_response_m": 5.098441849566565e-05,
+      "actor_response_m": -2.7487706663179012e-05,
+      "passed": false
+    },
+    {
+      "pose_key": "current_710",
+      "axis": 0,
+      "teacher_response_m": 0.00044493892289282355,
+      "actor_response_m": 8.167445367512904e-05,
+      "passed": false
+    },
+    {
+      "pose_key": "current_800",
+      "axis": 0,
+      "teacher_response_m": 0.0004545493552297608,
+      "actor_response_m": 1.656262554844412e-05,
+      "passed": false
+    }
+  ],
+  "remaining_failed_clearance_cases": [
+    {
+      "id": 3078,
+      "split": "val",
+      "pose_key": "reference_789",
+      "role": "clearance",
+      "offset_xy_m": [
+        0.015,
+        0.015
+      ],
+      "maximum_prefix_position_error_m": 0.001231661764537926,
+      "actor_delta_m": [
+        2.1048251971245158e-05,
+        5.322948279731267e-05,
+        -6.260610630301477e-05
+      ],
+      "teacher_delta_m": [
+        3.8884109021530833e-07,
+        -2.9284816464164587e-09,
+        0.0005292796535807942
+      ],
+      "clearance_passed": false,
+      "guard_error": null
+    }
+  ],
+  "full_evaluation": {
+    "full_task_evaluated": false,
+    "full_task_passed": false,
+    "reason": "Final continuation failed the original position-response gate",
+    "hardware_commands_sent": false
+  },
+  "verification": {
+    "verified": true,
+    "actual_updates": 3000,
+    "cumulative_new_optimizer_updates": 6000,
+    "source_hashes_verified": 546,
+    "checkpoint_sha256": "3dfc6e47244ab2df1b361b43b071f68a39ae0d3467c23dc56e43a41a360a3db3",
+    "optimizer_state_saved": true,
+    "optimizer_step_counts": [
+      3000.0
+    ],
+    "fresh_response_exactly_matches": true,
+    "position_response_gate_passed": false,
+    "frozen_parameters_independently_verified": true,
+    "failed_candidate_rejected_for_full_evaluation": true,
+    "hardware_commands_sent": false,
+    "hardware_deployment_allowed": false
+  },
+  "tests": {
+    "exact_latest_initializer_test": "RED then GREEN",
+    "inherited_objective_tests_passed": 6
+  },
+  "limitations": [
+    "末期误差从第2000步1.03mm回升至第3000步1.23mm，不能声称稳定收敛",
+    "本轮为局部位置响应测试，不能代替完整抓放或真实泛化验收",
+    "未替换现用模型，未下发真机动作，未新增现场测量"
+  ]
+}

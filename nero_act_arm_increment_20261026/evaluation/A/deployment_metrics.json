@@ -1,0 +1,115 @@
+{
+  "scope": "representative18episodes_stride80_not_full_task",
+  "records": {
+    "all": {
+      "samples": 668,
+      "deployment_arm20_normalized_MAE": 0.00631824335859251,
+      "deployment_prefix2_MAE_rad": 0.0010850727885025032,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0021700973178748395,
+      "prefix_error_to_motion_ratio": 0.5000111191165874,
+      "gripper_prefix2_MAE_m": 4.1694169538077825e-06,
+      "positive_motion_direction_fraction": 0.993431855500821
+    },
+    "train": {
+      "samples": 445,
+      "deployment_arm20_normalized_MAE": 0.005500127799960963,
+      "deployment_prefix2_MAE_rad": 0.0009781038489889348,
+      "teacher_prefix2_motion_mean_abs_rad": 0.002155775615697305,
+      "prefix_error_to_motion_ratio": 0.45371319810227945,
+      "gripper_prefix2_MAE_m": 3.628220325020365e-06,
+      "positive_motion_direction_fraction": 0.9913793103448276
+    },
+    "approach": {
+      "samples": 144,
+      "deployment_arm20_normalized_MAE": 0.008160762064572837,
+      "deployment_prefix2_MAE_rad": 0.0016112962034567895,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0026808460557182865,
+      "prefix_error_to_motion_ratio": 0.6010401828258171,
+      "gripper_prefix2_MAE_m": 1.3473321707695933e-07,
+      "positive_motion_direction_fraction": 1.0
+    },
+    "descend": {
+      "samples": 91,
+      "deployment_arm20_normalized_MAE": 0.008361947669806996,
+      "deployment_prefix2_MAE_rad": 0.0012938549856873144,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0019332385962621383,
+      "prefix_error_to_motion_ratio": 0.6692681328569304,
+      "gripper_prefix2_MAE_m": 2.7841717757839486e-06,
+      "positive_motion_direction_fraction": 0.978021978021978
+    },
+    "close": {
+      "samples": 25,
+      "deployment_arm20_normalized_MAE": 0.008514780070100512,
+      "deployment_prefix2_MAE_rad": 0.0014411860145628452,
+      "teacher_prefix2_motion_mean_abs_rad": 9.34015427316938e-06,
+      "prefix_error_to_motion_ratio": 154.30002250635306,
+      "gripper_prefix2_MAE_m": 2.7744860817620063e-05,
+      "positive_motion_direction_fraction": 0.6
+    },
+    "lift": {
+      "samples": 98,
+      "deployment_arm20_normalized_MAE": 0.009318591765081917,
+      "deployment_prefix2_MAE_rad": 0.0014179532172473328,
+      "teacher_prefix2_motion_mean_abs_rad": 0.001956162993244979,
+      "prefix_error_to_motion_ratio": 0.7248645548166529,
+      "gripper_prefix2_MAE_m": 3.818547547206092e-06,
+      "positive_motion_direction_fraction": 1.0
+    },
+    "carry": {
+      "samples": 74,
+      "deployment_arm20_normalized_MAE": 0.007520440649456959,
+      "deployment_prefix2_MAE_rad": 0.0011167001301911749,
+      "teacher_prefix2_motion_mean_abs_rad": 0.003632520289523491,
+      "prefix_error_to_motion_ratio": 0.30741745157262756,
+      "gripper_prefix2_MAE_m": 5.850123522667507e-07,
+      "positive_motion_direction_fraction": 1.0
+    },
+    "place": {
+      "samples": 91,
+      "deployment_arm20_normalized_MAE": 0.0025400747005568944,
+      "deployment_prefix2_MAE_rad": 0.0005467878864768138,
+      "teacher_prefix2_motion_mean_abs_rad": 0.002275534599925884,
+      "prefix_error_to_motion_ratio": 0.24028985825775756,
+      "gripper_prefix2_MAE_m": 6.777123831502375e-06,
+      "positive_motion_direction_fraction": 1.0
+    },
+    "release": {
+      "samples": 31,
+      "deployment_arm20_normalized_MAE": 0.002079173606661608,
+      "deployment_prefix2_MAE_rad": 0.0003805959936282876,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0007895480515220747,
+      "prefix_error_to_motion_ratio": 0.4820428508367317,
+      "gripper_prefix2_MAE_m": 1.5798539607203566e-05,
+      "positive_motion_direction_fraction": 1.0
+    },
+    "retreat": {
+      "samples": 91,
+      "deployment_arm20_normalized_MAE": 0.00266353139884805,
+      "deployment_prefix2_MAE_rad": 0.0005241312582580902,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0021462716758719044,
+      "prefix_error_to_motion_ratio": 0.2442054583072138,
+      "gripper_prefix2_MAE_m": 3.1928153431005746e-06,
+      "positive_motion_direction_fraction": 1.0
+    },
+    "settle": {
+      "samples": 23,
+      "deployment_arm20_normalized_MAE": 0.0023471873292524223,
+      "deployment_prefix2_MAE_rad": 0.0003558335853277804,
+      "teacher_prefix2_motion_mean_abs_rad": 2.35324968462405e-06,
+      "prefix_error_to_motion_ratio": 151.2094477916089,
+      "gripper_prefix2_MAE_m": 1.8521841050261648e-07,
+      "positive_motion_direction_fraction": 1.0
+    },
+    "dev": {
+      "samples": 223,
+      "deployment_arm20_normalized_MAE": 0.007950424398832676,
+      "deployment_prefix2_MAE_rad": 0.0012985309861865298,
+      "teacher_prefix2_motion_mean_abs_rad": 0.0021986764993501885,
+      "prefix_error_to_motion_ratio": 0.5905966551106114,
+      "gripper_prefix2_MAE_m": 5.249383320670567e-06,
+      "positive_motion_direction_fraction": 0.9975369458128078
+    }
+  },
+  "optimizer_updates": 0,
+  "hardware_commands_sent": false
+}

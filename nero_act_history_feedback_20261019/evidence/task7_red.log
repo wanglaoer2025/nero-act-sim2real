@@ -1,0 +1,69 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_____________________ test_20mm_is_mechanism_not_full_task _____________________
+
+    def test_20mm_is_mechanism_not_full_task():
+>       m=api();result=lifted()
+
+tests/test_history_mechanism.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('simulation.history_mechanism'), 'History mechanism evaluator missing'
+E       AssertionError: History mechanism evaluator missing
+E       assert None
+E        +  where None = <function find_spec at 0x7a5fbd1905e0>('simulation.history_mechanism')
+E        +    where <function find_spec at 0x7a5fbd1905e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_mechanism.py:8: AssertionError
+___________________ test_all_heldout_roles_required_for_gate ___________________
+
+    def test_all_heldout_roles_required_for_gate():
+>       m=api();a=gate_record(True);b=gate_record(True)
+
+tests/test_history_mechanism.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('simulation.history_mechanism'), 'History mechanism evaluator missing'
+E       AssertionError: History mechanism evaluator missing
+E       assert None
+E        +  where None = <function find_spec at 0x7a5fbd1905e0>('simulation.history_mechanism')
+E        +    where <function find_spec at 0x7a5fbd1905e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_mechanism.py:8: AssertionError
+__________________ test_B_failure_never_launches_formal_pair ___________________
+
+    def test_B_failure_never_launches_formal_pair():
+>       m=api()
+
+tests/test_history_mechanism.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('simulation.history_mechanism'), 'History mechanism evaluator missing'
+E       AssertionError: History mechanism evaluator missing
+E       assert None
+E        +  where None = <function find_spec at 0x7a5fbd1905e0>('simulation.history_mechanism')
+E        +    where <function find_spec at 0x7a5fbd1905e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_mechanism.py:8: AssertionError
+___ test_policy_transition_requires_explicit_offline_scope_and_same_physics ____
+
+    def test_policy_transition_requires_explicit_offline_scope_and_same_physics():
+        import simulation.runtime_checkpoint as m
+>       assert hasattr(m,'resume_bindings'), 'Explicit offline policy transition missing'
+E       AssertionError: Explicit offline policy transition missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.runtime_checkpoint' from '/home/user/wq/nero_act_history_feedback_20261019/simulation/runtime_checkpoint.py'>, 'resume_bindings')
+
+tests/test_history_mechanism.py:48: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_mechanism.py::test_20mm_is_mechanism_not_full_task
+FAILED tests/test_history_mechanism.py::test_all_heldout_roles_required_for_gate
+FAILED tests/test_history_mechanism.py::test_B_failure_never_launches_formal_pair
+FAILED tests/test_history_mechanism.py::test_policy_transition_requires_explicit_offline_scope_and_same_physics
+4 failed in 1.03s

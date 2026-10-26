@@ -1,0 +1,56 @@
+[
+  {
+    "pid": 362102,
+    "ppid": "2155",
+    "comm": "python3",
+    "programs": [
+      "/usr/bin/python3"
+    ],
+    "ros_domain_id": "0 (default)",
+    "rmw": "default",
+    "parameters": {}
+  },
+  {
+    "pid": 364004,
+    "ppid": "363999",
+    "comm": "ros2",
+    "programs": [
+      "/usr/bin/python3",
+      "/opt/ros/jazzy/bin/ros2",
+      "launch",
+      "start_single_agx_arm.launch.py"
+    ],
+    "ros_domain_id": "0 (default)",
+    "rmw": "default",
+    "parameters": {}
+  },
+  {
+    "pid": 364005,
+    "ppid": "363999",
+    "comm": "tee",
+    "programs": [
+      "/home/user/wq/nero_feedback_diagnosis_20261015/driver_v120.log"
+    ],
+    "ros_domain_id": "0 (default)",
+    "rmw": "default",
+    "parameters": {}
+  },
+  {
+    "pid": 364008,
+    "ppid": "364004",
+    "comm": "agx_arm_ctrl_si",
+    "programs": [
+      "/usr/bin/python3",
+      "/home/user/projects/nero_ros2_ws/install/agx_arm_ctrl/lib/agx_arm_ctrl/agx_arm_ctrl_single"
+    ],
+    "ros_domain_id": "0 (default)",
+    "rmw": "default",
+    "parameters": {
+      "arm_type": "nero",
+      "auto_enable": "false",
+      "can_port": "can0",
+      "control_enabled": "false",
+      "fw_version": "v120"
+    }
+  }
+]

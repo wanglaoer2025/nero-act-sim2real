@@ -1,0 +1,37 @@
+{
+  "states_targets_cup_tcp_contacts": {
+    "columns": [
+      "actual_joint1_rad",
+      "actual_joint2_rad",
+      "actual_joint3_rad",
+      "actual_joint4_rad",
+      "actual_joint5_rad",
+      "actual_joint6_rad",
+      "actual_joint7_rad",
+      "actual_gripper_total_width_m",
+      "applied_target_joint1_rad",
+      "applied_target_joint2_rad",
+      "applied_target_joint3_rad",
+      "applied_target_joint4_rad",
+      "applied_target_joint5_rad",
+      "applied_target_joint6_rad",
+      "applied_target_joint7_rad",
+      "applied_gripper_total_width_m",
+      "cup_x_m",
+      "cup_y_m",
+      "cup_z_m",
+      "tcp_x_m",
+      "tcp_y_m",
+      "tcp_z_m",
+      "bilateral_contact_bool",
+      "unexpected_arm_cup_contact_bool"
+    ],
+    "row_time_s": "(index+1)*0.05"
+  },
+  "raw_chunks": "[queries,20,8] full learned forecasts before safety/rate limits",
+  "query_steps": "observation step of each raw chunk",
+  "raw_actions": "[T,8], model prefix before limits; frozen target during completion hold",
+  "completion_hold_mode": "boolean[T], true for the post-completion100 control points",
+  "cup_upright_history": "cosine[T], simulator cup vertical orientation; only completion monitor uses this",
+  "hardware_data": false
+}

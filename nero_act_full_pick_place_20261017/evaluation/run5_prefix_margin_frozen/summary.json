@@ -1,0 +1,813 @@
+{
+  "checkpoint_sha256": "25d81c67ede8b4e0e77db94ffe42f86430985815fc52cd84324688a61b2675b8",
+  "selected_epoch": 47,
+  "task_scope": "complete_pick_carry_place_retreat",
+  "source_sha256": {
+    "executor/model.py": "53eaadd9d0527ec971a93ca0c949368dabbdc9441b91dd91457656ce2aeafa6b",
+    "executor/contract.py": "ea05e05392e2cf325d58a38578e9c463c248158fe87789f6dd0ab55d8b8b1b66",
+    "simulation/evaluate.py": "20bb9527aa1ce3469271cea02f086f5e08735d778550f4d6bb9230eaf1fb20d5",
+    "simulation/scene.py": "05ff4e11d90326028fdc717dfb8569497cfd7b8f44cd6b84bbae53da9babf325",
+    "simulation/teacher.py": "020209523598b20a0ea1d32b2f432ec4b9a0a517d8cc9c13221caf9caa904ddc",
+    "simulation/outcome.py": "34509d83cccfa7240cefecced226de5ebcb32fd7879abdbf9f36cccde06d78e7",
+    "scene/config.json": "bd16a93490eff3e0bc3d6727b3e21fc9acea07275e64cdb77149858ed81ca42f",
+    "policy_source/src/act/nero_policy.py": "33cdfd4dc048623664072d2d7c9ca1eda96fb9cf4474eb91a1043ba8c738bba3",
+    "policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d"
+  },
+  "scenarios": [
+    {
+      "query_stride": 10,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "nominal",
+      "seed": 94000
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_0",
+      "seed": 94100
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_1",
+      "seed": 94101
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_2",
+      "seed": 94102
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_3",
+      "seed": 94103
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_4",
+      "seed": 94104
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_5",
+      "seed": 94105
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_6",
+      "seed": 94106
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_7",
+      "seed": 94107
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.17,
+      "jitter": false,
+      "force": false,
+      "name": "cadence_11",
+      "seed": 94200
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 2,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_100ms",
+      "seed": 94201
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 10,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_500ms",
+      "seed": 94202
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_0",
+      "seed": 94300
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_1",
+      "seed": 94301
+    }
+  ],
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "reach_deadline_steps": 4300,
+  "post_completion_hold_steps": 100,
+  "observation_policy": "fresh rendered RGB and measured8D state per query",
+  "hardware_deployment_allowed": false,
+  "results": [
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.1963456393944305,
+      "maximum_horizontal_transfer_m": 0.12722088901583367,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 342,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 1,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5296805820355404,
+          -0.11154924598776934,
+          0.23769917788800926
+        ],
+        "tcp_xyz": [
+          -0.5317654100065863,
+          -0.1114321860366367,
+          0.24760623290471825
+        ],
+        "cup_upright": 0.9998592218374243,
+        "cup_speed": 0.027056197910844425,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07364418230800904,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 10,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "nominal",
+        "seed": 94000
+      },
+      "frames": 1280,
+      "queries": 129,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 12.50501710997196
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19672855144702045,
+      "maximum_horizontal_transfer_m": 0.18276110711616667,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 583,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5270822446238422,
+          -0.16879036806100164,
+          0.04749668780134398
+        ],
+        "tcp_xyz": [
+          -0.5112343128081525,
+          -0.19899225459801723,
+          0.245053641990665
+        ],
+        "cup_upright": 0.9999999999999519,
+        "cup_speed": 4.1861797233222385e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877672866,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_0",
+        "seed": 94100
+      },
+      "frames": 4284,
+      "queries": 381,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 4183,
+      "runtime_s": 43.505688607052434
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19749037068036562,
+      "maximum_horizontal_transfer_m": 0.17787958948249402,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 584,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5253229194392529,
+          -0.1642638287189902,
+          0.04749668780811266
+        ],
+        "tcp_xyz": [
+          -0.5150878532959524,
+          -0.1999623401965641,
+          0.24514091644556693
+        ],
+        "cup_upright": 0.9999999999999699,
+        "cup_speed": 1.349455313076868e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877630683,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_1",
+        "seed": 94101
+      },
+      "frames": 4283,
+      "queries": 381,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 4182,
+      "runtime_s": 43.937445058021694
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19616271702665178,
+      "maximum_horizontal_transfer_m": 0.13044407809262887,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 377,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 1,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5317792864223201,
+          -0.11352728837679898,
+          0.23643609783000294
+        ],
+        "tcp_xyz": [
+          -0.5338310961029235,
+          -0.11339090697857478,
+          0.2442893237471136
+        ],
+        "cup_upright": 0.9998546683901992,
+        "cup_speed": 0.022233053594047366,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07365109589667233,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_2",
+        "seed": 94102
+      },
+      "frames": 1309,
+      "queries": 120,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 12.308070997009054
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19575021759935773,
+      "maximum_horizontal_transfer_m": 0.1790648168651833,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 627,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5280144214997716,
+          -0.16137476214890414,
+          0.0474966878003246
+        ],
+        "tcp_xyz": [
+          -0.5201371514182931,
+          -0.1804182417805754,
+          0.24513106419510194
+        ],
+        "cup_upright": 0.9999999999999489,
+        "cup_speed": 7.597887334117637e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877722323,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_3",
+        "seed": 94103
+      },
+      "frames": 3709,
+      "queries": 329,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 3608,
+      "runtime_s": 37.23903476400301
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19440134459353647,
+      "maximum_horizontal_transfer_m": 0.17640701606728537,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 616,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5252627745917511,
+          -0.1620497980506572,
+          0.04749668780261635
+        ],
+        "tcp_xyz": [
+          -0.5089053074108729,
+          -0.19886306521414684,
+          0.24032693969047123
+        ],
+        "cup_upright": 0.9999999999999637,
+        "cup_speed": 5.29863095369806e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999900277886,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_4",
+        "seed": 94104
+      },
+      "frames": 4300,
+      "queries": 391,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 43.47172018501442
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19684489078797635,
+      "maximum_horizontal_transfer_m": 0.178828634469541,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 650,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5275695673685532,
+          -0.1595100521474866,
+          0.04749668780213419
+        ],
+        "tcp_xyz": [
+          -0.5087526090948862,
+          -0.19215792031139103,
+          0.2445480772858382
+        ],
+        "cup_upright": 0.9999999999999438,
+        "cup_speed": 2.3249996338444944e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999904095106,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_5",
+        "seed": 94105
+      },
+      "frames": 4300,
+      "queries": 391,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 43.18242815299891
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19573021394210233,
+      "maximum_horizontal_transfer_m": 0.12754678956722207,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 370,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 1,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5300361695279165,
+          -0.11312763443231216,
+          0.23741835866271557
+        ],
+        "tcp_xyz": [
+          -0.5318564116919403,
+          -0.11299068315909021,
+          0.2462537413826484
+        ],
+        "cup_upright": 0.9998040200418489,
+        "cup_speed": 0.024061528981519007,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07366008689653289,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_6",
+        "seed": 94106
+      },
+      "frames": 1342,
+      "queries": 123,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 12.863654462969862
+    },
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19627604796973613,
+      "maximum_horizontal_transfer_m": 0.17770344298664678,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 623,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.526699103567266,
+          -0.16235342191839244,
+          0.0474966878091102
+        ],
+        "tcp_xyz": [
+          -0.5231422716835141,
+          -0.17958085600828008,
+          0.2450345730268847
+        ],
+        "cup_upright": 0.9999999999999653,
+        "cup_speed": 4.48243632527627e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999877688745,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": true,
+        "force": false,
+        "name": "independent_7",
+        "seed": 94107
+      },
+      "frames": 4109,
+      "queries": 365,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 4008,
+      "runtime_s": 41.62243339396082
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.1972319535688959,
+      "maximum_horizontal_transfer_m": 0.13544774869174514,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 359,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 1,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5300261757040177,
+          -0.11976900396830271,
+          0.23931076632190393
+        ],
+        "tcp_xyz": [
+          -0.5315587298985297,
+          -0.11964621508681035,
+          0.24632249739656287
+        ],
+        "cup_upright": 0.9994711155193727,
+        "cup_speed": 0.0201582113726261,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07367703509371337,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.17,
+        "jitter": false,
+        "force": false,
+        "name": "cadence_11",
+        "seed": 94200
+      },
+      "frames": 1331,
+      "queries": 122,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 12.728959989035502
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19455997344034615,
+      "maximum_horizontal_transfer_m": 0.1264616320992212,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 401,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 1,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5289850536949294,
+          -0.11081249556611962,
+          0.2355667457780934
+        ],
+        "tcp_xyz": [
+          -0.5314834412894859,
+          -0.11067535611745635,
+          0.24755824675246899
+        ],
+        "cup_upright": 0.9999302239747263,
+        "cup_speed": 0.02546763376650067,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07362197943548612,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 2,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "delay_100ms",
+        "seed": 94201
+      },
+      "frames": 1529,
+      "queries": 140,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 14.665638345992193
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19709215267111313,
+      "maximum_horizontal_transfer_m": 0.12784094360095366,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 674,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 1,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.531100619756594,
+          -0.11211148547672123,
+          0.2372412130209999
+        ],
+        "tcp_xyz": [
+          -0.5323966395128598,
+          -0.11198246394806567,
+          0.23437732737391914
+        ],
+        "cup_upright": 0.9997159008673167,
+        "cup_speed": 0.0014042146773770657,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07372013757382426,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 10,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "delay_500ms",
+        "seed": 94202
+      },
+      "frames": 2629,
+      "queries": 240,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 24.8230200940161
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19523617639911167,
+      "maximum_horizontal_transfer_m": 0.12788493119580538,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 357,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 1,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5297820703382677,
+          -0.11221007247302564,
+          0.23649784719290814
+        ],
+        "tcp_xyz": [
+          -0.5306491645307786,
+          -0.11211379714434179,
+          0.24253305113516943
+        ],
+        "cup_upright": 0.9997817707736399,
+        "cup_speed": 0.02333984863251711,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.0737244394932222,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": true,
+        "name": "force_0",
+        "seed": 94300
+      },
+      "frames": 1331,
+      "queries": 122,
+      "error": "ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping",
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": null,
+      "runtime_s": 12.773887204006314
+    },
+    {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.19725332563814074,
+      "maximum_horizontal_transfer_m": 0.180299584845575,
+      "stable_released_frames": 0,
+      "lift_contact_frames": 611,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5267924662235646,
+          -0.16459674112831835,
+          0.0474966878064835
+        ],
+        "tcp_xyz": [
+          -0.51001277295113,
+          -0.1988111567147357,
+          0.2446469746509104
+        ],
+        "cup_upright": 0.9999999999999658,
+        "cup_speed": 3.7819940838049487e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09500000008886218,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 11,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": true,
+        "name": "force_1",
+        "seed": 94301
+      },
+      "frames": 4234,
+      "queries": 376,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 4133,
+      "runtime_s": 42.9815234389971
+    }
+  ],
+  "complete": true,
+  "passed": 4,
+  "total": 14
+}

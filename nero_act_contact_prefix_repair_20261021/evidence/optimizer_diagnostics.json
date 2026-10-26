@@ -1,0 +1,248 @@
+{
+  "schema": "optimizer_diagnostics_v1",
+  "complete": true,
+  "actual_optimizer_updates": 0,
+  "model_states_unchanged": true,
+  "exact_teacher_conflict_groups_after_filter": 0,
+  "excluded_ambiguous_windows": [
+    "episode_23:2580",
+    "episode_8:2360"
+  ],
+  "gradient_records": [
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 0,
+      "ordinary_loss": 0.011836515739560127,
+      "preservation_loss": 1.3531189324567094e-07,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 6.607690811157227,
+          "second_norm": 3.1531801223754883,
+          "cosine": 0.7937324047088623
+        },
+        "gripper_adapter": {
+          "first_norm": 0.01207972876727581,
+          "second_norm": 4.686316060542595e-06,
+          "cosine": 0.787060558795929
+        }
+      },
+      "total_gradient_norm": 9.310181617736816,
+      "global_clip_multiplier": 0.01074092787497961,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 24,
+      "ordinary_loss": 0.008150842972099781,
+      "preservation_loss": 7.151397340976473e-08,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 9.146648406982422,
+          "second_norm": 1.178678035736084,
+          "cosine": 0.8301869630813599
+        },
+        "gripper_adapter": {
+          "first_norm": 0.009037312120199203,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 10.146474838256836,
+      "global_clip_multiplier": 0.009855638705899684,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 99,
+      "ordinary_loss": 0.010935734026134014,
+      "preservation_loss": 5.924080781483099e-08,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 8.135415077209473,
+          "second_norm": 1.0558099746704102,
+          "cosine": -0.3875521421432495
+        },
+        "gripper_adapter": {
+          "first_norm": 0.030987991020083427,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 7.787358283996582,
+      "global_clip_multiplier": 0.012841323528696701,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "zero_update_baseline",
+      "batch_ordinal_zero_based": 499,
+      "ordinary_loss": 0.010984571650624275,
+      "preservation_loss": 5.607493491766036e-08,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 6.763907432556152,
+          "second_norm": 1.003650426864624,
+          "cosine": 0.20764458179473877
+        },
+        "gripper_adapter": {
+          "first_norm": 0.006104850675910711,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 7.04109525680542,
+      "global_clip_multiplier": 0.01420233389130949,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 0,
+      "ordinary_loss": 0.03367467224597931,
+      "preservation_loss": 279.02532958984375,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 11.822409629821777,
+          "second_norm": 275676.90625,
+          "cosine": 0.5108516216278076
+        },
+        "gripper_adapter": {
+          "first_norm": 0.009707004763185978,
+          "second_norm": 0.026838630437850952,
+          "cosine": -0.8124943971633911
+        }
+      },
+      "total_gradient_norm": 275682.9375,
+      "global_clip_multiplier": 3.6273554289023513e-07,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 24,
+      "ordinary_loss": 0.03357001021504402,
+      "preservation_loss": 38.45793914794922,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 11.804709434509277,
+          "second_norm": 106263.9609375,
+          "cosine": 0.3452443480491638
+        },
+        "gripper_adapter": {
+          "first_norm": 0.012838220223784447,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 106268.0390625,
+      "global_clip_multiplier": 9.410167053166893e-07,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 99,
+      "ordinary_loss": 0.04023203253746033,
+      "preservation_loss": 1.0150431394577026,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 14.549293518066406,
+          "second_norm": 12634.673828125,
+          "cosine": 0.3182719647884369
+        },
+        "gripper_adapter": {
+          "first_norm": 0.027793262153863907,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 12639.3125,
+      "global_clip_multiplier": 7.91182273498564e-06,
+      "optimizer_steps": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "batch_ordinal_zero_based": 499,
+      "ordinary_loss": 0.03876171633601189,
+      "preservation_loss": 40.86906814575195,
+      "gradient_groups": {
+        "arm_output": {
+          "first_norm": 12.341362953186035,
+          "second_norm": 110965.1171875,
+          "cosine": 0.47233879566192627
+        },
+        "gripper_adapter": {
+          "first_norm": 0.00592109514400363,
+          "second_norm": 0.0,
+          "cosine": null
+        }
+      },
+      "total_gradient_norm": 110970.9453125,
+      "global_clip_multiplier": 9.011367769959392e-07,
+      "optimizer_steps": 0
+    }
+  ],
+  "initial_replay_assessment": {
+    "samples": 423,
+    "maximum_arm_prefix_change_rad": 2.384185791015625e-07,
+    "rms_arm_prefix_change_rad": 2.8612286442776187e-08,
+    "maximum_gripper_prefix_change_m": 7.450580596923828e-09,
+    "training_replay_not_independent_validation": true
+  },
+  "model_states": [
+    {
+      "policy": "zero_update_baseline",
+      "before_sha256": "40c46c0bf71a03ddc00d127fd0eed524066e5b678eeca18a2656661d8fb6e3bc",
+      "after_sha256": "40c46c0bf71a03ddc00d127fd0eed524066e5b678eeca18a2656661d8fb6e3bc",
+      "optimizer_state_entries": 0
+    },
+    {
+      "policy": "failed_preservation_1000",
+      "before_sha256": "202c10b09dd852d71722368cc396c5b3bb8090dc6735889bc5614b5fd91ca55d",
+      "after_sha256": "202c10b09dd852d71722368cc396c5b3bb8090dc6735889bc5614b5fd91ca55d",
+      "optimizer_state_entries": 0
+    }
+  ],
+  "source_sha256": {
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/evidence/diagnose_gradients.py": "eb7c969558d4f1dad9032328d8187eeb3ada3916180cbc1d933c40c13116202a",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/policy_best_val.ckpt": "b252dd578b4bf5626566ec5b60a47be0bdcfee30e9eab990cde05ac122bdea71",
+    "/home/user/wq/nero_act_approach_preservation_20261021/training/pilot_A/checkpoints/policy_last.ckpt": "380cca3a2e6699c4185c5b97d4dac5383cd772243efe82df5c3e77f1f020f537",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/dataset_stats.pkl": "78390f6aed2b1c7d1a7f5e466c31b5279419da57168b640a2756427fc3914597",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/dataset_stats.pkl": "73edd23e981c48e78cc3fa1557f33c8f2c3dd1a9bdf2105c26fc7a027c2ad2fc",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/manifest.json": "b79fefcdfb08174bc713798dc0e1532f21385d6f9f14c3d5e583c78d29d2894a",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/batch_order_pilot.npy": "04c7a89f971a8bb797b71cc71b2c71c9510290c2564785c4ce7efc0333b1b00a",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/batch_order_manifest.json": "9ecaa14cd912c413045c028432e66c1ba2a3a2595c3067c4e4da6ea173f193f6",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/sampling_resolution.json": "fad222d19ef52009a499c05255cbda2a0d4e0b6a103c479eac0e7b350da44753",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/config/history_experiment.json": "afbd5f82e63d6fe50bc19cd0b9a4d979808c060e56b2d24f9aa3f7c304ce0ba5",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_inputs/approach_replay.npz": "91433692457f13d26a118b1bb3baf2d5255382f400a4550cfa7585b3cd715868",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_inputs/approach_replay.json": "bcbfb71a4af62dd4a27358d6a46780db416e47645323c7253b285d99513d3fb2",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/history_seal.py": "251847ba6ffdae02d8c387b7c2820cc7a8a8dc63c2a9d4cd8c9592bb62e0af27",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/append_history_recovery.py": "c6685e563bde2a520431f92d16657b7f9000fb60b2a95f0489a3154e7e2ffc7e",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/command_context.py": "f781f06f6c893dcecfa593ccd25d3e7f554a214cb9787254670cc38561783d90",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/history_dataset.py": "d30fc94b84fe97f5d5e24517952519bf1e9d00f0c2fa6e1567fc249f33667da3",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/visual.py": "5ffef7ba80e2393a3c192ab230cd7bb6baab68d88d252bf9d048fc745356014d",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/transition_sampling.py": "5bbf6083589539e1ed59e8a1af24dca724bec08ec1fe7464db9a224bdb618226",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/generalized.py": "e4e541624a798e5936da2e909c36ae2af564fcd8d448fdc078223fa7ab560347",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/export.py": "e9e7bc08923ae315f0abb482c0e6feb6dbb18e20337a269c9f8cbd7cde209003",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/history.py": "7a9b92901488ebdab255a1bd9eea41a6945b7849c9065524a58209782f9e8cfc",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/contact_timebase.py": "6e16f1113092548d8553d5f86ad91674a79899c3660db9f0a3cfa5d39930e9f8",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/prepare_approach_replay.py": "0faf276ad378ceb7337bc95fdcb454118913202d3d31f90830f8e50ff2864115",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/optimizer_control.py": "154973478302aaecdac6b34b4fca72f9c843915187821b459d3506357e04fb35",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/recoveries.py": "d19126db217accd576a605e069b31470ec56954b2d7464b2ec75ff569da337a1",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/rebase_initializer.py": "cf70510e00f2014c0bd77051a96200e5c02c9997fc293917d8e82f5851d66ff0",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/history_recoveries.py": "77c53ca209f55740aa8fd9b872ac0b0c34df89c6985aec6e5d6f257563d80bbc",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/integrity.py": "fee7e85b890d462b8a1f4582b5e0d311322df184b22b95d364b9a9ee414b4408",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/visual_dataset.py": "1e813d478e213a67e602cfdeeecdf509d6ed5fc91d86e922a5a84c6b63b8944e",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/pose_objective.py": "8f4dea5e665c9a22a1d2782e0949346521ae7974fe7507e53bb0902003d3a11a",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/contact_sampling.py": "3e6b487ebca30dfbbe2b7668cb05c7a4167def85dce2c9cdbdb3326cbc22c85c",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/history_data.py": "07446e6e9e9b0aa95b0328b8bc79d50ae5acaf77731ea4322a2f1e400a5233b6",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/visual_gripper_repair.py": "0472d1a939774a106b0780d08796cf1b778327a24b713c2a444d25a04200e35d",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/legacy_visual_data.py": "f37b3c1542fc810afd99f0b83e5b18ab8fc2b05c93c6d253b654f4783afa1863",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/train.py": "ddf5d699620283a37c21bfc8de924014e1230c6967403db44c5a9394163f50b1",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/approach_preservation.py": "4ba08a06f5f94398cf24563b934f739d25aca83f73e2c4a6106d0ba5904f9446",
+    "/home/user/wq/nero_act_approach_preservation_20261021/training/pilot_A/checkpoints/dataset_stats.pkl": "e8e3cb0a294bd192e831f4cf22f0ba3f2a8fb3970172081ed7b5893d4eee335d",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/evidence/prepare_inputs.py": "20a3e31f8c87482a4658fffa8778d92c04a5eef507c53d7f60da50285b143719",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/evidence/regenerate_physics.py": "257063bf0872cdbf4a00d1e7b8e7bf2d9068a4ef0b30ad199257cb0b6f5f0df1",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/evidence/derive_uniform_data.py": "a17b7dbe5dd40cd779e5fd8e4ce5ee9e9e3a273785b76ae2604ec8d6f9d5f8bd",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/evidence/qualify_pilot.py": "eb91c7a950da41ac6a3c25073a6f4d87da017e03e17cd0a7effdbec9c4c38e63",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/approved_scope.md": "0e8c2e77fcf75fb9958a4c2b27f88ca6dd04bf3310437b94db2d32f2c96bccc4"
+  },
+  "hardware_commands_sent": false
+}

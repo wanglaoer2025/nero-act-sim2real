@@ -1,0 +1,13 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+number of parameters: 12.58M
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/prepare_air_prefix.py", line 121, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_motion_trial_20261023/prepare_air_prefix.py", line 92, in main
+    model=build_scene(conservative);physical=mujoco.MjData(model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_grouped_gripper_20261021/simulation/scene.py", line 33, in build_scene
+    raise ValueError('Changing cup dimensions requires regenerating its physical geometry')
+ValueError: Changing cup dimensions requires regenerating its physical geometry

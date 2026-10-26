@@ -1,0 +1,41 @@
+﻿类别,检查项,状态,结果与限制,证据
+平台,Ubuntu / ROS / GPU,已读取,Ubuntu24.04.4、ROS Jazzy、RTX4090 24564MiB；NVIDIA驱动535.288.01,platform_and_CAN_check.json
+平台,Python与关键依赖,已读取,Python3.12环境；pyAgxArm1.0.0、Torch2.5.1+cu121、OpenCV5.0.0.93等版本已保存,platform_and_CAN_check.json
+链路,CAN通信,本次只读观察通过,can0 1Mbps，ERROR-ACTIVE；约1s窗口RX+3108、TX+0、新增丢包/错误0；历史累计丢包需与本次增量区别,platform_and_CAN_check.json
+链路,固件版本,启动日志已确认,当前运行驱动启动时检测v120/1.20；实机未重新发送固件查询；ACT包装器默认V120一致,platform_and_CAN_check.json
+链路,真实驱动在线,已实测,驱动进程在线、真实反馈持续发布；短时CLI发现不完整，持续DDS发现确认15节点,ros_graph.json
+ROS,全部可读取参数,部分节点完成,11节点503项参数已读取；2个MoveIt内部节点ListParameters响应超时，未声称全节点参数均可取,ros_parameters.json
+ROS,话题/服务/action/QoS,接口已枚举,接口类型与发布/订阅端已保存；只调用List/Get只读服务，未发送action goal,ros_graph.json;ros_actions.json
+ROS,当前控制门状态,已实测,control_enabled=false，采样期间gated话题收到0条；保留当前状态,feedback_timing_review.json
+ROS,控制器与真实驱动分工,已确认,controller_manager硬件是mock_components/GenericSystem，真实反馈来自独立CAN驱动；action成功不等于真机运动成功,ros_readonly_service_results.json
+ROS,控制器/真机起点同步,当前未同步,模拟控制器全零，真机最大关节差1.571rad、夹爪差约94.92mm，超过控制门同步阈值；未调整控制器或发送目标,feedback_timing_review.json
+ROS,ROS与SDK控制权,部署前需选定,当前ROS驱动持有CAN；现有ACT入口使用直接SDK，应选定单一控制路线后部署,verified_interface_contract.json
+状态,八维状态和单位,已实测,joint1至joint7弧度＋gripper总开口米；当前位置有限；命令与反馈JointState名称顺序不同，应按名字映射,verified_interface_contract.json;feedback_timing_review.json
+状态,反馈频率与新鲜度,已实测,发布约200Hz；独立关节时间戳约168Hz，末端50Hz，夹爪198Hz；时间戳无倒退,feedback_timing_review.json
+状态,故障状态字段,本次未见上报故障,arm_status/err_status及关节限位/通信错误布尔位无故障，夹爪错误位无故障；不能据此证明机械零位和TCP标定,ros_feedback_capture.json
+状态,夹爪反馈开口,已读反馈，实物未独立复测,约94.92mm；用户表示既往真实抓取正常，未提供尺测值；未执行开闭或归零,feedback_timing_review.json
+运动学,SDK、URDF与控制器法兰位姿,当前静止姿态软件一致,990条配对样本；SDK FK与反馈位置最大差0.01373mm；URDF link7与SDK最大差0.0000373mm；不等于物理TCP精度,kinematics_and_limits_check.json
+运动学,七轴软件位置限位,配置一致,SDK、运行URDF与ACT配置的七轴上下限逐项一致；物理限位与运动方向未用动作测试,kinematics_and_limits_check.json
+运动学,速度/加速度/力矩配置,已读取配置,URDF/MoveIt名义速度上限与ACT安全速度0.4rad/s分属不同层；ROS speed75%，ACT执行配置10%；未测试实际极限,ros_parameters.json;robot_model_inventory.json;baseline_configuration/act_nero_day6.yaml
+运动学,TCP参考与工具安装变换,定义尚未统一,当前ROS tcp_link偏移0；SDK手工TCP为法兰+X135mm；按本机安装变换换算仿真+Z115mm假设，相差约29.00mm；远端模型与实物尚未独立验收,kinematics_and_limits_check.json
+实物,关节零位,既有运行经验支持，未独立复核,用户报告之前实机抓取正常；没有把该回复等同于厂家零位校准记录,verification_report.json
+实物,机器人模型质量/惯量/碰撞几何,模型已读取，实物未测,运行URDF全部链接、惯量和关节信息保存；未独立测量机械臂惯量、负载或动力学,robot_model_inventory.json
+相机,型号/序列号/分辨率,已实测,固定ZED2i，SN39602891，HD720@30；ACT以SDK直接读取，depth_mode=NONE,camera_pipeline_check.json
+相机,RGB朝向与预处理,已实测通过,640×360 RGBuint8、旋转180°、float/255后bilinear align_corners=False缩放90×160，再ImageNet归一化；真实帧独立重构一致,camera_pipeline_check.json;zed_act_model_input.npz
+相机,原始图像采集频率,已实测,40帧连续采样约29.25Hz；不能与20Hz策略循环混淆,camera_pipeline_check.json
+相机,ROS点云输入,当前无发布者,/camera/depth/color/points只有订阅端；实时点云障碍物感知未验证；ACT采用SDK RGB路径,ros_graph.json
+时序,20Hz图像＋状态采集,100周期实测通过,实际19.9988Hz，准备耗时P95约6.93ms、最大30.56ms；未包含策略推理或执行,joint_camera_timing_check.json
+时序,图像/关节时间对齐,已测，动态一致性待验收,图像与最新反馈时间戳差P95约54.70ms、最大59.05ms；本次静止观察，不代表运动中同帧同步通过,joint_camera_timing_check.json
+ACT,模型输入/训练配置,源码与配置已确认,基础单相机state8/action8、90×160、20步、ResNet18、隐藏128；其他双相机/14维实验不能混用,baseline_configuration/act_nero_day5.yaml;verified_interface_contract.json
+ACT,SDK关节与夹爪命令参数,源码已确认,move_j七轴绝对弧度；move_gripper_m总开口米＋单独力N；本次未实际发送,verified_interface_contract.json
+ACT,夹爪动作编码,新仿真接入必须匹配,测量状态和SDK能力为连续宽度，现有SafetyFilter执行0/95mm二值迟滞：<=35mm闭，>=60mm开；75mm预测会被映射95mm,verified_interface_contract.json
+ACT,ROS部分关节命令,源码确认边界,直接move_j消息若只提供部分关节，驱动对缺失轴填0；适配器必须发送完整七轴，不能将部分目标当保持其他轴,verified_interface_contract.json
+ACT,SDK读反馈时间戳检查,源码限制已记录,包装器等待有限值反馈，但未显式检查反馈原始时间戳年龄；当前ROS新鲜度通过不等于SDK断链保护验收,verified_interface_contract.json
+ACT,旧dry-run入口硬件影响,源码已确认,现有run_act_real --dry-run仍connect/enable/follower，本次未运行该入口；使用相机＋ROS订阅的独立只读检查,verification_report.json
+ACT,离线接口/数据/推理循环测试,39项通过,真机工厂create_arm被禁止；使用FakeRobot/FakeCamera测试，不作为真实任务成功证据,offline_tests.txt
+场景,杯子、桌面、支架、相机高度,用户实测信息已收录,杯75×95mm/50g；平行支架13mm；左目桌高357mm；蓝卡100×100mm；板110mm/底托约20mm,prior_scene_evidence/task_measurements.json
+场景,相机外参当前几何一致性,前轮检查尚未通过,保存外参可复现；当前板平面约13°差，名义板Z约79mm差含基座原点假设；既往成功抓取不自动消除该场景检查差异,prior_scene_evidence/calibration_history_review.json
+场景,当前抓取/放置坐标,待核实,黄色杯→蓝卡已指定；先前蓝卡已移动；当前准确基座坐标、桌面基座Z与工具中心尚未确认,prior_scene_evidence/task_measurements.json
+实机验收,既往成功抓取,用户报告，保留既有基线,用户明确表示之前真机抓取无问题；未自行推断该成功属于本次Nero仿真ACT权重,verification_report.json
+实机验收,实际运动/限位/夹爪力/碰撞/闭环任务,本次未执行,本次仅只读核验；运行配置、CAN控制权、速度、使能、控制门和实机标定均未修改,verification_report.json
+相机,当前任务画面可见性,诊断场景已观察，最终任务画面待确认,当前图像偏暗，杯子/蓝卡部分位于画面边缘，标定板与测尺仍在任务区；记录现状，未调整相机设置或任务位置,current_scene_image_review.json;zed_act_rgb.png

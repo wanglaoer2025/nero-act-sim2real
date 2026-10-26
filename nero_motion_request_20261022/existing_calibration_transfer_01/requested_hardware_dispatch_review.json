@@ -1,0 +1,42 @@
+{
+  "time_local": "2026-10-22T22:46:45.981816+08:00",
+  "user_request": "下发真机运动",
+  "requested_full_ACT_path_released_to_hardware": false,
+  "blocking_evidence": {
+    "source": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/execution_results.json",
+    "sha256": "23534fefe99c71a78798ee1aff956c37a2d7648b02d85237aa34e643e302711d",
+    "current_layout_simulation_passed": false,
+    "closure_TCP_cup_XY_disagreement_mm": 96.58452689237242,
+    "error": "ACT requested closure outside the observed grasp region"
+  },
+  "high_approach_candidate_analysis": {
+    "source_points": 475,
+    "source_nominal_time_s": 23.75,
+    "model_TCP_final_m": [
+      -0.5052656121469268,
+      0.009597028394639048,
+      0.3202494123229332
+    ],
+    "joint_excursion_deg": [
+      9.622360859755702,
+      27.784451595524136,
+      8.76605369126944,
+      7.504151434512832,
+      2.3904824308786368,
+      17.771772855594502,
+      35.07851296089306
+    ],
+    "includes_grasp": false,
+    "current_real_whole_path_acceptance": false,
+    "ready_to_execute": false,
+    "limitation": "Existing20mm board-framing and automatic marker-sampling entries have different reviewed purposes, limits, and onsite bindings. They are not reused or weakened to execute this ACT candidate."
+  },
+  "safety_gates_weakened": false,
+  "old_sampling_or_grasp_receipts_reused": false,
+  "new_measurements_requested": false,
+  "new_enable_or_reset_sent": false,
+  "arm_targets_sent": 0,
+  "gripper_targets_sent": 0,
+  "CAN_TX_after_inspection": 6677,
+  "next_work": "Repair current-layout ACT position-conditioned behavior using saved observations and simulation failures, then validate exact revised path. No new manual measurement request."
+}

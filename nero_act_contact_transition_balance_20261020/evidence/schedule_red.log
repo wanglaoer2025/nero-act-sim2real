@@ -1,0 +1,39 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_______ test_fixed_budget_reserves_quarter_for_training_transition_pool ________
+
+    def test_fixed_budget_reserves_quarter_for_training_transition_pool():
+        from training.history import make_batch_order
+        pool=np.arange(20)
+>       schedule=make_batch_order(1000,batch_size=32,budget={'kind':'updates','limit':1000},seed=42,critical_indices=pool)
+E       TypeError: make_batch_order() got an unexpected keyword argument 'critical_indices'
+
+tests/test_transition_schedule.py:8: TypeError
+_____ test_pool_selects_first_five_actual_starts_from_training_recoveries ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-161/test_pool_selects_first_five_a0')
+
+    def test_pool_selects_first_five_actual_starts_from_training_recoveries(tmp_path):
+>       from training.history import transition_pool
+E       ImportError: cannot import name 'transition_pool' from 'training.history' (/home/user/wq/nero_act_contact_transition_balance_20261020/training/history.py)
+
+tests/test_transition_schedule.py:17: ImportError
+__________________ test_malformed_or_foreign_pool_is_rejected __________________
+
+    def test_malformed_or_foreign_pool_is_rejected():
+        from training.history import make_batch_order
+        for pool in [[],[-1],[1000],[1.5]]:
+>           with pytest.raises(ValueError):make_batch_order(1000,batch_size=32,budget={'kind':'updates','limit':1000},seed=42,critical_indices=pool)
+E           TypeError: make_batch_order() got an unexpected keyword argument 'critical_indices'
+
+tests/test_transition_schedule.py:34: TypeError
+=============================== warnings summary ===============================
+tests/test_transition_schedule.py::test_fixed_budget_reserves_quarter_for_training_transition_pool
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_transition_schedule.py::test_fixed_budget_reserves_quarter_for_training_transition_pool
+FAILED tests/test_transition_schedule.py::test_pool_selects_first_five_actual_starts_from_training_recoveries
+FAILED tests/test_transition_schedule.py::test_malformed_or_foreign_pool_is_rejected
+3 failed, 1 warning in 2.15s

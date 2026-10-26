@@ -1,0 +1,30 @@
+{
+  "post_hoc_diagnostic": true,
+  "variants": {
+    "A": {
+      "original_loss": 0.12726910412311554,
+      "image_permutation_loss_mean": 0.1280440241098404,
+      "image_permutation_loss_std": 0.00021069487024280367,
+      "state_permutation_loss_mean": 0.31525748372077944,
+      "state_permutation_loss_std": 0.009309137502745068,
+      "final_feature_spatial_permutation_max_prediction_delta": 4.76837158203125e-07,
+      "sidecar_sha256": "b15bf71485dd1c4588f681c556ea59e9f3553b4313fc8f798134004037002022"
+    },
+    "B": {
+      "original_loss": 0.12725557386875153,
+      "image_permutation_loss_mean": 0.12803080826997756,
+      "image_permutation_loss_std": 0.0002111376253394319,
+      "state_permutation_loss_mean": 0.31522639095783234,
+      "state_permutation_loss_std": 0.009306032242712007,
+      "final_feature_spatial_permutation_max_prediction_delta": 4.76837158203125e-07,
+      "sidecar_sha256": "52d87bba5b3916f4eba19d9bb964f99016d142e6a17ea3add0ab752f7dda4d47"
+    }
+  },
+  "permutations": 10,
+  "heldout_windows": 100,
+  "optimizer_updates": 0,
+  "interpretation": "Auxiliary global pooling cannot supervise feature-map position; state/image intervention measures this auxiliary head, not all ACT visual competence.",
+  "original_protocol_changed": false,
+  "policy_adopted": false,
+  "hardware_commands_sent": false
+}

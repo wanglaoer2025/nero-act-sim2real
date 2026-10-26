@@ -1,0 +1,13 @@
+{
+  "rationale": "run22 corrected raw gripper decision at fixed original input but regressed reaching: minimum height58.19mm, never entered unchanged grasp gate; preserve source21 learned arm/visual network exactly",
+  "epochs": 3,
+  "initializer": "/home/user/wq/nero_act_cvae_training_fix_20261018/model/run21_cvae_posterior/policy.ckpt",
+  "same_72_data_as_run22": true,
+  "kl_weight": 0.001,
+  "prior_gripper_loss_weight": 0.05,
+  "trainable_parameters": "only gripper row7 of action_head weight and bias",
+  "weight_decay": 0,
+  "all_arm_rows_and_other_weights_and_buffers_must_remain_identical_to_rebased_initializer": true,
+  "no_changed_safety_guards": true,
+  "no_hardware": true
+}

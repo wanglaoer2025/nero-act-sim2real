@@ -1,0 +1,191 @@
+{
+  "mode": "full_loop_execute",
+  "success": false,
+  "full_execution_ready": false,
+  "execution_goal_submitted": false,
+  "sdk_connected": false,
+  "scope": "full arm/gripper trajectory framework; no raw-action rebasing",
+  "execution_scope": "aligned_noncontact_air_sequence",
+  "trial_profile": {
+    "initial_state": [
+      0.18481291449367956,
+      -0.12836896648418294,
+      0.10992083629060287,
+      1.5715293650807343,
+      -0.022689280275926284,
+      0.2777516971623776,
+      0.13554226970987962,
+      0.060118
+    ],
+    "initial_tolerance_rad": 0.005,
+    "initial_gripper_tolerance_m": 0.004,
+    "arm_lower_rad": [
+      0.17681291449367956,
+      -0.13636896648418295,
+      0.10192083629060286,
+      1.5555293650807342,
+      -0.030689280275926285,
+      0.24975169716237755,
+      0.1275422697098796
+    ],
+    "arm_upper_rad": [
+      0.23281291449367958,
+      -0.10836896648418295,
+      0.14292083629060287,
+      1.5795293650807343,
+      -0.006689280275926284,
+      0.2857516971623776,
+      0.1585422697098796
+    ],
+    "gripper_lower_m": 0.052,
+    "gripper_upper_m": 0.078,
+    "maximum_seconds": 20,
+    "endpoint_state": [
+      0.22481291449367957,
+      -0.11636896648418295,
+      0.13492083629060286,
+      1.5635293650807343,
+      -0.014689280275926284,
+      0.25775169716237756,
+      0.1505422697098796,
+      0.060118
+    ]
+  },
+  "formal_hardware_deployment_allowed": false,
+  "experimental_air_trial_allowed": true,
+  "model_checkpoint_sha256": "fea6c7d33279141a0d4266d577689194416667f587c04e57c80859fba91039fb",
+  "requested_steps": 300,
+  "nominal_requested_duration_s": 15.0,
+  "execution_time_limit_s": 20.0,
+  "submitted_step_count": 0,
+  "completed_step_count": 0,
+  "validation_service_calls": [
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 341277.724379607,
+      "duration_s": 0.15692846197634935
+    }
+  ],
+  "actual_start": [
+    0.18472564803107983,
+    -0.12836896648418294,
+    0.10992083629060287,
+    1.5714595519106545,
+    -0.022776546738526,
+    0.2777167905773377,
+    0.13543754995475996,
+    0.060203
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "_NODE_NAME_UNKNOWN_",
+        "namespace": "_NODE_NAMESPACE_UNKNOWN_"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/control/joint_states": {
+      "receipt": 341277.877727622,
+      "stamp": 1792139022.7990713,
+      "q": [
+        0.18472554641929412,
+        -0.12833601996234756,
+        0.11001037987594244,
+        1.5714572774095457,
+        -0.02276724609632074,
+        0.2777229555730493,
+        0.13545794878600734,
+        0.060118
+      ]
+    },
+    "/feedback/joint_states": {
+      "receipt": 341277.879387545,
+      "stamp": 1792139022.7992163,
+      "q": [
+        0.18469074144603997,
+        -0.12836896648418294,
+        0.10992083629060287,
+        1.5714595519106545,
+        -0.022776546738526,
+        0.2777167905773377,
+        0.13543754995475996,
+        0.060203
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.10098160500638187,
+  "execution_readiness_checks_passed": false,
+  "execution_blocker": "Expected the existing control_gate as the sole gated publisher",
+  "step_target_completed": false,
+  "error": "RuntimeError: ROS readiness: Expected the existing control_gate as the sole gated publisher"
+}

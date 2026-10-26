@@ -1,0 +1,51 @@
+checkpoint: checkpoints/act_offset10/policy_best_val.ckpt
+dataset_stats: checkpoints/act_offset10/dataset_stats.pkl
+safety_summary: artifacts/act_offset10/safety_summary.json
+camera_names: [camera_0]
+state_dim: 8
+action_dim: 8
+image_size: [90, 160]
+chunk_size: 20
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.1
+backbone: resnet18
+control_frequency_hz: 20.0
+command_frequency_hz: 20.0
+command_reached_tolerance_rad: 0.005
+command_timeout_s: 5.0
+progress_window_s: 1.0
+no_progress_min_request_rad: 0.015
+no_progress_min_feedback_rad: 0.001
+camera_width: 640
+max_steps: 50
+device: auto
+execution_speed_percent: 10
+gripper_force_n: 1.0
+initial_state_margin_rad: 0.15
+max_tracking_error_rad: 0.25
+log_dir: logs/act_offset10_day6
+temporal_ensemble:
+  enabled: false
+  decay: 0.05
+safety:
+  joint_limits_rad:
+    - [-2.705261, 2.705261]
+    - [-1.745330, 1.745330]
+    - [-2.757621, 2.757621]
+    - [-1.012291, 2.146755]
+    - [-2.757621, 2.757621]
+    - [-0.733039, 0.959932]
+    - [-1.570797, 1.570797]
+  max_delta_rad: 0.02
+  max_velocity_rad_s: 0.4
+  max_command_lead_rad: 0.03
+  control_frequency_hz: 20.0
+  train_range_margin: 0.10
+  severe_limit_margin_rad: 0.10
+  gripper_open_m: 0.095
+  gripper_close_threshold_m: 0.035
+  gripper_open_threshold_m: 0.060

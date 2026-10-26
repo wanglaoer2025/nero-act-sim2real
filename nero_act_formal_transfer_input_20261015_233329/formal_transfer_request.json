@@ -1,0 +1,84 @@
+{
+  "user_requested_test": "Full ACT sim2real closed-loop yellow-cup pick and place to blue card; no further small-amplitude J1 tests",
+  "motion_sent_by_this_preparation": false,
+  "status": "blocked_before_policy_execution_by_model_and_adapter_mismatch",
+  "hardware_control_transport_working": true,
+  "hardware_control_evidence": "completed_moveit_air_test/report.json; applies to that air trajectory only",
+  "current_initial_state": {
+    "joint_names": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "values": [
+      0.1883384734392166,
+      -0.1264141947031021,
+      0.09992010146379471,
+      1.5710930824279785,
+      -0.023841196671128273,
+      0.2816088795661926,
+      0.13116149604320526,
+      0.06011800095438957
+    ],
+    "arm_unit": "rad",
+    "gripper_unit": "m total opening",
+    "capture": "current_capture/observations.npz",
+    "rgb_shape": [
+      101,
+      360,
+      640,
+      3
+    ],
+    "already_rotated_180_degrees": true,
+    "maximum_host_feedback_receipt_age_s": 0.005231926043052226,
+    "hardware_synchronized": false,
+    "previous_gripper_command_recorded": false
+  },
+  "retained_calibration": {
+    "camera_to_base.json": {
+      "source": "/home/user/projects/nero/config/camera_to_base.json",
+      "sha256": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be",
+      "independently_verified_in_this_run": false
+    },
+    "tcp_offset.json": {
+      "source": "/home/user/projects/nero/config/tcp_offset.json",
+      "sha256": "cdb4befafdf10527d228d946898e95c7dbbf6e87d0d48799cd317a7669fb381f",
+      "independently_verified_in_this_run": false
+    }
+  },
+  "historical_measurement_warning": "Historical source/destination coordinates are from October 14 and are not verified for the rearranged current scene. Retained table datum and TCP are not independently measured in this preparation. Do not treat status flags as verified zeros.",
+  "local_policy": {
+    "name": "recovery_v9",
+    "purpose": "observation-only transfer audit",
+    "state_dim": 14,
+    "action_dim": 8,
+    "policy_execution_accepted": false,
+    "range_review": "latest_readonly_preflight/formal_grasp_gate_review.json",
+    "latest_reported_v21_checkpoint_present_in_workspace": false
+  },
+  "adapter_mismatch": {
+    "old_run_act_real": "Synchronous prediction loop; first action/optional temporal aggregation; direct SDK transport",
+    "v9_simulation": "Asynchronous policy; 2 Hz query, 20 Hz command, first 10 steps per chunk, prefetch 2 steps, prediction age limits",
+    "running_real_control_stack": "ROS driver and gated MoveIt chain, ROS_DOMAIN_ID=42",
+    "constraint": "A direct SDK executor must not be run concurrently with the ROS CAN driver. Do not change CAN ownership for a package that has not passed compatibility checks."
+  },
+  "requested_from_simulation_computer_one_bundle": {
+    "checkpoint": "Latest intended ACT checkpoint trained for this real starting state, with SHA256",
+    "training_config_and_statistics": "Exact matching full training config, normalization statistics, model architecture and state semantics",
+    "execution_protocol": "Query/send frequencies, action chunk use, asynchronous scheduling, stale prediction handling and action/state units; define previous-command initialization if state is 15-D",
+    "independent_evaluation": "Reports tied to the same checkpoint; disclose failures and do not relabel v21 reported 5/8 nominal, 7/8 noisy, 2/6 corrective as accepted",
+    "real_executor_or_adapter_source": "Actual executor source/config implementing the exported policy protocol with fresh real feedback and a no-motion preview, without bypassing pose limits",
+    "scene_alignment": "Use current image and actual state to align the simulation; retain coordinate uncertainty rather than reusing old scene coordinates"
+  },
+  "not_completed": [
+    "ACT real closed-loop grasp",
+    "current scene source/destination localization validation",
+    "TCP contact geometry validation",
+    "current table collision geometry validation"
+  ]
+}

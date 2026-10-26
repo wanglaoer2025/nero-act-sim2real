@@ -1,0 +1,40 @@
+{
+  "mode": "offline_health_record_GC_comparison",
+  "hardware_connected": false,
+  "motion_sent": false,
+  "scope": "Recorded data with actual replay imports; not proof of the exact previous event cause",
+  "results": [
+    {
+      "compact_json_health": false,
+      "full_gc_events": [
+        {
+          "generation": 2,
+          "duration_s": 0.06767305999528617,
+          "samples": 4378
+        },
+        {
+          "generation": 2,
+          "duration_s": 0.07976703497115523,
+          "samples": 9687
+        },
+        {
+          "generation": 2,
+          "duration_s": 0.09400270995683968,
+          "samples": 16240
+        }
+      ],
+      "maximum_full_gc_pause_s": 0.09400270995683968,
+      "elapsed_s": 2.425071249017492,
+      "samples": 20000,
+      "feedback_samples": 40000
+    },
+    {
+      "compact_json_health": true,
+      "full_gc_events": [],
+      "maximum_full_gc_pause_s": 0,
+      "elapsed_s": 0.8435469380347058,
+      "samples": 20000,
+      "feedback_samples": 40000
+    }
+  ]
+}

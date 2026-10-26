@@ -1,0 +1,146 @@
+................................FF                                       [100%]
+=================================== FAILURES ===================================
+____ test_entry_persists_send_intent_at_hardware_submission_boundary[speed] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-77/test_entry_persists_send_inten0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x75f4ec3499a0>
+boundary = 'speed'
+
+    @pytest.mark.parametrize('boundary',['speed','arm'])
+    def test_entry_persists_send_intent_at_hardware_submission_boundary(tmp_path,monkeypatch,boundary):
+        m=api();p=plan();plan_path=tmp_path/'plan.json'
+        plan_path.write_text(json.dumps(p))
+        onsite=tmp_path/'onsite.json'
+        onsite.write_text(json.dumps(dict(plan_sha256=hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+            confirmed_epoch_s=time.time(),stop_access=True,whole_arm_and_new_mount_clearance=True,no_other_controller=True)))
+        output=tmp_path/'execution'
+        calls=[]
+        class FakeSDK:
+            def fk(self,q):
+                for row,pose in zip(p['waypoints_rad'],p['flange_poses_fk']):
+                    if np.array_equal(q,row):return pose
+                raise AssertionError('Unexpected unreviewed FK target')
+            def set_speed_percent(self,speed):
+                saved=json.loads((output/'execution.json').read_text())
+                if boundary=='speed':assert saved.get('speed_setting_attempted') is True
+                calls.append('speed')
+                if boundary=='speed':raise RuntimeError('stop at speed boundary')
+            def move_j(self,q):
+                saved=json.loads((output/'execution.json').read_text())
+                assert saved['events'][0]['send_attempted'] is True
+                assert saved['events'][0]['send_returned'] is False
+                calls.append('arm')
+                raise RuntimeError('stop at arm boundary')
+        class FakeRobot:
+            def __init__(self,**_):
+                self.sdk=FakeSDK();self.allow_no_solution=True;self.max_age_s=.15
+            def connect(self):pass
+            def disconnect(self):pass
+            def stop_sending(self):pass
+            def read_health(self,**_):
+                h=copy.deepcopy(p['health_samples'][-1])
+                h['feedback_timestamps']=[time.time()]*19
+                return h
+        monkeypatch.syspath_prepend('/home/user/zyh/src')
+        import nero_pi05.robot
+        monkeypatch.setattr(nero_pi05.robot,'NeroRobot',FakeRobot)
+        read_text=Path.read_text
+        def local_read(path,*a,**kw):
+            return '907' if str(path)=='/sys/class/net/can0/statistics/tx_packets' else read_text(path,*a,**kw)
+        monkeypatch.setattr(Path,'read_text',local_read)
+        monkeypatch.setattr(sys,'argv',['lower_for_board','--plan',str(plan_path),'--output',str(output),
+            '--execute','--onsite-confirmation',str(onsite)])
+>       with pytest.raises(RuntimeError,match='stop at '+boundary+' boundary'):m.main()
+
+tests/test_lower_for_board.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+lower_for_board.py:93: in main
+    controlled.prepare_execution(confirmed=True,speed_percent=1)
+../../zyh/scripts/visible_demo_start.py:56: in prepare_execution
+    self.robot.sdk.set_speed_percent(1)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_lower_for_board.test_entry_persists_send_intent_at_hardware_submission_boundary.<locals>.FakeSDK object at 0x75f4ec3a05f0>
+speed = 1
+
+    def set_speed_percent(self,speed):
+        saved=json.loads((output/'execution.json').read_text())
+>       if boundary=='speed':assert saved.get('speed_setting_attempted') is True
+E       AssertionError: assert None is True
+E        +  where None = <built-in method get of dict object at 0x75f4ebd3a640>('speed_setting_attempted')
+E        +    where <built-in method get of dict object at 0x75f4ebd3a640> = {'can_tx_before': 907, 'complete': False, 'enable_commands': 0, 'entry_sha256': 'f3f7b94caab92941893037973fc77db85bb139874c8234bd921f84bf3f0b972a', ...}.get
+
+tests/test_lower_for_board.py:68: AssertionError
+_____ test_entry_persists_send_intent_at_hardware_submission_boundary[arm] _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-77/test_entry_persists_send_inten1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x75f503b932f0>
+boundary = 'arm'
+
+    @pytest.mark.parametrize('boundary',['speed','arm'])
+    def test_entry_persists_send_intent_at_hardware_submission_boundary(tmp_path,monkeypatch,boundary):
+        m=api();p=plan();plan_path=tmp_path/'plan.json'
+        plan_path.write_text(json.dumps(p))
+        onsite=tmp_path/'onsite.json'
+        onsite.write_text(json.dumps(dict(plan_sha256=hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+            confirmed_epoch_s=time.time(),stop_access=True,whole_arm_and_new_mount_clearance=True,no_other_controller=True)))
+        output=tmp_path/'execution'
+        calls=[]
+        class FakeSDK:
+            def fk(self,q):
+                for row,pose in zip(p['waypoints_rad'],p['flange_poses_fk']):
+                    if np.array_equal(q,row):return pose
+                raise AssertionError('Unexpected unreviewed FK target')
+            def set_speed_percent(self,speed):
+                saved=json.loads((output/'execution.json').read_text())
+                if boundary=='speed':assert saved.get('speed_setting_attempted') is True
+                calls.append('speed')
+                if boundary=='speed':raise RuntimeError('stop at speed boundary')
+            def move_j(self,q):
+                saved=json.loads((output/'execution.json').read_text())
+                assert saved['events'][0]['send_attempted'] is True
+                assert saved['events'][0]['send_returned'] is False
+                calls.append('arm')
+                raise RuntimeError('stop at arm boundary')
+        class FakeRobot:
+            def __init__(self,**_):
+                self.sdk=FakeSDK();self.allow_no_solution=True;self.max_age_s=.15
+            def connect(self):pass
+            def disconnect(self):pass
+            def stop_sending(self):pass
+            def read_health(self,**_):
+                h=copy.deepcopy(p['health_samples'][-1])
+                h['feedback_timestamps']=[time.time()]*19
+                return h
+        monkeypatch.syspath_prepend('/home/user/zyh/src')
+        import nero_pi05.robot
+        monkeypatch.setattr(nero_pi05.robot,'NeroRobot',FakeRobot)
+        read_text=Path.read_text
+        def local_read(path,*a,**kw):
+            return '907' if str(path)=='/sys/class/net/can0/statistics/tx_packets' else read_text(path,*a,**kw)
+        monkeypatch.setattr(Path,'read_text',local_read)
+        monkeypatch.setattr(sys,'argv',['lower_for_board','--plan',str(plan_path),'--output',str(output),
+            '--execute','--onsite-confirmation',str(onsite)])
+>       with pytest.raises(RuntimeError,match='stop at '+boundary+' boundary'):m.main()
+
+tests/test_lower_for_board.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+lower_for_board.py:100: in main
+    controlled.move_j(target)
+../../zyh/scripts/visible_demo_start.py:77: in move_j
+    self.robot.sdk.move_j(q.tolist())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_lower_for_board.test_entry_persists_send_intent_at_hardware_submission_boundary.<locals>.FakeSDK object at 0x75f4ec34a2d0>
+q = [0.18336480555000625, -0.12700791539486328, 0.09990343085298659, 1.5758765018120493, -0.02252875426997233, 0.28183476849944067, ...]
+
+    def move_j(self,q):
+        saved=json.loads((output/'execution.json').read_text())
+>       assert saved['events'][0]['send_attempted'] is True
+E       assert False is True
+
+tests/test_lower_for_board.py:73: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_lower_for_board.py::test_entry_persists_send_intent_at_hardware_submission_boundary[speed]
+FAILED tests/test_lower_for_board.py::test_entry_persists_send_intent_at_hardware_submission_boundary[arm]
+2 failed, 32 passed in 1.68s

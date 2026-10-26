@@ -1,0 +1,45 @@
+{
+  "time_local": "2026-10-22T13:00:32.664241+08:00",
+  "objective": "Collect real TCP/camera calibration evidence for the approved15D visual ACT migration",
+  "approved_plan": "/home/user/wq/docs/superpowers/plans/2026-10-19-nero-act-live-visual-feedback.md",
+  "operator_available": true,
+  "tools_reported": [
+    "calibration board",
+    "ruler"
+  ],
+  "board_reported_external_size_mm": [
+    110,
+    110
+  ],
+  "black_square_side_measured_mm": null,
+  "detected_dictionary": "DICT_4X4_50",
+  "detected_id": 0,
+  "marker_visibility_passed_frames": 8,
+  "marker_visibility_total_frames": 8,
+  "camera_serial": "39602891",
+  "baseline_robot_feedback_samples": 5,
+  "tcp_fit_samples": 0,
+  "tcp_holdout_samples": 0,
+  "base_control_points_measured": 0,
+  "camera_holdout_samples": 0,
+  "board_base_pose_known": false,
+  "tcp_reference_fixture_ready": false,
+  "motion_sent": false,
+  "controller_reset_sent": false,
+  "can_tx_before": 907,
+  "can_tx_after": 907,
+  "calibration_verified": false,
+  "pending": "Actual black coding-square outer side length; user110mm board size has not identified which edge",
+  "rulings": [
+    "Current baseline is not a TCP fit sample: no fixed-point contact was confirmed",
+    "110mm pose estimates are diagnostic scale hypotheses; no base extrinsic or verified TCP is published",
+    "Existing legacy calibration CLIs enable/enter drag and write live configuration; do not invoke them as receive-only sampling",
+    "Use native rectified optical pixels and actual per-open intrinsics; upright180-degree view is for display only"
+  ],
+  "evidence_sha256": {
+    "/home/user/wq/nero_act_calibration_capture_20261022/baseline_01/baseline.json": "f12f5f7e8f403c14419510bf8e86572a195b0ac8b36b0eab0ad84b63cddae9fe",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_check_01/detections.json": "201f9d6ce89caf22e70681c45f54e0b59459942adcd55afcd81c44d6f32707af",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_check_02/detections.json": "62944a6e5939c56ec715da97545b82217ead19f04169d15414425d6fb021f38b",
+    "/home/user/wq/nero_act_calibration_capture_20261022/black_edge_measurement.png": "ebfbc289cc461224a82f973e96ab5112df4cad3bd1c48de5e1355eb54a1152d2"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "local_time": "2026-10-22T15:27:49.104830+08:00",
+  "executions": [
+    {
+      "directory": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/execution_01",
+      "arm_send_attempts": 71,
+      "arm_send_returns": 71,
+      "fit_samples": 0,
+      "pose_check_samples": 0,
+      "error": "RuntimeError('Exactly one complete ID0 required; stop without retry')",
+      "CAN": [
+        1241,
+        1600
+      ],
+      "gripper_commands": 0,
+      "enable_commands": 0,
+      "reset_commands": 0,
+      "audit_errors": [],
+      "cleanup_errors": []
+    },
+    {
+      "directory": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/remainder_execution_01",
+      "arm_send_attempts": 7,
+      "arm_send_returns": 7,
+      "fit_samples": 0,
+      "pose_check_samples": 0,
+      "error": "RuntimeError('Exactly one complete ID0 required; stop without retry')",
+      "CAN": [
+        1600,
+        1637
+      ],
+      "gripper_commands": 0,
+      "enable_commands": 0,
+      "reset_commands": 0,
+      "audit_errors": [],
+      "cleanup_errors": []
+    },
+    {
+      "directory": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/fixed_selector_execution_01",
+      "arm_send_attempts": 40,
+      "arm_send_returns": 40,
+      "fit_samples": 1,
+      "pose_check_samples": 0,
+      "error": "RuntimeError('Marker departed from provisional pose envelope; possible slip or geometry mismatch')",
+      "CAN": [
+        1637,
+        1840
+      ],
+      "gripper_commands": 0,
+      "enable_commands": 0,
+      "reset_commands": 0,
+      "audit_errors": [],
+      "cleanup_errors": []
+    }
+  ],
+  "total_sampling_arm_submissions": 118,
+  "accepted_distinct_hand_eye_candidates": 4,
+  "fit_candidates_complete": false,
+  "planned_fit_completed": 1,
+  "planned_fit_required": 15,
+  "planned_pose_checks_completed": 0,
+  "planned_pose_checks_required": 5,
+  "marker_false_stop_fixed": true,
+  "marker_selection_tests": "63 passed",
+  "second_blocker": "Nominal camera/mount absolute prediction mismatch12.27px; fixed board/camera per operator; inadequate4pose fit not published",
+  "runtime_prediction_guard_unchanged": true,
+  "all_motion_stopped": true,
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "ACT_motion_started": false,
+  "exposure_clock_verified": false,
+  "diagnostic_sources": {
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/four_pose_diagnostic.json": "f4300433e2426a9491940cd633abb256f5d6d13dc2edb09f8115f15382bd6cfb",
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/relative_observation_diagnostic.json": "129b043c15665918b285e4ebfb4204abacf5da496e508b1e26677fd2209c5318",
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/fk_frame_diagnostic.json": "a68f3351c0755541ccd833f6314b6ff289c37323b787e445103e821fc0166c1a",
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/id_selection_suite_final.log": "0f47c7fb5c887c0f6c10afe8704792484cdba45621f5a9a16d9264a745876375"
+  }
+}

@@ -1,0 +1,15 @@
+[INFO] [1792250075.281437573] [control_gate]: Control gate started. status_topics=['/arm_controller/follow_joint_trajectory/_action/status', '/gripper_controller/follow_joint_trajectory/_action/status'], gate_service_name=control_enable; commands remain blocked until controller state matches robot feedback
+[INFO] [1792250075.479981944] [control_gate]: Gate service is ready, forcing gate closed
+{"mode": "isolated_ROS_action_transport", "hardware_connected": false, "real_contact_verified": false, "success": true, "server_goals": [{"group": 0, "points": 121, "started_monotonic_s": 452331.110543184}, {"group": 1, "points": 121, "started_monotonic_s": 452331.112811075}, {"group": 1, "points": 81, "started_monotonic_s": 452333.166492404}, {"group": 0, "points": 5, "started_monotonic_s": 452338.000971325}, {"group": 1, "points": 5, "started_monotonic_s": 452338.001301435}], "gate_events": [{"open": false, "stamp": 452330.429891086}, {"open": true, "stamp": 452331.114115674}], "strict_sync_tolerance_rad": 0.001, "static_feedback_offset_rad": 0.003, "held_gate_continuation_passed": true, "can_tx_before": 367206, "can_tx_after": 367206}
+Exception ignored in: <module 'threading' from '/usr/lib/python3.12/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1592, in _shutdown
+    atexit_call()
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 31, in _python_exit
+    t.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt: 

@@ -1,0 +1,23 @@
+/control_gate:
+  ros__parameters:
+    arm_joint_names:
+    - joint1
+    - joint2
+    - joint3
+    - joint4
+    - joint5
+    - joint6
+    - joint7
+    arm_sync_tolerance_rad: 0.05235987755982989
+    control_topic: control/joint_states
+    feedback_topic: feedback/joint_states
+    gate_service_name: control_enable
+    gated_control_topic: control/gated_joint_states
+    gripper_sync_tolerance_m: 0.005
+    start_type_description_service: true
+    state_timeout_s: 0.25
+    status_topics:
+    - arm_controller/follow_joint_trajectory/_action/status
+    - gripper_controller/follow_joint_trajectory/_action/status
+    use_sim_time: false
+

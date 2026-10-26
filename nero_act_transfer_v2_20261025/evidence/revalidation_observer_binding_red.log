@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_revalidation_refuses_changed_bound_artifacts[observer] __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-160/test_revalidation_refuses_chan0')
+change = 'observer'
+
+    @pytest.mark.parametrize('change', ['checkpoint', 'training_core', 'data', 'code_binding', 'observer'])
+    def test_revalidation_refuses_changed_bound_artifacts(tmp_path, change):
+        m, root, proof, data, binding, report = fixture(tmp_path)
+        path = {'checkpoint': root / 'pilot.ckpt', 'training_core': root / m.CORE_FILES[0],
+                'data': data, 'code_binding': binding, 'observer': root / 'observer.py'}[change]
+        path.write_text('changed')
+>       assert m.admission_errors(proof, data, binding, root=root)
+E       AssertionError: assert []
+E        +  where [] = <function admission_errors at 0x7b936cc0d260>(PosixPath('/tmp/pytest-of-user/pytest-160/test_revalidation_refuses_chan0/proof.json'), PosixPath('/tmp/pytest-of-user/pytest-160/test_revalidation_refuses_chan0/data.json'), PosixPath('/tmp/pytest-of-user/pytest-160/test_revalidation_refuses_chan0/current.json'), root=PosixPath('/tmp/pytest-of-user/pytest-160/test_revalidation_refuses_chan0'))
+E        +    where <function admission_errors at 0x7b936cc0d260> = <module 'pilot_revalidate' from '/home/user/wq/nero_act_transfer_v2_20261025/pilot_revalidate.py'>.admission_errors
+
+tests/test_pilot_revalidation.py:70: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_changed_bound_artifacts[observer]
+1 failed in 0.36s

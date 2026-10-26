@@ -1,0 +1,366 @@
+{
+  "passed": false,
+  "probe_only_not_full_task_success": true,
+  "weights_saved": false,
+  "initial_l1": 0.011084996163845062,
+  "final_l1": 0.0060684410855174065,
+  "steps": 4000,
+  "changed_tensors": [
+    "model.action_head.weight",
+    "model.action_head.bias",
+    "gripper_adapter.0.weight",
+    "gripper_adapter.0.bias",
+    "gripper_adapter.2.weight",
+    "gripper_adapter.2.bias"
+  ],
+  "frozen_base_and_legacy_gripper_row_passed": true,
+  "training_groups_only": true,
+  "cached_frozen_zero_latent_decoder": true,
+  "hardware_connected": false,
+  "records": [
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 0,
+      "stage": "approach",
+      "id": 5000,
+      "arm_mae_rad": 0.0016148898284882307,
+      "gripper_mae_mm": 0.006649643182754517
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 439,
+      "stage": "descend",
+      "id": 5000,
+      "arm_mae_rad": 0.0010729555506259203,
+      "gripper_mae_mm": 0.0
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 754,
+      "stage": "close",
+      "id": 5000,
+      "arm_mae_rad": 9.88292958936654e-05,
+      "gripper_mae_mm": 1.4982223510742188
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 764,
+      "stage": "close",
+      "id": 5000,
+      "arm_mae_rad": 2.899978971981909e-05,
+      "gripper_mae_mm": 0.08863136463332921
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 835,
+      "stage": "lift",
+      "id": 5000,
+      "arm_mae_rad": 0.0005576565163210034,
+      "gripper_mae_mm": 1.218633376993239
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 1149,
+      "stage": "carry",
+      "id": 5000,
+      "arm_mae_rad": 0.0017724493518471718,
+      "gripper_mae_mm": 1.4001704985275865
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 1359,
+      "stage": "place",
+      "id": 5000,
+      "arm_mae_rad": 0.001750553259626031,
+      "gripper_mae_mm": 1.2585461372509599
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 1660,
+      "stage": "release",
+      "id": 5000,
+      "arm_mae_rad": 0.00011936458759009838,
+      "gripper_mae_mm": 0.5822554230690002
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 1670,
+      "stage": "release",
+      "id": 5000,
+      "arm_mae_rad": 4.37579037679825e-05,
+      "gripper_mae_mm": 0.05841404345119372
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "start": 1741,
+      "stage": "retreat",
+      "id": 5000,
+      "arm_mae_rad": 0.0016497683245688677,
+      "gripper_mae_mm": 0.004805624485015869
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 0,
+      "stage": "approach",
+      "id": 5003,
+      "arm_mae_rad": 0.0002638229343574494,
+      "gripper_mae_mm": 0.013916194802732207
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 846,
+      "stage": "descend",
+      "id": 5003,
+      "arm_mae_rad": 0.00026597047690302134,
+      "gripper_mae_mm": 0.012767314728989732
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 1453,
+      "stage": "close",
+      "id": 5003,
+      "arm_mae_rad": 0.00012273048923816532,
+      "gripper_mae_mm": 0.12314842024352401
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 1463,
+      "stage": "close",
+      "id": 5003,
+      "arm_mae_rad": 6.582939386134967e-05,
+      "gripper_mae_mm": 0.06344691064441577
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 1614,
+      "stage": "lift",
+      "id": 5003,
+      "arm_mae_rad": 6.202113581821322e-05,
+      "gripper_mae_mm": 0.6663426756858826
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 2224,
+      "stage": "carry",
+      "id": 5003,
+      "arm_mae_rad": 7.696844113525003e-05,
+      "gripper_mae_mm": 0.7119402289390564
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 2620,
+      "stage": "place",
+      "id": 5003,
+      "arm_mae_rad": 0.00015878221893217415,
+      "gripper_mae_mm": 0.7355838897638023
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 3202,
+      "stage": "release",
+      "id": 5003,
+      "arm_mae_rad": 9.977861191146076e-05,
+      "gripper_mae_mm": 0.537996762432158
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 3212,
+      "stage": "release",
+      "id": 5003,
+      "arm_mae_rad": 6.16211982560344e-05,
+      "gripper_mae_mm": 0.058897585404338315
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5003.hdf5",
+      "start": 3363,
+      "stage": "retreat",
+      "id": 5003,
+      "arm_mae_rad": 9.750181925483048e-05,
+      "gripper_mae_mm": 0.0065349045144103
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 0,
+      "stage": "approach",
+      "id": 5006,
+      "arm_mae_rad": 0.0003144867951050401,
+      "gripper_mae_mm": 0.0028811396077799145
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 844,
+      "stage": "descend",
+      "id": 5006,
+      "arm_mae_rad": 0.0020416155457496643,
+      "gripper_mae_mm": 0.016166270143003203
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 1451,
+      "stage": "close",
+      "id": 5006,
+      "arm_mae_rad": 0.0005826113629154861,
+      "gripper_mae_mm": 0.03479495717328973
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 1461,
+      "stage": "close",
+      "id": 5006,
+      "arm_mae_rad": 0.00013895987649448216,
+      "gripper_mae_mm": 1.1073396308347583
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 1612,
+      "stage": "lift",
+      "id": 5006,
+      "arm_mae_rad": 6.12569201621227e-05,
+      "gripper_mae_mm": 0.673269503749907
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 2231,
+      "stage": "carry",
+      "id": 5006,
+      "arm_mae_rad": 0.0019869802054017782,
+      "gripper_mae_mm": 0.66132697975263
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 2627,
+      "stage": "place",
+      "id": 5006,
+      "arm_mae_rad": 0.0016358030261471868,
+      "gripper_mae_mm": 0.5645185592584312
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 3268,
+      "stage": "release",
+      "id": 5006,
+      "arm_mae_rad": 6.747948646079749e-05,
+      "gripper_mae_mm": 0.15864447050262243
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 3278,
+      "stage": "release",
+      "id": 5006,
+      "arm_mae_rad": 0.00015959485608618706,
+      "gripper_mae_mm": 0.12114793207729235
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v2/episode_5006.hdf5",
+      "start": 3430,
+      "stage": "retreat",
+      "id": 5006,
+      "arm_mae_rad": 7.286497566383332e-05,
+      "gripper_mae_mm": 0.010777264833450317
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 0,
+      "stage": "approach",
+      "id": 5009,
+      "arm_mae_rad": 0.00023672498355153948,
+      "gripper_mae_mm": 0.004800408987648552
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 846,
+      "stage": "descend",
+      "id": 5009,
+      "arm_mae_rad": 0.0012563966447487473,
+      "gripper_mae_mm": 0.0011175870895385742
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 1453,
+      "stage": "close",
+      "id": 5009,
+      "arm_mae_rad": 4.178339077043347e-05,
+      "gripper_mae_mm": 0.22346526384353638
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 1463,
+      "stage": "close",
+      "id": 5009,
+      "arm_mae_rad": 0.00010501604992896318,
+      "gripper_mae_mm": 0.22744909801986068
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 1614,
+      "stage": "lift",
+      "id": 5009,
+      "arm_mae_rad": 8.678968879394233e-05,
+      "gripper_mae_mm": 0.6798416725359857
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 2224,
+      "stage": "carry",
+      "id": 5009,
+      "arm_mae_rad": 0.00012812003842554986,
+      "gripper_mae_mm": 0.7243402651511133
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 2620,
+      "stage": "place",
+      "id": 5009,
+      "arm_mae_rad": 0.00017379237397108227,
+      "gripper_mae_mm": 0.6658464553765953
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 3202,
+      "stage": "release",
+      "id": 5009,
+      "arm_mae_rad": 0.0001533512695459649,
+      "gripper_mae_mm": 0.6517842411994934
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 3212,
+      "stage": "release",
+      "id": 5009,
+      "arm_mae_rad": 5.900327960262075e-05,
+      "gripper_mae_mm": 0.06555915024364367
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5009.hdf5",
+      "start": 3363,
+      "stage": "retreat",
+      "id": 5009,
+      "arm_mae_rad": 7.084172102622688e-05,
+      "gripper_mae_mm": 0.010913610822171904
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5100.hdf5",
+      "start": 0,
+      "stage": "release",
+      "id": 5100,
+      "arm_mae_rad": 3.3018633985193446e-05,
+      "gripper_mae_mm": 0.026132167477044277
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5100.hdf5",
+      "start": 10,
+      "stage": "release",
+      "id": 5100,
+      "arm_mae_rad": 0.0002537396503612399,
+      "gripper_mae_mm": 0.08786544640315697
+    },
+    {
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v3/episode_5100.hdf5",
+      "start": 161,
+      "stage": "retreat",
+      "id": 5100,
+      "arm_mae_rad": 0.0014764888910576701,
+      "gripper_mae_mm": 0.014422089407162275
+    }
+  ]
+}

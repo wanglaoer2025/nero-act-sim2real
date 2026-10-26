@@ -1,0 +1,248 @@
+{
+  "captured_at_utc": "2026-10-13T14:44:44.300584+00:00",
+  "os": {
+    "PRETTY_NAME": "Ubuntu 24.04.4 LTS",
+    "NAME": "Ubuntu",
+    "VERSION_ID": "24.04",
+    "VERSION": "24.04.4 LTS (Noble Numbat)",
+    "VERSION_CODENAME": "noble",
+    "ID": "ubuntu",
+    "ID_LIKE": "debian",
+    "HOME_URL": "https://www.ubuntu.com/",
+    "SUPPORT_URL": "https://help.ubuntu.com/",
+    "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+    "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+    "UBUNTU_CODENAME": "noble",
+    "LOGO": "ubuntu-logo"
+  },
+  "package_versions_venv": {
+    "numpy": "2.5.2",
+    "opencv-python": "5.0.0.93",
+    "torch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "pyAgxArm": "1.0.0",
+    "h5py": "3.16.0",
+    "PyYAML": "6.0.3"
+  },
+  "GPU_nvidia_smi": "NVIDIA GeForce RTX 4090, 24564 MiB, 535.288.01",
+  "robot_processes": [
+    "38353 ros2            /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch agx_arm_ctrl start_single_agx_arm_moveit.launch.py can_port:=can0 arm_type:=nero effector_type:=agx_gripper gripper_default_effort:=0.8 fast_mode:=false controller_rate_hz:=200 speed_percent:=75 auto_control_gate:=true use_rviz:=false",
+    "38356 agx_arm_ctrl_si /usr/bin/python3 /home/user/projects/nero_ros2_ws/install/agx_arm_ctrl/lib/agx_arm_ctrl/agx_arm_ctrl_single --ros-args --log-level info --ros-args -r __node:=agx_arm_ctrl_single_node -r __ns:=/ --params-file /tmp/launch_params_gnkze73_ -r feedback/joint_states:=feedback/joint_states -r feedback/tcp_pose:=feedback/tcp_pose -r feedback/arm_status:=feedback/arm_status -r feedback/leader_joint_states:=feedback/leader_joint_states -r feedback/gripper_status:=feedback/gripper_status -r feedback/hand_status:=feedback/hand_status -r control/joint_states:=control/gated_joint_states -r control/move_j:=control/move_j -r control/move_p:=control/move_p -r control/move_l:=control/move_l -r control/move_c:=control/move_c -r control/move_js:=control/move_js -r control/move_mit:=control/move_mit -r control/move_cpv:=control/move_cpv -r control/hand:=control/hand -r control/hand_position_time:=control/hand_position_time -r enable_agx_arm:=enable_agx_arm -r control_enable:=control_enable -r move_home:=move_home -r emergency_stop:=emergency_stop -r exit_teach_mode:=exit_teach_mode",
+    "38358 move_group      /opt/ros/jazzy/lib/moveit_ros_move_group/move_group --ros-args -r __ns:=/ --params-file /tmp/launch_params_6avian04 --params-file /tmp/launch_params_hl5_9u1m -r /robot_description:=robot_description -r joint_states:=feedback/joint_states",
+    "38359 python3         python3 /home/user/projects/nero_ros2_ws/install/agx_arm_moveit/lib/agx_arm_moveit/agx_arm_control_gate --ros-args -r __ns:=/ --params-file /tmp/launch_params_ni0z1m2m -r /robot_description:=robot_description",
+    "38360 ros2_control_no /opt/ros/jazzy/lib/controller_manager/ros2_control_node --ros-args -r __ns:=/ --params-file /tmp/launch_params_eep79tpr --params-file /tmp/ros2_controllers_27aa21wm.yaml -r /robot_description:=robot_description -r joint_states:=control/joint_states"
+  ],
+  "driver_startup_firmware_log": {
+    "file": "/home/user/.ros/log/python3_38356_1791876557368.log",
+    "matching_lines": [
+      "[INFO] [1791876558.655756971] [agx_arm_ctrl_single_node]: fw_version: v120, 1.20, v120"
+    ],
+    "scope": "Startup detection by the currently running driver; no additional CAN firmware request sent"
+  },
+  "CAN": {
+    "before": {
+      "ifindex": 5,
+      "ifname": "can0",
+      "flags": [
+        "NOARP",
+        "UP",
+        "LOWER_UP",
+        "ECHO"
+      ],
+      "mtu": 16,
+      "qdisc": "pfifo_fast",
+      "operstate": "UP",
+      "linkmode": "DEFAULT",
+      "group": "default",
+      "txqlen": 10,
+      "link_type": "can",
+      "promiscuity": 0,
+      "allmulti": 0,
+      "min_mtu": 0,
+      "max_mtu": 0,
+      "linkinfo": {
+        "info_kind": "can",
+        "info_data": {
+          "ctrlmode_supported": [
+            "LOOPBACK",
+            "LISTEN-ONLY",
+            "CC-LEN8-DLC"
+          ],
+          "state": "ERROR-ACTIVE",
+          "restart_ms": 0,
+          "bittiming": {
+            "bitrate": 1000000,
+            "sample_point": "0.750",
+            "tq": 62,
+            "prop_seg": 5,
+            "phase_seg1": 6,
+            "phase_seg2": 4,
+            "sjw": 2,
+            "brp": 3
+          },
+          "bittiming_const": {
+            "name": "gs_usb",
+            "tseg1": {
+              "min": 1,
+              "max": 16
+            },
+            "tseg2": {
+              "min": 1,
+              "max": 8
+            },
+            "sjw": {
+              "min": 1,
+              "max": 4
+            },
+            "brp": {
+              "min": 1,
+              "max": 1024
+            },
+            "brp_inc": 1
+          },
+          "clock": 48000000
+        },
+        "info_xstats": {
+          "restarts": 0,
+          "bus_error": 0,
+          "arbitration_lost": 0,
+          "error_warning": 0,
+          "error_passive": 0,
+          "bus_off": 0
+        }
+      },
+      "num_tx_queues": 1,
+      "num_rx_queues": 1,
+      "gso_max_size": 65536,
+      "gso_max_segs": 65535,
+      "tso_max_size": 65536,
+      "tso_max_segs": 65535,
+      "gro_max_size": 65536,
+      "parentbus": "usb",
+      "parentdev": "1-6:1.0",
+      "stats64": {
+        "rx": {
+          "bytes": 1065911744,
+          "packets": 133241714,
+          "errors": 0,
+          "dropped": 2502899,
+          "over_errors": 0,
+          "multicast": 0
+        },
+        "tx": {
+          "bytes": 0,
+          "packets": 90,
+          "errors": 0,
+          "dropped": 0,
+          "carrier_errors": 0,
+          "collisions": 0
+        }
+      }
+    },
+    "after": {
+      "ifindex": 5,
+      "ifname": "can0",
+      "flags": [
+        "NOARP",
+        "UP",
+        "LOWER_UP",
+        "ECHO"
+      ],
+      "mtu": 16,
+      "qdisc": "pfifo_fast",
+      "operstate": "UP",
+      "linkmode": "DEFAULT",
+      "group": "default",
+      "txqlen": 10,
+      "link_type": "can",
+      "promiscuity": 0,
+      "allmulti": 0,
+      "min_mtu": 0,
+      "max_mtu": 0,
+      "linkinfo": {
+        "info_kind": "can",
+        "info_data": {
+          "ctrlmode_supported": [
+            "LOOPBACK",
+            "LISTEN-ONLY",
+            "CC-LEN8-DLC"
+          ],
+          "state": "ERROR-ACTIVE",
+          "restart_ms": 0,
+          "bittiming": {
+            "bitrate": 1000000,
+            "sample_point": "0.750",
+            "tq": 62,
+            "prop_seg": 5,
+            "phase_seg1": 6,
+            "phase_seg2": 4,
+            "sjw": 2,
+            "brp": 3
+          },
+          "bittiming_const": {
+            "name": "gs_usb",
+            "tseg1": {
+              "min": 1,
+              "max": 16
+            },
+            "tseg2": {
+              "min": 1,
+              "max": 8
+            },
+            "sjw": {
+              "min": 1,
+              "max": 4
+            },
+            "brp": {
+              "min": 1,
+              "max": 1024
+            },
+            "brp_inc": 1
+          },
+          "clock": 48000000
+        },
+        "info_xstats": {
+          "restarts": 0,
+          "bus_error": 0,
+          "arbitration_lost": 0,
+          "error_warning": 0,
+          "error_passive": 0,
+          "bus_off": 0
+        }
+      },
+      "num_tx_queues": 1,
+      "num_rx_queues": 1,
+      "gso_max_size": 65536,
+      "gso_max_segs": 65535,
+      "tso_max_size": 65536,
+      "tso_max_segs": 65535,
+      "gro_max_size": 65536,
+      "parentbus": "usb",
+      "parentdev": "1-6:1.0",
+      "stats64": {
+        "rx": {
+          "bytes": 1065936608,
+          "packets": 133244822,
+          "errors": 0,
+          "dropped": 2502899,
+          "over_errors": 0,
+          "multicast": 0
+        },
+        "tx": {
+          "bytes": 0,
+          "packets": 90,
+          "errors": 0,
+          "dropped": 0,
+          "carrier_errors": 0,
+          "collisions": 0
+        }
+      }
+    },
+    "interval_s": 1.0350408554077148,
+    "tx_packet_delta": 0,
+    "rx_packet_delta": 3108,
+    "rx_dropped_delta": 0,
+    "rx_error_delta": 0
+  },
+  "control_services_called": false
+}

@@ -1,0 +1,103 @@
+..FF                                                                     [100%]
+=================================== FAILURES ===================================
+________________ test_sparse_images_are_rerendered_not_repeated ________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ef14b14dbb0>
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-114/test_sparse_images_are_rerende0')
+
+    def test_sparse_images_are_rerendered_not_repeated(monkeypatch,tmp_path):
+        m=api('training.history_data')
+        from training.legacy_visual_data import training_profile
+        scene=json.loads((Path(m.__file__).parents[1]/'scene/center.json').read_text())
+        scene['generalization']=dict(index=0,source_group='scene_0',split='train')
+        n=12;source=tmp_path/'source.hdf5';target=tmp_path/'episode_0.hdf5'
+        with h5py.File(source,'w') as f:
+            f.attrs.update(scene_config=json.dumps(scene),sim=True,full_task_verified=True,teacher_success=True)
+            f['timestamp']=np.arange(n)*.05
+            q=np.zeros((n,16));q[:,:7]=scene['initial_robot_state']['qpos_rad'];q[:,7:9]=[.0475,-.0475]
+            q[:,9:]=[0,0,.05,1,0,0,0]
+            f['simulation/qpos']=q;f['simulation/qvel']=np.zeros((n,15));f['simulation/stage']=np.array([b'close']*n)
+            action=np.c_[q[:,:7],.095-np.arange(n)*.0001].astype(np.float32)
+            f['action']=action;f['observations/qpos']=q[:,:7].astype(np.float32)
+            f['observations/gripper_state']=np.full((n,1),.095,np.float32)
+            f['observations/images/camera_0']=np.zeros((n,90,160,3),np.uint8)
+        class Renderer:
+            scene=type('Scene',(),{'flags':np.zeros(100,dtype=bool)})()
+            def __init__(self,*a,**k):pass
+            def __enter__(self):return self
+            def __exit__(self,*a):pass
+            def update_scene(self,data,**k):self.index=int(round(data.time/.05))
+            def render(self):return np.full((180,320,3),self.index,np.uint8)
+        class Estimator:
+            def __init__(self,*a,**k):pass
+            def measure(self,rgb):return np.array([float(rgb[0,0,0])*.001,0,0]),np.array([.1,0,0]),{}
+        monkeypatch.setattr(m.mujoco,'Renderer',Renderer);monkeypatch.setattr(m,'NominalImageEstimator',Estimator)
+        report=m.derive_history_episode(source,target,expected_sha=m.sha(source),profile=training_profile(scene))
+        assert report['valid_samples']>0
+        with h5py.File(target) as f:
+            np.testing.assert_array_equal(f['action'][:],action)
+            for indices in f['history/indices'][:]:
+                assert len(set(indices))==5 and np.all(indices<=indices[-1])
+                assert len({f['observations/images/camera_0'][i].tobytes() for i in indices})==5
+                assert f['timestamp'][indices[-1]]-f['timestamp'][indices[0]]<=.40000001
+>       dataset_module=api('training.history_dataset')
+
+tests/test_history_data.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'training.history_dataset'
+
+    def api(name):
+>       assert importlib.util.find_spec(name), 'History data interface missing: '+name
+E       AssertionError: History data interface missing: training.history_dataset
+E       assert None
+E        +  where None = <function find_spec at 0x7ef14fdac5e0>('training.history_dataset')
+E        +    where <function find_spec at 0x7ef14fdac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_data.py:14: AssertionError
+_________________ test_statistics_use_only_37_training_groups __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-114/test_statistics_use_only_37_tr0')
+
+    def test_statistics_use_only_37_training_groups(tmp_path):
+        m=api('training.history_data')
+        with pytest.raises(ValueError):m.history_statistics([],expected_train_groups=set())
+        paths=[];groups={f'train_{i}' for i in range(37)}
+        for i in range(38):
+            path=tmp_path/f'{i}.hdf5'
+            with h5py.File(path,'w') as f:
+                f.attrs.update(source_group=f'train_{i}' if i<37 else 'val',split='train' if i<37 else 'val')
+                f['observations/visual_valid']=np.ones(2,bool);f['observations/qpos']=np.full((2,7),0 if i<37 else 999,np.float32)
+                f['observations/gripper_state']=np.full((2,1),.074,np.float32)
+                f['observations/visual_relative_m']=np.full((2,6),.2 if i<37 else 999,np.float32)
+                f['action']=np.c_[np.zeros((2,7)),[.065,.065]].astype(np.float32)
+            paths.append(path)
+        stats=m.history_statistics(paths[:37],expected_train_groups=groups)
+        np.testing.assert_allclose(stats['qpos_mean'],[0]*7+[.074],atol=1e-7)
+>       np.testing.assert_allclose(stats['geometry_mean'],[.2]*6,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-07, atol=1e-07
+E       
+E       Mismatched elements: 6 / 6 (100%)
+E       First 5 mismatches are at indices:
+E        [0]: 0.1999998688697815 (ACTUAL), 0.2 (DESIRED)
+E        [1]: 0.1999998688697815 (ACTUAL), 0.2 (DESIRED)
+E        [2]: 0.1999998688697815 (ACTUAL), 0.2 (DESIRED)
+E        [3]: 0.1999998688697815 (ACTUAL), 0.2 (DESIRED)
+E        [4]: 0.1999998688697815 (ACTUAL), 0.2 (DESIRED)
+E       Max absolute difference among violations: 1.31130219e-07
+E       Max relative difference among violations: 6.55651093e-07
+E        ACTUAL: array([0.2, 0.2, 0.2, 0.2, 0.2, 0.2], dtype=float32)
+E        DESIRED: array([0.2, 0.2, 0.2, 0.2, 0.2, 0.2])
+
+tests/test_history_data.py:117: AssertionError
+=============================== warnings summary ===============================
+tests/test_history_data.py::test_sparse_images_are_rerendered_not_repeated
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_data.py::test_sparse_images_are_rerendered_not_repeated
+FAILED tests/test_history_data.py::test_statistics_use_only_37_training_groups
+2 failed, 2 passed, 1 warning in 2.47s

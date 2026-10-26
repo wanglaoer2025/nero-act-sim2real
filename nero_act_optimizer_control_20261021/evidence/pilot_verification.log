@@ -1,0 +1,14 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+{
+  "complete": true,
+  "verification_complete_not_task_success": true,
+  "actual_updates_total": 2000,
+  "nominal_candidate": null,
+  "selection_rule": "lowest_replay_RMS_then_fixed_after_6of6",
+  "formal_training_started": false,
+  "independent16_evaluated": false,
+  "hardware_commands_sent": false
+}
+{"arm": "fixed", "replay": {"samples": 423, "maximum_arm_prefix_change_rad": 2.1517276763916016e-05, "rms_arm_prefix_change_rad": 7.78890656834847e-06, "maximum_gripper_prefix_change_m": 0.00023562461137771606, "training_replay_not_independent_validation": true}, "approach_gate": true, "mechanism": {"passed": 4, "total": 6, "records": [{"name": "nominal_pre_close", "passed": false, "new_points": 400, "error": null}, {"name": "nominal_hold_to_lift", "passed": false, "new_points": 2, "error": "RuntimeError: ACT requested opening outside supported-placement region"}, {"name": "heldout_pre_close", "passed": true, "new_points": 1402, "error": null}, {"name": "heldout_hold_to_lift", "passed": true, "new_points": 48, "error": null}, {"name": "heldout_support_release", "passed": true, "new_points": 394, "error": null}, {"name": "heldout_release_retreat", "passed": true, "new_points": 338, "error": null}]}}
+{"arm": "decay", "replay": {"samples": 423, "maximum_arm_prefix_change_rad": 1.3828277587890625e-05, "rms_arm_prefix_change_rad": 4.840416896470382e-06, "maximum_gripper_prefix_change_m": 0.00013978034257888794, "training_replay_not_independent_validation": true}, "approach_gate": true, "mechanism": {"passed": 4, "total": 6, "records": [{"name": "nominal_pre_close", "passed": false, "new_points": 400, "error": null}, {"name": "nominal_hold_to_lift", "passed": false, "new_points": 4, "error": "RuntimeError: Physical held contact/slip contract failed"}, {"name": "heldout_pre_close", "passed": true, "new_points": 1387, "error": null}, {"name": "heldout_hold_to_lift", "passed": true, "new_points": 48, "error": null}, {"name": "heldout_support_release", "passed": true, "new_points": 396, "error": null}, {"name": "heldout_release_retreat", "passed": true, "new_points": 336, "error": null}]}}

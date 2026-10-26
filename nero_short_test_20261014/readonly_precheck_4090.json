@@ -1,0 +1,109 @@
+{
+  "checked_at_utc": "2026-10-14T14:39:23.654512+00:00",
+  "read_only": true,
+  "SDK_robot_created": false,
+  "commands_sent": false,
+  "control_processes_observed": [
+    {
+      "pid": 135277,
+      "comm": "ros2",
+      "program_basenames": [
+        "python3",
+        "ros2",
+        "launch"
+      ]
+    },
+    {
+      "pid": 135283,
+      "comm": "agx_arm_ctrl_si",
+      "program_basenames": [
+        "python3",
+        "agx_arm_ctrl_single",
+        "--ros-args"
+      ]
+    },
+    {
+      "pid": 135285,
+      "comm": "move_group",
+      "program_basenames": [
+        "move_group",
+        "--ros-args",
+        "-r"
+      ]
+    },
+    {
+      "pid": 135286,
+      "comm": "python3",
+      "program_basenames": [
+        "python3",
+        "agx_arm_control_gate",
+        "--ros-args"
+      ]
+    },
+    {
+      "pid": 135287,
+      "comm": "ros2_control_no",
+      "program_basenames": [
+        "ros2_control_node",
+        "--ros-args",
+        "-r"
+      ]
+    }
+  ],
+  "real_feedback_received": true,
+  "feedback": {
+    "names": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "qpos_rad_and_total_width_m": [
+      -0.47439794398457874,
+      0.7821518509887389,
+      -0.12932889757277982,
+      1.3977818380446987,
+      -0.2804395042104489,
+      -0.5063898291736347,
+      -0.7044846992749912,
+      0.09983199999999999
+    ],
+    "stamp": {
+      "sec": 1791988763,
+      "nanosec": 640689373
+    }
+  },
+  "existing_joint_limits_rad": {
+    "lower": [
+      -2.705261,
+      -1.74533,
+      -2.757621,
+      -1.012291,
+      -2.757621,
+      -0.733039,
+      -1.570797
+    ],
+    "upper": [
+      2.705261,
+      1.74533,
+      2.757621,
+      2.146755,
+      2.757621,
+      0.959932,
+      1.570797
+    ],
+    "source": "previous local URDF/SDK interface review; no limits changed"
+  },
+  "current_joints_within_retained_limits": true,
+  "J1_candidate_range_rad": [
+    -0.47939794398457874,
+    -0.46939794398457874
+  ],
+  "J1_candidate_within_retained_limits": true,
+  "physical_sweep_clearance_confirmed": false,
+  "motion_executed": false
+}

@@ -1,0 +1,92 @@
+--- original/ros_support.py
++++ onsite/ros_support.py
+@@ -143,7 +143,15 @@
+ 
+     def feedback(self, topic, msg):
+         try:
+-            q = ordered(msg.name, msg.position)
++            wanted = NAMES
++            if topic == '/control/gated_joint_states':
++                if set(msg.name) == set(ARM):
++                    wanted = ARM
++                elif list(msg.name) == ['gripper']:
++                    wanted = ['gripper']
++                else:
++                    raise ValueError('Unexpected gated command joint group')
++            q = ordered(msg.name, msg.position, wanted)
+             stamp = msg.header.stamp.sec + msg.header.stamp.nanosec*1e-9
+             now = time.monotonic()
+             if topic == '/feedback/joint_states':
+@@ -206,7 +214,10 @@
+     def inventory(self):
+         from controller_manager_msgs.srv import ListControllers
+         from rosidl_runtime_py.convert import message_to_ordereddict
+-        self.spin(1.2)
++        # Allow DDS discovery before applying the unchanged live-age checks.
++        discovery_deadline = time.monotonic() + 5.0
++        while len(self.trace) < 10 and time.monotonic() < discovery_deadline:
++            self.spin(.1)
+         actual = self.actual()
+         if len(self.trace) < 10: raise RuntimeError('Too few actual feedback samples')
+         if max(max(abs(row['position'][i]-actual[i]) for i in range(7))
+@@ -251,6 +262,24 @@
+             self.report['execution_blocker'] = str(exc)
+         return actual
+ 
++    def bridge_publishers(self):
++        started = time.monotonic()
++        while True:
++            owners = {t: [dict(name=p.node_name, namespace=p.node_namespace)
++                          for p in self.node.get_publishers_info_by_topic(t)]
++                      for t in self.report['topic_publishers']}
++            # DDS can discover the driver before the independent gate process.
++            # Wait only for absent endpoints; ambiguous publishers still fail.
++            if (all(owners.values()) or any(len(v) > 1 for v in owners.values()) or
++                    time.monotonic() - started >= 5.0):
++                self.report['bridge_discovery_wait_s'] = time.monotonic() - started
++                self.report['topic_publishers'] = owners
++                return owners
++            self.spin(.05)
++            self.actual()
++            if any(self.active_goals.values()):
++                raise RuntimeError('Another trajectory goal is active')
++
+     def ready(self, planned_start):
+         self.spin(.1)
+         if self.report.get('planned_monotonic_s') is not None and time.monotonic()-self.report['planned_monotonic_s'] > 60:
+@@ -264,8 +293,10 @@
+                                  ['arm_type', 'effector_type', 'control_enabled', 'speed_percent', 'use_sim_time'])
+         if driver['arm_type'] != 'nero' or driver['effector_type'] != 'agx_gripper':
+             raise RuntimeError('Running driver is not Nero with original gripper')
+-        if driver['use_sim_time'] is not False or driver['control_enabled'] is not True:
+-            raise RuntimeError('ROS driver is simulated or control_enabled is not true; no auto-enable')
++        # The installed gate opens only for a synchronized action; this
++        # parameter records startup configuration, not live gate state.
++        if driver['use_sim_time'] is not False or driver['control_enabled'] is not False:
++            raise RuntimeError('Driver must start in real time with idle control gate closed')
+         speed = driver['speed_percent']
+         if type(speed) not in (int, float) or not 0 < speed <= 5:
+             raise RuntimeError('Existing ROS driver speed_percent must be in (0,5]; script does not change it')
+@@ -276,15 +307,19 @@
+         active = {c['name'] for c in self.report['controllers'] if c['state'] == 'active'}
+         if 'arm_controller' not in active: raise RuntimeError('arm_controller is not active')
+         if any(self.active_goals.values()): raise RuntimeError('Another trajectory goal is active')
+-        owners = {t: [dict(name=p.node_name, namespace=p.node_namespace)
+-                      for p in self.node.get_publishers_info_by_topic(t)]
+-                  for t in self.report['topic_publishers']}
++        owners = self.bridge_publishers()
+         if len(owners['/feedback/joint_states']) != 1 or owners['/feedback/joint_states'][0]['name'] != 'agx_arm_ctrl_single_node':
+             raise RuntimeError('Actual feedback must have exactly one real driver publisher')
+         if len(owners['/control/joint_states']) != 1:
+             raise RuntimeError('Control bridge publisher is missing or ambiguous')
+         if len(owners['/control/gated_joint_states']) != 1 or owners['/control/gated_joint_states'][0]['name'] != 'control_gate':
+             raise RuntimeError('Expected the existing control_gate as the sole gated publisher')
++        def driver_subscribers(topic):
++            return [p for p in self.node.get_subscriptions_info_by_topic(topic)
++                    if p.node_name == 'agx_arm_ctrl_single_node' and p.node_namespace == '/']
++        if (len(driver_subscribers('/control/gated_joint_states')) != 1 or
++                driver_subscribers('/control/joint_states')):
++            raise RuntimeError('Real driver must subscribe only to gated commands, never raw bridge states')
+         if any(self.node.count_publishers(t) for t in self.report['direct_command_publishers']):
+             raise RuntimeError('Other direct ROS motion publishers are present')
+         item = self.latest.get('/control/joint_states')

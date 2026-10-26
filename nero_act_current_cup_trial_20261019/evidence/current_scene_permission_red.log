@@ -1,0 +1,18 @@
+test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment) ... ERROR
+test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation) ... ok
+test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied) ... ok
+
+======================================================================
+ERROR: test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment (tests.test_fixed_trial_permission.FixedTrialPermissionTests.test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_current_cup_trial_20261019/tests/test_fixed_trial_permission.py", line 29, in test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment
+    check(meta,evaluation,receipt,now=self.now)
+  File "/home/user/wq/nero_act_current_cup_trial_20261019/executor/fixed_permission.py", line 46, in require_fixed_trial_permission
+    raise PermissionError('Only the explicitly acknowledged exact fixed-scene candidate and current ACT_FIXED_TRIAL receipt are allowed')
+PermissionError: Only the explicitly acknowledged exact fixed-scene candidate and current ACT_FIXED_TRIAL receipt are allowed
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.010s
+
+FAILED (errors=1)

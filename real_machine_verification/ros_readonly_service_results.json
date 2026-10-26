@@ -1,0 +1,420 @@
+{
+  "/controller_manager/list_controllers": {
+    "controller": [
+      {
+        "name": "gripper_controller",
+        "state": "active",
+        "type": "joint_trajectory_controller/JointTrajectoryController",
+        "is_async": false,
+        "update_rate": 200,
+        "claimed_interfaces": [
+          "gripper/position"
+        ],
+        "required_command_interfaces": [
+          "gripper/position"
+        ],
+        "required_state_interfaces": [
+          "gripper/position",
+          "gripper/velocity"
+        ],
+        "is_chainable": false,
+        "is_chained": false,
+        "exported_state_interfaces": [],
+        "reference_interfaces": [],
+        "chain_connections": []
+      },
+      {
+        "name": "arm_controller",
+        "state": "active",
+        "type": "joint_trajectory_controller/JointTrajectoryController",
+        "is_async": false,
+        "update_rate": 200,
+        "claimed_interfaces": [
+          "joint1/position",
+          "joint2/position",
+          "joint3/position",
+          "joint4/position",
+          "joint5/position",
+          "joint6/position",
+          "joint7/position"
+        ],
+        "required_command_interfaces": [
+          "joint1/position",
+          "joint2/position",
+          "joint3/position",
+          "joint4/position",
+          "joint5/position",
+          "joint6/position",
+          "joint7/position"
+        ],
+        "required_state_interfaces": [
+          "joint1/position",
+          "joint1/velocity",
+          "joint2/position",
+          "joint2/velocity",
+          "joint3/position",
+          "joint3/velocity",
+          "joint4/position",
+          "joint4/velocity",
+          "joint5/position",
+          "joint5/velocity",
+          "joint6/position",
+          "joint6/velocity",
+          "joint7/position",
+          "joint7/velocity"
+        ],
+        "is_chainable": false,
+        "is_chained": false,
+        "exported_state_interfaces": [],
+        "reference_interfaces": [],
+        "chain_connections": []
+      },
+      {
+        "name": "joint_state_broadcaster",
+        "state": "active",
+        "type": "joint_state_broadcaster/JointStateBroadcaster",
+        "is_async": false,
+        "update_rate": 200,
+        "claimed_interfaces": [],
+        "required_command_interfaces": [],
+        "required_state_interfaces": [
+          "gripper/position",
+          "joint1/position",
+          "joint7/velocity",
+          "joint7/position",
+          "joint3/velocity",
+          "joint6/velocity",
+          "joint4/velocity",
+          "joint1/velocity",
+          "joint2/position",
+          "joint3/position",
+          "joint4/position",
+          "joint5/position",
+          "joint2/velocity",
+          "joint5/velocity",
+          "gripper/velocity",
+          "joint6/position"
+        ],
+        "is_chainable": false,
+        "is_chained": false,
+        "exported_state_interfaces": [],
+        "reference_interfaces": [],
+        "chain_connections": []
+      }
+    ]
+  },
+  "/controller_manager/list_hardware_components": {
+    "component": [
+      {
+        "name": "FakeSystem",
+        "type": "system",
+        "is_async": false,
+        "rw_rate": 200,
+        "class_type": "",
+        "plugin_name": "mock_components/GenericSystem",
+        "state": {
+          "id": 3,
+          "label": "active"
+        },
+        "command_interfaces": [
+          {
+            "name": "joint7/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "gripper/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint6/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint5/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint4/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint3/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint2/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          },
+          {
+            "name": "joint1/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": true
+          }
+        ],
+        "state_interfaces": [
+          {
+            "name": "gripper/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint1/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint7/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint7/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint3/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint6/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint4/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint1/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint2/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint3/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint4/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint5/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint2/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint5/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "gripper/velocity",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          },
+          {
+            "name": "joint6/position",
+            "data_type": "double",
+            "is_available": true,
+            "is_claimed": false
+          }
+        ]
+      }
+    ]
+  },
+  "/controller_manager/list_hardware_interfaces": {
+    "command_interfaces": [
+      {
+        "name": "gripper/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      },
+      {
+        "name": "joint1/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      },
+      {
+        "name": "joint2/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      },
+      {
+        "name": "joint3/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      },
+      {
+        "name": "joint4/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      },
+      {
+        "name": "joint5/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      },
+      {
+        "name": "joint6/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      },
+      {
+        "name": "joint7/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": true
+      }
+    ],
+    "state_interfaces": [
+      {
+        "name": "gripper/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "gripper/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint1/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint1/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint2/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint2/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint3/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint3/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint4/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint4/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint5/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint5/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint6/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint6/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint7/position",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      },
+      {
+        "name": "joint7/velocity",
+        "data_type": "double",
+        "is_available": true,
+        "is_claimed": false
+      }
+    ]
+  }
+}

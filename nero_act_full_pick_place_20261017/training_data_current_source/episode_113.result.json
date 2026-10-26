@@ -1,0 +1,81 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.0,
+  "maximum_horizontal_transfer_m": 1.6889477678599397e-08,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5251550130575329,
+      0.015591113306331686,
+      0.04749668780590896
+    ],
+    "tcp_xyz": [
+      -0.5251222621908153,
+      0.01559038123394132,
+      0.05499536578940362
+    ],
+    "cup_upright": 0.9999999999999586,
+    "cup_speed": 2.1047130786759007e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.08079631588714542,
+    "contract_valid": true
+  },
+  "stages": [
+    {
+      "stage": "descend",
+      "cup_xyz": [
+        -0.5251550099232783,
+        0.0155911191161219,
+        0.04749668782125257
+      ],
+      "tcp_xyz": [
+        -0.5251872446038137,
+        0.015266845920738096,
+        0.057739080381265136
+      ],
+      "cup_upright": 0.9999999999999883,
+      "cup_speed": 2.6500542604834347e-06,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.09499999873066635,
+      "contract_valid": true
+    },
+    {
+      "stage": "close",
+      "cup_xyz": [
+        -0.5251550130575329,
+        0.015591113306331686,
+        0.04749668780590896
+      ],
+      "tcp_xyz": [
+        -0.5251222621908153,
+        0.01559038123394132,
+        0.05499536578940362
+      ],
+      "cup_upright": 0.9999999999999586,
+      "cup_speed": 2.1047130786759007e-06,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.08079631588714542,
+      "contract_valid": true
+    }
+  ],
+  "frames": 307,
+  "error": "No bilateral physical contact after closing; refuse lift",
+  "real_hardware_tested": false,
+  "task": "descend_to_retreat_correction",
+  "full_task_verified": false
+}

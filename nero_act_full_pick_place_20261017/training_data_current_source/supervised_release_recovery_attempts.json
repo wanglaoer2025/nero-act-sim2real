@@ -1,0 +1,85 @@
+{
+  "episodes": [
+    {
+      "path": "/home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source/episode_110.hdf5",
+      "status": "valid",
+      "task_role": "release_to_retreat_correction",
+      "full_task_verified": false,
+      "correction_verified": true,
+      "split": "train",
+      "frames": 838,
+      "origin": {
+        "origin": "/home/user/wq/nero_act_full_pick_place_20261017/evidence/run9_supervised_development_v5/nominal",
+        "query_step": 2613,
+        "split": "train",
+        "role": "partial_not_full",
+        "reason": "ACT failed to open after actual support confirmation and feedback reference hold"
+      },
+      "replay": {
+        "frames": 838,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 84
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source/episode_111.hdf5",
+      "status": "valid",
+      "task_role": "release_to_retreat_correction",
+      "full_task_verified": false,
+      "correction_verified": true,
+      "split": "train",
+      "frames": 855,
+      "origin": {
+        "origin": "/home/user/wq/nero_act_full_pick_place_20261017/evidence/run9_supervised_recovery_diagnostics/independent_3",
+        "query_step": 2042,
+        "split": "train",
+        "role": "partial_not_full",
+        "reason": "ACT failed to open after actual support confirmation and feedback reference hold"
+      },
+      "replay": {
+        "frames": 855,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 86
+      }
+    },
+    {
+      "path": "/home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source/episode_112.hdf5",
+      "status": "valid",
+      "task_role": "release_to_retreat_correction",
+      "full_task_verified": false,
+      "correction_verified": true,
+      "split": "val",
+      "frames": 863,
+      "origin": {
+        "origin": "/home/user/wq/nero_act_full_pick_place_20261017/evidence/run9_supervised_recovery_diagnostics/independent_6",
+        "query_step": 2115,
+        "split": "val",
+        "role": "partial_not_full",
+        "reason": "ACT failed to open after actual support confirmation and feedback reference hold"
+      },
+      "replay": {
+        "frames": 863,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 87
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "episode": 113,
+      "error": "Physical expert rejected: No bilateral physical contact after closing; refuse lift; /home/user/wq/nero_act_full_pick_place_20261017/training_data_current_source/episode_113.result.json"
+    }
+  ]
+}

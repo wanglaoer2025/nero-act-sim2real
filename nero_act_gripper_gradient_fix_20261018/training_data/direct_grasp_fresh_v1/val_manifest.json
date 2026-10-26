@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "rejected": [],
+  "episodes": [
+    {
+      "id": 4002,
+      "path": "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_fresh_v1/episode_4002.hdf5",
+      "sha256": "cdedf6a5cfdce46d07cbf4290a8afd922c7343f82c86437b073d3fffd2671556",
+      "status": "valid",
+      "split": "val",
+      "source_group": "run21_direct_grasp_validation42_grasp",
+      "teacher_success": true,
+      "full_task_verified": false,
+      "correction_verified": true,
+      "task": "grasp_to_retreat_correction",
+      "origin": "/home/user/wq/nero_act_cvae_training_fix_20261018/evaluation/run21_validation42/validation42_grasp",
+      "query_step": 1023,
+      "snapshot_sha256": "752e9b5d341c8e5f6e1c6831801e06c6509b9962fabff561fef7338091b21618",
+      "scene_sha256": "c0deb7688a7150347726e05bcdb2e6e2735dcb57447d03c1d9c58cf167c4fede",
+      "replay": {
+        "frames": 2674,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 268
+      },
+      "observation_derivation": {
+        "source": "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_raw_v1/episode_4002.hdf5",
+        "source_sha256": "96f9e945187fa8288dfc8d0d29446e717b9d712c39293b11c6d66e55df455b3a",
+        "target": "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_fresh_v1/episode_4002.hdf5",
+        "target_sha256": "cdedf6a5cfdce46d07cbf4290a8afd922c7343f82c86437b073d3fffd2671556",
+        "fresh_critical_frames": 60,
+        "identical_anchor_frames": [
+          0,
+          10,
+          170,
+          180,
+          1820,
+          1830
+        ],
+        "physical_arrays_and_original_attributes_identical": true
+      }
+    }
+  ],
+  "source_evaluation": "/home/user/wq/nero_act_cvae_training_fix_20261018/evaluation/run21_validation42",
+  "source_protocol_sha256": "dd1f65bb21e421960c83f9cf11f42b42632c9214b1915e2297ae797b4c13a500",
+  "source_checkpoint_sha256": "1a4de8b44492a6a6da9217eb86041ba6714f208d9ecc2034a31ced468bd61310"
+}

@@ -1,0 +1,67 @@
+.F...........F.                                                          [100%]
+=================================== FAILURES ===================================
+__________ test_current_observer_preserves_status_and_never_sends[2] ___________
+
+sdk = <test_arrival.HealthArm object at 0x7f38f499b260>, status = 2
+
+    @pytest.mark.parametrize('status', [0, 2])
+    def test_current_observer_preserves_status_and_never_sends(sdk, status):
+        sdk.status = status
+>       robot = observer()
+
+tests/test_robot_health.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../nero_full_task_20261016/task_replay.py:198: in observer
+    robot.read_health(require_enabled=True)
+../../zyh/src/nero_pi05/robot.py:209: in read_health
+    require_normal(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+measured = {'controller_errors': 'unknown', 'driver_state': ['namespace(foc_status=namespace(voltage_too_low=False, motor_overhea...37.3805163, 1792586737.3805192, 1792586737.3805196, 1792586737.38052, 1792586737.380598, 1792586737.3805988, ...], ...}
+
+    def require_normal(measured, *, allow_no_solution=False):
+        status = measured["feedback"]
+        allowed = (0, 2) if allow_no_solution else (0,)
+        if status.get("arm_status") not in allowed or status.get("err_code") != 0:
+>           raise RuntimeError("控制器非NORMAL或独立错误码非零/缺失，停止新发送")
+E           RuntimeError: 控制器非NORMAL或独立错误码非零/缺失，停止新发送
+
+../../zyh/src/nero_pi05/robot.py:20: RuntimeError
+__________ test_status_two_does_not_hide_driver_faults_or_age[stale] ___________
+
+sdk = <test_arrival.HealthArm object at 0x7f38f47d7320>, fault = 'stale'
+
+    @pytest.mark.parametrize('fault', ['collision_status', 'driver_overcurrent',
+                                       'disabled', 'stale'])
+    def test_status_two_does_not_hide_driver_faults_or_age(sdk, fault):
+        if fault == 'stale':
+            sdk.driver_age = 1
+        elif fault == 'disabled':
+            sdk.flags['driver_enable_status'] = False
+        else:
+            sdk.flags[fault] = True
+        with pytest.raises(TimeoutError if fault == 'stale' else RuntimeError):
+>           observer()
+
+tests/test_robot_health.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../nero_full_task_20261016/task_replay.py:198: in observer
+    robot.read_health(require_enabled=True)
+../../zyh/src/nero_pi05/robot.py:209: in read_health
+    require_normal(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+measured = {'controller_errors': 'unknown', 'driver_state': ['namespace(foc_status=namespace(voltage_too_low=False, motor_overhea....4335527, 1792586743.4335592, 1792586743.4335608, 1792586743.4335623, 1792586743.4337525, 1792586743.433755, ...], ...}
+
+    def require_normal(measured, *, allow_no_solution=False):
+        status = measured["feedback"]
+        allowed = (0, 2) if allow_no_solution else (0,)
+        if status.get("arm_status") not in allowed or status.get("err_code") != 0:
+>           raise RuntimeError("控制器非NORMAL或独立错误码非零/缺失，停止新发送")
+E           RuntimeError: 控制器非NORMAL或独立错误码非零/缺失，停止新发送
+
+../../zyh/src/nero_pi05/robot.py:20: RuntimeError
+=========================== short test summary info ============================
+FAILED tests/test_robot_health.py::test_current_observer_preserves_status_and_never_sends[2]
+FAILED tests/test_robot_health.py::test_status_two_does_not_hide_driver_faults_or_age[stale]
+2 failed, 13 passed in 7.25s

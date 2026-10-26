@@ -1,0 +1,45 @@
+{
+  "request": "恢复起点后修复策略、检查现存问题、再下发完整动作流程",
+  "scope": "Bounded existing15D ACT correction and original full-task recheck; no architecture/calibration/guard changes",
+  "evidence": [
+    "trace_audit.json",
+    "weight_revision_diagnostics.json"
+  ],
+  "hypothesis": "Small prefix biases compound into states not covered by teacher trajectories; successful isolated offsets did not enforce closed-loop recovery. Teacher-state descent errors exceed the executed displacement.",
+  "data": {
+    "new_complete_current_restored_scene": 1,
+    "new_actual_visited_prefixes": 8,
+    "teacher_source": "existing physical teacher; never failed ACT action labels",
+    "all_physical_labels_require_replay_and_contract_pass": true,
+    "old_validation_rows_never_optimized": true
+  },
+  "training": {
+    "updates": 1000,
+    "batch_size": 32,
+    "initializer": "latest fixed-last paired-position ACT06012db6",
+    "selection": "fixed_last",
+    "optimizer": "fresh AdamW for changed correction objective/data, declared before optimization",
+    "per_batch": "8 new correction +1 new and2 retained per each of8 stages",
+    "unchanged_trainable_modules": [
+      "position_projection",
+      "action_decoder",
+      "arm_output",
+      "gripper_increment"
+    ],
+    "visual_backbone_and_CVAE_frozen": true
+  },
+  "verification": [
+    "real-state prefix diagnostic before and after",
+    "full current restored scene with original contact/collision/limit guards",
+    "original response gate",
+    "original six mechanism cases and423 preservation if current full passes"
+  ],
+  "hardware": {
+    "commands_during_repair": 0,
+    "full_motion_requires_concrete_path_and_validated_current_geometry": true,
+    "no_forged_release_or_calibration": true,
+    "no_automatic_retry_or_return": true
+  },
+  "no_additional_manual_measurements": true,
+  "no_additional_round_if_failed": true
+}

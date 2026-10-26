@@ -1,0 +1,44 @@
+dataset_dir: data/act_dual_merged
+manifest: data/act_dual_merged/manifest.json
+split_file: data/act_dual_merged/splits/day5_split.json
+camera_names: [camera_0, camera_1]
+overfit_episode_ids: [27, 28, 29]
+coordinate_conditioning: true
+state_dim: 14
+action_dim: 8
+alignment_offset: 0
+trim_start_steps: 0
+trim_start_steps_by_parent:
+  data/act_dual: 33
+  data/act_dual_fixed: 0
+training_stride_steps: 4
+# 两组原始 action 分别前视 2/0 帧；统一从 qpos 生成 8 帧前视关节标签。
+joint_target_lead_steps: 8
+image_size: [180, 320]
+chunk_size: 20
+batch_size: 2
+eval_batch_size: 8
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.1
+kl_weight: 10.0
+gripper_bce_weight: 1.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 0.00001
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: true
+num_epochs: 20
+steps: 300
+seed: 42
+val_fraction: 0.2
+fixed_val_samples_per_episode: 5
+device: cuda
+cpu_threads: 4
+checkpoint_dir: checkpoints/act_dual_xyz_merged_day5
+artifact_dir: artifacts/act_dual_xyz_merged_day5
+training_log: logs/act_dual_xyz_merged_day5_training.csv

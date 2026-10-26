@@ -1,0 +1,243 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+______ test_caller_cannot_replace_the_sealed_sampling_profile[None-pilot] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ade18e72000>
+stage = 'pilot', override = None
+
+    @pytest.mark.parametrize('stage',['pilot','formal'])
+    @pytest.mark.parametrize('override',[None,'none'])
+    def test_caller_cannot_replace_the_sealed_sampling_profile(tmp_path,monkeypatch,stage,override):
+        import training.history as module
+        import executor.history_qualification as qualification
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(
+            dict(transition_sampling_profile='recovery_first5_quarter_v1')))
+        def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+        monkeypatch.setattr(qualification,'require_formal_gate',unexpected_gate)
+        config=dict(variant='B',stage=stage)
+        if override is not None:config['transition_sampling_profile']=override
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',config,tmp_path/'output')
+
+tests/test_sealed_sampling_config.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the0/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the0/initializer')
+config = {'stage': 'pilot', 'variant': 'B'}
+output = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the0/output')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        if stage=='formal' and settings.get('transition_sampling_profile','none')!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:250: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ade18e72000>
+stage = 'pilot', override = None
+
+    @pytest.mark.parametrize('stage',['pilot','formal'])
+    @pytest.mark.parametrize('override',[None,'none'])
+    def test_caller_cannot_replace_the_sealed_sampling_profile(tmp_path,monkeypatch,stage,override):
+        import training.history as module
+        import executor.history_qualification as qualification
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(
+            dict(transition_sampling_profile='recovery_first5_quarter_v1')))
+        def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+        monkeypatch.setattr(qualification,'require_formal_gate',unexpected_gate)
+        config=dict(variant='B',stage=stage)
+        if override is not None:config['transition_sampling_profile']=override
+>       with pytest.raises(ValueError,match='sealed'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'sealed'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_sealed_sampling_config.py:17: AssertionError
+_____ test_caller_cannot_replace_the_sealed_sampling_profile[None-formal] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ade19fedf10>
+stage = 'formal', override = None
+
+    @pytest.mark.parametrize('stage',['pilot','formal'])
+    @pytest.mark.parametrize('override',[None,'none'])
+    def test_caller_cannot_replace_the_sealed_sampling_profile(tmp_path,monkeypatch,stage,override):
+        import training.history as module
+        import executor.history_qualification as qualification
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(
+            dict(transition_sampling_profile='recovery_first5_quarter_v1')))
+        def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+        monkeypatch.setattr(qualification,'require_formal_gate',unexpected_gate)
+        config=dict(variant='B',stage=stage)
+        if override is not None:config['transition_sampling_profile']=override
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',config,tmp_path/'output')
+
+tests/test_sealed_sampling_config.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/history.py:245: in train_history
+    gate_inputs=require_formal_gate(ROOT)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the1'),)
+
+>   def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+E   AssertionError: Unqualified config reached downstream formal gate
+
+tests/test_sealed_sampling_config.py:13: AssertionError
+______ test_caller_cannot_replace_the_sealed_sampling_profile[none-pilot] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7add34843a70>
+stage = 'pilot', override = 'none'
+
+    @pytest.mark.parametrize('stage',['pilot','formal'])
+    @pytest.mark.parametrize('override',[None,'none'])
+    def test_caller_cannot_replace_the_sealed_sampling_profile(tmp_path,monkeypatch,stage,override):
+        import training.history as module
+        import executor.history_qualification as qualification
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(
+            dict(transition_sampling_profile='recovery_first5_quarter_v1')))
+        def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+        monkeypatch.setattr(qualification,'require_formal_gate',unexpected_gate)
+        config=dict(variant='B',stage=stage)
+        if override is not None:config['transition_sampling_profile']=override
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',config,tmp_path/'output')
+
+tests/test_sealed_sampling_config.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the2/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the2/initializer')
+config = {'stage': 'pilot', 'transition_sampling_profile': 'none', 'variant': 'B'}
+output = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the2/output')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        if stage=='formal' and settings.get('transition_sampling_profile','none')!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:250: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7add34843a70>
+stage = 'pilot', override = 'none'
+
+    @pytest.mark.parametrize('stage',['pilot','formal'])
+    @pytest.mark.parametrize('override',[None,'none'])
+    def test_caller_cannot_replace_the_sealed_sampling_profile(tmp_path,monkeypatch,stage,override):
+        import training.history as module
+        import executor.history_qualification as qualification
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(
+            dict(transition_sampling_profile='recovery_first5_quarter_v1')))
+        def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+        monkeypatch.setattr(qualification,'require_formal_gate',unexpected_gate)
+        config=dict(variant='B',stage=stage)
+        if override is not None:config['transition_sampling_profile']=override
+>       with pytest.raises(ValueError,match='sealed'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'sealed'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_sealed_sampling_config.py:17: AssertionError
+_____ test_caller_cannot_replace_the_sealed_sampling_profile[none-formal] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7add34842000>
+stage = 'formal', override = 'none'
+
+    @pytest.mark.parametrize('stage',['pilot','formal'])
+    @pytest.mark.parametrize('override',[None,'none'])
+    def test_caller_cannot_replace_the_sealed_sampling_profile(tmp_path,monkeypatch,stage,override):
+        import training.history as module
+        import executor.history_qualification as qualification
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir();(tmp_path/'config/history_experiment.json').write_text(json.dumps(
+            dict(transition_sampling_profile='recovery_first5_quarter_v1')))
+        def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+        monkeypatch.setattr(qualification,'require_formal_gate',unexpected_gate)
+        config=dict(variant='B',stage=stage)
+        if override is not None:config['transition_sampling_profile']=override
+        with pytest.raises(ValueError,match='sealed'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',config,tmp_path/'output')
+
+tests/test_sealed_sampling_config.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/history.py:245: in train_history
+    gate_inputs=require_formal_gate(ROOT)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-user/pytest-165/test_caller_cannot_replace_the3'),)
+
+>   def unexpected_gate(*args):raise AssertionError('Unqualified config reached downstream formal gate')
+E   AssertionError: Unqualified config reached downstream formal gate
+
+tests/test_sealed_sampling_config.py:13: AssertionError
+=============================== warnings summary ===============================
+tests/test_sealed_sampling_config.py::test_caller_cannot_replace_the_sealed_sampling_profile[None-pilot]
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_sealed_sampling_config.py::test_caller_cannot_replace_the_sealed_sampling_profile[None-pilot]
+FAILED tests/test_sealed_sampling_config.py::test_caller_cannot_replace_the_sealed_sampling_profile[None-formal]
+FAILED tests/test_sealed_sampling_config.py::test_caller_cannot_replace_the_sealed_sampling_profile[none-pilot]
+FAILED tests/test_sealed_sampling_config.py::test_caller_cannot_replace_the_sealed_sampling_profile[none-formal]
+4 failed, 1 warning in 2.56s

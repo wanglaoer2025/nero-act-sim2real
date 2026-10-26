@@ -1,0 +1,72 @@
+{
+  "status": "plane_diagnostic_collected",
+  "scope": "Read-only ZED plane-normal and scale diagnostic; no CAN or robot construction",
+  "user_measured_left_lens_height_above_table_mm": 357.0,
+  "previous_calibration_expected_lens_height_mm": 356.8070025281324,
+  "card_size_reported_mm": [
+    100,
+    100
+  ],
+  "depth_frame_count": 5,
+  "point_count": 10400,
+  "inlier_fraction": 1.0,
+  "normal_camera": [
+    -0.0570813725985046,
+    -0.9472828224844245,
+    0.3152728518731238
+  ],
+  "normal_base_using_existing_extrinsics": [
+    -0.2569800518301868,
+    0.028453231516869106,
+    -0.9659977570251401
+  ],
+  "normal_angle_from_calibrated_horizontal_plane_degrees": 14.984068146135582,
+  "camera_to_plane_perpendicular_distance_mm": 351.3362117959758,
+  "distance_minus_measured_lens_height_mm": -5.663788204024172,
+  "median_plane_residual_mm": 0.29839430009238604,
+  "p95_plane_residual_mm": 0.8260909615017218,
+  "per_frame_fits": [
+    {
+      "normal_camera": [
+        -0.0557236485183239,
+        -0.9474626183509827,
+        0.3149752914905548
+      ],
+      "distance_camera_to_plane_mm": 351.2378234863281
+    },
+    {
+      "normal_camera": [
+        -0.056467849761247635,
+        -0.9474519491195679,
+        0.3148748576641083
+      ],
+      "distance_camera_to_plane_mm": 351.1881408691406
+    },
+    {
+      "normal_camera": [
+        -0.05728716775774956,
+        -0.947280764579773,
+        0.31524163484573364
+      ],
+      "distance_camera_to_plane_mm": 351.33258056640625
+    },
+    {
+      "normal_camera": [
+        -0.05797014757990837,
+        -0.9470990896224976,
+        0.3156625032424927
+      ],
+      "distance_camera_to_plane_mm": 351.4798889160156
+    },
+    {
+      "normal_camera": [
+        -0.057960156351327896,
+        -0.9471153020858765,
+        0.3156156539916992
+      ],
+      "distance_camera_to_plane_mm": 351.4436950683594
+    }
+  ],
+  "limitations": "The ROI was taken from the previous blue-card location; the later raw image shows the card moved, so the samples cover the visible tabletop/paper there. Local NEURAL depth plane fitting is a diagnostic, not an accepted extrinsic calibration.",
+  "support_mounting_plane_parallel_to_table_user_confirmed": true
+}

@@ -1,0 +1,48 @@
+{
+  "train_groups": [
+    "new_handeye_contact_9100",
+    "new_handeye_contact_9101",
+    "new_handeye_contact_9102",
+    "new_handeye_train_9000",
+    "new_handeye_train_9001",
+    "new_handeye_train_9002",
+    "new_handeye_train_9003",
+    "new_handeye_train_9004",
+    "new_handeye_train_9007",
+    "new_handeye_train_9008",
+    "new_handeye_train_9009"
+  ],
+  "val_groups": [
+    "new_handeye_contact_9200",
+    "new_handeye_contact_9201"
+  ],
+  "training_episodes": 11,
+  "independent_validation_episodes": 2,
+  "validation_rows_in_training": 0,
+  "samples": 3851,
+  "pool_sizes": {
+    "center:approach": 59,
+    "center:descend": 42,
+    "center:close": 147,
+    "center:lift": 60,
+    "center:carry": 34,
+    "center:place": 40,
+    "center:release": 27,
+    "center:retreat": 41,
+    "other:approach": 336,
+    "other:descend": 296,
+    "other:close": 1029,
+    "other:lift": 422,
+    "other:carry": 236,
+    "other:place": 282,
+    "other:release": 189,
+    "other:retreat": 282,
+    "contact:close": 147,
+    "contact:lift": 182
+  },
+  "updates": 1000,
+  "batch_size": 32,
+  "exact_contact_batch_fraction": 0.5,
+  "all_original_stages_in_every_batch": true,
+  "statistics_recomputed": false
+}

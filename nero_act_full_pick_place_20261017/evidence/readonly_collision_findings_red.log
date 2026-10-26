@@ -1,0 +1,32 @@
+test_collision_queries_bound_inflight_and_stop_after_invalid_batch (tests.test_ros_geometry.RosGeometryTests.test_collision_queries_bound_inflight_and_stop_after_invalid_batch) ... FAIL
+test_cup_always_present_with_only_finger_contact_exceptions (tests.test_cup_collision_scene.CupCollisionSceneTests.test_cup_always_present_with_only_finger_contact_exceptions) ... ERROR
+test_mount_exception_requires_a_fixed_base_and_matching_static_table (tests.test_cup_collision_scene.CupCollisionSceneTests.test_mount_exception_requires_a_fixed_base_and_matching_static_table) ... FAIL
+
+======================================================================
+ERROR: test_cup_always_present_with_only_finger_contact_exceptions (tests.test_cup_collision_scene.CupCollisionSceneTests.test_cup_always_present_with_only_finger_contact_exceptions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_cup_collision_scene.py", line 105, in test_cup_always_present_with_only_finger_contact_exceptions
+    session.apply_scene([session.cup_object()], fixed_table_mount=True)
+TypeError: CupSceneMixin.apply_scene() got an unexpected keyword argument 'fixed_table_mount'
+
+======================================================================
+FAIL: test_collision_queries_bound_inflight_and_stop_after_invalid_batch (tests.test_ros_geometry.RosGeometryTests.test_collision_queries_bound_inflight_and_stop_after_invalid_batch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_ros_geometry.py", line 11, in test_collision_queries_bound_inflight_and_stop_after_invalid_batch
+    self.assertTrue(callable(getattr(ros_execution, 'validate_in_batches', None)),
+AssertionError: False is not true : unbounded ROS service bursts can overflow the depth10 queues
+
+======================================================================
+FAIL: test_mount_exception_requires_a_fixed_base_and_matching_static_table (tests.test_cup_collision_scene.CupCollisionSceneTests.test_mount_exception_requires_a_fixed_base_and_matching_static_table)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_cup_collision_scene.py", line 47, in test_mount_exception_requires_a_fixed_base_and_matching_static_table
+    self.assertTrue(callable(getattr(ros_execution,'require_fixed_table_mount',None)))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.071s
+
+FAILED (failures=2, errors=1)

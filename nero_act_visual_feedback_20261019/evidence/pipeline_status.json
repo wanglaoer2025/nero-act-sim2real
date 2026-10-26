@@ -1,0 +1,75 @@
+{
+  "stage": "training_complete_full_task_assessment5of16_failed",
+  "plan_approved": true,
+  "plan_complete": false,
+  "motion_sent": false,
+  "hardware_connected_by_this_phase": false,
+  "execution_ready": false,
+  "formal_training_started": true,
+  "new_deployable_checkpoints": 0,
+  "real_calibration_available": false,
+  "live_semantic_frontend_qualified": false,
+  "tasks": {
+    "1": "complete",
+    "2": "offline_solvers_complete_real_measurements_pending",
+    "3": "geometry_sync_core_complete_live_frontend_and_exposure_clock_pending",
+    "4": "pure_feature_and_error_budget_core_complete",
+    "5": "model_initializer_cvae_core_complete_bundle_streaming_integration_pending",
+    "6": "48_existing_full_physics_demos_converted_nominal_image_estimates_16104valid_inputs",
+    "7": "15D_loader_and_offline_RGB_estimator_ready_live_frontend_unqualified",
+    "8": "both_retained_nominal_calibration_candidates20epochs_complete_integrity_verified_full_task_evaluation_pending",
+    "9": "nominal_simulation16cases_complete5passed_not_deployment_qualified",
+    "10": "worker_dispatch_transport_components_tested_assembled_live_execution_pending"
+  },
+  "tests": {
+    "passed": 261,
+    "skipped": 5,
+    "log": "evidence/formal_offline_suite_final.log"
+  },
+  "review": {
+    "critical": 0,
+    "important_found": 4,
+    "important_fixed_with_red_green": 4,
+    "minor": 0,
+    "additional_intrinsics_hash_regression_fixed": true,
+    "report": "evidence/independent_review.md"
+  },
+  "original_sealed_dependencies_verified": 765,
+  "recorded_wall_s": 1792385977.198292,
+  "training_calibration_profile": "config/retained_nominal_training_calibration.json",
+  "training_calibration_verified": false,
+  "formal_training_plan": {
+    "input_dim": 15,
+    "action_shape": [
+      20,
+      8
+    ],
+    "seed": 42,
+    "batch_size": 32,
+    "epochs": 20,
+    "resolutions_wh": [
+      [
+        320,
+        180
+      ],
+      [
+        160,
+        90
+      ]
+    ]
+  },
+  "formal_training_pid": 2374658,
+  "formal_training_job_status": "evidence/formal_job_status.json",
+  "training_status": "training/visual_retained_v1_320/status.json",
+  "formal_training_review": {
+    "report": "evidence/formal_training_review.md",
+    "important": 1,
+    "fixed": 1,
+    "minor": 0,
+    "suite_passed": 261,
+    "suite_skipped": 5
+  },
+  "formal_training_complete": true,
+  "formal_training_completion_proof": "evidence/formal_training_completion_verified.json",
+  "latest_validation_project": "/home/user/wq/nero_act_visual_validation_20261019"
+}

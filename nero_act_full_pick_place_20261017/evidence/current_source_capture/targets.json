@@ -1,0 +1,252 @@
+{
+  "capture_wall_s": 1792226459.1218367,
+  "geometry_fit_passed": true,
+  "table_z_base_mm": 0,
+  "tcp_approximate": true,
+  "source_method": "YOLO cup with unique yellow contour",
+  "destination_method": "unique HSV blue quadrilateral",
+  "calibration_sha256": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be",
+  "tcp_sha256": "cdb4befafdf10527d228d946898e95c7dbbf6e87d0d48799cd317a7669fb381f",
+  "parameters": {
+    "weights": "/home/user/zyh/data/nero-teacher/runtime-v4/models/yolo.pt",
+    "source_class": "cup",
+    "destination_class": "blue",
+    "pick_place": true,
+    "auto_lock": false,
+    "stable_frames": 8,
+    "workspace_mm": [
+      -650,
+      0,
+      -300,
+      300,
+      0,
+      500
+    ],
+    "source_offset_mm": [
+      0,
+      0,
+      0
+    ],
+    "destination_offset_mm": [
+      0,
+      0,
+      0
+    ],
+    "cup_height_mm": 95.0,
+    "cup_radius_mm": 37.5,
+    "table_z_base_mm": 0.0,
+    "transit_speed_percent": 5,
+    "precision_speed_percent": 1,
+    "gripper_force_n": 1,
+    "act_output": "/home/user/wq/nero_act_full_pick_place_20261017/evidence/current_source_capture/unused.hdf5",
+    "act_position_group": "1",
+    "act_frequency": 20,
+    "act_action_lead_ms": 0,
+    "allow_approximate_tcp": true,
+    "confidence": 0.2,
+    "detection_timeout_s": 60,
+    "observe_only": false,
+    "lift_height_mm": 200,
+    "motion_timeout_s": 60,
+    "max_spread_mm": 5,
+    "max_fit_rmse_px": 8,
+    "gripper_open_mm": 95,
+    "gripper_close_mm": 0,
+    "gripper_contact_force_n": 0.5,
+    "gripper_force_step_n": 0.1,
+    "gripper_force_step_delay_s": 0.2,
+    "gripper_grasp_timeout_s": 5,
+    "gripper_min_width_gap_mm": 3,
+    "gripper_min_force_delta_n": 0.1
+  },
+  "targets": {
+    "source_bottom_mm": [
+      -525.1550104962355,
+      15.591124486056561,
+      0.0
+    ],
+    "destination_mm": [
+      -524.7430757905182,
+      -162.05567896289506,
+      0.0
+    ],
+    "fit_rmse_px": 1.1044687600109495,
+    "observed_box_px": [
+      248.0,
+      184.0,
+      297.0,
+      258.0
+    ],
+    "projected_box_px": [
+      247.38057832374852,
+      185.61495125736363,
+      297.71339960250265,
+      256.82581296300845
+    ],
+    "edge_residual_px": [
+      -0.619421676251477,
+      1.6149512573636287,
+      0.7133996025026477,
+      -1.1741870369915546
+    ],
+    "cup_height_mm": 95.0,
+    "cup_diameter_mm": 75.0,
+    "table_z_base_mm": 0.0,
+    "camera_matrix": [
+      [
+        263.6728515625,
+        0.0,
+        323.58526611328125
+      ],
+      [
+        0.0,
+        263.6728515625,
+        179.9199676513672
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "base_from_camera": [
+      [
+        -0.072697737738461,
+        0.45922912341725763,
+        0.8853381563747986,
+        -888.9602486428704
+      ],
+      [
+        0.9965659610030485,
+        -0.0018341655365573496,
+        0.08278237256116336,
+        -93.12566151992355
+      ],
+      [
+        0.03963993312028583,
+        0.8883159618301375,
+        -0.4575187730137615,
+        315.2114291079937
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "plan": {
+    "tcp": {
+      "grasp_pose": [
+        -0.5251550104962355,
+        0.015591124486056561,
+        0.055,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "lift_pose": [
+        -0.5251550104962355,
+        0.015591124486056561,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "pregrasp_high_pose": [
+        -0.5251550104962355,
+        0.015591124486056561,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "carry_pose": [
+        -0.5247430757905183,
+        -0.16205567896289505,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "place_pose": [
+        -0.5247430757905183,
+        -0.16205567896289505,
+        0.055,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "retreat_pose": [
+        -0.5247430757905183,
+        -0.16205567896289505,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ]
+    },
+    "flange": {
+      "grasp_pose": [
+        -0.39015501049623547,
+        0.015591124486056545,
+        0.055,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "lift_pose": [
+        -0.39015501049623547,
+        0.015591124486056545,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "pregrasp_high_pose": [
+        -0.39015501049623547,
+        0.015591124486056545,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "carry_pose": [
+        -0.3897430757905182,
+        -0.16205567896289508,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "place_pose": [
+        -0.3897430757905182,
+        -0.16205567896289508,
+        0.055,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "retreat_pose": [
+        -0.3897430757905182,
+        -0.16205567896289508,
+        0.255,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ]
+    },
+    "source_bottom_mm": [
+      -525.1550104962355,
+      15.591124486056561,
+      0.0
+    ],
+    "destination_mm": [
+      -524.7430757905182,
+      -162.05567896289506,
+      0.0
+    ],
+    "table_z_base_mm": 0.0
+  }
+}

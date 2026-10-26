@@ -1,0 +1,75 @@
+{
+  "schema": "retained_nominal_offline_training_v1",
+  "verified": false,
+  "hardware_deployment_allowed": false,
+  "camera": {
+    "transform_base_from_raw_optical_m": [
+      [
+        -0.072697737738461,
+        0.45922912341725763,
+        0.8853381563747986,
+        -0.8889602486428704
+      ],
+      [
+        0.9965659610030485,
+        -0.0018341655365573496,
+        0.08278237256116336,
+        -0.09312566151992355
+      ],
+      [
+        0.03963993312028583,
+        0.8883159618301375,
+        -0.4575187730137615,
+        0.3152114291079937
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intrinsic_matrix": [
+      [
+        263.6728515625,
+        0.0,
+        323.58526611328125
+      ],
+      [
+        0.0,
+        263.6728515625,
+        179.9199676513672
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "resolution_wh": [
+      640,
+      360
+    ],
+    "image_rotation_degrees": 180,
+    "installation_verified_on_real": false
+  },
+  "tcp_link7_xyz_m": [
+    0.152,
+    0,
+    -0.0235
+  ],
+  "cup": {
+    "outer_diameter_m": 0.075,
+    "height_m": 0.095,
+    "mass_kg": 0.05,
+    "wall_thickness_m": 0.002
+  },
+  "table_top_z_m": 0.0,
+  "limitations": [
+    "TCP is model nominal, not newly measured",
+    "Camera fit is historical, not an independent task-space accuracy bound",
+    "Cup is upright cylinder and card sides are base-axis aligned; real handle/rim frontend unqualified",
+    "No permission or qualification for physical execution"
+  ],
+  "sha256": "33c9ca07d85a5ae3b4f33099a4d887308dc95e18cc5085c418a0131fd4d90be8"
+}

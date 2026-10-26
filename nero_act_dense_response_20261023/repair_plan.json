@@ -1,0 +1,27 @@
+{
+  "scope": "Offline dense spatial-supervision comparison and pregrasp swept-collision rejection",
+  "evidence": {
+    "sampling_retention_fixed_but_task_failed": true,
+    "contact_before_grasp": "95mm open gripper, TCP height126mm, XY error38mm",
+    "training_offsets_were_m": [-0.03, 0.0, 0.03],
+    "heldout_offsets_remain_m": [-0.015, 0.015],
+    "hypothesis_not_yet_proven": "Sparse center/down and displaced/up labels interpolate into incorrect descent"
+  },
+  "controlled_training": {
+    "updates": 1000,
+    "initializer_sha256": "06012db673881efc678ecdc5c4d4780f2d46c44bb52f18cbeb81b20b53d0ec47",
+    "architecture_statistics_loss_optimizer_unchanged": true,
+    "additional_train_offsets_m": [-0.02, -0.01, 0.0, 0.01, 0.02],
+    "zero_zero_already_retained": true,
+    "no_validation_optimization": true,
+    "fixed_last_checkpoint": true,
+    "all_original_interventions_and_eight_stages_retained": true
+  },
+  "safety": {
+    "no_hardware_commands": true,
+    "calibration_verified": false,
+    "guard_generates_motion": false,
+    "full_physics_collision_check_not_TCP_only": true
+  },
+  "failure_policy": "Do not extend budget or release hardware on a failed fixed-last full task; report remaining structural limitations"
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "status": "implemented_offline_verified_with_existing_suite_failures",
+  "workspace": "/home/user/projects/nero",
+  "backup": "before.tar.gz",
+  "backup_sha256": "41466c7223603e5448e5c00bb8edb93432a9eff92a16b760d0b4fb4c5da899da",
+  "scope": "Formal experiment presentation copy in protocol defaults, example/local config, UI, chat, reports and CLI prompts; no change to execution behavior.",
+  "hardware_actions_performed": false,
+  "running_services_restarted_or_cancelled": false,
+  "historical_events_and_reports_modified": false,
+  "approval_and_numeric_parameters_changed": false,
+  "preset_engine_and_synthetic_provenance_preserved": true,
+  "changed_files": [
+    "src/utils/methylene_blue.py",
+    "src/utils/methylene_blue_ui.py",
+    "src/methylene_blue_experiment.py",
+    "src/ui/methylene_blue/index.html",
+    "src/ui/methylene_blue/app.js",
+    "config/methylene_blue_experiment.example.json",
+    "config/methylene_blue_experiment.local.json",
+    "tests/test_methylene_blue_experiment.py",
+    "docs/README.md",
+    "docs/methylene-blue-version-history.md"
+  ],
+  "tests": {
+    "new_regression_tests": {
+      "count": 3,
+      "expected_old_copy_failures_observed_before_implementation": true,
+      "passed_after_implementation": true
+    },
+    "full_suite": {
+      "command": "OPENBLAS_NUM_THREADS=1 /home/user/nero/bin/python -m unittest discover -s tests",
+      "total": 327,
+      "passed": 325,
+      "failures": 1,
+      "errors": 1,
+      "log": "full-suite.log",
+      "existing_issues": [
+        {
+          "test": "test_arm_gripper.ArmGripperTest.test_defaults_and_execute",
+          "reason": "Test passes unsupported --execute to the independent gripper CLI; SystemExit: 2."
+        },
+        {
+          "test": "test_transparent_vessel.TransparentPouringTests.test_live_motion_config_keeps_safe_shake_for_thirty_seconds",
+          "reason": "Old assertion expects 20 cycles; live motion config retains the user's 5 cycles."
+        }
+      ]
+    },
+    "related_tests_in_full_suite": {
+      "test_methylene_blue_experiment": 60,
+      "test_methylene_blue_hardware": 10,
+      "test_methylene_blue_localization_regression": 6,
+      "all_passed": true
+    },
+    "javascript_syntax_check": "passed",
+    "cli_help": "passed",
+    "cli_dry_run": {
+      "command": "/home/user/nero/bin/python -m src.methylene_blue_experiment --config config/methylene_blue_experiment.example.json --dry-run",
+      "run_id": "NERO-MB-20261023-170306-22f218",
+      "status": "passed",
+      "event_count": 54,
+      "synthetic_sample_count": 12,
+      "log": "dry-run.log",
+      "json_and_html_copy_and_provenance_assertions": "passed"
+    },
+    "git_diff_check": "passed",
+    "config_backup_comparison_only_copy_keys_changed": true
+  },
+  "independent_review": {
+    "result": "no_blocking_or_actionable_issues",
+    "scope": "Exact task-backup diff and UI/config/report call chain; approval, confirmation tokens, numerical parameters and hardware branches unchanged.",
+    "new_tests_and_javascript_syntax_rechecked": true,
+    "browser_and_hardware_validation_performed": false
+  },
+  "activation": "After the active experiment has safely ended, restart the main program from /home/user/projects/nero, then hard refresh the browser. The older nero-demo-github-538c8ba checkout was not modified.",
+  "limitations": "This is presentation cleanup, not new LLM integration or a claim of completed physical/chemical acceptance. No browser visual inspection or new hardware experiment was performed."
+}

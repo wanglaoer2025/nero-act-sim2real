@@ -1,0 +1,59 @@
+{
+  "inlier_count": 15,
+  "total_samples": 20,
+  "translation_rmse_mm": 4.58584534023317,
+  "rotation_rmse_deg": 0.6728617839148644,
+  "camera_serial_number": 39602891,
+  "fit_reproduced": true,
+  "independent_task_space_validation_passed": false,
+  "accepted_for_offline_scene": true,
+  "source_candidate_sha256": "b9874ae76258d6e804d40a3e6eca947c63ea0d33dacdd48335817b74ccbc4cb6",
+  "source_coordinate_system": "raw ZED left camera optical,image coordinates",
+  "target_coordinate_system": "nero_base",
+  "transform_base_from_raw_optical_m": [
+    [
+      0.02255291879948775,
+      0.4225301104135423,
+      0.9060682488905261,
+      -0.8802533802903315
+    ],
+    [
+      0.9997455961233941,
+      -0.009830845906860024,
+      -0.020300184743869396,
+      -0.0680567051197011
+    ],
+    [
+      0.0003299780346987363,
+      0.9062955700336817,
+      -0.4226443313849379,
+      0.38314256433174737
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "image_rotation_degrees": 180,
+  "rotation_applied_to_transform_twice": false,
+  "camera_origin_estimate_delta_mm": [
+    8.706868352538866,
+    25.06895640022244,
+    67.93113522375366
+  ],
+  "rotation_estimate_delta_deg": 6.362077089662333,
+  "same_known_camera_intrinsics_confirmed": true,
+  "independent_world_geometry_accepted": false,
+  "global_project_config_modified": false,
+  "robot_driver_started": false,
+  "task": "original ACT yellow cup pick/carry/place; four-vessel app is not substituted",
+  "test_scope": "Frozen-world extrinsic sensitivity only; not a fresh localization or deployment test",
+  "intrinsics_comparison_scope": "Today native 1280x720 capture matches earlier Oct23 recorded intrinsics; not an equality claim against old ACT 640x360 scaled intrinsics",
+  "fixed_world_extrinsic_sensitivity_passed": false,
+  "fixed_world_failure": "Cup clipped by image boundary before any policy action",
+  "current_frame_localization_passed": false,
+  "current_frame_failure": "Unique visible cup and target required; task cup/card absent from operating table",
+  "robot_commands_sent": false
+}

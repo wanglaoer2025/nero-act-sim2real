@@ -1,0 +1,17 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__ test_recovery_batch_requires_two_actual_nominal_contexts_before_generation __
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-116/test_recovery_batch_requires_t0')
+
+    def test_recovery_batch_requires_two_actual_nominal_contexts_before_generation(tmp_path):
+        import training.history_recoveries as m
+>       assert hasattr(m,'prepare_recoveries'), 'Recovery generation entry missing'
+E       AssertionError: Recovery generation entry missing
+E       assert False
+E        +  where False = hasattr(<module 'training.history_recoveries' from '/home/user/wq/nero_act_history_feedback_20261019/training/history_recoveries.py'>, 'prepare_recoveries')
+
+tests/test_history_teacher.py:34: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_teacher.py::test_recovery_batch_requires_two_actual_nominal_contexts_before_generation
+1 failed, 2 deselected in 0.07s

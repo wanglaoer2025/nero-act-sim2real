@@ -1,0 +1,1253 @@
+[INFO] [launch]: All log files can be found below /home/user/.ros/log/2026-10-16-09-58-43-353021-user-ThinkStation-P2-Tower-550541
+[INFO] [launch]: Default logging verbosity is set to INFO
+WARNING:root:[33;21mCannot infer SRDF from `/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/share/agx_arm_moveit`. -- using config/agx_arm.srdf[0m
+WARNING:root:[33;21mCannot infer SRDF from `/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/share/agx_arm_moveit`. -- using config/agx_arm.srdf[0m
+WARNING:root:[33;21mCannot infer SRDF from `/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/share/agx_arm_moveit`. -- using config/agx_arm.srdf[0m
+WARNING:root:[33;21mCannot infer SRDF from `/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/share/agx_arm_moveit`. -- using config/agx_arm.srdf[0m
+WARNING:root:[33;21mCannot infer SRDF from `/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/share/agx_arm_moveit`. -- using config/agx_arm.srdf[0m
+[INFO] [agx_arm_ctrl_single-1]: process started with pid [550547]
+[INFO] [robot_state_publisher-2]: process started with pid [550548]
+[INFO] [move_group-3]: process started with pid [550549]
+[INFO] [agx_arm_control_gate-4]: process started with pid [550550]
+[INFO] [ros2_control_node-5]: process started with pid [550583]
+[INFO] [spawner-6]: process started with pid [550584]
+[INFO] [spawner-7]: process started with pid [550585]
+[INFO] [spawner-8]: process started with pid [550586]
+[robot_state_publisher-2] [0m[INFO] [1792115923.781463057] [robot_state_publisher]: Robot initialized[0m
+[move_group-3] [0m[INFO] [1792115923.818994324] [moveit.moveit.ros.rdf_loader]: Loaded robot model in 0.00315207 seconds[0m
+[move_group-3] [0m[INFO] [1792115923.819116399] [moveit.moveit.core.robot_model]: Loading robot model 'agx_arm'...[0m
+[move_group-3] [0m[INFO] [1792115923.819129042] [moveit.moveit.core.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint[0m
+[ros2_control_node-5] [0m[INFO] [1792115923.929718940] [controller_manager]: Using Steady (Monotonic) clock for triggering controller manager cycles.[0m
+[ros2_control_node-5] [0m[INFO] [1792115923.933644971] [controller_manager]: Subscribing to '/robot_description' topic for robot description.[0m
+[ros2_control_node-5] [0m[INFO] [1792115923.933701324] [controller_manager]: update rate is 200 Hz[0m
+[ros2_control_node-5] [0m[INFO] [1792115923.933706951] [controller_manager]: Overruns handling is : enabled[0m
+[ros2_control_node-5] [0m[INFO] [1792115923.933710665] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50[0m
+[ros2_control_node-5] [33m[WARN] [1792115923.933779626] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.[0m
+[agx_arm_control_gate-4] [0m[INFO] [1792115924.034841577] [control_gate]: Control gate started. status_topics=['arm_controller/follow_joint_trajectory/_action/status', 'gripper_controller/follow_joint_trajectory/_action/status'], gate_service_name=control_enable; commands remain blocked until controller state matches robot feedback[0m
+[move_group-3] [0m[INFO] [1792115924.051488946] [moveit.moveit.kinematics.kdl_kinematics_plugin]: Joint weights for group 'arm': 1 1 1 1 1 1 1[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.089539322] [controller_manager]: Received robot description from topic.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.089592812] [controller_manager]: Enforcing command limits is disabled. Command limits from URDF will be ignored.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.092948493] [controller_manager]: Loading hardware 'FakeSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1792115924.093382410] [controller_manager]: Loaded hardware 'FakeSystem' from plugin 'mock_components/GenericSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.093445077] [controller_manager]: Initialize hardware 'FakeSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1792115924.107193917] [controller_manager]: Successful initialization of hardware 'FakeSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.107750302] [controller_manager]: Activating component 'FakeSystem'.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.107761525] [resource_manager]: 'configure' hardware 'FakeSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1792115924.107772958] [resource_manager]: Successful 'configure' of hardware 'FakeSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.107778599] [resource_manager]: 'activate' hardware 'FakeSystem' [0m
+[ros2_control_node-5] [0m[INFO] [1792115924.107785182] [resource_manager]: Successful 'activate' of hardware 'FakeSystem'[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.108122082] [controller_manager]: Registering statistics for : FakeSystem[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.108182725] [controller_manager]: Resource Manager has been successfully initialized. Starting Controller Manager services...[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.421893136] [agx_arm_ctrl_single_node]: can_port: can0[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.422290651] [agx_arm_ctrl_single_node]: arm_type: nero[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.422598070] [agx_arm_ctrl_single_node]: auto_enable: False[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.423404776] [agx_arm_ctrl_single_node]: fast_mode: False[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.424022652] [agx_arm_ctrl_single_node]: speed_percent: 5[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.424635583] [agx_arm_ctrl_single_node]: fw_version: v120, 1.20, v120[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.425027455] [agx_arm_ctrl_single_node]: pub_rate: 200[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.425407025] [agx_arm_ctrl_single_node]: enable_timeout: 5.0[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.426080458] [agx_arm_ctrl_single_node]: effector_type: agx_gripper[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.426687732] [agx_arm_ctrl_single_node]: tcp_offset: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0][0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.427284247] [agx_arm_ctrl_single_node]: gripper_default_effort: 1.0[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.427890822] [agx_arm_ctrl_single_node]: control_enabled: False[0m
+[spawner-6] [0m[INFO] [1792115924.472142385] [spawner_arm_controller]: waiting for service /controller_manager/list_controllers to become available...[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.536983706] [agx_arm_ctrl_single_node]: AgxGripper initialized successfully[0m
+[ros2_control_node-5] [33m[WARN] [1792115924.559407155] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 10.452734 ms (missed cycles : 3).[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.575256014] [agx_arm_ctrl_single_node]: Agx_arm feedback is ready, control is now enabled[0m
+[agx_arm_control_gate-4] [0m[INFO] [1792115924.576585196] [control_gate]: External control gate closed by execution status[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792115924.576882749] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[agx_arm_control_gate-4] [0m[INFO] [1792115924.623331276] [control_gate]: Gate service is ready, forcing gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.725079352] [controller_manager]: Loading controller : 'arm_controller' of type 'joint_trajectory_controller/JointTrajectoryController'[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.725113854] [controller_manager]: Loading controller 'arm_controller'[0m
+[ros2_control_node-5] [33m[WARN] [1792115924.728319743] [controller_manager]: The use of remapping arguments to the controller_manager node is deprecated. Please use the '--controller-ros-args' argument of the spawner to pass remapping arguments to the controller node.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.728341035] [controller_manager]: Controller 'arm_controller' node arguments: --ros-args --params-file /tmp/launch_params_abr3efq5 --params-file /tmp/ros2_controllers_v6utg8i9.yaml -r joint_states:=control/joint_states [0m
+[spawner-6] [0m[INFO] [1792115924.760867635] [spawner_arm_controller]: [94mLoaded [1marm_controller[0m[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.763368104] [controller_manager]: Configuring controller: 'arm_controller'[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.763662864] [arm_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.763685920] [arm_controller]: Command interfaces are [position] and state interfaces are [position velocity].[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.763746729] [arm_controller]: Using 'splines' interpolation method.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.768976341] [arm_controller]: Action status changes will be monitored at 20.00 Hz.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.775345140] [arm_controller]: Setting initial scaling factor to 1.000000[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.775368189] [arm_controller]: No scaling interface set. This controller will not read speed scaling from the hardware.[0m
+[ros2_control_node-5] [0m[INFO] [1792115924.781648647] [controller_manager]: Activating controllers: [ arm_controller ][0m
+[ros2_control_node-5] [0m[INFO] [1792115924.784322978] [controller_manager]: Successfully switched controllers![0m
+[spawner-6] [0m[INFO] [1792115924.790591132] [spawner_arm_controller]: [92mConfigured and activated [1marm_controller[0m[0m
+[spawner-8] [0m[INFO] [1792115924.888389008] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...[0m
+[INFO] [spawner-6]: process has finished cleanly [pid 550584]
+[move_group-3] [0m[INFO] [1792115925.006807324] [moveit.moveit.ros.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-3] [0m[INFO] [1792115925.006949124] [moveit.moveit.ros.moveit_cpp]: Listening to 'joint_states' for joint states[0m
+[move_group-3] [0m[INFO] [1792115925.008644835] [moveit.moveit.ros.current_state_monitor]: Listening to joint states on topic 'joint_states'[0m
+[move_group-3] [0m[INFO] [1792115925.009781257] [moveit.moveit.ros.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects[0m
+[move_group-3] [0m[INFO] [1792115925.009800828] [moveit.moveit.ros.planning_scene_monitor]: Stopping existing planning scene publisher.[0m
+[move_group-3] [0m[INFO] [1792115925.010174984] [moveit.moveit.ros.planning_scene_monitor]: Stopped publishing maintained planning scene.[0m
+[move_group-3] [0m[INFO] [1792115925.011052393] [moveit.moveit.ros.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'[0m
+[move_group-3] [0m[INFO] [1792115925.011453821] [moveit.moveit.ros.planning_scene_monitor]: Starting planning scene monitor[0m
+[move_group-3] [0m[INFO] [1792115925.012300697] [moveit.moveit.ros.planning_scene_monitor]: Listening to '/planning_scene'[0m
+[move_group-3] [0m[INFO] [1792115925.012318516] [moveit.moveit.ros.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.[0m
+[move_group-3] [0m[INFO] [1792115925.013393160] [moveit.moveit.ros.planning_scene_monitor]: Listening to 'collision_object'[0m
+[move_group-3] [0m[INFO] [1792115925.014320303] [moveit.moveit.ros.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry[0m
+[move_group-3] [33m[WARN] [1792115925.014599403] [moveit.moveit.ros.occupancy_map_monitor]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead[0m
+[ros2_control_node-5] [0m[INFO] [1792115925.378102451] [controller_manager]: Loading controller : 'joint_state_broadcaster' of type 'joint_state_broadcaster/JointStateBroadcaster'[0m
+[ros2_control_node-5] [0m[INFO] [1792115925.378735227] [controller_manager]: Loading controller 'joint_state_broadcaster'[0m
+[ros2_control_node-5] [33m[WARN] [1792115925.380180562] [controller_manager]: The use of remapping arguments to the controller_manager node is deprecated. Please use the '--controller-ros-args' argument of the spawner to pass remapping arguments to the controller node.[0m
+[ros2_control_node-5] [0m[INFO] [1792115925.380396321] [controller_manager]: Controller 'joint_state_broadcaster' node arguments: --ros-args --params-file /tmp/launch_params_abr3efq5 --params-file /tmp/ros2_controllers_v6utg8i9.yaml -r joint_states:=control/joint_states [0m
+[spawner-8] [0m[INFO] [1792115925.405333448] [spawner_joint_state_broadcaster]: [94mLoaded [1mjoint_state_broadcaster[0m[0m
+[ros2_control_node-5] [0m[INFO] [1792115925.406627276] [controller_manager]: Configuring controller: 'joint_state_broadcaster'[0m
+[ros2_control_node-5] [0m[INFO] [1792115925.406693498] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published[0m
+[ros2_control_node-5] [0m[INFO] [1792115925.415711179] [controller_manager]: Activating controllers: [ joint_state_broadcaster ][0m
+[ros2_control_node-5] [0m[INFO] [1792115925.419135626] [controller_manager]: Successfully switched controllers![0m
+[spawner-8] [0m[INFO] [1792115925.425187451] [spawner_joint_state_broadcaster]: [92mConfigured and activated [1mjoint_state_broadcaster[0m[0m
+[spawner-7] [0m[INFO] [1792115925.502090082] [spawner_gripper_controller]: waiting for service /controller_manager/list_controllers to become available...[0m
+[INFO] [spawner-8]: process has finished cleanly [pid 550586]
+[move_group-3] [0m[INFO] [1792115926.893987434] [moveit.moveit.ros.pointcloud_octomap_updater]: Listening to '/camera/depth/color/points' using message filter with target frame 'world '[0m
+[move_group-3] [0m[INFO] [1792115926.899000113] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'STOMP'[0m
+[move_group-3] [0m[INFO] [1792115926.900076076] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.901058264] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.901288622] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.901463222] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.901468280] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.901490314] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.901493882] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.901505209] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.902215626] [move_group]: Try loading adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792115926.903890264] [move_group]: Loaded adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792115926.904216332] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.905974190] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.906337389] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.907184457] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.915908945] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792115926.916898851] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.917240335] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.917389045] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.917654466] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.917661580] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.917682063] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.917686206] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.917696693] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.918411764] [move_group]: Try loading adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792115926.918687662] [move_group]: Loaded adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792115926.918692985] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.919517725] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.919718421] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.920298711] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.923133486] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'CHOMP'[0m
+[move_group-3] [0m[INFO] [1792115926.924103850] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.924305597] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.924326163] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.924477678] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.924482545] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.924498322] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.924501772] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.924513124] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.925197591] [move_group]: Try loading adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792115926.925468182] [move_group]: Loaded adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792115926.925475348] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.926309775] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.926519096] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.927131262] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.929461251] [moveit.moveit.planners.pilz.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-3] [0m[INFO] [1792115926.934113635] [moveit.moveit.planners.pilz.command_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP [0m
+[move_group-3] [0m[INFO] [1792115926.934563867] [moveit.moveit.planners.pilz.command_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC[0m
+[move_group-3] [0m[INFO] [1792115926.936128636] [moveit.moveit.planners.pilz.command_planner]: Registered Algorithm [CIRC][0m
+[move_group-3] [0m[INFO] [1792115926.936150286] [moveit.moveit.planners.pilz.command_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN[0m
+[move_group-3] [0m[INFO] [1792115926.936973116] [moveit.moveit.planners.pilz.command_planner]: Registered Algorithm [LIN][0m
+[move_group-3] [0m[INFO] [1792115926.936989092] [moveit.moveit.planners.pilz.command_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP[0m
+[move_group-3] [0m[INFO] [1792115926.937776813] [moveit.moveit.planners.pilz.command_planner]: Registered Algorithm [PTP][0m
+[move_group-3] [0m[INFO] [1792115926.937793552] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'Pilz Industrial Motion Planner'[0m
+[move_group-3] [0m[INFO] [1792115926.938510450] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.938573600] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792115926.938581292] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.938798326] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.938807171] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.938828735] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792115926.938835418] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.938849865] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792115926.939525952] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.940486991] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792115926.940500104] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.940755955] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'[0m
+[move_group-3] [0m[INFO] [1792115926.992989429] [moveit.moveit.plugins.simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller[0m
+[move_group-3] [0m[INFO] [1792115926.997145510] [moveit.moveit.plugins.simple_controller_manager]: Added FollowJointTrajectory controller for gripper_controller[0m
+[move_group-3] [0m[INFO] [1792115926.997322765] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792115926.997351127] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792115926.998317291] [moveit.moveit.ros.trajectory_execution_manager]: Trajectory execution is managing controllers[0m
+[move_group-3] [0m[INFO] [1792115926.998339106] [move_group]: MoveGroup debug mode is ON[0m
+[move_group-3] [0m[INFO] [1792115927.023089921] [moveit.moveit.planners.pilz.move_group_sequence_action]: initialize move group sequence action[0m
+[move_group-3] [0m[INFO] [1792115927.027994317] [moveit.moveit.planners.pilz.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-3] [0m[INFO] [1792115927.028712279] [moveit.moveit.planners.pilz.joint_limits_aggregator]: Reading limits from namespace robot_description_planning[0m
+[move_group-3] [0m[INFO] [1792115927.030076394] [moveit.moveit.ros.move_group.executable]: 
+[move_group-3] 
+[move_group-3] ********************************************************
+[move_group-3] * MoveGroup using: 
+[move_group-3] *     - apply_planning_scene_service
+[move_group-3] *     - clear_octomap_service
+[move_group-3] *     - get_group_urdf
+[move_group-3] *     - load_geometry_from_file
+[move_group-3] *     - CartesianPathService
+[move_group-3] *     - execute_trajectory_action
+[move_group-3] *     - get_planning_scene_service
+[move_group-3] *     - kinematics_service
+[move_group-3] *     - move_action
+[move_group-3] *     - motion_plan_service
+[move_group-3] *     - query_planners_service
+[move_group-3] *     - state_validation_service
+[move_group-3] *     - save_geometry_to_file
+[move_group-3] *     - SequenceAction
+[move_group-3] *     - SequenceService
+[move_group-3] ********************************************************
+[move_group-3] [0m
+[move_group-3] [0m[INFO] [1792115927.030129956] [moveit.moveit.ros.move_group.context]: MoveGroup context using pipeline ompl[0m
+[move_group-3] [0m[INFO] [1792115927.030142841] [moveit.moveit.ros.move_group.context]: MoveGroup context initialization complete[0m
+[move_group-3] [96mLoading 'move_group/ApplyPlanningSceneService'...[0m
+[move_group-3] [96mLoading 'move_group/ClearOctomapService'...[0m
+[move_group-3] [96mLoading 'move_group/GetUrdfService'...[0m
+[move_group-3] [96mLoading 'move_group/LoadGeometryFromFileService'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupCartesianPathService'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupGetPlanningSceneService'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupKinematicsService'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupMoveAction'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupPlanService'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupQueryPlannersService'...[0m
+[move_group-3] [96mLoading 'move_group/MoveGroupStateValidationService'...[0m
+[move_group-3] [96mLoading 'move_group/SaveGeometryToFileService'...[0m
+[move_group-3] [96mLoading 'pilz_industrial_motion_planner/MoveGroupSequenceAction'...[0m
+[move_group-3] [96mLoading 'pilz_industrial_motion_planner/MoveGroupSequenceService'...[0m
+[move_group-3] 
+[move_group-3] [92mYou can start planning now![0m
+[move_group-3] 
+[ros2_control_node-5] [0m[INFO] [1792115927.755128060] [controller_manager]: Loading controller : 'gripper_controller' of type 'joint_trajectory_controller/JointTrajectoryController'[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.755170761] [controller_manager]: Loading controller 'gripper_controller'[0m
+[ros2_control_node-5] [33m[WARN] [1792115927.755420236] [controller_manager]: The use of remapping arguments to the controller_manager node is deprecated. Please use the '--controller-ros-args' argument of the spawner to pass remapping arguments to the controller node.[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.755433321] [controller_manager]: Controller 'gripper_controller' node arguments: --ros-args --params-file /tmp/launch_params_abr3efq5 --params-file /tmp/ros2_controllers_v6utg8i9.yaml -r joint_states:=control/joint_states [0m
+[spawner-7] [0m[INFO] [1792115927.785530706] [spawner_gripper_controller]: [94mLoaded [1mgripper_controller[0m[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.786573735] [controller_manager]: Configuring controller: 'gripper_controller'[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.786724489] [gripper_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.786742701] [gripper_controller]: Command interfaces are [position] and state interfaces are [position velocity].[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.786752212] [gripper_controller]: Using 'splines' interpolation method.[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.788450765] [gripper_controller]: Action status changes will be monitored at 20.00 Hz.[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.796175547] [gripper_controller]: Setting initial scaling factor to 1.000000[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.796205902] [gripper_controller]: No scaling interface set. This controller will not read speed scaling from the hardware.[0m
+[ros2_control_node-5] [0m[INFO] [1792115927.801629305] [controller_manager]: Activating controllers: [ gripper_controller ][0m
+[ros2_control_node-5] [0m[INFO] [1792115927.804184027] [controller_manager]: Successfully switched controllers![0m
+[spawner-7] [0m[INFO] [1792115927.810355403] [spawner_gripper_controller]: [92mConfigured and activated [1mgripper_controller[0m[0m
+[INFO] [spawner-7]: process has finished cleanly [pid 550585]
+[ros2_control_node-5] [33m[WARN] [1792115939.930013708] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.059585 ms (missed cycles : 2).[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792116045.867395899] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[agx_arm_control_gate-4] Traceback (most recent call last):
+[agx_arm_control_gate-4]   File "/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/lib/agx_arm_moveit/agx_arm_control_gate", line 239, in <module>
+[agx_arm_control_gate-4]     main()
+[agx_arm_control_gate-4]   File "/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/lib/agx_arm_moveit/agx_arm_control_gate", line 235, in main
+[agx_arm_control_gate-4]     rclpy.shutdown()
+[agx_arm_control_gate-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[agx_arm_control_gate-4]     _shutdown(context=context)
+[agx_arm_control_gate-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[agx_arm_control_gate-4]     context.shutdown()
+[agx_arm_control_gate-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[agx_arm_control_gate-4]     self.__context.shutdown()
+[agx_arm_control_gate-4] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:333
+[ERROR] [agx_arm_control_gate-4]: process has died [pid 550550, exit code 1, cmd '/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/lib/agx_arm_moveit/agx_arm_control_gate --ros-args -r __ns:=/ --params-file /tmp/launch_params_254dgrs2 -r /robot_description:=robot_description'].
+[ros2_control_node-5] [0m[INFO] [1792116046.139483458] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792116046.139528099] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792116047.144043471] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792116047.392862110] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792116047.392894156] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792116048.394028420] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792116063.141255263] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [33m[WARN] [1792116285.534321575] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.367021 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792116312.829711135] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.756650 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792116314.931426038] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.471372 ms (missed cycles : 2).[0m
+[move_group-3] [0m[INFO] [1792116433.818186338] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792116433.818379994] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792116433.818416989] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792116433.818424897] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792116433.818440008] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792116433.818483300] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792116433.819156486] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792116433.819301893] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792116433.832575145] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792116433.832819539] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792116433.832905050] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792116433.832944760] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792116706.697210097] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792116706.697312957] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792116706.697338365] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792116706.697345121] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792116706.697359576] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792116706.697384147] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792116706.697688816] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792116706.697756852] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792116706.709949809] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792116706.710109751] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792116706.710180003] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792116706.710210102] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792116719.792460859] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received[0m
+[move_group-3] [0m[INFO] [1792116719.792510849] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792116719.792533410] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792116719.792626649] [moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-3] [0m[INFO] [1792116719.800588830] [moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-3] [0m[INFO] [1792116719.800665265] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792116719.800689979] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792116719.800817574] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1792116719.801014885] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792116719.801042546] [arm_controller]: Accepted new action goal[0m
+[move_group-3] [0m[INFO] [1792116719.801170728] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-3] [0m[INFO] [1792116719.801189019] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792116719.802071686] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792116723.799051801] [arm_controller]: Goal reached, success![0m
+[move_group-3] [0m[INFO] [1792116723.801335782] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792116723.802137571] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792116723.815593131] [moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-3] [0m[INFO] [1792116723.815701091] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: SUCCEEDED[0m
+[move_group-3] [0m[INFO] [1792117079.230290987] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792117079.230377034] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792117079.230400877] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792117079.230407525] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792117079.230421149] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792117079.230441720] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792117079.230693272] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792117079.230813438] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792117079.233071493] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792117079.233210786] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792117079.233279358] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792117079.233305790] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792117206.893801251] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792117206.893880268] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792117206.893903081] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792117206.893909906] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792117206.893923108] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792117206.893955890] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792117206.894198209] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792117206.894258365] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792117206.906734467] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792117206.906883976] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792117206.906952791] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792117206.906980564] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792117230.616516480] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received[0m
+[move_group-3] [0m[INFO] [1792117230.616560542] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792117230.616578282] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792117230.616627819] [moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-3] [0m[INFO] [1792117230.620324887] [moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-3] [0m[INFO] [1792117230.620368435] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792117230.620390747] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792117230.620469432] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1792117230.620583859] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792117230.620618834] [arm_controller]: Accepted new action goal[0m
+[move_group-3] [0m[INFO] [1792117230.620734080] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-3] [0m[INFO] [1792117230.620745016] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792117230.621489833] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792117234.624036636] [arm_controller]: Goal reached, success![0m
+[move_group-3] [0m[INFO] [1792117234.670867686] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792117234.671632627] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792117234.685204236] [moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-3] [0m[INFO] [1792117234.685275586] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: SUCCEEDED[0m
+[ros2_control_node-5] [33m[WARN] [1792117562.030179311] [controller_manager]: Overrun might occur, Total time : 6159.555 us (Expected < 5000.000 us) --> Read time : 14.175 us, Update time : 6142.561 us, Write time : 2.819 us[0m
+[ros2_control_node-5] [33m[WARN] [1792117562.030629002] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.674327 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792117596.535573233] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.618998 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792117665.236325848] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.371339 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792117688.335556929] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.602474 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792117723.730530971] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.576769 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792117781.334728919] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.774469 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792117808.331558951] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.604453 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792117874.633002648] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 9.048509 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792118229.830677315] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.723076 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792118231.035695245] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.740778 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.248322827] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.248350074] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.248401434] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.248426324] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122156.249092044] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.254034643] [arm_controller]: Got request to cancel goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.254050920] [arm_controller]: Canceling active action goal because cancel callback received.[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.254309591] [gripper_controller]: Got request to cancel goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122156.254328530] [gripper_controller]: Canceling active action goal because cancel callback received.[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122156.299785814] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122334.823608239] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122334.823641125] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122334.823660867] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122334.823681498] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122334.824359503] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.319108626] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122335.319224611] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122335.327860466] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.345999859] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.346030910] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.346073166] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.346091776] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122335.346912294] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.844067536] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122335.844177297] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122335.849517405] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.873046923] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.873069263] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.873162197] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122335.873182865] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122335.873713656] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.369058706] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122336.369148375] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122336.374780058] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.398949238] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.398976071] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.399026341] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.399049380] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122336.399816214] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.899036326] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122336.899086758] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122336.902346158] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.930832758] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.930859709] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.930933509] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122336.930954076] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122336.931527957] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.429115394] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122337.429258538] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122337.435115641] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.454473836] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.454498844] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.454558406] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.454576078] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122337.455445961] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.954075888] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122337.954157328] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122337.957883216] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.983331751] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.983365139] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.983388749] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122337.983370130] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122337.984248066] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122338.479041398] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122338.479112243] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122338.488771861] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122338.505902213] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122338.505929604] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122338.505950813] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122338.505968080] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122338.506608679] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.004048089] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122339.004130845] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122339.008937442] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.030457705] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.030481951] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.030518099] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.030537486] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122339.031141814] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.529058161] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122339.529117208] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122339.532903360] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.548694207] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.548718581] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.548773943] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122339.548791122] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122339.549659591] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.044086299] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122340.044175381] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122340.052207003] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.067850987] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.067871818] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.067926261] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.067947981] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122340.068532881] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.564042498] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122340.564122842] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122340.571743584] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.588914224] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.588936810] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.588995172] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122340.589018512] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122340.589721941] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122341.084072108] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122341.089054985] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122341.094090135] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792122341.110995572] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122341.111022395] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122341.111097353] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792122341.111119556] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122341.111853433] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792122341.614067226] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792122341.614140778] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792122341.662510406] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792122839.880271537] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792122839.880388775] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792122839.880411218] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792122839.880417669] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792122839.880436428] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792122839.880465121] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792122839.880807522] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792122839.880876187] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792122839.894391445] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792122839.895004026] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792122839.895258788] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792122839.895300351] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123272.423550545] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123272.699927879] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123272.699956139] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123273.704056133] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123273.956356878] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123273.956415684] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123274.959047522] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123305.246916964] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [33m[WARN] [1792123514.770836098] [controller_manager]: Overrun might occur, Total time : 6822.184 us (Expected < 5000.000 us) --> Read time : 13.838 us, Update time : 6806.069 us, Write time : 2.277 us[0m
+[ros2_control_node-5] [33m[WARN] [1792123514.771276602] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.322321 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792123561.200843349] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.889134 ms (missed cycles : 2).[0m
+[move_group-3] [0m[INFO] [1792123562.065344760] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792123562.065411064] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792123562.065432388] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792123562.065438851] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792123562.065453073] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792123562.065484484] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792123562.065730467] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792123562.065778926] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792123562.078542498] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792123562.078733859] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792123562.078814352] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792123562.078849424] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[ros2_control_node-5] [33m[WARN] [1792123602.544656182] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.701739 ms (missed cycles : 2).[0m
+[move_group-3] [0m[INFO] [1792123603.759487473] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792123603.759559430] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792123603.759575936] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792123603.759581118] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792123603.759593868] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792123603.759623776] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792123603.759885293] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792123603.759938107] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792123603.772170621] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792123603.772372507] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792123603.772451383] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792123603.772469733] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792123631.694221429] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792123631.694292844] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792123631.694317285] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792123631.694324311] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792123631.694338706] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792123631.694367186] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792123631.694621463] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792123631.694679390] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792123631.707757657] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792123631.707967103] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792123631.708058761] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792123631.708088294] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792123647.336279576] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received[0m
+[move_group-3] [0m[INFO] [1792123647.336324765] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792123647.336342557] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792123647.336386271] [moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-3] [0m[INFO] [1792123647.340555364] [moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-3] [0m[INFO] [1792123647.340599627] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792123647.340630677] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792123647.340715142] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1792123647.340896140] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123647.340925994] [arm_controller]: Accepted new action goal[0m
+[move_group-3] [0m[INFO] [1792123647.341038944] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-3] [0m[INFO] [1792123647.341046083] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123647.341920597] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123652.339039830] [arm_controller]: Goal reached, success![0m
+[move_group-3] [0m[INFO] [1792123652.341277515] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123652.342084656] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792123652.370226186] [moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-3] [0m[INFO] [1792123652.370300523] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: SUCCEEDED[0m
+[ros2_control_node-5] [0m[INFO] [1792123682.526713171] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123682.526747428] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123682.526769880] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123682.526787540] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123682.527714015] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.029030780] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123683.029076953] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123683.078102938] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.097398327] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.097427515] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.097476198] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.097500575] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123683.098289935] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.599030586] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123683.599072945] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123683.648658830] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.670896317] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.670926963] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.671006550] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123683.671030991] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123683.671782043] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.174028254] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123684.174071337] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123684.222174713] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.246109402] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.246140581] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.246283485] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.246308238] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123684.247003760] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.744037321] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123684.744085553] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123684.747618767] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.773894392] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.773922593] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.773998304] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123684.774021253] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123684.774793290] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.269039355] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123685.279034161] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123685.325290389] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.346426900] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.346457002] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.346515193] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.346540461] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123685.347450473] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.849027715] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123685.849070800] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123685.897784143] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.917724605] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.917761681] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.917853127] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123685.917877509] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123685.918916155] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123686.419031698] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123686.419078560] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123686.469089893] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123686.490777316] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123686.490808124] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123686.490859676] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123686.490876451] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123686.491684807] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123686.989030369] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123686.989076590] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123686.992197749] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.013972460] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.014002344] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.014089938] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.014111702] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123687.015114326] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.519031922] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123687.519077861] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123687.566112562] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.581661001] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.581690768] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.581816532] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123687.581840786] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123687.582722796] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.079034572] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123688.079084646] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123688.083434758] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.103990442] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.104018450] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.104098082] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.104119752] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123688.105048458] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.609029687] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123688.609073588] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123688.656109507] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.673855643] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.673886500] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.673943197] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123688.673969224] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123688.674989477] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.174028272] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123689.174069968] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123689.175821266] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.195925897] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.195954180] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.196040748] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.196063696] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123689.196907555] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.699026241] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123689.699069631] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123689.747601674] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.765910173] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.765941291] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.765992612] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123689.766017654] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123689.767026370] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.264035219] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123690.264086601] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123690.267729619] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.290588512] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.290626586] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.290713839] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.290738893] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123690.291700904] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.794035214] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123690.794085046] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123690.842202158] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.861690308] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.861720944] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.861802532] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123690.861826372] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123690.862848183] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123691.364031733] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123691.364075861] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123691.413389236] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123691.431128703] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123691.431158710] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123691.431243797] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123691.431268063] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123691.432207400] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123691.934029924] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123691.934073578] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123691.982827035] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.000765178] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.000796418] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.000821321] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.000838290] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123692.001843012] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.504024284] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123692.504070917] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123692.552532053] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.570734503] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.570764258] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.570843275] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123692.570867260] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123692.571738090] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.074027346] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123693.074071283] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123693.122590018] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.140279673] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.140311374] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.140363212] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.140387587] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123693.141509392] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.644030008] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123693.644074191] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123693.691960134] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.710157125] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.710188143] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.710249139] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123693.710272702] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123693.711508081] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.214026291] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123694.214069394] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123694.261971810] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.280991410] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.281023009] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.281112284] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.281138225] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123694.282084101] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.779036215] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123694.779082928] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123694.782724359] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.801245795] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.801270529] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.801324569] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123694.801347408] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123694.802336473] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.304027572] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123695.304067747] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123695.353024159] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.370779402] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.370810828] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.370897299] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.370920560] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123695.371860326] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.874030494] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123695.874072847] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123695.922532136] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.942292473] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.942319994] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.942452891] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123695.942468483] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123695.943436771] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123696.444027743] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123696.444076634] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123696.494108829] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123696.513921179] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123696.513952682] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123696.514032441] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123696.514054874] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123696.515091516] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.014043972] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123697.019040056] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123697.065895665] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.083629497] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.083660646] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.083750757] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.083767307] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123697.084845678] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.584027769] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123697.584071335] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123697.635906579] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.652792177] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.652825530] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.652879071] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123697.652895125] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123697.654001300] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.154028523] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123698.154072631] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123698.204594618] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.222514897] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.222549475] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.222621018] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.222647764] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123698.223863243] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.724034379] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123698.724080603] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123698.774305709] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.791316614] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.791347107] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.791435723] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123698.791460709] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123698.792577681] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.294030839] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123699.294073781] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123699.343566118] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.363042760] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.363072408] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.363124093] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.363147808] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123699.364294448] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.859034816] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123699.859084676] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123699.864857896] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.881898870] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.881932105] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.881994032] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123699.882018411] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123699.883178026] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123700.384027811] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123700.384069150] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123700.433637630] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792123700.452830666] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123700.452859703] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123700.452941360] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792123700.452969042] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123700.453944868] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792123700.949035023] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792123700.949081782] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792123700.954562160] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792123999.770015968] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792123999.770086705] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792123999.770109374] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792123999.770116190] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792123999.770129901] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792123999.770161297] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792123999.770406071] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792123999.770472664] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792123999.784800942] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792123999.785154855] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792123999.785283775] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792123999.785314694] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792124022.846497698] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792124022.846561567] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792124022.846581616] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792124022.846587999] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792124022.846602354] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792124022.846642249] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792124022.846881758] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792124022.846927491] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792124022.859408136] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792124022.859743589] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792124022.859868316] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792124022.859902996] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792124029.478531189] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received[0m
+[move_group-3] [0m[INFO] [1792124029.478573802] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792124029.478591505] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792124029.478641243] [moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-3] [0m[INFO] [1792124029.485321992] [moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-3] [0m[INFO] [1792124029.485356026] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792124029.485377255] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792124029.485462355] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1792124029.485639507] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124029.485664782] [arm_controller]: Accepted new action goal[0m
+[move_group-3] [0m[INFO] [1792124029.485769510] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-3] [0m[INFO] [1792124029.485782210] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124029.486596291] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792124045.389041750] [arm_controller]: Goal reached, success![0m
+[move_group-3] [0m[INFO] [1792124045.435922893] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124045.436678656] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792124045.450221823] [moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-3] [0m[INFO] [1792124045.450290026] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: SUCCEEDED[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.126493579] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.126513505] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.126543729] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.126527235] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124079.127480436] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.629036343] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792124079.629082101] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124079.677883821] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.698211979] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.698248292] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.698348437] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124079.698370527] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124079.699197528] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.199028935] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792124080.199073335] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124080.249563426] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.273258940] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.273293102] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.273353443] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.273378545] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124080.274341486] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.774032750] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792124080.774076767] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124080.824896150] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.851110947] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.851141628] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.851224379] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124080.851240377] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124080.852136962] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.354028489] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792124081.354077731] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124081.402569754] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.430360696] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.430391318] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.430477121] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.430502352] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124081.431394916] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.929036215] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792124081.929082295] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124081.931762613] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.954412165] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.954444262] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.954520535] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792124081.954544618] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124081.956065664] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792124082.459030957] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792124082.459073124] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792124082.506279377] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [33m[WARN] [1792126321.131785371] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.830921 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792126324.129892356] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.938143 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792126789.164788528] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.834197 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792126842.770893550] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.939198 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792126890.730088045] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.133509 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792126978.632679324] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 8.725055 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792127260.044937467] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.982681 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792128638.124683611] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.728598 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792129175.250649034] [controller_manager]: Overrun might occur, Total time : 6633.060 us (Expected < 5000.000 us) --> Read time : 16.570 us, Update time : 6614.375 us, Write time : 2.115 us[0m
+[ros2_control_node-5] [33m[WARN] [1792129175.253196473] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 9.242034 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792129351.724304963] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.350576 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792129788.525687701] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.732849 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792134153.535870650] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.916240 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792134155.636477355] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.523003 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792134300.232560145] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 8.606011 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792134411.830617513] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.663201 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792134625.435340235] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.386119 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792134642.836317341] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.363006 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792134987.236017463] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.063240 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792135274.330735489] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.781247 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792135297.735041123] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.086900 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792135996.136304068] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.349673 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792136229.835889452] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 11.935267 ms (missed cycles : 3).[0m
+[ros2_control_node-5] [33m[WARN] [1792137740.972502153] [controller_manager]: Overrun might occur, Total time : 8487.099 us (Expected < 5000.000 us) --> Read time : 8204.483 us, Update time : 280.671 us, Write time : 1.945 us[0m
+[ros2_control_node-5] [33m[WARN] [1792137740.972580782] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 8.626484 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792137824.719814825] [controller_manager]: Overrun might occur, Total time : 5772.594 us (Expected < 5000.000 us) --> Read time : 22.030 us, Update time : 5746.904 us, Write time : 3.660 us[0m
+[ros2_control_node-5] [33m[WARN] [1792137824.721285335] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.330944 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792138028.469879205] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 10.924880 ms (missed cycles : 3).[0m
+[ros2_control_node-5] [33m[WARN] [1792138519.534090318] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.135690 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792138544.669521134] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.566946 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792138727.311718037] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 17.764043 ms (missed cycles : 4).[0m
+[ros2_control_node-5] [33m[WARN] [1792138742.647838578] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 18.884257 ms (missed cycles : 4).[0m
+[ros2_control_node-5] [33m[WARN] [1792138790.369736133] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 10.781762 ms (missed cycles : 3).[0m
+[ros2_control_node-5] [33m[WARN] [1792138890.091709477] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.755415 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [0m[INFO] [1792138955.397210561] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792138955.397249470] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792138955.397393952] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792138955.397404525] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792138955.398471397] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792138956.694104239] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792138956.699039875] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792138956.748613702] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792138982.571959790] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792138982.572038053] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792138982.572059361] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792138982.572064429] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792138982.572079481] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792138982.572103818] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792138982.572353382] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792138982.572416769] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792138982.585080642] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792138982.585380724] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792138982.585497891] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792138982.585520854] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m
+[move_group-3] [0m[INFO] [1792138997.046982544] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received[0m
+[move_group-3] [0m[INFO] [1792138997.047035605] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792138997.047054567] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792138997.047107493] [moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01[0m
+[move_group-3] [0m[INFO] [1792138997.050818796] [moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...[0m
+[move_group-3] [0m[INFO] [1792138997.050876498] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792138997.050897064] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list[0m
+[move_group-3] [0m[INFO] [1792138997.050978720] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller[0m
+[ros2_control_node-5] [0m[INFO] [1792138997.051157422] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792138997.051185951] [arm_controller]: Accepted new action goal[0m
+[move_group-3] [0m[INFO] [1792138997.051286334] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution[0m
+[move_group-3] [0m[INFO] [1792138997.051297092] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792138997.052256230] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139006.804087333] [arm_controller]: Goal reached, success![0m
+[move_group-3] [0m[INFO] [1792139006.851550852] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139006.852419751] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[move_group-3] [0m[INFO] [1792139006.865683648] [moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...[0m
+[move_group-3] [0m[INFO] [1792139006.865805911] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: SUCCEEDED[0m
+[ros2_control_node-5] [33m[WARN] [1792139075.329632155] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.677909 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [0m[INFO] [1792139105.499775980] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139105.500191780] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139105.499791487] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139105.500291850] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139105.501397538] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139105.999093886] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139106.004033323] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139106.051882468] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.063453885] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.063492904] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.063509484] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.063516340] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139106.065020772] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.559032519] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139106.559121430] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139106.566966124] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.582747639] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.582777753] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.583179355] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139106.583195378] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139106.584007033] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.079051172] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139107.079128138] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139107.084468921] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.100328629] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.100422749] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.100397874] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.101621326] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139107.101480266] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.604034214] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139107.604113316] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139107.653990029] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.667022426] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.667050239] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139107.668024148] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.668235555] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139107.668257167] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.169036632] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139108.169146448] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139108.219946879] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.233938601] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.233975802] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.234193018] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.234217804] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139108.235812738] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.729108747] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139108.739034308] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139108.785868120] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.793983217] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.794014544] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.794033883] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139108.794043215] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139108.795118468] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.294044105] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139109.294237129] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139109.297747472] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.313857821] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.313890253] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.314199507] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.314207837] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139109.316967663] [agx_arm_ctrl_single_node]: External control gate is closed, ignore control commands[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139109.317377365] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.809139214] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139109.814047195] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139109.819245303] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.828325916] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.828362877] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.828610177] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139109.828621245] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139109.830770635] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.329037633] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139110.329124635] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139110.380214919] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.390902919] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.390940278] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.390992707] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.391124565] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139110.392009451] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.894031528] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139110.894094780] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139110.942847767] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.956898281] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.956930408] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.956988357] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139110.956996105] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139110.958133904] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139111.459032289] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139111.459107175] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139111.508848091] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139111.522849739] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139111.522884391] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139111.523138910] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139111.523162058] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139111.524046806] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.019040881] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139112.024102240] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139112.074485033] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.088391628] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.088429796] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.088566517] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.088579868] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139112.090017228] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.589157562] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139112.589278488] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139112.640972896] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.654406484] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.654441286] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.654458103] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139112.654465067] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139112.655964970] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.154044951] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139113.154144249] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139113.156793280] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.173908851] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.173948239] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.173990016] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.173999534] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139113.176171379] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.679046675] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139113.679138457] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139113.727266878] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.740456359] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.740495751] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.740610161] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139113.740624610] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139113.743770704] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.244030708] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139114.244103098] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139114.292455062] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.306843828] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.306881307] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.307093880] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.307109234] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139114.308025374] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.804073637] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139114.804195945] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139114.810095156] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.824163155] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.824212969] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.824391846] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139114.824407741] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139114.827253879] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.329043847] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139115.329158067] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139115.378660014] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.388804693] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.388836304] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.388887347] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.388909284] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139115.390167742] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.884100953] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139115.889041243] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139115.893585833] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.903795322] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.903829678] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.904015635] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139115.904031759] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139115.907342076] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139116.404075066] [arm_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139116.409043300] [gripper_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139116.456139473] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139116.466767406] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139116.466800074] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139116.466901945] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139116.466925023] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139116.468062809] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139116.969044498] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139116.969358187] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139117.018956955] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.032664949] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.032705028] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.032814961] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.032837074] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139117.035176348] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.534046613] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139117.534192278] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139117.586687757] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.601871028] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.601905383] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.602064945] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139117.602088712] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139117.603889179] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.104048474] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139118.104522911] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139118.153947758] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.165173377] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.165214832] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.165609742] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.165627288] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139118.167098623] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.669052552] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139118.669128677] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139118.717420103] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.732920603] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.732955823] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.733076503] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139118.733100553] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139118.734583484] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.234038919] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139119.234123783] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139119.285017851] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.295642986] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.295704520] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.295725255] [gripper_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.295807137] [arm_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139119.297380848] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.794036334] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139119.794155699] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139119.797704740] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.810108607] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.810140581] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.810203556] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139119.810228512] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139119.811403457] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.314040672] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139120.314396087] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139120.362196506] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.371991608] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.372025883] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.372134999] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.372160316] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139120.373200839] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.874035922] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139120.874245728] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139120.925804043] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.935862541] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.935904235] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.936104830] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139120.936121033] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139120.937398325] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139121.439039002] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139121.439518382] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139121.488920323] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [0m[INFO] [1792139121.497799112] [arm_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139121.497831264] [arm_controller]: Accepted new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139121.497936033] [gripper_controller]: Received new action goal[0m
+[ros2_control_node-5] [0m[INFO] [1792139121.497960278] [gripper_controller]: Accepted new action goal[0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139121.499090450] [agx_arm_ctrl_single_node]: External control gate opened[0m
+[ros2_control_node-5] [0m[INFO] [1792139121.994037200] [gripper_controller]: Goal reached, success![0m
+[ros2_control_node-5] [0m[INFO] [1792139121.994519375] [arm_controller]: Goal reached, success![0m
+[agx_arm_ctrl_single-1] [0m[INFO] [1792139122.002205776] [agx_arm_ctrl_single_node]: External control gate closed[0m
+[ros2_control_node-5] [33m[WARN] [1792139242.762693094] [controller_manager]: Overrun might occur, Total time : 7478.059 us (Expected < 5000.000 us) --> Read time : 411.612 us, Update time : 7060.972 us, Write time : 5.475 us[0m
+[ros2_control_node-5] [33m[WARN] [1792139242.765766408] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 11.811572 ms (missed cycles : 3).[0m
+[ros2_control_node-5] [33m[WARN] [1792140858.224767891] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.813244 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141146.464523679] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.569262 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141298.936325845] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.371522 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141347.110712411] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.758063 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141464.536458486] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.503882 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141473.917762693] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 8.808250 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141476.184695900] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.741368 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141478.030877208] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.922934 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141487.460070068] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.115746 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141493.554687813] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 20.733441 ms (missed cycles : 5).[0m
+[ros2_control_node-5] [33m[WARN] [1792141677.634267669] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.313190 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141814.036539720] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.585656 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792141844.234411924] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 15.457635 ms (missed cycles : 4).[0m
+[ros2_control_node-5] [33m[WARN] [1792142604.534648174] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.693913 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792142766.241089308] [controller_manager]: Overrun might occur, Total time : 7076.968 us (Expected < 5000.000 us) --> Read time : 10.845 us, Update time : 7063.481 us, Write time : 2.642 us[0m
+[ros2_control_node-5] [33m[WARN] [1792142766.241139170] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 7.184879 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792142822.930455408] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 11.500735 ms (missed cycles : 3).[0m
+[ros2_control_node-5] [33m[WARN] [1792142825.185118221] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 6.163730 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792142877.189314668] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.360349 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792142881.554799055] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.844401 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792142904.423732912] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 14.778161 ms (missed cycles : 3).[0m
+[ros2_control_node-5] [33m[WARN] [1792143037.138981131] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 5.026823 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792143211.284711864] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 25.757247 ms (missed cycles : 6).[0m
+[ros2_control_node-5] [33m[WARN] [1792143212.848667774] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 9.713478 ms (missed cycles : 2).[0m
+[ros2_control_node-5] [33m[WARN] [1792143257.032078554] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 200 Hz. The loop took 8.124189 ms (missed cycles : 2).[0m
+[move_group-3] [0m[INFO] [1792147486.236301119] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...[0m
+[move_group-3] [0m[INFO] [1792147486.236369569] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'[0m
+[move_group-3] [0m[INFO] [1792147486.236393029] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'[0m
+[move_group-3] [33m[WARN] [1792147486.236399753] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.[0m
+[move_group-3] [0m[INFO] [1792147486.236413991] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'[0m
+[move_group-3] [0m[INFO] [1792147486.236439669] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'[0m
+[move_group-3] [0m[INFO] [1792147486.236698679] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.[0m
+[move_group-3] [0m[INFO] [1792147486.236776161] [move_group]: Calling Planner 'OMPL'[0m
+[move_group-3] [0m[INFO] [1792147486.238842463] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'[0m
+[move_group-3] [0m[INFO] [1792147486.243711820] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'[0m
+[move_group-3] [0m[INFO] [1792147486.244717760] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'[0m
+[move_group-3] [33m[WARN] [1792147486.244795192] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.[0m

@@ -1,0 +1,26 @@
+test_all_twenty_steps_supervised_with_near_ten_weighted (tests.test_training_contract.TrainingContractTests.test_all_twenty_steps_supervised_with_near_ten_weighted) ... /home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+ok
+test_corrective_finetuning_does_not_import_validation_statistics (tests.test_training_contract.TrainingContractTests.test_corrective_finetuning_does_not_import_validation_statistics) ... ok
+test_finetuning_new_profile_requires_same_dataset_and_embedded_scene (tests.test_training_contract.TrainingContractTests.test_finetuning_new_profile_requires_same_dataset_and_embedded_scene) ... ok
+test_new_dataset_requires_its_own_scene_instead_of_historical_start (tests.test_training_contract.TrainingContractTests.test_new_dataset_requires_its_own_scene_instead_of_historical_start) ... ok
+test_prefix_margin_is_a_training_penalty_with_physical_units_and_gradients (tests.test_training_contract.TrainingContractTests.test_prefix_margin_is_a_training_penalty_with_physical_units_and_gradients) ... ok
+test_release_deadband_ramp_is_not_restarted_from_unchanged_observation (tests.test_training_contract.TrainingContractTests.test_release_deadband_ramp_is_not_restarted_from_unchanged_observation) ... FAIL
+test_stationary_contact_and_open_dwell_do_not_teach_endless_wait (tests.test_training_contract.TrainingContractTests.test_stationary_contact_and_open_dwell_do_not_teach_endless_wait) ... ok
+test_supplemental_full_data_must_have_actual_full_task_physics_evidence (tests.test_training_contract.TrainingContractTests.test_supplemental_full_data_must_have_actual_full_task_physics_evidence) ... ok
+test_task_budget_uses_training_demonstration_duration_and_excludes_validation (tests.test_training_contract.TrainingContractTests.test_task_budget_uses_training_demonstration_duration_and_excludes_validation) ... ok
+test_training_only_statistics_and_terminal_windows (tests.test_training_contract.TrainingContractTests.test_training_only_statistics_and_terminal_windows) ... ok
+
+======================================================================
+FAIL: test_release_deadband_ramp_is_not_restarted_from_unchanged_observation (tests.test_training_contract.TrainingContractTests.test_release_deadband_ramp_is_not_restarted_from_unchanged_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_training_contract.py", line 145, in test_release_deadband_ramp_is_not_restarted_from_unchanged_observation
+    for start in [0,10,20,30]:self.assertNotIn((0,start),windows)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (0, 0) unexpectedly found in [(0, 0), (0, 0), (0, 0), (0, 10), (0, 10), (0, 10), (0, 20), (0, 20), (0, 20), (0, 30), (0, 30), (0, 30), (0, 40), (0, 40), (0, 40), (0, 50), (0, 50), (0, 50)]
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.834s
+
+FAILED (failures=1)

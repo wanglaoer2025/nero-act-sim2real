@@ -1,0 +1,16 @@
+{
+  "epochs": 5,
+  "seed": 42,
+  "initializer": "run21_cvae_posterior",
+  "same72data": true,
+  "train": 51,
+  "val": 21,
+  "gripper_adapter_lr": 0.001,
+  "prior_gripper_weight": 0.05,
+  "only_gripper_adapter_trainable": true,
+  "zero_residual_initializer": true,
+  "pretrained_CVAE_and_arm_frozen": true,
+  "checkpoint_selection": "minimum_zero_latent_validation_total",
+  "nominal_gate_before_independent16": true,
+  "hardware_connected": false
+}

@@ -1,0 +1,77 @@
+{
+  "verified_at_utc": "2026-10-14T12:43:44.410009+00:00",
+  "samples": 101,
+  "state_shape": [
+    101,
+    8
+  ],
+  "rgb_shape": [
+    101,
+    360,
+    640,
+    3
+  ],
+  "state_dtype": "float32",
+  "rgb_dtype": "uint8",
+  "duration_between_first_last_sample_s": 4.998121991986409,
+  "achieved_hz": 20.007514854645812,
+  "sample_interval_p95_ms": 50.663443945813924,
+  "maximum_host_receipt_age_ms": 4.059978993609548,
+  "joint_device_stamp_age_p95_ms": 8.247613906860352,
+  "saved_png_matches_first_RGB_frame": true,
+  "all_values_finite": true,
+  "timestamps_strictly_increasing": true,
+  "gripper_range_m": [
+    0.09983199834823608,
+    0.09983199834823608
+  ],
+  "joint_ranges_rad": [
+    [
+      -0.47446775436401367,
+      -0.4743455946445465
+    ],
+    [
+      0.7821169495582581,
+      0.7821692824363708
+    ],
+    [
+      -0.1293288916349411,
+      -0.1293288916349411
+    ],
+    [
+      1.397729516029358,
+      1.3978341817855835
+    ],
+    [
+      -0.2805093228816986,
+      -0.28038713335990906
+    ],
+    [
+      -0.506389856338501,
+      -0.506302535533905
+    ],
+    [
+      -0.7044847011566162,
+      -0.7043276429176331
+    ]
+  ],
+  "frame_gray_mean_range": [
+    109.56368055555555,
+    107.83936631944445
+  ],
+  "hardware_synchronization_verified": false,
+  "limitations": "V9 has camera host grab/receipt times but no SDK image timestamp. Device-level image/state alignment cannot be established from this recording. Host-receipt age and joint stamp ages are different quantities.",
+  "ready_for_real_motion": false,
+  "saved_observation_data_integrity_passed": true,
+  "v9_audit_gripper_limit_issue": {
+    "measured_total_width_range_mm": [
+      99.83199834823608,
+      99.83199834823608
+    ],
+    "SDK_wrapper_max_total_width_mm": 100,
+    "V9_auditor_upper_bound_mm": 98,
+    "within_SDK_width_range": true,
+    "within_V9_auditor_range": false,
+    "handling": "Preserve raw observations; no clipping, motion command or threshold change"
+  }
+}

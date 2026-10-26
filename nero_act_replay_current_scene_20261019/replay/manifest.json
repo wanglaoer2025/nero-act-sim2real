@@ -1,0 +1,62 @@
+{
+  "checkpoint_sha256": "47e220e102aaede593004678b3941db99287b07a9a1bc3245bd1e16c3246b6f4",
+  "stats_sha256": "be90d06e25f8b32e2978bcf8cb9276263c73914dcbddda0e19b500b703bfc22b",
+  "scene_sha256": "594886be4d561e70c392dfe8582427619bbfa68295c87f638ea1f01a41f6da9d",
+  "training_config_sha256": "23312e42857e1cf2bbd36d89a97ca3e6507bbbd0143213292e691610f3bd8e0d",
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "source_rollout": "/home/user/wq/nero_act_transfer_completion_20261017/evidence/final_frozen_nominal/nominal/rollout.npz",
+  "source_rollout_sha256": "cf8d81b26538588ca91f3522330e17ac0872bc3ffe56fff3436c1d70242f7205",
+  "simulation_result_sha256": "71320e1fce410bddde7e565ce8feb319027a768ad025d68d7540a956b0fcfe1f",
+  "reference_points": 2655,
+  "reference_period_s": 0.05,
+  "reference_sha256": "3effdf068bc44e989cd47893c902671e0d1ba22a2e6e854d379fcfa3dcbe4458",
+  "sources": {
+    "ACT": 1211,
+    "ACT_arm_pregrasp_open_hold": 800,
+    "ACT_gripper_feedback_arm_hold": 140,
+    "feedback_safety_hold": 4,
+    "operator_pause": 320,
+    "post_completion_hold": 100,
+    "reference_settle": 80
+  },
+  "teacher_motion_fallback": false,
+  "phases": [
+    {
+      "name": "approach",
+      "start": 0,
+      "end": 800
+    },
+    {
+      "name": "close",
+      "start": 800,
+      "end": 991
+    },
+    {
+      "name": "lift",
+      "start": 991,
+      "end": 1352
+    },
+    {
+      "name": "carry_place",
+      "start": 1352,
+      "end": 1962
+    },
+    {
+      "name": "release",
+      "start": 1962,
+      "end": 2155
+    },
+    {
+      "name": "retreat",
+      "start": 2155,
+      "end": 2655
+    }
+  ],
+  "allowed_safety_transforms": [
+    "gripper_closure_floor_at_measured_contact_width_minus_9mm",
+    "measured_zero_motion_reference_hold_during_supported_release",
+    "bounded_reference_connection_after_retreat_clearance",
+    "stop_before_attached_cup_crosses_table"
+  ],
+  "required_real_task": "actual_empty_cup_grasp_lift_carry_supported_release_retreat"
+}

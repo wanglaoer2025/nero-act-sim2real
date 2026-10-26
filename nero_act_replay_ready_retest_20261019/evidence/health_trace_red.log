@@ -1,0 +1,29 @@
+test_health_export_preserves_every_snapshot_and_numpy_state (test_health_trace.HealthTraceTests.test_health_export_preserves_every_snapshot_and_numpy_state) ... FAIL
+test_long_recording_does_not_grow_the_cyclic_gc_scan_graph (test_health_trace.HealthTraceTests.test_long_recording_does_not_grow_the_cyclic_gc_scan_graph) ... FAIL
+
+======================================================================
+FAIL: test_health_export_preserves_every_snapshot_and_numpy_state (test_health_trace.HealthTraceTests.test_health_export_preserves_every_snapshot_and_numpy_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_ready_retest_20261019/tests/test_health_trace.py", line 19, in test_health_export_preserves_every_snapshot_and_numpy_state
+    trace = self.new_trace()
+            ^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_replay_ready_retest_20261019/tests/test_health_trace.py", line 13, in new_trace
+    self.assertIsNotNone(importlib.util.find_spec('executor.health_trace'),
+AssertionError: unexpectedly None : Health recording must avoid retaining nested GC graphs
+
+======================================================================
+FAIL: test_long_recording_does_not_grow_the_cyclic_gc_scan_graph (test_health_trace.HealthTraceTests.test_long_recording_does_not_grow_the_cyclic_gc_scan_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_ready_retest_20261019/tests/test_health_trace.py", line 35, in test_long_recording_does_not_grow_the_cyclic_gc_scan_graph
+    trace = self.new_trace()
+            ^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_replay_ready_retest_20261019/tests/test_health_trace.py", line 13, in new_trace
+    self.assertIsNotNone(importlib.util.find_spec('executor.health_trace'),
+AssertionError: unexpectedly None : Health recording must avoid retaining nested GC graphs
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

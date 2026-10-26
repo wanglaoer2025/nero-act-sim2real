@@ -1,0 +1,101 @@
+{
+  "scope": "Offline reanalysis of existing September real-robot joint stream logs; no fresh motor test run",
+  "historical_runs": [
+    {
+      "file": "/home/user/projects/nero/logs/act_joint_stream_20260908_103631.csv",
+      "sha256": "babaf77f78b8a82452a2bb3a36ce3b80237322688213e9079c3301769a1390e5",
+      "samples": 25,
+      "joint_index": 0,
+      "nominal_frequency_hz": 5.0,
+      "measured_loop_hz": 4.999914518127195,
+      "amplitude_rad": 0.02,
+      "target_peak_to_peak_rad": 0.03992109000682831,
+      "actual_peak_to_peak_rad": 0.04000294208526611,
+      "instantaneous_error_p95_rad": 0.012881329655647266,
+      "SDK_send_call_p95_ms": 0.5151546094566583,
+      "SDK_feedback_read_call_p95_ms": 0.12463359162211414,
+      "errors": []
+    },
+    {
+      "file": "/home/user/projects/nero/logs/act_joint_stream_20260908_104051.csv",
+      "sha256": "3cd4ad94a28f286fcef8a51f084048122f8f8ce029a048bbffd8bd9214b81b8c",
+      "samples": 50,
+      "joint_index": 0,
+      "nominal_frequency_hz": 10.0,
+      "measured_loop_hz": 9.999866444614618,
+      "amplitude_rad": 0.02,
+      "target_peak_to_peak_rad": 0.039921313524246216,
+      "actual_peak_to_peak_rad": 0.04007275402545929,
+      "instantaneous_error_p95_rad": 0.01248678863048553,
+      "SDK_send_call_p95_ms": 0.7168626209022476,
+      "SDK_feedback_read_call_p95_ms": 0.15677358605898914,
+      "errors": []
+    },
+    {
+      "file": "/home/user/projects/nero/logs/act_joint_stream_20260908_104439.csv",
+      "sha256": "77ec5ca4c6148c236b7b8a06262e5234b41b05e1fbaa8461159960d2d9bd1443",
+      "samples": 100,
+      "joint_index": 0,
+      "nominal_frequency_hz": 20.0,
+      "measured_loop_hz": 19.99969760055759,
+      "amplitude_rad": 0.02,
+      "target_peak_to_peak_rad": 0.03999999165534973,
+      "actual_peak_to_peak_rad": 0.04009021818637848,
+      "instantaneous_error_p95_rad": 0.012797130644321439,
+      "SDK_send_call_p95_ms": 0.5753289093263447,
+      "SDK_feedback_read_call_p95_ms": 0.13518502237275243,
+      "errors": []
+    },
+    {
+      "file": "/home/user/projects/nero/logs/act_joint_stream_20260909_103711.csv",
+      "sha256": "c37dd2bd9f4c1bc0c694170c4c34d37dbf503998bc09be7e0780c17098b77b19",
+      "samples": 25,
+      "joint_index": 0,
+      "nominal_frequency_hz": 5.0,
+      "measured_loop_hz": 4.999927217727324,
+      "amplitude_rad": 0.02,
+      "target_peak_to_peak_rad": 0.03992104530334473,
+      "actual_peak_to_peak_rad": 0.04016002267599106,
+      "instantaneous_error_p95_rad": 0.012881264090538013,
+      "SDK_send_call_p95_ms": 0.5893404013477266,
+      "SDK_feedback_read_call_p95_ms": 0.15788060845807192,
+      "errors": []
+    },
+    {
+      "file": "/home/user/projects/nero/logs/act_joint_stream_20260909_104038.csv",
+      "sha256": "c9b5675b0c5ce0a44e7da7c1874612b0d226e7cbb82794946e36ba4bca9f7338",
+      "samples": 100,
+      "joint_index": 0,
+      "nominal_frequency_hz": 20.0,
+      "measured_loop_hz": 19.999741910515027,
+      "amplitude_rad": 0.02,
+      "target_peak_to_peak_rad": 0.04000000283122063,
+      "actual_peak_to_peak_rad": 0.04014257341623306,
+      "instantaneous_error_p95_rad": 0.012796853110194203,
+      "SDK_send_call_p95_ms": 0.6246874836506322,
+      "SDK_feedback_read_call_p95_ms": 0.14478838129434735,
+      "errors": []
+    },
+    {
+      "file": "/home/user/projects/nero/logs/act_joint_stream_20260909_104402.csv",
+      "sha256": "8c9ec3f42e5223362ae2d0ef76244a0fee640655fab22ded965b9dad44955ad3",
+      "samples": 100,
+      "joint_index": 0,
+      "nominal_frequency_hz": 20.0,
+      "measured_loop_hz": 19.99975945327869,
+      "amplitude_rad": 0.02,
+      "target_peak_to_peak_rad": 0.04000000283122063,
+      "actual_peak_to_peak_rad": 0.04009021073579788,
+      "instantaneous_error_p95_rad": 0.01076991334557533,
+      "SDK_send_call_p95_ms": 0.6290545454248785,
+      "SDK_feedback_read_call_p95_ms": 0.13748542987741527,
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Logged latency is SDK call wall time, not a measured physical command-response delay.",
+    "Feedback sensor timestamps and device command-acceptance timestamps are not recorded.",
+    "Only listed joint/configuration is tested; this does not establish all-seven-joint tracking or current V9 block execution performance."
+  ],
+  "new_motion_required_if_current_response_validation_requested": true
+}

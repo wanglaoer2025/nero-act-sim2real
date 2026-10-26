@@ -1,0 +1,130 @@
+{
+  "mode": "preflight",
+  "ros_domain_id": "42",
+  "preflight_complete": true,
+  "plan_complete": false,
+  "execution_goal_submitted": false,
+  "execution_goal_accepted": false,
+  "sdk_connected": false,
+  "enable_or_parameter_mutation": false,
+  "real_cup_test": false,
+  "scope": "MoveIt ROS air test; does not validate ACT sim2real",
+  "success": true,
+  "actual_start": [
+    0.188373386167748,
+    -0.1263792911369094,
+    0.09992009967667538,
+    1.5710930327677355,
+    -0.023806290997202658,
+    0.2815216083466853,
+    0.1312138531649337,
+    0.060118
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 280552.781058996,
+      "stamp": 1792078297.6788726,
+      "q": [
+        0.188373386167748,
+        -0.1263792911369094,
+        0.09992009967667538,
+        1.5710930327677355,
+        -0.023806290997202658,
+        0.2815216083466853,
+        0.1312138531649337,
+        0.060118
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 280552.781102469,
+      "stamp": 1792078297.6853576,
+      "q": [
+        0.1883592363673071,
+        -0.12638588717934457,
+        0.09993851501692186,
+        1.5710979210712894,
+        -0.023830198500996304,
+        0.2816081321393979,
+        0.13122733895434385,
+        0.060118
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "execution_readiness_checks_passed": true
+}

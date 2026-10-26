@@ -1,0 +1,31 @@
+{
+  "request": "查找现在存在的问题并且修正",
+  "basis": "Approved15D visual ACT design sections6 and7: same robot state with different cup locations must change actual grasp response; validate mechanism before full training.",
+  "scope": "Offline data/loss correction within unchanged RGB+15D to20x8 ACT; no topology, calibration or runtime task-controller changes",
+  "confirmed_defects": [
+    "Descending relative XY-error coverage missing: new/recovery max5.60/5.11mm vs observed78.46mm failure",
+    "Coupled RGB+numeric40mm cup shift has weak/wrong steering: at155mm height actorX0.014mm/Y0.0036mm vs teacherX0.465/Y1.714mm",
+    "On one frozen batch weighted preservation shared-position gradient186.97 vs primary arm0.418, ratio447.16; not proof all batches identical"
+  ],
+  "data": "Physically replay-verified20-point pregrasp correction prefixes: same joint pose, multiple cup layouts, image-derived features. Include safe vertical clearance from actual low off-target pose. Explicit partial labels, never full success.",
+  "loss": "Supervise executed first2 joint/gripper points and their differentiable FK poses; bound weighted preservation shared-projection gradient relative to primary. Original final423/6/full-task criteria unchanged.",
+  "initializer": "Fixed last2000-new-update candidate, SHA bound; no best checkpoint selection",
+  "budget": {
+    "optimizer_updates": 1000,
+    "batch_size": 32,
+    "checkpoint": "fixed_last",
+    "formal_epochs": 0
+  },
+  "gate": {
+    "required_before_full": "Heldout pose/offset direction response and prefix Cartesian accuracy; no full-task claim from gate",
+    "maximum_prefix_position_error_m": 0.0005,
+    "minimum_correct_direction_fraction": 0.8,
+    "minimum_teacher_response_fraction": 0.25
+  },
+  "safety": {
+    "hardware_commands_sent": false,
+    "additional_manual_measurements": false,
+    "guards_unchanged": true,
+    "nominal_geometry_not_requalified": true
+  }
+}

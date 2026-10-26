@@ -1,0 +1,12 @@
+{
+  "mode": "offline_schema_reproduction_only",
+  "hardware_connected": false,
+  "ros_node_created": false,
+  "message_published": false,
+  "motion_sent": false,
+  "fixture": "seven-arm-joint gated message; corresponds to existing control_gate filtering for arm action",
+  "observed_callback_error": "/control/gated_joint_states: 'gripper'",
+  "expected_behavior": "accept arm-only gated telemetry without treating absent gripper as corrupt actual feedback",
+  "gate_idle_contract": "existing control_gate calls control_enable(False) with no active action and opens only after action accepted/executing and start synchronized",
+  "test_precondition_conflict": "ready() requires driver control_enabled=True before submitting the first action; conflicts with normal closed-at-idle gate behavior"
+}

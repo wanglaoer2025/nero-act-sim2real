@@ -1,0 +1,70 @@
+{
+  "task": "aligned_noncontact_air_sequence",
+  "selected_by": "frozen validation loss, epoch35",
+  "checkpoint_sha256": "07a7c97ad070b5a4dc45b32b783423a3f9947412dff24b29580d782426a305b4",
+  "stats_sha256": "b1d9d784b2fb4e0760f728ebf26a2e9336cc1c4e1cf8a512489695b692dc9014",
+  "groups": [
+    {
+      "name": "nominal",
+      "seeds": [
+        8000,
+        8001,
+        8002,
+        8003,
+        8004,
+        8005,
+        8006,
+        8007
+      ],
+      "real_image": false,
+      "query_stride": 10,
+      "noise": false
+    },
+    {
+      "name": "recorded_appearance",
+      "seeds": [
+        9000,
+        9001,
+        9002,
+        9003,
+        9004,
+        9005,
+        9006,
+        9007
+      ],
+      "real_image": true,
+      "query_stride": 10,
+      "noise": false
+    },
+    {
+      "name": "noisy_slow",
+      "seeds": [
+        10000,
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006,
+        10007
+      ],
+      "real_image": true,
+      "query_stride": 16,
+      "noise": true
+    }
+  ],
+  "criteria": {
+    "all24_required": true,
+    "endpoint_max_error_rad_lt": 0.006,
+    "j1_progress_rad_gt": 0.025,
+    "gripper_span_m_gt": 0.003,
+    "end_gripper_error_m_lt": 0.003,
+    "maximum_arm_excursion_from_reference_rad": 0.06,
+    "gripper_allowed_range_m": [
+      0.052,
+      0.078
+    ]
+  },
+  "not_independent_of_task_design": true,
+  "scope": "new simulation rollouts with disjoint random seeds, not real-world transfer acceptance"
+}

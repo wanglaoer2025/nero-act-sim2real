@@ -1,0 +1,135 @@
+{
+  "completed_at": "2026-10-23T18:41:55.146793+08:00",
+  "status": "bounded_comparison_complete_model_not_qualified",
+  "overall_sim_to_real_goal_complete": false,
+  "actual_optimizer_updates": 1000,
+  "additional_training_rounds": 0,
+  "architecture_stats_and_batches_unchanged": true,
+  "software_tests_passed": 4,
+  "training_scope": "same06012 initializer,same data/batches/optimizer/LR/freeze;all4 group gradient cap",
+  "gradient_cap": {
+    "raw_group_norm_only": true,
+    "maximum_saved_fraction": 0.5,
+    "saved_update_count": 11,
+    "not_an_AdamW_update_guarantee": true
+  },
+  "weight_verification": {
+    "checkpoint_sha256": "9dd36d386903e3a65198d049a9244388e819024357e9dc12d5d05a1ae575c9a3",
+    "actual_updates": 1000,
+    "optimizer_steps": [
+      1000
+    ],
+    "optimizer_states": 70,
+    "changed_tensors": 52,
+    "allowed_tensors": 70,
+    "frozen_changes": [],
+    "config_unchanged": true,
+    "stats_unchanged": true,
+    "batches_unchanged": true
+  },
+  "position_response": {
+    "passed": false,
+    "direction_passed": 5,
+    "direction_count": 7,
+    "maximum_prefix_error_mm": 1.8115437264201653
+  },
+  "full_flow": {
+    "success": false,
+    "error": null,
+    "active_policy_points": 3900,
+    "queries": 1950,
+    "max_lift_m": 0.0,
+    "maximum_horizontal_transfer_m": 1.9174072369932842e-08,
+    "stable_released_frames": 0,
+    "simulated_events": [],
+    "unexpected_arm_cup_contact_frames": 0,
+    "execution_contract_failures": 0,
+    "runtime_s": 111.2446981050307,
+    "passed": false,
+    "failure_classification": "budget_exhausted_without_GRASP_or_lift"
+  },
+  "original_qualification": {
+    "six_mechanisms_passed": 3,
+    "six_total": 6,
+    "joint_exact_and_preservation_gate_passed": false,
+    "preservation": {
+      "samples": 423,
+      "maximum_arm_prefix_change_rad": 0.002391219139099121,
+      "rms_arm_prefix_change_rad": 0.00028056883393566247,
+      "maximum_gripper_prefix_change_m": 0.000871904194355011,
+      "training_replay_not_independent_validation": true
+    },
+    "three_gripper_prefix_errors_mm": [
+      0.027351081371307373,
+      0.02372264862060547,
+      0.028811395168304443
+    ]
+  },
+  "zero_update_teacher_diagnostic": {
+    "optimizer_updates": 0,
+    "three_saved_states_restored": true,
+    "teacher_complete_success_count": 3,
+    "ACT_success_claimed": false,
+    "records": [
+      {
+        "name": "nearest_alignment",
+        "query": 565,
+        "teacher_complete_success": true,
+        "teacher_frames": 2173,
+        "maximum_prefix_position_error_m": 0.0005588227243525812
+      },
+      {
+        "name": "outward_drift",
+        "query": 614,
+        "teacher_complete_success": true,
+        "teacher_frames": 2201,
+        "maximum_prefix_position_error_m": 0.0005600805049508227
+      },
+      {
+        "name": "terminal",
+        "query": 1949,
+        "teacher_complete_success": true,
+        "teacher_frames": 2902,
+        "maximum_prefix_position_error_m": 0.00022129811086545143
+      }
+    ]
+  },
+  "independent_review": {
+    "reviewer": "/root/preservation_scope_final_review",
+    "critical": 0,
+    "important": 0,
+    "hashes_checked": 891,
+    "tests_passed": 4,
+    "metadata_notes": "Completion status and qualification invocation finalized as planned; protected training code unchanged"
+  },
+  "calibration_verified": false,
+  "hardware_commands_sent": false,
+  "hardware_deployment_allowed": false,
+  "project_driver_remained_stopped": true,
+  "hardware_observation": {
+    "checked_epoch_s": 1792751832.230866,
+    "service_state": "MainPID=0\nActiveState=inactive",
+    "service_returncode": 0,
+    "can_tx_packets": {
+      "can0": 226054
+    },
+    "can_tx_before": {
+      "can0": 226053
+    },
+    "can_tx_unchanged_during_this_resume": false,
+    "read_only_checks_only": true,
+    "hardware_commands_sent_by_this_work": false
+  },
+  "next_step": "User supplied new hand-eye calibration information; locate and audit new calibration, then reassess scene/ACT. Do not add more optimizer updates from this failed bounded comparison.",
+  "artifacts_sha256": {
+    "/home/user/wq/nero_act_preservation_scope_20261023/repair_plan.json": "72c5ebaf5756b3cc5f778478ff0e1c92fa7bc90f07c1b1335bf6b90d0afacbba",
+    "/home/user/wq/nero_act_preservation_scope_20261023/sampling_audit.json": "69495f8f29e4ba59ff7851f29f54fdcfdb0d947cd0ebf43f751b608842d67cb8",
+    "/home/user/wq/nero_act_preservation_scope_20261023/weight_verification.json": "295d4e359c1992637f78353904dc3f81d6aaa0cacadd2466eafae8d282a19f28",
+    "/home/user/wq/nero_act_preservation_scope_20261023/hash_verification.json": "f0be0598de2934b328437a1a46f5401c46fc9f03a5d94cb9c9a5228ae2533bfa",
+    "/home/user/wq/nero_act_preservation_scope_20261023/gradient_scope_audit.json": "869d44e206defec3d7c5f11e92a85159f2f2130902adae9ebfe51d4199e17913",
+    "/home/user/wq/nero_act_preservation_scope_20261023/results/full_flow_summary.json": "5c5c91f3ca9ddf65acd5e04f092edd5af67e23422ac38242c80aa40af6200f7c",
+    "/home/user/wq/nero_act_preservation_scope_20261023/results/qualification/summary.json": "72b83adbd8ac09b820f804ba4fc623b986ac5758b7b41d8836bb8206a3285a73",
+    "/home/user/wq/nero_act_preservation_scope_20261023/diagnostics/teacher_recovery/report.json": "9e89c0c64da9d9180d3fa0c465beb1e4632f7bf93b31d9913eebb7a312f3c971",
+    "/home/user/wq/nero_act_preservation_scope_20261023/hardware_after.json": "1d473524cf46f4ced918cd86eb135a312cb01bf15d82e9c9f2e9982757605e71"
+  }
+}

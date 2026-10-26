@@ -1,0 +1,58 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_______________ test_resume_preserves_next_prediction_and_guard ________________
+
+    def test_resume_preserves_next_prediction_and_guard():
+>       m=api();model,data,servo,p,c,o=fixture();bindings={'scope':'offline_simulation','source':'test'}
+
+tests/test_runtime_checkpoint.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('simulation.runtime_checkpoint'), 'Complete runtime checkpoint missing'
+E       AssertionError: Complete runtime checkpoint missing
+E       assert None
+E        +  where None = <function find_spec at 0x7d6dbbd4c5e0>('simulation.runtime_checkpoint')
+E        +    where <function find_spec at 0x7d6dbbd4c5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_runtime_checkpoint.py:15: AssertionError
+_____________ test_resume_preserves_disturbance_and_liftoff_latch ______________
+
+    def test_resume_preserves_disturbance_and_liftoff_latch():
+>       m=api();model,data,servo,p,c,o=fixture();bindings={'scope':'offline_simulation'}
+
+tests/test_runtime_checkpoint.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('simulation.runtime_checkpoint'), 'Complete runtime checkpoint missing'
+E       AssertionError: Complete runtime checkpoint missing
+E       assert None
+E        +  where None = <function find_spec at 0x7d6dbbd4c5e0>('simulation.runtime_checkpoint')
+E        +    where <function find_spec at 0x7d6dbbd4c5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_runtime_checkpoint.py:15: AssertionError
+________________ test_incomplete_or_live_checkpoint_is_rejected ________________
+
+    def test_incomplete_or_live_checkpoint_is_rejected():
+>       m=api();model,data,servo,p,c,o=fixture();bindings={'scope':'offline_simulation'}
+
+tests/test_runtime_checkpoint.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('simulation.runtime_checkpoint'), 'Complete runtime checkpoint missing'
+E       AssertionError: Complete runtime checkpoint missing
+E       assert None
+E        +  where None = <function find_spec at 0x7d6dbbd4c5e0>('simulation.runtime_checkpoint')
+E        +    where <function find_spec at 0x7d6dbbd4c5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_runtime_checkpoint.py:15: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_runtime_checkpoint.py::test_resume_preserves_next_prediction_and_guard
+FAILED tests/test_runtime_checkpoint.py::test_resume_preserves_disturbance_and_liftoff_latch
+FAILED tests/test_runtime_checkpoint.py::test_incomplete_or_live_checkpoint_is_rejected
+3 failed in 1.00s

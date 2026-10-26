@@ -1,0 +1,31 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_preservation_matches_single_observation_runtime_queries _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-11/test_preservation_matches_sing0')
+
+    def test_preservation_matches_single_observation_runtime_queries(tmp_path):
+        from training.approach_preservation import ApproachPreservation
+        from training.history import build_history_policy
+        c,q,image,_=config();p=build_history_policy(c).eval()
+        image=image[:,0].contiguous(memory_format=torch.channels_last).unsqueeze(1)
+        with torch.no_grad():target=torch.cat([p(q[i:i+1],image[i:i+1]) for i in range(len(q))]).numpy()
+        path=tmp_path/'replay.npz';np.savez_compressed(path,current=q.numpy(),image=image.numpy(),target=target)
+        keeper=ApproachPreservation(dict(profile='baseline_prefix_v1',weight=1.,arm_unit_rad=.0001,gripper_unit_m=.0005,batch_size=2,replay_path=str(path)),p.loss_stats,'cpu')
+>       assert float(keeper.loss(p,0).detach())==pytest.approx(0.,abs=1e-12)
+E       assert 8.510986582166424e-09 == 0.0 ± 1.0e-12
+E         comparison failed
+E         Obtained: 8.510986582166424e-09
+E         Expected: 0.0 ± 1.0e-12
+
+tests/test_approach_preservation.py:61: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_preservation.py::test_preservation_matches_single_observation_runtime_queries
+1 failed, 1 warning in 2.92s

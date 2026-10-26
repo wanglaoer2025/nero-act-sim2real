@@ -1,0 +1,74 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_____ test_cvae_decoder_last_layer_backbone_and_gripper_receive_gradients ______
+
+    def test_cvae_decoder_last_layer_backbone_and_gripper_receive_gradients():
+>       p=model();p.train();obs,images,actions,pad=batch()
+
+tests/test_policy.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def model():
+>       from policy import ACTPolicy
+E       ModuleNotFoundError: No module named 'policy'
+
+tests/test_policy.py:19: ModuleNotFoundError
+___________ test_deployment_uses_zero_latent_and_never_takes_actions ___________
+
+    def test_deployment_uses_zero_latent_and_never_takes_actions():
+>       p=model().eval();obs,images,_,_=batch()
+
+tests/test_policy.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def model():
+>       from policy import ACTPolicy
+E       ModuleNotFoundError: No module named 'policy'
+
+tests/test_policy.py:19: ModuleNotFoundError
+_______ test_gripper_points_share_query_previous_without_cumulative_sum ________
+
+    def test_gripper_points_share_query_previous_without_cumulative_sum():
+>       p=model().eval();obs,images,_,_=batch()
+
+tests/test_policy.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def model():
+>       from policy import ACTPolicy
+E       ModuleNotFoundError: No module named 'policy'
+
+tests/test_policy.py:19: ModuleNotFoundError
+___________ test_padded_nan_actions_do_not_pollute_posterior_or_loss ___________
+
+    def test_padded_nan_actions_do_not_pollute_posterior_or_loss():
+>       p=model();obs,images,actions,pad=batch()
+
+tests/test_policy.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def model():
+>       from policy import ACTPolicy
+E       ModuleNotFoundError: No module named 'policy'
+
+tests/test_policy.py:19: ModuleNotFoundError
+_____________ test_unreachable_gripper_prefix_labels_are_rejected ______________
+
+    def test_unreachable_gripper_prefix_labels_are_rejected():
+>       p=model();obs,images,actions,pad=batch()
+
+tests/test_policy.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def model():
+>       from policy import ACTPolicy
+E       ModuleNotFoundError: No module named 'policy'
+
+tests/test_policy.py:19: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_policy.py::test_cvae_decoder_last_layer_backbone_and_gripper_receive_gradients
+FAILED tests/test_policy.py::test_deployment_uses_zero_latent_and_never_takes_actions
+FAILED tests/test_policy.py::test_gripper_points_share_query_previous_without_cumulative_sum
+FAILED tests/test_policy.py::test_padded_nan_actions_do_not_pollute_posterior_or_loss
+FAILED tests/test_policy.py::test_unreachable_gripper_prefix_labels_are_rejected
+5 failed in 0.97s

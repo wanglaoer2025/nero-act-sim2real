@@ -1,0 +1,29 @@
+dataset_dir: data/act
+manifest: data/act/manifest.json
+camera_names: [camera_0]
+state_dim: 8
+action_dim: 8
+alignment_offset: 0
+image_size: [90, 160]
+chunk_size: 20
+batch_size: 2
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.1
+kl_weight: 10.0
+lr: 0.0001
+lr_backbone: 0.00001
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: false
+train_episode_ids: [1]
+overfit_episode_ids: [1, 2, 3]
+seed: 1
+steps: 100
+device: auto
+cpu_threads: 4
+checkpoint_dir: checkpoints/act_day4_overfit
+artifact_dir: artifacts/act_day4

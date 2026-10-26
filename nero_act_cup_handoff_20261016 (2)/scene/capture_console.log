@@ -1,0 +1,55 @@
+[2026-10-16 16:29:04 UTC][ZED][INFO] Logging level INFO
+[2026-10-16 16:29:06 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-10-16 16:29:06 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-10-16 16:29:06 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-10-16 16:29:06 UTC][ZED][INFO] [Init]  Serial Number: S/N 39602891
+[2026-10-16 16:29:06 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+{
+  "mode": "read_only_live_capture",
+  "robot": "Nero single arm AGX gripper",
+  "joint_names": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "joint7",
+    "gripper"
+  ],
+  "arm_unit": "rad",
+  "gripper_unit": "m total width",
+  "joint_topic": "/feedback/joint_states",
+  "rgb_order": "RGB",
+  "image_rotation_applied_degrees": 180,
+  "image_already_upright": true,
+  "camera_configured_fps": 30,
+  "requested_sample_hz": 20.0,
+  "camera_metadata": {
+    "sdk_version": "5.4.1",
+    "native_width": 1280,
+    "native_height": 720,
+    "rectified_left_intrinsics_native": {
+      "fx": 527.3888549804688,
+      "fy": 527.3888549804688,
+      "cx": 647.1690063476562,
+      "cy": 359.83807373046875
+    },
+    "intrinsics_coordinate_frame": "raw ZED optical, before 180 degree image rotation",
+    "view": "LEFT rectified; distortion not reapplied",
+    "capture_width": 640,
+    "capture_height": 360
+  },
+  "achieved_sample_hz": 19.863567637759974,
+  "samples": 101,
+  "rejected": [],
+  "feedback_messages": 1014,
+  "observed_feedback_receipt_hz": 188.18290522090464,
+  "feedback_age_gate": "host message receipt, not measured sensor age",
+  "hardware_synchronized": false,
+  "robot_sdk_connected": false,
+  "motion_sent": false,
+  "interrupted": false,
+  "failure": null,
+  "real_transfer_verified": false
+}

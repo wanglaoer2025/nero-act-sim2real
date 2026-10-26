@@ -1,0 +1,63 @@
+{
+  "checkpoint_sha256": "47e220e102aaede593004678b3941db99287b07a9a1bc3245bd1e16c3246b6f4",
+  "stats_sha256": "be90d06e25f8b32e2978bcf8cb9276263c73914dcbddda0e19b500b703bfc22b",
+  "scene_sha256": "594886be4d561e70c392dfe8582427619bbfa68295c87f638ea1f01a41f6da9d",
+  "training_config_sha256": "23312e42857e1cf2bbd36d89a97ca3e6507bbbd0143213292e691610f3bd8e0d",
+  "mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "source_rollout": "/home/user/wq/nero_act_replay_current_scene_20261019/evidence/post_grasp_scene_diagnosis/fresh_run11_recorded_scene/recorded_post_stop_source/rollout.npz",
+  "source_rollout_sha256": "d6a28d21788d436e63bee2ae7201e44d5be82ee6fc798a9d5d43b777b357c79e",
+  "simulation_result_sha256": "378caefe4b987a1d4214522ee4a9f11862ea899ec9aecbcb7986c125df31c832",
+  "reference_points": 2663,
+  "reference_period_s": 0.05,
+  "reference_sha256": "5690f689fe84d90fcc35ad2435ab1cdafb39e337d4ad19d5f96a6f943c1d9628",
+  "sources": {
+    "ACT": 1250,
+    "ACT_arm_pregrasp_open_hold": 780,
+    "ACT_gripper_feedback_arm_hold": 130,
+    "feedback_safety_hold": 3,
+    "operator_pause": 320,
+    "post_completion_hold": 100,
+    "reference_settle": 80
+  },
+  "teacher_motion_fallback": false,
+  "phases": [
+    {
+      "name": "approach",
+      "start": 0,
+      "end": 780
+    },
+    {
+      "name": "close",
+      "start": 780,
+      "end": 981
+    },
+    {
+      "name": "lift",
+      "start": 981,
+      "end": 1361
+    },
+    {
+      "name": "carry_place",
+      "start": 1361,
+      "end": 1981
+    },
+    {
+      "name": "release",
+      "start": 1981,
+      "end": 2153
+    },
+    {
+      "name": "retreat",
+      "start": 2153,
+      "end": 2663
+    }
+  ],
+  "allowed_safety_transforms": [
+    "gripper_closure_floor_at_measured_contact_width_minus_9mm",
+    "measured_zero_motion_reference_hold_during_supported_release",
+    "bounded_reference_connection_after_retreat_clearance",
+    "stop_before_attached_cup_crosses_table"
+  ],
+  "required_real_task": "actual_empty_cup_grasp_lift_carry_supported_release_retreat",
+  "derivation": "Fresh frozen run11 ACT physical rollout at recorded post-stop cup position; no spatial retargeting, teacher motion or IK fallback"
+}

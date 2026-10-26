@@ -1,0 +1,30 @@
+{
+  "scope": "Independent review of completed real MoveIt J1 air motion; no additional motion sent",
+  "input_report_sha256": "13feb019129156cf56f3f68fa836bbb554f9029dd35e2ea0de03bf7045296c89",
+  "sample_count": 1430,
+  "measured_j1_delta_rad": 0.005078908123303499,
+  "measured_j1_delta_deg": 0.29100000000000004,
+  "endpoint_max_error_rad": 0.00012217304763958992,
+  "maximum_other_joint_excursion_rad": 0.00013962634015954323,
+  "gripper_max_drift_m": 0.0,
+  "post_confirmation_record_segment": {
+    "sample_count": 1058,
+    "duration_s": 5.263308399007656,
+    "negative_stamp_steps": 0,
+    "equal_stamp_steps": 60,
+    "maximum_stamp_gap_s": 0.0123748779296875
+  },
+  "recording_caveat": "Full trace includes a 7.54s ROS-stamp gap while input() blocks executor before motion confirmation. Full trace is not a continuous motion-only frequency measurement. The final segment is selected after that gap, not from a saved goal-submission index.",
+  "reported_physical_acceptance_passed": true,
+  "current_readonly_feedback_j1_rad": 0.1883384795827081,
+  "current_readonly_feedback_gripper_m": 0.060118,
+  "can_readonly_check": "UP 1Mbps ERROR-ACTIVE; RX/TX errors and dropped counts zero",
+  "automatic_return_performed": false,
+  "does_not_validate": [
+    "ACT autonomous grasp",
+    "cup/placement coordinates in the rearranged scene",
+    "TCP contact geometry",
+    "table collision model"
+  ],
+  "next_contact_motion_ready": false
+}

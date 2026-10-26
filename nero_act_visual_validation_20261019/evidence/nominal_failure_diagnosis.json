@@ -1,0 +1,157 @@
+{
+  "candidates": [
+    {
+      "resolution_width": 320,
+      "complete_task_passed": false,
+      "executed_ACT_points": 3900,
+      "event_sequence": [
+        "GRASP"
+      ],
+      "max_lift_m": 1.6825213387042237e-06,
+      "last_actual_width_m": 0.07458431846851143,
+      "last100_raw_prefix_target_width_range_m": [
+        0.07274723798036575,
+        0.07325342297554016
+      ],
+      "last100_feedback_minus_prefix_target_range_m": [
+        0.0013392690087975778,
+        0.0018345122095870803
+      ],
+      "required_stable_contact_gap_m": [
+        0.003,
+        0.012
+      ],
+      "bilateral_contact_at_end": true,
+      "measured_lift_contact_frames": 0,
+      "nearest_training_inputs": [
+        {
+          "episode": 21,
+          "frame": 1080,
+          "stage": "close",
+          "normalized_distance": 0.3419967199115282,
+          "actual_width_m": 0.07406145334243774,
+          "label_width_m": 0.07140003889799118,
+          "label_gap_m": 0.0026614144444465637
+        },
+        {
+          "episode": 14,
+          "frame": 1050,
+          "stage": "close",
+          "normalized_distance": 0.3772168183383461,
+          "actual_width_m": 0.07459314912557602,
+          "label_width_m": 0.07340003550052643,
+          "label_gap_m": 0.001193113625049591
+        },
+        {
+          "episode": 21,
+          "frame": 1070,
+          "stage": "close",
+          "normalized_distance": 0.3997200987490019,
+          "actual_width_m": 0.07579314708709717,
+          "label_width_m": 0.07540003210306168,
+          "label_gap_m": 0.00039311498403549194
+        },
+        {
+          "episode": 20,
+          "frame": 1040,
+          "stage": "close",
+          "normalized_distance": 0.4504649273122425,
+          "actual_width_m": 0.07416430860757828,
+          "label_width_m": 0.07140003889799118,
+          "label_gap_m": 0.002764269709587097
+        },
+        {
+          "episode": 26,
+          "frame": 1090,
+          "stage": "close",
+          "normalized_distance": 0.48866994716790224,
+          "actual_width_m": 0.07539314776659012,
+          "label_width_m": 0.07420003414154053,
+          "label_gap_m": 0.001193113625049591
+        }
+      ],
+      "train_close_label_gap_median_m": 0.0007931143045425415,
+      "confirmed_failure": "Policy reaches grasp region but does not establish stable monitored hold/lift within original point budget",
+      "interpretation": "In320px candidate, early gripper targets settle closer to feedback than the required3mm contact-gap predicate. This is a policy/closed-loop progression failure; no proof of a unique TCP/camera/training-loss cause.",
+      "safety_thresholds_changed": false
+    },
+    {
+      "resolution_width": 160,
+      "complete_task_passed": false,
+      "executed_ACT_points": 3900,
+      "event_sequence": [
+        "GRASP"
+      ],
+      "max_lift_m": 0.0003453149651692425,
+      "last_actual_width_m": 0.07446673788084945,
+      "last100_raw_prefix_target_width_range_m": [
+        0.07350685447454453,
+        0.07395922392606735
+      ],
+      "last100_feedback_minus_prefix_target_range_m": [
+        0.0005168931333890819,
+        0.0009597995727046171
+      ],
+      "required_stable_contact_gap_m": [
+        0.003,
+        0.012
+      ],
+      "bilateral_contact_at_end": true,
+      "measured_lift_contact_frames": 0,
+      "nearest_training_inputs": [
+        {
+          "episode": 14,
+          "frame": 1050,
+          "stage": "close",
+          "normalized_distance": 0.30427513757744823,
+          "actual_width_m": 0.07459314912557602,
+          "label_width_m": 0.07340003550052643,
+          "label_gap_m": 0.001193113625049591
+        },
+        {
+          "episode": 20,
+          "frame": 1040,
+          "stage": "close",
+          "normalized_distance": 0.32299054368911534,
+          "actual_width_m": 0.07416430860757828,
+          "label_width_m": 0.07140003889799118,
+          "label_gap_m": 0.002764269709587097
+        },
+        {
+          "episode": 20,
+          "frame": 1030,
+          "stage": "close",
+          "normalized_distance": 0.35530857613338207,
+          "actual_width_m": 0.07659314572811127,
+          "label_width_m": 0.07540003210306168,
+          "label_gap_m": 0.001193113625049591
+        },
+        {
+          "episode": 14,
+          "frame": 1040,
+          "stage": "close",
+          "normalized_distance": 0.5017112528440436,
+          "actual_width_m": 0.07859314233064651,
+          "label_width_m": 0.07740002870559692,
+          "label_gap_m": 0.001193113625049591
+        },
+        {
+          "episode": 26,
+          "frame": 1090,
+          "stage": "close",
+          "normalized_distance": 0.5083592621233383,
+          "actual_width_m": 0.07539314776659012,
+          "label_width_m": 0.07420003414154053,
+          "label_gap_m": 0.001193113625049591
+        }
+      ],
+      "train_close_label_gap_median_m": 0.0007931143045425415,
+      "confirmed_failure": "Policy reaches grasp region but does not establish stable monitored hold/lift within original point budget",
+      "interpretation": "In320px candidate, early gripper targets settle closer to feedback than the required3mm contact-gap predicate. This is a policy/closed-loop progression failure; no proof of a unique TCP/camera/training-loss cause.",
+      "safety_thresholds_changed": false
+    }
+  ],
+  "hardware_motion_sent": false,
+  "proposed_policy_fix": "Generate correctly labelled recoveries from recorded closed-loop stall states, train short-prefix contact transitions; preserve original contact/force/point protections and assess new frozen scenarios",
+  "model_retrained_by_this_phase": false
+}

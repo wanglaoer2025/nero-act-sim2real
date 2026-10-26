@@ -1,0 +1,73 @@
+{
+  "time_local": "2026-10-22T21:08:56.149664+08:00",
+  "schema": "calibration_available_tools_checkpoint_v1",
+  "operator_report": "\u53ea\u6709\u6807\u5b9a\u677f\u3001\u5c3a\u5b50\u548c\u666e\u901a\u5939\u5177",
+  "available_tools": [
+    "95mm black-square ID0 hard calibration board",
+    "ruler",
+    "ordinary clamps"
+  ],
+  "tcp_center_reference_fixture_available": false,
+  "board_surface_height_operator_mm": 8,
+  "sources_sha256": {
+    "/home/user/wq/nero_act_calibration_capture_20261022/capture.py": "c9385e3bb5158aa93693c7af9b263949b56bfe0e94fc3381d3e31add1baf72e4",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_measured_95mm/marker_profile.json": "e7c6e62bf56b882621e27ff8cddc89950cd7e7f3ff1af14b496899d06a9ddfdb",
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/calibration_reference_revision_proposal.json": "129ffb7c8a822a2af8e74f93bcb3e03e961819732817cb92f9f0bdd9098e9ef4",
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/four_pose_diagnostic.json": "f4300433e2426a9491940cd633abb256f5d6d13dc2edb09f8115f15382bd6cfb",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_plane_8mm_derivation.json": "bc408beedb9522c09edc92589ad52bae7ab58bc5853afbb63a9ba548dbf107d2",
+    "/home/user/wq/nero_act_transfer_resume_20261021/robot_health.py": "8dddedb530df7d452c8b6432c732dec94329dc2327b7481398948b211cdc886e"
+  },
+  "camera_sampling_method": {
+    "name": "fixed-camera eye-to-hand, board rigidly attached to end effector",
+    "requires_known_grasp_tcp": false,
+    "requires": "Each accepted native marker observation paired with fresh stationary base-to-SDK-wrist-frame feedback; one invariant mount per sampling batch. Fixed SDK-wrist to URDF-flange transform is named explicitly.",
+    "fit_pose_target": 15,
+    "disjoint_pose_check_target": 5,
+    "new_mount_requires_new_dataset": true,
+    "old_mounted_candidates": 4,
+    "old_candidates_must_not_mix_with_new_mount": true,
+    "tabletop_marker_positions_do_not_count_as_handeye_pairs": true,
+    "full_independent_base_validation_still_required": true,
+    "primary_reference": "https://docs.opencv.org/4.13.0/d9/d0c/group__calib3d.html"
+  },
+  "next_static_probe": {
+    "status": "await operator rigid remount, location and protrusion report",
+    "mode": "receive_only_no_window",
+    "command_argv": [
+      "/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python",
+      "-u",
+      "/home/user/wq/nero_act_calibration_capture_20261022/capture.py",
+      "--once",
+      "--output",
+      "/home/user/wq/nero_act_calibration_capture_20261022/hand_eye_remount_02/static_probe_01"
+    ],
+    "sdk_sends_blocked": true,
+    "robot_motion_authorized_by_this_checkpoint": false,
+    "requires_fresh_static_health_and_native_marker_frame": true,
+    "pose_is_only_candidate": true
+  },
+  "before_any_automatic_sampling_motion": [
+    "Inspect new mounting rigidity/location and complete board-plus-clamp sweep envelope.",
+    "Resolve known circular dependence of legacy absolute image prediction on unverified base-camera calibration in an isolated tested/reviewed entry; existing runtime guard has not been changed.",
+    "Read actual current robot state and review exact bounded trajectory from it.",
+    "Obtain current physical clearance/stop/controller conditions for the reviewed path."
+  ],
+  "tcp_work": {
+    "status": "physical reference data absent",
+    "existing_pivot_solver": "/home/user/wq/nero_act_visual_feedback_20261019/calibration/solve.py",
+    "fit_pose_minimum": 6,
+    "independent_holdout_minimum": 3,
+    "ordinary_ruler_measurement_role": "coarse independent geometry check with recorded uncertainty only; it cannot be marked1mm-verified TCP",
+    "needed": "A rigid repeatable reference/pointing arrangement tied to actual two-finger grasp center, including measured fixture-to-center relation.",
+    "primary_reference": "https://www.universal-robots.com/manuals/EN/HTML/SW5_22/Content/prod-usr-man/software/PolyScope/content/installation_g5/teaching_TCP_position.htm"
+  },
+  "runtime_visual_guard_unchanged": true,
+  "live_calibration_modified": false,
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "robot_connected": false,
+  "motion_sent": false,
+  "status": "superseded_by_existing_record_reuse_audit",
+  "superseded_by": "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/record_reuse_audit.json",
+  "static_remount_request_withdrawn": true
+}

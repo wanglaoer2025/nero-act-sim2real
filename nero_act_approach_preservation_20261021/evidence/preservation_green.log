@@ -1,0 +1,47 @@
+/home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-3hq96jm4 because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+.F..............                                                         [100%]
+=================================== FAILURES ===================================
+__ test_replay_gradient_restores_baseline_without_updating_frozen_parameters ___
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-2/test_replay_gradient_restores_0')
+
+    def test_replay_gradient_restores_baseline_without_updating_frozen_parameters(tmp_path):
+        from training.approach_preservation import ApproachPreservation
+        from training.history import frozen_output_head_state,require_frozen_output_head_state
+        c,q,image,_=config();p,path=replay_file(tmp_path,c,q,image)
+        settings=dict(profile='baseline_prefix_v1',weight=1.,arm_unit_rad=.0001,gripper_unit_m=.0005,batch_size=2,replay_path=str(path))
+        keeper=ApproachPreservation(settings,p.loss_stats,'cpu')
+        keys=set(p.state_dict());before=frozen_output_head_state(p)
+        assert float(keeper.loss(p,0).detach())==pytest.approx(0.,abs=1e-10)
+        with torch.no_grad():p.model.action_head.bias[:7].add_(.001)
+        p.train();loss=keeper.loss(p,0)
+        assert p.training and keeper.last_indices.tolist()==[0,1]
+        assert float(loss.detach())>0
+        loss.backward()
+        assert p.model.action_head.bias.grad[:7].abs().sum()>0
+        assert all(v.grad is None for n,v in p.named_parameters() if not v.requires_grad)
+        p.optimizer.step();require_frozen_output_head_state(p,before)
+        assert set(p.state_dict())==keys
+>       assert float(keeper.loss(p,0).detach())<float(loss.detach())
+E       assert 3.4332804679870605 < 0.041597217321395874
+E        +  where 3.4332804679870605 = float(tensor(3.4333))
+E        +    where tensor(3.4333) = <built-in method detach of Tensor object at 0x7e67f2acb750>()
+E        +      where <built-in method detach of Tensor object at 0x7e67f2acb750> = tensor(3.4333, grad_fn=<MeanBackward0>).detach
+E        +        where tensor(3.4333, grad_fn=<MeanBackward0>) = <bound method ApproachPreservation.loss of <training.approach_preservation.ApproachPreservation object at 0x7e67f2cdcb90>>(FullTaskPolicy(\n  (model): DETRVAE(\n    (transformer): Transformer(\n      (encoder): TransformerEncoder(\n        (laye...tures=128, out_features=64, bias=True)\n    (1): SiLU()\n    (2): Linear(in_features=64, out_features=1, bias=True)\n  )\n), 0)
+E        +          where <bound method ApproachPreservation.loss of <training.approach_preservation.ApproachPreservation object at 0x7e67f2cdcb90>> = <training.approach_preservation.ApproachPreservation object at 0x7e67f2cdcb90>.loss
+E        +  and   0.041597217321395874 = float(tensor(0.0416))
+E        +    where tensor(0.0416) = <built-in method detach of Tensor object at 0x7e67f2ac8b90>()
+E        +      where <built-in method detach of Tensor object at 0x7e67f2ac8b90> = tensor(0.0416, grad_fn=<MeanBackward0>).detach
+
+tests/test_approach_preservation.py:52: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_preservation.py::test_replay_gradient_restores_baseline_without_updating_frozen_parameters
+1 failed, 15 passed, 1 warning in 20.58s

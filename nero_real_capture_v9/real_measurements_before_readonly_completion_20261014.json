@@ -1,0 +1,50 @@
+{
+  "coordinate_frame": "nero_base",
+  "unit": "mm",
+  "source_xyz_mm": null,
+  "destination_xyz_mm": null,
+  "table_top_z_mm": null,
+  "cup_height_mm": 95,
+  "tcp_verified_on_robot": null,
+  "camera_to_base_verified_on_independent_points": null,
+  "installation_matches_inventory_user_confirmed": true,
+  "notes": "2026-10-14：用户确认底部安装面高出桌面10mm，取代此前13mm。其余已有尺寸、标定和安装记录按用户指示沿用。本机CAD安装面Z=0，对应名义桌面Z=-10mm和杯中心Z=37.5mm；源/目标XY、实体夹爪间距、独立TCP和相机基准点没有补充实测值，保持原始状态。停止生成分批待测回传包。",
+  "cup_outer_diameter_mm": 75,
+  "cup_empty_mass_g": 50,
+  "base_support_height_mm": 10,
+  "base_support_parallel_to_table_user_reported": true,
+  "zed_left_lens_height_above_table_mm": 357,
+  "blue_card_size_mm": [
+    100,
+    100
+  ],
+  "coordinates_measurement_status": "pending_user_measurement",
+  "gripper_verification": {
+    "physical_inner_spacing_mm": null,
+    "physical_measurement_time": null,
+    "feedback_zero_offset_mm": null,
+    "physically_verified_effective_range_mm": null,
+    "captured_feedback_total_width_range_mm": [
+      99.83199834823608,
+      99.83199834823608
+    ],
+    "feedback_unit": "m total opening",
+    "feedback_source": "capture_new/observations.npz recorded on 2026-10-14; historical capture, not a new live reading",
+    "SDK_declared_total_width_range_mm": [
+      0,
+      100
+    ],
+    "V9_model_expected_total_opening_mm": [
+      0,
+      95
+    ],
+    "V9_auditor_accepted_upper_mm": 98,
+    "range_interpretation": "Captured 99.832mm is within SDK declared 100mm range but outside V9 auditor 98mm boundary. Physical spacing/zero offset remain unmeasured; this is not proof of a unit or hardware fault."
+  },
+  "table_top_z_provenance": {
+    "candidate_z_mm": -10,
+    "basis": "User says installation face 10mm above table; local CAD bottom installation plane Z=0. This uses retained model datum, not an independent physical coordinate survey.",
+    "independent_physical_origin_verified": false
+  },
+  "nominal_upright_cup_centre_z_mm": 37.5
+}

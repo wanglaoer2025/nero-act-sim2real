@@ -1,0 +1,14 @@
+test_stale_dense_input_is_rejected_and_physical_equivalence_is_required (tests.test_observation_refresh.ObservationRefreshTests.test_stale_dense_input_is_rejected_and_physical_equivalence_is_required) ... FAIL
+
+======================================================================
+FAIL: test_stale_dense_input_is_rejected_and_physical_equivalence_is_required (tests.test_observation_refresh.ObservationRefreshTests.test_stale_dense_input_is_rejected_and_physical_equivalence_is_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_transition_fix_20261018/tests/test_observation_refresh.py", line 7, in test_stale_dense_input_is_rejected_and_physical_equivalence_is_required
+    self.assertIsNotNone(importlib.util.find_spec('simulation.refresh_observations'))
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

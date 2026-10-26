@@ -1,0 +1,83 @@
+{
+  "success": true,
+  "physical_success": true,
+  "max_lift_m": 0.19945949147007347,
+  "maximum_horizontal_transfer_m": 0.1710452324715874,
+  "stable_released_frames": 103,
+  "lift_contact_frames": 764,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5300431868559535,
+      -0.16090499454820878,
+      0.04749668781278852
+    ],
+    "tcp_xyz": [
+      -0.5224556814567901,
+      -0.16419060892739204,
+      0.24787767462441332
+    ],
+    "cup_upright": 0.9999999999999734,
+    "cup_speed": 2.4034200073007755e-07,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09499999877426163,
+    "contract_valid": true
+  },
+  "error": null,
+  "events": [
+    {
+      "phase": "approach",
+      "point": 0,
+      "contact": "open"
+    },
+    {
+      "phase": "close",
+      "point": 780,
+      "contact": "open"
+    },
+    {
+      "phase": "lift",
+      "point": 981,
+      "contact": "holding"
+    },
+    {
+      "phase": "carry_place",
+      "point": 1361,
+      "contact": "holding"
+    },
+    {
+      "phase": "release",
+      "point": 1981,
+      "contact": "holding"
+    },
+    {
+      "phase": "retreat",
+      "point": 2155,
+      "contact": "released"
+    }
+  ],
+  "frames": 2666,
+  "measured_contact_width_m": 0.07435658958632127,
+  "mode": "offline_physics_ACT_reference_replay",
+  "hardware_connected": false,
+  "real_receipt": false,
+  "execution_scene_sha256": "785d861b15dd49049a38453fb0b3c9afac4ea07d625132a047e33d3e546fe47e",
+  "trace_sha256": "d6a28d21788d436e63bee2ae7201e44d5be82ee6fc798a9d5d43b777b357c79e",
+  "approach_clearance": {
+    "minimum_gap_m": 0.008180143058567783,
+    "required_gap_m": 0.005,
+    "passed": true,
+    "interpolated_states": 3306,
+    "closest_interpolated_state": 3303,
+    "scope": "nominal cylindrical cup and modeled fingers; protrusions and TCP remain unmeasured",
+    "hardware_connected": false
+  },
+  "maximum_approach_source_shift_m": 5.288263550316418e-08,
+  "preclose_contact_checked_every_physics_step": true
+}

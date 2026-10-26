@@ -1,0 +1,131 @@
+{
+  "status": "COMPLETE_SUPERVISED_PICK_PLACE_PASSED_READONLY_RESTORED",
+  "success": true,
+  "scope": "One operator-supervised physical yellow cup grasp, lift, transfer to blue card, supported placement, release and vertical retreat",
+  "reviewed_wall_s": 1792167675.9823585,
+  "execution_result": "execution_04/result.json",
+  "execution_process_success": true,
+  "onsite_operator_confirmations": [
+    {
+      "token": "PICK",
+      "wall_s": 1792166773.8444622
+    },
+    {
+      "action": "移动到杯子正上方",
+      "token": "NEXT",
+      "wall_s": 1792166808.3489318
+    },
+    {
+      "action": "在杯子上方打开夹爪",
+      "token": "NEXT",
+      "wall_s": 1792166849.5781
+    },
+    {
+      "action": "垂直下降到杯子抓取高度",
+      "token": "NEXT",
+      "wall_s": 1792166902.366415
+    },
+    {
+      "action": "确认两指位于杯壁两侧并闭爪",
+      "token": "GRASP",
+      "wall_s": 1792166960.2771134
+    },
+    {
+      "action": "垂直抬升杯子",
+      "token": "NEXT",
+      "wall_s": 1792167030.477719
+    },
+    {
+      "action": "高位转运到蓝纸片正上方",
+      "token": "NEXT",
+      "wall_s": 1792167082.4029937
+    },
+    {
+      "action": "垂直下降放到蓝纸片",
+      "token": "NEXT",
+      "wall_s": 1792167139.5465283
+    },
+    {
+      "action": "确认杯底已落在蓝纸片上并松爪",
+      "token": "RELEASE",
+      "wall_s": 1792167197.601672
+    },
+    {
+      "action": "松爪后垂直退出",
+      "token": "NEXT",
+      "wall_s": 1792167255.9749904
+    }
+  ],
+  "final_visual_review": {
+    "image": "acceptance_capture_04/camera_0_upright_rgb.png",
+    "sha256": "23b3b3bfc8cf8ebff6f370de3af142e7db311de7fb3a917d7409eb3f0359194c",
+    "reviewer": "assistant visual inspection of the recorded final camera image",
+    "findings": [
+      "yellow cup upright on blue card",
+      "gripper open and withdrawn above the destination"
+    ],
+    "passed": true
+  },
+  "raw_execution_result_and_hdf5_unchanged": true,
+  "recording": {
+    "path": "execution_04/episode.hdf5",
+    "frames": 9793,
+    "health_samples": 9793,
+    "span_s": 489.60037847503554,
+    "mean_hz": 19.999984539430436,
+    "dt_p95_s": 0.05032471253944095,
+    "dt_max_s": 0.10115659004077315,
+    "late_cycles": 1,
+    "raw_task_success": "unreviewed",
+    "includes_operator_waits": true,
+    "independent_training_dataset_qc_approved": false
+  },
+  "tcp_offset_flange_xyz_m": [
+    0.152,
+    0,
+    -0.0235
+  ],
+  "tcp_independently_measured": false,
+  "historical_table_z_base_mm": 0,
+  "table_height_new_independent_measurement": false,
+  "act_policy_used_for_this_grasp": false,
+  "pi05_policy_used_for_this_grasp": false,
+  "autonomous_grasp_validated": false,
+  "guard_tests_passed": 19,
+  "cup_sweep_checks": [
+    {
+      "stage": "lift_pose",
+      "fk_samples": 752,
+      "minimum_cup_bottom_mm": 0.012288276111972751
+    },
+    {
+      "stage": "carry_pose",
+      "fk_samples": 455,
+      "minimum_cup_bottom_mm": 199.99999997598945
+    },
+    {
+      "stage": "place_pose",
+      "fk_samples": 708,
+      "minimum_cup_bottom_mm": -1.6882942266427392e-07
+    }
+  ],
+  "retreat_start_collision_check": {
+    "valid": true,
+    "contacts": []
+  },
+  "final_state": [
+    0.39189621806144714,
+    0.5983163118362427,
+    0.01014036312699318,
+    1.5139683485031128,
+    0.21012018620967865,
+    0.34342843294143677,
+    -0.5791351795196533,
+    0.09431000053882599
+  ],
+  "final_health_passed": true,
+  "receive_only_restored": true,
+  "readonly_verification": "readonly_final_verified.json",
+  "automatic_retry_return_reset_or_disable": false,
+  "source_code_weights_and_original_calibration_unchanged": true
+}

@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-15T21:39:48.906822+08:00",
+  "status": "usb_can_software_reset_failed_normal_mode_not_restored",
+  "latest_run": "adapter_recovery_20261015_213716_365923",
+  "observed": [
+    "usbreset reported success",
+    "internal loopback capture contained zero frames",
+    "normal-mode configuration returned RTNETLINK Protocol error twice",
+    "can0 is DOWN / STOPPED with no loopback or listen-only flag shown",
+    "CAN interface index changed from 8 to 9 during USB reset",
+    "no CAN socket holder or ROS arm driver remains"
+  ],
+  "limits": [
+    "one failed software-reset loopback test does not establish that robot hardware is faulty",
+    "usb xmit fail N records report cancelled/failed URB contexts during reset, not an independent identification of the physical cause",
+    "USB link/adapter firmware/driver reinitialization and physical wiring/power are not yet independently separated"
+  ],
+  "next_action": "physically disconnect only USB-CAN host USB for 5 seconds, reconnect directly to a host USB port, initialize normal 1 Mbps mode; do not rerun the software-reset loopback script",
+  "source": "https://cdn.kernel.org/doc/html/latest/driver-api/usb/error-codes.html",
+  "robot_motion_sent": false,
+  "robot_enable_sent": false,
+  "formal_capture_complete": false
+}

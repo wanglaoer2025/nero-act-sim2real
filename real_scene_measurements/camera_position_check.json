@@ -1,0 +1,72 @@
+{
+  "status": "height_consistent; visual_frame_chain_consistency_not_validated",
+  "calibration_file": "sim2real_inventory/local_camera_to_base.json",
+  "transform_direction": "T_base_from_camera; translation is left optical-camera origin expressed in base millimetres",
+  "calibration_created_at": "2026-08-30T08:09:50.173766+00:00",
+  "camera_left_optical_center_base_mm": [
+    -784.8249373589714,
+    -169.83354475519596,
+    343.8070025281324
+  ],
+  "camera_optical_axis_in_base": [
+    0.8305881283846344,
+    0.12005902955848317,
+    -0.5437914953435607
+  ],
+  "camera_optical_axis_angle_down_from_base_horizontal_degrees": 32.94211728395614,
+  "mounting_assumption": "13 mm support raises base mounting plane above tabletop; assumes SDK base origin lies on that plane",
+  "nominal_table_z_base_mm": -13.0,
+  "expected_left_lens_height_above_table_mm": 356.8070025281324,
+  "nominal_optical_axis_table_intersection_base_mm": [
+    -239.83726660267052,
+    -91.05720707795007,
+    -13.0
+  ],
+  "optical_card_diagnostic": {
+    "user_reports_card_on_table": true,
+    "card_dimension_boundary_confirmation": "Still not confirmed whether 100 mm describes colored quadrilateral or full white-bordered card",
+    "independent_camera_to_card_plane_perpendicular_distance_mm": 376.4244339689427,
+    "difference_from_nominal_camera_height_mm": 19.61743144081032,
+    "card_plane_tilt_in_base_frame_using_existing_rotation_degrees": 12.82890890957071,
+    "best_reprojection_rms_px": 0.8650416719654498,
+    "note": "Uses uncalibrated color-boundary corners and planar pose; diagnostics do not independently verify the extrinsic transform"
+  },
+  "conclusion": "Camera height component matches user lens-height measurement under the mounting-origin assumption. Correctly scaled 110 mm / DICT_5X5_50 fiducial agrees with ZED center depth to about 2.1 mm, while the legacy camera-to-base transform fails board-normal and board-height consistency. Full base-frame fiducial pose or reference correspondences are required to recover/validate full extrinsics. No replacement calibration is installed.",
+  "hardware_actions": "none",
+  "user_measured_left_lens_height_above_table_mm": 357.0,
+  "measured_minus_calibration_expected_lens_height_mm": 0.1929974718676135,
+  "support_mounting_plane_parallel_to_table_user_confirmed": true,
+  "depth_plane_diagnostics": {
+    "multiple_region_normal_angle_degrees": [
+      15.53694647215113,
+      19.41109472036768,
+      16.736520399484224
+    ],
+    "multiple_region_camera_to_plane_distances_mm": [
+      348.89870410231765,
+      303.81947229584273,
+      338.3785685714589
+    ],
+    "interpretation": "Candidate tabletop regions show 15.5-19.4 degree normal mismatch using the existing extrinsic and differing depth-plane distances. This indicates a visual-coordinate consistency problem; depth quality, surface identity and extrinsic orientation cannot be separated conclusively by these samples alone.",
+    "reference": "multi_region_plane_check.json"
+  },
+  "latest_image_note": "Blue card position changed during physical measuring; original 20:16 target coordinates belong to that earlier capture, not the latest scene.",
+  "correctly_scaled_fiducial_check": {
+    "actual_marker": {
+      "dictionary": "DICT_5X5_50",
+      "id": 0,
+      "black_square_side_mm": 110.0,
+      "board_surface_above_table_mm": 20.0,
+      "geometry_source": "user measurements; support height approximately 20 mm"
+    },
+    "legacy_marker_metadata": {
+      "dictionary": "DICT_4X4_50",
+      "id": 0,
+      "size_mm": 95.5
+    },
+    "optical_vs_depth_center_distance_median_mm": 2.087020501277814,
+    "old_extrinsic_marker_normal_tilt_median_deg": 13.346135025124234,
+    "old_extrinsic_marker_center_z_median_mm": -72.49368803112381,
+    "nominal_marker_plane_z_base_mm": 7.0
+  }
+}

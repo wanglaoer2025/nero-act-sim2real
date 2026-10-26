@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_twenty_epoch_counter_cannot_hide_missing_optimizer_steps _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-133/test_twenty_epoch_counter_cann0')
+
+    def test_twenty_epoch_counter_cannot_hide_missing_optimizer_steps(tmp_path):
+        m=api();checkpoint,protected=output_fixture(tmp_path)
+        checkpoint.rename(tmp_path/'checkpoints/policy_best_val.ckpt')
+        config=dict(training_budget={'kind':'epochs','limit':20},num_epochs=20,declared_optimizer_steps=40)
+>       with pytest.raises(ValueError):m.finalize_history_training(tmp_path,config,dict(updates=39,epochs=20),protected)
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_history_training.py:140: Failed
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_training.py::test_twenty_epoch_counter_cannot_hide_missing_optimizer_steps
+1 failed, 8 deselected, 1 warning in 1.81s

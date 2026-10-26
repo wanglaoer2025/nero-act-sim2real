@@ -1,0 +1,113 @@
+{
+  "created_at_utc": "2026-10-14T14:53:05.809392+00:00",
+  "scope": "one authorized physical-control probe; not ACT/V9 deployment",
+  "csv": "logs/act_joint_stream_20261014_224752.csv",
+  "terminal_log": "terminal_execute_20261014_224705.log",
+  "script_exit_code": 0,
+  "execution_confirmations_entered_in_onsite_terminal": true,
+  "agent_supplied_confirmation_tokens": false,
+  "targets_logged": 10,
+  "requested_send_hz": 20,
+  "observed_host_loop_hz": 19.99734257530547,
+  "requested_stream_duration_s": 0.5,
+  "last_logged_command_elapsed_s": 0.4500603670021519,
+  "feedback_missing_count": 0,
+  "row_errors": [],
+  "tested_joint": "J1",
+  "q0_inferred_from_first_target_rad": [
+    -0.47441539750696865,
+    0.7822391390800476,
+    -0.1293288916349411,
+    1.3979040384292603,
+    -0.2805093228816986,
+    -0.506389856338501,
+    -0.7044497728347778
+  ],
+  "J1_command_range_rad": [
+    -0.4791721999645233,
+    -0.469658762216568
+  ],
+  "J1_command_peak_to_peak_rad": 0.009513437747955322,
+  "J1_logged_feedback_range_rad": [
+    -0.4744153916835785,
+    -0.4744153916835785
+  ],
+  "J1_logged_feedback_peak_to_peak_rad": 0.0,
+  "J1_feedback_unique_values": 1,
+  "J1_instantaneous_error_abs_mean_rad": 0.003078281879425049,
+  "J1_instantaneous_error_abs_p95_rad": 0.004756727814674377,
+  "J1_instantaneous_error_abs_max_rad": 0.004756808280944824,
+  "send_call_mean_ms": 0.41209049813915044,
+  "send_call_p95_ms": 0.5822550374432465,
+  "feedback_getter_mean_ms": 0.10364360350649804,
+  "controller_speed_commanded_percent": 5,
+  "controller_speed_restored": false,
+  "controller_speed_independent_readback_available": false,
+  "gripper_movement_commanded": false,
+  "ACT_policy_executed": false,
+  "additional_test_motion_sent": false,
+  "ROS_restored": false,
+  "SDK_test_process_exited": true,
+  "return_wait_completed_under_script_tolerance": true,
+  "script_return_tolerance_rad": 0.01,
+  "exact_return_and_during_test_feedback_freshness_verified": false,
+  "post_test_passive_observation": {
+    "file": "post_test_passive_can.json",
+    "observed_at_utc": "2026-10-14T14:50:15.136226+00:00",
+    "frames_received": 6196,
+    "joint_12_frame_count": 400,
+    "RX_packets_delta": 6197,
+    "observer_TX_packets_delta": 0,
+    "raw_frames_retained": 300,
+    "frame_storage_scope": "first300 of6196 frames; not entire two-second raw dump",
+    "post_test_q_rad_from_last_retained_frames": [
+      -0.47439794398457874,
+      0.7822042108662987,
+      -0.12932889757277982,
+      1.3979040110923384,
+      -0.28054422396556855,
+      -0.5063723758811148,
+      -0.7044323393974314
+    ],
+    "post_test_q_minus_inferred_start_rad": [
+      1.7453522389909715e-05,
+      -3.492821374895261e-05,
+      -5.937838720715405e-09,
+      -2.7336921837317618e-08,
+      -3.490108386994262e-05,
+      1.7480457386143122e-05,
+      1.7433437346392466e-05
+    ],
+    "post_test_max_abs_q_minus_start_rad": 3.492821374895261e-05,
+    "status_payloads_in_retained_frames": [
+      {
+        "ctrl_mode": 1,
+        "arm_status": 0,
+        "mode_feedback": 1,
+        "teach_status": 0,
+        "motion_status": 0,
+        "trajectory_num": 0,
+        "err_code": 0,
+        "data_hex": "0100010000000000"
+      }
+    ],
+    "interpretation": "Live controller CAN feedback present after test; not evidence of feedback freshness or target tracking during the preceding motion."
+  },
+  "result": "command_loop_completed_but_J1_motion_tracking_not_demonstrated",
+  "actuator_response_accepted": false,
+  "ready_for_V9_real_execution": false,
+  "diagnostic_findings": [
+    "CSV records a changing J1 target but identical J1 feedback in all10 samples. Process exit0 alone cannot establish motion response.",
+    "Wrapper connect calls SDK set_follower_mode. Current installed SDK implementation writes disable-can-push and follower linkage; this differs from SDK set_normal_mode for a single arm. Actual effect during this test not independently recorded.",
+    "Wrapper get_arm_qpos validates shape/finiteness but does not validate device feedback timestamp changes, so cached feedback can satisfy checks.",
+    "Post-test passive CAN shows continuing ~200Hz joint/status frames and normal CAN/MOVE_J status; complete ongoing CAN feedback shutdown is not supported by this observation.",
+    "Return tolerance0.01rad exceeds test amplitude0.005rad; the return check cannot by itself detect this nontracking record.",
+    "No fresh passive CAN/status recording was made during the stream; target acceptance and physical response latency remain unestablished."
+  ],
+  "next_work_without_motion": "Offline check installed SDK normal/follower semantics, feedback timestamp guards and single-arm setup; preserve raw records. Do not repeat/amplify this physical test or deployV9 based on exit0.",
+  "inputs_sha256": {
+    "act_joint_stream_20261014_224752.csv": "f7a5a057db2797b9a30d4a0dbfc7ba33c8246c8bae52ab5318055669ae270bd6",
+    "terminal_execute_20261014_224705.log": "1f2792b3ac7da57912894ea7b293888a116edf93c89e3b4e97ded3154548489b",
+    "post_test_passive_can.json": "a5420d57a63ed778e7ec47dcc2af18db2c0d7f15699c69e93997150df57229d7"
+  }
+}

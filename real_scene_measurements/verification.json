@@ -1,0 +1,52 @@
+{
+  "source": "4090 read-only observations; remote simulation report has not been independently inspected",
+  "image_shape_hw": [
+    720,
+    1280
+  ],
+  "depth_unit": "mm",
+  "sample_count_per_target": 8,
+  "calibration_validation": "pending",
+  "depth_to_pixel_projection_checks": {
+    "cup": {
+      "passed": true,
+      "projected_upright_pixel": [
+        436.6380604202071,
+        605.5270754053961
+      ],
+      "sample_scatter_mm": 0.8955295348069766
+    },
+    "blue": {
+      "passed": true,
+      "projected_upright_pixel": [
+        666.5129044353895,
+        642.0480330522837
+      ],
+      "sample_scatter_mm": 0.39651361201890417
+    }
+  },
+  "note": "These checks establish file/transform/pixel consistency and temporal stability; target absolute positions remain unverified due to the table-height discrepancy.",
+  "plane_data_checks": {
+    "local_fit_point_count": 10400,
+    "normal_angle_degrees": 14.984068146135582,
+    "local_plane_distance_mm": 351.3362117959758,
+    "multiple_region_count": 3,
+    "interpretation": "Data calculations checked; full camera extrinsic and current target coordinates have not passed independent validation."
+  },
+  "static_fiducial_reprojection_and_point_checks": {
+    "actual_black_square_side_mm": 110,
+    "accepted_frames": 8,
+    "max_reprojection_rms_px": 0.6203855276107788,
+    "median_optical_vs_depth_center_mm": 2.087020501277814,
+    "full_camera_to_base_validation_passed": false
+  },
+  "calibration_history_checks": {
+    "raw_datasets": 14,
+    "candidate_count": 10,
+    "historical_photos": 37,
+    "active_reproduction_max_abs_difference": 0.0,
+    "all_candidate_rotations_valid": true,
+    "independent_scene_validation_passed": false,
+    "active_config_sha256_unchanged_since_analysis": true
+  }
+}

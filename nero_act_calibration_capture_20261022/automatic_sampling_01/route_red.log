@@ -1,0 +1,135 @@
+...FFFFFFFF.......................................                       [100%]
+=================================== FAILURES ===================================
+______ test_full_route_has_distinct_15_fit_5_kept_out_and_100mm_coverage _______
+
+    def test_full_route_has_distinct_15_fit_5_kept_out_and_100mm_coverage():
+>       p=route();api().validate_route(p)
+E       AttributeError: module 'automatic_sampling' has no attribute 'validate_route'
+
+tests/test_automatic_sampling.py:77: AttributeError
+______________ test_modified_route_rejected_before_hardware[role] ______________
+
+fault = 'role'
+
+    @pytest.mark.parametrize('fault',['role','collision','step','speed','source','goal'])
+    def test_modified_route_rejected_before_hardware(fault):
+        p=copy.deepcopy(route())
+        if fault=='role':p['stages'][-1]['role']='fit'
+        elif fault=='collision':p['nominal_route_passed']=False
+        elif fault=='step':p['stages'][0]['waypoints_rad'][0][0]+=.03
+        elif fault=='speed':p['speed_percent']=5
+        elif fault=='goal':p['stages'][1]['goal_transform'][0][3]+=.02
+        else:p['source_sha256'][next(iter(p['source_sha256']))]='0'*64
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       AttributeError: module 'automatic_sampling' has no attribute 'validate_route'
+
+tests/test_automatic_sampling.py:92: AttributeError
+___________ test_modified_route_rejected_before_hardware[collision] ____________
+
+fault = 'collision'
+
+    @pytest.mark.parametrize('fault',['role','collision','step','speed','source','goal'])
+    def test_modified_route_rejected_before_hardware(fault):
+        p=copy.deepcopy(route())
+        if fault=='role':p['stages'][-1]['role']='fit'
+        elif fault=='collision':p['nominal_route_passed']=False
+        elif fault=='step':p['stages'][0]['waypoints_rad'][0][0]+=.03
+        elif fault=='speed':p['speed_percent']=5
+        elif fault=='goal':p['stages'][1]['goal_transform'][0][3]+=.02
+        else:p['source_sha256'][next(iter(p['source_sha256']))]='0'*64
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       AttributeError: module 'automatic_sampling' has no attribute 'validate_route'
+
+tests/test_automatic_sampling.py:92: AttributeError
+______________ test_modified_route_rejected_before_hardware[step] ______________
+
+fault = 'step'
+
+    @pytest.mark.parametrize('fault',['role','collision','step','speed','source','goal'])
+    def test_modified_route_rejected_before_hardware(fault):
+        p=copy.deepcopy(route())
+        if fault=='role':p['stages'][-1]['role']='fit'
+        elif fault=='collision':p['nominal_route_passed']=False
+        elif fault=='step':p['stages'][0]['waypoints_rad'][0][0]+=.03
+        elif fault=='speed':p['speed_percent']=5
+        elif fault=='goal':p['stages'][1]['goal_transform'][0][3]+=.02
+        else:p['source_sha256'][next(iter(p['source_sha256']))]='0'*64
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       AttributeError: module 'automatic_sampling' has no attribute 'validate_route'
+
+tests/test_automatic_sampling.py:92: AttributeError
+_____________ test_modified_route_rejected_before_hardware[speed] ______________
+
+fault = 'speed'
+
+    @pytest.mark.parametrize('fault',['role','collision','step','speed','source','goal'])
+    def test_modified_route_rejected_before_hardware(fault):
+        p=copy.deepcopy(route())
+        if fault=='role':p['stages'][-1]['role']='fit'
+        elif fault=='collision':p['nominal_route_passed']=False
+        elif fault=='step':p['stages'][0]['waypoints_rad'][0][0]+=.03
+        elif fault=='speed':p['speed_percent']=5
+        elif fault=='goal':p['stages'][1]['goal_transform'][0][3]+=.02
+        else:p['source_sha256'][next(iter(p['source_sha256']))]='0'*64
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       AttributeError: module 'automatic_sampling' has no attribute 'validate_route'
+
+tests/test_automatic_sampling.py:92: AttributeError
+_____________ test_modified_route_rejected_before_hardware[source] _____________
+
+fault = 'source'
+
+    @pytest.mark.parametrize('fault',['role','collision','step','speed','source','goal'])
+    def test_modified_route_rejected_before_hardware(fault):
+        p=copy.deepcopy(route())
+        if fault=='role':p['stages'][-1]['role']='fit'
+        elif fault=='collision':p['nominal_route_passed']=False
+        elif fault=='step':p['stages'][0]['waypoints_rad'][0][0]+=.03
+        elif fault=='speed':p['speed_percent']=5
+        elif fault=='goal':p['stages'][1]['goal_transform'][0][3]+=.02
+        else:p['source_sha256'][next(iter(p['source_sha256']))]='0'*64
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       AttributeError: module 'automatic_sampling' has no attribute 'validate_route'
+
+tests/test_automatic_sampling.py:92: AttributeError
+______________ test_modified_route_rejected_before_hardware[goal] ______________
+
+fault = 'goal'
+
+    @pytest.mark.parametrize('fault',['role','collision','step','speed','source','goal'])
+    def test_modified_route_rejected_before_hardware(fault):
+        p=copy.deepcopy(route())
+        if fault=='role':p['stages'][-1]['role']='fit'
+        elif fault=='collision':p['nominal_route_passed']=False
+        elif fault=='step':p['stages'][0]['waypoints_rad'][0][0]+=.03
+        elif fault=='speed':p['speed_percent']=5
+        elif fault=='goal':p['stages'][1]['goal_transform'][0][3]+=.02
+        else:p['source_sha256'][next(iter(p['source_sha256']))]='0'*64
+>       with pytest.raises(ValueError):api().validate_route(p)
+E       AttributeError: module 'automatic_sampling' has no attribute 'validate_route'
+
+tests/test_automatic_sampling.py:92: AttributeError
+________ test_camera_guard_uses_actual_marker_and_stops_on_displacement ________
+
+    def test_camera_guard_uses_actual_marker_and_stops_on_displacement():
+        m=api();p=route();root=Path(__file__).resolve().parents[1]
+        diagnostic=json.loads((root/'timing_probe_01/report.json').read_text())
+        image=cv2.imread(str(root/'timing_probe_01/optical_007.png'))
+        detector=cv2.aruco.ArucoDetector(cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50))
+        corners,ids,_=detector.detectMarkers(image)
+        assert ids.ravel().tolist()==[0]
+        pixels=np.asarray(corners[0]).reshape(4,2)
+>       m.guard_marker(p,p['initial_state'],pixels,np.array(diagnostic['K']))
+E       AttributeError: module 'automatic_sampling' has no attribute 'guard_marker'
+
+tests/test_automatic_sampling.py:103: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_automatic_sampling.py::test_full_route_has_distinct_15_fit_5_kept_out_and_100mm_coverage
+FAILED tests/test_automatic_sampling.py::test_modified_route_rejected_before_hardware[role]
+FAILED tests/test_automatic_sampling.py::test_modified_route_rejected_before_hardware[collision]
+FAILED tests/test_automatic_sampling.py::test_modified_route_rejected_before_hardware[step]
+FAILED tests/test_automatic_sampling.py::test_modified_route_rejected_before_hardware[speed]
+FAILED tests/test_automatic_sampling.py::test_modified_route_rejected_before_hardware[source]
+FAILED tests/test_automatic_sampling.py::test_modified_route_rejected_before_hardware[goal]
+FAILED tests/test_automatic_sampling.py::test_camera_guard_uses_actual_marker_and_stops_on_displacement
+8 failed, 42 passed in 1.80s

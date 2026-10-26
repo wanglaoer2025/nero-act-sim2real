@@ -1,0 +1,28 @@
+number of parameters: 12.58M
+{
+  "passed": true,
+  "probe_only_not_task_success": true,
+  "weights_saved": false,
+  "training_windows": 57,
+  "optimization_steps": 1000,
+  "future_labels_only_in_loss": true,
+  "all_windows_from_training_groups": true,
+  "unchanged_arm_output_max": 0.0,
+  "changed_parameters": [
+    "gripper_adapter.0.weight",
+    "gripper_adapter.0.bias",
+    "gripper_adapter.2.weight",
+    "gripper_adapter.2.bias"
+  ],
+  "frozen_base_passed": true,
+  "initial_raw_l1": 0.09692157059907913,
+  "final_raw_l1": 0.004122497513890266,
+  "worst_raw_mae_mm_by_role": {
+    "actual_failed_grasp": 0.050641223788261414,
+    "close": 0.13796165585517883,
+    "initial_open": 0.1434367150068283,
+    "lift": 0.0367533415555954,
+    "release": 0.1473706215620041
+  },
+  "hardware_connected": false
+}

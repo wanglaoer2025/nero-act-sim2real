@@ -1,0 +1,17 @@
+{
+  "goal": "keep current cup; repair and verify complete ACT simulation before any new physical attempt",
+  "user_selection": "保持当前杯位，先修复并验证ACT完整流程",
+  "strategy": "retained ACT architecture, fine-tune existing 8-output action head only; frozen encoder/decoder/CVAE and normalization; no runtime teacher",
+  "scene_source": "/home/user/wq/nero_act_replay_current_cup_retest_20261019/evidence/retry_readonly_02/report.json",
+  "declared_epochs": 10,
+  "checkpoint_selection": "lowest held-out validation loss; no independent-test selection",
+  "training_only": true,
+  "hardware_authorization": "no new training model motion authorization inferred",
+  "rulings": [
+    "Reuse the existing approved full demonstration + ACT training + frozen physical evaluation plan for the newly measured fixed scene. No new model input or architecture.",
+    "Keep all original training and validation episode IDs in their original split; add current-source IDs 200/201 and correction208 to training; 202/203 and correction209 to validation. Reuse original training-only statistics and maintain all its training provenance.",
+    "The old full replay receipt is consumed. Do not execute any candidate until full physical outcome, approach margin, collision and fresh actual-state checks pass.",
+    "Health trace mitigation passed 69 tests and 210s receive-only real-feedback probe; not proof that GC was the sole previous timeout cause."
+  ],
+  "created_wall_s": 1792380262.2476587
+}

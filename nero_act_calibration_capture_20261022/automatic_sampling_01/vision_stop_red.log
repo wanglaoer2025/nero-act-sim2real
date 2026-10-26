@@ -1,0 +1,37 @@
+.....................F.......................................            [100%]
+=================================== FAILURES ===================================
+___________ test_vision_stop_preserves_exact_native_frame_and_health ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-90/test_vision_stop_preserves_exa0')
+
+    def test_vision_stop_preserves_exact_native_frame_and_health(tmp_path):
+        m=api();p=route();camera=m.Camera.__new__(m.Camera)
+        camera.cv2=cv2;camera.output=tmp_path;camera.K=np.array([[263.7,0,323.6],[0,263.7,179.9],[0,0,1]])
+        camera.detector=cv2.aruco.ArucoDetector(cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50))
+        native=np.full((360,640,3),123,np.uint8);stamp=1792652500123456789
+        camera.read=lambda:(native,stamp)
+        camera.show=lambda *_:pytest.fail('Do not overwrite missing-marker diagnostic with a passed preview')
+        health=dict(state=p['initial_state'],feedback=dict(arm_status=2,err_code=0,ctrl_mode=1,motion_status=0))
+        with pytest.raises(RuntimeError,match='Exactly one complete ID0'):m.observe_motion(camera,p,health)
+>       np.testing.assert_array_equal(cv2.imread(str(tmp_path/'vision_stop_optical.png')),native)
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 691200 / 691200 (100%)
+E       First 5 mismatches are at indices:
+E        [0, 0, 0]: None (ACTUAL), 123 (DESIRED)
+E        [0, 0, 1]: None (ACTUAL), 123 (DESIRED)
+E        [0, 0, 2]: None (ACTUAL), 123 (DESIRED)
+E        [0, 1, 0]: None (ACTUAL), 123 (DESIRED)
+E        [0, 1, 1]: None (ACTUAL), 123 (DESIRED)
+E        ACTUAL: array(None, dtype=object)
+E        DESIRED: array([[[123, 123, 123],
+E               [123, 123, 123],
+E               [123, 123, 123],...
+
+tests/test_automatic_sampling.py:222: AssertionError
+----------------------------- Captured stderr call -----------------------------
+[ WARN:0@1.162] global loadsave.cpp:278 findDecoder imread_('/tmp/pytest-of-user/pytest-90/test_vision_stop_preserves_exa0/vision_stop_optical.png'): can't open/read file: check file path/integrity
+=========================== short test summary info ============================
+FAILED tests/test_automatic_sampling.py::test_vision_stop_preserves_exact_native_frame_and_health
+1 failed, 60 passed in 2.54s

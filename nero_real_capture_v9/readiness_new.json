@@ -1,0 +1,35 @@
+{
+  "mode": "saved_observation_readiness_audit",
+  "ready_for_recorded_shadow": false,
+  "shadow_blockers": [
+    "gripper feedback incompatible with 0-95 mm total opening",
+    "unmeasured or invalid source_xyz_mm",
+    "unmeasured or invalid destination_xyz_mm",
+    "table height unmeasured"
+  ],
+  "capture_details": {
+    "samples": 101,
+    "image_shape": [
+      101,
+      360,
+      640,
+      3
+    ],
+    "achieved_sample_hz": 20.007514854645812,
+    "maximum_host_feedback_age_s": 0.004059978993609548,
+    "hardware_synchronized": false
+  },
+  "task_coordinates_mm": {},
+  "ready_for_real_motion": false,
+  "motion_sent": false,
+  "real_motion_pending": [
+    "independent closed-loop policy acceptance",
+    "real camera appearance/geometry alignment",
+    "physical TCP verification",
+    "measured actuator response and single CAN owner"
+  ],
+  "tcp_verified_on_robot": false,
+  "camera_independent_points_verified": false,
+  "scope": "file audit only; passing permits recorded-input checking, never motion",
+  "real_transfer_verified": false
+}

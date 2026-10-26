@@ -1,0 +1,54 @@
+{
+  "checkpoint_sha256": "75bee59e2296d74d629b1e71781071a6f3e95280d0323092d08f6532a5e29e85",
+  "stats_sha256": "a327317b4398430b5c47a7b4d732717c065192e45a56117fc3c24748d95079b4",
+  "epoch": 24,
+  "teacher_free": true,
+  "runtime_geometry_closure_guard": false,
+  "control_hz": 20,
+  "chunk_size": 20,
+  "initial_qpos_or_object_reset_during_rollout": false,
+  "thresholds": {
+    "lift_m": 0.06,
+    "bilateral_frames": 10,
+    "final_xy_error_m": 0.02,
+    "upright_cosine": 0.95,
+    "final_speed": 0.05
+  },
+  "scenarios": [
+    [
+      "recorded_start",
+      0,
+      10,
+      0,
+      false
+    ]
+  ],
+  "independent_cup_xy_jitter_m": 0.002,
+  "independent_initial_joint_jitter_rad": 0.002,
+  "feedback_noise_rad": 0.0002,
+  "real_hardware_tested": false,
+  "results": [
+    {
+      "scenario": "recorded_start",
+      "teacher_free": true,
+      "success": false,
+      "max_lift_m": 0.06449032815957287,
+      "final_lift_m": -0.0010005405579273721,
+      "bilateral_frames": 392,
+      "held_at_finish": false,
+      "unexpected_arm_cup_contact_frames": 0,
+      "final_xy_error_m": 0.003588116238997245,
+      "upright_cosine": 0.9999999999999984,
+      "final_speed": 7.326351556214881e-07,
+      "first_arm_gap_rad": 0.0005780458450317383,
+      "existing_strict_block_contract_violations": 2,
+      "failure": null,
+      "runtime_s": 40.238834047995624,
+      "real_hardware_tested": false
+    }
+  ],
+  "passed": 0,
+  "total": 1,
+  "complete": true,
+  "hardware_deployment_allowed": false
+}

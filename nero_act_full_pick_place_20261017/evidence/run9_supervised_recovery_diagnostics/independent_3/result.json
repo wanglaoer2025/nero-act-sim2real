@@ -1,0 +1,76 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19196947076566806,
+  "maximum_horizontal_transfer_m": 0.17776579867911232,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 703,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5208310480281656,
+      -0.16237455066355627,
+      0.047819554822061267
+    ],
+    "tcp_xyz": [
+      -0.5228683008668521,
+      -0.1623172600816801,
+      0.060644059268188055
+    ],
+    "cup_upright": 0.9999532986950179,
+    "cup_speed": 3.2001381852983275e-05,
+    "bilateral": true,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07370826519286865,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": true,
+    "force": false,
+    "name": "independent_3",
+    "seed": 99103
+  },
+  "frames": 4624,
+  "active_policy_points": 4300,
+  "queries": 395,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_supported_confirm_hold_v5",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 814,
+      "active_points": 814,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1320,
+      "active_points": 1199,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 1919,
+      "active_points": 1718,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 4,
+  "runtime_s": 40.97451438801363,
+  "contact_arm_hold_points": 2398
+}

@@ -1,0 +1,12 @@
+[2026-10-17 23:43:15 UTC][ZED][INFO] Logging level INFO
+[2026-10-17 23:43:16 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-10-17 23:43:16 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-10-17 23:43:16 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-10-17 23:43:16 UTC][ZED][INFO] [Init]  Serial Number: S/N 39602891
+[2026-10-17 23:43:16 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+[INFO] [1792251798.756688978] [control_gate]: Control gate started. status_topics=['/arm_controller/follow_joint_trajectory/_action/status', '/gripper_controller/follow_joint_trajectory/_action/status'], gate_service_name=control_enable; commands remain blocked until controller state matches robot feedback
+[INFO] [1792251799.024791526] [control_gate]: Gate service is ready, forcing gate closed
+已请求关闭驱动命令门并取消本次轨迹；软件取消不保证CAN最后目标瞬间停止。
+{"success": false, "real_camera": true, "SDK_receive_only": true, "ROS_domain": 43, "ROS_feedback_is_synthetic": true, "gate_driver_service_is_fake": true, "motion_goals_sent": false, "events": [{"stage": "perception_warm_start_before_SDK_ROS", "stamp": 454049.858281087}, {"stage": "cold_inputs_ready_before_SDK_ROS", "stamp": 454052.86578787}], "error": "RuntimeError: Live ACT gate unhealthy or stale: {'failed': False, 'driver_open': False, 'reason': None, 'receipt_valid': True, 'received': 454055.278249151}", "act_stop_latched": true, "cancel_requested_for_handles": 0, "unresolved_goal_acknowledgements": 0, "unresolved_cancellation_replies": 0, "driver_gate_closed_for_abort": true, "can_tx_before": 367207, "can_tx_after": 367207}
+The following exception was never retrieved: cannot use Destroyable because destruction was requested
+The following exception was never retrieved: cannot use Destroyable because destruction was requested

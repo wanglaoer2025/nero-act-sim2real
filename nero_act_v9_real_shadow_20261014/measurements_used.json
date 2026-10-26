@@ -1,0 +1,118 @@
+{
+  "coordinate_frame": "nero_base",
+  "unit": "mm",
+  "source_xyz_mm": [
+    -523.6328770877162,
+    73.93982104009312,
+    37.5
+  ],
+  "destination_xyz_mm": [
+    -515.9092259086017,
+    -117.49644438829995,
+    37.5
+  ],
+  "table_top_z_mm": -10,
+  "cup_height_mm": 95,
+  "cup_outer_diameter_mm": 75,
+  "cup_empty_mass_g": 50,
+  "base_support_height_mm": 10,
+  "base_support_parallel_to_table_user_reported": true,
+  "blue_card_size_mm": [
+    100,
+    100
+  ],
+  "coordinates_measurement_status": "read_only_visual_estimates_with_retained_model_datum",
+  "coordinate_provenance": {
+    "source_XY": "Current RGB-D yellow cup body, known-radius cylinder model, transformed by the current Oct14 calibration",
+    "destination_XY": "Current blue-card central surface from RGB-D, transformed by current Oct14 calibration",
+    "source_and_destination_Z": "Confirmed installation-face height10mm + local CAD base datum + upright cup height95mm => -10+47.5",
+    "source_raw_visual_Z_mm": 40.34118003219811,
+    "table_raw_visual_Z_mm": -6.406602882379445,
+    "not_an_independent_base_frame_coordinate_survey": true
+  },
+  "independent_physical_coordinate_survey_completed": false,
+  "paired_capture_directory": "capture_new",
+  "scene_provenance": {
+    "geometry_observation": "scene_evidence/setup_observation.json",
+    "geometry_frame": "scene_evidence/scene_upright.png",
+    "policy_input_recording": "capture_new/",
+    "same_target_scene_visually_checked": true,
+    "geometry_and_policy_input_recording_simultaneous": false,
+    "old_capture_new_scene_matches_current_coordinates": false,
+    "note": "Earlier V9 capture_new has a different scene. Use fresh capture in this handoff; images are already rotated 180 degrees."
+  },
+  "gripper_verification": {
+    "status": "software_range_and_feedback_only; no_new_physical_measurement",
+    "feedback_unit": "m total opening",
+    "captured_feedback_total_width_range_mm": [
+      99.83199834823608,
+      99.83199834823608
+    ],
+    "SDK_declared_total_width_range_mm": [
+      0,
+      100
+    ],
+    "V9_model_expected_total_opening_mm": [
+      0,
+      95
+    ],
+    "V9_auditor_accepted_upper_mm": 98,
+    "physical_inner_spacing_verified": false,
+    "physical_zero_offset_verified": false,
+    "physical_effective_range_verified": false,
+    "interpretation": "99.832 mm is inside declared SDK range but outside V9 audit bound. Feedback is not an independent ruler measurement; no clipping or threshold changes applied."
+  },
+  "retained_TCP": {
+    "config": "calibration/tcp_offset.json",
+    "offset_flange_xyz_mm": [
+      135,
+      0,
+      0
+    ],
+    "offset_flange_rpy_rad": [
+      0,
+      0,
+      0
+    ],
+    "method": "manual_measurement",
+    "approximate": true,
+    "created_at": "2026-09-01T09:25:37.942811+00:00",
+    "status": "retained_prior_manual_parameter; no_new_independent_verification"
+  },
+  "tcp_verified_on_robot": false,
+  "camera_to_base_verified_on_independent_points": false,
+  "calibration_used": {
+    "path": "calibration/camera_to_base.json",
+    "created_at": "2026-10-14T08:56:12.645652+00:00",
+    "sha256": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be",
+    "fit": {
+      "sample_count": 17,
+      "total_sample_count": 19,
+      "excluded_sample_indices": [
+        17,
+        18
+      ],
+      "translation_rmse_mm": 6.632190934727078,
+      "translation_max_mm": 10.885170795345616,
+      "rotation_rmse_deg": 0.9482001459767242,
+      "rotation_max_deg": 1.616451709125613
+    }
+  },
+  "calibration_status": "current_existing_Oct14_handeye_fit_retained; no_new_independent_base_reference_survey",
+  "table_top_z_provenance": {
+    "candidate_z_mm": -10,
+    "basis": "User says installation face 10mm above table; local CAD bottom installation plane Z=0. This uses retained model datum, not an independent physical coordinate survey.",
+    "independent_physical_origin_verified": false
+  },
+  "historical_user_lens_height": {
+    "value_mm": 357,
+    "status": "prior_user_report_not_remeasured; do_not_treat_as_current_calibration_validation",
+    "current_calibration_derived_height_above_nominal_table_mm": 325.2114291079937
+  },
+  "dynamic_response_status": "retained_September_J1_logs_only; no_new_motion; SDK_call_time_is_not_physical_response_delay",
+  "user_requested_mode": "read_only_checks_retain_old_parameters_no_new_motor_measurements",
+  "all_required_physical_measurements_completed": false,
+  "unverified_items_are_status_flags_not_numeric_fill_requests": true,
+  "motion_sent": false,
+  "notes": "本轮按用户选择完成只读资料整理。源/目标 XY 为带已知杯尺寸约束的视觉估计，Z 按保留的模型安装基准和杯高计算；不是独立基座坐标实测。保留原始夹爪反馈，不把未复核的零偏、TCP 误差或相机绝对误差填成 0。"
+}

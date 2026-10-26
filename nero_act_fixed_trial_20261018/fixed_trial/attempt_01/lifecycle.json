@@ -1,0 +1,158 @@
+{
+  "scope": "one_fixed_scene_supervised_trial",
+  "success": false,
+  "old_readonly_pid": 1457412,
+  "automatic_retry": false,
+  "automatic_return": false,
+  "general14of14_passed": false,
+  "processes": [
+    {
+      "pid": 2112440,
+      "command": [
+        "/home/user/wq/nero_act_fixed_trial_20261018/.venv/bin/python",
+        "-u",
+        "-m",
+        "executor.virtual_bridge",
+        "--synchronize-virtual",
+        "--output",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_01/mock_sync.json"
+      ]
+    },
+    {
+      "pid": 2112472,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "executor.fixed_driver",
+        "--model",
+        "/home/user/wq/nero_act_fixed_scene_heads_20261018/model/run27_fixed_heads",
+        "--evaluation",
+        "/home/user/wq/nero_act_fixed_scene_heads_20261018/evaluation/run27_current_scene14/summary.json",
+        "--receipt",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/receipt.json",
+        "--execute",
+        "--output",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_01/driver.json"
+      ]
+    },
+    {
+      "pid": 2112510,
+      "command": [
+        "/home/user/wq/nero_act_fixed_trial_20261018/.venv/bin/python",
+        "-u",
+        "-m",
+        "executor.fixed_gate",
+        "--model",
+        "/home/user/wq/nero_act_fixed_scene_heads_20261018/model/run27_fixed_heads",
+        "--evaluation",
+        "/home/user/wq/nero_act_fixed_scene_heads_20261018/evaluation/run27_current_scene14/summary.json",
+        "--receipt",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/receipt.json",
+        "--execute",
+        "--ros-args",
+        "-p",
+        "arm_joint_names:=[joint1,joint2,joint3,joint4,joint5,joint6,joint7]",
+        "-p",
+        "status_topics:=[arm_controller/follow_joint_trajectory/_action/status,gripper_controller/follow_joint_trajectory/_action/status]",
+        "-p",
+        "arm_sync_tolerance_rad:=0.001",
+        "-p",
+        "gripper_sync_tolerance_m:=0.0005",
+        "-p",
+        "state_timeout_s:=0.15"
+      ]
+    },
+    {
+      "pid": 2112511,
+      "command": [
+        "/home/user/wq/nero_act_fixed_trial_20261018/.venv/bin/python",
+        "-u",
+        "-m",
+        "executor.fixed_trial",
+        "--execute",
+        "--stage",
+        "prepare",
+        "--attempt",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_01"
+      ]
+    },
+    {
+      "pid": 2112858,
+      "command": [
+        "/home/user/wq/nero_act_fixed_trial_20261018/.venv/bin/python",
+        "-u",
+        "-m",
+        "executor.fixed_gate",
+        "--model",
+        "/home/user/wq/nero_act_fixed_scene_heads_20261018/model/run27_fixed_heads",
+        "--evaluation",
+        "/home/user/wq/nero_act_fixed_scene_heads_20261018/evaluation/run27_current_scene14/summary.json",
+        "--receipt",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/receipt.json",
+        "--execute",
+        "--ros-args",
+        "-p",
+        "arm_joint_names:=[joint1,joint2,joint3,joint4,joint5,joint6,joint7]",
+        "-p",
+        "status_topics:=[arm_controller/follow_joint_trajectory/_action/status,gripper_controller/follow_joint_trajectory/_action/status]",
+        "-p",
+        "arm_sync_tolerance_rad:=0.001",
+        "-p",
+        "gripper_sync_tolerance_m:=0.0005",
+        "-p",
+        "state_timeout_s:=0.15"
+      ]
+    },
+    {
+      "pid": 2112859,
+      "command": [
+        "/home/user/wq/nero_act_fixed_trial_20261018/.venv/bin/python",
+        "-u",
+        "-m",
+        "executor.fixed_trial",
+        "--execute",
+        "--stage",
+        "task",
+        "--attempt",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_01"
+      ]
+    },
+    {
+      "pid": 2113060,
+      "command": [
+        "/usr/bin/python3",
+        "-u",
+        "-m",
+        "executor.driver",
+        "--readonly",
+        "--output",
+        "/home/user/wq/nero_act_fixed_trial_20261018/fixed_trial/attempt_01/readonly_restored.json"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "stage": "prepare",
+      "exit_code": 0
+    },
+    {
+      "stage": "task",
+      "exit_code": 1
+    }
+  ],
+  "normal_closed_gate_handoff": true,
+  "task_success": false,
+  "read_only_restored": {
+    "mode": "receive_only",
+    "pid": 2113060,
+    "interpreter": "/usr/bin/python3",
+    "auto_enable": false,
+    "control_enabled_at_start": false,
+    "speed_percent_parameter": 0,
+    "runtime_send_blocked": true,
+    "can_tx_before": 474278,
+    "can_tx_after_start": 474278,
+    "motion_submitted_by_entry": false
+  }
+}

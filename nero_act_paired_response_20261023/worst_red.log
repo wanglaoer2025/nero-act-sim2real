@@ -1,0 +1,17 @@
+test_normalization_does_not_ignore_small_teacher_response (test_paired.PairedResponseTests.test_normalization_does_not_ignore_small_teacher_response) ... ok
+test_response_is_independent_of_shared_pose_bias (test_paired.PairedResponseTests.test_response_is_independent_of_shared_pose_bias) ... ok
+test_worst_prefix_is_not_diluted_by_easier_samples (test_paired.PairedResponseTests.test_worst_prefix_is_not_diluted_by_easier_samples) ... FAIL
+test_wrong_response_gets_opposite_endpoint_gradients (test_paired.PairedResponseTests.test_wrong_response_gets_opposite_endpoint_gradients) ... ok
+
+======================================================================
+FAIL: test_worst_prefix_is_not_diluted_by_easier_samples (test_paired.PairedResponseTests.test_worst_prefix_is_not_diluted_by_easier_samples)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_paired_response_20261023/test_paired.py", line 35, in test_worst_prefix_is_not_diluted_by_easier_samples
+    self.assertAlmostEqual(float(loss.detach()),10.,places=5)
+AssertionError: 5.500000476837158 != 10.0 within 5 places (4.499999523162842 difference)
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.005s
+
+FAILED (failures=1)

@@ -1,0 +1,58 @@
+{
+  "complete": true,
+  "failed_inputs": [
+    {
+      "sample": "episode_2017:5",
+      "prefix_error_m": 7.464736700057983e-05,
+      "next_minus_previous_m": -0.0003581047058105469,
+      "minimum_prefix_margin_m": 0.0037663057446479797,
+      "require_holding": true,
+      "prediction_prefix_m": [
+        0.07059940695762634,
+        0.0705159530043602
+      ],
+      "teacher_prefix_m": [
+        0.07067405432462692,
+        0.0704740509390831
+      ]
+    },
+    {
+      "sample": "episode_2018:5",
+      "prefix_error_m": 7.160753011703491e-05,
+      "next_minus_previous_m": -0.0003455504775047302,
+      "minimum_prefix_margin_m": 0.002271987497806549,
+      "require_holding": false,
+      "prediction_prefix_m": [
+        0.07223533093929291,
+        0.07216139137744904
+      ],
+      "teacher_prefix_m": [
+        0.07230693846940994,
+        0.07210693508386612
+      ]
+    },
+    {
+      "sample": "episode_2018:10",
+      "prefix_error_m": 7.099658250808716e-05,
+      "next_minus_previous_m": -0.0003503262996673584,
+      "minimum_prefix_margin_m": 0.0031466856598854065,
+      "require_holding": true,
+      "prediction_prefix_m": [
+        0.07123592495918274,
+        0.07115659862756729
+      ],
+      "teacher_prefix_m": [
+        0.07130692154169083,
+        0.071106918156147
+      ]
+    }
+  ],
+  "replay_assessment": {
+    "samples": 423,
+    "maximum_arm_prefix_change_rad": 2.384185791015625e-07,
+    "rms_arm_prefix_change_rad": 2.8612286442776187e-08,
+    "maximum_gripper_prefix_change_m": 0.0008438751101493835,
+    "training_replay_not_independent_validation": true
+  },
+  "exact_and_preservation_gate_passed": true
+}

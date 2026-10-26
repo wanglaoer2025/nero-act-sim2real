@@ -1,0 +1,15 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_reobservation_preserves_labels_and_pixels_and_tracks_underlying_changes _
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-141/test_reobservation_preserves_l0')
+
+    def test_reobservation_preserves_labels_and_pixels_and_tracks_underlying_changes(tmp_path):
+        import h5py,numpy as np
+>       from rebuild_data import publish_reobserved
+E       ModuleNotFoundError: No module named 'rebuild_data'
+
+tests/test_collection.py:16: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_collection.py::test_reobservation_preserves_labels_and_pixels_and_tracks_underlying_changes
+1 failed, 1 passed in 0.13s

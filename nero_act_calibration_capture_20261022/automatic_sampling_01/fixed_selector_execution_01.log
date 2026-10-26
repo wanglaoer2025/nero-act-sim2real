@@ -1,0 +1,32 @@
+[2026-10-22 15:19:10 UTC][ZED][INFO] Logging level INFO
+[2026-10-22 15:19:11 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-10-22 15:19:11 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-10-22 15:19:11 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-10-22 15:19:11 UTC][ZED][INFO] [Init]  Serial Number: S/N 39602891
+[2026-10-22 15:19:11 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+QFontDatabase: Cannot find font directory /home/user/nero/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/user/nero/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/user/nero/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/user/nero/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/user/nero/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+{"role": "fit", "directory": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/fixed_selector_execution_01/attempt_000", "accepted": true, "state": "accepted", "transform_base_from_flange_m": [[-0.8830295067616607, 0.16036258716030613, -0.44106998404732894, -0.199976], [0.4693174464200611, 0.30203971044875894, -0.8297669237790709, -0.041408], [0.00015707963203359654, -0.9397105160374032, -0.3419709364473919, 0.350026], [0.0, 0.0, 0.0, 1.0]]}
+{"stage": 1, "fit": 1, "pose_check": 0}
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling.py", line 369, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling.py", line 351, in main
+    drive_stage(robot,camera,plan,stage,log,deadline)
+  File "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling.py", line 188, in drive_stage
+    observe_motion(camera,plan,health)
+  File "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling.py", line 151, in observe_motion
+    residual=guard_marker(plan,health['state'],pixels,camera.K)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling.py", line 85, in guard_marker
+    raise RuntimeError('Marker departed from provisional pose envelope; possible slip or geometry mismatch')
+RuntimeError: Marker departed from provisional pose envelope; possible slip or geometry mismatch

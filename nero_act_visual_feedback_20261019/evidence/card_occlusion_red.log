@@ -1,0 +1,37 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_card_center_not_shifted_by_cup_occluding_middle _____________
+
+    def test_card_center_not_shifted_by_cup_occluding_middle():
+        from training.legacy_visual_data import NominalImageEstimator, training_profile
+        observer = NominalImageEstimator(training_profile(scene()), (180, 320))
+        target = np.array([-.52, -.16, 0.])
+        rgb = np.full((180, 320, 3), 180, np.uint8)
+        corners = target+np.array([[-.05, -.05, 0], [-.05, .05, 0], [.05, .05, 0], [.05, -.05, 0]])
+        poly = np.rint(observer.project(corners)).astype(np.int32)
+        cv2.fillConvexPoly(rgb, poly, (15, 65, 160))
+        hull = observer.cup_hull(target+[-.01, 0, .002])
+        cv2.fillConvexPoly(rgb, np.rint(hull).astype(np.int32), (220, 180, 15))
+        _, card, _ = observer.measure(rgb)
+>       np.testing.assert_allclose(card, target, atol=.004)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-07, atol=0.004
+E       
+E       Mismatched elements: 2 / 3 (66.7%)
+E       Mismatch at indices:
+E        [0]: -0.5436840819203078 (ACTUAL), -0.52 (DESIRED)
+E        [1]: -0.15598125806300359 (ACTUAL), -0.16 (DESIRED)
+E       Max absolute difference among violations: 0.02368408
+E       Max relative difference among violations: 0.04554631
+E        ACTUAL: array([-0.543684, -0.155981,  0.      ])
+E        DESIRED: array([-0.52, -0.16,  0.  ])
+
+tests/test_existing_calibration_training.py:113: AssertionError
+=============================== warnings summary ===============================
+tests/test_existing_calibration_training.py::test_card_center_not_shifted_by_cup_occluding_middle
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_existing_calibration_training.py::test_card_center_not_shifted_by_cup_occluding_middle
+1 failed, 9 deselected, 1 warning in 2.09s

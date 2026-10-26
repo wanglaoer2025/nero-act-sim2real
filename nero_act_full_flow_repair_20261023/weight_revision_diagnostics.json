@@ -1,0 +1,830 @@
+{
+  "offline_only": true,
+  "training_updates": 0,
+  "same_observations": true,
+  "training_scene_diagnostic_not_independent_validation": true,
+  "records": [
+    {
+      "name": "projected",
+      "checkpoint_sha256": {
+        "/home/user/wq/nero_act_transfer_resume_20261021/training/projected_A/policy_last.ckpt": "1953ba3567fd4eec637c975e2a5ba71229c9c60e40f87929382cb14da1b73142"
+      },
+      "stage_mean_error": {
+        "release": {
+          "prefix_position_error_mm": 3.6813265208216657,
+          "prefix_joint_error_mrad": 5.761817097663879,
+          "prefix_gripper_error_mm": 0.11951103806495667
+        },
+        "descend": {
+          "prefix_position_error_mm": 2.094797964491912,
+          "prefix_joint_error_mrad": 4.961147904396057,
+          "prefix_gripper_error_mm": 0.08039548993110657
+        },
+        "place": {
+          "prefix_position_error_mm": 2.3187152334280405,
+          "prefix_joint_error_mrad": 12.046068668365479,
+          "prefix_gripper_error_mm": 0.30603259801864624
+        },
+        "close": {
+          "prefix_position_error_mm": 0.5655946000423948,
+          "prefix_joint_error_mrad": 1.5520453453063965,
+          "prefix_gripper_error_mm": 0.2375040203332901
+        },
+        "carry": {
+          "prefix_position_error_mm": 4.033528579769832,
+          "prefix_joint_error_mrad": 9.677767753601074,
+          "prefix_gripper_error_mm": 0.17737969756126404
+        },
+        "lift": {
+          "prefix_position_error_mm": 2.1606185538362905,
+          "prefix_joint_error_mrad": 3.6694854497909546,
+          "prefix_gripper_error_mm": 0.10884180665016174
+        },
+        "retreat": {
+          "prefix_position_error_mm": 1.7276341679307734,
+          "prefix_joint_error_mrad": 4.121012926101685,
+          "prefix_gripper_error_mm": 0.0
+        },
+        "approach": {
+          "prefix_position_error_mm": 0.7451487193352254,
+          "prefix_joint_error_mrad": 2.916112542152405,
+          "prefix_gripper_error_mm": 0.015076249837875366
+        }
+      },
+      "rows": [
+        {
+          "stage": "approach",
+          "step": 0,
+          "prefix_position_error_mm": 0.530906490617102,
+          "prefix_joint_error_mrad": 3.9740800857543945,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 230,
+          "prefix_position_error_mm": 0.7589600255909548,
+          "prefix_joint_error_mrad": 2.6630163192749023,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 460,
+          "prefix_position_error_mm": 0.9892752619180673,
+          "prefix_joint_error_mrad": 3.416299819946289,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 700,
+          "prefix_position_error_mm": 0.7014530992147775,
+          "prefix_joint_error_mrad": 1.6110539436340332,
+          "prefix_gripper_error_mm": 0.060304999351501465
+        },
+        {
+          "stage": "descend",
+          "step": 710,
+          "prefix_position_error_mm": 2.224530145939257,
+          "prefix_joint_error_mrad": 5.590260028839111,
+          "prefix_gripper_error_mm": 0.06232410669326782
+        },
+        {
+          "stage": "descend",
+          "step": 820,
+          "prefix_position_error_mm": 1.7645558659428568,
+          "prefix_joint_error_mrad": 3.7914514541625977,
+          "prefix_gripper_error_mm": 0.06272643804550171
+        },
+        {
+          "stage": "descend",
+          "step": 930,
+          "prefix_position_error_mm": 2.041508107038489,
+          "prefix_joint_error_mrad": 4.607558250427246,
+          "prefix_gripper_error_mm": 0.06183236837387085
+        },
+        {
+          "stage": "descend",
+          "step": 1040,
+          "prefix_position_error_mm": 2.3485977390470465,
+          "prefix_joint_error_mrad": 5.855321884155273,
+          "prefix_gripper_error_mm": 0.1346990466117859
+        },
+        {
+          "stage": "close",
+          "step": 1047,
+          "prefix_position_error_mm": 0.06969265583222273,
+          "prefix_joint_error_mrad": 0.4208087921142578,
+          "prefix_gripper_error_mm": 0.2573952078819275
+        },
+        {
+          "stage": "close",
+          "step": 1095,
+          "prefix_position_error_mm": 0.3151563799025292,
+          "prefix_joint_error_mrad": 0.943303108215332,
+          "prefix_gripper_error_mm": 0.26898086071014404
+        },
+        {
+          "stage": "close",
+          "step": 1144,
+          "prefix_position_error_mm": 0.6044786752010723,
+          "prefix_joint_error_mrad": 1.8268823623657227,
+          "prefix_gripper_error_mm": 0.25378167629241943
+        },
+        {
+          "stage": "close",
+          "step": 1207,
+          "prefix_position_error_mm": 1.2730506892337552,
+          "prefix_joint_error_mrad": 3.0171871185302734,
+          "prefix_gripper_error_mm": 0.16985833644866943
+        },
+        {
+          "stage": "lift",
+          "step": 1208,
+          "prefix_position_error_mm": 0.7428429819910168,
+          "prefix_joint_error_mrad": 1.657247543334961,
+          "prefix_gripper_error_mm": 0.1710355281829834
+        },
+        {
+          "stage": "lift",
+          "step": 1225,
+          "prefix_position_error_mm": 4.169263954201101,
+          "prefix_joint_error_mrad": 5.879759788513184,
+          "prefix_gripper_error_mm": 0.14483928680419922
+        },
+        {
+          "stage": "lift",
+          "step": 1370,
+          "prefix_position_error_mm": 2.2153551084595855,
+          "prefix_joint_error_mrad": 3.610074520111084,
+          "prefix_gripper_error_mm": 0.06437301635742188
+        },
+        {
+          "stage": "lift",
+          "step": 1550,
+          "prefix_position_error_mm": 1.5150121706934585,
+          "prefix_joint_error_mrad": 3.53085994720459,
+          "prefix_gripper_error_mm": 0.05511939525604248
+        },
+        {
+          "stage": "carry",
+          "step": 1560,
+          "prefix_position_error_mm": 3.747139627457555,
+          "prefix_joint_error_mrad": 6.575345993041992,
+          "prefix_gripper_error_mm": 0.055246055126190186
+        },
+        {
+          "stage": "carry",
+          "step": 1640,
+          "prefix_position_error_mm": 4.322195106646979,
+          "prefix_joint_error_mrad": 8.356690406799316,
+          "prefix_gripper_error_mm": 0.12589246034622192
+        },
+        {
+          "stage": "carry",
+          "step": 1730,
+          "prefix_position_error_mm": 4.454746594750577,
+          "prefix_joint_error_mrad": 12.554287910461426,
+          "prefix_gripper_error_mm": 0.19550323486328125
+        },
+        {
+          "stage": "carry",
+          "step": 1820,
+          "prefix_position_error_mm": 3.6100329902242154,
+          "prefix_joint_error_mrad": 11.224746704101562,
+          "prefix_gripper_error_mm": 0.3328770399093628
+        },
+        {
+          "stage": "place",
+          "step": 1830,
+          "prefix_position_error_mm": 1.381860673200882,
+          "prefix_joint_error_mrad": 11.652528762817383,
+          "prefix_gripper_error_mm": 0.33539533615112305
+        },
+        {
+          "stage": "place",
+          "step": 1940,
+          "prefix_position_error_mm": 1.152861193645589,
+          "prefix_joint_error_mrad": 13.067960739135742,
+          "prefix_gripper_error_mm": 0.268690288066864
+        },
+        {
+          "stage": "place",
+          "step": 2050,
+          "prefix_position_error_mm": 1.834213924663539,
+          "prefix_joint_error_mrad": 13.837158203125,
+          "prefix_gripper_error_mm": 0.28208643198013306
+        },
+        {
+          "stage": "place",
+          "step": 2170,
+          "prefix_position_error_mm": 4.905925142202153,
+          "prefix_joint_error_mrad": 9.626626968383789,
+          "prefix_gripper_error_mm": 0.33795833587646484
+        },
+        {
+          "stage": "release",
+          "step": 2174,
+          "prefix_position_error_mm": 4.8046129746068456,
+          "prefix_joint_error_mrad": 7.947206497192383,
+          "prefix_gripper_error_mm": 0.16032159328460693
+        },
+        {
+          "stage": "release",
+          "step": 2184,
+          "prefix_position_error_mm": 4.766265217748152,
+          "prefix_joint_error_mrad": 7.200360298156738,
+          "prefix_gripper_error_mm": 0.160999596118927
+        },
+        {
+          "stage": "release",
+          "step": 2200,
+          "prefix_position_error_mm": 4.7266195825572135,
+          "prefix_joint_error_mrad": 6.8236589431762695,
+          "prefix_gripper_error_mm": 0.15672296285629272
+        },
+        {
+          "stage": "release",
+          "step": 2330,
+          "prefix_position_error_mm": 0.42780830837445366,
+          "prefix_joint_error_mrad": 1.076042652130127,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2340,
+          "prefix_position_error_mm": 2.0225994959958093,
+          "prefix_joint_error_mrad": 4.720926284790039,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2450,
+          "prefix_position_error_mm": 2.7180564353110293,
+          "prefix_joint_error_mrad": 5.237817764282227,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2560,
+          "prefix_position_error_mm": 1.7648914205508799,
+          "prefix_joint_error_mrad": 5.076676368713379,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2680,
+          "prefix_position_error_mm": 0.4049893198653756,
+          "prefix_joint_error_mrad": 1.4486312866210938,
+          "prefix_gripper_error_mm": 0.0
+        }
+      ]
+    },
+    {
+      "name": "before_pairs",
+      "checkpoint_sha256": {
+        "/home/user/wq/nero_act_position_response_continuation_20261023/training/pilot_A/policy_last.ckpt": "3dfc6e47244ab2df1b361b43b071f68a39ae0d3467c23dc56e43a41a360a3db3"
+      },
+      "stage_mean_error": {
+        "release": {
+          "prefix_position_error_mm": 1.0068799434814668,
+          "prefix_joint_error_mrad": 1.8459707498550415,
+          "prefix_gripper_error_mm": 0.06810948252677917
+        },
+        "descend": {
+          "prefix_position_error_mm": 3.0088036411966774,
+          "prefix_joint_error_mrad": 6.350472569465637,
+          "prefix_gripper_error_mm": 0.06823614239692688
+        },
+        "place": {
+          "prefix_position_error_mm": 0.9851037488974344,
+          "prefix_joint_error_mrad": 3.0828043818473816,
+          "prefix_gripper_error_mm": 0.08107349276542664
+        },
+        "close": {
+          "prefix_position_error_mm": 1.1409544741996267,
+          "prefix_joint_error_mrad": 2.156674861907959,
+          "prefix_gripper_error_mm": 0.05728006362915039
+        },
+        "carry": {
+          "prefix_position_error_mm": 0.42965272377071184,
+          "prefix_joint_error_mrad": 1.323498785495758,
+          "prefix_gripper_error_mm": 0.014897435903549194
+        },
+        "lift": {
+          "prefix_position_error_mm": 1.301952938529505,
+          "prefix_joint_error_mrad": 2.917449951171875,
+          "prefix_gripper_error_mm": 0.025236979126930237
+        },
+        "retreat": {
+          "prefix_position_error_mm": 0.5377041687008705,
+          "prefix_joint_error_mrad": 1.880154013633728,
+          "prefix_gripper_error_mm": 0.0
+        },
+        "approach": {
+          "prefix_position_error_mm": 0.4379420899086114,
+          "prefix_joint_error_mrad": 0.9803250432014465,
+          "prefix_gripper_error_mm": 0.0
+        }
+      },
+      "rows": [
+        {
+          "stage": "approach",
+          "step": 0,
+          "prefix_position_error_mm": 0.19172222767748937,
+          "prefix_joint_error_mrad": 0.8041858673095703,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 230,
+          "prefix_position_error_mm": 0.22800789243833036,
+          "prefix_joint_error_mrad": 0.7559061050415039,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 460,
+          "prefix_position_error_mm": 0.4106440585525823,
+          "prefix_joint_error_mrad": 0.7770359516143799,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 700,
+          "prefix_position_error_mm": 0.9213941809660435,
+          "prefix_joint_error_mrad": 1.584172248840332,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 710,
+          "prefix_position_error_mm": 2.036183137418745,
+          "prefix_joint_error_mrad": 4.858434200286865,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 820,
+          "prefix_position_error_mm": 3.108651130913505,
+          "prefix_joint_error_mrad": 5.4329633712768555,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 930,
+          "prefix_position_error_mm": 4.276048544514006,
+          "prefix_joint_error_mrad": 8.352041244506836,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 1040,
+          "prefix_position_error_mm": 2.6143317519404543,
+          "prefix_joint_error_mrad": 6.758451461791992,
+          "prefix_gripper_error_mm": 0.2729445695877075
+        },
+        {
+          "stage": "close",
+          "step": 1047,
+          "prefix_position_error_mm": 0.29171965189019067,
+          "prefix_joint_error_mrad": 1.0993480682373047,
+          "prefix_gripper_error_mm": 0.1247301697731018
+        },
+        {
+          "stage": "close",
+          "step": 1095,
+          "prefix_position_error_mm": 0.16154026173929076,
+          "prefix_joint_error_mrad": 0.6036758422851562,
+          "prefix_gripper_error_mm": 0.05164742469787598
+        },
+        {
+          "stage": "close",
+          "step": 1144,
+          "prefix_position_error_mm": 0.18543292030118882,
+          "prefix_joint_error_mrad": 0.5328655242919922,
+          "prefix_gripper_error_mm": 0.023059546947479248
+        },
+        {
+          "stage": "close",
+          "step": 1207,
+          "prefix_position_error_mm": 3.9251250628678367,
+          "prefix_joint_error_mrad": 6.390810012817383,
+          "prefix_gripper_error_mm": 0.02968311309814453
+        },
+        {
+          "stage": "lift",
+          "step": 1208,
+          "prefix_position_error_mm": 3.3903956302991216,
+          "prefix_joint_error_mrad": 5.033135414123535,
+          "prefix_gripper_error_mm": 0.029690563678741455
+        },
+        {
+          "stage": "lift",
+          "step": 1225,
+          "prefix_position_error_mm": 0.16313971700793028,
+          "prefix_joint_error_mrad": 1.9862055778503418,
+          "prefix_gripper_error_mm": 0.021591782569885254
+        },
+        {
+          "stage": "lift",
+          "step": 1370,
+          "prefix_position_error_mm": 0.08890989206272353,
+          "prefix_joint_error_mrad": 1.0379552841186523,
+          "prefix_gripper_error_mm": 0.017657876014709473
+        },
+        {
+          "stage": "lift",
+          "step": 1550,
+          "prefix_position_error_mm": 1.5653665147482452,
+          "prefix_joint_error_mrad": 3.6125035285949707,
+          "prefix_gripper_error_mm": 0.032007694244384766
+        },
+        {
+          "stage": "carry",
+          "step": 1560,
+          "prefix_position_error_mm": 0.4312730578588145,
+          "prefix_joint_error_mrad": 1.1145174503326416,
+          "prefix_gripper_error_mm": 0.026382505893707275
+        },
+        {
+          "stage": "carry",
+          "step": 1640,
+          "prefix_position_error_mm": 0.4829478224518504,
+          "prefix_joint_error_mrad": 1.4008283615112305,
+          "prefix_gripper_error_mm": 0.015877187252044678
+        },
+        {
+          "stage": "carry",
+          "step": 1730,
+          "prefix_position_error_mm": 0.42522378273391365,
+          "prefix_joint_error_mrad": 1.227736473083496,
+          "prefix_gripper_error_mm": 0.011056661605834961
+        },
+        {
+          "stage": "carry",
+          "step": 1820,
+          "prefix_position_error_mm": 0.3791662320382689,
+          "prefix_joint_error_mrad": 1.550912857055664,
+          "prefix_gripper_error_mm": 0.006273388862609863
+        },
+        {
+          "stage": "place",
+          "step": 1830,
+          "prefix_position_error_mm": 1.9825609624109213,
+          "prefix_joint_error_mrad": 6.436645984649658,
+          "prefix_gripper_error_mm": 0.006310641765594482
+        },
+        {
+          "stage": "place",
+          "step": 1940,
+          "prefix_position_error_mm": 0.2697285876634656,
+          "prefix_joint_error_mrad": 1.0098516941070557,
+          "prefix_gripper_error_mm": 0.021629035472869873
+        },
+        {
+          "stage": "place",
+          "step": 2050,
+          "prefix_position_error_mm": 0.9610957795108072,
+          "prefix_joint_error_mrad": 2.6584863662719727,
+          "prefix_gripper_error_mm": 0.038854777812957764
+        },
+        {
+          "stage": "place",
+          "step": 2170,
+          "prefix_position_error_mm": 0.7270296660045433,
+          "prefix_joint_error_mrad": 2.22623348236084,
+          "prefix_gripper_error_mm": 0.2574995160102844
+        },
+        {
+          "stage": "release",
+          "step": 2174,
+          "prefix_position_error_mm": 0.5873350673773443,
+          "prefix_joint_error_mrad": 0.8307695388793945,
+          "prefix_gripper_error_mm": 0.11973828077316284
+        },
+        {
+          "stage": "release",
+          "step": 2184,
+          "prefix_position_error_mm": 0.6134774130303654,
+          "prefix_joint_error_mrad": 1.0111331939697266,
+          "prefix_gripper_error_mm": 0.07847696542739868
+        },
+        {
+          "stage": "release",
+          "step": 2200,
+          "prefix_position_error_mm": 0.5607456873103556,
+          "prefix_joint_error_mrad": 1.033008098602295,
+          "prefix_gripper_error_mm": 0.07422268390655518
+        },
+        {
+          "stage": "release",
+          "step": 2330,
+          "prefix_position_error_mm": 2.2659616062078025,
+          "prefix_joint_error_mrad": 4.50897216796875,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2340,
+          "prefix_position_error_mm": 0.4820721865011967,
+          "prefix_joint_error_mrad": 2.1195411682128906,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2450,
+          "prefix_position_error_mm": 0.22968772379712865,
+          "prefix_joint_error_mrad": 1.4892220497131348,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2560,
+          "prefix_position_error_mm": 0.13252352337891957,
+          "prefix_joint_error_mrad": 1.4455914497375488,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2680,
+          "prefix_position_error_mm": 1.3065332411262367,
+          "prefix_joint_error_mrad": 2.466261386871338,
+          "prefix_gripper_error_mm": 0.0
+        }
+      ]
+    },
+    {
+      "name": "latest",
+      "checkpoint_sha256": {
+        "/home/user/wq/nero_act_paired_response_20261023/training/pilot_A/policy_last.ckpt": "06012db673881efc678ecdc5c4d4780f2d46c44bb52f18cbeb81b20b53d0ec47"
+      },
+      "stage_mean_error": {
+        "release": {
+          "prefix_position_error_mm": 0.8302982333232665,
+          "prefix_joint_error_mrad": 1.9632279872894287,
+          "prefix_gripper_error_mm": 0.05361996591091156
+        },
+        "descend": {
+          "prefix_position_error_mm": 2.5093108901140253,
+          "prefix_joint_error_mrad": 6.9873034954071045,
+          "prefix_gripper_error_mm": 0.07925182580947876
+        },
+        "place": {
+          "prefix_position_error_mm": 0.9390202886880796,
+          "prefix_joint_error_mrad": 3.072872757911682,
+          "prefix_gripper_error_mm": 0.09252317249774933
+        },
+        "close": {
+          "prefix_position_error_mm": 1.1041223236242488,
+          "prefix_joint_error_mrad": 2.1035969257354736,
+          "prefix_gripper_error_mm": 0.04785507917404175
+        },
+        "carry": {
+          "prefix_position_error_mm": 0.4899663374479667,
+          "prefix_joint_error_mrad": 1.698508858680725,
+          "prefix_gripper_error_mm": 0.010246410965919495
+        },
+        "lift": {
+          "prefix_position_error_mm": 1.1788073490449409,
+          "prefix_joint_error_mrad": 2.2447686791419983,
+          "prefix_gripper_error_mm": 0.022564083337783813
+        },
+        "retreat": {
+          "prefix_position_error_mm": 1.0468202281631598,
+          "prefix_joint_error_mrad": 2.9316246509552,
+          "prefix_gripper_error_mm": 0.0
+        },
+        "approach": {
+          "prefix_position_error_mm": 0.47261210792003916,
+          "prefix_joint_error_mrad": 1.409236341714859,
+          "prefix_gripper_error_mm": 0.0
+        }
+      },
+      "rows": [
+        {
+          "stage": "approach",
+          "step": 0,
+          "prefix_position_error_mm": 0.12934085634820364,
+          "prefix_joint_error_mrad": 0.4552006721496582,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 230,
+          "prefix_position_error_mm": 0.17901787483428347,
+          "prefix_joint_error_mrad": 0.8051246404647827,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 460,
+          "prefix_position_error_mm": 0.7318498768581523,
+          "prefix_joint_error_mrad": 0.8827745914459229,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "approach",
+          "step": 700,
+          "prefix_position_error_mm": 0.8502398236395173,
+          "prefix_joint_error_mrad": 3.4938454627990723,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 710,
+          "prefix_position_error_mm": 1.665430164659629,
+          "prefix_joint_error_mrad": 6.3651204109191895,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 820,
+          "prefix_position_error_mm": 2.141960247067152,
+          "prefix_joint_error_mrad": 5.831658840179443,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 930,
+          "prefix_position_error_mm": 3.5894885019566973,
+          "prefix_joint_error_mrad": 8.553504943847656,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "descend",
+          "step": 1040,
+          "prefix_position_error_mm": 2.6403646467726225,
+          "prefix_joint_error_mrad": 7.198929786682129,
+          "prefix_gripper_error_mm": 0.31700730323791504
+        },
+        {
+          "stage": "close",
+          "step": 1047,
+          "prefix_position_error_mm": 0.4043260856085463,
+          "prefix_joint_error_mrad": 1.8942952156066895,
+          "prefix_gripper_error_mm": 0.09810924530029297
+        },
+        {
+          "stage": "close",
+          "step": 1095,
+          "prefix_position_error_mm": 0.42365408249125147,
+          "prefix_joint_error_mrad": 0.6645917892456055,
+          "prefix_gripper_error_mm": 0.03764033317565918
+        },
+        {
+          "stage": "close",
+          "step": 1144,
+          "prefix_position_error_mm": 0.24893537231438922,
+          "prefix_joint_error_mrad": 0.45567750930786133,
+          "prefix_gripper_error_mm": 0.025503337383270264
+        },
+        {
+          "stage": "close",
+          "step": 1207,
+          "prefix_position_error_mm": 3.3395737540828083,
+          "prefix_joint_error_mrad": 5.399823188781738,
+          "prefix_gripper_error_mm": 0.03016740083694458
+        },
+        {
+          "stage": "lift",
+          "step": 1208,
+          "prefix_position_error_mm": 2.8039340326365276,
+          "prefix_joint_error_mrad": 4.0427446365356445,
+          "prefix_gripper_error_mm": 0.03016740083694458
+        },
+        {
+          "stage": "lift",
+          "step": 1225,
+          "prefix_position_error_mm": 0.17387487321969286,
+          "prefix_joint_error_mrad": 0.9729266166687012,
+          "prefix_gripper_error_mm": 0.01835078001022339
+        },
+        {
+          "stage": "lift",
+          "step": 1370,
+          "prefix_position_error_mm": 0.20722280416275718,
+          "prefix_joint_error_mrad": 0.6960630416870117,
+          "prefix_gripper_error_mm": 0.006601214408874512
+        },
+        {
+          "stage": "lift",
+          "step": 1550,
+          "prefix_position_error_mm": 1.5301976861607858,
+          "prefix_joint_error_mrad": 3.2673404216766357,
+          "prefix_gripper_error_mm": 0.03513693809509277
+        },
+        {
+          "stage": "carry",
+          "step": 1560,
+          "prefix_position_error_mm": 0.33636776072061136,
+          "prefix_joint_error_mrad": 0.9074211120605469,
+          "prefix_gripper_error_mm": 0.024415552616119385
+        },
+        {
+          "stage": "carry",
+          "step": 1640,
+          "prefix_position_error_mm": 0.669128844656839,
+          "prefix_joint_error_mrad": 1.5347003936767578,
+          "prefix_gripper_error_mm": 0.010639429092407227
+        },
+        {
+          "stage": "carry",
+          "step": 1730,
+          "prefix_position_error_mm": 0.3941041730854904,
+          "prefix_joint_error_mrad": 1.0137557983398438,
+          "prefix_gripper_error_mm": 0.0032261013984680176
+        },
+        {
+          "stage": "carry",
+          "step": 1820,
+          "prefix_position_error_mm": 0.5602645713289259,
+          "prefix_joint_error_mrad": 3.338158130645752,
+          "prefix_gripper_error_mm": 0.0027045607566833496
+        },
+        {
+          "stage": "place",
+          "step": 1830,
+          "prefix_position_error_mm": 1.8311517942710862,
+          "prefix_joint_error_mrad": 6.6231489181518555,
+          "prefix_gripper_error_mm": 0.002652406692504883
+        },
+        {
+          "stage": "place",
+          "step": 1940,
+          "prefix_position_error_mm": 0.2903204318517012,
+          "prefix_joint_error_mrad": 2.145826816558838,
+          "prefix_gripper_error_mm": 0.02012401819229126
+        },
+        {
+          "stage": "place",
+          "step": 2050,
+          "prefix_position_error_mm": 0.9618368505084789,
+          "prefix_joint_error_mrad": 1.9363164901733398,
+          "prefix_gripper_error_mm": 0.03378838300704956
+        },
+        {
+          "stage": "place",
+          "step": 2170,
+          "prefix_position_error_mm": 0.6727720781210519,
+          "prefix_joint_error_mrad": 1.5861988067626953,
+          "prefix_gripper_error_mm": 0.3135278820991516
+        },
+        {
+          "stage": "release",
+          "step": 2174,
+          "prefix_position_error_mm": 0.5560957797875299,
+          "prefix_joint_error_mrad": 1.5393495559692383,
+          "prefix_gripper_error_mm": 0.06759166717529297
+        },
+        {
+          "stage": "release",
+          "step": 2184,
+          "prefix_position_error_mm": 0.6320801283011914,
+          "prefix_joint_error_mrad": 1.3256072998046875,
+          "prefix_gripper_error_mm": 0.08711963891983032
+        },
+        {
+          "stage": "release",
+          "step": 2200,
+          "prefix_position_error_mm": 0.5718982036373821,
+          "prefix_joint_error_mrad": 1.2748241424560547,
+          "prefix_gripper_error_mm": 0.05976855754852295
+        },
+        {
+          "stage": "release",
+          "step": 2330,
+          "prefix_position_error_mm": 1.5611188215669622,
+          "prefix_joint_error_mrad": 3.7131309509277344,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2340,
+          "prefix_position_error_mm": 1.6142279703580378,
+          "prefix_joint_error_mrad": 3.8950443267822266,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2450,
+          "prefix_position_error_mm": 0.3507774639557864,
+          "prefix_joint_error_mrad": 1.529395580291748,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2560,
+          "prefix_position_error_mm": 0.5955884372580599,
+          "prefix_joint_error_mrad": 1.519620418548584,
+          "prefix_gripper_error_mm": 0.0
+        },
+        {
+          "stage": "retreat",
+          "step": 2680,
+          "prefix_position_error_mm": 1.626687041080755,
+          "prefix_joint_error_mrad": 4.782438278198242,
+          "prefix_gripper_error_mm": 0.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "task": "ACT sim2real: yellow cup to blue card; next hardware stage is a validated noncontact approach/pregrasp segment",
+  "priority": "Train a task-specific policy whose demonstrated TCP trajectory actually approaches this cup. Do not extend or relabel the air-motion policy.",
+  "current_scene": {
+    "capture": "scene/current_capture/observations.npz",
+    "first_image": "scene/current_capture/camera_0_upright_rgb.png",
+    "first_paired_state": [
+      0.2237861156463623,
+      -0.11719886213541031,
+      0.1344776153564453,
+      1.5639197826385498,
+      -0.014765485189855099,
+      0.25787240266799927,
+      0.14997614920139313,
+      0.06017899885773659
+    ],
+    "last_recorded_state": [
+      0.2238210290670395,
+      -0.11719886213541031,
+      0.1344776153564453,
+      1.5640244483947754,
+      -0.01473057921975851,
+      0.25787240266799927,
+      0.15002849698066711,
+      0.06011199951171875
+    ],
+    "state_order": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "state_units": [
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "m_total_opening"
+    ],
+    "first_frame_paired_with_first_state": true,
+    "capture_start_unix_s": 1792139346.6110804,
+    "capture_end_unix_s": 1792139351.6454213,
+    "capture_start_utc": "2026-10-16T08:29:06.611080+00:00",
+    "is_hardware_synchronized": false,
+    "host_receipt_pairing_only": true,
+    "recorded_initial_state_is_not_a_future_live_state": true
+  },
+  "camera": {
+    "name": "camera_0",
+    "input": "RGB uint8 640x360, rotated180 exactly once by capture; no second rotation",
+    "model_input_hw": [
+      90,
+      160
+    ],
+    "normalization": "uint8 -> float/255 -> bilinear align_corners=False -> ImageNet channel normalization (verify in exact returned policy source)",
+    "metadata": "scene/current_capture/report.json",
+    "base_from_camera": "calibration/camera_to_base.json",
+    "translation_unit": "mm"
+  },
+  "provisional_geometry": {
+    "frame": "nero_base",
+    "unit": "mm",
+    "source_cup_geometric_centre_xyz_mm": [
+      -512.4589093631635,
+      -20.848633498434555,
+      37.5
+    ],
+    "destination_cup_geometric_centre_xyz_mm": [
+      -514.6247758930626,
+      -218.71507264613905,
+      37.499999999999986
+    ],
+    "table_top_z_mm": -10.0,
+    "cup_height_mm": 95.0,
+    "cup_outer_diameter_mm": 75.0,
+    "cup_empty_mass_g": 50.0,
+    "blue_card_reported_side_mm": 100.0,
+    "source_method": "known-size upright cylinder fitted to current detected cup box",
+    "destination_method": "HSV blue quadrilateral intersected with retained table plane; not YOLO blue detection",
+    "independent_absolute_coordinate_validation_completed": false,
+    "usable_as_direct_hardware_targets": false
+  },
+  "geometry_limits": {
+    "cup_box_fit_rmse_px": 2.594689209560364,
+    "table_z_basis": "retained 10mm mounting support and model datum, not a new independent survey",
+    "blue_square_pnp_diagnostic": "scene/blue_card_geometry.json; best solution is about 11.1mm below retained table. Segmentation boundary and plane/extrinsic uncertainty remain; do not silently replace table Z with PnP Z.",
+    "tcp_reference": "calibration/tcp_offset.json manual approximate +X135mm in SDK flange",
+    "tcp_frame_comparison": "calibration/sdk_urdf_reference_frames.json; old simulation TCP after frame mapping differs by ~29mm, physical contact point not revalidated"
+  },
+  "hardware_protocol": {
+    "ros_domain_id": 42,
+    "driver_is_sole_can_controller": true,
+    "ros_commands_via_existing_control_gate": true,
+    "do_not_start_parallel_sdk_can_controller": true,
+    "driver_speed_percent_during_accepted_trial": 5,
+    "action": "seven absolute joint rad targets + continuous gripper total width in m",
+    "reference_state_dim": 8,
+    "reference_action_dim": 8,
+    "target_query_hz": 2,
+    "trajectory_point_hz": 20,
+    "prefix_points_per_query": 10,
+    "pre_send_observation_age_max_s": 0.25,
+    "within_prefix_observation_age_max_s": 0.75,
+    "observed_block_hz": 1.8126707778295925,
+    "strict_wall_clock_20hz_accepted": false,
+    "full_arm_gripper_real_feedback_required": true
+  },
+  "runtime_reference_scope": {
+    "reference_only": true,
+    "existing_code_accepts_only": "8D aligned_noncontact_air_sequence with its signed/hash-matched bounded metadata",
+    "new_cup_policy_needs_task_specific_executor_and_geometry_checks": true,
+    "do_not_bypass_existing_contract_or_change_deployment_flags_to_relabel_air_as_grasp": true,
+    "if_using_14_or_15D_state": "Return complete ordered schema, units, coordinate/previous-command initialization and matching model/statistics/adapter; no padding or silent reuse of the 8D runner."
+  },
+  "simulation_source_status": {
+    "formal_current_grasp_simulation_pipeline": "on the other computer; not in this package",
+    "included_robot_baseline": "robot_reference/mujoco_baseline/nero.xml, for frame/asset reference, not an aligned cup scene or task demo",
+    "missing_from_this_host": [
+      "nero_domain_randomization",
+      "nero_scene_camera",
+      "current grasp demonstration collector and closed-loop evaluator"
+    ],
+    "no_new_cup_demonstrations_or_weights_generated_on_4090": true
+  },
+  "required_simulation_work": [
+    "Reconstruct current recorded joint/gripper state, camera and provisional cup/card geometry; export a real-vs-rendered overlay for review.",
+    "Reconcile TCP frame mapping, table/cup clearance and the blue-square scale diagnostic before contact geometry is accepted.",
+    "Generate task-specific demonstrations that approach this cup, open sufficiently for the 75mm outer diameter and include contact only where physically validated; the old air range52..78mm is not a grasp envelope.",
+    "Train a new coherent Nero ACT checkpoint with paired statistics and full input/action schema.",
+    "Independently evaluate the same frozen checkpoint in teacher-free closed-loop scenes, with noise/corrections and the observed real execution latency; report failures without changing thresholds.",
+    "Export a complete offline preview and separately bounded noncontact pregrasp executor before any physical cup contact."
+  ],
+  "hardware_new_grasp_or_approach_motion_sent_for_this_handoff": false
+}

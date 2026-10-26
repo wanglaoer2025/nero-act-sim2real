@@ -1,0 +1,80 @@
+test_command_context_can_learn_the_release_deadband_progress (tests.test_command_context.CommandContextTests.test_command_context_can_learn_the_release_deadband_progress) ... /home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+ok
+test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels (tests.test_command_context.CommandContextTests.test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels) ... ok
+test_frozen_worker_builds_the_same_nine_dimensional_observation (tests.test_command_context.CommandContextTests.test_frozen_worker_builds_the_same_nine_dimensional_observation) ... ERROR
+test_initialization_only_weights_can_never_be_exported (tests.test_command_context.CommandContextTests.test_initialization_only_weights_can_never_be_exported) ... ok
+test_live_worker_uses_submitted_reference_instead_of_measured_opening (tests.test_command_context.CommandContextTests.test_live_worker_uses_submitted_reference_instead_of_measured_opening) ... ok
+test_nine_model_features_never_change_eight_dimensional_physical_contract (tests.test_command_context.CommandContextTests.test_nine_model_features_never_change_eight_dimensional_physical_contract) ... ERROR
+test_noise_preserves_the_same_known_past_command (tests.test_command_context.CommandContextTests.test_noise_preserves_the_same_known_past_command) ... ERROR
+test_observation_keeps_actual_width_and_requires_real_past_command (tests.test_command_context.CommandContextTests.test_observation_keeps_actual_width_and_requires_real_past_command) ... ERROR
+test_state_projection_expansion_preserves_legacy_prediction_and_learns_context (tests.test_command_context.CommandContextTests.test_state_projection_expansion_preserves_legacy_prediction_and_learns_context) ... ERROR
+
+======================================================================
+ERROR: test_frozen_worker_builds_the_same_nine_dimensional_observation (tests.test_command_context.CommandContextTests.test_frozen_worker_builds_the_same_nine_dimensional_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 94, in test_frozen_worker_builds_the_same_nine_dimensional_observation
+    worker.predict(np.zeros((90,160,3),np.uint8),np.r_[np.zeros(7),.074],previous_gripper_target_m=.065)
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/policy_worker.py", line 56, in predict
+    torch.from_numpy(make_policy_observation(state,self.stats,self.config,previous_gripper_target_m))[None].to(self.device),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/model.py", line 31, in make_policy_observation
+    raise ValueError('Explicit causal previous-gripper context required')
+ValueError: Explicit causal previous-gripper context required
+
+======================================================================
+ERROR: test_nine_model_features_never_change_eight_dimensional_physical_contract (tests.test_command_context.CommandContextTests.test_nine_model_features_never_change_eight_dimensional_physical_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 26, in test_nine_model_features_never_change_eight_dimensional_physical_contract
+    guard=FullTaskContract(profile());state=np.r_[np.zeros(7),.074]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/contract.py", line 17, in __init__
+    raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+======================================================================
+ERROR: test_noise_preserves_the_same_known_past_command (tests.test_command_context.CommandContextTests.test_noise_preserves_the_same_known_past_command)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 104, in test_noise_preserves_the_same_known_past_command
+    policy=FullTaskPolicy(config).train();stats=config['constraint_loss_stats']
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/training/train.py", line 89, in __init__
+    super().__init__(config)
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/model.py", line 82, in __init__
+    FullTaskContract(config)
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/contract.py", line 17, in __init__
+    raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+======================================================================
+ERROR: test_observation_keeps_actual_width_and_requires_real_past_command (tests.test_command_context.CommandContextTests.test_observation_keeps_actual_width_and_requires_real_past_command)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 38, in test_observation_keeps_actual_width_and_requires_real_past_command
+    value=model.make_policy_observation(state,stats,profile(),.065)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/model.py", line 31, in make_policy_observation
+    raise ValueError('Explicit causal previous-gripper context required')
+ValueError: Explicit causal previous-gripper context required
+
+======================================================================
+ERROR: test_state_projection_expansion_preserves_legacy_prediction_and_learns_context (tests.test_command_context.CommandContextTests.test_state_projection_expansion_preserves_legacy_prediction_and_learns_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 68, in test_state_projection_expansion_preserves_legacy_prediction_and_learns_context
+    old=BoundedActPolicy(config).eval();new=BoundedActPolicy(dict(config,**profile())).eval()
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/model.py", line 82, in __init__
+    FullTaskContract(config)
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/contract.py", line 17, in __init__
+    raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.942s
+
+FAILED (errors=5)
+number of parameters: 12.58M

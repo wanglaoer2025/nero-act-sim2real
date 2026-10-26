@@ -1,0 +1,87 @@
+{
+  "created_at_utc": "2026-10-14T14:09:25.760671+00:00",
+  "scope": "complete_available_read_only_inputs; not_completed_independent_physical_metrology",
+  "user_instruction": "只读检查，沿用旧参数，暂不做新的运动测量",
+  "capture_directory": "capture_new",
+  "samples": 101,
+  "achieved_sample_hz": 20.01151699621413,
+  "data_and_scene": "Fresh current-scene recording. Do not mix current task coordinates with earlier capture_new.",
+  "coordinates_status": "read_only_visual_estimates_with_retained_model_datum",
+  "no_additional_numeric_fill_fields_required_for_this_read_only_handoff": true,
+  "all_required_physical_measurements_completed": false,
+  "motion_sent": false,
+  "robot_sdk_connected": false,
+  "control_gate_changed": false,
+  "copied_to_other_computer": false,
+  "actual_v9_checkpoint_present": false,
+  "shadow_inference_run": false,
+  "V9_policy_contract_user_reported": {
+    "state_dim": 14,
+    "composition": "8 robot-state components plus 6 source/destination coordinate components. Measurement file uses Nero-base mm; model coordinate scaling must be checked against the actual V9 model/config before inference.",
+    "action_dim": 8,
+    "policy_query_hz": 2,
+    "command_send_hz": 20,
+    "execute_prediction_first_steps": 10,
+    "refresh_period_s": 0.5,
+    "provenance": "User latest simulation-side requirements; actual V9 model and sim executor source not present in this capture-only package",
+    "legacy_executor_alignment_status": "Existing run_act_real selects chunk first action on each control cycle; matching query/send block execution requires an adapter, cannot just swap weights",
+    "model_statistics_compatibility": "14-dim coordinate-conditioned checkpoint needs its own matching normalization statistics; original 8-dim baseline statistics cannot substitute"
+  },
+  "remote_simulation_progress_user_reported": {
+    "recovery_demonstrations_added": 10,
+    "teacher_and_replay_passed": "10/10",
+    "ACT_recovery_development_test": "0/4",
+    "ACT_new_independent_grasp_scenes": "4/8",
+    "acceptance_threshold": "7/8",
+    "offline_regression_passed": 29,
+    "simulation_current_image_state_alignment_fix_reported": true,
+    "independently_rerun_on_4090": false,
+    "policy_accepted_for_autonomous_cup_grasp": false
+  },
+  "calibration_provenance": {
+    "path": "calibration/camera_to_base.json",
+    "created_at": "2026-10-14T08:56:12.645652+00:00",
+    "sha256": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be",
+    "fit": {
+      "sample_count": 17,
+      "total_sample_count": 19,
+      "excluded_sample_indices": [
+        17,
+        18
+      ],
+      "translation_rmse_mm": 6.632190934727078,
+      "translation_max_mm": 10.885170795345616,
+      "rotation_rmse_deg": 0.9482001459767242,
+      "rotation_max_deg": 1.616451709125613
+    }
+  },
+  "superseded_camera_snapshot": "Oct13/Aug30 inventory camera_to_base is historical; current Oct14 calibration is bundled unchanged.",
+  "coordinate_uncertainty": {
+    "cup_fit_residual_p95_mm": 3.3994984702406796,
+    "free_circle_radius_mm": 75.19786220347615,
+    "known_radius_constraint_mm": 37.5,
+    "absolute_error_independently_measured": false,
+    "note": "Partial cup arc/free-radius fit is unstable. Fixed-radius residual and calibration training-fit RMSE are not absolute coordinate accuracy guarantees."
+  },
+  "remaining_software_work": [
+    "Reconcile V9 0-95mm/model audit 98mm with unmodified real total-width feedback 99.832mm and declared SDK 0-100mm range.",
+    "Use matching V9 14-dimensional checkpoint/config/statistics and verify coordinate feature order/scaling before recorded shadow inference.",
+    "Align policy query 2Hz, command 20Hz and first10 steps with the real executor.",
+    "Reach independent simulated closed-loop acceptance before autonomous real grasp deployment."
+  ],
+  "physical_unverified_statuses": [
+    "No independent source/destination base-coordinate survey",
+    "No physical gripper zero/range measurement",
+    "No new independent TCP error verification",
+    "No independent current camera base-point error survey",
+    "No new current motor response test"
+  ],
+  "measurement_motion_plan_status": "user_declined; no_new_motion_executed",
+  "readiness_auditor_exit_code": 1,
+  "readiness_audit_report": "readiness_readonly.json",
+  "readiness_blockers": [
+    "gripper feedback incompatible with 0-95 mm total opening"
+  ],
+  "ready_for_recorded_shadow": false,
+  "ready_for_real_motion": false
+}

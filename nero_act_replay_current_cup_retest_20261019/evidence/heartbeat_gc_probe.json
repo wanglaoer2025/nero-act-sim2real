@@ -1,0 +1,32 @@
+{
+  "mode": "offline_recorded_health_log_allocation_probe",
+  "hardware_connected": false,
+  "motion_sent": false,
+  "hypothesis": "Growing retained nested health dictionaries causes increasing full-generation GC pauses in the heartbeat thread",
+  "retained_samples": 18000,
+  "elapsed_s": 0.8460864160442725,
+  "full_gc_events": [
+    {
+      "generation": 2,
+      "duration_s": 0.004486757097765803,
+      "retained_samples": 4048
+    },
+    {
+      "generation": 2,
+      "duration_s": 0.00987932295538485,
+      "retained_samples": 8097
+    },
+    {
+      "generation": 2,
+      "duration_s": 0.015405862010084093,
+      "retained_samples": 12146
+    },
+    {
+      "generation": 2,
+      "duration_s": 0.02168405707925558,
+      "retained_samples": 16195
+    }
+  ],
+  "max_full_gc_pause_s": 0.02168405707925558,
+  "all_gc_max_pause_s": 0.02168405707925558
+}

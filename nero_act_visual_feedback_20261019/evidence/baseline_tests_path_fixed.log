@@ -1,0 +1,1763 @@
+..............................F........F............F.F.........FFFFFF.. [ 37%]
+............FFFFFFF..FFF.F.F.FF.FFF.....FFFF................F.F.F....... [ 74%]
+.......F.F.FFFF.F..FFFFsFFsFFFFF...........F.....F                       [100%]
+=================================== FAILURES ===================================
+_ AlignmentPipelineTests.test_reusing_a_pipeline_never_overwrites_its_existing_status _
+
+self = <tests.test_alignment_pipeline.AlignmentPipelineTests testMethod=test_reusing_a_pipeline_never_overwrites_its_existing_status>
+
+    def test_reusing_a_pipeline_never_overwrites_its_existing_status(self):
+        source = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as tmp:
+            evidence = Path(tmp)/'evidence'
+            evidence.mkdir()
+            script = evidence/'run18_pipeline.py'
+>           shutil.copy2(source/'evidence/run18_pipeline.py', script)
+
+tests/test_alignment_pipeline.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/shutil.py:475: in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+src = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/evidence/run18_pipeline.py')
+dst = PosixPath('/tmp/tmp2qrtqk5s/evidence/run18_pipeline.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/evidence/run18_pipeline.py'
+
+/usr/lib/python3.12/shutil.py:260: FileNotFoundError
+_ BundleTests.test_export_binds_completed_training_and_keeps_hardware_disabled _
+
+self = <tests.test_bundle.BundleTests testMethod=test_export_binds_completed_training_and_keeps_hardware_disabled>
+
+    def test_export_binds_completed_training_and_keeps_hardware_disabled(self):
+        self.assertIsNotNone(importlib.util.find_spec('training.export'), 'completed model export missing')
+        from training.export import export_model
+        from executor.policy_worker import verify_model_bundle
+        import pickle
+        import numpy as np
+        import torch
+        with tempfile.TemporaryDirectory() as directory:
+            run = Path(directory)/'run'
+            (run/'checkpoints').mkdir(parents=True)
+            (run/'artifacts').mkdir()
+            checkpoint = run/'checkpoints/policy_best_val.ckpt'
+            config = dict(chunk_size=20, state_dim=8, action_dim=8, num_epochs=1,
+                          task_scope='complete_pick_carry_place_retreat', bounded_gripper_output=True)
+            config['scene_config'] = dict(initial_robot_state={'qpos_rad': [.123]*7},
+                                        tcp_link7_xyz_m=[.152, 0, -.0235], table_top_z_m=0)
+            torch.save(dict(epoch=1, config=config, model={}), checkpoint)
+            with (checkpoint.parent/'dataset_stats.pkl').open('wb') as f:
+                pickle.dump(dict(qpos_mean=np.zeros(8), qpos_std=np.ones(8),
+                                 action_mean=np.zeros(8), action_std=np.ones(8)), f)
+            target = Path(directory)/'export'
+            with self.assertRaises(ValueError):
+                export_model(checkpoint, target)
+            (run/'artifacts/training_summary.json').write_text(json.dumps(dict(last_metrics={'epoch': 1})))
+>           export_model(checkpoint, target)
+
+tests/test_bundle.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/export.py:41: in export_model
+    source_hashes = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+/usr/lib/python3.12/pathlib.py:1021: in read_bytes
+    with self.open(mode='rb') as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_____ CommandContextTests.test_noise_preserves_the_same_known_past_command _____
+
+self = <tests.test_command_context.CommandContextTests testMethod=test_noise_preserves_the_same_known_past_command>
+
+    def test_noise_preserves_the_same_known_past_command(self):
+        from unittest.mock import patch
+        from training.train import FullTaskPolicy
+        from executor.model import make_policy_observation
+>       config=json.loads((ROOT/'model/candidate_run12_full_contract_recovery/training_config.json').read_text())
+
+tests/test_command_context.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/candidate_run12_full_contract_recovery/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/candidate_run12_full_contract_recovery/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ CommandContextTests.test_state_projection_expansion_preserves_legacy_prediction_and_learns_context _
+
+self = <tests.test_command_context.CommandContextTests testMethod=test_state_projection_expansion_preserves_legacy_prediction_and_learns_context>
+
+    def test_state_projection_expansion_preserves_legacy_prediction_and_learns_context(self):
+        self.assertIsNotNone(importlib.util.find_spec('training.command_context'))
+        from training.command_context import expand_context_state_dict
+        from executor.model import BoundedActPolicy
+>       config=json.loads((ROOT/'model/candidate_run12_full_contract_recovery/training_config.json').read_text())
+
+tests/test_command_context.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/candidate_run12_full_contract_recovery/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/candidate_run12_full_contract_recovery/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ CvaeTrainingTests.test_cvae_training_rejects_missing_or_nonpositive_kl_regularization _
+
+self = <tests.test_cvae_training.CvaeTrainingTests testMethod=test_cvae_training_rejects_missing_or_nonpositive_kl_regularization>
+
+    def test_cvae_training_rejects_missing_or_nonpositive_kl_regularization(self):
+        for weight in [0., -.001, float('nan'), float('inf')]:
+            with self.subTest(weight=weight), self.assertRaises(ValueError):
+>               FullTaskPolicy(self.config(kl_weight=weight))
+
+tests/test_cvae_training.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ CvaeTrainingTests.test_legacy_training_keeps_zero_kl_and_identical_prior_predictions _
+
+self = <tests.test_cvae_training.CvaeTrainingTests testMethod=test_legacy_training_keeps_zero_kl_and_identical_prior_predictions>
+
+    def test_legacy_training_keeps_zero_kl_and_identical_prior_predictions(self):
+>       legacy = FullTaskPolicy(self.config(cvae_training=False)).train()
+
+tests/test_cvae_training.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ CvaeTrainingTests.test_padded_future_labels_do_not_influence_training_prediction _
+
+self = <tests.test_cvae_training.CvaeTrainingTests testMethod=test_padded_future_labels_do_not_influence_training_prediction>
+
+    def test_padded_future_labels_do_not_influence_training_prediction(self):
+>       policy = FullTaskPolicy(self.config()).train()
+
+tests/test_cvae_training.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ CvaeTrainingTests.test_rebased_cvae_preserves_physical_posterior_conditioning _
+
+self = <tests.test_cvae_training.CvaeTrainingTests testMethod=test_rebased_cvae_preserves_physical_posterior_conditioning>
+
+    def test_rebased_cvae_preserves_physical_posterior_conditioning(self):
+        from training.rebase_initializer import paired_config, rebase_initializer
+>       config = self.config()
+
+tests/test_cvae_training.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ CvaeTrainingTests.test_supervised_training_reaches_posterior_and_backpropagates_kl _
+
+self = <tests.test_cvae_training.CvaeTrainingTests testMethod=test_supervised_training_reaches_posterior_and_backpropagates_kl>
+
+    def test_supervised_training_reaches_posterior_and_backpropagates_kl(self):
+>       policy = FullTaskPolicy(self.config()).train()
+
+tests/test_cvae_training.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ CvaeTrainingTests.test_validation_predictions_ignore_future_labels_and_match_runtime _
+
+self = <tests.test_cvae_training.CvaeTrainingTests testMethod=test_validation_predictions_ignore_future_labels_and_match_runtime>
+
+    def test_validation_predictions_ignore_future_labels_and_match_runtime(self):
+>       policy = FullTaskPolicy(self.config()).eval()
+
+tests/test_cvae_training.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ FixedSceneHeadsTests.test_cached_learning_probe_matches_complete_runtime_including_joint_anchor _
+
+self = <tests.test_fixed_scene_heads.FixedSceneHeadsTests testMethod=test_cached_learning_probe_matches_complete_runtime_including_joint_anchor>
+
+    def test_cached_learning_probe_matches_complete_runtime_including_joint_anchor(self):
+>       from evidence.probe_fixed_heads import cached_readout
+E       ModuleNotFoundError: No module named 'evidence.probe_fixed_heads'
+
+tests/test_fixed_scene_heads.py:65: ModuleNotFoundError
+_ FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected _
+
+self = <tests.test_fixed_scene_heads.FixedSceneHeadsTests testMethod=test_conflicting_modes_and_nonpositive_learning_rates_are_rejected>
+
+    def test_conflicting_modes_and_nonpositive_learning_rates_are_rejected(self):
+        for change in [dict(train_nonlinear_gripper_only=True), dict(train_gripper_head_only=True),
+                       dict(reset_action_head=True), dict(nonlinear_gripper_head=False),
+                       dict(freeze_backbone=False), dict(arm_output_lr=0.),
+                       dict(arm_output_lr=float('nan')), dict(gripper_adapter_lr=0.),
+                       dict(prior_gripper_loss_weight=0.)]:
+>           config = self.config()
+
+tests/test_fixed_scene_heads.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_fixed_scene_heads.py:16: in config
+    return test_cvae_training.CvaeTrainingTests().config(nonlinear_gripper_head=True,
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ FixedSceneHeadsTests.test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor _
+
+self = <tests.test_fixed_scene_heads.FixedSceneHeadsTests testMethod=test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor>
+
+    def test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor(self):
+>       policy = FullTaskPolicy(self.config()).train()
+
+tests/test_fixed_scene_heads.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_fixed_scene_heads.py:16: in config
+    return test_cvae_training.CvaeTrainingTests().config(nonlinear_gripper_head=True,
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ FixedSceneHeadsTests.test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent _
+
+self = <tests.test_fixed_scene_heads.FixedSceneHeadsTests testMethod=test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent>
+
+    def test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent(self):
+>       config = self.config()
+
+tests/test_fixed_scene_heads.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_fixed_scene_heads.py:16: in config
+    return test_cvae_training.CvaeTrainingTests().config(nonlinear_gripper_head=True,
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ FixedTrialPermissionTests.test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment _
+
+self = <tests.test_fixed_trial_permission.FixedTrialPermissionTests testMethod=test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment>
+
+    def test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment(self):
+>       check=self.checker();meta,evaluation,receipt=self.fixture()
+
+tests/test_fixed_trial_permission.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_fixed_trial_permission.py:16: in fixture
+    meta=json.loads((MODEL/'runtime_metadata.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/current_cup_run27/runtime_metadata.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/current_cup_run27/runtime_metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ FixedTrialPermissionTests.test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation _
+
+self = <tests.test_fixed_trial_permission.FixedTrialPermissionTests testMethod=test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation>
+
+    def test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation(self):
+>       check=self.checker();meta,evaluation,receipt=self.fixture()
+
+tests/test_fixed_trial_permission.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_fixed_trial_permission.py:16: in fixture
+    meta=json.loads((MODEL/'runtime_metadata.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/current_cup_run27/runtime_metadata.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/current_cup_run27/runtime_metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ FixedTrialPermissionTests.test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied _
+
+self = <tests.test_fixed_trial_permission.FixedTrialPermissionTests testMethod=test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied>
+
+    def test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied(self):
+>       check=self.checker();meta,evaluation,receipt=self.fixture()
+
+tests/test_fixed_trial_permission.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_fixed_trial_permission.py:16: in fixture
+    meta=json.loads((MODEL/'runtime_metadata.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/current_cup_run27/runtime_metadata.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/current_cup_run27/runtime_metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GeneralizationTests.test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact _
+
+self = <tests.test_generalization.GeneralizationTests testMethod=test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact>
+
+    def test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.generalization'))
+        from simulation.generalization import episode_config,validate_initial_pose
+        from simulation.scene import build_scene
+>       base=json.loads((ROOT/'scene/center.json').read_text())
+
+tests/test_generalization.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GeneralizationTests.test_scene_groups_cover_centimetres_without_train_validation_duplicates _
+
+self = <tests.test_generalization.GeneralizationTests testMethod=test_scene_groups_cover_centimetres_without_train_validation_duplicates>
+
+    def test_scene_groups_cover_centimetres_without_train_validation_duplicates(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.generalization'))
+        from simulation.generalization import episode_config
+>       base=json.loads((ROOT/'scene/center.json').read_text())
+
+tests/test_generalization.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GeneralizedEvaluationTests.test_frozen_test_cases_cover9_cup4_start3_site_cases_without_training_seeds _
+
+self = <tests.test_generalized_evaluation.GeneralizedEvaluationTests testMethod=test_frozen_test_cases_cover9_cup4_start3_site_cases_without_training_seeds>
+
+    def test_frozen_test_cases_cover9_cup4_start3_site_cases_without_training_seeds(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.evaluate_generalized'))
+        from simulation.evaluate_generalized import test_cases
+>       base=json.loads((ROOT/'scene/center.json').read_text())
+
+tests/test_generalized_evaluation.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GeneralizedTrainingTests.test_rebased_context_model_preserves_physical_predictions_with_new_statistics _
+
+self = <tests.test_generalized_training.GeneralizedTrainingTests testMethod=test_rebased_context_model_preserves_physical_predictions_with_new_statistics>
+
+    def test_rebased_context_model_preserves_physical_predictions_with_new_statistics(self):
+        self.assertIsNotNone(importlib.util.find_spec('training.rebase_initializer'))
+        from training.rebase_initializer import rebase_initializer,paired_config
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+>       config=json.loads((ROOT/'initializers/run13/training_config.json').read_text())
+
+tests/test_generalized_training.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/initializers/run13/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/initializers/run13/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GripperGradientTests.test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions _
+
+self = <tests.test_gripper_gradient.GripperGradientTests testMethod=test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions>
+
+    def test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions(self):
+        torch.set_num_threads(2)
+>       policy = FullTaskPolicy(self.config()).eval()
+
+tests/test_gripper_gradient.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_gripper_gradient.py:13: in config
+    return CvaeTrainingTests().config(prior_gripper_loss_weight=.05, **updates)
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected _
+
+self = <tests.test_gripper_gradient.GripperGradientTests testMethod=test_nonfinite_or_negative_auxiliary_weight_is_rejected>
+
+    def test_nonfinite_or_negative_auxiliary_weight_is_rejected(self):
+        for weight in [-.1, float('nan'), float('inf')]:
+            with self.subTest(weight=weight), self.assertRaises(ValueError):
+>               config = self.config()
+
+tests/test_gripper_gradient.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_gripper_gradient.py:13: in config
+    return CvaeTrainingTests().config(prior_gripper_loss_weight=.05, **updates)
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GripperGradientTests.test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open _
+
+self = <tests.test_gripper_gradient.GripperGradientTests testMethod=test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open>
+
+    def test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open(self):
+        torch.set_num_threads(2)
+>       policy = FullTaskPolicy(self.config()).train()
+
+tests/test_gripper_gradient.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_gripper_gradient.py:13: in config
+    return CvaeTrainingTests().config(prior_gripper_loss_weight=.05, **updates)
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+___ GripperHeadTests.test_gripper_only_adaptation_cannot_reset_the_arm_head ____
+
+self = <tests.test_gripper_head.GripperHeadTests testMethod=test_gripper_only_adaptation_cannot_reset_the_arm_head>
+
+    def test_gripper_only_adaptation_cannot_reset_the_arm_head(self):
+        with self.assertRaises(ValueError):
+>           FullTaskPolicy(self.config(reset_action_head=True))
+
+tests/test_gripper_head.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_gripper_head.py:11: in config
+    return CvaeTrainingTests().config(train_gripper_head_only=True,
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ GripperHeadTests.test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers _
+
+self = <tests.test_gripper_head.GripperHeadTests testMethod=test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers>
+
+    def test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers(self):
+        torch.set_num_threads(2)
+>       policy = FullTaskPolicy(self.config())
+
+tests/test_gripper_head.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_gripper_head.py:11: in config
+    return CvaeTrainingTests().config(train_gripper_head_only=True,
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ LiftRecoveryTests.test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait _
+
+self = <tests.test_lift_recovery.LiftRecoveryTests testMethod=test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait>
+
+    def test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait(self):
+        from simulation.teacher import task_waypoints,run_teacher
+>       config=json.loads((ROOT/'scene/center.json').read_text())
+
+tests/test_lift_recovery.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ NonlinearGripperTests.test_adapter_training_and_validation_use_deployed_prior_without_future_labels _
+
+self = <tests.test_nonlinear_gripper.NonlinearGripperTests testMethod=test_adapter_training_and_validation_use_deployed_prior_without_future_labels>
+
+    def test_adapter_training_and_validation_use_deployed_prior_without_future_labels(self):
+>       config = self.config()
+
+tests/test_nonlinear_gripper.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_nonlinear_gripper.py:18: in config
+    return test_cvae_training.CvaeTrainingTests().config(
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ NonlinearGripperTests.test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected _
+
+self = <tests.test_nonlinear_gripper.NonlinearGripperTests testMethod=test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected>
+
+    def test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected(self):
+        for update in [dict(train_gripper_head_only=True), dict(reset_action_head=True),
+                       dict(nonlinear_gripper_head=False), dict(gripper_adapter_lr=0.),
+                       dict(gripper_adapter_lr=float('nan')), dict(prior_gripper_loss_weight=0.)]:
+>           config = self.config()
+
+tests/test_nonlinear_gripper.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_nonlinear_gripper.py:18: in config
+    return test_cvae_training.CvaeTrainingTests().config(
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ NonlinearGripperTests.test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output _
+
+self = <tests.test_nonlinear_gripper.NonlinearGripperTests testMethod=test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output>
+
+    def test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output(self):
+>       config = self.config()
+
+tests/test_nonlinear_gripper.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_nonlinear_gripper.py:18: in config
+    return test_cvae_training.CvaeTrainingTests().config(
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ NonlinearGripperTests.test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs _
+
+self = <tests.test_nonlinear_gripper.NonlinearGripperTests testMethod=test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs>
+
+    def test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs(self):
+>       config = self.config()
+
+tests/test_nonlinear_gripper.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_nonlinear_gripper.py:18: in config
+    return test_cvae_training.CvaeTrainingTests().config(
+tests/test_cvae_training.py:16: in config
+    config = json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ PoseObjectiveTests.test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible _
+
+self = <tests.test_pose_objective.PoseObjectiveTests testMethod=test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible>
+
+    def test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible(self):
+        module=self.module()
+        from training.train import FullTaskPolicy
+        from executor.model import BoundedActPolicy
+>       c=json.loads((ROOT/'model/run15/training_config.json').read_text())
+
+tests/test_pose_objective.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ PoseObjectiveTests.test_pose_fk_matches_mujoco_position_and_rotation_at_two_independent_poses _
+
+self = <tests.test_pose_objective.PoseObjectiveTests testMethod=test_pose_fk_matches_mujoco_position_and_rotation_at_two_independent_poses>
+
+    def test_pose_fk_matches_mujoco_position_and_rotation_at_two_independent_poses(self):
+        module=self.module()
+        import mujoco
+        from simulation.scene import build_scene
+        from src.act.nero_kinematics import SerialArmKinematics
+>       config=json.loads((ROOT/'scene/center.json').read_text());model=build_scene(config)
+
+tests/test_pose_objective.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ RecoveryEvaluationTests.test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed _
+
+self = <tests.test_recovery_evaluation.RecoveryEvaluationTests testMethod=test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed>
+
+    def test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed(self):
+        from simulation import evaluate_generalized as module
+        self.assertTrue(hasattr(module,'fresh_test_cases'),'a reused failed-case suite cannot be independent acceptance')
+>       center=json.loads((ROOT/'scene/center.json').read_text())
+
+tests/test_recovery_evaluation.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/center.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ RosGeometryTests.test_fk_matches_the_selected_tcp_and_returns_a_proper_rotation _
+
+self = <tests.test_ros_geometry.RosGeometryTests testMethod=test_fk_matches_the_selected_tcp_and_returns_a_proper_rotation>
+
+    def test_fk_matches_the_selected_tcp_and_returns_a_proper_rotation(self):
+        self.assertIsNotNone(importlib.util.find_spec('executor.ros_execution'))
+        from executor.ros_execution import RobotGeometry
+        root = Path(__file__).resolve().parents[1]
+>       config = json.loads((root/'scene/config.json').read_text())
+
+tests/test_ros_geometry.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ RuntimeEntryTests.test_default_is_offline_and_execute_without_receipt_creates_no_attempt _
+
+self = <tests.test_runtime_entry.RuntimeEntryTests testMethod=test_default_is_offline_and_execute_without_receipt_creates_no_attempt>
+
+    def test_default_is_offline_and_execute_without_receipt_creates_no_attempt(self):
+        root = Path(__file__).resolve().parents[1]
+>       self.assertTrue((root/'run.py').exists())
+E       AssertionError: False is not true
+
+tests/test_runtime_entry.py:40: AssertionError
+___________ SceneTests.test_invalid_geometry_and_force_are_rejected ____________
+
+self = <tests.test_scene.SceneTests testMethod=test_invalid_geometry_and_force_are_rejected>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.scene'),
+                             'complete-task scene builder has not been implemented')
+        from simulation.scene import build_scene, tcp_in_link7
+        self.build, self.tcp = build_scene, tcp_in_link7
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_scene.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________ SceneTests.test_model_preserves_limits_camera_and_selected_tcp ________
+
+self = <tests.test_scene.SceneTests testMethod=test_model_preserves_limits_camera_and_selected_tcp>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.scene'),
+                             'complete-task scene builder has not been implemented')
+        from simulation.scene import build_scene, tcp_in_link7
+        self.build, self.tcp = build_scene, tcp_in_link7
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_scene.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+____________ SceneTests.test_reflected_camera_transform_is_rejected ____________
+
+self = <tests.test_scene.SceneTests testMethod=test_reflected_camera_transform_is_rejected>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.scene'),
+                             'complete-task scene builder has not been implemented')
+        from simulation.scene import build_scene, tcp_in_link7
+        self.build, self.tcp = build_scene, tcp_in_link7
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_scene.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+____ SceneTests.test_same_source_and_destination_cannot_be_a_full_transfer _____
+
+self = <tests.test_scene.SceneTests testMethod=test_same_source_and_destination_cannot_be_a_full_transfer>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.scene'),
+                             'complete-task scene builder has not been implemented')
+        from simulation.scene import build_scene, tcp_in_link7
+        self.build, self.tcp = build_scene, tcp_in_link7
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_scene.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ SnapshotTests.test_restored_integration_and_delayed_servo_produce_identical_next_physics _
+
+self = <tests.test_snapshot.SnapshotTests testMethod=test_restored_integration_and_delayed_servo_produce_identical_next_physics>
+
+    def test_restored_integration_and_delayed_servo_produce_identical_next_physics(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.snapshot'))
+        from simulation.snapshot import capture, restore
+>       cfg = json.loads((Path(__file__).resolve().parents[1]/'scene/config.json').read_text())
+
+tests/test_snapshot.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+___ TeacherTests.test_contact_aware_expert_width_reserves_raw_prefix_margin ____
+
+self = <tests.test_teacher.TeacherTests testMethod=test_contact_aware_expert_width_reserves_raw_prefix_margin>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_______ TeacherTests.test_continuation_does_not_relabel_full_grasp_data ________
+
+self = <tests.test_teacher.TeacherTests testMethod=test_continuation_does_not_relabel_full_grasp_data>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ TeacherTests.test_delayed_expert_gripper_can_use_slower_rate_with_same_full_opening _
+
+self = <tests.test_teacher.TeacherTests testMethod=test_delayed_expert_gripper_can_use_slower_rate_with_same_full_opening>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________ TeacherTests.test_lift_path_keeps_orientation_and_vertical_tcp ________
+
+self = <tests.test_teacher.TeacherTests testMethod=test_lift_path_keeps_orientation_and_vertical_tcp>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_____ TeacherTests.test_plan_contains_actual_transfer_release_and_retreat ______
+
+self = <tests.test_teacher.TeacherTests testMethod=test_plan_contains_actual_transfer_release_and_retreat>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+__________ TeacherTests.test_release_teacher_refuses_unsupported_cup ___________
+
+self = <tests.test_teacher.TeacherTests testMethod=test_release_teacher_refuses_unsupported_cup>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+____________ TeacherTests.test_retreat_requires_actual_open_fingers ____________
+
+self = <tests.test_teacher.TeacherTests testMethod=test_retreat_requires_actual_open_fingers>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ TeacherTests.test_robot_table_collision_is_not_hidden_by_valid_cup_contacts __
+
+self = <tests.test_teacher.TeacherTests testMethod=test_robot_table_collision_is_not_hidden_by_valid_cup_contacts>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+__ TeacherTests.test_snapshot_corrections_have_explicit_partial_start_stages ___
+
+self = <tests.test_teacher.TeacherTests testMethod=test_snapshot_corrections_have_explicit_partial_start_stages>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ TeacherTests.test_teacher_uses_tighter_configured_lead_without_rebasing_history _
+
+self = <tests.test_teacher.TeacherTests testMethod=test_teacher_uses_tighter_configured_lead_without_rebasing_history>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_________ TeacherTests.test_unreachable_or_invalid_opening_is_rejected _________
+
+self = <tests.test_teacher.TeacherTests testMethod=test_unreachable_or_invalid_opening_is_rejected>
+
+    def setUp(self):
+        self.assertIsNotNone(importlib.util.find_spec('simulation.teacher'),
+                             'complete physical teacher is missing')
+        from simulation.teacher import task_waypoints, run_teacher
+        self.waypoints, self.run_teacher = task_waypoints, run_teacher
+>       self.config = json.loads((ROOT/'scene/config.json').read_text())
+
+tests/test_teacher.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/scene/config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ TrainingReviewFixes.test_completed_epochs_alone_cannot_export_a_generalized_run _
+
+self = <tests.test_training_review_fixes.TrainingReviewFixes testMethod=test_completed_epochs_alone_cannot_export_a_generalized_run>
+
+    def test_completed_epochs_alone_cannot_export_a_generalized_run(self):
+        from training.export import export_model
+>       config=json.loads((ROOT/'initializers/run13/training_config.json').read_text())
+
+tests/test_training_review_fixes.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/initializers/run13/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/initializers/run13/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ VisualLearningTests.test_explicit_visual_training_updates_backbone_and_preserves_default_freeze _
+
+self = <tests.test_visual_learning.VisualLearningTests testMethod=test_explicit_visual_training_updates_backbone_and_preserves_default_freeze>
+
+    def test_explicit_visual_training_updates_backbone_and_preserves_default_freeze(self):
+        from training.train import FullTaskPolicy
+        torch.set_num_threads(2);torch.manual_seed(42)
+>       policy=FullTaskPolicy(self.config(False));policy.train()
+
+tests/test_visual_learning.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_visual_learning.py:7: in config
+    c=json.loads((ROOT/'model/run15/training_config.json').read_text())
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/model/run15/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  /home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+    warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_alignment_pipeline.py::AlignmentPipelineTests::test_reusing_a_pipeline_never_overwrites_its_existing_status
+FAILED tests/test_bundle.py::BundleTests::test_export_binds_completed_training_and_keeps_hardware_disabled
+FAILED tests/test_command_context.py::CommandContextTests::test_noise_preserves_the_same_known_past_command
+FAILED tests/test_command_context.py::CommandContextTests::test_state_projection_expansion_preserves_legacy_prediction_and_learns_context
+FAILED tests/test_cvae_training.py::CvaeTrainingTests::test_cvae_training_rejects_missing_or_nonpositive_kl_regularization
+FAILED tests/test_cvae_training.py::CvaeTrainingTests::test_legacy_training_keeps_zero_kl_and_identical_prior_predictions
+FAILED tests/test_cvae_training.py::CvaeTrainingTests::test_padded_future_labels_do_not_influence_training_prediction
+FAILED tests/test_cvae_training.py::CvaeTrainingTests::test_rebased_cvae_preserves_physical_posterior_conditioning
+FAILED tests/test_cvae_training.py::CvaeTrainingTests::test_supervised_training_reaches_posterior_and_backpropagates_kl
+FAILED tests/test_cvae_training.py::CvaeTrainingTests::test_validation_predictions_ignore_future_labels_and_match_runtime
+FAILED tests/test_fixed_scene_heads.py::FixedSceneHeadsTests::test_cached_learning_probe_matches_complete_runtime_including_joint_anchor
+FAILED tests/test_fixed_scene_heads.py::FixedSceneHeadsTests::test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+FAILED tests/test_fixed_scene_heads.py::FixedSceneHeadsTests::test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor
+FAILED tests/test_fixed_scene_heads.py::FixedSceneHeadsTests::test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent
+FAILED tests/test_fixed_trial_permission.py::FixedTrialPermissionTests::test_exact_acknowledged_candidate_may_start_trial_but_not_general_deployment
+FAILED tests/test_fixed_trial_permission.py::FixedTrialPermissionTests::test_nominal_or_safety_failure_cannot_be_relabelled_as_approved_evaluation
+FAILED tests/test_fixed_trial_permission.py::FixedTrialPermissionTests::test_wrong_model_changed_evaluation_missing_ack_or_expired_receipt_is_denied
+FAILED tests/test_generalization.py::GeneralizationTests::test_initial_ik_matches_declared_translation_and_has_no_unexpected_contact
+FAILED tests/test_generalization.py::GeneralizationTests::test_scene_groups_cover_centimetres_without_train_validation_duplicates
+FAILED tests/test_generalized_evaluation.py::GeneralizedEvaluationTests::test_frozen_test_cases_cover9_cup4_start3_site_cases_without_training_seeds
+FAILED tests/test_generalized_training.py::GeneralizedTrainingTests::test_rebased_context_model_preserves_physical_predictions_with_new_statistics
+FAILED tests/test_gripper_gradient.py::GripperGradientTests::test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions
+FAILED tests/test_gripper_gradient.py::GripperGradientTests::test_nonfinite_or_negative_auxiliary_weight_is_rejected
+FAILED tests/test_gripper_gradient.py::GripperGradientTests::test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open
+FAILED tests/test_gripper_head.py::GripperHeadTests::test_gripper_only_adaptation_cannot_reset_the_arm_head
+FAILED tests/test_gripper_head.py::GripperHeadTests::test_optimizer_updates_only_gripper_row_and_preserves_arm_predictions_and_buffers
+FAILED tests/test_lift_recovery.py::LiftRecoveryTests::test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait
+FAILED tests/test_nonlinear_gripper.py::NonlinearGripperTests::test_adapter_training_and_validation_use_deployed_prior_without_future_labels
+FAILED tests/test_nonlinear_gripper.py::NonlinearGripperTests::test_incompatible_training_modes_and_invalid_adapter_rate_are_rejected
+FAILED tests/test_nonlinear_gripper.py::NonlinearGripperTests::test_initializer_upgrade_is_explicit_and_rebase_preserves_trained_adapter_output
+FAILED tests/test_nonlinear_gripper.py::NonlinearGripperTests::test_real_optimizer_changes_only_adapter_and_preserves_all_arm_outputs
+FAILED tests/test_pose_objective.py::PoseObjectiveTests::test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible
+FAILED tests/test_pose_objective.py::PoseObjectiveTests::test_pose_fk_matches_mujoco_position_and_rotation_at_two_independent_poses
+FAILED tests/test_recovery_evaluation.py::RecoveryEvaluationTests::test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed
+FAILED tests/test_ros_geometry.py::RosGeometryTests::test_fk_matches_the_selected_tcp_and_returns_a_proper_rotation
+FAILED tests/test_runtime_entry.py::RuntimeEntryTests::test_default_is_offline_and_execute_without_receipt_creates_no_attempt
+FAILED tests/test_scene.py::SceneTests::test_invalid_geometry_and_force_are_rejected
+FAILED tests/test_scene.py::SceneTests::test_model_preserves_limits_camera_and_selected_tcp
+FAILED tests/test_scene.py::SceneTests::test_reflected_camera_transform_is_rejected
+FAILED tests/test_scene.py::SceneTests::test_same_source_and_destination_cannot_be_a_full_transfer
+FAILED tests/test_snapshot.py::SnapshotTests::test_restored_integration_and_delayed_servo_produce_identical_next_physics
+FAILED tests/test_teacher.py::TeacherTests::test_contact_aware_expert_width_reserves_raw_prefix_margin
+FAILED tests/test_teacher.py::TeacherTests::test_continuation_does_not_relabel_full_grasp_data
+FAILED tests/test_teacher.py::TeacherTests::test_delayed_expert_gripper_can_use_slower_rate_with_same_full_opening
+FAILED tests/test_teacher.py::TeacherTests::test_lift_path_keeps_orientation_and_vertical_tcp
+FAILED tests/test_teacher.py::TeacherTests::test_plan_contains_actual_transfer_release_and_retreat
+FAILED tests/test_teacher.py::TeacherTests::test_release_teacher_refuses_unsupported_cup
+FAILED tests/test_teacher.py::TeacherTests::test_retreat_requires_actual_open_fingers
+FAILED tests/test_teacher.py::TeacherTests::test_robot_table_collision_is_not_hidden_by_valid_cup_contacts
+FAILED tests/test_teacher.py::TeacherTests::test_snapshot_corrections_have_explicit_partial_start_stages
+FAILED tests/test_teacher.py::TeacherTests::test_teacher_uses_tighter_configured_lead_without_rebasing_history
+FAILED tests/test_teacher.py::TeacherTests::test_unreachable_or_invalid_opening_is_rejected
+FAILED tests/test_training_review_fixes.py::TrainingReviewFixes::test_completed_epochs_alone_cannot_export_a_generalized_run
+FAILED tests/test_visual_learning.py::VisualLearningTests::test_explicit_visual_training_updates_backbone_and_preserves_default_freeze
+54 failed, 138 passed, 2 skipped, 1 warning in 6.81s

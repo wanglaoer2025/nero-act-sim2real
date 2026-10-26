@@ -1,0 +1,95 @@
+{
+  "time_local": "2026-10-22T21:24:46.485905+08:00",
+  "user_request": "打开ros和驱动，然后下发真机运动",
+  "motion_goal_assumption": "Continue complete ACT grasp/place workflow from ongoing sim-to-real task",
+  "ROS_CAN": {
+    "service": "nero-ros-can-readonly-20261021.service",
+    "already_running_at_request": true,
+    "restart_required": false,
+    "can_device": "can0",
+    "bitrate": 1000000,
+    "driver_domain_id": 42,
+    "feedback_publisher": "agx_arm_ctrl_single_node",
+    "feedback_rate_hz": 209.36015517790264,
+    "control_enabled": false,
+    "auto_enable": false,
+    "speed_percent_parameter": 0,
+    "receive_only_send_guard_retained": true
+  },
+  "fresh_robot_state": {
+    "q_rad": [
+      0.1832072138786316,
+      -0.12651892006397247,
+      0.09998991340398788,
+      1.5707788467407227,
+      -0.023893557488918304,
+      0.28176596760749817,
+      0.1310393214225769
+    ],
+    "q_deg": [
+      10.497000131596192,
+      -7.249000148218654,
+      5.729000031927084,
+      89.99899846667017,
+      -1.36900000166822,
+      16.14400075432951,
+      7.508000067771891
+    ],
+    "gripper_width_mm": 94.92599964141846,
+    "SDK_frame_pose_m_rad": [
+      -0.218665,
+      -0.091434,
+      0.47942599999999996,
+      -1.5707439669173369,
+      -3.490658503988659e-05,
+      3.1415402937122336
+    ],
+    "raw_controller_feedback": {
+      "arm_status": 2,
+      "motion_status": 0,
+      "ctrl_mode": 1,
+      "err_code": 0
+    },
+    "SDK_ROS_max_arm_difference_rad": 6.981314096383973e-05,
+    "status2_alone_used_as_rejection": false
+  },
+  "current_scene_frame": "/home/user/wq/nero_motion_request_20261022/preflight_01/live_ACT_preview/camera_000.png",
+  "current_scene_sha256": "68cac9b892747e0be316bc7688f261fa50a1dca84d2fb035ef3133e17dfc6876",
+  "preflight": {
+    "camera_frame_captured": true,
+    "historical_kernel_warmup_records": 3,
+    "current_cup_detections": 0,
+    "valid_live_ACT_predictions": 0,
+    "current_error": "RuntimeError(\"ValueError('Expected exactly one YOLO cup before yellow outline refinement')\")",
+    "current_table_plane_verified": false,
+    "independent_TCP_verified": false,
+    "original_six_case_result": "5/6",
+    "deployment_ready": false,
+    "blockers": [
+      "Current live image has no YOLO cup detection at unchanged0.2 threshold; position frontend rejects before ACT prediction.",
+      "Current independent camera/base and TCP validation are still absent; previously observed descent/cup contact cannot be cleared by reusing nominal transforms."
+    ],
+    "no_threshold_or_protection_changed": true
+  },
+  "outcome": {
+    "ROS_CAN_connection_verified": true,
+    "motion_submitted": false,
+    "arm_targets_sent": 0,
+    "gripper_targets_sent": 0,
+    "enable_sent": false,
+    "reset_sent": false,
+    "can_tx_before": 6677,
+    "can_tx_after": 6677,
+    "final_mode": "existing receive-only driver retained"
+  },
+  "evidence_sha256": {
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/ROS_feedback.json": "2fcd7f0152238b6eb11af0e37f8476f02d3ef40a20c4c4deff133e14beac5867",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/SDK_health.json": "bd5265f343d741c55c5827ac09c376095da546909a023c8f1e485ee4270291a9",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/live_ACT_preview/report.json": "6a00897c37c4d5165faa34b2806680621bddf7c8fc3baaba5883693df4c8a7a5",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/offline_cup_detection_review.json": "8eaf309581247c2208fc7333a832b4f33258f8ef32ccd5054f213cc903013b02",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/probe_provenance.json": "43f04670a621ef845374257cfd35e9a7d8908b13c1fc8f9dc638f5bf05b9e1ef",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_plane_8mm_derivation.json": "bc408beedb9522c09edc92589ad52bae7ab58bc5853afbb63a9ba548dbf107d2",
+    "/home/user/wq/nero_act_transfer_resume_20261021/results/qualification/summary.json": "0cc1db992a83b4eadafe4816b1e4b0b968d2a5ac5ad9155408b1166225458c66"
+  },
+  "next_work": "Use saved current image and existing calibration records to repair/qualify observation and geometry before forming a physical grasp trajectory; do not request duplicate installation photographs as a default."
+}

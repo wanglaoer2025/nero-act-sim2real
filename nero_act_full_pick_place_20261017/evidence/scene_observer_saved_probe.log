@@ -1,0 +1,16 @@
+usage: - [-h] --weights WEIGHTS [--source-class SOURCE_CLASS]
+         [--destination-class DESTINATION_CLASS] [--pick-place] [--auto-lock]
+         [--stable-frames STABLE_FRAMES]
+         [--workspace-mm WORKSPACE_MM WORKSPACE_MM WORKSPACE_MM WORKSPACE_MM WORKSPACE_MM WORKSPACE_MM]
+         [--source-offset-mm SOURCE_OFFSET_MM SOURCE_OFFSET_MM SOURCE_OFFSET_MM]
+         [--destination-offset-mm DESTINATION_OFFSET_MM DESTINATION_OFFSET_MM DESTINATION_OFFSET_MM]
+         --cup-height-mm CUP_HEIGHT_MM --cup-radius-mm CUP_RADIUS_MM
+         --table-z-base-mm TABLE_Z_BASE_MM
+         [--transit-speed-percent TRANSIT_SPEED_PERCENT]
+         [--precision-speed-percent PRECISION_SPEED_PERCENT]
+         [--gripper-force-n GRIPPER_FORCE_N] --act-output ACT_OUTPUT
+         --act-position-group {1,2,3} [--act-frequency ACT_FREQUENCY]
+         [--act-action-lead-ms ACT_ACTION_LEAD_MS] [--allow-approximate-tcp]
+         [--confidence CONFIDENCE] [--detection-timeout-s DETECTION_TIMEOUT_S]
+         [--observe-only]
+-: error: the following arguments are required: --weights

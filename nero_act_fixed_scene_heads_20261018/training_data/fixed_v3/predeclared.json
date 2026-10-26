@@ -1,0 +1,43 @@
+{
+  "full_domains": [
+    "nominal",
+    "delay_100ms",
+    "delay_500ms",
+    "force"
+  ],
+  "variants_per_domain": 3,
+  "train_variants": [
+    0,
+    1
+  ],
+  "validation_variants": [
+    2
+  ],
+  "fixed_object_positions": true,
+  "initial_joint_jitter_rad": 0.001,
+  "initial_joint_seeds": [
+    270000,
+    270001,
+    270002,
+    270003,
+    270004,
+    270005,
+    270006,
+    270007,
+    270008,
+    270009,
+    270010,
+    270011
+  ],
+  "partial_roles": [
+    "release_to_retreat"
+  ],
+  "partial_origins": [
+    "force_0",
+    "delay_100ms"
+  ],
+  "physical_limits_unchanged": true,
+  "no_hardware": true,
+  "no_automatic_retries": true,
+  "slower_delayed_teacher": true
+}

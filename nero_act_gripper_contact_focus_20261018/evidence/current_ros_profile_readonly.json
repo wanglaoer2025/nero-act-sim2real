@@ -1,0 +1,185 @@
+{
+  "mode": "ROS_graph_and_GetParameters_only",
+  "motion_sent": false,
+  "gripper_sent": false,
+  "enable_sent": false,
+  "parameter_changes": false,
+  "sdk_imported": false,
+  "wall_s": 1792333402.1951103,
+  "nodes": [
+    [
+      "agx_arm_ctrl_single_node",
+      "/"
+    ],
+    [
+      "robot_state_publisher",
+      "/"
+    ],
+    [
+      "move_group",
+      "/"
+    ],
+    [
+      "moveit",
+      "/"
+    ],
+    [
+      "moveit_1760320788",
+      "/"
+    ],
+    [
+      "move_group_private_104605484623440",
+      "/"
+    ],
+    [
+      "transform_listener_impl_5f235d63e260",
+      "/"
+    ],
+    [
+      "transform_listener_impl_5f235fb060d0",
+      "/"
+    ],
+    [
+      "moveit_simple_controller_manager",
+      "/"
+    ],
+    [
+      "controller_manager",
+      "/"
+    ],
+    [
+      "fakesystem",
+      "/"
+    ],
+    [
+      "arm_controller",
+      "/"
+    ],
+    [
+      "gripper_controller",
+      "/"
+    ],
+    [
+      "joint_state_broadcaster",
+      "/"
+    ],
+    [
+      "act_fixed_scene_profile_readonly",
+      "/"
+    ]
+  ],
+  "control_topics": {
+    "/feedback/joint_states": {
+      "publishers": [
+        {
+          "name": "agx_arm_ctrl_single_node",
+          "namespace": "/"
+        }
+      ],
+      "subscribers": [
+        {
+          "name": "robot_state_publisher",
+          "namespace": "/"
+        },
+        {
+          "name": "move_group_private_104605484623440",
+          "namespace": "/"
+        }
+      ]
+    },
+    "/control/joint_states": {
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/"
+        }
+      ],
+      "subscribers": []
+    },
+    "/control/gated_joint_states": {
+      "publishers": [],
+      "subscribers": [
+        {
+          "name": "agx_arm_ctrl_single_node",
+          "namespace": "/"
+        }
+      ]
+    }
+  },
+  "driver_parameters": {
+    "control_enabled": {
+      "type": 1,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0,
+      "string_value": ""
+    },
+    "auto_enable": {
+      "type": 1,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0,
+      "string_value": ""
+    },
+    "speed_percent": {
+      "type": 2,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0,
+      "string_value": ""
+    },
+    "fast_mode": {
+      "type": 1,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0,
+      "string_value": ""
+    },
+    "pub_rate": {
+      "type": 2,
+      "bool_value": false,
+      "integer_value": 200,
+      "double_value": 0.0,
+      "string_value": ""
+    },
+    "gripper_default_effort": {
+      "type": 3,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 1.0,
+      "string_value": ""
+    },
+    "can_port": {
+      "type": 4,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0,
+      "string_value": "can0"
+    },
+    "arm_type": {
+      "type": 4,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0,
+      "string_value": "nero"
+    }
+  },
+  "controllers": [
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "read_completed": true
+}

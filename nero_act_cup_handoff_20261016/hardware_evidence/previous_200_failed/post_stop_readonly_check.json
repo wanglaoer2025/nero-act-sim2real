@@ -1,0 +1,145 @@
+{
+  "mode": "read_only_post_stop_check",
+  "motion_sent": false,
+  "actual_start": [
+    0.20746728818456597,
+    -0.12178907520416431,
+    0.12356931104119853,
+    1.5677420006039067,
+    -0.0182212373908208,
+    0.2669306558000128,
+    0.14351842439149373,
+    0.06643
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 326377.387311132,
+      "stamp": 1792124122.2802474,
+      "q": [
+        0.20746728818456597,
+        -0.12178907520416431,
+        0.1236740307963182,
+        1.5677420006039067,
+        -0.0182212373908208,
+        0.2669306558000128,
+        0.14351842439149373,
+        0.06643
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 326377.387391601,
+      "stamp": 1792124122.2840343,
+      "q": [
+        0.20748241245746613,
+        -0.12182281166315079,
+        0.12360551953315735,
+        1.567737102508545,
+        -0.018222855404019356,
+        0.26695552468299866,
+        0.1434912383556366,
+        0.06646594405174255
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.00022781698498874903,
+  "execution_readiness_checks_passed": true,
+  "current_actual": [
+    0.2074847414770859,
+    -0.12180652849668426,
+    0.1236740307963182,
+    1.5677420006039067,
+    -0.0182212373908208,
+    0.2669306558000128,
+    0.14351842439149373,
+    0.06643
+  ],
+  "feedback_samples": 200,
+  "one_second_joint_span_rad": [
+    0.00012217304763958992,
+    0.00010471975511966436,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.00013962634015957098
+  ],
+  "one_second_gripper_span_m": 0.0,
+  "passed": true
+}

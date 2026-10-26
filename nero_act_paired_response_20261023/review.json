@@ -1,0 +1,17 @@
+{
+  "reviewer": "position_learning_review",
+  "verdict": "No Important/Critical blockers",
+  "checks": [
+    "24pairs train-only, exact initial robot state and prior command; fixed target; one cup axis changed",
+    "FK paired normalization and worst-prefix scale match plan",
+    "Probe weights discarded and exact initializer reloaded; AdamW moments restored fromstep3000",
+    "Fixed2000 steps, no validation optimization or checkpoint selection",
+    "Original response gate and five full/six mechanism/423 preservation criteria unchanged",
+    "Four new tests independently rerun"
+  ],
+  "limitations": [
+    "Probe proves two training-pair learnability only",
+    "No hardware verification",
+    "No independent training run by reviewer"
+  ]
+}

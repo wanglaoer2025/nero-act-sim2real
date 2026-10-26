@@ -1,0 +1,88 @@
+{
+  "complete": false,
+  "episodes": [
+    {
+      "id": 5000,
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5000.hdf5",
+      "split": "train",
+      "source_group": "fixed_5000",
+      "domain": "nominal",
+      "sha256": "9d9822c6e32b602f7471732e48dc9ff8f26cf79fbd62873e1928a93a76221302",
+      "raw_path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/raw/episode_5000.hdf5",
+      "raw_sha256": "84c3fa4480b78e32c1e151d68baed2987c7db71a6a1843d0934aae4802d3d073",
+      "task": "complete_pick_carry_place_retreat",
+      "full_task_verified": true,
+      "teacher_success": true,
+      "replay": {
+        "frames": 2156,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 216
+      },
+      "provenance": null,
+      "frames": 2156
+    },
+    {
+      "id": 5001,
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5001.hdf5",
+      "split": "train",
+      "source_group": "fixed_5001",
+      "domain": "nominal",
+      "sha256": "0b6817228bfcba264c553526a9b60a2aa634d39d0e3620928bcf7db50cd6ce68",
+      "raw_path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/raw/episode_5001.hdf5",
+      "raw_sha256": "48ad7957920581e933e734c40762d8f49fd99b3113d54404d9a8137662d50fc9",
+      "task": "complete_pick_carry_place_retreat",
+      "full_task_verified": true,
+      "teacher_success": true,
+      "replay": {
+        "frames": 2156,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 216
+      },
+      "provenance": null,
+      "frames": 2156
+    },
+    {
+      "id": 5002,
+      "path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/episode_5002.hdf5",
+      "split": "val",
+      "source_group": "fixed_5002",
+      "domain": "nominal",
+      "sha256": "f027c081f9e6fea6d048a319537ec839b11bef34f893e7b094a2aa88271d1977",
+      "raw_path": "/home/user/wq/nero_act_fixed_scene_heads_20261018/training_data/fixed_v1/raw/episode_5002.hdf5",
+      "raw_sha256": "fe1680be36d1e818daf2423300f34bbb287b1e341c5dd4d6d850d114e304e514",
+      "task": "complete_pick_carry_place_retreat",
+      "full_task_verified": true,
+      "teacher_success": true,
+      "replay": {
+        "frames": 2156,
+        "maximum_qpos_error": 0.0,
+        "passed": true
+      },
+      "prefix_contract_audit": {
+        "passed": true,
+        "windows": 216
+      },
+      "provenance": null,
+      "frames": 2156
+    }
+  ],
+  "rejected": [
+    {
+      "id": 5003,
+      "split": "train",
+      "domain": "delay_100ms",
+      "error": "Discontinuous raw arm prefix; no rebasing or large-jump clipping"
+    }
+  ],
+  "scope": "current_fixed_scene",
+  "source_model": "/home/user/wq/nero_act_gripper_contact_focus_20261018/model/run26_current_fixed_scene",
+  "hardware_connected": false
+}

@@ -1,0 +1,33 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+number of parameters: 12.58M
+{"id": 9000, "role": "regression", "passed": false, "points": 2465, "events": [{"kind": "GRASP", "physics_step": 1025, "active_points": 1021, "simulated_permission_only": true, "real_receipt": false}, {"kind": "CARRY", "physics_step": 1828, "active_points": 1698, "simulated_permission_only": true, "real_receipt": false}, {"kind": "RELEASE", "physics_step": 2571, "active_points": 2356, "simulated_permission_only": true, "real_receipt": false}], "lift_m": 0.19978969691484982, "error": "ValueError: At least three current visible card corners required"}
+{"id": 9005, "role": "regression", "passed": false, "points": 1209, "events": [{"kind": "GRASP", "physics_step": 1074, "active_points": 1070, "simulated_permission_only": true, "real_receipt": false}], "lift_m": 8.397963365353034e-05, "error": "RuntimeError: Attached-cup model would cross the table"}
+{"id": 9006, "role": "regression", "passed": true, "points": 2739, "events": [{"kind": "GRASP", "physics_step": 955, "active_points": 951, "simulated_permission_only": true, "real_receipt": false}, {"kind": "CARRY", "physics_step": 1753, "active_points": 1623, "simulated_permission_only": true, "real_receipt": false}, {"kind": "RELEASE", "physics_step": 2438, "active_points": 2223, "simulated_permission_only": true, "real_receipt": false}, {"kind": "RETREAT", "physics_step": 2697, "active_points": 2353, "simulated_permission_only": true, "real_receipt": false}], "lift_m": 0.1835102532312885, "error": null}
+{"id": 9200, "role": "regression", "passed": true, "points": 2866, "events": [{"kind": "GRASP", "physics_step": 930, "active_points": 926, "simulated_permission_only": true, "real_receipt": false}, {"kind": "CARRY", "physics_step": 1724, "active_points": 1594, "simulated_permission_only": true, "real_receipt": false}, {"kind": "RELEASE", "physics_step": 2483, "active_points": 2268, "simulated_permission_only": true, "real_receipt": false}, {"kind": "RETREAT", "physics_step": 2757, "active_points": 2414, "simulated_permission_only": true, "real_receipt": false}], "lift_m": 0.19816248535297187, "error": null}
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_contact_escape_fix_20261023/evaluate_escape.py", line 76, in <module>
+    evaluate_dense.main()
+  File "/home/user/wq/nero_act_dense_response_20261023/evaluate_dense.py", line 62, in main
+    evaluation.main()
+  File "/home/user/wq/nero_act_contact_escape_fix_20261023/evaluate_escape.py", line 46, in evaluate
+    result=runtime.rollout(row['scene'],policy,stats,scenario,output/str(row['id']),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_contact_escape_fix_20261023/supervised_contact_escape.py", line 352, in rollout
+    advance(row,source,prefix_part=common_history,admit=row_index==len(rows)-1);active+=1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_contact_escape_fix_20261023/supervised_contact_escape.py", line 182, in advance
+    history_manager.sample(model,data,renderer,visual_observer)
+  File "/home/user/wq/nero_act_grouped_gripper_20261021/simulation/history_observation.py", line 44, in sample
+    receipt=lookup_receipt(self.receipts,stamp);previous=float(receipt['rows'][-1][7])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_grouped_gripper_20261021/executor/observation_history.py", line 34, in lookup_receipt
+    or np.any((rows[:, 7] < 0) | (rows[:, 7] > .0950001))
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/numpy/_core/fromnumeric.py", line 2577, in any
+    return _wrapreduction_any_all(a, np.logical_or, 'any', axis, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/numpy/_core/fromnumeric.py", line 88, in _wrapreduction_any_all
+    passkwargs = {k: v for k, v in kwargs.items()
+                  ^^^^
+KeyboardInterrupt

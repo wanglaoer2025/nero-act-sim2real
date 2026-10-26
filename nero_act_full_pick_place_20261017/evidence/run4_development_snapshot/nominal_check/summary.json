@@ -1,0 +1,85 @@
+{
+  "checkpoint_sha256": "81fb5f78caac861babe670a9d3d34923ccc1022fc416447980a1ab8a5b8818a9",
+  "selected_epoch": 43,
+  "task_scope": "complete_pick_carry_place_retreat",
+  "source_sha256": {
+    "executor/model.py": "53eaadd9d0527ec971a93ca0c949368dabbdc9441b91dd91457656ce2aeafa6b",
+    "executor/contract.py": "ea05e05392e2cf325d58a38578e9c463c248158fe87789f6dd0ab55d8b8b1b66",
+    "simulation/evaluate.py": "6528de3c1295bb333e13c963a2b0dd0f1561b5085e61232175ad7d202d9af17e",
+    "simulation/scene.py": "05ff4e11d90326028fdc717dfb8569497cfd7b8f44cd6b84bbae53da9babf325",
+    "simulation/teacher.py": "020209523598b20a0ea1d32b2f432ec4b9a0a517d8cc9c13221caf9caa904ddc",
+    "simulation/outcome.py": "34509d83cccfa7240cefecced226de5ebcb32fd7879abdbf9f36cccde06d78e7",
+    "scene/config.json": "bd16a93490eff3e0bc3d6727b3e21fc9acea07275e64cdb77149858ed81ca42f",
+    "policy_source/src/act/nero_policy.py": "33cdfd4dc048623664072d2d7c9ca1eda96fb9cf4474eb91a1043ba8c738bba3",
+    "policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d"
+  },
+  "scenarios": [
+    {
+      "query_stride": 10,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "nominal",
+      "seed": 92000
+    }
+  ],
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "reach_deadline_steps": 3200,
+  "post_completion_hold_steps": 100,
+  "observation_policy": "fresh rendered RGB and measured8D state per query",
+  "hardware_deployment_allowed": false,
+  "results": [
+    {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19679323019385098,
+      "maximum_horizontal_transfer_m": 0.19234124066435332,
+      "stable_released_frames": 101,
+      "lift_contact_frames": 664,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "last_observation": {
+        "cup_xyz": [
+          -0.5238483497198135,
+          -0.17411096809788204,
+          0.047496687810920944
+        ],
+        "tcp_xyz": [
+          -0.5271729862049999,
+          -0.17617562381066462,
+          0.2453193249459016
+        ],
+        "cup_upright": 0.9999999999999727,
+        "cup_speed": 4.208455082817972e-07,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.0949999987758366,
+        "contract_valid": true
+      },
+      "scenario": {
+        "query_stride": 10,
+        "servo_delay_steps": 0,
+        "observation_age_s": 0.05,
+        "jitter": false,
+        "force": false,
+        "name": "nominal",
+        "seed": 92000
+      },
+      "frames": 2162,
+      "queries": 207,
+      "error": null,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "post_completion_freeze_step": 2061,
+      "runtime_s": 20.065744575986173
+    }
+  ],
+  "complete": true,
+  "passed": 1,
+  "total": 1
+}

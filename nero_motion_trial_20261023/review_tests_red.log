@@ -1,0 +1,33 @@
+test_current_tracking_height_and_error_guards_remain_active (test_air_trial.AirTrialBoundaryTests.test_current_tracking_height_and_error_guards_remain_active) ... ok
+test_failed_receiver_cannot_send_even_a_valid_next_target (test_air_trial.AirTrialBoundaryTests.test_failed_receiver_cannot_send_even_a_valid_next_target) ... FAIL
+test_joint_jump_or_gripper_motion_is_rejected (test_air_trial.AirTrialBoundaryTests.test_joint_jump_or_gripper_motion_is_rejected) ... ok
+test_loaded_plan_and_targets_are_bound_to_their_own_bytes (test_air_trial.AirTrialBoundaryTests.test_loaded_plan_and_targets_are_bound_to_their_own_bytes) ... ERROR
+test_low_flange_path_is_rejected (test_air_trial.AirTrialBoundaryTests.test_low_flange_path_is_rejected) ... ok
+test_model_path_is_admitted_only_inside_the_high_arm_scope (test_air_trial.AirTrialBoundaryTests.test_model_path_is_admitted_only_inside_the_high_arm_scope) ... ok
+test_status2_alone_does_not_remove_other_protections (test_air_trial.AirTrialBoundaryTests.test_status2_alone_does_not_remove_other_protections) ... ok
+
+======================================================================
+ERROR: test_loaded_plan_and_targets_are_bound_to_their_own_bytes (test_air_trial.AirTrialBoundaryTests.test_loaded_plan_and_targets_are_bound_to_their_own_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 59, in test_loaded_plan_and_targets_are_bound_to_their_own_bytes
+    loaded,rows,digest=air_trial.load_bound_plan(path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'air_trial' has no attribute 'load_bound_plan'
+
+======================================================================
+FAIL: test_failed_receiver_cannot_send_even_a_valid_next_target (test_air_trial.AirTrialBoundaryTests.test_failed_receiver_cannot_send_even_a_valid_next_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_motion_trial_20261023/test_air_trial.py", line 76, in test_failed_receiver_cannot_send_even_a_valid_next_target
+    sdk.set_speed_percent.assert_not_called();sdk.move_j.assert_not_called()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/mock.py", line 905, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'set_speed_percent' to not have been called. Called 1 times.
+Calls: [call(5)].
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.098s
+
+FAILED (failures=1, errors=1)

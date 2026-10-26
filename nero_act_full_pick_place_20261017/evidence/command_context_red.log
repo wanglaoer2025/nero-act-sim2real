@@ -1,0 +1,70 @@
+test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels (tests.test_command_context.CommandContextTests.test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels) ... FAIL
+test_initialization_only_weights_can_never_be_exported (tests.test_command_context.CommandContextTests.test_initialization_only_weights_can_never_be_exported) ... ERROR
+test_live_worker_uses_submitted_reference_instead_of_measured_opening (tests.test_command_context.CommandContextTests.test_live_worker_uses_submitted_reference_instead_of_measured_opening) ... ERROR
+test_nine_model_features_never_change_eight_dimensional_physical_contract (tests.test_command_context.CommandContextTests.test_nine_model_features_never_change_eight_dimensional_physical_contract) ... ERROR
+test_observation_keeps_actual_width_and_requires_real_past_command (tests.test_command_context.CommandContextTests.test_observation_keeps_actual_width_and_requires_real_past_command) ... FAIL
+test_state_projection_expansion_preserves_legacy_prediction_and_learns_context (tests.test_command_context.CommandContextTests.test_state_projection_expansion_preserves_legacy_prediction_and_learns_context) ... FAIL
+
+======================================================================
+ERROR: test_initialization_only_weights_can_never_be_exported (tests.test_command_context.CommandContextTests.test_initialization_only_weights_can_never_be_exported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 91, in test_initialization_only_weights_can_never_be_exported
+    with self.assertRaisesRegex(ValueError,'initializer'):export_model(path,Path(directory)/'bad_model')
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/training/export.py", line 20, in export_model
+    with (checkpoint.parent/'dataset_stats.pkl').open('rb') as stream:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpdp0q50gj/dataset_stats.pkl'
+
+======================================================================
+ERROR: test_live_worker_uses_submitted_reference_instead_of_measured_opening (tests.test_command_context.CommandContextTests.test_live_worker_uses_submitted_reference_instead_of_measured_opening)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 84, in test_live_worker_uses_submitted_reference_instead_of_measured_opening
+    self.assertEqual(request['previous_gripper_target_m'],.065)
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'previous_gripper_target_m'
+
+======================================================================
+ERROR: test_nine_model_features_never_change_eight_dimensional_physical_contract (tests.test_command_context.CommandContextTests.test_nine_model_features_never_change_eight_dimensional_physical_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 26, in test_nine_model_features_never_change_eight_dimensional_physical_contract
+    guard=FullTaskContract(profile());state=np.r_[np.zeros(7),.074]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/contract.py", line 10, in __init__
+    raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+======================================================================
+FAIL: test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels (tests.test_command_context.CommandContextTests.test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 46, in test_dataset_reads_previous_action_or_initial_snapshot_never_future_labels
+    self.assertIsNotNone(importlib.util.find_spec('training.command_context'))
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_observation_keeps_actual_width_and_requires_real_past_command (tests.test_command_context.CommandContextTests.test_observation_keeps_actual_width_and_requires_real_past_command)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 36, in test_observation_keeps_actual_width_and_requires_real_past_command
+    self.assertTrue(callable(getattr(model,'make_policy_observation',None)))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_state_projection_expansion_preserves_legacy_prediction_and_learns_context (tests.test_command_context.CommandContextTests.test_state_projection_expansion_preserves_legacy_prediction_and_learns_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_command_context.py", line 63, in test_state_projection_expansion_preserves_legacy_prediction_and_learns_context
+    self.assertIsNotNone(importlib.util.find_spec('training.command_context'))
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.630s
+
+FAILED (failures=3, errors=3)

@@ -1,0 +1,21 @@
+F.F
+======================================================================
+FAIL: test_a_quiet_input_projection_cannot_hide_a_dominant_arm_gradient (test_group_scope.GroupScopeTests.test_a_quiet_input_projection_cannot_hide_a_dominant_arm_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_preservation_scope_20261023/test_group_scope.py", line 22, in test_a_quiet_input_projection_cannot_hide_a_dominant_arm_gradient
+    self.assertLessEqual(weight*100, .5+1e-12)
+AssertionError: 10.0 not less than or equal to 0.500000000001
+
+======================================================================
+FAIL: test_unopposed_preservation_in_a_task_zero_group_is_suppressed (test_group_scope.GroupScopeTests.test_unopposed_preservation_in_a_task_zero_group_is_suppressed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_preservation_scope_20261023/test_group_scope.py", line 35, in test_unopposed_preservation_in_a_task_zero_group_is_suppressed
+    self.assertEqual(weight, 0.)
+AssertionError: 0.1 != 0.0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (failures=2)

@@ -1,0 +1,38 @@
+{
+  "run": "run15_first_lift_recovery",
+  "training_complete": true,
+  "declared_epochs": 20,
+  "hardware_tested": false,
+  "hardware_deployment_allowed": false,
+  "ready_for_real_execution": false,
+  "suites": {
+    "run15_development16": {
+      "passed": 2,
+      "total": 16,
+      "complete": true,
+      "finalized": true,
+      "failure_counts": {
+        "budget_exhausted_without_full_task": 4,
+        "passed": 2,
+        "RuntimeError: ACT requested opening outside supported-placement region": 3,
+        "RuntimeError: Attached-cup model would cross the table": 2,
+        "RuntimeError: ACT requested closure outside the observed grasp region": 1,
+        "RuntimeError: Unexpected robot/environment/cup contact": 4
+      }
+    },
+    "run15_independent16": {
+      "passed": 0,
+      "total": 16,
+      "complete": true,
+      "finalized": true,
+      "failure_counts": {
+        "RuntimeError: Physical held contact/slip contract failed": 4,
+        "RuntimeError: ACT requested opening outside supported-placement region": 2,
+        "RuntimeError: ACT requested closure outside the observed grasp region": 4,
+        "budget_exhausted_without_full_task": 3,
+        "RuntimeError: Unexpected robot/environment/cup contact": 2,
+        "RuntimeError: Attached-cup model would cross the table": 1
+      }
+    }
+  }
+}

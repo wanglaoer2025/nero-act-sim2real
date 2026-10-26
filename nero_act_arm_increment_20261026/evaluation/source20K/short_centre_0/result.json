@@ -1,0 +1,62 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.0,
+  "maximum_horizontal_transfer_m": 1.8257733820127735e-08,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5167678327168398,
+      0.0545980708177914,
+      0.047496687815949526
+    ],
+    "tcp_xyz": [
+      -0.3676568344830881,
+      -0.06428158723739975,
+      0.4785908836145294
+    ],
+    "cup_upright": 0.9999999999999798,
+    "cup_speed": 2.383362700854261e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09500000058675373,
+    "contract_valid": true
+  },
+  "scenario": {
+    "seed": 251900,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false
+  },
+  "frames": 604,
+  "active_policy_points": 600,
+  "queries": 300,
+  "error": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "full_task_from_fresh_start": true,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 0,
+  "runtime_s": 24.542882146022748,
+  "contact_arm_hold_points": 0,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": false,
+  "inference_latency_p95_ms": 9.345559251960367,
+  "guard_diagnostic": null
+}

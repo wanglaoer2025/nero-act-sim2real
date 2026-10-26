@@ -1,0 +1,122 @@
+{
+  "mode": "ACT_migration_readonly_transport_inventory",
+  "motion_sent": false,
+  "gripper_sent": false,
+  "enable_sent": false,
+  "actual_start": [
+    0.18324211816688468,
+    -0.12651891747706895,
+    0.0999375529691953,
+    1.5707963267948966,
+    -0.023893557459802373,
+    0.2816961412718848,
+    0.13110913340981403,
+    0.094389
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 0,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": []
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [
+    "nero_table"
+  ],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 429159.969713908,
+      "stamp": 1792226904.8695428,
+      "q": [
+        0.18324211816688468,
+        -0.12651891747706895,
+        0.0999375529691953,
+        1.5707963267948966,
+        -0.023893557459802373,
+        0.2816961412718848,
+        0.13110913340981403,
+        0.094389
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 429159.969759482,
+      "stamp": 1792226904.8760567,
+      "q": [
+        0.3918601047409386,
+        0.5982328685549848,
+        0.0101513323050317,
+        1.5140693207856295,
+        0.21002363392410212,
+        0.3433268131457477,
+        -0.579183914230138,
+        0.095
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "execution_readiness_checks_passed": false,
+  "execution_blocker": "Existing ROS driver speed_percent must be in (0,5]; script does not change it"
+}

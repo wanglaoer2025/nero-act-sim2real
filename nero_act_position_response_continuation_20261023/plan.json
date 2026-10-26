@@ -1,0 +1,13 @@
+{
+  "request": "继续训练",
+  "scope": "Continue latest weights with unchanged RGB+15D ACT, data, losses, frozen scopes and qualification thresholds; offline only",
+  "initializer_sha256": "519641725f0b22eb70549a154786be3e4c330986ab7f616c76850ce5d3c5b9ab",
+  "additional_updates": 3000,
+  "batch_size": 32,
+  "checkpoint_selection": "fixed_last_3000; intermediate1000/2000 are diagnostics, never best-of-validation selection",
+  "optimizer": "AdamW rebuilt because initializer did not save optimizer state; original group initial rates linearly decay to10% across this continuation",
+  "sampling": "Three independently shuffled passes through the prior fixed1000 batch schedule; same16 correction-prefix plus16 eight-stage rehearsal samples per batch",
+  "evaluation": "Same position-response gate at1000/2000/3000; only final3000 may proceed to unchanged five complete rollouts, six mechanism cases and423 preservation qualification",
+  "hardware_commands_sent": false,
+  "additional_manual_measurements": false
+}

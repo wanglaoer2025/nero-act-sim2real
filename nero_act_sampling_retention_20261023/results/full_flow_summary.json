@@ -1,0 +1,44 @@
+{
+  "current_full_flow_passed": false,
+  "current_result": {
+    "success": false,
+    "error": "RuntimeError: Unexpected robot/environment/cup contact",
+    "active_policy_points": 1634,
+    "queries": 818,
+    "max_lift_m": 0.0,
+    "maximum_horizontal_transfer_m": 1.527832269476198e-06,
+    "stable_released_frames": 0,
+    "simulated_events": [],
+    "unexpected_arm_cup_contact_frames": 1,
+    "execution_contract_failures": 0,
+    "runtime_s": 41.10172525100643
+  },
+  "source_sha256": {
+    "/home/user/wq/nero_act_full_flow_repair_20261023/evaluate_repair.py": "5a7e75116c2f5b0a140cb4d5de7c05863f0f58e31e4bf9277f30f9f3ddd45f09",
+    "/home/user/wq/nero_act_sampling_retention_20261023/current_scene.json": "b24719cb4829700e624a61389b0aa84040c27f86dbe45110f5d56973f5ba8897",
+    "/home/user/wq/nero_act_sampling_retention_20261023/training/pilot_A/policy_last.ckpt": "7285d2cd4ec146278eded988ec0d441e63c2a3f0051a131e5489a4c30528163d",
+    "/home/user/wq/nero_act_sampling_retention_20261023/training/pilot_A/integrity.json": "e5b0f1926c88d2de06d72b9836b45f585d6558bf6dede0314878f03da969119d"
+  },
+  "nominal_scene_only": true,
+  "calibration_verified": false,
+  "hardware_commands_sent": false,
+  "hardware_deployment_allowed": false,
+  "original_qualification_run": false,
+  "baseline_same_scene": {
+    "success": false,
+    "error": "ValueError: Raw prediction exceeds physical arm/gripper limits",
+    "active_policy_points": 2086,
+    "queries": 1044,
+    "max_lift_m": 0.0,
+    "maximum_horizontal_transfer_m": 1.833138568752144e-08,
+    "stable_released_frames": 0,
+    "simulated_events": [],
+    "unexpected_arm_cup_contact_frames": 0,
+    "execution_contract_failures": 1,
+    "runtime_s": 53.753040509996936
+  },
+  "predictive_guard_enabled": true,
+  "motion_targets_generated_by_guard": false,
+  "predictive_guard_sha256": "b2cea2bb40d7cbbc2eed72407d067b0f8fe62560c21cdd059e3ece635cf9fb86",
+  "comparison_uses_same_stricter_guard": true
+}

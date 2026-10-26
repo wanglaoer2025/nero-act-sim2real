@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_changed_training_input_never_writes_successful_summary __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-61/test_changed_training_input_ne0')
+
+    def test_changed_training_input_never_writes_successful_summary(tmp_path):
+>       from training.visual import complete_training
+E       ImportError: cannot import name 'complete_training' from 'training.visual' (/home/user/wq/nero_act_visual_feedback_20261019/training/visual.py)
+
+tests/test_existing_calibration_training.py:117: ImportError
+=============================== warnings summary ===============================
+tests/test_existing_calibration_training.py::test_changed_training_input_never_writes_successful_summary
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_existing_calibration_training.py::test_changed_training_input_never_writes_successful_summary
+1 failed, 10 deselected, 1 warning in 1.90s

@@ -1,0 +1,433 @@
+{
+  "name": "(noname)+",
+  "robot_state": {
+    "joint_state": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "name": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "gripper",
+        "gripper_joint1",
+        "gripper_joint2"
+      ],
+      "position": [
+        0.18823375982758844,
+        -0.12655382406210886,
+        0.10002481943179502,
+        1.5707090603322968,
+        -0.02368411794956305,
+        0.28166123468684495,
+        0.13110913340981403,
+        3.1e-05,
+        1.55e-05,
+        -1.55e-05
+      ],
+      "velocity": [],
+      "effort": []
+    },
+    "multi_dof_joint_state": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "joint_names": [],
+      "transforms": [],
+      "twist": [],
+      "wrench": []
+    },
+    "attached_collision_objects": [],
+    "is_diff": false
+  },
+  "robot_model_name": "agx_arm",
+  "fixed_frame_transforms": [
+    {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "world",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    }
+  ],
+  "allowed_collision_matrix": {
+    "entry_names": [
+      "base_link",
+      "gripper_base",
+      "gripper_flange",
+      "gripper_link1",
+      "gripper_link2",
+      "link1",
+      "link2",
+      "link3",
+      "link4",
+      "link5",
+      "link6",
+      "link7"
+    ],
+    "entry_values": [
+      {
+        "enabled": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          true,
+          false,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "default_entry_names": [],
+    "default_entry_values": []
+  },
+  "link_padding": [
+    {
+      "link_name": "base_link",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_base",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_flange",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_link1",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_link2",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link1",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link2",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link3",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link4",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link5",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link6",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link7",
+      "padding": 0.0
+    }
+  ],
+  "link_scale": [
+    {
+      "link_name": "base_link",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_base",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_flange",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_link1",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_link2",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link1",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link2",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link3",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link4",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link5",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link6",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link7",
+      "scale": 1.0
+    }
+  ],
+  "object_colors": [],
+  "world": {
+    "collision_objects": [],
+    "octomap": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "origin": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      },
+      "octomap": {
+        "header": {
+          "stamp": {
+            "sec": 0,
+            "nanosec": 0
+          },
+          "frame_id": ""
+        },
+        "binary": false,
+        "id": "",
+        "resolution": 0.0,
+        "data": []
+      }
+    }
+  },
+  "is_diff": false
+}

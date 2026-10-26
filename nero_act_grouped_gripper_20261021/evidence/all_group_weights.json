@@ -1,0 +1,825 @@
+{
+  "complete": true,
+  "actual_optimizer_updates": 0,
+  "scope": "static four-group weights each at least5percent, unchanged rehearsal; exploratory fit on24, original-model12 separately; vectors saved for deterministic CPU feasibility analysis",
+  "weaker_test": "closing/holding positive signed gradient projection; opening/release nonnegative",
+  "cases": [
+    {
+      "case": "all24",
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "weights": [
+        0.05,
+        0.5688575789669676,
+        0.05,
+        0.3311424210330323
+      ],
+      "maximum_signed_closing_margin": 0.0647394256516174,
+      "records": [
+        {
+          "policy": "B252",
+          "batch": 0,
+          "passed": true,
+          "cosines": [
+            0.897783108173383,
+            0.859075689508589,
+            null,
+            0.9291869288998932
+          ],
+          "noncollapse_ratio": 0.6450536428996333
+        },
+        {
+          "policy": "B252",
+          "batch": 24,
+          "passed": true,
+          "cosines": [
+            0.4725355720061933,
+            0.4196901655524056,
+            null,
+            0.4377304849855596
+          ],
+          "noncollapse_ratio": 0.48502289524167425
+        },
+        {
+          "policy": "B252",
+          "batch": 99,
+          "passed": true,
+          "cosines": [
+            0.889870714575035,
+            0.8786315444287092,
+            null,
+            0.978446686534248
+          ],
+          "noncollapse_ratio": 0.6365428696659229
+        },
+        {
+          "policy": "B252",
+          "batch": 499,
+          "passed": true,
+          "cosines": [
+            0.8373869264206926,
+            0.801211595352667,
+            null,
+            0.9687972420059345
+          ],
+          "noncollapse_ratio": 0.5162949351117181
+        },
+        {
+          "policy": "B252",
+          "batch": 149,
+          "passed": true,
+          "cosines": [
+            0.7392494333144632,
+            0.6966475817536733,
+            null,
+            0.9352996843487442
+          ],
+          "noncollapse_ratio": 0.3016864015648629
+        },
+        {
+          "policy": "B252",
+          "batch": 249,
+          "passed": true,
+          "cosines": [
+            0.7329392434961893,
+            0.7178073559850414,
+            null,
+            0.9626534252071187
+          ],
+          "noncollapse_ratio": 0.4458019679767574
+        },
+        {
+          "policy": "B252",
+          "batch": 749,
+          "passed": true,
+          "cosines": [
+            0.9457878804837102,
+            0.9196573562500511,
+            null,
+            0.9233230176670011
+          ],
+          "noncollapse_ratio": 0.8620927853005783
+        },
+        {
+          "policy": "B252",
+          "batch": 999,
+          "passed": true,
+          "cosines": [
+            0.67345921557295,
+            0.6308909342464987,
+            null,
+            0.9462253301269724
+          ],
+          "noncollapse_ratio": 0.39610247127284615
+        },
+        {
+          "policy": "B252",
+          "batch": 74,
+          "passed": true,
+          "cosines": [
+            0.8539760808243217,
+            0.8129958555202843,
+            null,
+            0.8801485999441172
+          ],
+          "noncollapse_ratio": 0.6682836287635865
+        },
+        {
+          "policy": "B252",
+          "batch": 349,
+          "passed": true,
+          "cosines": [
+            0.8506506109813486,
+            0.8195684771975646,
+            null,
+            0.9683371168686191
+          ],
+          "noncollapse_ratio": 0.7986544224714521
+        },
+        {
+          "policy": "B252",
+          "batch": 649,
+          "passed": true,
+          "cosines": [
+            0.6530133219990245,
+            0.5936388227531927,
+            null,
+            0.6205954438511447
+          ],
+          "noncollapse_ratio": 0.45132349841156766
+        },
+        {
+          "policy": "B252",
+          "batch": 899,
+          "passed": true,
+          "cosines": [
+            0.6173650242707519,
+            0.6656866366910468,
+            null,
+            0.5610177216200275
+          ],
+          "noncollapse_ratio": 0.1568348447390287
+        },
+        {
+          "policy": "previous1000",
+          "batch": 0,
+          "passed": true,
+          "cosines": [
+            0.3335574456995872,
+            0.2918905287924533,
+            null,
+            0.304019870171473
+          ],
+          "noncollapse_ratio": 0.4835499181366518
+        },
+        {
+          "policy": "previous1000",
+          "batch": 24,
+          "passed": true,
+          "cosines": [
+            0.20679034012274855,
+            0.14992438449632187,
+            null,
+            0.1026487840419483
+          ],
+          "noncollapse_ratio": 0.4545408945499434
+        },
+        {
+          "policy": "previous1000",
+          "batch": 99,
+          "passed": true,
+          "cosines": [
+            0.913759418688618,
+            0.9099721320514762,
+            null,
+            0.9596822417067392
+          ],
+          "noncollapse_ratio": 0.6603252235347953
+        },
+        {
+          "policy": "previous1000",
+          "batch": 499,
+          "passed": true,
+          "cosines": [
+            0.7206228645024821,
+            0.682810779165776,
+            null,
+            0.8924445816981448
+          ],
+          "noncollapse_ratio": 0.38686632066376764
+        },
+        {
+          "policy": "previous1000",
+          "batch": 149,
+          "passed": true,
+          "cosines": [
+            0.8562697377898765,
+            0.8248348263376054,
+            null,
+            0.9549980216865384
+          ],
+          "noncollapse_ratio": 0.44662928776150057
+        },
+        {
+          "policy": "previous1000",
+          "batch": 249,
+          "passed": true,
+          "cosines": [
+            0.7177964596721135,
+            0.7180236392683959,
+            null,
+            0.9355982685802755
+          ],
+          "noncollapse_ratio": 0.3545322376361386
+        },
+        {
+          "policy": "previous1000",
+          "batch": 749,
+          "passed": true,
+          "cosines": [
+            0.9445174177649178,
+            0.9202639685342645,
+            null,
+            0.8666409801693116
+          ],
+          "noncollapse_ratio": 0.6625496476834992
+        },
+        {
+          "policy": "previous1000",
+          "batch": 999,
+          "passed": true,
+          "cosines": [
+            0.5542316250100615,
+            0.5241465540176938,
+            null,
+            0.8626521780303672
+          ],
+          "noncollapse_ratio": 0.2889942772771434
+        },
+        {
+          "policy": "previous1000",
+          "batch": 74,
+          "passed": true,
+          "cosines": [
+            0.742409120096065,
+            0.6854059457967562,
+            null,
+            0.7008550795916453
+          ],
+          "noncollapse_ratio": 0.551027347035042
+        },
+        {
+          "policy": "previous1000",
+          "batch": 349,
+          "passed": true,
+          "cosines": [
+            0.8446045732247695,
+            0.8146655424304327,
+            null,
+            0.963196616485657
+          ],
+          "noncollapse_ratio": 0.8164015032317675
+        },
+        {
+          "policy": "previous1000",
+          "batch": 649,
+          "passed": true,
+          "cosines": [
+            0.6960730768672876,
+            0.6363926748932356,
+            null,
+            0.5724341169692255
+          ],
+          "noncollapse_ratio": 0.5201611867559357
+        },
+        {
+          "policy": "previous1000",
+          "batch": 899,
+          "passed": true,
+          "cosines": [
+            0.892098649317634,
+            0.9168461778509095,
+            null,
+            0.734918137381009
+          ],
+          "noncollapse_ratio": 0.3455817576400057
+        }
+      ],
+      "full_original_gate_passed": true
+    },
+    {
+      "case": "B252_12",
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "weights": [
+        0.05,
+        0.6563423831043509,
+        0.05,
+        0.24365761689564913
+      ],
+      "maximum_signed_closing_margin": 0.09003670886113245,
+      "records": [
+        {
+          "policy": "B252",
+          "batch": 0,
+          "passed": true,
+          "cosines": [
+            0.8827422978894178,
+            0.8438434479021677,
+            null,
+            0.9336883576647645
+          ],
+          "noncollapse_ratio": 0.48474942703133117
+        },
+        {
+          "policy": "B252",
+          "batch": 24,
+          "passed": true,
+          "cosines": [
+            0.3810308832227422,
+            0.32428133630636335,
+            null,
+            0.37685378706505424
+          ],
+          "noncollapse_ratio": 0.3328559909975882
+        },
+        {
+          "policy": "B252",
+          "batch": 99,
+          "passed": true,
+          "cosines": [
+            0.8946471446923938,
+            0.8869614980031615,
+            null,
+            0.9660664516959441
+          ],
+          "noncollapse_ratio": 0.5611967794411457
+        },
+        {
+          "policy": "B252",
+          "batch": 499,
+          "passed": true,
+          "cosines": [
+            0.7943445804256704,
+            0.7542283385147872,
+            null,
+            0.9560134973977914
+          ],
+          "noncollapse_ratio": 0.34843066250130966
+        },
+        {
+          "policy": "B252",
+          "batch": 149,
+          "passed": true,
+          "cosines": [
+            0.5159171723433907,
+            0.46844634845313204,
+            null,
+            0.8210086051734095
+          ],
+          "noncollapse_ratio": 0.1922028192949839
+        },
+        {
+          "policy": "B252",
+          "batch": 249,
+          "passed": true,
+          "cosines": [
+            0.6664556996078191,
+            0.6513075592479541,
+            null,
+            0.9206874966063561
+          ],
+          "noncollapse_ratio": 0.3157191295163946
+        },
+        {
+          "policy": "B252",
+          "batch": 749,
+          "passed": true,
+          "cosines": [
+            0.9509741557104158,
+            0.928223463893343,
+            null,
+            0.9224166428045599
+          ],
+          "noncollapse_ratio": 0.707124118173449
+        },
+        {
+          "policy": "B252",
+          "batch": 999,
+          "passed": true,
+          "cosines": [
+            0.46590917650629055,
+            0.4141134013582956,
+            null,
+            0.8393030387575465
+          ],
+          "noncollapse_ratio": 0.25994186506173833
+        },
+        {
+          "policy": "B252",
+          "batch": 74,
+          "passed": true,
+          "cosines": [
+            0.8486822012532316,
+            0.8103920333831247,
+            null,
+            0.893287192706641
+          ],
+          "noncollapse_ratio": 0.5358741532197312
+        },
+        {
+          "policy": "B252",
+          "batch": 349,
+          "passed": true,
+          "cosines": [
+            0.8310893830202366,
+            0.8021216820847378,
+            null,
+            0.9587729898183811
+          ],
+          "noncollapse_ratio": 0.6488294004877196
+        },
+        {
+          "policy": "B252",
+          "batch": 649,
+          "passed": true,
+          "cosines": [
+            0.49242402905055205,
+            0.423594821912826,
+            null,
+            0.5063126703048728
+          ],
+          "noncollapse_ratio": 0.2969596071361685
+        },
+        {
+          "policy": "B252",
+          "batch": 899,
+          "passed": true,
+          "cosines": [
+            0.7075786704542422,
+            0.7492149552701505,
+            null,
+            0.6366909344862098
+          ],
+          "noncollapse_ratio": 0.1682810311389859
+        },
+        {
+          "policy": "previous1000",
+          "batch": 0,
+          "passed": true,
+          "cosines": [
+            0.2716650594897335,
+            0.23108289409714378,
+            null,
+            0.2422770298247561
+          ],
+          "noncollapse_ratio": 0.3277522697044864
+        },
+        {
+          "policy": "previous1000",
+          "batch": 24,
+          "passed": false,
+          "cosines": [
+            -0.08948002885920511,
+            -0.14538060998730712,
+            null,
+            -0.1728019643528451
+          ],
+          "noncollapse_ratio": 0.3349563593429095
+        },
+        {
+          "policy": "previous1000",
+          "batch": 99,
+          "passed": true,
+          "cosines": [
+            0.9350592997973078,
+            0.9359067347966004,
+            null,
+            0.933565892570381
+          ],
+          "noncollapse_ratio": 0.5507127018155348
+        },
+        {
+          "policy": "previous1000",
+          "batch": 499,
+          "passed": true,
+          "cosines": [
+            0.43074578509942835,
+            0.3846274740634584,
+            null,
+            0.6574324726102234
+          ],
+          "noncollapse_ratio": 0.22817059019819105
+        },
+        {
+          "policy": "previous1000",
+          "batch": 149,
+          "passed": true,
+          "cosines": [
+            0.8132867167558938,
+            0.7798244761868407,
+            null,
+            0.9462997577321655
+          ],
+          "noncollapse_ratio": 0.30064141037293013
+        },
+        {
+          "policy": "previous1000",
+          "batch": 249,
+          "passed": true,
+          "cosines": [
+            0.6593450485818364,
+            0.6635801412779768,
+            null,
+            0.8674566565265893
+          ],
+          "noncollapse_ratio": 0.2512699055928165
+        },
+        {
+          "policy": "previous1000",
+          "batch": 749,
+          "passed": true,
+          "cosines": [
+            0.9458414091310389,
+            0.9251313747297519,
+            null,
+            0.8412488258818147
+          ],
+          "noncollapse_ratio": 0.49244751094406086
+        },
+        {
+          "policy": "previous1000",
+          "batch": 999,
+          "passed": true,
+          "cosines": [
+            0.08290284959228691,
+            0.04947889177038321,
+            null,
+            0.4820184415580589
+          ],
+          "noncollapse_ratio": 0.18383137760713736
+        },
+        {
+          "policy": "previous1000",
+          "batch": 74,
+          "passed": true,
+          "cosines": [
+            0.6235431609554518,
+            0.557337752589341,
+            null,
+            0.5840916752294504
+          ],
+          "noncollapse_ratio": 0.3486316632707791
+        },
+        {
+          "policy": "previous1000",
+          "batch": 349,
+          "passed": true,
+          "cosines": [
+            0.8287732845956953,
+            0.7984927048345207,
+            null,
+            0.9607357982417699
+          ],
+          "noncollapse_ratio": 0.5940227157612169
+        },
+        {
+          "policy": "previous1000",
+          "batch": 649,
+          "passed": true,
+          "cosines": [
+            0.5328097623258423,
+            0.46198417984056217,
+            null,
+            0.42573685732701655
+          ],
+          "noncollapse_ratio": 0.3276602769563303
+        },
+        {
+          "policy": "previous1000",
+          "batch": 899,
+          "passed": true,
+          "cosines": [
+            0.9189855463188544,
+            0.9405349292020351,
+            null,
+            0.7563612534031612
+          ],
+          "noncollapse_ratio": 0.35095584660743384
+        }
+      ],
+      "full_original_gate_passed": false
+    }
+  ],
+  "per_batch": [
+    {
+      "policy": "B252",
+      "batch": 0,
+      "success": true,
+      "maximum_margin": 1.4146552075785588
+    },
+    {
+      "policy": "B252",
+      "batch": 24,
+      "success": true,
+      "maximum_margin": 0.7321341121714227
+    },
+    {
+      "policy": "B252",
+      "batch": 99,
+      "success": true,
+      "maximum_margin": 0.9241911481422103
+    },
+    {
+      "policy": "B252",
+      "batch": 499,
+      "success": true,
+      "maximum_margin": 1.3084175305197012
+    },
+    {
+      "policy": "B252",
+      "batch": 149,
+      "success": true,
+      "maximum_margin": 0.9226540110495459
+    },
+    {
+      "policy": "B252",
+      "batch": 249,
+      "success": true,
+      "maximum_margin": 0.9983071410859301
+    },
+    {
+      "policy": "B252",
+      "batch": 749,
+      "success": true,
+      "maximum_margin": 1.602155742201665
+    },
+    {
+      "policy": "B252",
+      "batch": 999,
+      "success": true,
+      "maximum_margin": 1.0935703004580721
+    },
+    {
+      "policy": "B252",
+      "batch": 74,
+      "success": true,
+      "maximum_margin": 1.1900314217069372
+    },
+    {
+      "policy": "B252",
+      "batch": 349,
+      "success": true,
+      "maximum_margin": 1.4499467435652822
+    },
+    {
+      "policy": "B252",
+      "batch": 649,
+      "success": true,
+      "maximum_margin": 1.1108875555105258
+    },
+    {
+      "policy": "B252",
+      "batch": 899,
+      "success": true,
+      "maximum_margin": 0.14603513771508242
+    },
+    {
+      "policy": "previous1000",
+      "batch": 0,
+      "success": true,
+      "maximum_margin": 1.4431453143744317
+    },
+    {
+      "policy": "previous1000",
+      "batch": 24,
+      "success": true,
+      "maximum_margin": 0.7230662658952851
+    },
+    {
+      "policy": "previous1000",
+      "batch": 99,
+      "success": true,
+      "maximum_margin": 1.107737182957182
+    },
+    {
+      "policy": "previous1000",
+      "batch": 499,
+      "success": true,
+      "maximum_margin": 1.3103302491006072
+    },
+    {
+      "policy": "previous1000",
+      "batch": 149,
+      "success": true,
+      "maximum_margin": 1.1628175008450843
+    },
+    {
+      "policy": "previous1000",
+      "batch": 249,
+      "success": true,
+      "maximum_margin": 0.7754366122002874
+    },
+    {
+      "policy": "previous1000",
+      "batch": 749,
+      "success": true,
+      "maximum_margin": 1.5239102607390347
+    },
+    {
+      "policy": "previous1000",
+      "batch": 999,
+      "success": true,
+      "maximum_margin": 0.9959045762878673
+    },
+    {
+      "policy": "previous1000",
+      "batch": 74,
+      "success": true,
+      "maximum_margin": 1.4652247474955737
+    },
+    {
+      "policy": "previous1000",
+      "batch": 349,
+      "success": true,
+      "maximum_margin": 1.7965268986834557
+    },
+    {
+      "policy": "previous1000",
+      "batch": 649,
+      "success": true,
+      "maximum_margin": 1.3965177660603445
+    },
+    {
+      "policy": "previous1000",
+      "batch": 899,
+      "success": true,
+      "maximum_margin": 0.3202983668532042
+    }
+  ],
+  "source_sha256": {
+    "/home/user/wq/nero_act_grouped_gripper_20261021/evidence/solve_all_group_weights.py": "57628c3318670a868af35540e327f204a6206ec7ee329f0e70e3d3f846275b19",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/training/grouped_gripper.py": "010886be8e1a35fd7121fcc2ea3033ea8dca1b8c06651e8b4701699e2e82c873",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/evidence/readonly_gate_scope.md": "86f5fcab7a878c51ec7bfd5c1b0376ef6fe9a1c99fb69f8ae6870b76c0144bae",
+    "/home/user/wq/nero_act_grouped_gripper_20261021/approved_scope.md": "b6efae53adc44631682184b48f63b208800fe0a566e4d582452ccfb87f6bae3f",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training/pilot_A/checkpoints/policy_last.ckpt": "f55292c875696c73d6f742f5d5f18b936c1703a1ccbae103a27e5a288b16c923",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/policy_best_val.ckpt": "b252dd578b4bf5626566ec5b60a47be0bdcfee30e9eab990cde05ac122bdea71",
+    "/home/user/wq/nero_act_visual_gripper_fix_20261019/training/gripper_force_building_v1/checkpoints/dataset_stats.pkl": "78390f6aed2b1c7d1a7f5e466c31b5279419da57168b640a2756427fc3914597",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/manifest.json": "b79fefcdfb08174bc713798dc0e1532f21385d6f9f14c3d5e583c78d29d2894a",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/dataset_stats.pkl": "73edd23e981c48e78cc3fa1557f33c8f2c3dd1a9bdf2105c26fc7a027c2ad2fc",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/batch_order_pilot.npy": "04c7a89f971a8bb797b71cc71b2c71c9510290c2564785c4ce7efc0333b1b00a",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_0.hdf5": "97175a3579751563e634a363a6147264d281e7bdd4d200929f3b31ee5753d796",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_1.hdf5": "df3575684590dd27dc754afd76498ae577b0df576c291d02c981beb52c489294",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2.hdf5": "9c1f5af99179969c2c32e0fe3e28814048ed06c7635200f7dd2344bd9604153c",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_3.hdf5": "23c83036cdc7ce85c94625c311415472e9b90174277359c3517cab7fdf7ffd65",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_4.hdf5": "ddbf63e3003e2af069d71c2ee5f261381c7e08fcb0382ad51c7aadf6af433d6f",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_5.hdf5": "7682a02c8b065d9a0a0ad4063be15fe3479ff26d67326c5ff435411e96859082",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_6.hdf5": "fcb4963bc67f699fc9bfb39d775c1640236b225539b11c5c29b86be7313805d6",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_7.hdf5": "384fa38eaf883ba30ad90c724172fa5b753384d7e6342f29ed5fc1d2696c8002",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_8.hdf5": "ac93f6370f1b9475a6afa152760feccfa3f6bbf06d9879e7ad5438e67a72975c",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_9.hdf5": "1e58086a078d120f9e8d808ce57bf313b72699601867d91b58806127f4972903",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_10.hdf5": "928ee7967e1c84c4ef3ec764aad7181c05a0d0b7e9e930287a3c27c0087914c3",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_11.hdf5": "07aad29446325844a8fa7c667501db2c22f4865736d3b096b53487023d09faba",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_12.hdf5": "8272d2712350cb7a12f860422dd016a12939349687d3d450bc4c97fd8e51669b",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_13.hdf5": "1f03903545745132258ccda0460c0d27a2cd3f01555f30f61df6fedb95c3bd88",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_14.hdf5": "fe97ddbc851febea0444943f2ca4fc837432fd17fd8f8773bbf6f6478c44e3ec",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_15.hdf5": "067a35f67f6abd2259c6b7f7e5f8d148b2ef220e59578eaf031798650275a6ed",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_16.hdf5": "89f25f3127cbe9054f04d4a7d5056ad4e1df3ccff25edd42b1195a876019441d",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_17.hdf5": "45b40cb0e01fa495a9177a1f12226ecf90beb03c395431780bcf5756dfed9d45",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_18.hdf5": "fdeeebc6b0f47f224cf596a54b041cd1afe459c894510a670aa6449a4e30e5cc",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_19.hdf5": "fa9fc5108edfee131efde4b9f5c6194dedb56d81d42601e26c43537306d9d26b",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_20.hdf5": "d4a511b45f3c369b6b72e844c7464e94e9b8880763724796f978491bb7319ebc",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_21.hdf5": "7806748654631ad3401e0eb2b09575eebdd90c90b6064d3165e5c42ec14a6154",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_22.hdf5": "4b27c329eb6eaa1b19fe142ed5c961362afc80ca1260c235ff91af767d38c83e",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_23.hdf5": "d2a4529f8a458f44ed8cd33d8fa5ae86b6ad12296497615ba1ee8b0ee7702175",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_24.hdf5": "3363b688e8f20136f1bf09a76e64577992617f188a6199c7728ffbf8ba26c2b7",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_25.hdf5": "ac320b096a2167b31cb331d265cd73f4df0cf9294f2f296f4b186579580607e8",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_26.hdf5": "55407764d03e10a34e2f00e82a340b88fe26a471e94ecd5b9a81134882192960",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_27.hdf5": "639072dd6195832d934ec6a3f74254fa953b27831214136bb2993ecf862ec266",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_28.hdf5": "ad6b2a3cf631172e6fe4a6715659dcfa7d97a5c0d17c101137a7a365034af001",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_29.hdf5": "99e144a20154551790760550b9dc9daed6ec8d610c1e768f38e5bf1f04346b8c",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_30.hdf5": "f3d1e364a24376f6e9548acb1cd00c394da698aa43d7a2e02abe2d37f71a965c",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_31.hdf5": "d87bd65cc12a10579427517dc87105de3bf34353e2a83f852c819a7e2b10989e",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_32.hdf5": "fe384d9974951bc5b4ab648c13082c145c4c138e8424111d50937a18a73fc929",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_33.hdf5": "733af840b60d23094338b90c576521037b2cc939c8a2c62fce08dc33a6f5c600",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_34.hdf5": "a6f6fb7cf4d9f3c23545aa61011e1abd7e640c1d6cc22e96447f5399d67e7394",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_35.hdf5": "62b42127967c522ac9610853c05475f8c78aa8dfee8b0b6f31331ae03f908dcb",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2000.hdf5": "cf43fa07e0a01f198cdef0865f78b5e14a5cf874b32eea7be4e623fff6720a3c",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2001.hdf5": "1c87e088e4289f781061df19903159e5dd3d8fab6525332a368412cefc8eba1b",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2002.hdf5": "55401bd7bd1d796da467d0c6045060b9e19726453b855b18276ce80a718d0d37",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2003.hdf5": "28a41b8f99c63d1c40a84a4dd05575786a3188416f44d405f8c7fe0137a35fca",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2004.hdf5": "206c4edceffc006d70dc09b20753026780d18cf73b8ad7b9d1e7aa900b988d12",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2005.hdf5": "a60f6ca221e8c3a740d0b99253266cc32e5efcb984d4b680485ca6d632984e31",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2006.hdf5": "78da88417f0d348c254dfb840e12f1d8cd3f1eddc5fdb4f0850c040e11ce53ff",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2007.hdf5": "c785e2771222d7fab1be3033acd44503866660c93082243521644393576defbd",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2008.hdf5": "67bcb37be9e55e18bc2779fce8ddedcc2b01f2aeecb9545926a49269aa5257ff",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2009.hdf5": "e346594a6da84cb61488d30f7eb3e053db8e8764139bcf0bf24df81fe35a0c36",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2010.hdf5": "f6fbed8df407b40b79c4cbd238331b255c521ec64319aac20f61e0aa7ab0ba35",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2011.hdf5": "45acae73f3ed82cc59ea0289d79660f407ec27dd4e6a5ee5bbe1ba4da03a4e52",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2016.hdf5": "7cd6965180e42fe8c878aca8ea6ff610950d41f8bf8271c62013a233801167ba",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2017.hdf5": "13f2838af2177854709c886d10a3799a0267932e32f89741276469407a7987bd",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2018.hdf5": "3db95058b72ccffe0964608d18152625cfcd50ef4f8aadd6f9f151b29013c0e7",
+    "/home/user/wq/nero_act_contact_prefix_repair_20261021/training_data/uniform_complete_v1/episode_2019.hdf5": "f8e1ebdc5993ecc9584227066cc34d45e32d5f90aa59cc533340e56a629573f1"
+  },
+  "hardware_commands_sent": false
+}

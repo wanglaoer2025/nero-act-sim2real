@@ -1,0 +1,14 @@
+[2026-10-22 20:45:48 UTC][ZED][INFO] Logging level INFO
+[2026-10-22 20:45:50 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-10-22 20:45:50 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-10-22 20:45:50 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-10-22 20:45:50 UTC][ZED][INFO] [Init]  Serial Number: S/N 39602891
+[2026-10-22 20:45:50 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_calibration_capture_20261022/table_marker_capture.py", line 119, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_act_calibration_capture_20261022/table_marker_capture.py", line 106, in main
+    if len(values)<20:raise ValueError('Fewer than20/24 qualified marker frames')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Fewer than20/24 qualified marker frames

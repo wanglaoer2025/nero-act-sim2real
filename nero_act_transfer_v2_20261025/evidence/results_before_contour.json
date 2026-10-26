@@ -1,0 +1,35 @@
+{
+  "complete": false,
+  "updated_utc": "2026-10-25T09:14:52.063613+00:00",
+  "software_tests_passed": 57,
+  "software_tests_total": 57,
+  "current_stage": "mechanism_pilot_preflight",
+  "current_state_file": "evidence/pipeline_state.json",
+  "mechanism_pilot": {
+    "started": true,
+    "train_episodes": 90,
+    "dev_episodes": 30,
+    "update_limit": 200,
+    "updates_at_snapshot": 0,
+    "manifest": "data/mechanism_pilot_120.json",
+    "formal_admission": false,
+    "hardware_deployment_allowed": false
+  },
+  "main_data": {
+    "required": 150,
+    "accepted": 120,
+    "missing": 30,
+    "accepted_training_positions": 9,
+    "required_training_positions": 12,
+    "old_repaired_failures": 9,
+    "subsequent_enclosed_rule_failures": 10,
+    "unstarted": 20
+  },
+  "observer_complete_edge_route_verified": false,
+  "ACT_full_task_success_verified": false,
+  "formal_training_started": false,
+  "formal_updates": 0,
+  "independent_test_consumed": false,
+  "hardware_commands_sent": false,
+  "scope_note": "Limited numerical pilot, not complete-task or position-generalization acceptance."
+}

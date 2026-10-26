@@ -1,0 +1,18 @@
+test_cup_always_present_with_only_finger_contact_exceptions (tests.test_cup_collision_scene.CupCollisionSceneTests.test_cup_always_present_with_only_finger_contact_exceptions) ... ERROR
+
+======================================================================
+ERROR: test_cup_always_present_with_only_finger_contact_exceptions (tests.test_cup_collision_scene.CupCollisionSceneTests.test_cup_always_present_with_only_finger_contact_exceptions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_cup_collision_scene.py", line 92, in test_cup_always_present_with_only_finger_contact_exceptions
+    session.attach_actual_source()
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/ros_execution.py", line 119, in attach_actual_source
+    self.apply_scene([CollisionObject(id='act_task_cup', operation=CollisionObject.REMOVE)],
+  File "/home/user/wq/nero_act_full_pick_place_20261017/executor/ros_execution.py", line 85, in apply_scene
+    raise RuntimeError('Collision scene update rejected')
+RuntimeError: Collision scene update rejected
+
+----------------------------------------------------------------------
+Ran 1 test in 0.096s
+
+FAILED (errors=1)

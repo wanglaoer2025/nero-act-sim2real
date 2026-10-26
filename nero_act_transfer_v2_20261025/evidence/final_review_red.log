@@ -1,0 +1,88 @@
+FFFFFFF                                                                  [100%]
+=================================== FAILURES ===================================
+_______ test_simulation_nacks_and_unproven_initial_context_are_rejected ________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-133/test_simulation_nacks_and_unpr0')
+
+    def test_simulation_nacks_and_unproven_initial_context_are_rejected(tmp_path):
+        from data_audit import audit_episode
+        p=tmp_path/'nack.h5';episode(p)
+        with h5py.File(p,'r+') as f:f['action_acknowledged'][0]=False
+>       assert not audit_episode(p)['main15_ready']
+E       assert not True
+
+tests/test_review_regressions.py:11: AssertionError
+_______ test_second_prefix_point_uses_same_previous_and_reports_location _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-133/test_second_prefix_point_uses_0')
+
+    def test_second_prefix_point_uses_same_previous_and_reports_location(tmp_path):
+        from data_audit import audit_episode
+        p=tmp_path/'two.h5';episode(p)
+        with h5py.File(p,'r+') as f:f['action'][:,7]=.095-.0008*np.arange(1,25)
+        result=audit_episode(p)
+>       assert not result['main15_ready']
+E       assert not True
+
+tests/test_review_regressions.py:22: AssertionError
+_________ test_spatial_admission_checks_actual_scene_and_hdf_metadata __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-133/test_spatial_admission_checks_0')
+
+    def test_spatial_admission_checks_actual_scene_and_hdf_metadata(tmp_path):
+>       from train import spatial_errors
+E       ImportError: cannot import name 'spatial_errors' from 'train' (/home/user/wq/nero_act_transfer_v2_20261025/train.py)
+
+tests/test_review_regressions.py:27: ImportError
+________ test_complete_predicate_requires_fresh_teacher_free_provenance ________
+
+    def test_complete_predicate_requires_fresh_teacher_free_provenance():
+        from evaluate import full_task_passed
+        from test_evaluate import good_result
+        for extra in [dict(resumed_partial_not_full=True),dict(teacher_free=False),dict(full_task_from_fresh_start=False)]:
+>           assert not full_task_passed(dict(good_result(),**extra))
+E           AssertionError: assert not True
+E            +  where True = <function full_task_passed at 0x74ffc65f18a0>({'active_policy_points': 3000, 'constraint_attachment_used': False, 'error': None, 'execution_contract_failures': 0, ...})
+E            +    where {'active_policy_points': 3000, 'constraint_attachment_used': False, 'error': None, 'execution_contract_failures': 0, ...} = dict({'active_policy_points': 3000, 'constraint_attachment_used': False, 'error': None, 'execution_contract_failures': 0, ...}, **{'resumed_partial_not_full': True})
+E            +      where {'active_policy_points': 3000, 'constraint_attachment_used': False, 'error': None, 'execution_contract_failures': 0, ...} = <function good_result at 0x74ffc65f2020>()
+
+tests/test_review_regressions.py:47: AssertionError
+__ test_validation_ignores_unexecuted_gripper_and_selection_keeps_eligibility __
+
+    def test_validation_ignores_unexecuted_gripper_and_selection_keeps_eligibility():
+>       from train import deployment_error,select_candidate
+E       ImportError: cannot import name 'select_candidate' from 'train' (/home/user/wq/nero_act_transfer_v2_20261025/train.py)
+
+tests/test_review_regressions.py:52: ImportError
+________ test_trace_close_is_bounded_when_queue_full_and_writer_stalled ________
+
+    def test_trace_close_is_bounded_when_queue_full_and_writer_stalled():
+        from runtime import AsyncTrace
+        gate=threading.Event();entered=threading.Event()
+        def writer(_):entered.set();gate.wait(2)
+        trace=AsyncTrace(writer,capacity=1)
+        trace.append(1);assert entered.wait(1);trace.append(2)
+        started=time.monotonic()
+        try:
+>           with pytest.raises(RuntimeError):trace.close(timeout_s=.03)
+E           TypeError: AsyncTrace.close() got an unexpected keyword argument 'timeout_s'
+
+tests/test_review_regressions.py:75: TypeError
+______ test_development_suite_keeps_all_thirty_and_seven_historical_cases ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-133/test_development_suite_keeps_a0')
+
+    def test_development_suite_keeps_all_thirty_and_seven_historical_cases(tmp_path):
+>       from evaluate import development_suite
+E       ImportError: cannot import name 'development_suite' from 'evaluate' (/home/user/wq/nero_act_transfer_v2_20261025/evaluate.py). Did you mean: 'development_cases'?
+
+tests/test_review_regressions.py:81: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_review_regressions.py::test_simulation_nacks_and_unproven_initial_context_are_rejected
+FAILED tests/test_review_regressions.py::test_second_prefix_point_uses_same_previous_and_reports_location
+FAILED tests/test_review_regressions.py::test_spatial_admission_checks_actual_scene_and_hdf_metadata
+FAILED tests/test_review_regressions.py::test_complete_predicate_requires_fresh_teacher_free_provenance
+FAILED tests/test_review_regressions.py::test_validation_ignores_unexecuted_gripper_and_selection_keeps_eligibility
+FAILED tests/test_review_regressions.py::test_trace_close_is_bounded_when_queue_full_and_writer_stalled
+FAILED tests/test_review_regressions.py::test_development_suite_keeps_all_thirty_and_seven_historical_cases
+7 failed in 3.45s

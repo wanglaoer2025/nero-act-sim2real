@@ -1,0 +1,172 @@
+{
+  "status": "PROVISIONAL_FULL_PICK_PLACE_GEOMETRY_PREPARED_CONTACT_NOT_READY",
+  "task": "yellow cup -> blue card -> release -> retreat",
+  "motion_sent": false,
+  "gripper_sent": false,
+  "actual_start": [
+    0.18324211239814758,
+    -0.12650147080421448,
+    0.09998991340398788,
+    1.5707963705062866,
+    -0.023893557488918304,
+    0.2816961407661438,
+    0.1310567706823349,
+    0.0649849995970726
+  ],
+  "source_cup_bottom_mm_provisional": [
+    -514.4486331082957,
+    8.978922593094484,
+    -10.0
+  ],
+  "destination_mm_provisional": [
+    -519.4255129466911,
+    -224.2244818137122,
+    -10.0
+  ],
+  "full_stage_order": [
+    "pregrasp_high_pose",
+    "open_gripper",
+    "grasp_pose",
+    "adaptive_grasp",
+    "lift_pose",
+    "carry_pose",
+    "place_pose",
+    "release",
+    "retreat_pose"
+  ],
+  "provisional_full_cartesian_plan": {
+    "tcp": {
+      "grasp_pose": [
+        -0.5144486331082957,
+        0.008978922593094485,
+        0.045,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "lift_pose": [
+        -0.5144486331082957,
+        0.008978922593094485,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "pregrasp_high_pose": [
+        -0.5144486331082957,
+        0.008978922593094485,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "carry_pose": [
+        -0.5194255129466911,
+        -0.2242244818137122,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "place_pose": [
+        -0.5194255129466911,
+        -0.2242244818137122,
+        0.045,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "retreat_pose": [
+        -0.5194255129466911,
+        -0.2242244818137122,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ]
+    },
+    "flange": {
+      "grasp_pose": [
+        -0.3794486331082957,
+        0.008978922593094468,
+        0.045,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "lift_pose": [
+        -0.3794486331082957,
+        0.008978922593094468,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "pregrasp_high_pose": [
+        -0.3794486331082957,
+        0.008978922593094468,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "carry_pose": [
+        -0.38442551294669114,
+        -0.22422448181371224,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "place_pose": [
+        -0.38442551294669114,
+        -0.22422448181371224,
+        0.045,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ],
+      "retreat_pose": [
+        -0.38442551294669114,
+        -0.22422448181371224,
+        0.245,
+        -1.5707963267948966,
+        0.0,
+        3.141592653589793
+      ]
+    },
+    "source_bottom_mm": [
+      -514.4486331082957,
+      8.978922593094484,
+      -10.0
+    ],
+    "destination_mm": [
+      -519.4255129466911,
+      -224.2244818137122,
+      -10.0
+    ],
+    "table_z_base_mm": -10.0
+  },
+  "pose_plan_source": "unchanged scripts.nero_methylene_teacher.transfer_plan",
+  "perception_source": "current camera; unchanged cup YOLO; independent unique HSV blue quadrilateral diagnostic",
+  "perception_spread_mm": 1.479510598975935,
+  "camera_calibration_used_for_diagnostic": "/home/user/projects/nero/config/camera_to_base.json (2026-10-14)",
+  "teacher_runtime_camera_snapshot_is_older": true,
+  "table_z_assumed_mm": -10.0,
+  "blue_known_size_pnp_z_median_mm": -21.088447037402148,
+  "pnp_minus_assumed_table_mm": -11.088447037402148,
+  "tcp_manual_offset_xyz_m": [
+    0.135,
+    0.0,
+    0.0
+  ],
+  "tcp_approximate": true,
+  "physical_contact_geometry_verified": false,
+  "required_before_contact": [
+    "independent current base-table Z and physical grip-centre TCP validation",
+    "fresh complete robot/cup and carried-cup swept-path collision checks",
+    "per-stage real onsite PICK/NEXT/GRASP/RELEASE confirmations required by existing teacher workflow"
+  ],
+  "original_sources_calibration_limits_weights_modified": false,
+  "hardware_motion_goal_submitted": false
+}

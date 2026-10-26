@@ -1,0 +1,143 @@
+{
+  "checkpoint_sha256": "23bffd16e3e93c2fbb1420eedd60603575d19c794e3c9362e57411402439aec3",
+  "stats_sha256": "a327317b4398430b5c47a7b4d732717c065192e45a56117fc3c24748d95079b4",
+  "epoch": 74,
+  "teacher_free": true,
+  "runtime_geometry_closure_guard": false,
+  "control_hz": 20,
+  "chunk_size": 20,
+  "initial_qpos_or_object_reset_during_rollout": false,
+  "thresholds": {
+    "lift_m": 0.06,
+    "bilateral_frames": 10,
+    "final_xy_error_m": 0.02,
+    "upright_cosine": 0.95,
+    "final_speed": 0.05
+  },
+  "scenarios": [
+    [
+      "reference_start",
+      0,
+      10,
+      0,
+      false
+    ],
+    [
+      "current_start",
+      0,
+      10,
+      0,
+      false
+    ],
+    [
+      "current_real_appearance",
+      0,
+      10,
+      0,
+      true
+    ]
+  ],
+  "independent_cup_xy_jitter_m": 0.002,
+  "independent_initial_joint_jitter_rad": 0.002,
+  "feedback_noise_rad": 0.0002,
+  "real_hardware_tested": false,
+  "timing_protocol": "separate reach deadline and full100-point post-completion hold; original truncated-window results retained",
+  "validation_timing_fix_after_primary_trials": true,
+  "completion_monitor": {
+    "lift_m": 0.06,
+    "stable_grasp_seconds": 1,
+    "post_completion_frozen_goal_seconds": 5,
+    "goal_observation": "simulator cup pose/contact for evaluation termination only; not policy inputs; real monitoring not validated"
+  },
+  "diagnostic_only": true,
+  "initial_state_source": "logs/acceptance_live_inference/report.json",
+  "current_initial_state": [
+    0.13992305099964142,
+    0.8725773692131042,
+    -0.021903881803154945,
+    1.4172247648239136,
+    0.08173377066850662,
+    0.06464699655771255,
+    -0.6932796835899353,
+    0.0949070006608963
+  ],
+  "reference_initial_state_unchanged": true,
+  "frozen_evaluator_source_sha256": "ef2195631c984a07285270efa7af6c0f603c20b43fe2078ecb7b11da6fd2be82",
+  "scenario_descriptions": {
+    "reference_start": "Original recorded start with original simulation observation",
+    "current_start": "User-confirmed current pose with simulated image feedback",
+    "current_real_appearance": "Current pose with repeated fresh real image, appearance stress only; not real visual closed loop"
+  },
+  "results": [
+    {
+      "scenario": "reference_start",
+      "teacher_free": true,
+      "success": true,
+      "max_lift_m": 0.07355676547098533,
+      "final_lift_m": 0.06639496780538945,
+      "bilateral_frames": 228,
+      "held_at_finish": true,
+      "unexpected_arm_cup_contact_frames": 0,
+      "final_xy_error_m": 0.0032126485491183617,
+      "upright_cosine": 0.9999938066892695,
+      "final_speed": 0.0015935208336691719,
+      "first_arm_gap_rad": 0.0013045519590377808,
+      "existing_strict_block_contract_violations": 2,
+      "failure": null,
+      "runtime_s": 18.263060658005998,
+      "completion_step": 1125,
+      "goal_reach_deadline_steps": 1429,
+      "continuous_post_hold_verified": true,
+      "post_completion_hold_points": 100,
+      "real_hardware_tested": false
+    },
+    {
+      "scenario": "current_start",
+      "teacher_free": true,
+      "success": false,
+      "max_lift_m": 0.00035629046227864114,
+      "final_lift_m": -0.0010014410422342912,
+      "bilateral_frames": 0,
+      "held_at_finish": false,
+      "unexpected_arm_cup_contact_frames": 1332,
+      "final_xy_error_m": 0.007240615857366037,
+      "upright_cosine": 0.9999999990238113,
+      "final_speed": 0.0006814323405428099,
+      "first_arm_gap_rad": 0.007067739963531494,
+      "existing_strict_block_contract_violations": 0,
+      "failure": null,
+      "runtime_s": 22.36688360502012,
+      "completion_step": null,
+      "goal_reach_deadline_steps": 1429,
+      "continuous_post_hold_verified": false,
+      "post_completion_hold_points": 0,
+      "real_hardware_tested": false
+    },
+    {
+      "scenario": "current_real_appearance",
+      "teacher_free": true,
+      "success": false,
+      "max_lift_m": 0.0,
+      "final_lift_m": -0.0010013174079871387,
+      "bilateral_frames": 0,
+      "held_at_finish": false,
+      "unexpected_arm_cup_contact_frames": 1327,
+      "final_xy_error_m": 0.01275636890222912,
+      "upright_cosine": 0.9999999992454247,
+      "final_speed": 0.0006383499225471141,
+      "first_arm_gap_rad": 0.00732046365737915,
+      "existing_strict_block_contract_violations": 0,
+      "failure": null,
+      "runtime_s": 16.673827217018697,
+      "completion_step": null,
+      "goal_reach_deadline_steps": 1429,
+      "continuous_post_hold_verified": false,
+      "post_completion_hold_points": 0,
+      "real_hardware_tested": false
+    }
+  ],
+  "passed": 1,
+  "total": 3,
+  "complete": true,
+  "hardware_deployment_allowed": false
+}

@@ -1,0 +1,578 @@
+dataset_dir: /home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/generalized_v1
+manifest: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training/run22_prior_gripper_gradient/manifest.json
+split_file: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training/run22_prior_gripper_gradient/split.json
+camera_names:
+- camera_0
+state_dim: 8
+action_dim: 8
+alignment_offset: 0
+image_size:
+- 90
+- 160
+chunk_size: 20
+batch_size: 32
+eval_batch_size: 32
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.0
+kl_weight: 0.001
+gripper_bce_weight: 0.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 1e-05
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: false
+num_epochs: 3
+seed: 42
+val_fraction: 0.2
+fixed_val_samples_per_episode: 20
+device: cuda
+cpu_threads: 2
+checkpoint_dir: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training/run22_prior_gripper_gradient/checkpoints
+artifact_dir: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training/run22_prior_gripper_gradient/artifacts
+training_log: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training/run22_prior_gripper_gradient/training.csv
+training_stride_steps: 10
+experiment_scope: Complete simulation-only ACT pick carry supported place release
+  retreat; trained bounded absolute-target readout
+terminal_padded_windows: true
+action_representation: absolute_joint_position
+execution_query_stride: 10
+training_objective: deployment_mean_weighted_l1
+near_term_steps: 10
+near_term_weight: 5
+checkpoint_include_optimizer: false
+init_checkpoint: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training/run22_prior_gripper_gradient/artifacts/rebased_initializer.ckpt
+loss_prefix_steps: 20
+freeze_backbone: false
+task_scope: complete_pick_carry_place_retreat
+real_initial_state:
+- 0.18325957655906677
+- -0.12651892006397247
+- 0.10002481937408447
+- 1.5707963705062866
+- -0.023858651518821716
+- 0.2816786766052246
+- 0.13098695874214172
+- 0.09438899904489517
+training_observation_noise_normalized:
+- 0.0012458508343591835
+- 0.0006874193170044154
+- 0.002904105618453305
+- 0.0021215379181531214
+- 0.001544912430459347
+- 0.0011327052966051095
+- 0.0006717259063673708
+- 0.009595849878387595
+joint_residual_anchor: true
+reset_initial_joint_head: true
+joint_anchor_scale:
+- 0.9992278218269348
+- 1.0041775703430176
+- 1.0003063678741455
+- 0.9998534321784973
+- 1.0014101266860962
+- 0.999251127243042
+- 1.0049161911010742
+joint_anchor_offset:
+- -0.001993692247197032
+- 0.0014161955332383513
+- -9.693762694951147e-05
+- 0.010127441957592964
+- -0.001629475736990571
+- -0.0016149180009961128
+- 0.007160389330238104
+training_revision: position_generalization_prior_gripper_gradient_v1
+stage_sampling:
+  close_repeats: 3
+  release_repeats: 3
+  settle_repeats: 3
+  corrective_repeats: 3
+tcp_position_loss_weight: 0
+tcp_position_loss_scale_m: 0.01
+tcp_loss_robot_xml: /home/wq/robot_learning/assets/nero_mujoco/nero_gripper.xml
+tcp_loss_action_mean:
+- 0.10559826344251633
+- 0.573329746723175
+- 0.040047746151685715
+- 1.0477393865585327
+- 0.003233375959098339
+- 0.11270250380039215
+- 0.9915686249732971
+- 0.08711813390254974
+tcp_loss_action_std:
+- 0.06601718068122864
+- 0.3899329602718353
+- 0.05178462713956833
+- 0.27727872133255005
+- 0.010638013482093811
+- 0.08100319653749466
+- 0.45280179381370544
+- 0.012659071013331413
+normalization_stats: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training/run22_prior_gripper_gradient/training_only_stats.pkl
+reset_action_head: false
+bounded_gripper_output: true
+gripper_action_mean: 0.08067332953214645
+gripper_action_std: 0.014282033778727055
+stationary_contact_prefixes_excluded: true
+release_deadband_prefixes_excluded: false
+normalization_source: only_new_training_scene_groups
+scene_config:
+  robot: nero_single_arm
+  end_effector: agx_gripper
+  can_connected: false
+  cup:
+    outer_diameter_m: 0.075
+    height_m: 0.095
+    mass_kg: 0.05
+    wall_thickness_m: 0.002
+  assumptions:
+  - new arm/gripper start measured; qvel zero assumed for stationary capture
+  - object centres and retained table height are provisional ray/plane hypotheses,
+    not real metrology
+  - retained camera extrinsic plus captured intrinsics; print/handle/background remain
+    unmatched
+  - joint servo parameters are simulation assumptions; no real response calibration
+    completed
+  contact_friction:
+  - 0.6
+  - 0.005
+  - 0.0001
+  pick_xy_m:
+  - -0.5251550104962355
+  - 0.015591124486056561
+  place_xy_m:
+  - -0.5247430757905183
+  - -0.16205567896289505
+  table_top_z_m: 0.0
+  control_hz: 20
+  simulation_timestep_s: 0.002
+  arm_kp:
+  - 100
+  - 100
+  - 80
+  - 80
+  - 40
+  - 30
+  - 20
+  arm_kd:
+  - 15
+  - 15
+  - 12
+  - 12
+  - 6
+  - 5
+  - 3
+  joint_speed_limit_rad_s: 0.04
+  finger_force_limit_n: 1.0
+  lift_height_m: 0.2
+  success_position_tolerance_m: 0.02
+  source_measurements: /home/wq/sim2real/nero_act_source/task_measurements.json
+  real_task_geometry_verified: false
+  dwell_seconds:
+    recover_open: 4
+    recover_clear: 0.2
+    moving: 0.2
+    close: 4
+    release: 4
+  final_settle_seconds: 4
+  render_shadows: false
+  teacher_command_lead_limit_rad: 0.03
+  initial_robot_state:
+    qpos_rad:
+    - 0.18325957655906677
+    - -0.12651892006397247
+    - 0.10002481937408447
+    - 1.5707963705062866
+    - -0.023858651518821716
+    - 0.2816786766052246
+    - 0.13098695874214172
+    gripper_total_width_m: 0.09438899904489517
+  table_center_xy_m:
+  - -0.4
+  - -0.15
+  table_half_size_xy_m:
+  - 0.65
+  - 0.65
+  show_target_marker: true
+  camera_calibration:
+    transform_base_from_raw_optical_m:
+    - - -0.072697737738461
+      - 0.45922912341725763
+      - 0.8853381563747986
+      - -0.8889602486428704
+    - - 0.9965659610030485
+      - -0.0018341655365573496
+      - 0.08278237256116336
+      - -0.09312566151992355
+    - - 0.03963993312028583
+      - 0.8883159618301375
+      - -0.4575187730137615
+      - 0.3152114291079937
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    intrinsic_matrix:
+    - - 263.6728515625
+      - 0.0
+      - 323.58526611328125
+    - - 0.0
+      - 263.6728515625
+      - 179.9199676513672
+    - - 0.0
+      - 0.0
+      - 1.0
+    resolution_wh:
+    - 640
+    - 360
+    image_rotation_degrees: 180
+    installation_verified_on_real: false
+  initial_pose_source: evidence/current_source_capture/observations.npz
+  camera_calibrated_to_real: false
+  provisional_geometry_source: nero_act_cup_handoff_20261016
+  experiment_scope: full_ACT_pick_carry_place_retreat_simulation_not_hardware
+  hardware_deployment_allowed: false
+  appearance:
+    table_rgb:
+    - 0.9
+    - 0.9
+    - 0.9
+    cup_rgb:
+    - 0.95
+    - 0.8
+    - 0.05
+    arm_rgb:
+    - 0.16
+    - 0.16
+    - 0.18
+    background_rgb:
+    - 0.25
+    - 0.25
+    - 0.28
+    light_scale: 0.92
+  ik_goal_rotation:
+  - - -1
+    - 0
+    - 0
+  - - 0
+    - 1
+    - 0
+  - - 0
+    - 0
+    - -1
+  visual_marker_xy_m:
+  - -0.5247430757905183
+  - -0.16205567896289505
+  tcp_link7_xyz_m:
+  - 0.152
+  - 0
+  - -0.0235
+  grasp_tcp_height_m: 0.055
+  minimum_transfer_m: 0.1
+  ik_goal_rotation_link7:
+  - - -1
+    - 0
+    - 0
+  - - 0
+    - 0
+    - -1
+  - - 0
+    - -1
+    - 0
+  source_geometry_evidence: evidence/current_source_capture/targets.json
+  source_capture_sha256: 254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f
+physical_state_dim: 8
+policy_input_dim: 9
+gripper_command_context: previous_gripper_target_delta_v1
+coordinate_conditioning: false
+previous_gripper_conditioning: false
+task_displacement_features: false
+reach_deadline_steps: 3900
+task_budget_rule: max3200_or125percent_longest_training_episode_rounded100; final100hold_separate
+prefix_margin_loss_weight: 0.0
+constraint_loss_stats:
+  qpos_mean:
+  - 0.1707107573747635
+  - 0.6710590124130249
+  - 0.03024677373468876
+  - 1.6399112939834595
+  - 0.11253102123737335
+  - 0.15121522545814514
+  - -0.7595588564872742
+  - 0.08445027470588684
+  qpos_std:
+  - 0.1605328619480133
+  - 0.2909432351589203
+  - 0.06886801868677139
+  - 0.0942712351679802
+  - 0.12945717573165894
+  - 0.1765684336423874
+  - 0.29774048924446106
+  - 0.01042117178440094
+  action_mean:
+  - 0.17103105783462524
+  - 0.6706486940383911
+  - 0.030253447592258453
+  - 1.6389564275741577
+  - 0.11274167150259018
+  - 0.15150058269500732
+  - -0.7616803646087646
+  - 0.08067332953214645
+  action_std:
+  - 0.1606569141149521
+  - 0.28973284363746643
+  - 0.0688469260931015
+  - 0.09428505599498749
+  - 0.1292748749256134
+  - 0.17670075595378876
+  - 0.29628390073776245
+  - 0.014282033778727055
+bounded_feedback_residual_output: true
+feedback_readout_version: feedback_tanh_v2
+initialization_legacy_source: /home/user/wq/nero_act_full_pick_place_20261017/training/run12_full_contract_recovery/checkpoints/policy_best_val.ckpt
+training_integrity_required: true
+hardware_deployment_allowed: false
+independent_cases_file: /home/user/wq/nero_act_alignment_recovery_20261018/evidence/predeclared_independent_16_v4.json
+independent_cases_sha256: 83ce2c3db1f019e9518d0178be03acc869b0e93fd93c3fad9a67ac39556c8413
+correction_manifest: /home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_fresh_v1/train_manifest.json
+correction_role: verified_partial_recoveries_not_full_demonstrations
+prior_evaluation_scope: development_regression_after_failed_state_corrections
+visual_learning_control: visual_training_and_dense_critical_inputs_with_verified_alignment_recoveries
+critical_input_sampling:
+  stages:
+  - close
+  - lift
+  - release
+  first_points: 20
+  lift_first5_repeats: 6
+  lift_later_repeats: 2
+  other_added_repeats: 1
+  original_wait_filters_preserved: true
+  descend_recovery_all_inputs_20hz: true
+critical_rgb_source: fresh_preaction_full_physics_renders; identical_actions_states_scene
+additional_correction_manifests:
+- /home/user/wq/nero_act_gripper_gradient_fix_20261018/training_data/direct_grasp_fresh_v1/val_manifest.json
+- /home/user/wq/nero_act_grasp_state_recovery_20261018/training_data/grasp_fresh_v2/manifest.json
+- /home/user/wq/nero_act_alignment_recovery_20261018/training_data/alignment_fresh_v1/manifest.json
+- /home/user/wq/nero_act_transition_fix_20261018/training_data/critical_rgb_v1/recoveries_v1/manifest.json
+pose_loss_weight: 0.05
+pose_kinematics_spec:
+  links:
+  - position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - - 1.0
+      - 0.0
+      - 0.0
+    - - 0.0
+      - 1.0
+      - 0.0
+    - - 0.0
+      - 0.0
+      - 1.0
+  - position:
+    - 0.0
+    - 0.0
+    - 0.138
+    rotation:
+    - - 1.0
+      - 0.0
+      - 0.0
+    - - 0.0
+      - 1.0
+      - 0.0
+    - - 0.0
+      - 0.0
+      - 1.0
+    joint_index: 0
+    axis:
+    - 0.0
+    - 0.0
+    - 1.0
+    joint_position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - - -0.9999999999999987
+      - 5.3589793170057226e-08
+      - 1.4359329578661548e-15
+    - - 3.308722450212111e-24
+      - 2.6794896468285145e-08
+      - -0.9999999999999997
+    - - -5.358979317005725e-08
+      - -0.9999999999999983
+      - -2.6794896468285145e-08
+    joint_index: 1
+    axis:
+    - 0.0
+    - 0.0
+    - 1.0
+    joint_position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - position:
+    - 0.0
+    - -0.31
+    - 0.0
+    rotation:
+    - - -0.9999999999999993
+      - 1.0452744539799955e-15
+      - 3.901020694218449e-08
+    - - -3.9010206942184495e-08
+      - -2.6794896412773994e-08
+      - -0.999999999999999
+    - - 0.0
+      - -0.9999999999999997
+      - 2.6794896412773994e-08
+    joint_index: 2
+    axis:
+    - 0.0
+    - 0.0
+    - 1.0
+    joint_position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - - -0.9999999999999993
+      - 1.0452744539799955e-15
+      - 3.901020694218449e-08
+    - - -3.9010206942184495e-08
+      - -2.6794896412773994e-08
+      - -0.999999999999999
+    - - 0.0
+      - -0.9999999999999997
+      - 2.6794896412773994e-08
+    joint_index: 3
+    axis:
+    - 0.0
+    - 0.0
+    - 1.0
+    joint_position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - position:
+    - 0.0
+    - -0.27001
+    - 0.0
+    rotation:
+    - - 2.6794896468285145e-08
+      - -0.9999999999999993
+      - -2.6794896412773994e-08
+    - - 5.551115123125783e-17
+      - 2.6794896468285145e-08
+      - -0.9999999999999997
+    - - 0.9999999999999997
+      - 2.6794896412773994e-08
+      - 7.216449660063518e-16
+    joint_index: 4
+    axis:
+    - 0.0
+    - 0.0
+    - 1.0
+    joint_position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - - 2.6794896468285145e-08
+      - -0.9999999999999993
+      - -2.6794896412773994e-08
+    - - 5.551115123125783e-17
+      - 2.6794896468285145e-08
+      - -0.9999999999999997
+    - - 0.9999999999999997
+      - 2.6794896412773994e-08
+      - 7.216449660063518e-16
+    joint_index: 5
+    axis:
+    - 0.0
+    - 0.0
+    - 1.0
+    joint_position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - position:
+    - 0.0
+    - -0.0235
+    - 0.0
+    rotation:
+    - - 1.0
+      - 0.0
+      - 0.0
+    - - 0.0
+      - 2.6794896468285145e-08
+      - -0.9999999999999997
+    - - 0.0
+      - 0.9999999999999997
+      - 2.6794896468285145e-08
+    joint_index: 6
+    axis:
+    - 0.0
+    - 0.0
+    - 1.0
+    joint_position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - position:
+    - 0.031
+    - 0.0
+    - -0.0235
+    rotation:
+    - - -3.673205103305044e-06
+      - -3.6732051032495328e-06
+      - 0.9999999999865075
+    - - -0.9999999999932536
+      - 1.3492373884815834e-11
+      - -3.6732051032495328e-06
+    - - 5.551115123125783e-17
+      - -0.9999999999932536
+      - -3.673205103360555e-06
+  - position:
+    - 0.0
+    - 0.0
+    - 0.006
+    rotation:
+    - - 1.0
+      - 0.0
+      - 0.0
+    - - 0.0
+      - 1.0
+      - 0.0
+    - - 0.0
+      - 0.0
+      - 1.0
+  tcp_position:
+  - -4.444578175210112e-07
+  - -4.4445781750028547e-07
+  - 0.11499999999836757
+pose_loss_scales:
+  position_m: 0.01
+  rotation_chord_rad: 0.017453292519943295
+checkpoint_selection: minimum_zero_latent_validation_total_with_prior_gripper_loss
+cvae_training: true
+cvae_validation: zero_latent_no_future_actions
+prior_gripper_loss_weight: 0.05

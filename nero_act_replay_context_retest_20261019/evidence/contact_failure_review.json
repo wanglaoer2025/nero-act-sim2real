@@ -1,0 +1,211 @@
+{
+  "recorded_wall_s": 1792383559.1682718,
+  "status": "stopped_before_close_after_observed_pregrasp_contact",
+  "physical_success": false,
+  "execution_mode": "ACT_simulation_trajectory_replay_not_live_visual_policy",
+  "user_observation": {
+    "question_id": "call_67a377a39d474b62a2c077a1acac207e",
+    "answer": "看到夹指接触杯子或杯子被推动",
+    "scope": "contact or push confirmed; exact cup feature not identified"
+  },
+  "completed_phases": [],
+  "only_submitted_phase": "approach",
+  "grasp_confirmation_requested": false,
+  "close_submitted": false,
+  "lift_submitted": false,
+  "carry_place_submitted": false,
+  "release_submitted": false,
+  "retreat_submitted": false,
+  "error": "ValueError: 夹爪宽度必须在0..0.1 m",
+  "started_monotonic_s": 585423.661305323,
+  "final_feedback_elapsed_s": 55.9036636389792,
+  "approach_command_width_range_mm": [
+    94.9715,
+    95.0
+  ],
+  "final_feedback_width_mm": 100.06,
+  "health_samples": 4990,
+  "feedback_samples": 12352,
+  "maximum_health_sample_gap_ms": 16.616376000456512,
+  "health_force_range_n": [
+    -1.052,
+    0.012
+  ],
+  "diagnostic_timeline": [
+    {
+      "elapsed_s": -0.005391696002334356,
+      "width_mm": 94.94300186634064,
+      "reported_force_n": -0.01,
+      "model_tcp_m": [
+        -0.3706773186968986,
+        -0.06796063778566695,
+        0.4794283944992219
+      ],
+      "model_finger_cup_gap_mm": 50.0
+    },
+    {
+      "elapsed_s": 49.99817851302214,
+      "width_mm": 94.94300186634064,
+      "reported_force_n": 0.004,
+      "model_tcp_m": [
+        -0.5355539368416958,
+        -0.010205612749586314,
+        0.13041925044457445
+      ],
+      "model_finger_cup_gap_mm": 17.606003351627425
+    },
+    {
+      "elapsed_s": 50.99577592301648,
+      "width_mm": 94.94300186634064,
+      "reported_force_n": 0.0,
+      "model_tcp_m": [
+        -0.535457105730834,
+        -0.009970776955293597,
+        0.12168369298385752
+      ],
+      "model_finger_cup_gap_mm": 11.259855336065872
+    },
+    {
+      "elapsed_s": 52.00422738597263,
+      "width_mm": 94.94300186634064,
+      "reported_force_n": 0.002,
+      "model_tcp_m": [
+        -0.5353758191009927,
+        -0.009852845713450822,
+        0.11301354305730867
+      ],
+      "model_finger_cup_gap_mm": 7.331759283084196
+    },
+    {
+      "elapsed_s": 52.99699754198082,
+      "width_mm": 94.98099982738495,
+      "reported_force_n": -0.046,
+      "model_tcp_m": [
+        -0.5354216056018832,
+        -0.009833596727083409,
+        0.10471469376564939
+      ],
+      "model_finger_cup_gap_mm": 7.086547689888988
+    },
+    {
+      "elapsed_s": 53.99996506597381,
+      "width_mm": 95.56800127029419,
+      "reported_force_n": -0.334,
+      "model_tcp_m": [
+        -0.5351466282095985,
+        -0.009935062983053687,
+        0.0959768450837265
+      ],
+      "model_finger_cup_gap_mm": 7.262735167191243
+    },
+    {
+      "elapsed_s": 55.00197920599021,
+      "width_mm": 96.17500007152557,
+      "reported_force_n": -0.711,
+      "model_tcp_m": [
+        -0.5351367898774757,
+        -0.00983687174515728,
+        0.08829503157870071
+      ],
+      "model_finger_cup_gap_mm": 7.669244128497865
+    },
+    {
+      "elapsed_s": 55.87790836102795,
+      "width_mm": 99.93000328540802,
+      "reported_force_n": -1.0050000000000001,
+      "model_tcp_m": [
+        -0.5346544157976251,
+        -0.009504195162904953,
+        0.07815815716613214
+      ],
+      "model_finger_cup_gap_mm": 9.862641105429981
+    }
+  ],
+  "final_feedback_model_fk": {
+    "model_tcp_m": [
+      -0.5346248677924865,
+      -0.009443279789432445,
+      0.07788364713374421
+    ],
+    "model_finger_cup_gap_mm": 9.988881361830035
+  },
+  "diagnostic_scope": "FK and distances for logged actual states using the existing approximate fingers/TCP/cylindrical cup. Not real metrology, not clearance acceptance, and not authorization.",
+  "known_model_gaps": [
+    "real cup handle, flared rim and protrusions not modeled",
+    "TCP accepted nominal rather than independently measured",
+    "camera ray-plane estimates not independently metrologically verified",
+    "real joint response not fully calibrated"
+  ],
+  "causal_assessment": {
+    "established": "Contact observed during pregrasp descent; actual width increased while commanded width remained95mm; invalid100.06mm feedback triggered stop before close.",
+    "unresolved": "Exact contact feature and relative contributions of cup geometry, TCP, localization and tracking errors cannot be separated from available evidence.",
+    "heartbeat": "No150ms sample gap in recorded health stream; this stop was a width validation error, not the prior heartbeat timeout.",
+    "force": "Signed SDK force is reported as evidence only; direction/mechanism not independently calibrated."
+  },
+  "post_stop": {
+    "cup_shift_estimate_mm": [
+      4.6063468800099425,
+      4.6063468800099425,
+      4.6063468800099425,
+      4.823646016047534,
+      4.6063468800099425,
+      4.6063468800099425,
+      4.6063468800099425,
+      4.6063468800099425
+    ],
+    "position_estimation_caveat": "Occlusion and ray-plane assumptions limit precision; photo is not a contact point measurement.",
+    "last_feedback": {
+      "receipt_monotonic_s": 585758.49979818,
+      "position": [
+        0.03616322210132251,
+        0.9645387578221464,
+        -0.01773254520026239,
+        1.684225274882008,
+        0.02816961412718848,
+        -0.0043982297150257105,
+        -1.0763445497049031,
+        0.095062
+      ],
+      "effort": [
+        0.40641102215999997,
+        -8.946123853867201,
+        0.11769128000000001,
+        -2.9507019000000003,
+        -0.5008007039910001,
+        0.1282752680398,
+        -0.4583979886080001,
+        -0.064
+      ]
+    },
+    "can_tx_before": 868030,
+    "can_tx_after": 868030,
+    "gated_command_publishers": 0,
+    "command_driver_alive": false,
+    "gate_alive": false,
+    "runtime_alive": false,
+    "readonly_driver_pid": 2301664
+  },
+  "sealed_package_verification": {
+    "entries": 765,
+    "mismatches": [],
+    "verified": true
+  },
+  "automatic_retry": false,
+  "automatic_return": false,
+  "protection_thresholds_changed": false,
+  "next_work": "Resolve real finger/cup-rim/handle/TCP geometry and its uncertainty budget in an isolated candidate, regenerate full ACT simulation and full clearance/collision verification before another physical attempt. Do not bypass the width or contact guards.",
+  "evidence_files": [
+    "real_attempt_01/report.json",
+    "real_attempt_01/independent_health.json",
+    "real_attempt_01/actual_feedback.json",
+    "replay_session_01/lifecycle.json",
+    "post_stop_contact_readonly/report.json"
+  ],
+  "evidence_sha256": {
+    "real_attempt_01/report.json": "233a1368c5f2466f57b24532207d1125d990304cbc2cf2dcafc7b89943098516",
+    "real_attempt_01/independent_health.json": "a7936ba8af7b2ccbb879ae6ffb725cd87fcfe8214a4225af443cc8c0726b9a4d",
+    "real_attempt_01/actual_feedback.json": "33b6a8554116d5035d7da51ea24e72382388c976940bedf1e56cdbc4a078d4e5",
+    "replay_session_01/lifecycle.json": "d0100a990cf7f5a5b23f64e23d4b123fc1a57f5a72835a1d15b84429f08d33ff",
+    "post_stop_contact_readonly/report.json": "c5fb3aa6a23d8a83acbfbd9b55ddc981a683395a36391bc309832d5dc46465ea"
+  }
+}

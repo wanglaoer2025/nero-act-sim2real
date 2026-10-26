@@ -1,0 +1,16 @@
+Hardware Component 1
+	name: FakeSystem
+	type: system
+	plugin name: mock_components/GenericSystem
+	state: id=3 label=active
+	read/write rate: 200 Hz
+	is_async: False
+	command interfaces
+		joint7/position [available] [claimed]
+		gripper/position [available] [claimed]
+		joint6/position [available] [claimed]
+		joint5/position [available] [claimed]
+		joint4/position [available] [claimed]
+		joint3/position [available] [claimed]
+		joint2/position [available] [claimed]
+		joint1/position [available] [claimed]

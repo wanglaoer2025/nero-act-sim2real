@@ -1,0 +1,138 @@
+{
+  "time_local": "2026-10-22T21:01:27.296289+08:00",
+  "schema": "table_plane_thickness_derivation_v1",
+  "mode": "offline_recompute_from_preserved_native_marker_corners",
+  "thickness_measurement": {
+    "value_mm": 8.0,
+    "source": "Operator reply: 8mm, to tabletop-to-black-printed-surface vertical-height question",
+    "measurement_uncertainty_mm": null,
+    "independently_verified": false
+  },
+  "camera_serial": 39602891,
+  "marker_id": 0,
+  "marker_black_side_m": 0.095,
+  "raw_images_and_capture_sources_hashes_verified": true,
+  "positions": [
+    {
+      "raw_source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/report.json",
+      "raw_source_sha256": "599ed1cc86a9ab8bca75616f1abc203682a14d24424ac809fb8d55598a6de7b4",
+      "qualified_repeated_frames": 24,
+      "measurement_with_operator_thickness": {
+        "valid_frames": 24,
+        "distinct_physical_positions": 1,
+        "plane_normal_optical": [
+          0.0008129846982303647,
+          0.9275152981870485,
+          -0.37378431037815246
+        ],
+        "camera_to_board_plane_m": 0.35798334182944513,
+        "board_distance_spread_mm": 1.775178226376184,
+        "board_thickness_mm": 8.0,
+        "camera_to_table_plane_m": 0.36598334182944514,
+        "marker_center_optical_m": [
+          -0.0879584840298913,
+          -0.1246298501553835,
+          0.6484342338970794
+        ],
+        "maximum_normal_deviation_deg": 0.09584697317518666,
+        "independent_absolute_base_validation": false,
+        "calibration_verified": false,
+        "hardware_deployment_allowed": false
+      },
+      "original_unknown_thickness_report_unchanged": true
+    },
+    {
+      "raw_source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/report.json",
+      "raw_source_sha256": "8a131c24c28d5a606f8284f5f18240390bceb77eb741629a0f2a20df2c556e1b",
+      "qualified_repeated_frames": 24,
+      "measurement_with_operator_thickness": {
+        "valid_frames": 24,
+        "distinct_physical_positions": 1,
+        "plane_normal_optical": [
+          0.0022515703318510094,
+          0.9263745536821725,
+          -0.37659675612144694
+        ],
+        "camera_to_board_plane_m": 0.36334989492180503,
+        "board_distance_spread_mm": 1.6685109693014288,
+        "board_thickness_mm": 8.0,
+        "camera_to_table_plane_m": 0.37134989492180503,
+        "marker_center_optical_m": [
+          -0.19197563098370676,
+          -0.12623230971597352,
+          0.6532183117780009
+        ],
+        "maximum_normal_deviation_deg": 0.08949819064720894,
+        "independent_absolute_base_validation": false,
+        "calibration_verified": false,
+        "hardware_deployment_allowed": false
+      },
+      "original_unknown_thickness_report_unchanged": true
+    },
+    {
+      "raw_source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/report.json",
+      "raw_source_sha256": "738e5fd6dfa58553ed84b699a8925deaaac7cdc96069a95609681194519e33da",
+      "qualified_repeated_frames": 24,
+      "measurement_with_operator_thickness": {
+        "valid_frames": 24,
+        "distinct_physical_positions": 1,
+        "plane_normal_optical": [
+          -0.0019270346343906047,
+          0.9285635930936623,
+          -0.3711683447150438
+        ],
+        "camera_to_board_plane_m": 0.3574467723025534,
+        "board_distance_spread_mm": 2.031355066683005,
+        "board_thickness_mm": 8.0,
+        "camera_to_table_plane_m": 0.3654467723025534,
+        "marker_center_optical_m": [
+          -0.19257524139519117,
+          -0.08538735841315608,
+          0.7503589609463321
+        ],
+        "maximum_normal_deviation_deg": 0.08951601961058873,
+        "independent_absolute_base_validation": false,
+        "calibration_verified": false,
+        "hardware_deployment_allowed": false
+      },
+      "original_unknown_thickness_report_unchanged": true
+    }
+  ],
+  "independent_physical_positions": 3,
+  "repeated_frames_total": 72,
+  "camera_to_table_plane_mm": [
+    365.9833418294451,
+    371.34989492180506,
+    365.4467723025534
+  ],
+  "cross_position_table_distance_span_mm": 5.903122619251633,
+  "old_nominal_camera_table_distance_mm": 315.2114291079937,
+  "table_plane_minus_old_nominal_mm": [
+    50.77191272145143,
+    56.13846581381132,
+    50.23534319455969
+  ],
+  "current_real_calibration_gap": {
+    "tcp_fixed_reference_fit_samples": 0,
+    "tcp_independent_holdout_samples": 0,
+    "known_base_camera_control_points": 0,
+    "camera_independent_3d_holdout_points": 0,
+    "candidate_mounted_marker_pairs_previous_session": 4,
+    "camera_plane_poses_this_session": 3,
+    "camera_to_base_full_transform_verified": false,
+    "tcp_verified": false
+  },
+  "pending": "No further tabletop translation needed. Obtain independent base/camera correspondences and physical TCP fixed-reference samples; current table-plane diagnostic alone cannot establish full transform. Keep live configuration unchanged.",
+  "calibration_verified": false,
+  "accuracy_target_met": false,
+  "hardware_deployment_allowed": false,
+  "robot_connected": false,
+  "robot_motion_sent": false,
+  "live_calibration_modified": false,
+  "interpretation": [
+    "Positive8mm board-surface height is added along measured camera-to-plane normal distance: table distance=board-top distance+0.008m.",
+    "Unknown measurement uncertainty remains null, not zero. No new independent base metrology or TCP evidence was created.",
+    "The previous raw reports retain unknown-thickness measurements; this file records the subsequent operator measurement and reproducible offline derivation.",
+    "Approximately5.9mm disagreement persists across three positions. Do not publish their average as a verified calibration or2mm localization accuracy."
+  ]
+}

@@ -1,0 +1,24 @@
+test_normalization_does_not_ignore_small_teacher_response (test_paired.PairedResponseTests.test_normalization_does_not_ignore_small_teacher_response) ... FAIL
+test_response_is_independent_of_shared_pose_bias (test_paired.PairedResponseTests.test_response_is_independent_of_shared_pose_bias) ... FAIL
+test_wrong_response_gets_opposite_endpoint_gradients (test_paired.PairedResponseTests.test_wrong_response_gets_opposite_endpoint_gradients) ... ok
+
+======================================================================
+FAIL: test_normalization_does_not_ignore_small_teacher_response (test_paired.PairedResponseTests.test_normalization_does_not_ignore_small_teacher_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_paired_response_20261023/test_paired.py", line 29, in test_normalization_does_not_ignore_small_teacher_response
+    self.assertAlmostEqual(float(a),float(b),places=5)
+AssertionError: 0.6666666865348816 != 66.66666412353516 within 5 places (65.99999743700027 difference)
+
+======================================================================
+FAIL: test_response_is_independent_of_shared_pose_bias (test_paired.PairedResponseTests.test_response_is_independent_of_shared_pose_bias)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_paired_response_20261023/test_paired.py", line 13, in test_response_is_independent_of_shared_pose_bias
+    self.assertLess(float(paired_response_loss(prediction,target)),1e-20)
+AssertionError: 18666667.81902315 not less than 1e-20
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (failures=2)

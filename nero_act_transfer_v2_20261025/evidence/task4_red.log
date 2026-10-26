@@ -1,0 +1,42 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_______ test_proxy_and_partial_demonstrations_cannot_qualify_main_policy _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-115/test_proxy_and_partial_demonst0')
+
+    def test_proxy_and_partial_demonstrations_cannot_qualify_main_policy(tmp_path):
+>       from data_audit import audit_episode
+E       ModuleNotFoundError: No module named 'data_audit'
+
+tests/test_data.py:30: ModuleNotFoundError
+____ test_future_previous_context_or_invalid_visual_frame_is_not_qualified _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-115/test_future_previous_context_o0')
+
+    def test_future_previous_context_or_invalid_visual_frame_is_not_qualified(tmp_path):
+>       from data_audit import audit_episode
+E       ModuleNotFoundError: No module named 'data_audit'
+
+tests/test_data.py:40: ModuleNotFoundError
+_________ test_position_groups_have_exact_counts_and_five_mm_exclusion _________
+
+    def test_position_groups_have_exact_counts_and_five_mm_exclusion():
+>       from protocol import plan_positions,validate_positions
+E       ModuleNotFoundError: No module named 'protocol'
+
+tests/test_data.py:50: ModuleNotFoundError
+_____________ test_vds_missing_source_is_an_error_not_black_images _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-115/test_vds_missing_source_is_an_0')
+
+    def test_vds_missing_source_is_an_error_not_black_images(tmp_path):
+>       from data_audit import audit_episode
+E       ModuleNotFoundError: No module named 'data_audit'
+
+tests/test_data.py:60: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_data.py::test_proxy_and_partial_demonstrations_cannot_qualify_main_policy
+FAILED tests/test_data.py::test_future_previous_context_or_invalid_visual_frame_is_not_qualified
+FAILED tests/test_data.py::test_position_groups_have_exact_counts_and_five_mm_exclusion
+FAILED tests/test_data.py::test_vds_missing_source_is_an_error_not_black_images
+4 failed in 0.09s

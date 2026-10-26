@@ -1,0 +1,94 @@
+{
+  "computed_at": "2026-10-24T21:11:10.789331+08:00",
+  "scope": "Read-only arithmetic feasibility probe over all 79 recorded feedback trajectories; no converted training dataset generated",
+  "candidate_future_state_contract": "q_target[t,j]=measured_q[t+lead+j], j=0..19. This is future-state imitation, not reconstructed submitted commands. Gripper future target stream remains separately recorded intent with unchanged event timing.",
+  "tail_policy": "Count only full valid future windows for this probe; do not clamp beyond episode end and treat repeated endpoints as new valid actions.",
+  "leads": [
+    {
+      "future_feedback_lead_steps": 1,
+      "valid_future_state_pairs": 56340,
+      "actual_future_dt_ms_p05_p50_p95": [
+        49.928091891342774,
+        49.999225011561066,
+        50.07521257066401
+      ],
+      "max_joint_displacement_deg_p05_p50_p95": [
+        0.001003867038525642,
+        0.17500010132789612,
+        0.8690049648284912
+      ],
+      "nonpadded_queries_with_20_targets": 54839,
+      "nonpadded_queries_with_first_2_targets": 56261
+    },
+    {
+      "future_feedback_lead_steps": 2,
+      "valid_future_state_pairs": 56261,
+      "actual_future_dt_ms_p05_p50_p95": [
+        99.91947999515105,
+        99.999394005863,
+        100.08222299802583
+      ],
+      "max_joint_displacement_deg_p05_p50_p95": [
+        0.003995660692453384,
+        0.3250000476837158,
+        1.74399995803833
+      ],
+      "nonpadded_queries_with_20_targets": 54760,
+      "nonpadded_queries_with_first_2_targets": 56182
+    },
+    {
+      "future_feedback_lead_steps": 4,
+      "valid_future_state_pairs": 56103,
+      "actual_future_dt_ms_p05_p50_p95": [
+        199.91126641107257,
+        199.99955501407385,
+        200.08774619782344
+      ],
+      "max_joint_displacement_deg_p05_p50_p95": [
+        0.005000018514692783,
+        0.6179997324943542,
+        3.4670004844665527
+      ],
+      "nonpadded_queries_with_20_targets": 54602,
+      "nonpadded_queries_with_first_2_targets": 56024
+    },
+    {
+      "future_feedback_lead_steps": 8,
+      "valid_future_state_pairs": 55787,
+      "actual_future_dt_ms_p05_p50_p95": [
+        399.9019459937699,
+        399.9994850018993,
+        400.0947774198721
+      ],
+      "max_joint_displacement_deg_p05_p50_p95": [
+        0.007000943645834923,
+        1.2059996128082275,
+        6.7729997634887695
+      ],
+      "nonpadded_queries_with_20_targets": 54286,
+      "nonpadded_queries_with_first_2_targets": 55708
+    }
+  ],
+  "gripper_examples": [
+    {
+      "path": "/home/user/projects/nero/data/act_dual_fixed/episode_0.hdf5",
+      "gripper_width_1s_after_first_close_mm": 79.36100006103516
+    },
+    {
+      "path": "/home/user/projects/nero/data/act_dual_fixed/episode_42.hdf5",
+      "gripper_width_1s_after_first_close_mm": 69.67499542236328
+    },
+    {
+      "path": "/home/user/projects/nero/data/act_dual_fixed_destination/episode_0.hdf5",
+      "gripper_width_1s_after_first_close_mm": 72.09400177001953
+    }
+  ],
+  "limitations": [
+    "No lead chosen as optimal",
+    "No actual command or servo latency identified",
+    "No physical rollout or policy fit performed",
+    "No missing current 15D geometry or command receipts fabricated"
+  ],
+  "hardware_commands": 0,
+  "training_updates": 0
+}

@@ -1,0 +1,397 @@
+{
+  "source": "/home/user/wq/nero_act_transfer_v2_20261025/data/v2_enclosed_missing_01/train_02_03.hdf5",
+  "rows": [
+    {
+      "frame": 0,
+      "stage": "approach",
+      "error": null,
+      "components": [
+        [
+          380,
+          481,
+          113,
+          154,
+          13497
+        ]
+      ],
+      "bbox_rmse_px": 0.09032391704275204,
+      "fit_bottom": [
+        -0.5473225731795195,
+        0.08450278814194254,
+        0.0018906087978920352
+      ],
+      "truth_diagnostic_error_mm": 1.053569036341937,
+      "outside_hull_pixels": 71,
+      "outside_hull_max_px": 0.5978410865845264
+    },
+    {
+      "frame": 1517,
+      "stage": "carry",
+      "error": null,
+      "components": [
+        [
+          317,
+          260,
+          144,
+          172,
+          18564
+        ],
+        [
+          458,
+          361,
+          4,
+          25,
+          27
+        ]
+      ],
+      "bbox_rmse_px": 0.6019601175727781,
+      "fit_bottom": [
+        -0.5443545074886739,
+        0.08616774913256262,
+        0.193509678306445
+      ],
+      "truth_diagnostic_error_mm": 2.8444133058991152,
+      "outside_hull_pixels": 211,
+      "outside_hull_max_px": 1.5672021354688865
+    },
+    {
+      "frame": 1518,
+      "stage": "carry",
+      "error": "Exterior colour candidate outside projected cup",
+      "components": [
+        [
+          317,
+          260,
+          144,
+          172,
+          18567
+        ],
+        [
+          458,
+          358,
+          3,
+          19,
+          21
+        ]
+      ],
+      "bbox_rmse_px": 0.8938656767571364,
+      "fit_bottom": [
+        -0.543292188084092,
+        0.08700370674990836,
+        0.19304050606018308
+      ],
+      "truth_diagnostic_error_mm": 4.40689630045581,
+      "outside_hull_pixels": 281,
+      "outside_hull_max_px": 3.0382542426557877
+    },
+    {
+      "frame": 1520,
+      "stage": "carry",
+      "error": null,
+      "components": [
+        [
+          319,
+          260,
+          144,
+          172,
+          18552
+        ],
+        [
+          461,
+          370,
+          3,
+          19,
+          21
+        ]
+      ],
+      "bbox_rmse_px": 0.5013885714515007,
+      "fit_bottom": [
+        -0.5447489561099367,
+        0.08465098591594285,
+        0.19367126726873354
+      ],
+      "truth_diagnostic_error_mm": 2.1869554744498325,
+      "outside_hull_pixels": 165,
+      "outside_hull_max_px": 1.4869051692255244
+    },
+    {
+      "frame": 1540,
+      "stage": "carry",
+      "error": null,
+      "components": [
+        [
+          340,
+          260,
+          140,
+          171,
+          18348
+        ]
+      ],
+      "bbox_rmse_px": 0.7117224118529979,
+      "fit_bottom": [
+        -0.5422621098302588,
+        0.0733941859373783,
+        0.19282600612606488
+      ],
+      "truth_diagnostic_error_mm": 3.8790332737953808,
+      "outside_hull_pixels": 250,
+      "outside_hull_max_px": 2.4570904195569043
+    },
+    {
+      "frame": 1560,
+      "stage": "carry",
+      "error": null,
+      "components": [
+        [
+          361,
+          259,
+          139,
+          171,
+          18136
+        ]
+      ],
+      "bbox_rmse_px": 0.048793903423498534,
+      "fit_bottom": [
+        -0.544808394223314,
+        0.058502637143471044,
+        0.19456087802407324
+      ],
+      "truth_diagnostic_error_mm": 1.103075822626262,
+      "outside_hull_pixels": 51,
+      "outside_hull_max_px": 0.4062346039475185
+    },
+    {
+      "frame": 1600,
+      "stage": "carry",
+      "error": null,
+      "components": [
+        [
+          400,
+          259,
+          131,
+          169,
+          17700
+        ]
+      ],
+      "bbox_rmse_px": 0.1872073717870442,
+      "fit_bottom": [
+        -0.5407776298315727,
+        0.03633751769648966,
+        0.19331694908451433
+      ],
+      "truth_diagnostic_error_mm": 1.1880171167256057,
+      "outside_hull_pixels": 79,
+      "outside_hull_max_px": 1.2547066090459444
+    }
+  ],
+  "teacher_result": {
+    "success": true,
+    "physical_success": true,
+    "max_lift_m": 0.19428985911947366,
+    "maximum_horizontal_transfer_m": 0.21759104349055075,
+    "stable_released_frames": 135,
+    "lift_contact_frames": 931,
+    "unexpected_arm_cup_contact_frames": 0,
+    "execution_contract_failures": 0,
+    "premature_release_before_support": false,
+    "constraint_attachment_used": false,
+    "last_observation": {
+      "cup_xyz": [
+        -0.5247431397412401,
+        -0.131638402209085,
+        0.04749668780491483
+      ],
+      "tcp_xyz": [
+        -0.5246238815985608,
+        -0.131792058716364,
+        0.25500777048915313
+      ],
+      "cup_upright": 0.9999999999999615,
+      "cup_speed": 1.3259541301688674e-06,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.0949999987750496,
+      "contract_valid": true
+    },
+    "stages": [
+      {
+        "stage": "approach",
+        "cup_xyz": [
+          -0.5467678281003888,
+          0.08459806959083228,
+          0.04749668781827374
+        ],
+        "tcp_xyz": [
+          -0.5465771005140857,
+          0.08450913534442354,
+          0.2550667726024739
+        ],
+        "cup_upright": 0.9999999999999821,
+        "cup_speed": 1.6632416160769114e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999870593397,
+        "contract_valid": true
+      },
+      {
+        "stage": "descend",
+        "cup_xyz": [
+          -0.5467678299941019,
+          0.08459806787226277,
+          0.047496687812627746
+        ],
+        "tcp_xyz": [
+          -0.5467061874493773,
+          0.08458462438206103,
+          0.05517696520277628
+        ],
+        "cup_upright": 0.999999999999974,
+        "cup_speed": 1.0994475754487378e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999866508402,
+        "contract_valid": true
+      },
+      {
+        "stage": "close",
+        "cup_xyz": [
+          -0.5467678378524267,
+          0.0845983510259734,
+          0.04749668864696621
+        ],
+        "tcp_xyz": [
+          -0.5467353074443662,
+          0.08459764280175328,
+          0.054995064888981406
+        ],
+        "cup_upright": 0.9999999999826994,
+        "cup_speed": 1.8555818723234456e-05,
+        "bilateral": true,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07413143311253168,
+        "contract_valid": true
+      },
+      {
+        "stage": "lift",
+        "cup_xyz": [
+          -0.5465707577648027,
+          0.08455416824384886,
+          0.24164462057780725
+        ],
+        "tcp_xyz": [
+          -0.5467148419007133,
+          0.08456700929419544,
+          0.25189898007133055
+        ],
+        "cup_upright": 0.9999707858580447,
+        "cup_speed": 0.0024534828422462457,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.0737738983461034,
+        "contract_valid": true
+      },
+      {
+        "stage": "carry",
+        "cup_xyz": [
+          -0.5242780378958763,
+          -0.13166357342067067,
+          0.23923258799100533
+        ],
+        "tcp_xyz": [
+          -0.5245938548973859,
+          -0.131629239465483,
+          0.25211604017226047
+        ],
+        "cup_upright": 0.9998520929958531,
+        "cup_speed": 0.0025070000289788424,
+        "bilateral": true,
+        "supported": false,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07374987654285356,
+        "contract_valid": true
+      },
+      {
+        "stage": "place",
+        "cup_xyz": [
+          -0.5247498229551265,
+          -0.13163449691096088,
+          0.04748874645881783
+        ],
+        "tcp_xyz": [
+          -0.5259340966460555,
+          -0.13174583317241773,
+          0.0608044536255026
+        ],
+        "cup_upright": 0.9999999926068852,
+        "cup_speed": 0.00012850486826391767,
+        "bilateral": true,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.07378717030102386,
+        "contract_valid": true
+      },
+      {
+        "stage": "release",
+        "cup_xyz": [
+          -0.5247431404379133,
+          -0.13163840091143156,
+          0.04749668780935005
+        ],
+        "tcp_xyz": [
+          -0.5246235523861438,
+          -0.13179566485911073,
+          0.05499504341190676
+        ],
+        "cup_upright": 0.9999999999999669,
+        "cup_speed": 2.4233052466559693e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09182629765590095,
+        "contract_valid": true
+      },
+      {
+        "stage": "retreat",
+        "cup_xyz": [
+          -0.5247431396435575,
+          -0.13163840021191356,
+          0.04749668781183378
+        ],
+        "tcp_xyz": [
+          -0.5246184227632028,
+          -0.1317972913608488,
+          0.2548401267662233
+        ],
+        "cup_upright": 0.9999999999999718,
+        "cup_speed": 2.4619744696750246e-06,
+        "bilateral": false,
+        "supported": true,
+        "unexpected_contact": false,
+        "unexpected_robot_contact": false,
+        "gripper_width": 0.09499999860544153,
+        "contract_valid": true
+      }
+    ],
+    "frames": 2951,
+    "error": null,
+    "real_hardware_tested": false,
+    "task": "complete_pick_carry_place_retreat",
+    "teacher_transition_profile": "measured_event_v2",
+    "full_task_verified": true
+  },
+  "elapsed_s": 34.61652113997843,
+  "hardware_commands_sent": false
+}

@@ -1,0 +1,56 @@
+{
+  "new_calibration_in_sealed_training_sources": false,
+  "audited_visual_files": 267,
+  "splits": {
+    "train": 241,
+    "val": 26
+  },
+  "camera_transform_counts": {
+    "e9cfe252c0faa0662881adb95ea2b428b15b8aa307abf1c04590188b1cd275c6": 267
+  },
+  "new_camera_transform_present_in_training": false,
+  "training_cup_xy_range_m": [
+    [
+      -0.6626654684755715,
+      -0.05645164748254177
+    ],
+    [
+      -0.49515501049623545,
+      0.04559112448605656
+    ]
+  ],
+  "current_cup_xy_m": [
+    -0.5167678268557342,
+    0.05459807822381106
+  ],
+  "initial_actor_prefix_tcp_delta_mm": [
+    [
+      -0.5133404127724561,
+      0.239599201632551,
+      -0.32136357199952226
+    ],
+    [
+      -0.802620656511821,
+      0.3446269454928791,
+      -0.5354822561100536
+    ]
+  ],
+  "initial_teacher_prefix_tcp_delta_mm": [
+    [
+      -0.22478687609611692,
+      0.18897508711396283,
+      -0.3458341157166478
+    ],
+    [
+      -0.44891733871604833,
+      0.3782734460947984,
+      -0.6917732581556146
+    ]
+  ],
+  "max_actor_teacher_initial_prefix_error_mm": 0.3881558982456635,
+  "actor_and_teacher_initial_state_max_error": 1.1592355825262857e-09,
+  "conclusion": "Old weights were evaluated with new extrinsic and new geometry without training examples using this camera transform; a controlled new-calibration data adaptation is required to test this cause",
+  "hypothesis_not_unique_proof": true,
+  "optimizer_updates": 0,
+  "hardware_commands_sent": false
+}

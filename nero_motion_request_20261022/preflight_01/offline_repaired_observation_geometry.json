@@ -1,0 +1,482 @@
+{
+  "mode": "offline_saved_frame_detector_and_geometry_sequential_diagnostic",
+  "image": "/home/user/wq/nero_motion_request_20261022/preflight_01/live_ACT_preview/camera_000.png",
+  "image_sha256": "68cac9b892747e0be316bc7688f261fa50a1dca84d2fb035ef3133e17dfc6876",
+  "replacement_detector_candidate": "/home/user/projects/nero/yolov8n.pt",
+  "candidate_detector_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "original_confidence_threshold_unchanged": 0.2,
+  "yellow_outline_checks_passed": true,
+  "single_blue_quadrilateral_passed": true,
+  "cup_bbox": [
+    260,
+    232,
+    312,
+    314
+  ],
+  "blue_bbox": [
+    385,
+    269,
+    451,
+    319
+  ],
+  "cup_dimensions_mm": [
+    95,
+    75
+  ],
+  "max_fit_rmse_px_unchanged": 8,
+  "results": [
+    {
+      "name": "generic_detector_original_geometry",
+      "fit_passed": true,
+      "fit_rmse_px": 6.062314019061625,
+      "details": {
+        "source_bottom_mm": [
+          -634.0278563276505,
+          -27.570912032594872,
+          0.0
+        ],
+        "destination_mm": [
+          -627.4882744454621,
+          -204.58839335441422,
+          0.0
+        ],
+        "fit_rmse_px": 6.062314019061625,
+        "observed_box_px": [
+          260.0,
+          232.0,
+          312.0,
+          314.0
+        ],
+        "projected_box_px": [
+          254.91108849639608,
+          223.45708755183813,
+          317.64560129722884,
+          318.031800797051
+        ],
+        "edge_residual_px": [
+          -5.088911503603924,
+          -8.542912448161871,
+          5.645601297228836,
+          4.031800797051005
+        ],
+        "cup_height_mm": 95.0,
+        "cup_diameter_mm": 75.0,
+        "table_z_base_mm": 0.0,
+        "camera_matrix": [
+          [
+            263.6728515625,
+            0.0,
+            323.58526611328125
+          ],
+          [
+            0.0,
+            263.6728515625,
+            179.9199676513672
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "base_from_camera": [
+          [
+            -0.072697737738461,
+            0.45922912341725763,
+            0.8853381563747986,
+            -888.9602486428704
+          ],
+          [
+            0.9965659610030485,
+            -0.0018341655365573496,
+            0.08278237256116336,
+            -93.12566151992355
+          ],
+          [
+            0.03963993312028583,
+            0.8883159618301375,
+            -0.4575187730137615,
+            315.2114291079937
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "error": null,
+      "transform_base_from_optical_diagnostic_m": [
+        [
+          -0.072697737738461,
+          0.45922912341725763,
+          0.8853381563747986,
+          -0.8889602486428704
+        ],
+        [
+          0.9965659610030485,
+          -0.0018341655365573496,
+          0.08278237256116336,
+          -0.09312566151992355
+        ],
+        [
+          0.03963993312028583,
+          0.8883159618301375,
+          -0.4575187730137615,
+          0.3152114291079937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "valid_for_control": false
+    },
+    {
+      "name": "generic_detector_plus_table_plane_position_1_diagnostic",
+      "fit_passed": true,
+      "fit_rmse_px": 3.339142086855903,
+      "details": {
+        "source_bottom_mm": [
+          -533.6227234031211,
+          -17.26951106485819,
+          0.0
+        ],
+        "destination_mm": [
+          -516.8141200164578,
+          -248.42891004230927,
+          -5.684341886080802e-14
+        ],
+        "fit_rmse_px": 3.339142086855903,
+        "observed_box_px": [
+          260.0,
+          232.0,
+          312.0,
+          314.0
+        ],
+        "projected_box_px": [
+          262.67906760621133,
+          236.74986152749443,
+          309.06258131763207,
+          311.5035098197063
+        ],
+        "edge_residual_px": [
+          2.6790676062113334,
+          4.749861527494431,
+          -2.937418682367934,
+          -2.4964901802936765
+        ],
+        "cup_height_mm": 95.0,
+        "cup_diameter_mm": 75.0,
+        "table_z_base_mm": 0.0,
+        "camera_matrix": [
+          [
+            263.6728515625,
+            0.0,
+            323.58526611328125
+          ],
+          [
+            0.0,
+            263.6728515625,
+            179.9199676513672
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "base_from_camera": [
+          [
+            -0.07462323063917069,
+            0.37279851745366227,
+            0.9249068271092632,
+            -888.9602486428704
+          ],
+          [
+            0.9972114682979,
+            0.027141057704923557,
+            0.06951726750818384,
+            -93.12566151992355
+          ],
+          [
+            0.0008129846982303646,
+            0.9275152981870488,
+            -0.3737843103781526,
+            365.9833418294451
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "error": null,
+      "transform_base_from_optical_diagnostic_m": [
+        [
+          -0.07462323063917069,
+          0.37279851745366227,
+          0.9249068271092632,
+          -0.8889602486428704
+        ],
+        [
+          0.9972114682979,
+          0.027141057704923557,
+          0.06951726750818384,
+          -0.09312566151992355
+        ],
+        [
+          0.0008129846982303646,
+          0.9275152981870488,
+          -0.3737843103781526,
+          0.36598334182944514
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "valid_for_control": false
+    },
+    {
+      "name": "generic_detector_plus_table_plane_position_2_diagnostic",
+      "fit_passed": true,
+      "fit_rmse_px": 3.7207273949463198,
+      "details": {
+        "source_bottom_mm": [
+          -530.1992151400453,
+          -15.859375149218346,
+          0.0
+        ],
+        "destination_mm": [
+          -513.9072519511817,
+          -249.67566034968957,
+          5.684341886080802e-14
+        ],
+        "fit_rmse_px": 3.7207273949463198,
+        "observed_box_px": [
+          260.0,
+          232.0,
+          312.0,
+          314.0
+        ],
+        "projected_box_px": [
+          262.9159237085464,
+          237.3359554943372,
+          308.8030876989637,
+          311.1399354871108
+        ],
+        "edge_residual_px": [
+          2.9159237085464156,
+          5.335955494337213,
+          -3.1969123010363205,
+          -2.8600645128892097
+        ],
+        "cup_height_mm": 95.0,
+        "cup_diameter_mm": 75.0,
+        "table_z_base_mm": 0.0,
+        "camera_matrix": [
+          [
+            263.6728515625,
+            0.0,
+            323.58526611328125
+          ],
+          [
+            0.0,
+            263.6728515625,
+            179.9199676513672
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "base_from_camera": [
+          [
+            -0.07462590353514047,
+            0.3757032555150163,
+            0.9237305009130004,
+            -888.9602486428704
+          ],
+          [
+            0.9972090577971127,
+            0.026024029003484293,
+            0.0699774603841918,
+            -93.12566151992355
+          ],
+          [
+            0.0022515703318510085,
+            0.9263745536821728,
+            -0.3765967561214471,
+            371.34989492180506
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "error": null,
+      "transform_base_from_optical_diagnostic_m": [
+        [
+          -0.07462590353514047,
+          0.3757032555150163,
+          0.9237305009130004,
+          -0.8889602486428704
+        ],
+        [
+          0.9972090577971127,
+          0.026024029003484293,
+          0.0699774603841918,
+          -0.09312566151992355
+        ],
+        [
+          0.0022515703318510085,
+          0.9263745536821728,
+          -0.3765967561214471,
+          0.37134989492180503
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "valid_for_control": false
+    },
+    {
+      "name": "generic_detector_plus_table_plane_position_3_diagnostic",
+      "fit_passed": true,
+      "fit_rmse_px": 3.40489425745368,
+      "details": {
+        "source_bottom_mm": [
+          -532.2993688287463,
+          -17.989802488974114,
+          0.0
+        ],
+        "destination_mm": [
+          -514.7208125225843,
+          -249.7969806937735,
+          0.0
+        ],
+        "fit_rmse_px": 3.40489425745368,
+        "observed_box_px": [
+          260.0,
+          232.0,
+          312.0,
+          314.0
+        ],
+        "projected_box_px": [
+          262.77653175640194,
+          236.8036207115743,
+          308.94945241380503,
+          311.4933132411188
+        ],
+        "edge_residual_px": [
+          2.776531756401937,
+          4.803620711574297,
+          -3.0505475861949662,
+          -2.5066867588811874
+        ],
+        "cup_height_mm": 95.0,
+        "cup_diameter_mm": 75.0,
+        "table_z_base_mm": 0.0,
+        "camera_matrix": [
+          [
+            263.6728515625,
+            0.0,
+            323.58526611328125
+          ],
+          [
+            0.0,
+            263.6728515625,
+            179.9199676513672
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "base_from_camera": [
+          [
+            -0.07454980555569236,
+            0.37000277682078625,
+            0.9260347032571274,
+            -888.9602486428704
+          ],
+          [
+            0.9972154295984026,
+            0.029455028872758766,
+            0.06851122714547295,
+            -93.12566151992355
+          ],
+          [
+            -0.0019270346343905967,
+            0.9285635930936625,
+            -0.37116834471504384,
+            365.4467723025534
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "error": null,
+      "transform_base_from_optical_diagnostic_m": [
+        [
+          -0.07454980555569236,
+          0.37000277682078625,
+          0.9260347032571274,
+          -0.8889602486428704
+        ],
+        [
+          0.9972154295984026,
+          0.029455028872758766,
+          0.06851122714547295,
+          -0.09312566151992355
+        ],
+        [
+          -0.0019270346343905967,
+          0.9285635930936625,
+          -0.37116834471504384,
+          0.3654467723025534
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "valid_for_control": false
+    }
+  ],
+  "table_plane_source": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_plane_8mm_derivation.json",
+  "source_scene": "/home/user/wq/nero_act_transfer_resume_20261021/results/unqualified_nominal_full_development/scene_configuration.json",
+  "important_limitations": [
+    "Generic detector is an offline comparison only, not installed into live runtime.",
+    "Plane correction hypothesis retains unverified nominal baseXY/yaw and tablebaseZ=0; not full camera/base calibration.",
+    "Unknown absolute board/flange/grasp-center metrology prevents interpreting bbox fit as physical position accuracy.",
+    "A passing bbox fit cannot qualify TCP or authorize physical movement."
+  ],
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "robot_connected": false,
+  "motion_sent": false,
+  "live_configuration_modified": false
+}

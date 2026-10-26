@@ -1,0 +1,133 @@
+{
+  "stage": "offline_verification_complete_original_scene_not_fixed",
+  "frozen_artifacts_and_sources_verified": true,
+  "frozen_arm_audit": {
+    "passed": true,
+    "checkpoints": [
+      {
+        "checkpoint": "/home/user/wq/nero_act_gripper_head_fix_20261018/training/run23_gripper_head_only/checkpoints/policy_best_l1.ckpt",
+        "epoch": 1,
+        "only_gripper_row_changed": [
+          "model.action_head.weight",
+          "model.action_head.bias"
+        ],
+        "all_other_weights_and_buffers_identical": true
+      },
+      {
+        "checkpoint": "/home/user/wq/nero_act_gripper_head_fix_20261018/training/run23_gripper_head_only/checkpoints/policy_best_val.ckpt",
+        "epoch": 3,
+        "only_gripper_row_changed": [
+          "model.action_head.weight",
+          "model.action_head.bias"
+        ],
+        "all_other_weights_and_buffers_identical": true
+      },
+      {
+        "checkpoint": "/home/user/wq/nero_act_gripper_head_fix_20261018/training/run23_gripper_head_only/checkpoints/policy_last.ckpt",
+        "epoch": 3,
+        "only_gripper_row_changed": [
+          "model.action_head.weight",
+          "model.action_head.bias"
+        ],
+        "all_other_weights_and_buffers_identical": true
+      }
+    ],
+    "comparison": "completed checkpoints vs paired rebased initializer",
+    "scope": "identical inputs preserve arm outputs; changed observations still require closed-loop tests",
+    "hardware_connected": false
+  },
+  "prior_gripper_fixed_input_report": "evidence/fixed_grasp_readout_comparison.json",
+  "outcomes": {
+    "nominal": {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.0,
+      "maximum_horizontal_transfer_m": 1.6889477678599397e-08,
+      "stable_released_frames": 0,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "error": "RuntimeError: ACT descended below the original grasp region without confirmation",
+      "simulated_events": []
+    },
+    "validation42": {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.19439007950148224,
+      "maximum_horizontal_transfer_m": 0.1770718996577263,
+      "stable_released_frames": 102,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "error": null,
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1023,
+          "active_points": 1023,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 1705,
+          "active_points": 1584,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 2382,
+          "active_points": 2181,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 2565,
+          "active_points": 2241,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ]
+    }
+  },
+  "nominal_diagnosis": {
+    "closest_grasp_query": {
+      "query": 217,
+      "step": 1261,
+      "tcp_m": [
+        -0.524969279589055,
+        0.018194449329135286,
+        0.05486761750428706
+      ],
+      "rotation_error_deg": 3.448972133480832,
+      "source_xy_error_m": 0.0026099418017405942,
+      "bounded_width_first10_mm": [
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0,
+        95.0
+      ]
+    },
+    "queries_in_unchanged_grasp_depth": 17,
+    "bounded_width_min_in_depth_mm": 95.0,
+    "bounded_width_max_in_depth_mm": 95.0,
+    "fk_independent_mujoco_error_m": 1.734723475976807e-16,
+    "recorded_chunks_are_bounded_physical_predictions": true
+  },
+  "independent16_executed": false,
+  "hardware_connected": false,
+  "hardware_deployment_allowed": false,
+  "next_fix_requires_architectural_discussion": true
+}

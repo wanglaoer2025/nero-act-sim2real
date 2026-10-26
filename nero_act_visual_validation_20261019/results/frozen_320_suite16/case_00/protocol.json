@@ -1,0 +1,371 @@
+{
+  "cases": [
+    {
+      "name": "heldout_xy_0",
+      "seed": 191900,
+      "query_stride": 2,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "scene": {
+        "robot": "nero_single_arm",
+        "end_effector": "agx_gripper",
+        "can_connected": false,
+        "cup": {
+          "outer_diameter_m": 0.075,
+          "height_m": 0.095,
+          "mass_kg": 0.05,
+          "wall_thickness_m": 0.002
+        },
+        "assumptions": [
+          "new arm/gripper start measured; qvel zero assumed for stationary capture",
+          "object centres and retained table height are provisional ray/plane hypotheses, not real metrology",
+          "retained camera extrinsic plus captured intrinsics; print/handle/background remain unmatched",
+          "joint servo parameters are simulation assumptions; no real response calibration completed"
+        ],
+        "contact_friction": [
+          0.6,
+          0.005,
+          0.0001
+        ],
+        "pick_xy_m": [
+          -0.5451550104962355,
+          -0.0044088755139434395
+        ],
+        "place_xy_m": [
+          -0.5247430757905183,
+          -0.16205567896289505
+        ],
+        "table_top_z_m": 0.0,
+        "control_hz": 20,
+        "simulation_timestep_s": 0.002,
+        "arm_kp": [
+          100,
+          100,
+          80,
+          80,
+          40,
+          30,
+          20
+        ],
+        "arm_kd": [
+          15,
+          15,
+          12,
+          12,
+          6,
+          5,
+          3
+        ],
+        "joint_speed_limit_rad_s": 0.04,
+        "finger_force_limit_n": 1.0,
+        "lift_height_m": 0.2,
+        "success_position_tolerance_m": 0.02,
+        "source_measurements": "/home/wq/sim2real/nero_act_source/task_measurements.json",
+        "real_task_geometry_verified": false,
+        "dwell_seconds": {
+          "recover_open": 4,
+          "recover_clear": 0.2,
+          "moving": 0.2,
+          "close": 4,
+          "release": 4
+        },
+        "final_settle_seconds": 4,
+        "render_shadows": false,
+        "teacher_command_lead_limit_rad": 0.03,
+        "initial_robot_state": {
+          "qpos_rad": [
+            0.18325957655906677,
+            -0.12651892006397247,
+            0.10002481937408447,
+            1.5707963705062866,
+            -0.023858651518821716,
+            0.2816786766052246,
+            0.13098695874214172
+          ],
+          "gripper_total_width_m": 0.09438899904489517
+        },
+        "table_center_xy_m": [
+          -0.4,
+          -0.15
+        ],
+        "table_half_size_xy_m": [
+          0.65,
+          0.65
+        ],
+        "show_target_marker": true,
+        "camera_calibration": {
+          "transform_base_from_raw_optical_m": [
+            [
+              -0.072697737738461,
+              0.45922912341725763,
+              0.8853381563747986,
+              -0.8889602486428704
+            ],
+            [
+              0.9965659610030485,
+              -0.0018341655365573496,
+              0.08278237256116336,
+              -0.09312566151992355
+            ],
+            [
+              0.03963993312028583,
+              0.8883159618301375,
+              -0.4575187730137615,
+              0.3152114291079937
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "intrinsic_matrix": [
+            [
+              263.6728515625,
+              0.0,
+              323.58526611328125
+            ],
+            [
+              0.0,
+              263.6728515625,
+              179.9199676513672
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "resolution_wh": [
+            640,
+            360
+          ],
+          "image_rotation_degrees": 180,
+          "installation_verified_on_real": false
+        },
+        "initial_pose_source": "evidence/current_source_capture/observations.npz",
+        "camera_calibrated_to_real": false,
+        "provisional_geometry_source": "nero_act_cup_handoff_20261016",
+        "experiment_scope": "full_ACT_pick_carry_place_retreat_simulation_not_hardware",
+        "hardware_deployment_allowed": false,
+        "appearance": {
+          "table_rgb": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "cup_rgb": [
+            0.95,
+            0.8,
+            0.05
+          ],
+          "arm_rgb": [
+            0.16,
+            0.16,
+            0.18
+          ],
+          "background_rgb": [
+            0.25,
+            0.25,
+            0.28
+          ],
+          "light_scale": 0.92
+        },
+        "ik_goal_rotation": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            -1
+          ]
+        ],
+        "visual_marker_xy_m": [
+          -0.5247430757905183,
+          -0.16205567896289505
+        ],
+        "tcp_link7_xyz_m": [
+          0.152,
+          0,
+          -0.0235
+        ],
+        "grasp_tcp_height_m": 0.055,
+        "minimum_transfer_m": 0.1,
+        "ik_goal_rotation_link7": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            -1,
+            0
+          ]
+        ],
+        "source_geometry_evidence": "evidence/current_source_capture/targets.json",
+        "source_capture_sha256": "254343e97105bd47ffc33688b5030affa16b05c72ba10046038e2c9b5120ba8f"
+      }
+    }
+  ],
+  "provenance": {
+    "all_parameters_predeclared_before_training": false,
+    "reason": "Three final case IDs had no numeric perturbations in the original protocol; definitions completed after training",
+    "original_protocol_sha256": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+    "measured_geometry": false,
+    "live_frontend_qualified": false,
+    "hardware_deployment_allowed": false,
+    "partial_suite_case_index": 0
+  },
+  "dependencies": {
+    "/home/user/wq/nero_act_visual_feedback_20261019/training/visual_retained_v1_320/checkpoints/dataset_stats.pkl": "78390f6aed2b1c7d1a7f5e466c31b5279419da57168b640a2756427fc3914597",
+    "/home/user/wq/nero_act_visual_feedback_20261019/training/visual_retained_v1_320/checkpoints/policy_best_val.ckpt": "e8fa251898a0cca0171366922f42b90657398662992e75510652d9072a133d29",
+    "/home/user/wq/nero_act_visual_validation_20261019/calibration/__init__.py": "6b6757b57ca64a37b0e2e5b2cd1fa422323d389617bbc83e9a1414a9e4bac554",
+    "/home/user/wq/nero_act_visual_validation_20261019/calibration/bundle.py": "3a0ccce40d1a7d35c3366e3d14483789203174781f89cd59311ddce0e09d295f",
+    "/home/user/wq/nero_act_visual_validation_20261019/calibration/solve.py": "36e38a0f46e57d7c71db30c243de3414d4ee7f1343db30b2f0f83be645469f85",
+    "/home/user/wq/nero_act_visual_validation_20261019/evaluation/protocol.json": "73f68fcf51b7b39fb2fe1a53421b1facf0dce01c719fd149aa2201a568b74ea3",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/bundle.py": "fb91b04b7f6b36b8b0ace695ecb0bc925655211d89c84ad8a89950c5a30334d0",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/contact.py": "8f9d1885ed6d1d62bc46e29a21222bff9c8c51ef94fb409bdb1dfe159ee9cbad",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/contract.py": "b4f61390051c8b78d6729923380020f31c3da78ca911339250b7a87c08dee1e3",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/driver.py": "640a25c79a15392148b762df2f628b70652e5c9bfc4d9efde17957ddc62fd9bc",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/evaluation_integrity.py": "5c8d8cb65102d3511913c57e975e62c172f3dbb4316fb321bef1b11f607ad8ee",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/execution_guards.py": "f1c1dedf968f031229d198dbeaba1088e982b6e4f7834ad72f6f4d76f452acd3",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/fixed_driver.py": "fe23678cf92c7b8fb0f73623e591f70961bc73bad29bdb1654b952238549d5de",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/fixed_gate.py": "e8e065774f2ba78560b9d9c197115a1d57dcd784ba677358f1928df96fbe600f",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/fixed_permission.py": "08556c98449b456191038ca91b6fdcca15cbc17eabc12d05aec7640586877a69",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/fixed_trial.py": "7b7a166285d3a2c22c1fe396bc35ab8a77e6e099e7cf92f485d9eef075f6cd58",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/fixed_trial_run.py": "459978ace8057020e0865c144f3520efcae3c11d8f98d4831bc26196ebb5c29f",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/gate.py": "8d778292a3a9242e33c370a2a44df7d0303ff5158e0de98289855a8c41ff597f",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/gate_health.py": "b0cc34af9a1ac3317c689e44a0d1857277c1620be491fe1f44a1bd36071ba07f",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/health_trace.py": "d12fe8b91aceb75b3fba0b189fb3097ce495c2abb12791afd6827c9e11859ca1",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/model.py": "d155af90db10b3da95cf5009093bbc1374c347f03589e89af6ada0dbdaec35f8",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/permission.py": "4a65d85a22daac631a77a8b243b86b7c7007301e6e84ca09ba6b58863eb204f1",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/phases.py": "7d9f7be87338d91ee1a584d9507bac6c344f61b7ba8de8a02082c6bf3a55371d",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/policy_worker.py": "40b20f117c32872fa0ebc309a822304122d6f541df33a5845710b7f7097e8409",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/release_hold.py": "e0921d6f543845b2192932d4ad3e1def4d0817bcb575fdc5947f4cc8bd69e922",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/ros_execution.py": "b94b5306c3afdfdb9d2920335a171705e69ed8d6a6f99cf9b11c0a0a82f70a8d",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/runtime.py": "23def3f95921692c4b9ffdd88a30b5da7d7daba9aca9affa61ad796cdc068daf",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/shadow.py": "3d61940fc76a27099250a90f0df155df8b5c977381ae06d01c20d9e4b3759d3a",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/supervision.py": "f3fefe03b57b8da8a04f8bde8f8ece717c7a177e83bd2f6e66a7a3b6651d6861",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/transport.py": "c0a30bcd89d3e16700b845343193061b226a720115a443cc94392a8a6be7a570",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/virtual_bridge.py": "cb117cead61dda71d35e042dd4e7b0b6b79a6fbda9eec273fd91fe132ad56d1d",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/visual_control.py": "0ac91008e8ca5c5552a50bad7f835244f64cfaca1311aee9d543ede3d60cdab2",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/visual_dispatch.py": "add25b2c9b396cbd199ffd1ae24abc3a7ada2a53d266537f9f2f63c11e7b7608",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/visual_inference.py": "51145dfa6e38e782233fdc268a943e555cff7115e5b087be00a11d94b2380fce",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/visual_observation.py": "05fcdc19b9fdb33bbcef44d9c1276b7662a874563da338b8dd03e132801c6add",
+    "/home/user/wq/nero_act_visual_validation_20261019/executor/visual_run.py": "451532fe10d3ba34aa6d12dfdf38880282d6f507d7c108500e51da7a24cd682f",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/__init__.py": "e824b724a356717942fcc4a5591d209f866a74350479a3bc3cab465bfd9b0764",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/__init__.py": "5d44dc52a5f36cfb23b151b466e04ab74e3205ed4116afe68fe40018fec18db4",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/action_safety.py": "25e735fbd31b07b7487d587295f5b1d28705430a38b6c466ac48573841f7edd5",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/adaptive_mpc.py": "47da594fe0f2918d41a729e9ba882969a48da3757ad26234c896bb36f85a7368",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/dataset_stats.py": "4796e657895deb8e715cfb4b74636580bddf9b0fe43beca5a933b0833f0d0c47",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/episode_inspect.py": "0f7435750f7c5e513a06b04dcd48f40c7a33d4aac68cf5a10c0e4cd04ed385c1",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/episode_io.py": "28fe0c9b92bdb17b9e7b1cb7e7de509cf14080beda1124233963abbe5256d10b",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/episode_plot.py": "9ba3215180343a046806c99d6c3e82d514091c1e61a9916bf3d6976b5f37e4ee",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/eval_offline.py": "09dd9c53c731e2e2d0e0b9e9c4a0b8bb7896d95001a53a82cec0e7a1a1e971a8",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/eval_saved_rollout.py": "8c35813e03109a0d3c98172f33c5531f6680f0d0782309223821bcb1d8fdd017",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/grasp_transition_audit.py": "faf136e4f38b65d500cfe5697718e4ce0d24b0238204c6bec85f1a5671cb8d53",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/nero_kinematics.py": "6f6f5247a8f0e3ef378abe1d03e5498a9572c27be7b075ee0cd9ac10692e8790",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/nero_policy.py": "f4079c94fd20a76a6df68957cc4b92616521180de07655ff89b201b244a8254d",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/realtime_logger.py": "9aca4303d8758e5fa161bf28c93c6aee8e06a78f60c823cddb349c99ac6ffb8a",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/record_episode.py": "22bb191dc4a4528ad905f85842133bc77eb387b46d80ce7ba96d65e161a4d702",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/record_yolo_episode.py": "fdc4fb252508904dfc40abc8e54811455672224f98cfefaa3840f6f0d3a69f7e",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/replay_episode.py": "01e8593896a616a353a0e03c41c5e25098f197c9c0c67c4f1d0755a1cf7f3df0",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/robot_wrapper.py": "c7d20f6c226c2e7a03c170ab64b59fa4c36d0b5ed994f02128fe94e2a57eda1d",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/run_act_real.py": "867e35d7d2329d7272fefb19a172555fdff169bb02851e68fbac4f0a004608a6",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/run_act_shadow.py": "53f02ea237b90cfd795bcaa4b50f579ee11d0f15ff08ea75cf9ba4006a27ea98",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/safety_filter.py": "c4267f92b287714e6bafef0b90b962a79d05472da1f0c6ba9f292d14ea928b95",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/temporal_ensemble.py": "f4b8ff42423b75c10faebf09561180d2dcc0812e938f50140125c331bd456502",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/test_joint_stream.py": "cc04a01a72aa3ce868d36db4600d5b6a01d7b759d4904994ebaa499ea5558ec8",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/train.py": "40cac2a60e1c35c5669d80d201c4304f5f8218bc1259cb94be5a6f3cf31dcd0f",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/train_smoke_test.py": "1f3aa074b3cf24530c61465ee679e41410c8989fa4b17181d329eba787124126",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/act/validate_episode.py": "7b4fb39d00fd8ae9b0b95458df4001445e43cdb2d55f5b214646bfff46abdc16",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/arm/__init__.py": "ddc6f003042d474d0ccfac97cae71b61d055d150244e1bef99f153f86cc4aff8",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/arm/prepare.py": "b3c1560f2edbc4efad12601963460807d372ed4824c971d910c036f7beb0d47b",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/demo/__init__.py": "345cfcd7a7766cd8d1a8ad43d415f76f6c39c918d86fcdaf6b54db3783a87381",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/demo/yolo_pick_place.py": "11a87213fe3256d9745ac5be59a456af62470f3b6951147171b59ff7eb398455",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/utils/__init__.py": "041281a55fbd14e6ba3496ace2e95402c11170bcb4ff5e48ef03a95156d492a7",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/utils/arm.py": "50b53785a56a56eb50b5b24ef4506c130e1e9d4d23935dc43125d60eb18dfec1",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/src/utils/vision.py": "2c58da80838c2ea364694737bcd031405cc085be2e44a1180e9e3c13319cad71",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/tests/test_act_kinematic_features.py": "0ed2278e81caffe4879bd971faef6854adf1accafa03d001c43c59cc384533ef",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/tests/test_act_nero_dataset.py": "5bc2e594bc491168a8913805ded11dd5a8014d94b9eb33844915daef9f11b6c7",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/tests/test_act_offline_imports.py": "83e2f067f52a0f6f19318745a6f1530413c6f3634c8802b166ebd6dc69c7bed2",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/tests/test_act_robot_wrapper.py": "de34ff7bd0ea2699c8e47c82704762f4b5ac03c0493f09717a0652304f071374",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/tests/test_act_shadow_capture.py": "25de467a43549c1828a88286d2f61c4c1f863a2c207e64331354bb5897e77edb",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/tests/test_joint_stream_offline.py": "354177a5a66c1100a4a8233556063c7cd666f84eb1126aa6f2e54ee01333b97a",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/__init__.py": "8304b95ea43a245d928411824f57f19a7dbd65ccc78b223dd5668800dfbf2f76",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/__init__.py": "d782b1f5f60188e1aa3d02c7e9c97bcaace1db00c76108d2b3c018c03ef232c8",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/detr/__init__.py": "e78ac0eca34142588d25cf6b82fdd725e0ad7f0ebcaa116a8a07e7b5bf3be556",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/detr/main.py": "f3bde9d1e1c3e9a7f895433952753649155c244a42407381802a5336fe5668c8",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/detr/models/__init__.py": "61cb75a7d8e99893e96ace4802a4c0a50181230f7f7a2c0262590cfc922007e9",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/detr/models/backbone.py": "04c62f58a732604cda245f94a5d91543bbc9913559395c0bc11ded281bebd464",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/detr/models/detr_vae.py": "3c29f5719a80573e23662826f6db86d3b353c427c8e14b8fd692a68dc170cbda",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/detr/models/position_encoding.py": "851babd1dad8383699290163fde9049d6e30453308ac6cf84036d6fe96ef12ed",
+    "/home/user/wq/nero_act_visual_validation_20261019/policy_source/third_party/act/detr/models/transformer.py": "75f5c4082815186b3d1dd62db805426f0406a26bf6f01199d3dd7bf886e1eeda",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/base_link.stl": "540462fb56e52091daa3cd1ad3acc3c19a43f120b2f11bae5a69b32b08c738b6",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/flange.stl": "1ae6d1c5af001582a3328564839e8eb5f2acec02e7e2b19e65fc3c43f8a9c95a",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/gripper_base.stl": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/gripper_link1.stl": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/gripper_link2.stl": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/link1.stl": "0e38bf33ce41f04d7e70e471768c00fa144ba4016a878b9a6d8303c319736e09",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/link2.stl": "fc9eb85db9fbd351c9f6e119f5fed33c6f0dd3bc3b11698a0f96aaeb2d36c721",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/link3.stl": "44c70f731ad5067d608ebebc9e59f3c231988f992dfac6cb01ee7a6bb4b053f1",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/link4.stl": "47242e9b5d8b06c912261756f24dddb1e7f54ac6e718232a25889115298b966d",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/link5.stl": "dc497f5a9bab2d0d314250134d4ec86617abea7205d122db41b765acdb86ae7e",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/link6.stl": "66417d30596e33c890f4f141781023bd3ea15709a502e7f59b30f6676f556022",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/assets/link7.stl": "70a2f415358f9e46088673c92bfe78ca5b1072dd73b7ea24464ba3ebb4c3e647",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/collect.py": "f898fafa7ee4037bf5c1f9d9b05940dc99d6aae7dd362a6a487a93998fe85169",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/collect_generalized.py": "64352b8d2fd6e6cb7cb97d4b45fd6dbd8580c55bcac556edd314074d20d702bf",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/evaluate.py": "c6ed574ff91f2d6949db52d1cb50d921a886ff2f4cdbe876a0e98c5cd6172295",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/evaluate_generalized.py": "bb1f354522b5dca2a401aba9f0fc608bb20adebfd974361ec2b8d57153d77e10",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/generalization.py": "444ebca99525a723d265843998aabd9794559724f2284c531dfcf5917b719a75",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/nero_domain_randomization.py": "0a3e99196177663aebb5fce13986744868b7e318c7578fc15fe75507e4e2662c",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/nero_scene_camera.py": "1233f272b3c97dc7aa3a4dd02c65f13a392ed02ec5aa1e6afe94d75577a04002",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/outcome.py": "d0c2eac81bef9082e914c9ff3cdb24c3dd95ef94d7cb3d46d0a11b0177869253",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/refresh_observations.py": "0f8a6606b48260107b5d6fb60de7464eb2ac55b29b02bffe50b38d471b98e54f",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/scene.py": "80ec8a5b98d43beed9b9e395406b692a2e5806d5e16d73f93160302babe0afb7",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/scene_template.xml": "8a8a54dd9289e96ba23c8ef3b0963f1add64eba5b5ec05c20d1e76c0d7de8af3",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/snapshot.py": "d56c077227db6b072f1e75f8695a2a729b20c7bc508c9b2deadf994ab0a7cec4",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/supervised_rollout.py": "8b057f3202d3892f7c57e1814061ccb3f51537314c4d1e356e25728eb3dce7ef",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/teacher.py": "e580fff50f4d4b675dca9b244183904d937b900d8835c000adc07d7332a7b2bd",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/visual_evaluation.py": "165f2a6e8f0012fcf54c8cbb3e7e4f0b2fa5db305d794ef8f4c0b7e9595adfdc",
+    "/home/user/wq/nero_act_visual_validation_20261019/simulation/visual_suite.py": "b40df34dbf76e8b7a8b38c9c29baba6431c40344882e3222b01d7998212f4ba5",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/command_context.py": "f781f06f6c893dcecfa593ccd25d3e7f554a214cb9787254670cc38561783d90",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/export.py": "ffb557936cdec21d0a7645719e511525ab6ce44afc8973350b49d8b28575dcd3",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/generalized.py": "e4e541624a798e5936da2e909c36ae2af564fcd8d448fdc078223fa7ab560347",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/integrity.py": "e0dd127f976e274bf56b71d7fc98af54745b6b15d26c5476388f120bbeb9a66c",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/legacy_visual_data.py": "afb95e5d385ad9007441b41a711b86d25a9065b952db7c067cbb0dc4332ae234",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/pose_objective.py": "8f4dea5e665c9a22a1d2782e0949346521ae7974fe7507e53bb0902003d3a11a",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/rebase_initializer.py": "cf70510e00f2014c0bd77051a96200e5c02c9997fc293917d8e82f5851d66ff0",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/recoveries.py": "d19126db217accd576a605e069b31470ec56954b2d7464b2ec75ff569da337a1",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/train.py": "304d543f748105dde945c9349de828beec76c5c0af627699f27515b28f1b49de",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/transition_sampling.py": "5bbf6083589539e1ed59e8a1af24dca724bec08ec1fe7464db9a224bdb618226",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/visual.py": "0e282523d68d1a9e25a1f2552f1ddbe0c8e8a5de9c62e47361c309a8d66b641b",
+    "/home/user/wq/nero_act_visual_validation_20261019/training/visual_dataset.py": "1e813d478e213a67e602cfdeeecdf509d6ed5fc91d86e922a5a84c6b63b8944e",
+    "/home/user/wq/nero_act_visual_validation_20261019/vision/__init__.py": "968afaea0eb50609451b601073502a86ee29eecf047260db518234f0a1e255b3",
+    "/home/user/wq/nero_act_visual_validation_20261019/vision/observation.py": "0f631b84514d70fa195b077f09dc325aa28c2e3b85ed6310c73368eaf06e22d3",
+    "/home/user/wq/nero_act_visual_validation_20261019/vision/synchronization.py": "f503b25faec7c7affaa037f0e7c1f74e1a1ded13817fa47b632fdf008ed023b1"
+  },
+  "observation_schema": "visual_relative_base_v1",
+  "hardware_deployment_allowed": false
+}

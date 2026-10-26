@@ -1,0 +1,66 @@
+{
+  "checkpoint_sha256": "23bffd16e3e93c2fbb1420eedd60603575d19c794e3c9362e57411402439aec3",
+  "stats_sha256": "a327317b4398430b5c47a7b4d732717c065192e45a56117fc3c24748d95079b4",
+  "epoch": 74,
+  "teacher_free": true,
+  "diagnostic_only": true,
+  "not_in_primary_score": true,
+  "max_simulated_seconds": 120,
+  "runtime_geometry_closure_guard": false,
+  "control_hz": 20,
+  "chunk_size": 20,
+  "initial_qpos_or_object_reset_during_rollout": false,
+  "thresholds": {
+    "lift_m": 0.06,
+    "bilateral_frames": 10,
+    "final_xy_error_m": 0.02,
+    "upright_cosine": 0.95,
+    "final_speed": 0.05
+  },
+  "scenarios": [
+    [
+      "half_second_delay",
+      0,
+      11,
+      10,
+      false
+    ]
+  ],
+  "independent_cup_xy_jitter_m": 0.002,
+  "independent_initial_joint_jitter_rad": 0.002,
+  "feedback_noise_rad": 0.0002,
+  "real_hardware_tested": false,
+  "completion_monitor": {
+    "lift_m": 0.06,
+    "stable_grasp_seconds": 1,
+    "post_completion_frozen_goal_seconds": 5,
+    "goal_observation": "simulator cup pose/contact for evaluation termination only; not policy inputs; real monitoring not validated"
+  },
+  "results": [
+    {
+      "scenario": "half_second_delay",
+      "teacher_free": true,
+      "success": false,
+      "max_lift_m": 0.0,
+      "final_lift_m": -0.0010011447791961822,
+      "bilateral_frames": 0,
+      "held_at_finish": false,
+      "unexpected_arm_cup_contact_frames": 385,
+      "final_xy_error_m": 0.00030440366303588815,
+      "upright_cosine": 0.9999999998736461,
+      "final_speed": 5.966000093165366e-05,
+      "first_arm_gap_rad": 0.001252099871635437,
+      "existing_strict_block_contract_violations": 0,
+      "failure": null,
+      "runtime_s": 72.44888201999129,
+      "completion_step": null,
+      "continuous_post_hold_verified": false,
+      "post_completion_hold_points": 0,
+      "real_hardware_tested": false
+    }
+  ],
+  "passed": 0,
+  "total": 1,
+  "complete": true,
+  "hardware_deployment_allowed": false
+}

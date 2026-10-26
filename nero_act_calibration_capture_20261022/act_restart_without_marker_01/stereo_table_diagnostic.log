@@ -1,0 +1,94 @@
+[2026-10-22 16:07:10 UTC][ZED][INFO] Logging level INFO
+[2026-10-22 16:07:11 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-10-22 16:07:11 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-10-22 16:07:11 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-10-22 16:07:11 UTC][ZED][INFO] [Init]  Serial Number: S/N 39602891
+[2026-10-22 16:07:11 UTC][ZED][WARNING] [Init]  ULTRA is deprecated. Please update your configuration to use NEURAL instead.
+{
+  "mode": "camera_only_stereo_table_diagnostic",
+  "depth_mode": "ULTRA",
+  "coordinates": "IMAGE",
+  "units": "meter",
+  "camera_serial_required": 39602891,
+  "can_tx_start": 2587,
+  "frames": [
+    {
+      "index": 0,
+      "image_stamp_ns": 1792656432639918520,
+      "selected_points": 1109,
+      "plane_normal_optical": [
+        -0.0004395328846182068,
+        0.9156907305961062,
+        -0.4018834317450928
+      ],
+      "plane_offset_m": 0.3828779218360901,
+      "camera_to_plane_distance_m": 0.3828779218360901,
+      "inlier_fraction": 0.5608656447249775,
+      "median_abs_error_mm": 2.5923833988988343,
+      "p95_abs_error_mm": 100.36037489467198,
+      "normal_vs_nominal_deg": 4.231172364221436,
+      "offset_vs_nominal_mm": 67.66649272809639
+    },
+    {
+      "index": 1,
+      "image_stamp_ns": 1792656432673336520,
+      "selected_points": 1057,
+      "plane_normal_optical": [
+        -0.007701955650955411,
+        0.9135661394406881,
+        -0.4066172509210447
+      ],
+      "plane_offset_m": 0.384843015803931,
+      "camera_to_plane_distance_m": 0.384843015803931,
+      "inlier_fraction": 0.5827814569536424,
+      "median_abs_error_mm": 2.4770260613692363,
+      "p95_abs_error_mm": 82.83954857420574,
+      "normal_vs_nominal_deg": 4.238449583416874,
+      "offset_vs_nominal_mm": 69.63158669593727
+    },
+    {
+      "index": 2,
+      "image_stamp_ns": 1792656432706708520,
+      "selected_points": 1053,
+      "plane_normal_optical": [
+        -0.014974767824164468,
+        0.9172637033542753,
+        -0.39799881260804304
+      ],
+      "plane_offset_m": 0.37872056562933365,
+      "camera_to_plane_distance_m": 0.37872056562933365,
+      "inlier_fraction": 0.6163342830009497,
+      "median_abs_error_mm": 2.258482741403056,
+      "p95_abs_error_mm": 14.426659625363708,
+      "normal_vs_nominal_deg": 4.918062821506219,
+      "offset_vs_nominal_mm": 63.50913652133994
+    }
+  ],
+  "motion_sent": false,
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "nominal_camera_table_distance_m": 0.3152114291079937,
+  "old_cup_dimensions_mm": [
+    95,
+    75
+  ],
+  "operator_reports_dimensions_unchanged": true,
+  "K": [
+    [
+      263.6944274902344,
+      0,
+      323.5845031738281
+    ],
+    [
+      0,
+      263.6944274902344,
+      179.91903686523438
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "can_tx_end": 2587
+}

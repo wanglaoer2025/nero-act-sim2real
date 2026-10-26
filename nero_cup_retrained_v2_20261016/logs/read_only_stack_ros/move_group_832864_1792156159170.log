@@ -1,0 +1,1349 @@
+[INFO] [1792156159.207900820] [moveit.moveit.ros.rdf_loader]: Loaded robot model in 0.00240423 seconds
+[INFO] [1792156159.207971136] [moveit.moveit.core.robot_model]: Loading robot model 'agx_arm'...
+[INFO] [1792156159.207982133] [moveit.moveit.core.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[INFO] [1792156159.430628228] [moveit.moveit.kinematics.kdl_kinematics_plugin]: Joint weights for group 'arm': 1 1 1 1 1 1 1
+[INFO] [1792156160.058400313] [moveit.moveit.ros.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[INFO] [1792156160.058510142] [moveit.moveit.ros.moveit_cpp]: Listening to 'joint_states' for joint states
+[INFO] [1792156160.058988257] [moveit.moveit.ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[INFO] [1792156160.059220603] [moveit.moveit.ros.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects
+[INFO] [1792156160.059229592] [moveit.moveit.ros.planning_scene_monitor]: Stopping existing planning scene publisher.
+[INFO] [1792156160.059299854] [moveit.moveit.ros.planning_scene_monitor]: Stopped publishing maintained planning scene.
+[INFO] [1792156160.059446740] [moveit.moveit.ros.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[INFO] [1792156160.059488703] [moveit.moveit.ros.planning_scene_monitor]: Starting planning scene monitor
+[INFO] [1792156160.059628667] [moveit.moveit.ros.planning_scene_monitor]: Listening to '/planning_scene'
+[INFO] [1792156160.059634024] [moveit.moveit.ros.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.
+[INFO] [1792156160.060060396] [moveit.moveit.ros.planning_scene_monitor]: Listening to 'collision_object'
+[INFO] [1792156160.060207142] [moveit.moveit.ros.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry
+[WARN] [1792156160.060392010] [moveit.moveit.ros.occupancy_map_monitor]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead
+[INFO] [1792156161.504837603] [moveit.moveit.ros.pointcloud_octomap_updater]: Listening to '/camera/depth/color/points' using message filter with target frame 'world '
+[INFO] [1792156161.508017379] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'STOMP'
+[INFO] [1792156161.508513152] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.509082042] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.509088390] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.509185079] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.509188385] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.509201046] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.509203263] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.509209985] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.509676807] [move_group]: Try loading adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[INFO] [1792156161.510707437] [move_group]: Loaded adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[INFO] [1792156161.510717089] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.511899356] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.511909451] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.512198619] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.519094497] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'OMPL'
+[INFO] [1792156161.519625797] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.519669711] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.519672844] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.519808615] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.519812382] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.519822753] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.519825113] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.519831640] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.520303338] [move_group]: Try loading adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[INFO] [1792156161.520485359] [move_group]: Loaded adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[INFO] [1792156161.520489518] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.520837212] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.520849281] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.521027837] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.522943254] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'CHOMP'
+[INFO] [1792156161.523442061] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.523480817] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.523503697] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.523621431] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.523625185] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.523635265] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.523637593] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.523644139] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.524099197] [move_group]: Try loading adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[INFO] [1792156161.524261736] [move_group]: Loaded adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[INFO] [1792156161.524265079] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.524473026] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.524477886] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.524607928] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.526012919] [moveit.moveit.planners.pilz.joint_limits_aggregator]: Reading limits from namespace robot_description_planning
+[INFO] [1792156161.529348570] [moveit.moveit.planners.pilz.command_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP 
+[INFO] [1792156161.529362412] [moveit.moveit.planners.pilz.command_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC
+[INFO] [1792156161.543351522] [moveit.moveit.planners.pilz.command_planner]: Registered Algorithm [CIRC]
+[INFO] [1792156161.543376841] [moveit.moveit.planners.pilz.command_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN
+[INFO] [1792156161.544048323] [moveit.moveit.planners.pilz.command_planner]: Registered Algorithm [LIN]
+[INFO] [1792156161.544060632] [moveit.moveit.planners.pilz.command_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP
+[INFO] [1792156161.544663821] [moveit.moveit.planners.pilz.command_planner]: Registered Algorithm [PTP]
+[INFO] [1792156161.544677972] [moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'Pilz Industrial Motion Planner'
+[INFO] [1792156161.545190952] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.545231113] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[INFO] [1792156161.545233890] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.545401977] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[INFO] [1792156161.545406668] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.545417749] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[INFO] [1792156161.545420002] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.545427274] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[INFO] [1792156161.545895255] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.546388715] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'
+[INFO] [1792156161.546397376] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.546540977] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'
+[INFO] [1792156161.569725158] [moveit.moveit.plugins.simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller
+[INFO] [1792156161.571130034] [moveit.moveit.plugins.simple_controller_manager]: Added FollowJointTrajectory controller for gripper_controller
+[INFO] [1792156161.571250569] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[INFO] [1792156161.571267653] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[INFO] [1792156161.571488041] [moveit.moveit.ros.trajectory_execution_manager]: Trajectory execution is managing controllers
+[INFO] [1792156161.571498308] [move_group]: MoveGroup debug mode is ON
+[INFO] [1792156161.582513941] [moveit.moveit.planners.pilz.move_group_sequence_action]: initialize move group sequence action
+[INFO] [1792156161.583997752] [moveit.moveit.planners.pilz.joint_limits_aggregator]: Reading limits from namespace robot_description_planning
+[INFO] [1792156161.584142843] [moveit.moveit.planners.pilz.joint_limits_aggregator]: Reading limits from namespace robot_description_planning
+[INFO] [1792156161.584564424] [moveit.moveit.ros.move_group.executable]: 
+
+********************************************************
+* MoveGroup using: 
+*     - apply_planning_scene_service
+*     - clear_octomap_service
+*     - get_group_urdf
+*     - load_geometry_from_file
+*     - CartesianPathService
+*     - execute_trajectory_action
+*     - get_planning_scene_service
+*     - kinematics_service
+*     - move_action
+*     - motion_plan_service
+*     - query_planners_service
+*     - state_validation_service
+*     - save_geometry_to_file
+*     - SequenceAction
+*     - SequenceService
+********************************************************
+
+[INFO] [1792156161.584589700] [moveit.moveit.ros.move_group.context]: MoveGroup context using pipeline ompl
+[INFO] [1792156161.584595919] [moveit.moveit.ros.move_group.context]: MoveGroup context initialization complete
+[INFO] [1792156816.537009489] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792156816.537398089] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792156816.537473691] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792156816.537486480] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792156816.537513674] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792156816.537575624] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792156816.538770021] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[INFO] [1792156816.539021830] [move_group]: Calling Planner 'OMPL'
+[INFO] [1792156816.555077133] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'
+[INFO] [1792156816.555351890] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792156816.555459910] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[WARN] [1792156816.555496040] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.
+[INFO] [1792158767.333157229] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792158767.333271796] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792158767.333297829] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792158767.333304101] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792158767.333320252] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792158767.333362215] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792158767.333777853] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[INFO] [1792158767.333876359] [move_group]: Calling Planner 'OMPL'
+[INFO] [1792158767.350984443] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'
+[INFO] [1792158767.351309517] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792158767.351439469] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[WARN] [1792158767.351482672] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.
+[INFO] [1792159169.651334931] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792159169.651531405] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792159169.651591968] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792159169.651626636] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792159169.651664892] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792159169.651722419] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792159169.652336939] [moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[INFO] [1792159169.652510222] [move_group]: Calling Planner 'OMPL'
+[INFO] [1792159169.670099371] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'
+[INFO] [1792159169.670508676] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792159169.670715723] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[WARN] [1792159169.670790531] [moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.
+[INFO] [1792159183.222432974] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received
+[INFO] [1792159183.222530112] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[INFO] [1792159183.222580160] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[INFO] [1792159183.222785293] [moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[INFO] [1792159183.224254852] [moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...
+[INFO] [1792159183.224367195] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[INFO] [1792159183.224418280] [moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[INFO] [1792159183.224670891] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to arm_controller
+[INFO] [1792159183.225302691] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: arm_controller started execution
+[INFO] [1792159183.225327993] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[INFO] [1792159187.275823437] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'arm_controller' successfully finished
+[INFO] [1792159187.294641257] [moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[INFO] [1792159187.294996469] [moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: SUCCEEDED
+[INFO] [1792163694.508563156] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163694.508661491] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163694.508713528] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163694.508747425] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163694.508754567] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163694.508786261] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163694.508819684] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163694.509002706] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163694.509061448] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163694.509104934] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163694.509908082] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163694.511034294] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163694.515881499] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163694.515947678] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163694.515998451] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163694.516038501] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163694.516051603] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163694.516080372] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163694.516119438] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163694.516229590] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163694.516261392] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163694.516280098] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163694.517717562] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163694.521962463] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163694.526914238] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163694.526984628] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163694.527042346] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163694.527081120] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163694.527093866] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163694.527121326] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163694.527160067] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163694.527342925] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163694.527386770] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163694.527413077] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163694.527968355] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163694.529342694] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163694.531681511] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163694.531786120] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163694.531835741] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163694.531867022] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163694.531879063] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163694.531905991] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163694.531946943] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163694.532060071] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163694.532099337] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163694.532120415] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163694.532648282] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163694.533551368] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163694.535311959] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163694.535343511] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163694.535366558] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163694.535375925] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163694.535378757] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163694.535386102] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163694.535402247] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163694.535460576] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163694.535478570] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163694.535486061] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163694.536170314] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163694.539190080] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163694.545465109] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163694.545533305] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163694.545581278] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163694.545626161] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163694.545636811] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163694.545659334] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163694.545700279] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163694.545856872] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163694.545897583] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163694.545916879] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163694.546354978] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163694.547540827] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[WARN] [1792163694.549281221] [moveit.moveit.core.planning_scene]: Tried to remove world object 'nero_beaker_teacher_source', but it does not exist in this scene.
+[INFO] [1792163922.824310369] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163922.824410866] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163922.824487520] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163922.824543574] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163922.824561562] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163922.824598282] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163922.824673047] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163922.824839462] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163922.824894479] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163922.824924296] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163922.825808965] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163922.827061622] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163922.830720722] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163922.830771422] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163922.830811544] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163922.830843678] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163922.830854977] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163922.830878360] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163922.830914826] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163922.831016657] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163922.831050036] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163922.831067540] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163922.832482137] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163922.834952091] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163922.837774065] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163922.837821475] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163922.837851413] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163922.837868251] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163922.837872538] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163922.837884732] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163922.837908248] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163922.838033353] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163922.838054459] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163922.838062263] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163922.838780532] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163922.840839800] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163922.842968606] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163922.843037459] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163922.843062083] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163922.843080820] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163922.843086983] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163922.843100451] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163922.843120516] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163922.843178444] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163922.843197938] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163922.843207975] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163922.843462571] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163922.843811020] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163922.845184471] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163922.845212221] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163922.845232775] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163922.845250925] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163922.845257357] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163922.845270273] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163922.845288581] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163922.845341652] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163922.845359343] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163922.845369022] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163922.846180833] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163922.848438186] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792163922.850825541] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792163922.850852173] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792163922.850868696] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792163922.850876887] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792163922.850879171] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792163922.850884516] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792163922.850896660] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792163922.850960943] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792163922.850971804] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792163922.850977087] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792163922.851543075] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792163922.853437415] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[WARN] [1792163922.854736958] [moveit.moveit.core.planning_scene]: Tried to remove world object 'nero_beaker_teacher_source', but it does not exist in this scene.
+[INFO] [1792164197.782924575] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164197.782956794] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164197.782980716] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164197.782989430] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164197.782992145] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164197.782998937] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164197.783018033] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164197.783064497] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164197.783075603] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164197.783082869] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164197.783253338] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164197.783736884] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164197.786119822] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164197.786151648] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164197.786177338] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164197.786193436] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164197.786199491] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164197.786215119] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164197.786266904] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164197.786322454] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164197.786338003] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164197.786349119] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164197.786765600] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164197.789110999] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164197.791488297] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164197.791510859] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164197.791531256] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164197.791545715] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164197.791551747] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164197.791565405] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164197.791590736] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164197.791677698] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164197.791692033] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164197.791701730] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164197.792427942] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164197.794660540] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164236.865993526] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164236.866035478] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164236.866068382] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164236.866088100] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164236.866094687] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164236.866108998] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164236.866164313] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164236.866228616] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164236.866247103] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164236.866258873] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164236.866453995] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164236.866930994] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164236.872353255] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164236.872424185] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164236.872481230] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164236.872516257] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164236.872531016] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164236.872562164] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164236.872645092] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164236.872817280] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164236.872861775] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164236.872873260] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164236.873841188] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164236.876733898] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164236.880872783] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164236.880923730] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164236.880958997] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164236.880984747] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164236.880989190] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164236.881003625] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164236.881029930] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164236.881175901] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164236.881200657] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164236.881211372] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164236.882322165] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164236.886408617] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164237.108356428] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164237.108411860] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164237.108436383] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164237.108446160] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164237.108448946] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164237.108456167] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164237.108466695] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164237.108517176] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164237.108528367] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164237.108535826] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164237.108676999] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164237.108997802] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164237.253819576] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164237.253855617] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164237.253888079] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164237.253913945] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164237.253920786] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164237.253935222] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164237.253953007] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164237.254023853] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164237.254045972] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164237.254058064] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164237.254868194] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164237.257554280] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164237.473368212] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164237.473395339] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164237.473418379] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164237.473433558] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164237.473436082] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164237.473442757] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164237.473455320] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164237.473536641] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164237.473550904] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164237.473557884] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164237.474129795] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164237.476001401] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164356.783463987] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164356.783566505] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164356.783701703] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164356.783765195] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164356.783772389] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164356.783789521] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164356.783819982] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164356.783933988] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164356.783963718] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164356.783977806] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164356.784489126] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164356.785321533] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164356.789670661] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164356.789704073] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164356.789729272] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164356.789739694] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164356.789742878] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164356.789751961] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164356.789768700] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164356.789830809] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164356.789843897] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164356.789851706] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164356.790320351] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164356.792658588] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164356.795097185] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164356.795137758] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164356.795174414] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164356.795205964] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164356.795215325] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164356.795234992] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164356.795268602] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164356.795420919] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164356.795452358] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164356.795469321] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164356.796841433] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164356.802149860] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164357.051766300] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164357.051819314] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164357.051842524] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164357.051854962] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164357.051857388] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164357.051863806] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164357.051876849] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164357.051925896] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164357.051938549] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164357.051945984] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164357.052137720] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164357.052571211] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164357.207284989] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164357.207320686] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164357.207353665] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164357.207371246] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164357.207377473] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164357.207390807] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164357.207409969] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164357.207480361] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164357.207497922] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164357.207509895] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164357.207924862] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164357.210014684] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164357.436490408] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164357.436524578] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164357.436555389] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164357.436572732] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164357.436579276] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164357.436594502] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164357.436619549] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[ERROR] [1792164357.436730827] [move_group]: PlanningRequestAdapter 'CheckStartStateCollision' failed, because '1 contact(s) detected : base_link - nero_table, '. Aborting planning pipeline.
+[ERROR] [1792164357.436775379] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164357.437741886] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164357.437763355] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164357.437783498] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164357.437796981] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164357.437802439] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164357.437815814] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164357.437834311] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[ERROR] [1792164357.437896046] [move_group]: PlanningRequestAdapter 'CheckStartStateCollision' failed, because '1 contact(s) detected : base_link - nero_table, '. Aborting planning pipeline.
+[ERROR] [1792164357.437917130] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164357.438749457] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164357.438770877] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164357.438789629] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164357.438801992] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164357.438804497] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164357.438810334] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164357.438820633] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[ERROR] [1792164357.438870432] [move_group]: PlanningRequestAdapter 'CheckStartStateCollision' failed, because '1 contact(s) detected : base_link - nero_table, '. Aborting planning pipeline.
+[ERROR] [1792164357.438887185] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164357.439755953] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164357.439783778] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164357.439807306] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164357.439822701] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164357.439828882] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164357.439841893] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164357.439861987] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[ERROR] [1792164357.439930454] [move_group]: PlanningRequestAdapter 'CheckStartStateCollision' failed, because '1 contact(s) detected : base_link - nero_table, '. Aborting planning pipeline.
+[ERROR] [1792164357.439961428] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164357.440775870] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164357.440799986] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164357.440821535] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164357.440837240] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164357.440843740] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164357.440857023] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164357.440876035] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[ERROR] [1792164357.440935877] [move_group]: PlanningRequestAdapter 'CheckStartStateCollision' failed, because '1 contact(s) detected : base_link - nero_table, '. Aborting planning pipeline.
+[ERROR] [1792164357.440959571] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164407.012844155] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164407.012882160] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164407.012916085] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164407.012942146] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164407.012949420] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164407.012963475] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164407.012983806] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164407.013045917] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164407.013067496] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164407.013080184] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164407.013585553] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164407.014039432] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164407.016636819] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164407.016663573] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164407.016687944] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164407.016704021] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164407.016710389] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164407.016723796] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164407.016743558] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164407.016799283] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164407.016815043] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164407.016825523] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164407.017308364] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164407.019568368] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164407.022074796] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164407.022103082] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164407.022128171] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164407.022143880] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164407.022150030] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164407.022165982] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164407.022186169] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164407.022270391] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164407.022285531] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164407.022296257] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164407.023017831] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164407.025263066] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164407.244838335] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164407.244894903] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164407.244919035] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164407.244927813] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164407.244930555] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164407.244937771] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164407.244949628] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164407.245003702] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164407.245015842] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164407.245022773] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164407.245154265] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164407.245455922] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164407.379412002] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164407.379443609] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164407.379467653] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164407.379476305] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164407.379478643] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164407.379484949] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164407.379496801] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164407.379549804] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164407.379561030] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164407.379567999] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164407.380074224] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164407.382012698] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164502.612583198] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164502.612623371] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164502.612648956] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164502.612658279] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164502.612660780] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164502.612668224] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164502.612681863] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164502.612729137] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164502.612746476] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164502.612754281] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164502.613022967] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164502.613462072] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164502.615662151] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164502.615689485] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164502.615713914] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164502.615729407] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164502.615735366] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164502.615750296] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164502.615770103] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164502.615825236] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164502.615839622] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164502.615850132] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164502.616611382] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164502.618878505] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164502.621231398] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164502.621255607] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164502.621272632] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164502.621279966] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164502.621282391] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164502.621293072] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164502.621304896] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164502.621376176] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164502.621385474] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164502.621390901] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164502.622124859] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164502.624154820] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164502.859638711] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164502.859704291] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164502.859734235] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164502.859746253] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164502.859749879] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164502.859759277] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164502.859775216] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164502.859845880] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164502.859860302] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164502.859869860] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164502.860063358] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164502.860509521] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164502.994867418] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164502.994902549] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164502.994933921] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164502.994952009] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164502.994958733] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164502.994973063] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164502.994990868] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164502.995069592] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164502.995087596] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164502.995099374] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164502.995508117] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164502.998138730] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164503.218210941] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164503.218248240] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164503.218270457] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164503.218278803] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164503.218281061] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164503.218287530] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164503.218298854] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164503.218999459] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164503.219013708] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164503.219021665] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164503.219375339] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[ERROR] [1792164503.255296924] [moveit.moveit.ros.validate_solution]: Computed path is not valid. Invalid states at index locations: [ 28 29 30 ] out of 113. Explanations follow in command line. Contacts are published on /display_contacts
+[INFO] [1792164503.256095184] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.256111885] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.257174553] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.257190074] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.258010104] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.258023694] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[ERROR] [1792164503.258722446] [moveit.moveit.ros.validate_solution]: Completed listing of explanations for invalid states.
+[ERROR] [1792164503.258924966] [move_group]: PlanningResponseAdapter 'ValidateSolution' failed with error code INVALID_MOTION_PLAN
+[ERROR] [1792164503.258947519] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164503.260754435] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164503.260783453] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164503.260809664] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164503.260827549] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164503.260834460] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164503.260850159] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164503.260873266] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164503.261734854] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164503.261757201] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164503.261769575] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164503.262185530] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[ERROR] [1792164503.301845536] [moveit.moveit.ros.validate_solution]: Computed path is not valid. Invalid states at index locations: [ 28 29 30 ] out of 113. Explanations follow in command line. Contacts are published on /display_contacts
+[INFO] [1792164503.301944559] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.301957271] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.302945029] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.302959078] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.304100782] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.304113298] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[ERROR] [1792164503.304818504] [moveit.moveit.ros.validate_solution]: Completed listing of explanations for invalid states.
+[ERROR] [1792164503.304952889] [move_group]: PlanningResponseAdapter 'ValidateSolution' failed with error code INVALID_MOTION_PLAN
+[ERROR] [1792164503.304971815] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164503.306721529] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164503.306743891] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164503.306760458] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164503.306767795] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164503.306770700] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164503.306777146] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164503.306789386] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164503.307455809] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164503.307469136] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164503.307475551] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164503.307822251] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[ERROR] [1792164503.344540650] [moveit.moveit.ros.validate_solution]: Computed path is not valid. Invalid states at index locations: [ 29 30 ] out of 116. Explanations follow in command line. Contacts are published on /display_contacts
+[INFO] [1792164503.345228757] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.345238269] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.346128993] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.346136962] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[ERROR] [1792164503.346817908] [moveit.moveit.ros.validate_solution]: Completed listing of explanations for invalid states.
+[ERROR] [1792164503.346912972] [move_group]: PlanningResponseAdapter 'ValidateSolution' failed with error code INVALID_MOTION_PLAN
+[ERROR] [1792164503.346926497] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164503.348858953] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164503.348898745] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164503.348923583] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164503.348939876] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164503.348946451] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164503.348960668] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164503.348984234] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164503.349879181] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164503.349900016] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164503.349911961] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164503.350304976] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[ERROR] [1792164503.386804019] [moveit.moveit.ros.validate_solution]: Computed path is not valid. Invalid states at index locations: [ 27 28 29 30 31 ] out of 108. Explanations follow in command line. Contacts are published on /display_contacts
+[INFO] [1792164503.387989332] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.387999530] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.390194568] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.390203600] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.391205355] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.391212318] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.392113553] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.392120185] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.392849739] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.392856127] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[ERROR] [1792164503.393434518] [moveit.moveit.ros.validate_solution]: Completed listing of explanations for invalid states.
+[ERROR] [1792164503.393525591] [move_group]: PlanningResponseAdapter 'ValidateSolution' failed with error code INVALID_MOTION_PLAN
+[ERROR] [1792164503.393538327] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164503.395712923] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164503.395743072] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164503.395771547] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164503.395791000] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164503.395799079] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164503.395816162] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164503.395839326] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164503.396877677] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164503.396901619] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164503.396910359] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164503.397328498] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[ERROR] [1792164503.436450400] [moveit.moveit.ros.validate_solution]: Computed path is not valid. Invalid states at index locations: [ 31 32 33 34 ] out of 124. Explanations follow in command line. Contacts are published on /display_contacts
+[INFO] [1792164503.437360988] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.437376773] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.438495764] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.438509384] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.439452075] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.439464898] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[INFO] [1792164503.440666290] [moveit.moveit.core.moveit_collision_detection_fcl]: Found a contact between 'nero_beaker_teacher_destination' (type 'Object') and 'gripper_base' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[INFO] [1792164503.440680018] [moveit.moveit.core.moveit_collision_detection_fcl]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[ERROR] [1792164503.441386437] [moveit.moveit.ros.validate_solution]: Completed listing of explanations for invalid states.
+[ERROR] [1792164503.441527390] [move_group]: PlanningResponseAdapter 'ValidateSolution' failed with error code INVALID_MOTION_PLAN
+[ERROR] [1792164503.441551054] [moveit.moveit.ros.move_group.plan_service]: Generating a plan with planning pipeline failed.
+[INFO] [1792164548.601626986] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164548.601708632] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164548.601781075] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164548.601842396] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164548.601860105] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164548.601895851] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164548.601954320] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164548.602116162] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164548.602168608] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164548.602198526] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164548.603110346] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164548.604446687] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164548.608756632] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164548.608831674] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164548.608898718] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164548.608935707] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164548.608949347] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164548.608978306] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164548.609022801] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164548.609159738] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164548.609196922] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164548.609221253] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164548.610230646] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164548.613169935] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164548.617246955] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164548.617304081] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164548.617356457] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164548.617391670] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164548.617405293] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164548.617434737] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164548.617478245] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164548.617696103] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164548.617729696] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164548.617752271] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164548.619387016] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164548.623835802] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164548.857673040] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164548.857743075] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164548.857775904] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164548.857794014] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164548.857800215] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164548.857814788] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164548.857832719] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164548.857901813] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164548.857919037] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164548.857930731] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164548.858114155] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164548.858543343] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164548.997967600] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164548.997997491] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164548.998022386] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164548.998031030] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164548.998033699] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164548.998039909] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164548.998050264] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164548.998108140] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164548.998119385] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164548.998126371] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164548.998758480] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164549.001055968] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164549.232876444] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792164549.232922393] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792164549.309407614] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792164880.462829706] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164880.462866310] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164880.462890843] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164880.462900146] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164880.462902774] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164880.462909944] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164880.462923003] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164880.462971758] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164880.462982715] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164880.462989657] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164880.463193117] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164880.463643441] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164880.465848177] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164880.465872098] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164880.465893496] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164880.465907052] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164880.465909351] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164880.465916047] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164880.465927890] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164880.465973292] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164880.465985610] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164880.465991531] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164880.466614076] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164880.468639285] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164880.470944169] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164880.470959360] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164880.470970067] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164880.470976048] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164880.470978379] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164880.470983959] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164880.470994625] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164880.471046093] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164880.471054331] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164880.471059366] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164880.471405459] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164880.473317812] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164880.701957204] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164880.702032484] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164880.702064301] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164880.702082963] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164880.702089549] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164880.702104384] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164880.702122318] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164880.702183740] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164880.702199848] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164880.702211852] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164880.702385873] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164880.702858321] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164880.842087978] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792164880.842123254] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792164880.842153946] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792164880.842179428] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792164880.842186222] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792164880.842201770] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792164880.842219845] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792164880.842283107] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792164880.842303727] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792164880.842315123] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792164880.843440944] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792164880.845715172] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792164881.132548683] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792164881.132593054] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792164881.207652750] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792165028.777534404] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165028.777574430] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165028.777612580] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165028.777632594] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165028.777639538] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165028.777653601] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165028.777679782] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165028.777744322] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165028.777761823] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165028.777773856] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165028.777990623] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165028.778510798] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165028.780704336] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165028.780728400] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165028.780751412] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165028.780766554] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165028.780772597] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165028.780785723] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165028.780804891] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165028.780864195] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165028.780880331] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165028.780890512] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165028.781691929] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165028.784054239] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165028.786371424] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165028.786395157] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165028.786413015] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165028.786424426] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165028.786426762] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165028.786432435] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165028.786443301] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165028.786509254] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165028.786520596] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165028.786525860] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165028.787162165] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165028.789035726] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165029.024511391] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165029.024573113] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165029.024611778] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165029.024630150] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165029.024636719] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165029.024651538] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165029.024685270] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165029.024774096] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165029.024787299] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165029.024794812] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165029.024928514] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165029.025269474] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165029.162890211] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165029.162924814] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165029.162956531] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165029.162975042] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165029.162981861] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165029.162995671] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165029.163013946] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165029.163078430] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165029.163095247] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165029.163107153] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165029.163561220] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165029.166183269] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165029.383140838] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792165029.383186032] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792165029.440741261] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792165642.768500745] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165642.768539106] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165642.768572485] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165642.768591650] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165642.768598328] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165642.768618399] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165642.768640842] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165642.768705684] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165642.768722643] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165642.768733941] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165642.768947112] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165642.769445298] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165642.771719468] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165642.771742196] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165642.771762983] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165642.771778034] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165642.771784014] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165642.771797239] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165642.771816437] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165642.771871633] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165642.771887315] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165642.771897760] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165642.772347220] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165642.774368744] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165642.776597888] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165642.776627261] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165642.776649570] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165642.776665164] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165642.776671411] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165642.776684171] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165642.776704482] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165642.776792695] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165642.776807444] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165642.776817627] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165642.777505015] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165642.779842726] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165643.018773604] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165643.018849935] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165643.018887961] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165643.018907128] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165643.018913470] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165643.018928198] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165643.018953186] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165643.019032460] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165643.019052305] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165643.019064282] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165643.019236720] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165643.019703867] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165643.156864809] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165643.156901547] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165643.156933668] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165643.156952531] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165643.156959129] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165643.156973233] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165643.156993514] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165643.157071848] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165643.157090557] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165643.157102457] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165643.157517921] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165643.160147240] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165643.376171344] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792165643.376201132] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792165643.441271628] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792165701.402075435] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165701.402185900] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165701.402262344] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165701.402316981] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165701.402335863] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165701.402376596] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165701.402427363] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165701.402582760] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165701.402663834] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165701.402696742] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165701.403641932] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165701.405016239] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792165853.077713623] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792165853.077807699] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792165853.077884234] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792165853.077931561] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792165853.077948487] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792165853.077983723] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792165853.078043630] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792165853.078227018] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792165853.078269320] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792165853.078298962] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792165853.079369577] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792165853.084515261] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166081.237071122] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166081.237107641] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166081.237139501] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166081.237158452] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166081.237165136] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166081.237179188] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166081.237200470] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166081.237266500] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166081.237283293] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166081.237295131] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166081.237401344] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166081.237535910] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166081.239712410] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166081.239741724] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166081.239769896] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166081.239785777] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166081.239791703] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166081.239806262] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166081.239826862] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166081.239889837] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166081.239906661] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166081.239918069] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166081.240384375] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166081.242377372] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166081.244541699] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166081.244565445] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166081.244585719] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166081.244599931] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166081.244612038] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166081.244625708] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166081.244644999] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166081.244728884] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166081.244743694] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166081.244753441] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166081.245196643] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166081.247626316] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166081.497287613] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166081.497341953] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166081.497366280] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166081.497374868] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166081.497377255] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166081.497384149] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166081.497393932] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166081.497447096] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166081.497459416] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166081.497466797] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166081.497598480] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166081.497933406] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166081.634848757] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166081.634877337] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166081.634900733] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166081.634909784] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166081.634912245] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166081.634919260] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166081.634929898] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166081.634986456] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166081.634997629] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166081.635005244] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166081.635358246] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166081.637522946] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166081.858247608] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792166081.858291025] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792166081.913104644] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792166229.185432770] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166229.185491806] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166229.185536349] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166229.185551904] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166229.185556997] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166229.185570237] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166229.185611265] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166229.185734034] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166229.185756193] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166229.185768463] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166229.185951914] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166229.186198407] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166229.190569866] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166229.190636537] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166229.190683623] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166229.190712777] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166229.190723443] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166229.190750313] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166229.190792039] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166229.190908824] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166229.190936899] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166229.190958713] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166229.191678895] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166229.195858096] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166229.200196674] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166229.200260733] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166229.200307917] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166229.200337760] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166229.200348855] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166229.200373449] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166229.200416682] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166229.200654165] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166229.200688893] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166229.200699579] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166229.201210203] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166229.203886661] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166229.448535222] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166229.448570782] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166229.448601720] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166229.448623698] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166229.448629848] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166229.448643364] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166229.448662234] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166229.448729915] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166229.448747294] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166229.448758845] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166229.448921975] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166229.449332474] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166229.591760817] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166229.591795523] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166229.591826726] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166229.591839036] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166229.591843289] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166229.591852881] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166229.591869481] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166229.591950009] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166229.591967996] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166229.591978113] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166229.592455370] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166229.594666818] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166229.813601559] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792166229.813648109] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792166229.864732790] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792166327.327928022] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166327.327986569] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166327.328032675] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166327.328070774] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166327.328081073] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166327.328102434] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166327.328136981] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166327.328241990] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166327.328273707] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166327.328292228] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166327.328489224] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166327.328725636] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166327.330990836] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166327.331028998] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166327.331062038] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166327.331082284] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166327.331090070] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166327.331108984] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166327.331136759] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166327.331217069] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166327.331237755] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166327.331251390] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166327.332235069] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166327.335380700] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166327.338335661] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166327.338378953] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166327.338419130] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166327.338445038] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166327.338454849] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166327.338476123] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166327.338507728] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166327.338666773] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166327.338691943] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166327.338708727] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166327.339361769] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166327.342261758] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166327.586008341] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166327.586084425] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166327.586116799] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166327.586135891] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166327.586142405] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166327.586157269] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166327.586175771] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166327.586234935] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166327.586297999] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166327.586309415] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166327.586491941] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166327.586832546] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166327.731173305] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166327.731204501] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166327.731232105] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166327.731244541] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166327.731248181] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166327.731257204] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166327.731271219] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166327.731339997] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166327.731354619] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166327.731363924] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166327.731821321] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166327.733962181] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166327.970780997] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792166327.970818791] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792166328.061638948] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792166731.573290003] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166731.573328899] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166731.573365788] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166731.573385343] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166731.573392090] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166731.573406709] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166731.573430316] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166731.573507077] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166731.573532927] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166731.573545211] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166731.573671926] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166731.573836813] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166731.575680502] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166731.575714138] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166731.575740249] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166731.575755866] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166731.575761726] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166731.575774689] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166731.575795643] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166731.575856778] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166731.575872152] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166731.575882216] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166731.576297599] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166731.578813895] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166731.581045998] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166731.581074908] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166731.581101146] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166731.581117181] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166731.581123350] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166731.581136193] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166731.581156652] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166731.581249940] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166731.581271687] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166731.581281954] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166731.581705801] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166731.584283318] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166731.829438846] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166731.829487673] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166731.829512034] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166731.829521540] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166731.829524070] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166731.829530814] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166731.829540819] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166731.829592765] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166731.829608105] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166731.829615937] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166731.829747327] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166731.830086182] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166731.987203963] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166731.987236299] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166731.987266912] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166731.987284318] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166731.987290707] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166731.987304260] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166731.987322710] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166731.987397001] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166731.987414225] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166731.987426126] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166731.987836697] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166731.990415048] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166732.216332702] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792166732.216370113] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792166732.301072930] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[INFO] [1792166778.480383095] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166778.480424544] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166778.480461232] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166778.480481316] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166778.480488095] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166778.480502779] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166778.480527108] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166778.480602748] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166778.480628192] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166778.480640727] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166778.480773580] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166778.480957683] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166850.647869387] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166850.647946962] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166850.648019280] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166850.648067284] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166850.648084583] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166850.648120651] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166850.648174641] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166850.648330749] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166850.648370319] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166850.648398574] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166850.649553587] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166850.654827441] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792166965.606118513] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792166965.606222882] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792166965.606305808] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792166965.606357845] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792166965.606376058] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792166965.606413852] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792166965.606478553] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792166965.606809071] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792166965.606856828] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792166965.606888943] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792166965.608169545] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792166965.613547485] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792167042.650115245] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792167042.650210154] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792167042.650289467] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792167042.650400996] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792167042.650443068] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792167042.650482281] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792167042.650524629] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792167042.650682124] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792167042.650710227] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792167042.650727602] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792167042.651072615] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792167042.652599829] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792167085.074626017] [moveit.moveit.ros.move_group.plan_service]: Received new planning service request...
+[INFO] [1792167085.074701280] [moveit.moveit.ros.move_group.capability]: Using planning pipeline 'pilz_industrial_motion_planner'
+[INFO] [1792167085.074781866] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[INFO] [1792167085.074804599] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[WARN] [1792167085.074811297] [moveit.moveit.ros.validate_workspace_bounds]: It looks like the planning volume was not specified. Using default values.
+[INFO] [1792167085.074827098] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[INFO] [1792167085.074861230] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[INFO] [1792167085.075027710] [moveit.moveit.planners.pilz.trajectory_generator.ptp]: Initialized Point-to-Point Trajectory Generator.
+[INFO] [1792167085.075054798] [move_group]: Calling Planner 'Pilz Industrial Motion Planner'
+[INFO] [1792167085.075071336] [moveit.moveit.planners.pilz.trajectory_generator]: Generating PTP trajectory...
+[INFO] [1792167085.075953567] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[INFO] [1792167085.080901240] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[INFO] [1792167198.682154545] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Received request to compute Cartesian path
+[INFO] [1792167198.682282528] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Attempting to follow 1 waypoints for link 'link7' using a step of 0.001000 m and jump threshold 2.000000 (in global reference frame)
+[INFO] [1792167198.779598578] [moveit.moveit.ros.move_group.cartesian_path_service_capability]: Computed Cartesian path with 202 points (followed 100.000000% of requested trajectory)
+[ERROR] [1792233794.267127337] [moveit.moveit.core.conversions]: Found empty JointState message
+[ERROR] [1792233803.885585204] [moveit.moveit.core.conversions]: Found empty JointState message
+[ERROR] [1792233892.510350172] [moveit.moveit.core.conversions]: Found empty JointState message
+[ERROR] [1792233892.510739472] [moveit.moveit.core.conversions]: Found empty JointState message
+[WARN] [1792250079.355687285] [rclcpp]: Failed to get parameters: parameter 'robot_description_planning.joint_limits.gripper.has_jerk_limits' is not initialized

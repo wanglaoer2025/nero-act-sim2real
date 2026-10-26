@@ -1,0 +1,39 @@
+{
+  "records": [
+    {
+      "condition": "runtime_Torch",
+      "queries": 300,
+      "active_points": 600,
+      "endpoint_tcp_m": [
+        -0.3652099111410535,
+        -0.05821465002338342,
+        0.4794695571139756
+      ],
+      "tcp_height_range_m": 0.0019908489580702238,
+      "endpoint_distance_to_approach_m": 0.29339920848785184,
+      "simulated_events": [],
+      "deliberate_diagnostic_cap": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+      "full_task_test": false,
+      "optimizer_updates": 0
+    },
+    {
+      "condition": "training_CV2",
+      "queries": 300,
+      "active_points": 600,
+      "endpoint_tcp_m": [
+        -0.3652199845238261,
+        -0.05824470690804784,
+        0.4794708315664396
+      ],
+      "tcp_height_range_m": 0.00209849425171843,
+      "endpoint_distance_to_approach_m": 0.2934065386045455,
+      "simulated_events": [],
+      "deliberate_diagnostic_cap": "RuntimeError: Diagnostic300query cap; not full-task acceptance",
+      "full_task_test": false,
+      "optimizer_updates": 0
+    }
+  ],
+  "scope": "matched600point diagnosis; only preprocessing changes, both model/physics/initial state fixed",
+  "training_process_changed": false,
+  "hardware_commands_sent": false
+}

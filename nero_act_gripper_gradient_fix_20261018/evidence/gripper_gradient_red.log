@@ -1,0 +1,80 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions (tests.test_gripper_gradient.GripperGradientTests.test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions) ... ERROR
+test_grasp_correction_cannot_replace_the_original_goal_rotation (tests.test_gripper_gradient.GripperGradientTests.test_grasp_correction_cannot_replace_the_original_goal_rotation) ... FAIL
+test_nonfinite_or_negative_auxiliary_weight_is_rejected (tests.test_gripper_gradient.GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected) ... 
+  test_nonfinite_or_negative_auxiliary_weight_is_rejected (tests.test_gripper_gradient.GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected) (weight=-0.1) ... FAIL
+  test_nonfinite_or_negative_auxiliary_weight_is_rejected (tests.test_gripper_gradient.GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected) (weight=nan) ... FAIL
+  test_nonfinite_or_negative_auxiliary_weight_is_rejected (tests.test_gripper_gradient.GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected) (weight=inf) ... FAIL
+test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open (tests.test_gripper_gradient.GripperGradientTests.test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open) ... FAIL
+test_verified_grasp_corrections_remain_partial_and_keep_source_splits (tests.test_gripper_gradient.GripperGradientTests.test_verified_grasp_corrections_remain_partial_and_keep_source_splits) ... ERROR
+
+======================================================================
+ERROR: test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions (tests.test_gripper_gradient.GripperGradientTests.test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/tests/test_gripper_gradient.py", line 48, in test_auxiliary_validation_uses_zero_latent_and_padding_without_changing_predictions
+    self.assertGreater(float(first['prior_gripper']), 0.)
+                             ~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'prior_gripper'
+
+======================================================================
+ERROR: test_verified_grasp_corrections_remain_partial_and_keep_source_splits (tests.test_gripper_gradient.GripperGradientTests.test_verified_grasp_corrections_remain_partial_and_keep_source_splits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/tests/test_gripper_gradient.py", line 64, in test_verified_grasp_corrections_remain_partial_and_keep_source_splits
+    self.assertEqual(len(validate_corrections(manifest, [], check_files=False)), 3)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/training/recoveries.py", line 54, in validate_corrections
+    raise ValueError('Separate verified partial roles, IDs and independent grouped splits required')
+ValueError: Separate verified partial roles, IDs and independent grouped splits required
+
+======================================================================
+FAIL: test_grasp_correction_cannot_replace_the_original_goal_rotation (tests.test_gripper_gradient.GripperGradientTests.test_grasp_correction_cannot_replace_the_original_goal_rotation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/tests/test_gripper_gradient.py", line 81, in test_grasp_correction_cannot_replace_the_original_goal_rotation
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_nonfinite_or_negative_auxiliary_weight_is_rejected (tests.test_gripper_gradient.GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected) (weight=-0.1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/tests/test_gripper_gradient.py", line 53, in test_nonfinite_or_negative_auxiliary_weight_is_rejected
+    with self.subTest(weight=weight), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_nonfinite_or_negative_auxiliary_weight_is_rejected (tests.test_gripper_gradient.GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected) (weight=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/tests/test_gripper_gradient.py", line 53, in test_nonfinite_or_negative_auxiliary_weight_is_rejected
+    with self.subTest(weight=weight), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_nonfinite_or_negative_auxiliary_weight_is_rejected (tests.test_gripper_gradient.GripperGradientTests.test_nonfinite_or_negative_auxiliary_weight_is_rejected) (weight=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/tests/test_gripper_gradient.py", line 53, in test_nonfinite_or_negative_auxiliary_weight_is_rejected
+    with self.subTest(weight=weight), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open (tests.test_gripper_gradient.GripperGradientTests.test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_gripper_gradient_fix_20261018/tests/test_gripper_gradient.py", line 31, in test_verified_close_target_has_gradient_when_runtime_output_is_saturated_open
+    self.assertGreater(float(policy.model.action_head.bias.grad[7]), 0.)
+AssertionError: 0.0 not greater than 0.0
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.563s
+
+FAILED (failures=5, errors=2)
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M

@@ -1,0 +1,101 @@
+.FF..FF                                                                  [100%]
+=================================== FAILURES ===================================
+______ test_prefix_only_advances_actual_two_points_and_rechecks_each_send ______
+
+    def test_prefix_only_advances_actual_two_points_and_rechecks_each_send():
+        from runtime import PrefixRunner
+        times = iter([1.04,1.04,1.041,1.06,1.06,1.061])
+        sent = []
+        runner = PrefixRunner(sent.append, clock=lambda: next(times))
+>       assert runner.submit(prediction()) == 2
+
+tests/test_runtime.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+runtime.py:107: in submit
+    self.history.submit(target, now)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <contract.CommandHistory object at 0x7f3c49506030>
+target8 = array([0., 0., 0., 0., 0., 0., 0., 0.]), stamp = 1.04, ack = True
+
+    def submit(self, target8, stamp, ack=True):
+        target = physical_state(target8,command=True)
+        stamp = float(stamp)
+        if not math.isfinite(stamp) or stamp <= self._last_event:
+>           raise ValueError('Submission events must have strictly increasing finite times')
+E           ValueError: Submission events must have strictly increasing finite times
+
+contract.py:26: ValueError
+_____________ test_slow_sender_cannot_emit_a_second_expired_point ______________
+
+    def test_slow_sender_cannot_emit_a_second_expired_point():
+        from runtime import PrefixRunner
+        times = iter([1.04,1.04,1.041,1.4])
+        sent = []
+        runner = PrefixRunner(sent.append, clock=lambda: next(times))
+>       with pytest.raises(RuntimeError, match='stale'): runner.submit(prediction())
+
+tests/test_runtime.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+runtime.py:107: in submit
+    self.history.submit(target, now)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <contract.CommandHistory object at 0x7f3c48e65190>
+target8 = array([0., 0., 0., 0., 0., 0., 0., 0.]), stamp = 1.04, ack = True
+
+    def submit(self, target8, stamp, ack=True):
+        target = physical_state(target8,command=True)
+        stamp = float(stamp)
+        if not math.isfinite(stamp) or stamp <= self._last_event:
+>           raise ValueError('Submission events must have strictly increasing finite times')
+E           ValueError: Submission events must have strictly increasing finite times
+
+contract.py:26: ValueError
+___________ test_log_admission_delay_is_rechecked_before_actual_send ___________
+
+    def test_log_admission_delay_is_rechecked_before_actual_send():
+        from runtime import PrefixRunner
+        now=[1.04];sent=[]
+        class SlowTrace:
+            def check(self):pass
+            def append(self,value):now[0]=1.4
+        runner=PrefixRunner(sent.append,clock=lambda:now[0],trace=SlowTrace())
+        with pytest.raises(RuntimeError,match='stale'):runner.submit(prediction())
+>       assert sent==[] and runner.stopped
+E       assert ([array([0., 0... 0., 0., 0.])] == []
+E         Left contains one more item: array([0., 0., 0., 0., 0., 0., 0., 0.])
+E         Use -v to get more diff)
+
+tests/test_runtime.py:87: AssertionError
+________ test_ack_delay_stops_after_recording_the_one_actual_submission ________
+
+    def test_ack_delay_stops_after_recording_the_one_actual_submission():
+        from runtime import PrefixRunner
+        times=iter([1.04,1.04,1.10]);sent=[]
+        runner=PrefixRunner(sent.append,clock=lambda:next(times))
+>       with pytest.raises(RuntimeError,match='ACK'):runner.submit(prediction())
+
+tests/test_runtime.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+runtime.py:107: in submit
+    self.history.submit(target, now)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <contract.CommandHistory object at 0x7f3c49246960>
+target8 = array([0., 0., 0., 0., 0., 0., 0., 0.]), stamp = 1.04, ack = True
+
+    def submit(self, target8, stamp, ack=True):
+        target = physical_state(target8,command=True)
+        stamp = float(stamp)
+        if not math.isfinite(stamp) or stamp <= self._last_event:
+>           raise ValueError('Submission events must have strictly increasing finite times')
+E           ValueError: Submission events must have strictly increasing finite times
+
+contract.py:26: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_runtime.py::test_prefix_only_advances_actual_two_points_and_rechecks_each_send
+FAILED tests/test_runtime.py::test_slow_sender_cannot_emit_a_second_expired_point
+FAILED tests/test_runtime.py::test_log_admission_delay_is_rechecked_before_actual_send
+FAILED tests/test_runtime.py::test_ack_delay_stops_after_recording_the_one_actual_submission
+4 failed, 3 passed in 0.12s

@@ -1,0 +1,20 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+________ test_grasp_only_or_forced_attachment_cannot_pass_complete_task ________
+
+    def test_grasp_only_or_forced_attachment_cannot_pass_complete_task():
+>       from evaluate import full_task_passed
+E       ModuleNotFoundError: No module named 'evaluate'
+
+tests/test_evaluate.py:10: ModuleNotFoundError
+__________ test_development_cases_do_not_consume_final_test_positions __________
+
+    def test_development_cases_do_not_consume_final_test_positions():
+>       from evaluate import development_cases
+E       ModuleNotFoundError: No module named 'evaluate'
+
+tests/test_evaluate.py:21: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_evaluate.py::test_grasp_only_or_forced_attachment_cannot_pass_complete_task
+FAILED tests/test_evaluate.py::test_development_cases_do_not_consume_final_test_positions
+2 failed in 0.02s

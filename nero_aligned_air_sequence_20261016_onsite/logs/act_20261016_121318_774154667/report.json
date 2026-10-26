@@ -1,0 +1,141 @@
+{
+  "mode": "return_start_plan",
+  "success": true,
+  "full_execution_ready": false,
+  "execution_goal_submitted": false,
+  "sdk_connected": false,
+  "scope": "Separate MoveIt known-start return, not ACT inference",
+  "gripper_command_sent": false,
+  "plan_complete": true,
+  "actual_start": [
+    0.2239781029084323,
+    -0.11705923293125968,
+    0.13456488532876282,
+    1.5637277433243195,
+    -0.014765485471872028,
+    0.25766295747192286,
+    0.150203035426632,
+    0.060113
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 326254.740166767,
+      "stamp": 1792123999.636441,
+      "q": [
+        0.2239781029084323,
+        -0.11705923293125968,
+        0.13456488532876282,
+        1.5637277433243195,
+        -0.014765485471872028,
+        0.25766295747192286,
+        0.150203035426632,
+        0.060113
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 326254.740217618,
+      "stamp": 1792123999.6390488,
+      "q": [
+        0.22396959364414215,
+        -0.11705669015645981,
+        0.13457277417182922,
+        1.5637328624725342,
+        -0.014718257822096348,
+        0.2576655447483063,
+        0.15021586418151855,
+        0.060037605464458466
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.00024391099577769637,
+  "execution_readiness_checks_passed": true,
+  "planned_monotonic_s": 326254.959821322,
+  "duration_s": 15.885083538492893,
+  "return_target": [
+    0.18481291449367956,
+    -0.12836896648418294,
+    0.10992083629060287,
+    1.5715293650807343,
+    -0.022689280275926284,
+    0.2777516971623776,
+    0.13554226970987962,
+    0.060113
+  ]
+}

@@ -1,0 +1,34 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_____ test_offline_groups_distinguish_closing_holding_opening_and_release ______
+
+    def test_offline_groups_distinguish_closing_holding_opening_and_release():
+>       from training.grouped_gripper import classify_gripper_groups
+E       ModuleNotFoundError: No module named 'training.grouped_gripper'
+
+tests/test_grouped_gripper.py:7: ModuleNotFoundError
+_ test_gripper_contributions_reproduce_actual_restricted_prefix_gradient[legacy_physical_target] _
+
+profile = 'legacy_physical_target'
+
+    @pytest.mark.parametrize('profile',['legacy_physical_target','feedback_preimage_v1'])
+    def test_gripper_contributions_reproduce_actual_restricted_prefix_gradient(profile):
+>       from training.grouped_gripper import gripper_contributions
+E       ModuleNotFoundError: No module named 'training.grouped_gripper'
+
+tests/test_grouped_gripper.py:17: ModuleNotFoundError
+_ test_gripper_contributions_reproduce_actual_restricted_prefix_gradient[feedback_preimage_v1] _
+
+profile = 'feedback_preimage_v1'
+
+    @pytest.mark.parametrize('profile',['legacy_physical_target','feedback_preimage_v1'])
+    def test_gripper_contributions_reproduce_actual_restricted_prefix_gradient(profile):
+>       from training.grouped_gripper import gripper_contributions
+E       ModuleNotFoundError: No module named 'training.grouped_gripper'
+
+tests/test_grouped_gripper.py:17: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_grouped_gripper.py::test_offline_groups_distinguish_closing_holding_opening_and_release
+FAILED tests/test_grouped_gripper.py::test_gripper_contributions_reproduce_actual_restricted_prefix_gradient[legacy_physical_target]
+FAILED tests/test_grouped_gripper.py::test_gripper_contributions_reproduce_actual_restricted_prefix_gradient[feedback_preimage_v1]
+3 failed in 1.10s

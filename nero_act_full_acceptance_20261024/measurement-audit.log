@@ -1,0 +1,121 @@
+{
+  "complete": true,
+  "measurement_count": 11861,
+  "all_saved_summary_metrics_match_measurements": true,
+  "protected_sources_unchanged": 265,
+  "total": 7,
+  "passed": 1,
+  "cases": [
+    {
+      "id": 9000,
+      "full_task_passed": false,
+      "max_lift_mm": 0.26460831987561856,
+      "max_transfer_mm": 5.736272369437865,
+      "final_target_error_mm": 192.30713786851746,
+      "stable_suffix_frames": 0,
+      "final_cup_bottom_mm": 0.21892935678816117,
+      "final_tcp_height_mm": 57.591460896435045,
+      "bilateral_contact_frames": 24,
+      "events": [
+        "GRASP"
+      ],
+      "error": "RuntimeError: Attached-cup model would cross the table"
+    },
+    {
+      "id": 9005,
+      "full_task_passed": false,
+      "max_lift_mm": 0.0,
+      "max_transfer_mm": 0.14791112762388192,
+      "final_target_error_mm": 197.08253474133926,
+      "stable_suffix_frames": 0,
+      "final_cup_bottom_mm": -0.0032823553971148,
+      "final_tcp_height_mm": 56.86231547621214,
+      "bilateral_contact_frames": 25,
+      "events": [
+        "GRASP"
+      ],
+      "error": "RuntimeError: Attached-cup model would cross the table"
+    },
+    {
+      "id": 9006,
+      "full_task_passed": true,
+      "max_lift_mm": 183.491238582287,
+      "max_transfer_mm": 181.7191636982263,
+      "final_target_error_mm": 16.511892237485615,
+      "stable_suffix_frames": 101,
+      "final_cup_bottom_mm": -0.0033121849965511707,
+      "final_tcp_height_mm": 246.01224097783268,
+      "bilateral_contact_frames": 1429,
+      "events": [
+        "GRASP",
+        "CARRY",
+        "RELEASE",
+        "RETREAT"
+      ],
+      "error": null
+    },
+    {
+      "id": 9200,
+      "full_task_passed": false,
+      "max_lift_mm": 197.07310589265802,
+      "max_transfer_mm": 163.64661336195624,
+      "final_target_error_mm": 11.9789231505395,
+      "stable_suffix_frames": 0,
+      "final_cup_bottom_mm": 12.865031185597827,
+      "final_tcp_height_mm": 76.77320656305014,
+      "bilateral_contact_frames": 1269,
+      "events": [
+        "GRASP",
+        "CARRY"
+      ],
+      "error": "ValueError: Visible blue geometry does not span the nominal square card"
+    },
+    {
+      "id": 9201,
+      "full_task_passed": false,
+      "max_lift_mm": 0.21970054965844005,
+      "max_transfer_mm": 1.0056292355883492,
+      "final_target_error_mm": 194.40953425230802,
+      "stable_suffix_frames": 0,
+      "final_cup_bottom_mm": 0.1874300213357133,
+      "final_tcp_height_mm": 57.23808886621823,
+      "bilateral_contact_frames": 33,
+      "events": [
+        "GRASP"
+      ],
+      "error": "RuntimeError: Attached-cup model would cross the table"
+    },
+    {
+      "id": 9300,
+      "full_task_passed": false,
+      "max_lift_mm": 0.005982188653393117,
+      "max_transfer_mm": 1.9357721318800218,
+      "final_target_error_mm": 196.15165990304982,
+      "stable_suffix_frames": 0,
+      "final_cup_bottom_mm": -0.0031872470051957924,
+      "final_tcp_height_mm": 57.392912830908216,
+      "bilateral_contact_frames": 37,
+      "events": [
+        "GRASP"
+      ],
+      "error": "RuntimeError: Attached-cup model would cross the table"
+    },
+    {
+      "id": 9301,
+      "full_task_passed": false,
+      "max_lift_mm": 0.0,
+      "max_transfer_mm": 1.7755145748287864e-05,
+      "final_target_error_mm": 175.40938665348625,
+      "stable_suffix_frames": 0,
+      "final_cup_bottom_mm": -0.003312185425118075,
+      "final_tcp_height_mm": 121.45501080652086,
+      "bilateral_contact_frames": 0,
+      "events": [],
+      "error": "RuntimeError: Predicted low descent before alignment; no action sent"
+    }
+  ],
+  "independent_geometry_instrument": false,
+  "scope": "recalculation_from_same_saved_simulated_physics",
+  "full_real_task_accepted": false,
+  "hardware_commands_sent": false
+}

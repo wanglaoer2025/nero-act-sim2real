@@ -1,0 +1,76 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19684861014090932,
+  "maximum_horizontal_transfer_m": 0.18175947524887853,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 774,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.524990818433903,
+      -0.16424268451919116,
+      0.04760389483059075
+    ],
+    "tcp_xyz": [
+      -0.5230086474684453,
+      -0.16418866352409783,
+      0.060185034783100944
+    ],
+    "cup_upright": 0.99999395364293,
+    "cup_speed": 3.94165532142164e-05,
+    "bilateral": true,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07398031900322866,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": true,
+    "force": false,
+    "name": "independent_1",
+    "seed": 100101
+  },
+  "frames": 4624,
+  "active_policy_points": 4300,
+  "queries": 395,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_first_close_support_hold_v6",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 792,
+      "active_points": 792,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1377,
+      "active_points": 1256,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 1995,
+      "active_points": 1794,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 4,
+  "runtime_s": 37.15995915903477,
+  "contact_arm_hold_points": 2359
+}

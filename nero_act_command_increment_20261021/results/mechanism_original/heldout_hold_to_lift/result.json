@@ -1,0 +1,74 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.02076989125800248,
+  "maximum_horizontal_transfer_m": 0.0015077853524842902,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5506614548631946,
+      -0.008606326666781686,
+      0.06826989125800248
+    ],
+    "tcp_xyz": [
+      -0.5507757031650107,
+      -0.008599913158321868,
+      0.07617960098758723
+    ],
+    "cup_upright": 0.9999275327425111,
+    "cup_speed": 0.014997276420224316,
+    "bilateral": true,
+    "supported": false,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07378615109797038,
+    "contract_valid": true
+  },
+  "scenario": {
+    "seed": 180360,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false
+  },
+  "frames": 55,
+  "active_policy_points": 1195,
+  "queries": 25,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 1024,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 0,
+  "runtime_s": 1.5799012670031516,
+  "contact_arm_hold_points": 0,
+  "resumed_partial_not_full": true,
+  "resume_policy_transition": true,
+  "new_active_points": 50,
+  "contact_state": "holding",
+  "mechanism_success": true,
+  "current_cup_lift_m": 0.02076989125800248,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": true,
+  "inference_latency_p95_ms": 9.035547406529076,
+  "guard_diagnostic": null
+}

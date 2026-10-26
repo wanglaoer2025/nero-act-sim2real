@@ -1,0 +1,40 @@
+..F                                                                      [100%]
+=================================== FAILURES ===================================
+______ test_unreadable_manifest_is_a_reported_blocker_not_an_optimization ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-127/test_unreadable_manifest_is_a_0')
+
+    def test_unreadable_manifest_is_a_reported_blocker_not_an_optimization(tmp_path):
+        from train import preflight
+        p=tmp_path/'broken.json';p.write_text('{')
+>       report=preflight(p)
+
+tests/test_training_entry.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+train.py:29: in preflight
+    manifest=json.loads(manifest_path.read_text())
+/usr/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+/usr/lib/python3.12/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fdef2f29730>, s = '{', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+>           obj, end = self.scan_once(s, idx)
+E           json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+/usr/lib/python3.12/json/decoder.py:353: JSONDecodeError
+=========================== short test summary info ============================
+FAILED tests/test_training_entry.py::test_unreadable_manifest_is_a_reported_blocker_not_an_optimization
+1 failed, 2 passed in 1.03s

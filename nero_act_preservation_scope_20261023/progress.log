@@ -1,0 +1,16 @@
+# SDD ledger — plan: /home/user/wq/nero_act_preservation_scope_20261023/repair_plan.json
+Resume: all-group gradient coefficient and three unit tests already implemented; zero-update gradients checked on the same initializer and four fixed batches. Training has not started.
+Ruling: Use the existing isolated experiment directory instead of a git worktree because /home/user/wq has no git repository. Historical source and checkpoint hashes remain binding; no commits can be made here.
+Pre-flight: The reused data preparers couple their input root and audit output root. Redirect both roots to this experiment and reuse the exact dense data through a local symlink; retain exact batch-order equality. If wrong, the data-integration regression and initializer/source hashes must reject training.
+Task 1: historical audit isolation RED reproduced against the real data preparers while blocking the historical write before it happened.
+Remaining: GREEN whole experiment suite; fixed1000 offline training; guarded full flow and original qualification; final evidence and review. ROS/CAN must stay stopped.
+Task 1: complete — historical-write regression RED→GREEN; whole isolated experiment suite 4/4; real data and original batch equality verified.
+Task 2: start — exactly1000 offline updates; no model/statistics/data/LR changes; ROS driver verified inactive.
+Task 2: complete — exactly1000 updates; frozen-parameter check passed; all recorded group raw-gradient fractions <=0.5 plus roundoff; position-response gate still failed.
+Task 3: start — guarded whole-task rollout and unchanged original qualification; no further optimizer updates.
+Task 3: complete — current task exhausted3900 points with noGRASP/no lift/no contact; original6 mechanisms3/6.
+Ruling: Add a zero-update development diagnostic at nearest alignment, outward drift and terminal saved physics states, as recommended by prior review. This adds no optimizer budget and distinguishes teacher reachability from frozen ACT disagreement; nominal-only results cannot qualify hardware.
+Final review: fresh reviewer /root/preservation_scope_final_review; noCritical/Important;891 hashes,70 optimizer states exactly1000,52 permitted changes,4/4 tests verified.
+Ruling: Review observed pending completion metadata while reporting task was still in progress; finish already-planned status/result finalization and record separate original qualification invocation. No protected source or performance thresholds change.
+Task 4: complete — bounded comparison and3 zero-update full teacher recoveries recorded; ACT remains unqualified; no additional training or hardware operations.
+Steering: User reports new hand-eye calibration made today; next work is locating and auditing that calibration, not extending old-calibration optimizer budget.

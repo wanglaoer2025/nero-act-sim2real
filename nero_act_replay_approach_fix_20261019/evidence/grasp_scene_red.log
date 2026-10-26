@@ -1,0 +1,63 @@
+test_bad_earlier_stable_frame_cannot_be_hidden_by_last_good_frame (test_grasp_scene_check.GraspSceneCheckTests.test_bad_earlier_stable_frame_cannot_be_hidden_by_last_good_frame) ... COLD_INPUTS_WARMING
+COLD_INPUTS_READY
+PHASE_COMPLETE approach
+FAIL
+test_card_movement_also_prevents_contact_authorization (test_grasp_scene_check.GraspSceneCheckTests.test_card_movement_also_prevents_contact_authorization) ... COLD_INPUTS_WARMING
+COLD_INPUTS_READY
+PHASE_COMPLETE approach
+FAIL
+test_nonfinite_measurement_cannot_authorize_close (test_grasp_scene_check.GraspSceneCheckTests.test_nonfinite_measurement_cannot_authorize_close) ... COLD_INPUTS_WARMING
+COLD_INPUTS_READY
+PHASE_COMPLETE approach
+FAIL
+test_nonfinite_sensor_window_is_rejected_in_all_replay_stages (test_grasp_scene_check.GraspSceneCheckTests.test_nonfinite_sensor_window_is_rejected_in_all_replay_stages) ... FAIL
+test_unchanged_source_reaches_existing_close_contact_gate (test_grasp_scene_check.GraspSceneCheckTests.test_unchanged_source_reaches_existing_close_contact_gate) ... COLD_INPUTS_WARMING
+COLD_INPUTS_READY
+PHASE_COMPLETE approach
+ERROR
+
+======================================================================
+ERROR: test_unchanged_source_reaches_existing_close_contact_gate (test_grasp_scene_check.GraspSceneCheckTests.test_unchanged_source_reaches_existing_close_contact_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_approach_fix_20261019/tests/test_grasp_scene_check.py", line 98, in test_unchanged_source_reaches_existing_close_contact_gate
+    self.assertTrue(report['grasp_scene_check']['passed'])
+                    ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'grasp_scene_check'
+
+======================================================================
+FAIL: test_bad_earlier_stable_frame_cannot_be_hidden_by_last_good_frame (test_grasp_scene_check.GraspSceneCheckTests.test_bad_earlier_stable_frame_cannot_be_hidden_by_last_good_frame)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_approach_fix_20261019/tests/test_grasp_scene_check.py", line 79, in test_bad_earlier_stable_frame_cannot_be_hidden_by_last_good_frame
+    self.assertFalse(contact.close_authorized)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_card_movement_also_prevents_contact_authorization (test_grasp_scene_check.GraspSceneCheckTests.test_card_movement_also_prevents_contact_authorization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_approach_fix_20261019/tests/test_grasp_scene_check.py", line 86, in test_card_movement_also_prevents_contact_authorization
+    self.assertFalse(contact.close_authorized)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_nonfinite_measurement_cannot_authorize_close (test_grasp_scene_check.GraspSceneCheckTests.test_nonfinite_measurement_cannot_authorize_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_approach_fix_20261019/tests/test_grasp_scene_check.py", line 91, in test_nonfinite_measurement_cannot_authorize_close
+    self.assertFalse(contact.close_authorized)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_nonfinite_sensor_window_is_rejected_in_all_replay_stages (test_grasp_scene_check.GraspSceneCheckTests.test_nonfinite_sensor_window_is_rejected_in_all_replay_stages)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_approach_fix_20261019/tests/test_grasp_scene_check.py", line 22, in test_nonfinite_sensor_window_is_rejected_in_all_replay_stages
+    with self.assertRaisesRegex(RuntimeError, 'finite'):
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.331s
+
+FAILED (failures=4, errors=1)

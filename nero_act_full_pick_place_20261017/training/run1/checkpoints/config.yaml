@@ -1,0 +1,119 @@
+dataset_dir: /home/user/wq/nero_act_full_pick_place_20261017/training_data
+manifest: /home/user/wq/nero_act_full_pick_place_20261017/training/run1/manifest.json
+split_file: /home/user/wq/nero_act_full_pick_place_20261017/training/run1/split.json
+camera_names:
+- camera_0
+state_dim: 8
+action_dim: 8
+alignment_offset: 0
+image_size:
+- 90
+- 160
+chunk_size: 20
+batch_size: 32
+eval_batch_size: 32
+hidden_dim: 128
+dim_feedforward: 512
+nheads: 8
+enc_layers: 2
+dec_layers: 2
+dropout: 0.0
+kl_weight: 0.0
+gripper_bce_weight: 0.0
+gripper_logit_scale: 3.0
+lr: 0.0001
+lr_backbone: 1e-05
+weight_decay: 0.0001
+backbone: resnet18
+pretrained_backbone: false
+num_epochs: 80
+seed: 42
+val_fraction: 0.2
+fixed_val_samples_per_episode: 20
+device: cuda
+cpu_threads: 2
+checkpoint_dir: /home/user/wq/nero_act_full_pick_place_20261017/training/run1/checkpoints
+artifact_dir: /home/user/wq/nero_act_full_pick_place_20261017/training/run1/artifacts
+training_log: /home/user/wq/nero_act_full_pick_place_20261017/training/run1/training.csv
+training_stride_steps: 10
+experiment_scope: Current paired-start cup pickup/hold; alternative IK branch; physical
+  perturbation correction demos; all20 query points supervised; simulation only
+terminal_padded_windows: true
+action_representation: absolute_joint_position
+execution_query_stride: 10
+training_objective: deployment_mean_weighted_l1
+near_term_steps: 10
+near_term_weight: 5
+checkpoint_include_optimizer: false
+init_checkpoint: /home/user/wq/nero_cup_retrained_v2_20261016/model/policy.ckpt
+loss_prefix_steps: 20
+freeze_backbone: true
+task_scope: complete_pick_carry_place_retreat
+real_initial_state:
+- 0.2237861156463623
+- -0.11719886213541031
+- 0.1344776153564453
+- 1.5639197826385498
+- -0.014765485189855099
+- 0.25787240266799927
+- 0.14997614920139313
+- 0.06017899885773659
+training_observation_noise_normalized:
+- 0.001342556417932424
+- 0.0010924777296655458
+- 0.003278512094084289
+- 0.002226982283394017
+- 0.0017084798974945626
+- 0.0011888644159646767
+- 0.0009810329541140419
+- 0.009571460277669398
+joint_residual_anchor: true
+reset_initial_joint_head: true
+joint_anchor_scale:
+- 0.999954104423523
+- 0.9983977675437927
+- 0.9998658895492554
+- 1.0010602474212646
+- 1.0008714199066162
+- 0.9999546408653259
+- 1.001118779182434
+joint_anchor_offset:
+- 2.9607002943521366e-05
+- 0.005661931354552507
+- 0.0009855510434135795
+- 0.00921118725091219
+- 0.0007196972728706896
+- 8.591609002905898e-06
+- 0.007294320035725832
+training_revision: full_task_simulation_current_start
+stage_sampling:
+  before_close_steps: 40
+  close_repeats: 3
+  release_repeats: 1
+  require_release: false
+tcp_position_loss_weight: 0
+tcp_position_loss_scale_m: 0.01
+tcp_loss_robot_xml: /home/wq/robot_learning/assets/nero_mujoco/nero_gripper.xml
+tcp_loss_action_mean:
+- 0.10559826344251633
+- 0.573329746723175
+- 0.040047746151685715
+- 1.0477393865585327
+- 0.003233375959098339
+- 0.11270250380039215
+- 0.9915686249732971
+- 0.08711813390254974
+tcp_loss_action_std:
+- 0.06601718068122864
+- 0.3899329602718353
+- 0.05178462713956833
+- 0.27727872133255005
+- 0.010638013482093811
+- 0.08100319653749466
+- 0.45280179381370544
+- 0.012659071013331413
+normalization_stats: /home/user/wq/nero_act_full_pick_place_20261017/training/run1/training_only_stats.pkl
+reset_action_head: true
+bounded_gripper_output: true
+gripper_action_mean: 0.08088631927967072
+gripper_action_std: 0.014664977788925171

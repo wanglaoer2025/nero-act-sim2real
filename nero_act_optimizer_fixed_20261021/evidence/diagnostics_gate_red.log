@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_optimizer_cannot_start_without_matched_zero_update_diagnostics ______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-19/test_optimizer_cannot_start_wi0')
+
+    def test_optimizer_cannot_start_without_matched_zero_update_diagnostics(tmp_path):
+>       from training.optimizer_control import require_optimizer_diagnostics
+E       ImportError: cannot import name 'require_optimizer_diagnostics' from 'training.optimizer_control' (/home/user/wq/nero_act_optimizer_fixed_20261021/training/optimizer_control.py)
+
+tests/test_optimizer_control.py:85: ImportError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_optimizer_control.py::test_optimizer_cannot_start_without_matched_zero_update_diagnostics
+1 failed, 1 warning in 2.15s

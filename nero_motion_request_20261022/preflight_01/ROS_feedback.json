@@ -1,0 +1,94 @@
+{
+  "time_local": "2026-10-22T21:22:18.242238+08:00",
+  "can_tx_start": 6677,
+  "motion_sent": false,
+  "control_publishers_created": 0,
+  "control_clients_created": 0,
+  "error": null,
+  "parameters": {
+    "control_enabled": {
+      "type": 1,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0
+    },
+    "auto_enable": {
+      "type": 1,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0
+    },
+    "speed_percent": {
+      "type": 2,
+      "bool_value": false,
+      "integer_value": 0,
+      "double_value": 0.0
+    }
+  },
+  "nodes": [
+    {
+      "name": "nero_motion_preflight_readonly_20261022",
+      "namespace": "/"
+    },
+    {
+      "name": "agx_arm_ctrl_single_node",
+      "namespace": "/"
+    }
+  ],
+  "feedback_count": 106,
+  "first_feedback": {
+    "name": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "position": [
+      0.18329447804444451,
+      -0.12651891747706895,
+      0.09998991284675514,
+      1.5707788735023767,
+      -0.023841197582242544,
+      0.28166123468684495,
+      0.13103932023973427,
+      0.094926
+    ],
+    "header_time_s": 1792675338.497884,
+    "receipt_monotonic_s": 204886.175839964
+  },
+  "latest_feedback": {
+    "name": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "position": [
+      0.1832595714594046,
+      -0.12651891747706895,
+      0.09998991284675514,
+      1.5707788735023767,
+      -0.023963370629882144,
+      0.2817485011494446,
+      0.13103932023973427,
+      0.094926
+    ],
+    "header_time_s": 1792675339.0277758,
+    "receipt_monotonic_s": 204886.67736806
+  },
+  "feedback_age_at_finish_s": 9.220000356435776e-05,
+  "receipt_rate_hz": 209.36015517790264,
+  "positions_finite": true,
+  "publisher_nodes": [
+    "agx_arm_ctrl_single_node"
+  ],
+  "can_tx_end": 6677
+}

@@ -1,0 +1,43 @@
+{
+  "time_local": "2026-10-22T20:54:58.472074+08:00",
+  "mode": "offline_two_distinct_tabletop_marker_positions",
+  "raw_report_sha256": {
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/report.json": "599ed1cc86a9ab8bca75616f1abc203682a14d24424ac809fb8d55598a6de7b4",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/report.json": "8a131c24c28d5a606f8284f5f18240390bceb77eb741629a0f2a20df2c556e1b"
+  },
+  "raw_image_and_capture_source_hashes_verified": true,
+  "independent_physical_positions": 2,
+  "valid_frames_per_position": [
+    24,
+    24
+  ],
+  "camera_to_board_plane_mm": [
+    357.9833418294451,
+    363.349894921805
+  ],
+  "board_plane_distance_difference_mm": 5.366553092359894,
+  "normal_difference_deg": 0.19243782172347665,
+  "physical_center_displacement_mm": 104.13943603758227,
+  "center_difference_optical_mm": [
+    -104.01714695381546,
+    -1.6024595605900194,
+    4.7840778809215
+  ],
+  "second_position_reprojection_rmse_px_median": 0.039473276463441176,
+  "board_thickness_mm": null,
+  "camera_to_table_plane_m": null,
+  "interpretation": "Two marker centers are104mm apart, mostly opticalX. Distance estimates differ5.367mm despite normals within0.193degree. Preserve disagreement; do not average into an accepted table calibration. A third position in table depth direction is pending. Per-open actualK is used and all raw images are preserved.",
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "motion_sent": false,
+  "can_tx_per_capture": [
+    [
+      6677,
+      6677
+    ],
+    [
+      6677,
+      6677
+    ]
+  ]
+}

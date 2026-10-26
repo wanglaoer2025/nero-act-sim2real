@@ -1,0 +1,10 @@
+{
+  "close_frames": 4356,
+  "close_gap_at_least3mm_frames": 2232,
+  "sampled_close_frames": 893,
+  "sampled_close_gap_at_least3mm": 30,
+  "source": "actual36training_HDF5s",
+  "finding": "legacy window_is_trainable excludes stationary close frames when width-target>=3mm; newly derived valid inputs follow those windows",
+  "mechanism": "training supervision under-represents the sustained gap required by PhysicsContact; causal effect still needs controlled correction training",
+  "threshold_changed": false
+}

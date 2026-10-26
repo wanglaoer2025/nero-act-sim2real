@@ -1,0 +1,177 @@
+{
+  "updated_at": "2026-10-16T22:51:10.941452+08:00",
+  "status": "FULL_ORIGINAL_AMPLITUDE_SIMULATION_TASK_EMPTY_REPLAY_PASSED",
+  "success": true,
+  "scope": "Complete original-amplitude six-phase simulation teacher trajectory replay on real robot with empty gripper and cup outside swept volume",
+  "act_inference": false,
+  "real_cup_grasp_validated": false,
+  "authorization": "authorization.json",
+  "authorization_consumed": true,
+  "motion_attempt_count": 1,
+  "automatic_retry_return_reset_or_disable": false,
+  "source": "/home/user/wq/nero_cup_retrained_v2_20261016/training_data/episode_0.hdf5",
+  "original_point_count": 1229,
+  "completed_point_count": 1229,
+  "all_six_stages_completed": true,
+  "original_nominal_duration_s": 61.45,
+  "trajectory_duration_s": 61.50000000000001,
+  "execution_and_post_settling_elapsed_s": 62.53656786400825,
+  "first_point_delay_s": 0.1,
+  "original_positions_preserved_without_amplitude_scaling": true,
+  "common_controller_start": true,
+  "recomputed_actual_maximum_joint_excursion_deg": [
+    10.359,
+    63.591,
+    8.257,
+    47.876,
+    1.9109999999999998,
+    12.732,
+    77.959
+  ],
+  "physical_result": {
+    "success": true,
+    "actual_feedback_required": true,
+    "action_success": true,
+    "full_amplitude_traversed": true,
+    "maximum_joint_excursion_deg": [
+      10.359,
+      63.591,
+      8.257,
+      47.876,
+      1.9109999999999998,
+      12.732,
+      77.959
+    ],
+    "last5_arm_endpoint_error_rad": 0.00010965725994505071,
+    "last5_gripper_endpoint_error_m": 5.002384185784359e-06,
+    "actual_gripper_span_m": 0.034799000000000004
+  },
+  "phase_checks": [
+    {
+      "stage": "recover_open",
+      "elapsed_s": 4.1023769460152835,
+      "actual": [
+        0.22376866339819299,
+        -0.11714649939385939,
+        0.1344427122811232,
+        1.5639546361270789,
+        -0.014765485471872028,
+        0.2578549436896423,
+        0.14988887616127303,
+        0.09486299999999999
+      ],
+      "endpoint_error_rad": 8.727304012010051e-05,
+      "gripper_error_m": 0.0001369988079071155,
+      "success": true
+    },
+    {
+      "stage": "approach",
+      "elapsed_s": 38.303650440997444,
+      "actual": [
+        0.0439822971502571,
+        0.9028064621791069,
+        -0.009407324668249437,
+        0.7289193088029119,
+        0.009791297103688189,
+        0.037559485502917975,
+        1.509762162852655,
+        0.094887
+      ],
+      "endpoint_error_rad": 0.0001872962500361064,
+      "gripper_error_m": 0.00011299880790710537,
+      "success": true
+    },
+    {
+      "stage": "descend",
+      "elapsed_s": 45.854249285010155,
+      "actual": [
+        0.04309217923174,
+        0.9926560120717749,
+        -0.005654866776461628,
+        0.9334369905516073,
+        0.018395770316020233,
+        0.03572688978832393,
+        1.2155869174290106,
+        0.094887
+      ],
+      "endpoint_error_rad": 0.0005879409834310678,
+      "gripper_error_m": 0.00011299880790710537,
+      "success": true
+    },
+    {
+      "stage": "close",
+      "elapsed_s": 49.90478634700412,
+      "actual": [
+        0.04310963252425994,
+        0.9925861989016952,
+        -0.005689773361501515,
+        0.9328959384834891,
+        0.01827359726838063,
+        0.035709436495803985,
+        1.2160232497420091,
+        0.065027
+      ],
+      "endpoint_error_rad": 8.646976611803581e-05,
+      "gripper_error_m": 2.7002384185792483e-05,
+      "success": true
+    },
+    {
+      "stage": "lift",
+      "elapsed_s": 57.50434572598897,
+      "actual": [
+        0.04399975044277705,
+        0.9023177699885484,
+        -0.009669124056048587,
+        0.728273536979674,
+        0.009826203688728077,
+        0.037576938795437914,
+        1.5105999208936123,
+        0.065005
+      ],
+      "endpoint_error_rad": 0.00017940236710345392,
+      "gripper_error_m": 5.002384185784359e-06,
+      "success": true
+    },
+    {
+      "stage": "hold",
+      "elapsed_s": 61.50150776101509,
+      "actual": [
+        0.04405211032033688,
+        0.9024748496212279,
+        -0.00958185759344887,
+        0.7284829764899133,
+        0.009826203688728077,
+        0.037542032210398035,
+        1.5105999208936123,
+        0.065005
+      ],
+      "endpoint_error_rad": 5.1182462183720426e-05,
+      "gripper_error_m": 5.002384185784359e-06,
+      "success": true
+    }
+  ],
+  "actual_feedback_sample_count": 12706,
+  "independent_sdk_health_sample_count_during_execution": 2814,
+  "final_actual_state": [
+    0.044017203735296995,
+    0.902422489743668,
+    -0.0096342174710087,
+    0.7284306166123534,
+    0.009826203688728077,
+    0.03752457891787808,
+    1.5105824676010922,
+    0.065005
+  ],
+  "post_execution_health_passed": true,
+  "receive_only_restored": true,
+  "gated_command_publishers_after": 0,
+  "can_tx_packets_after_restore_and_recheck": 195480,
+  "limits_original_source_weights_or_calibration_modified": false,
+  "independent_code_review_passed": true,
+  "regression_tests_passed": 14,
+  "full_report": "full_original_amplitude_execution/report.json",
+  "actual_feedback": "full_original_amplitude_execution/actual_feedback.json",
+  "full_path_clearance": "moved_cup_full_path_clearance.json",
+  "final_camera": "final_scene_capture/camera_0_upright_rgb.png",
+  "shutdown_note": "Gate closed on action completion; later SIGINT printed already-shutdown ROS-context error. Gate exited, motion driver exited cleanly, receive-only restoration independently verified."
+}

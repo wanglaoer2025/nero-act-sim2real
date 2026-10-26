@@ -1,0 +1,89 @@
+{
+  "checked_local": "2026-10-22T13:37:49.141805+08:00",
+  "ros_domain_id": 42,
+  "can_tx_before": 907,
+  "joint_messages": 986,
+  "nodes": [
+    {
+      "name": "agx_arm_ctrl_single_node",
+      "namespace": "/"
+    },
+    {
+      "name": "nero_ros_can_readonly_check_20261022",
+      "namespace": "/"
+    }
+  ],
+  "topics": {
+    "/control/gated_joint_states": [
+      "sensor_msgs/msg/JointState"
+    ],
+    "/control/move_c": [
+      "geometry_msgs/msg/PoseArray"
+    ],
+    "/control/move_cpv": [
+      "sensor_msgs/msg/JointState"
+    ],
+    "/control/move_j": [
+      "sensor_msgs/msg/JointState"
+    ],
+    "/control/move_js": [
+      "sensor_msgs/msg/JointState"
+    ],
+    "/control/move_l": [
+      "geometry_msgs/msg/PoseStamped"
+    ],
+    "/control/move_mit": [
+      "agx_arm_msgs/msg/MoveMITMsg"
+    ],
+    "/control/move_p": [
+      "geometry_msgs/msg/PoseStamped"
+    ],
+    "/feedback/arm_status": [
+      "agx_arm_msgs/msg/AgxArmStatus"
+    ],
+    "/feedback/gripper_status": [
+      "agx_arm_msgs/msg/GripperStatus"
+    ],
+    "/feedback/joint_states": [
+      "sensor_msgs/msg/JointState"
+    ],
+    "/feedback/leader_joint_states": [
+      "sensor_msgs/msg/JointState"
+    ],
+    "/feedback/tcp_pose": [
+      "geometry_msgs/msg/PoseStamped"
+    ],
+    "/parameter_events": [
+      "rcl_interfaces/msg/ParameterEvent"
+    ],
+    "/rosout": [
+      "rcl_interfaces/msg/Log"
+    ]
+  },
+  "latest_joint_state": {
+    "names": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "positions": [
+      0.18327702475192453,
+      -0.12651891747706895,
+      0.10000736613927509,
+      1.5707963267948966,
+      -0.023893557459802373,
+      0.28166123468684495,
+      0.13103932023973427,
+      0.094924
+    ],
+    "header_stamp_s": 1792647474.205227
+  },
+  "feedback_hz": 200.01998823001009,
+  "can_tx_after": 907,
+  "motion_sent_by_check": false
+}

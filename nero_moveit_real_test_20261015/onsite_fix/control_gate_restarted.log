@@ -1,0 +1,18 @@
+[INFO] [1792077621.944386813] [control_gate]: Control gate started. status_topics=['arm_controller/follow_joint_trajectory/_action/status', 'gripper_controller/follow_joint_trajectory/_action/status'], gate_service_name=control_enable; commands remain blocked until controller state matches robot feedback
+[INFO] [1792077622.731598874] [control_gate]: External control gate closed by execution status
+[INFO] [1792077622.736045153] [control_gate]: Gate service is ready, forcing gate closed
+[INFO] [1792077910.375986637] [control_gate]: External control gate opened by execution status
+[INFO] [1792077914.376357600] [control_gate]: External control gate closed by execution status
+Traceback (most recent call last):
+  File "/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/lib/agx_arm_moveit/agx_arm_control_gate", line 239, in <module>
+    main()
+  File "/home/user/projects/nero_ros2_ws/install/agx_arm_moveit/lib/agx_arm_moveit/agx_arm_control_gate", line 235, in main
+    rclpy.shutdown()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+    _shutdown(context=context)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+    context.shutdown()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+    self.__context.shutdown()
+rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:333
+[ros2run]: Process exited with failure 1

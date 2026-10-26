@@ -1,0 +1,41 @@
+{
+  "profile": "visual_force_building_dedup_v1",
+  "image_pool_profile": "visual_complete_close_context_v1",
+  "labels_changed": false,
+  "hardware_deployment_allowed": false,
+  "all_requested_inputs_valid": true,
+  "roles": {
+    "train": {
+      "weighted_windows": 21925,
+      "unique_windows": 13833,
+      "stages": {
+        "approach": 2202,
+        "carry": 1141,
+        "settle": 396,
+        "close": 2664,
+        "lift": 2150,
+        "retreat": 1432,
+        "descend": 1502,
+        "place": 1432,
+        "close_gap_at_least3mm": 540,
+        "release": 914
+      }
+    },
+    "val": {
+      "weighted_windows": 7334,
+      "unique_windows": 4632,
+      "stages": {
+        "release": 307,
+        "approach": 754,
+        "settle": 132,
+        "close": 888,
+        "descend": 501,
+        "lift": 718,
+        "carry": 380,
+        "retreat": 475,
+        "place": 477,
+        "close_gap_at_least3mm": 180
+      }
+    }
+  }
+}

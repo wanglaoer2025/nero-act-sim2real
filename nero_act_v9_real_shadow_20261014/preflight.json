@@ -1,0 +1,151 @@
+{
+  "created_at_utc": "2026-10-14T15:54:04.328848+00:00",
+  "session_date_client": "2026-10-14",
+  "package_path": "/home/user/wq/nero_act_4090_shadow_recovery_v9(2)/nero_act_4090_shadow_recovery_v9",
+  "manifest_files_verified": 140,
+  "package_sha256_check_passed": true,
+  "checkpoint_sha256": "872b747f45ca02f5484df2b8cf7ae5955c7de765a689e3887328222975005191",
+  "checkpoint_epoch": 10,
+  "hardware_deployment_allowed": false,
+  "checkpoint_config_matches_supplied_training_config": true,
+  "state_dim": 14,
+  "action_dim": 8,
+  "camera_names": [
+    "camera_0"
+  ],
+  "image_size": [
+    90,
+    160
+  ],
+  "chunk_size": 100,
+  "joint_residual_anchor": true,
+  "normalization_dimensions_verified": true,
+  "coordinate_input_mm": [
+    -523.6328770877162,
+    73.93982104009312,
+    37.5,
+    -515.9092259086017,
+    -117.49644438829995,
+    37.5
+  ],
+  "coordinate_input_semantics": "Nero-base source/destination cup geometric centres; mm converted to m in shadow loader",
+  "coordinate_provenance": {
+    "source_XY": "Current RGB-D yellow cup body, known-radius cylinder model, transformed by the current Oct14 calibration",
+    "destination_XY": "Current blue-card central surface from RGB-D, transformed by current Oct14 calibration",
+    "source_and_destination_Z": "Confirmed installation-face height10mm + local CAD base datum + upright cup height95mm => -10+47.5",
+    "source_raw_visual_Z_mm": 40.34118003219811,
+    "table_raw_visual_Z_mm": -6.406602882379445,
+    "not_an_independent_base_frame_coordinate_survey": true
+  },
+  "independent_coordinate_survey_verified": false,
+  "capture_matches_coordinate_scene": true,
+  "capture_source": "/home/user/wq/nero_readonly_handoff_20261014/capture_new/observations.npz",
+  "capture_sha256": "8146f1ce0e06c5150f1617a4ac086e834301b316f5af134c03b4be0d254daa88",
+  "capture_timestamp_scope": "previous saved actual robot/scene record, not current live observation",
+  "package_measurement_templates_not_used": true,
+  "package_synthetic_smoke_data_not_used_as_real_input": true,
+  "joint_training_range_comparison": [
+    {
+      "joint": "J1",
+      "recorded_rad": -0.4744153916835785,
+      "train_min_rad": 0.17437799274921417,
+      "train_max_rad": 0.8871153593063354,
+      "initial_margin_rad": 0.15,
+      "outside_initial_range": true
+    },
+    {
+      "joint": "J2",
+      "recorded_rad": 0.7821518778800964,
+      "train_min_rad": -0.7618262767791748,
+      "train_max_rad": -0.2876224219799042,
+      "initial_margin_rad": 0.15,
+      "outside_initial_range": true
+    },
+    {
+      "joint": "J3",
+      "recorded_rad": -0.1293288916349411,
+      "train_min_rad": 2.0611305236816406,
+      "train_max_rad": 2.465996265411377,
+      "initial_margin_rad": 0.15,
+      "outside_initial_range": true
+    },
+    {
+      "joint": "J4",
+      "recorded_rad": 1.397729516029358,
+      "train_min_rad": 1.4977163076400757,
+      "train_max_rad": 2.0210721492767334,
+      "initial_margin_rad": 0.15,
+      "outside_initial_range": false
+    },
+    {
+      "joint": "J5",
+      "recorded_rad": -0.28040459752082825,
+      "train_min_rad": -0.02456815168261528,
+      "train_max_rad": 0.46218642592430115,
+      "initial_margin_rad": 0.15,
+      "outside_initial_range": true
+    },
+    {
+      "joint": "J6",
+      "recorded_rad": -0.5063374638557434,
+      "train_min_rad": -0.7234384417533875,
+      "train_max_rad": -0.038826920092105865,
+      "initial_margin_rad": 0.15,
+      "outside_initial_range": false
+    },
+    {
+      "joint": "J7",
+      "recorded_rad": -0.7044323682785034,
+      "train_min_rad": 0.6809073686599731,
+      "train_max_rad": 1.2744959592819214,
+      "initial_margin_rad": 0.15,
+      "outside_initial_range": true
+    }
+  ],
+  "joints_outside_demonstration_range": [
+    "J1",
+    "J2",
+    "J3",
+    "J5",
+    "J7"
+  ],
+  "first_model_state_14": [
+    -0.4744153916835785,
+    0.7821518778800964,
+    -0.1293288916349411,
+    1.397729516029358,
+    -0.28040459752082825,
+    -0.5063374638557434,
+    -0.7044323682785034,
+    0.09983199834823608,
+    -0.5236328770877162,
+    0.07393982104009313,
+    0.0375,
+    -0.5159092259086017,
+    -0.11749644438829995,
+    0.0375
+  ],
+  "first_normalized_model_state_14": [
+    -5.387685423461483,
+    15.955945395596993,
+    -40.67672551797052,
+    -3.128448848465411,
+    -5.380076289427409,
+    -0.6924292913460399,
+    -13.88716294601264,
+    1.496739879782307,
+    -40.66317867231245,
+    8.128650327780235,
+    -1.074776971521459,
+    -86.59407105558617,
+    -19.74990398166559,
+    -1.074776971521459
+  ],
+  "raw_gripper_feedback_mm": 99.83200073242188,
+  "raw_state_not_clipped": true,
+  "no_safety_limits_or_model_deployment_flags_changed": true,
+  "motion_sent": false,
+  "planned_sample_stride": 10,
+  "planned_policy_queries": 11,
+  "model_loaded_for_metadata_only": true
+}

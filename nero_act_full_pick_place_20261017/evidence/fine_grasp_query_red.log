@@ -1,0 +1,26 @@
+test_first_small_close_at_grasp_depth_requires_grasp_before_any_motion (tests.test_phases.PhaseTests.test_first_small_close_at_grasp_depth_requires_grasp_before_any_motion) ... ok
+test_grasp_and_release_permissions_follow_actual_geometry (tests.test_phases.PhaseTests.test_grasp_and_release_permissions_follow_actual_geometry) ... ok
+test_grasp_approach_queries_each_point_before_crossing_confirmation_depth (tests.test_phases.PhaseTests.test_grasp_approach_queries_each_point_before_crossing_confirmation_depth) ... FAIL
+test_open_gripper_cannot_descend_below_original_grasp_region_without_confirmation (tests.test_phases.PhaseTests.test_open_gripper_cannot_descend_below_original_grasp_region_without_confirmation) ... FAIL
+test_released_cup_does_not_authorize_another_closure (tests.test_phases.PhaseTests.test_released_cup_does_not_authorize_another_closure) ... ok
+
+======================================================================
+FAIL: test_grasp_approach_queries_each_point_before_crossing_confirmation_depth (tests.test_phases.PhaseTests.test_grasp_approach_queries_each_point_before_crossing_confirmation_depth)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_phases.py", line 11, in test_grasp_approach_queries_each_point_before_crossing_confirmation_depth
+    self.assertTrue(callable(getattr(guard,'single_point_grasp_prefix',None)))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_open_gripper_cannot_descend_below_original_grasp_region_without_confirmation (tests.test_phases.PhaseTests.test_open_gripper_cannot_descend_below_original_grasp_region_without_confirmation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_phases.py", line 20, in test_open_gripper_cannot_descend_below_original_grasp_region_without_confirmation
+    with self.assertRaises(RuntimeError):
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.005s
+
+FAILED (failures=2)

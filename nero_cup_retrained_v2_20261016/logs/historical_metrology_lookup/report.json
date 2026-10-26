@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-10-16T21:30:38.606191+08:00",
+  "user_hint": "previous home/nero files",
+  "resolved_locations": {
+    "python_environment": "/home/user/nero",
+    "source_project": "/home/user/projects/nero",
+    "legacy_work_symlink": "/home/user/work -> /home/user/projects/nero"
+  },
+  "located_tcp": {
+    "file": "/home/user/projects/nero/config/tcp_offset.json",
+    "sha256": "cdb4befafdf10527d228d946898e95c7dbbf6e87d0d48799cd317a7669fb381f",
+    "created_at": "2026-09-01T09:25:37.942811+00:00",
+    "method": "manual_measurement",
+    "coordinate_frame": "SDK flange local frame",
+    "translation_xyz_mm": [
+      135.0,
+      0.0,
+      0.0
+    ],
+    "orientation_rpy_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "approximate": true,
+    "fit": null,
+    "physical_grip_center_independent_validation_found": false,
+    "documentation": "/home/user/projects/nero/README.md:586",
+    "documentation_measurement_range_mm": [
+      130,
+      140
+    ],
+    "documentation_allowed_use": "high noncontact hover and stop before cup; supervised physical acceptance required before grasp"
+  },
+  "table_records": [
+    {
+      "file": "/home/user/projects/nero/config/transparent_pouring.json",
+      "value_mm": 0.0,
+      "classification": "old demo configuration, not a newly accepted absolute base-height measurement",
+      "independently_validated_for_current_installation": false
+    },
+    {
+      "file": "/home/user/wq/nero_act_cup_handoff_20261016/historical/measurements_oct14_NOT_current_coordinates.json",
+      "value_mm": -10,
+      "classification": "confirmed10mm mounting support plus retained model base datum; derived current assumption",
+      "base_support_height_mm": 10,
+      "independent_physical_origin_verified": false
+    },
+    {
+      "file": "/home/user/wq/real_scene_measurements/task_measurements.json",
+      "measured_or_reported_support_height_mm": 10,
+      "absolute_base_table_height_mm": null,
+      "classification": "operator-reported mounting height; absolute base origin/table Z remains unmeasured in this file"
+    }
+  ],
+  "table_records_are_not_interchangeable": true,
+  "retained_camera_file": "/home/user/projects/nero/config/camera_to_base.json",
+  "current_approximate_sdk_tcp_vs_simulator_tcp_difference_mm": 29.004650946144775,
+  "numeric_records_found": true,
+  "independent_table_and_tcp_validation_confirmed": false,
+  "historical_files_modified": false,
+  "current_calibration_or_model_values_changed": false,
+  "hardware_commands_sent": false
+}

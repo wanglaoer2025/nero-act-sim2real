@@ -1,0 +1,73 @@
+{
+  "mode": "finalized_available_readonly_inputs_not_independent_metrology",
+  "coordinate_frame": "nero_base",
+  "unit": "mm",
+  "source_xyz_mm": [
+    -523.6328770877162,
+    73.93982104009312,
+    37.5
+  ],
+  "destination_xyz_mm": [
+    -515.9092259086017,
+    -117.49644438829995,
+    37.5
+  ],
+  "table_top_z_mm": -10,
+  "cup_height_mm": 95,
+  "cup_outer_diameter_mm": 75,
+  "base_mounting_face_height_above_table_mm": 10,
+  "gripper_recorded_total_width_mm": 99.832,
+  "SDK_declared_gripper_range_mm": [
+    0,
+    100
+  ],
+  "retained_TCP_offset_flange_xyz_mm": [
+    135.0,
+    0.0,
+    0.0
+  ],
+  "calibration_used": {
+    "path": "/home/user/projects/nero/config/camera_to_base.json",
+    "created_at": "2026-10-14T08:56:12.645652+00:00",
+    "sha256": "2dba88c51ee11b490b7c59fe715e6b6c13372697dfe6650ee9bfc90b0d2415be",
+    "fit": {
+      "sample_count": 17,
+      "total_sample_count": 19,
+      "excluded_sample_indices": [
+        17,
+        18
+      ],
+      "translation_rmse_mm": 6.632190934727078,
+      "translation_max_mm": 10.885170795345616,
+      "rotation_rmse_deg": 0.9482001459767242,
+      "rotation_max_deg": 1.616451709125613
+    }
+  },
+  "coordinate_provenance": {
+    "source_XY": "Current RGB-D yellow cup body, known-radius cylinder model, transformed by the current Oct14 calibration",
+    "destination_XY": "Current blue-card central surface from RGB-D, transformed by current Oct14 calibration",
+    "source_and_destination_Z": "Confirmed installation-face height10mm + local CAD base datum + upright cup height95mm => -10+47.5",
+    "source_raw_visual_Z_mm": 40.34118003219811,
+    "table_raw_visual_Z_mm": -6.406602882379445,
+    "not_an_independent_base_frame_coordinate_survey": true
+  },
+  "retained_information_requested_by_user": true,
+  "all_required_physical_measurements_completed": false,
+  "remaining_physical_measurements": [
+    "Actual finger inner-face spacing and empirical zero offset/range",
+    "Actual grip TCP offset and independently observed TCP error",
+    "Independent physical base reference points for camera absolute error",
+    "Current motor response delay and measured execution of V9 2Hz/20Hz blocks"
+  ],
+  "remaining_policy_compatibility": [
+    "Real feedback99.832mm exceeds V9 auditor98mm upper bound",
+    "V9 policy itself not accepted: independent4/8, recovery0/4",
+    "Current real executor block/query timing not aligned with V9"
+  ],
+  "raw_capture_scene_note": "Earlier capture_new first image has cup at far-right and no blue-card target in view; current placed scene is different. Do not pair its observations with these current scene coordinates.",
+  "return_package_created": true,
+  "motion_sent": false,
+  "return_package_path": "/home/user/wq/nero-readonly-handoff-20261014.tar.gz",
+  "motion_permission": "declined_user_selected_read_only",
+  "remaining_physical_measurements_not_requested_in_this_scope": true
+}

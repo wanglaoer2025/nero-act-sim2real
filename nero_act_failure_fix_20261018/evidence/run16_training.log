@@ -1,0 +1,51 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+ACT Day5：device=cuda epochs=20 joint target lead=recorded action steps；trim=0 stride=10；不会连接机械臂
+number of parameters: 12.58M
+已加载初始化权重：/home/user/wq/nero_act_failure_fix_20261018/training/run16_visual_learning/artifacts/rebased_initializer.ckpt
+epoch 1/20 train=0.0039/0.0039 val=0.0040/0.0040 best_loss=0.0040@1 best_l1=0.0040@1
+epoch 2/20 train=0.0032/0.0032 val=0.0039/0.0039 best_loss=0.0039@2 best_l1=0.0039@2
+epoch 3/20 train=0.0030/0.0030 val=0.0042/0.0042 best_loss=0.0039@2 best_l1=0.0039@2
+epoch 4/20 train=0.0030/0.0030 val=0.0038/0.0038 best_loss=0.0038@4 best_l1=0.0038@4
+epoch 5/20 train=0.0029/0.0029 val=0.0041/0.0041 best_loss=0.0038@4 best_l1=0.0038@4
+epoch 6/20 train=0.0028/0.0028 val=0.0038/0.0038 best_loss=0.0038@4 best_l1=0.0038@4
+epoch 7/20 train=0.0028/0.0028 val=0.0038/0.0038 best_loss=0.0038@4 best_l1=0.0038@4
+epoch 8/20 train=0.0026/0.0026 val=0.0038/0.0038 best_loss=0.0038@8 best_l1=0.0038@8
+epoch 9/20 train=0.0026/0.0026 val=0.0039/0.0039 best_loss=0.0038@8 best_l1=0.0038@8
+epoch 10/20 train=0.0026/0.0026 val=0.0038/0.0038 best_loss=0.0038@8 best_l1=0.0038@8
+epoch 11/20 train=0.0027/0.0027 val=0.0039/0.0039 best_loss=0.0038@8 best_l1=0.0038@8
+epoch 12/20 train=0.0026/0.0026 val=0.0041/0.0041 best_loss=0.0038@8 best_l1=0.0038@8
+epoch 13/20 train=0.0024/0.0024 val=0.0040/0.0040 best_loss=0.0038@8 best_l1=0.0038@8
+epoch 14/20 train=0.0025/0.0025 val=0.0038/0.0038 best_loss=0.0038@14 best_l1=0.0038@14
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_failure_fix_20261018/training/generalized.py", line 151, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/home/user/wq/nero_act_failure_fix_20261018/training/generalized.py", line 140, in main
+    result=trainer.main()
+           ^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_failure_fix_20261018/policy_source/src/act/train.py", line 401, in main
+    train(config)
+  File "/home/user/wq/nero_act_failure_fix_20261018/policy_source/src/act/train.py", line 332, in train
+    val_metrics = run_epoch(policy, val_loader, device, training=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_failure_fix_20261018/policy_source/src/act/train.py", line 149, in run_epoch
+    for image, qpos, action, is_pad, _ in loader:
+  File "/home/user/nero/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/nero/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/home/user/wq/nero_act_failure_fix_20261018/training/command_context.py", line 17, in __getitem__
+    image,_,actions,padding,start=super().__getitem__(index)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_failure_fix_20261018/policy_source/src/act/nero_dataset.py", line 270, in __getitem__
+    action = (torch.from_numpy(padded) - torch.from_numpy(self.stats["action_mean"])) / torch.from_numpy(self.stats["action_std"])
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

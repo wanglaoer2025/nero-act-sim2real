@@ -1,0 +1,17 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_contact_adaptation_keeps_all_arm_and_encoder_weights_and_outputs _____
+
+    def test_contact_adaptation_keeps_all_arm_and_encoder_weights_and_outputs():
+>       from training.visual_gripper_repair import build_contact_adapter
+E       ModuleNotFoundError: No module named 'training.visual_gripper_repair'
+
+tests/test_visual_gripper_repair.py:6: ModuleNotFoundError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_gripper_repair.py::test_contact_adaptation_keeps_all_arm_and_encoder_weights_and_outputs
+1 failed, 1 warning in 1.80s

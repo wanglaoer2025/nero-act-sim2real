@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_replay_retains_runtime_image_layout_after_disk_roundtrip _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-8/test_replay_retains_runtime_im0')
+
+    def test_replay_retains_runtime_image_layout_after_disk_roundtrip(tmp_path):
+        from training.approach_preservation import ApproachPreservation
+        c,q,image,_=config();_,path=replay_file(tmp_path,c,q,image)
+        settings=dict(profile='baseline_prefix_v1',weight=1.,arm_unit_rad=.0001,gripper_unit_m=.0005,batch_size=2,replay_path=str(path))
+        keeper=ApproachPreservation(settings,c['constraint_loss_stats'],'cpu')
+        selected=keeper.image[torch.tensor([1,0])]
+>       assert selected[:,0].is_contiguous(memory_format=torch.channels_last)
+E       assert False
+E        +  where False = <built-in method is_contiguous of Tensor object at 0x774c78c04050>(memory_format=torch.channels_last)
+E        +    where <built-in method is_contiguous of Tensor object at 0x774c78c04050> = tensor([[[[0.7212, 0.3617, 0.6573,  ..., 0.6046, 0.8845, 0.2226],\n          [0.2157, 0.2963, 0.9820,  ..., 0.0110, 0.5...89, 0.7002, 0.3793,  ..., 0.9418, 0.9947, 0.7925],\n          [0.1374, 0.6086, 0.2028,  ..., 0.0993, 0.5780, 0.8948]]]]).is_contiguous
+E        +    and   torch.channels_last = torch.channels_last
+
+tests/test_approach_preservation.py:50: AssertionError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.72M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_preservation.py::test_replay_retains_runtime_image_layout_after_disk_roundtrip
+1 failed, 1 warning in 2.87s

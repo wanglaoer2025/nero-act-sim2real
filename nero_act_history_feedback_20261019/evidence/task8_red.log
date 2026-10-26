@@ -1,0 +1,57 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_candidate_selection_never_uses_independent_results ____________
+
+    def test_candidate_selection_never_uses_independent_results():
+        import simulation.visual_evaluation as m
+>       assert hasattr(m,'select_independent_candidate'), 'Predeclared history candidate selection missing'
+E       AssertionError: Predeclared history candidate selection missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.visual_evaluation' from '/home/user/wq/nero_act_history_feedback_20261019/simulation/visual_evaluation.py'>, 'select_independent_candidate')
+
+tests/test_history_evaluation.py:14: AssertionError
+______________ test_explicit_protocol_is_forwarded_and_hash_bound ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-140/test_explicit_protocol_is_forw0')
+
+    def test_explicit_protocol_is_forwarded_and_hash_bound(tmp_path):
+        import simulation.visual_suite as m
+>       assert hasattr(m,'case_command'), 'Explicit protocol child command missing'
+E       AssertionError: Explicit protocol child command missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.visual_suite' from '/home/user/wq/nero_act_history_feedback_20261019/simulation/visual_suite.py'>, 'case_command')
+
+tests/test_history_evaluation.py:26: AssertionError
+___________ test_only_finalized_correct_case_children_can_aggregate ____________
+
+    def test_only_finalized_correct_case_children_can_aggregate():
+        import simulation.visual_suite as m
+>       assert hasattr(m,'validate_child_summary'), 'Case identity/dependency validation missing'
+E       AssertionError: Case identity/dependency validation missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.visual_suite' from '/home/user/wq/nero_act_history_feedback_20261019/simulation/visual_suite.py'>, 'validate_child_summary')
+
+tests/test_history_evaluation.py:35: AssertionError
+_____________ test_pilot_20mm_and_partial_events_cannot_pass_full ______________
+
+    def test_pilot_20mm_and_partial_events_cannot_pass_full():
+        from simulation.visual_evaluation import full_task_passed
+        complete=complete_result()
+        assert full_task_passed(complete)
+>       assert not full_task_passed(dict(complete,resumed_partial_not_full=True))
+E       AssertionError: assert not True
+E        +  where True = <function full_task_passed at 0x760926c59760>({'active_policy_points': 3500, 'error': None, 'execution_contract_failures': 0, 'max_lift_m': 0.19, ...})
+E        +    where {'active_policy_points': 3500, 'error': None, 'execution_contract_failures': 0, 'max_lift_m': 0.19, ...} = dict({'active_policy_points': 3500, 'error': None, 'execution_contract_failures': 0, 'max_lift_m': 0.19, ...}, resumed_partial_not_full=True)
+
+tests/test_history_evaluation.py:49: AssertionError
+=============================== warnings summary ===============================
+tests/test_history_evaluation.py::test_candidate_selection_never_uses_independent_results
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_evaluation.py::test_candidate_selection_never_uses_independent_results
+FAILED tests/test_history_evaluation.py::test_explicit_protocol_is_forwarded_and_hash_bound
+FAILED tests/test_history_evaluation.py::test_only_finalized_correct_case_children_can_aggregate
+FAILED tests/test_history_evaluation.py::test_pilot_20mm_and_partial_events_cannot_pass_full
+4 failed, 1 warning in 2.29s

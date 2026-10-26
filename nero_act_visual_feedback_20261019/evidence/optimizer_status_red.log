@@ -1,0 +1,64 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_first_training_step_records_real_optimizer_and_status __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-57/test_first_training_step_recor0')
+
+    def test_first_training_step_records_real_optimizer_and_status(tmp_path):
+        import torch
+        from training.visual import build_visual_policy, run_epoch
+        from tests.test_visual_policy import config
+        c = config(); c.update(nonlinear_gripper_head=True, prior_gripper_loss_weight=.005, num_epochs=20)
+        policy = build_visual_policy(c)
+        (tmp_path/'artifacts').mkdir()
+        batch = (torch.rand(2, 1, 3, 90, 160), torch.rand(2, 15),
+                 torch.rand(2, 20, 8), torch.zeros(2, 20, dtype=torch.bool), torch.zeros(2))
+        before = policy.model.input_proj_robot_state.weight.detach().clone()
+>       metrics = run_epoch(policy, [batch], torch.device('cpu'), training=True, output=tmp_path, epoch=1)
+
+tests/test_existing_calibration_training.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/visual.py:147: in run_epoch
+    status = dict(stage='optimizing', epoch=epoch, total_epochs=policy.config['num_epochs'],
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FullTaskPolicy(
+  (model): DETRVAE(
+    (transformer): Transformer(
+      (encoder): TransformerEncoder(
+        (laye...atures=32, out_features=64, bias=True)
+    (1): SiLU()
+    (2): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+name = 'config'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'FullTaskPolicy' object has no attribute 'config'
+
+../../nero/lib/python3.12/site-packages/torch/nn/modules/module.py:1931: AttributeError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 11.22M
+=============================== warnings summary ===============================
+tests/test_existing_calibration_training.py::test_first_training_step_records_real_optimizer_and_status
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_existing_calibration_training.py::test_first_training_step_records_real_optimizer_and_status
+1 failed, 8 deselected, 1 warning in 2.16s

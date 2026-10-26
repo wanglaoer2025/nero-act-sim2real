@@ -1,0 +1,623 @@
+{
+  "name": "(noname)+",
+  "robot_state": {
+    "joint_state": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "name": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "gripper",
+        "gripper_joint1",
+        "gripper_joint2"
+      ],
+      "position": [
+        0.1832595714594046,
+        -0.1265363707695889,
+        0.09995500626171526,
+        1.5707090603322968,
+        -0.02392846404484226,
+        0.28167868797936485,
+        0.13098696036217444,
+        0.094913,
+        0.0474565,
+        -0.0474565
+      ],
+      "velocity": [],
+      "effort": []
+    },
+    "multi_dof_joint_state": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "joint_names": [],
+      "transforms": [],
+      "twist": [],
+      "wrench": []
+    },
+    "attached_collision_objects": [],
+    "is_diff": false
+  },
+  "robot_model_name": "agx_arm",
+  "fixed_frame_transforms": [
+    {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "world",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    }
+  ],
+  "allowed_collision_matrix": {
+    "entry_names": [
+      "act_task_cup",
+      "base_link",
+      "gripper_base",
+      "gripper_flange",
+      "gripper_link1",
+      "gripper_link2",
+      "link1",
+      "link2",
+      "link3",
+      "link4",
+      "link5",
+      "link6",
+      "link7",
+      "nero_table"
+    ],
+    "entry_values": [
+      {
+        "enabled": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          false,
+          true,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "enabled": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "default_entry_names": [
+      "act_task_cup"
+    ],
+    "default_entry_values": [
+      false
+    ]
+  },
+  "link_padding": [
+    {
+      "link_name": "base_link",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_base",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_flange",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_link1",
+      "padding": 0.0
+    },
+    {
+      "link_name": "gripper_link2",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link1",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link2",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link3",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link4",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link5",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link6",
+      "padding": 0.0
+    },
+    {
+      "link_name": "link7",
+      "padding": 0.0
+    }
+  ],
+  "link_scale": [
+    {
+      "link_name": "base_link",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_base",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_flange",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_link1",
+      "scale": 1.0
+    },
+    {
+      "link_name": "gripper_link2",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link1",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link2",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link3",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link4",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link5",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link6",
+      "scale": 1.0
+    },
+    {
+      "link_name": "link7",
+      "scale": 1.0
+    }
+  ],
+  "object_colors": [],
+  "world": {
+    "collision_objects": [
+      {
+        "header": {
+          "stamp": {
+            "sec": 0,
+            "nanosec": 0
+          },
+          "frame_id": "world"
+        },
+        "pose": {
+          "position": {
+            "x": -0.5281434741495702,
+            "y": -0.009916777678895138,
+            "z": 0.0475
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "id": "act_task_cup",
+        "type": {
+          "key": "",
+          "db": ""
+        },
+        "primitives": [
+          {
+            "type": 3,
+            "dimensions": [
+              0.095,
+              0.0375
+            ],
+            "polygon": {
+              "points": []
+            }
+          }
+        ],
+        "primitive_poses": [
+          {
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            }
+          }
+        ],
+        "meshes": [],
+        "mesh_poses": [],
+        "planes": [],
+        "plane_poses": [],
+        "subframe_names": [],
+        "subframe_poses": [],
+        "operation": "\u0000"
+      },
+      {
+        "header": {
+          "stamp": {
+            "sec": 0,
+            "nanosec": 0
+          },
+          "frame_id": "world"
+        },
+        "pose": {
+          "position": {
+            "x": -0.35000000000000003,
+            "y": 0.0,
+            "z": -0.02
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "id": "nero_table",
+        "type": {
+          "key": "",
+          "db": ""
+        },
+        "primitives": [
+          {
+            "type": 1,
+            "dimensions": [
+              0.6,
+              0.6,
+              0.04
+            ],
+            "polygon": {
+              "points": []
+            }
+          }
+        ],
+        "primitive_poses": [
+          {
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            }
+          }
+        ],
+        "meshes": [],
+        "mesh_poses": [],
+        "planes": [],
+        "plane_poses": [],
+        "subframe_names": [],
+        "subframe_poses": [],
+        "operation": "\u0000"
+      }
+    ],
+    "octomap": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": "world"
+      },
+      "origin": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      },
+      "octomap": {
+        "header": {
+          "stamp": {
+            "sec": 0,
+            "nanosec": 0
+          },
+          "frame_id": ""
+        },
+        "binary": false,
+        "id": "",
+        "resolution": 0.0,
+        "data": []
+      }
+    }
+  },
+  "is_diff": false
+}

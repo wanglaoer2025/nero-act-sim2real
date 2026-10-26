@@ -1,0 +1,162 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>真实示教视觉适配对照：完成实验，拒绝采用B</title><style>
+:root {color-scheme: light; --ink:#182633; --muted:#536575; --line:#d4dfe7; --accent:#165b86;}
+* {box-sizing:border-box} html {scroll-behavior:smooth}
+body {margin:0;background:#eef2f5;color:var(--ink);font:16px/1.85 "Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;}
+.export-bar {max-width:1240px;margin:22px auto 0;padding:12px 24px;color:var(--muted);font-size:14px;}
+main {max-width:1240px;margin:0 auto 36px;padding:36px 54px;background:white;box-shadow:0 2px 18px #1b364014;}
+nav {padding:14px 22px;background:#f3f7fa;border:1px solid var(--line);margin-bottom:32px;}
+nav summary {cursor:pointer;font-weight:700;color:var(--accent)}
+nav ol {columns:2;column-gap:36px;padding-left:24px} nav li {break-inside:avoid;padding:3px 0;font-size:14px;}
+h1 {font-size:30px;line-height:1.5;margin:0 0 24px} h2 {font-size:23px;line-height:1.6;border-bottom:2px solid var(--line);padding-bottom:8px;margin-top:42px;scroll-margin-top:18px;}
+h3 {font-size:19px;margin-top:27px;scroll-margin-top:18px} p {margin:14px 0}
+a {color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+table {display:block;width:100%;border-collapse:collapse;font-size:14px;overflow-x:auto;margin:20px 0;}
+th,td {border:1px solid var(--line);padding:10px 12px;vertical-align:top;min-width:110px;}
+th {background:#edf3f7;text-align:left} tr:nth-child(even) {background:#fafcfd;}
+pre {padding:16px 20px;background:#f1f4f6;border:1px solid var(--line);overflow-x:auto;font-size:13px;line-height:1.7;}
+code {font-family:"Noto Sans Mono","Consolas",monospace;font-size:.9em;overflow-wrap:anywhere;background:#f1f4f6;padding:1px 4px;}
+pre code {background:none;padding:0;font-size:inherit;overflow-wrap:normal;}
+blockquote {border-left:4px solid var(--accent);margin:20px 0;padding:2px 20px;background:#f3f7fa;}
+li {margin:5px 0} strong {font-weight:700}
+@media(max-width:760px) {main {padding:24px 18px} h1 {font-size:25px} h2 {font-size:21px} nav ol {columns:1} .export-bar {padding:10px 18px}}
+@media print {@page {size:A4;margin:16mm 13mm} body {background:white;font-size:10pt;line-height:1.65} main {margin:0;padding:0;max-width:none;box-shadow:none} .export-bar,nav {display:none} h1 {font-size:19pt} h2 {font-size:15pt} h3 {font-size:12pt} h1,h2,h3 {break-after:avoid} table {font-size:8pt;overflow:visible} th,td {padding:5px 6px;min-width:0} tr {break-inside:avoid} pre {white-space:pre-wrap;overflow:visible;font-size:8pt} a {color:inherit}}
+
+img {max-width:100%;height:auto;}
+</style></head><body><div class="export-bar">汇总截至 2026-10-24 · <a href="README.md">Markdown 原文</a> · 可使用浏览器打印为 PDF</div><main><nav aria-label="目录"><details open><summary>目录 · 7 节</summary><ol><li><a href="#heading-2">1 本轮解决的具体缺口</a></li><li><a href="#heading-3">2 数据、训练预算与保持检查</a></li><li><a href="#heading-4">3 实际结果与采用判定</a></li><li><a href="#heading-5">4 为什么这次没有得到有效的视觉收益</a></li><li><a href="#heading-6">5 中途两项工程修正</a></li><li><a href="#heading-7">6 验证及复现</a></li><li><a href="#heading-8">7 下一步调整方向与尚存缺口</a></li></ol></details></nav><article><h1 id="heading-1">真实示教视觉适配对照：完成实验，拒绝采用B</h1>
+<p>用户要求“继续调整”，本轮在已完成的<a href="../nero_act_real_data_adapter_20261024/README.md">79份真实数据适配</a>上，实际完成A/B各200次更新。B比只训练辅助头的A减少验证损失约<strong>0.010631%</strong>，低于预先规定的5%，因此<strong>不采用B，保留原1a28模型</strong>。本轮没有完整抓放评估或真机运动，不能据此声称迁移成功或泛化改善。</p>
+<p>主要证据：<a href="run_03/protocol.json">固定协议</a>、<a href="run_03/results.json">完整结果</a>、<a href="input_intervention_diagnostic.json">输入扰动诊断</a>、<a href="final-review.md">独立复核</a>。</p>
+<h2 id="heading-2">1 本轮解决的具体缺口</h2>
+<p>现有真实示教具有RGB、8维实测状态和夹爪意图，缺少当前15维策略要求的同版杯位/目标位、因果命令上下文等完整记录。把缺项填成零、仿真真值或旧坐标，会使数据看似能加载却改变实际语义。</p>
+<p>本轮实现单独的离线辅助任务：从真实RGB和8维实测状态，预测20点“未来实测七轴状态＋原记录夹爪意图”。它不等于预测控制器实际收到的七轴目标，不重建缺失回执，也不直接产生主ACT的真实15维训练标签。</p>
+<table>
+<thead>
+<tr>
+<th>对照</th>
+<th>训练的模块</th>
+<th>保持冻结</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>独立real8辅助头，4个参数张量</td>
+<td>原ACT及夹爪增量头、视觉残差层</td>
+</tr>
+<tr>
+<td>B</td>
+<td>相同辅助头＋视觉残差层，共8个参数张量</td>
+<td>原ACT及夹爪增量头</td>
+</tr>
+</tbody>
+</table>
+<p>视觉残差层接在原ACT的<code>input_proj</code>输出后，128→16→128通道，最后一层零初始化。零初始化时与原网络严格恒等；辅助头读取全局池化后的视觉特征和8维状态。辅助头不接入真机控制输出。代码：<a href="bridge.py">bridge.py</a>、<a href="experiment.py">experiment.py</a>。</p>
+<p>原checkpoint实际是<code>FrozenIncrementPolicy</code>完整包装，包含<code>base</code> ACT主体及<code>head</code>夹爪增量头。本轮完整严格加载220个state_dict条目，没有忽略键或丢弃已训练头。原checkpoint SHA256：</p>
+<pre><code class="language-text">1a28f4fddd3095791403028b639b99f9775b91caab45c950c2d0f518955bc0f0
+</code></pre>
+<h2 id="heading-3">2 数据、训练预算与保持检查</h2>
+<ul>
+<li>真实数据沿用37 train、10 val，32 reserve不使用；训练/验证以episode分开，不宣称是位置独立留出。每条按开始、闭爪、释放等记录事件取最多10个20点窗口，实际370 train、100 val。事件仅用于离线抽样，不作为运行时输入。</li>
+<li>A/B相同初始辅助头、相同200×16批次顺序、各200次AdamW更新；头学习率1e−3，B残差层1e−4，无weight decay，梯度范数上限1。只评估最后一步，没有根据验证集挑权重。</li>
+<li>辅助任务对前2点和后18点分别赋0.75/0.25权重，应用原padding。七轴误差和夹爪意图误差按固定尺度归一化，保持标签原语义。</li>
+<li>原15维保持资料覆盖5条完整示教、8阶段：接近、下降、闭爪、抬升、转运、放置、释放、退出。先按原视觉有效性和有限几何筛选，再每阶段取6点；前3点作特征保持，后3点作检查。得到120 rehearsal与120多阶段check，索引不重叠。</li>
+<li>训练中使用投影特征保持正则；训练后另检查完整主模型动作输出。加96个历史访问接近输入，共216 check，每个检查全部20点预测。它证明这些固定输入上的预测变化，不能代替完整闭环回归。</li>
+<li>当前GPU驱动不可用，采用CPU和冻结投影特征缓存，没有调整驱动。CPU提取路径与主模型投影路径最大差为0。历史96点CUDA输出与本轮CPU基线存在最大5.1460e−5 rad、2.0196e−6 m差异，已记录并统一按CPU基线做前后对照；没有声称精确复现CUDA轨迹。</li>
+</ul>
+<p>来源及抽样：<a href="run_03/real_sample_index.json">真实样本索引</a>、<a href="run_03/preservation_index.json">保持索引和CPU对照</a>、<a href="run_03/batch_order.npy">固定批次</a>。</p>
+<h2 id="heading-4">3 实际结果与采用判定</h2>
+<table>
+<thead>
+<tr>
+<th>100个留出窗口的指标</th>
+<th style="text-align:right">A：只训头</th>
+<th style="text-align:right">B：头＋视觉层</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始辅助损失</td>
+<td style="text-align:right">0.277539015</td>
+<td style="text-align:right">0.277539015</td>
+</tr>
+<tr>
+<td>第200步辅助损失</td>
+<td style="text-align:right">0.127269104</td>
+<td style="text-align:right">0.127255574</td>
+</tr>
+<tr>
+<td>七轴未来状态MAE，度</td>
+<td style="text-align:right">0.564745</td>
+<td style="text-align:right">0.564778</td>
+</tr>
+<tr>
+<td>夹爪意图MAE，毫米</td>
+<td style="text-align:right">21.2082</td>
+<td style="text-align:right">21.2162</td>
+</tr>
+<tr>
+<td>夹爪意图二分类准确率</td>
+<td style="text-align:right">90.55%</td>
+<td style="text-align:right">90.55%</td>
+</tr>
+<tr>
+<td>原15维全部20点最大七轴变化，rad</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0.0000625844</td>
+</tr>
+<tr>
+<td>原15维全部20点最大夹爪变化，m</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0.00000151262</td>
+</tr>
+</tbody>
+</table>
+<p>90.55%是100个窗口各20个相关目标点的<strong>意图标签分类</strong>，不是独立2000次实验，更不是实物抓取成功率。未来状态预测指标也不能当作命令预测误差。</p>
+<p>预定门槛：B较A验证辅助损失至少改善5%，夹爪分类不下降，主15维全部20点最大变化不超过0.001 rad/0.001 m。实际改善为0.010631%，仅保持和分类不退化通过，整体机制门槛未通过。结果字段为<code>policy_adopted=false</code>、<code>full_task_passed=false</code>、<code>hardware_deployment_allowed=false</code>。</p>
+<p>原模型全部参数和buffer保持不变，checkpoint文件SHA不变。A也只是辅助任务对照，不是新的可部署ACT。B的残差层不接入现有执行入口。</p>
+<h2 id="heading-5">4 为什么这次没有得到有效的视觉收益</h2>
+<p>实验结束后进行了只读诊断，没有新增优化、改协议或挑权重。对100个留出窗口，使用10组固定随机排列分别错配图像、错配状态，并检查最终投影特征空间重排的影响。</p>
+<table>
+<thead>
+<tr>
+<th>B的只读诊断</th>
+<th style="text-align:right">损失或变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原输入损失</td>
+<td style="text-align:right">0.127255574</td>
+</tr>
+<tr>
+<td>图像样本排列后平均损失</td>
+<td style="text-align:right">0.128030808，约增加0.609%</td>
+</tr>
+<tr>
+<td>状态条件排列后平均损失</td>
+<td style="text-align:right">0.315226391，约增加147.71%</td>
+</tr>
+<tr>
+<td>特征空间重排后最大预测差</td>
+<td style="text-align:right">4.7684e−7</td>
+</tr>
+</tbody>
+</table>
+<p>在这些探针中，新辅助头更依赖状态条件。它的逐点视觉残差后接全局池化，几乎不受最终特征格位置重排影响，没有显式保留空间顺序；对需要杯位变化驱动动作变化的目标，这个辅助任务提供的位置信号不足。这支持下一轮调整辅助读出，不能证明原ACT没有用视觉，也不能解释全部历史失败。原ACT仍使用空间特征和位置编码。</p>
+<p>状态排列诊断保留原实测基点和目标，仅改变辅助头条件，是输入敏感性反事实，不是物理可执行轨迹。相邻窗口及20点目标相关，10次排列不是独立位置验收。<a href="diagnose.py">诊断脚本</a>在实验后加入，未追改<code>run_03</code>冻结源码清单；诊断结果单独保存，A/B权重SHA保持不变。</p>
+<h2 id="heading-6">5 中途两项工程修正</h2>
+<ol>
+<li><code>run_01</code>严格加载失败：最初误按底层ACT构造，而checkpoint是完整增量包装。追踪既有模型结构后改为完整加载，新增真实checkpoint和嵌套hook回归测试。该次0更新，保留<a href="run_01/failure.json">失败记录</a>。</li>
+<li><code>run_02</code>保持资料被原加载器拒绝：先按阶段直接均匀取点会选中原先无效的视觉行，240点中176点无效。新增回归后先过滤原有效性再抽样，没有放宽schema或补真值。该次0更新，保留<a href="run_02/failure.json">失败记录</a>。</li>
+</ol>
+<p>因此实际预算是<code>run_03</code>的A200＋B200，共400次新模块更新；原模型更新为0。没有暗中重复训练或扩大预算。</p>
+<h2 id="heading-7">6 验证及复现</h2>
+<p>新模块测试与原数据适配回归分别运行，记录见<a href="final-tests.log">15项新测试</a>、<a href="adapter-regression-tests.log">15项数据回归</a>。独立复核未发现需要修改的正确性或数据泄漏问题；复核范围不含完整仿真和硬件。</p>
+<pre><code class="language-bash">/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python -m pytest nero_act_real_visual_bridge_20261024/tests -q
+/home/user/wq/nero_act_command_increment_20261021/.venv/bin/python -m pytest nero_act_real_data_adapter_20261024/tests -q
+</code></pre>
+<p><code>experiment.py --help</code>可查看入口。运行完整实验必须给不存在的新输出目录；程序会重新执行A/B更新，不能用于覆盖<code>run_03</code>。<code>diagnose.py</code>只读取现有缓存及权重，不做优化。复现依赖VDS指向的原资料、原checkpoint和既有15维保持数据；源失效时应修复路径或核验数据，不取消检查。</p>
+<p>完整方案：<a href="../docs/superpowers/specs/2026-10-24-nero-real-visual-bridge-design.md">设计</a>、<a href="../docs/superpowers/plans/2026-10-24-nero-real-visual-bridge.md">计划</a>、<a href="progress.md">执行账本</a>、<a href="integrity.json">最终完整性</a>。协议和实验源码保持训练时版本，完成情况另记账本。</p>
+<h2 id="heading-8">7 下一步调整方向与尚存缺口</h2>
+<p>下一轮建议优先把辅助头改为<strong>保留特征空间位置的读出</strong>，再与本轮全局池化头做同数据、同预算对照。先检查相同姿态、不同画面或杯位时，预测是否按正确方向变化，同时保留多阶段主模型检查。不能仅因训练损失降低就增加预算或部署。</p>
+<p>这需要新一轮验证，本轮没有执行额外更新。真实15维几何/命令记录缺口、未训练位置完整闭环、TCP和相机独立验收、实时命令时效等问题仍在；空间读出改动不能替代这些检查。没有开启ROS/CAN，也没有下发真机指令。</p>
+</article></main></body></html>

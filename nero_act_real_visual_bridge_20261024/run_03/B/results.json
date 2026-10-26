@@ -1,0 +1,101 @@
+{
+  "updates": 200,
+  "initial_validation": {
+    "loss": 0.2775390148162842,
+    "joint_mae_deg": 0.7791638374328613,
+    "gripper_intent_mae_mm": 48.5679817199707,
+    "gripper_intent_accuracy": 0.5149999856948853,
+    "queries": 100
+  },
+  "train": {
+    "loss": 0.14085987210273743,
+    "joint_mae_deg": 0.5608952045440674,
+    "gripper_intent_mae_mm": 26.493207931518555,
+    "gripper_intent_accuracy": 0.8695945739746094,
+    "queries": 370
+  },
+  "validation": {
+    "loss": 0.12725557386875153,
+    "joint_mae_deg": 0.5647783279418945,
+    "gripper_intent_mae_mm": 21.216171264648438,
+    "gripper_intent_accuracy": 0.9054999947547913,
+    "queries": 100
+  },
+  "shuffled_validation": {
+    "loss": 0.12693144381046295,
+    "joint_mae_deg": 0.5648753643035889,
+    "gripper_intent_mae_mm": 21.26359748840332,
+    "gripper_intent_accuracy": 0.9070000052452087,
+    "queries": 100
+  },
+  "preservation": {
+    "maximum_arm_change_rad": 6.258441862883046e-05,
+    "maximum_gripper_change_m": 1.5126167909329524e-06,
+    "records": [
+      {
+        "name": "multistage_current_camera",
+        "queries": 120,
+        "all20": true,
+        "maximum_arm_change_rad": 6.258441862883046e-05,
+        "maximum_gripper_change_m": 1.5126167909329524e-06,
+        "stages": {
+          "approach": {
+            "queries": 15,
+            "maximum_arm_change_rad": 2.598723949631676e-05,
+            "maximum_gripper_change_m": 0.0
+          },
+          "carry": {
+            "queries": 15,
+            "maximum_arm_change_rad": 6.258441862883046e-05,
+            "maximum_gripper_change_m": 3.279158136137994e-07
+          },
+          "close": {
+            "queries": 15,
+            "maximum_arm_change_rad": 5.816317752760369e-06,
+            "maximum_gripper_change_m": 2.2365539109614474e-07
+          },
+          "descend": {
+            "queries": 15,
+            "maximum_arm_change_rad": 1.1313447430438828e-05,
+            "maximum_gripper_change_m": 4.918737204206991e-07
+          },
+          "lift": {
+            "queries": 15,
+            "maximum_arm_change_rad": 1.93717896763701e-05,
+            "maximum_gripper_change_m": 1.4293766525952378e-07
+          },
+          "place": {
+            "queries": 15,
+            "maximum_arm_change_rad": 6.300561381067382e-06,
+            "maximum_gripper_change_m": 2.387899655786896e-07
+          },
+          "release": {
+            "queries": 15,
+            "maximum_arm_change_rad": 3.780606493819505e-05,
+            "maximum_gripper_change_m": 1.5126167909329524e-06
+          },
+          "retreat": {
+            "queries": 15,
+            "maximum_arm_change_rad": 2.4680199203430675e-05,
+            "maximum_gripper_change_m": 0.0
+          }
+        }
+      },
+      {
+        "name": "visited_approach96",
+        "queries": 96,
+        "all20": true,
+        "maximum_arm_change_rad": 3.184788511134684e-05,
+        "maximum_gripper_change_m": 4.7673913172729954e-07,
+        "stages": {
+          "visited_approach": {
+            "queries": 96,
+            "maximum_arm_change_rad": 3.184788511134684e-05,
+            "maximum_gripper_change_m": 4.7673913172729954e-07
+          }
+        }
+      }
+    ]
+  },
+  "trainable_tensor_count": 8
+}

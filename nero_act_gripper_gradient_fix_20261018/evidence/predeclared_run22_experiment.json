@@ -1,0 +1,15 @@
+{
+  "reason": "measured nominal grasp input predicts96.5..98.4mm before readout, bounded95mm with20/20 zero gradients to verified closing targets",
+  "diagnosis": "/home/user/wq/nero_act_cvae_training_fix_20261018/evidence/grasp_boundary_diagnosis.json",
+  "epochs": 3,
+  "kl_weight": 0.001,
+  "prior_gripper_loss_weight": 0.05,
+  "initializer": "/home/user/wq/nero_act_cvae_training_fix_20261018/model/run21_cvae_posterior/policy.ckpt",
+  "new_data": "one nominal grasp-to-retreat train correction, one validation42 grasp-to-retreat val correction; full physical verification required",
+  "keep_prior70": true,
+  "expected_total": 72,
+  "train": 51,
+  "val": 21,
+  "inference_guards_unchanged": true,
+  "no_hardware": true
+}

@@ -1,0 +1,94 @@
+....FF...FFF                                                             [100%]
+=================================== FAILURES ===================================
+_______ test_delayed_midprefix_exposure_is_excluded_without_losing_past ________
+
+    def test_delayed_midprefix_exposure_is_excluded_without_losing_past():
+        worker,seen,now,index=make_worker()
+        before=worker.predict(previous_gripper_target_m=.095,after_s=9.9)
+        worker.record_submission(dict(receipt_id='new',rows=[[0]*7+[.095]],sent_s=10.22,ack_s=10.23,
+            accepted=True,kind='submitted_prefix',scope='s'))
+        now[0]=10.32
+>       worker.prefix_completed('new',completed_s=10.32)
+E       TypeError: VisualInferenceWorker.prefix_completed() got an unexpected keyword argument 'completed_s'
+
+tests/test_history_inference.py:79: TypeError
+________ test_prediction_detaches_camera_and_geometry_before_inference _________
+
+    def test_prediction_detaches_camera_and_geometry_before_inference():
+        from executor.visual_inference import digest,verify_prediction_packet
+        worker,seen,*_=make_worker()
+        capture=worker.capture;measure=worker.observer.measure;shared={};model_input=[]
+        def external_frame():
+            frame=capture();shared['frame']=frame;return frame
+        def external_geometry(frame):
+            geometry=measure(frame);shared['geometry']=geometry;return geometry
+        worker.capture=external_frame;worker.observer.measure=external_geometry
+        def overwrite(rgb,state,previous,**kwargs):
+            model_input.append(digest(rgb));shared['frame'].rgb[0,0,0]=255
+            shared['geometry'].cup_bottom_base_m[0]=99
+            return np.tile(state,(20,1))
+        worker.policy.predict=overwrite
+        packet=worker.predict(previous_gripper_target_m=.095,after_s=9.9)
+        verify_prediction_packet(packet)
+>       assert packet['details']['rgb_sha256']==model_input[0]
+E       AssertionError: assert '9fa92e687c4b...4992c3a6406a4' == '65b095f8650b...02031e5e587d6'
+E         - 65b095f8650bf6f8d9be6e7529fe0808bfd6068dad62aa31b2e02031e5e587d6
+E         + 9fa92e687c4be6beb1b4d734a082908d8870de4373a735e01f44992c3a6406a4
+
+tests/test_history_inference.py:103: AssertionError
+________ test_direct_development_summary_uses_unique_bound_case_results ________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-151/test_direct_development_summar0')
+
+    def test_direct_development_summary_uses_unique_bound_case_results(tmp_path):
+        import json
+        from tests.test_history_evaluation import complete_result
+        m=api();checkpoint=tmp_path/'policy.ckpt';checkpoint.write_bytes(b'model')
+        path=tmp_path/'summary.json';protocol=tmp_path/'protocol.json'
+        names=[f'case_{i}' for i in range(16)]
+        results=[dict(complete_result(),scenario={'name':name}) for name in names]
+        summary=dict(complete=True,finalized=True,total=16,passed=16,results=results,
+            provenance={'assessment_role':'paired_baseline_development_not_independent'})
+        protocol.write_text(json.dumps({'dependencies':{str(checkpoint.resolve()):m.sha(checkpoint)}}))
+>       assert m.development_count(path,summary,checkpoint,names)[0]==16
+E       AttributeError: module 'executor.history_qualification' has no attribute 'development_count'
+
+tests/test_history_qualification.py:38: AttributeError
+________ test_development_requires_successful_bound_prerequisite[pilot] ________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-151/test_development_requires_succ0')
+stage = 'pilot'
+
+    @pytest.mark.parametrize('stage',['pilot','development'])
+    def test_development_requires_successful_bound_prerequisite(tmp_path,stage):
+        m=api()
+        with pytest.raises(ValueError,match='decision|nominal|prerequisite'):
+>           m.require_development_gate(tmp_path,tmp_path/'training/run',pilot=stage=='pilot')
+E           AttributeError: module 'executor.history_qualification' has no attribute 'require_development_gate'
+
+tests/test_history_qualification.py:47: AttributeError
+_____ test_development_requires_successful_bound_prerequisite[development] _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-151/test_development_requires_succ1')
+stage = 'development'
+
+    @pytest.mark.parametrize('stage',['pilot','development'])
+    def test_development_requires_successful_bound_prerequisite(tmp_path,stage):
+        m=api()
+        with pytest.raises(ValueError,match='decision|nominal|prerequisite'):
+>           m.require_development_gate(tmp_path,tmp_path/'training/run',pilot=stage=='pilot')
+E           AttributeError: module 'executor.history_qualification' has no attribute 'require_development_gate'
+
+tests/test_history_qualification.py:47: AttributeError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_inference.py::test_delayed_midprefix_exposure_is_excluded_without_losing_past
+FAILED tests/test_history_inference.py::test_prediction_detaches_camera_and_geometry_before_inference
+FAILED tests/test_history_qualification.py::test_direct_development_summary_uses_unique_bound_case_results
+FAILED tests/test_history_qualification.py::test_development_requires_successful_bound_prerequisite[pilot]
+FAILED tests/test_history_qualification.py::test_development_requires_successful_bound_prerequisite[development]
+5 failed, 7 passed, 1 warning in 2.22s

@@ -1,0 +1,54 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.0,
+  "maximum_horizontal_transfer_m": 1.5819101476202254e-08,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 1,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5251550116000108,
+      0.015591116673517265,
+      0.04749668781352801
+    ],
+    "tcp_xyz": [
+      -0.5206508049634965,
+      0.011810532585165064,
+      0.03215740308906674
+    ],
+    "cup_upright": 0.9999999999999776,
+    "cup_speed": 2.2823279700396413e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": true,
+    "unexpected_robot_contact": true,
+    "gripper_width": 0.09499999850261623,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.17,
+    "jitter": false,
+    "force": false,
+    "name": "cadence_11",
+    "seed": 100200
+  },
+  "frames": 939,
+  "active_policy_points": 938,
+  "queries": 86,
+  "error": "RuntimeError: Unexpected robot/environment/cup contact",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_first_close_support_hold_v6",
+  "simulated_events": [],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 0,
+  "runtime_s": 10.277830970997456,
+  "contact_arm_hold_points": 0
+}

@@ -1,0 +1,65 @@
+{
+  "time_local": "2026-10-22T21:43:18.554787+08:00",
+  "user_goal_confirmed": "实际夹杯、搬运和放置，沿用原目标",
+  "goal_changed_to_empty_run": false,
+  "existing_ROS_CAN_service_retained": true,
+  "source_image_reused_no_recapture_this_turn": true,
+  "calibration_reinstallation_requested": false,
+  "diagnostic_results": {
+    "custom_cup_confidence_current_saved_frame": 0.1201053336262703,
+    "candidate_generic_cup_confidence_same_frame": 0.7723638415336609,
+    "production_detection_threshold_unchanged": 0.2,
+    "candidate_yellow_outline_and_blue_quad_checks_passed": true,
+    "candidate_detector_checked_saved_frames": 3,
+    "candidate_detector_installed_into_live_runtime": false,
+    "original_bbox_geometry_fit_rmse_px": 6.062314019061625,
+    "candidate_plane_bbox_fit_rmse_px": [
+      3.339142086855903,
+      3.7207273949463198,
+      3.40489425745368
+    ],
+    "cup_base_position_disagreement_from_partial_calibration_hypotheses_mm": [
+      100.9322028863459,
+      104.48706535756062,
+      102.17868089235428
+    ],
+    "interpretation": "A bbox fit below8px can pass while unverified base-coordinate targets differ by100..104mm. Neither alternative is accepted as independent ground truth.",
+    "ACT_offline_raw_first_joint_step_rad_original_geometry": 0.002267122268676758,
+    "original_point_step_limit_rad": 0.002,
+    "first_prefix_continuity_not_relaxed": true
+  },
+  "full_ACT_source": {
+    "point_count": 3165,
+    "nominal_duration_s": 158.25,
+    "maximum_start_arm_difference_deg": 0.0050014060197418365,
+    "start_gripper_difference_mm": -0.5370005965232849,
+    "original_qualification_passed": false,
+    "current_physical_scene_whole_path_checked": false,
+    "directly_replayed": false
+  },
+  "remaining_independent_physical_evidence": {
+    "actual_grasp_center_TCP_verified": false,
+    "current_camera_to_base_full_transform_verified": false,
+    "absolute_coordinate_accuracy_bound_known": false,
+    "current_contact_path_qualified": false
+  },
+  "execution_outcome": {
+    "arm_targets_sent": 0,
+    "gripper_targets_sent": 0,
+    "enable_sent": false,
+    "reset_sent": false,
+    "readonly_mode_retained": true,
+    "model_weights_modified": false,
+    "live_calibration_modified": false,
+    "safety_gates_changed": false,
+    "hardware_deployment_allowed": false
+  },
+  "next_required_boundary": "Establish and independently validate current TCP and camera/base geometry before contact-motion dispatch. Reuse existing photos,315 archived handeye samples and4 current paired observations; do not mistake their fit residuals for current independent physical accuracy.",
+  "source_sha256": {
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/offline_detector_comparison.json": "e81b64ea8dfa231d865944b5864d98660624e5f2d8f0f85054314271bce9c0af",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/offline_repaired_observation_geometry.json": "311a2e78e7f9aee9b95bd55b3a892dbed93ca32d4a3eedfca8645d531e600a82",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/offline_ACT_geometry_sensitivity.json": "82149db9525c5a75b14fd36b0cc7d583721596b7eb4ee715301d212a02546ad3",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/full_ACT_motion_source_review.json": "7d7e1f99e7aef2264391071c444abe6fd648fa7a398f44c61070766f311196af",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/motion_readiness.json": "fb79367b66be0267233a031f96d3beacf15ad427400719cc9a790b848eb12788"
+  }
+}

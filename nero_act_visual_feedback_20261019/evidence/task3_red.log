@@ -1,0 +1,94 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_____________ test_unrotation_and_rectified_intrinsics_are_paired ______________
+
+    def test_unrotation_and_rectified_intrinsics_are_paired():
+>       m=api()
+
+tests/test_visual_observation.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('vision.observation') is not None, 'Calibrated read-only geometry observer missing'
+E       AssertionError: Calibrated read-only geometry observer missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x755491dac5e0>('vision.observation')
+E        +    where <function find_spec at 0x755491dac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_observation.py:9: AssertionError
+_____________ test_cup_handle_and_occlusion_are_not_valid_centres ______________
+
+    def test_cup_handle_and_occlusion_are_not_valid_centres():
+>       m=api()
+
+tests/test_visual_observation.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('vision.observation') is not None, 'Calibrated read-only geometry observer missing'
+E       AssertionError: Calibrated read-only geometry observer missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x755491dac5e0>('vision.observation')
+E        +    where <function find_spec at 0x755491dac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_observation.py:9: AssertionError
+______ test_observer_records_invalid_frame_instead_of_using_old_geometry _______
+
+    def test_observer_records_invalid_frame_instead_of_using_old_geometry():
+>       m=api()
+
+tests/test_visual_observation.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('vision.observation') is not None, 'Calibrated read-only geometry observer missing'
+E       AssertionError: Calibrated read-only geometry observer missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x755491dac5e0>('vision.observation')
+E        +    where <function find_spec at 0x755491dac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_observation.py:9: AssertionError
+______________ test_pair_rejects_51ms_skew_repeated_future_frame _______________
+
+    def test_pair_rejects_51ms_skew_repeated_future_frame():
+>       m=api();f=frame()
+
+tests/test_visual_sync.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('vision.synchronization') is not None, 'Same-frame feedback pairing missing'
+E       AssertionError: Same-frame feedback pairing missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x755491dac5e0>('vision.synchronization')
+E        +    where <function find_spec at 0x755491dac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_sync.py:9: AssertionError
+________ test_pair_rejects_unknown_clock_malformed_state_or_stale_data _________
+
+    def test_pair_rejects_unknown_clock_malformed_state_or_stale_data():
+>       m=api();f=frame();f.clock_verified=False
+
+tests/test_visual_sync.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('vision.synchronization') is not None, 'Same-frame feedback pairing missing'
+E       AssertionError: Same-frame feedback pairing missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x755491dac5e0>('vision.synchronization')
+E        +    where <function find_spec at 0x755491dac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_sync.py:9: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_visual_observation.py::test_unrotation_and_rectified_intrinsics_are_paired
+FAILED tests/test_visual_observation.py::test_cup_handle_and_occlusion_are_not_valid_centres
+FAILED tests/test_visual_observation.py::test_observer_records_invalid_frame_instead_of_using_old_geometry
+FAILED tests/test_visual_sync.py::test_pair_rejects_51ms_skew_repeated_future_frame
+FAILED tests/test_visual_sync.py::test_pair_rejects_unknown_clock_malformed_state_or_stale_data
+5 failed in 0.07s

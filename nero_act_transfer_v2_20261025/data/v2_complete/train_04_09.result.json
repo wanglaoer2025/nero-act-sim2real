@@ -1,0 +1,107 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.08581715337070113,
+  "maximum_horizontal_transfer_m": 0.0006391019500063843,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 49,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5262803453668936,
+      0.06449644175398,
+      0.13331715337070113
+    ],
+    "tcp_xyz": [
+      -0.5263341393130991,
+      0.06451148083601484,
+      0.14216663829165213
+    ],
+    "cup_upright": 0.9999982509992188,
+    "cup_speed": 0.015516250388328564,
+    "bilateral": true,
+    "supported": false,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07378273922943399,
+    "contract_valid": true
+  },
+  "stages": [
+    {
+      "stage": "approach",
+      "cup_xyz": [
+        -0.5267678312564533,
+        0.06459806594762617,
+        0.04749668780641829
+      ],
+      "tcp_xyz": [
+        -0.5265228547686402,
+        0.0644645958292009,
+        0.2551788555676889
+      ],
+      "cup_upright": 0.9999999999999618,
+      "cup_speed": 9.100705596040586e-07,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.09499999872499705,
+      "contract_valid": true
+    },
+    {
+      "stage": "descend",
+      "cup_xyz": [
+        -0.526767832243091,
+        0.06459806285705008,
+        0.04749668779788195
+      ],
+      "tcp_xyz": [
+        -0.5267051928393985,
+        0.06458704261636725,
+        0.055310129635710005
+      ],
+      "cup_upright": 0.9999999999999414,
+      "cup_speed": 2.4187936475528774e-06,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.09499999859583264,
+      "contract_valid": true
+    },
+    {
+      "stage": "close",
+      "cup_xyz": [
+        -0.5267678411759895,
+        0.06459835109944996,
+        0.04749668864275002
+      ],
+      "tcp_xyz": [
+        -0.5267336080186836,
+        0.06459775896170225,
+        0.054994442170520824
+      ],
+      "cup_upright": 0.9999999999828822,
+      "cup_speed": 1.4340143654756347e-05,
+      "bilateral": true,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.07413153191201484,
+      "contract_valid": true
+    }
+  ],
+  "frames": 1299,
+  "error": "Shared observer refused: Unique visible cup and target required",
+  "real_hardware_tested": false,
+  "task": "complete_pick_carry_place_retreat",
+  "teacher_transition_profile": "measured_event_v2",
+  "full_task_verified": false,
+  "elapsed_s": 77.19514615496155,
+  "position_group": "train_04",
+  "split": "train",
+  "hardware_commands_sent": false
+}

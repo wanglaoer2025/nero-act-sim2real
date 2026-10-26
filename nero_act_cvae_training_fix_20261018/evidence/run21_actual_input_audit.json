@@ -1,0 +1,13 @@
+{
+  "manifest_identical": true,
+  "split_identical": true,
+  "all_normalization_statistics_bit_identical": true,
+  "initial_tensor_differences": [
+    "model.encoder_action_proj.weight",
+    "model.encoder_action_proj.bias"
+  ],
+  "reason_for_difference": "newly active posterior action projection rebased to paired physical normalization; unchanged zero-latent predictions verified on eight actual inputs",
+  "initial_zero_latent_max_difference": 0.0,
+  "old_baseline_run": "run20_grasp_state_recovery",
+  "hardware_connected": false
+}

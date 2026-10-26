@@ -1,0 +1,177 @@
+......FFFFFF                                                             [100%]
+=================================== FAILURES ===================================
+________________ test_old_8_9_and_new_15_profiles_are_explicit _________________
+
+    def test_old_8_9_and_new_15_profiles_are_explicit():
+        from executor.contract import FullTaskContract
+        from executor.model import make_policy_observation
+        c=config();stats=statistics(c);state=np.r_[np.zeros(7),.074]
+>       FullTaskContract(c)
+
+tests/test_visual_policy.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <executor.contract.FullTaskContract object at 0x75770578fd70>
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'alignment_offset': 0, 'artifact_dir': '/home/user/wq/nero_act_contact_recovery_20261018/training/run15_first_lift_recovery/artifacts', ...}
+
+    def __init__(self, config):
+        context=config.get('gripper_command_context')
+        matched_state=config.get('state_dim')==8 and (
+            (not context and config.get('policy_input_dim',8)==8) or
+            (context==GRIPPER_CONTEXT and config.get('policy_input_dim')==9))
+        if (config.get('chunk_size') != 20 or not matched_state
+                or config.get('physical_state_dim',8)!=8
+                or config.get('action_dim') != 8
+                or config.get('task_scope') != 'complete_pick_carry_place_retreat'):
+>           raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+E           ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+executor/contract.py:18: ValueError
+______________ test_init_9_to_15_preserves_same_image_prediction _______________
+
+    def test_init_9_to_15_preserves_same_image_prediction():
+        from executor.model import BoundedActPolicy
+        from training import command_context
+>       assert callable(getattr(command_context,'expand_visual_state_dict',None)), 'Explicit9→15 initializer expansion missing'
+E       AssertionError: Explicit9→15 initializer expansion missing
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(<module 'training.command_context' from '/home/user/wq/nero_act_visual_feedback_20261019/training/command_context.py'>, 'expand_visual_state_dict', None)
+
+tests/test_visual_policy.py:42: AssertionError
+_________________ test_readout_uses_only_first_eight_channels __________________
+
+    def test_readout_uses_only_first_eight_channels():
+        from executor.model import BoundedActPolicy
+>       torch.set_num_threads(1);policy=BoundedActPolicy(config()).eval()
+
+tests/test_visual_policy.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+executor/model.py:94: in __init__
+    FullTaskContract(config)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <executor.contract.FullTaskContract object at 0x7577029cd400>
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'alignment_offset': 0, 'artifact_dir': '/home/user/wq/nero_act_contact_recovery_20261018/training/run15_first_lift_recovery/artifacts', ...}
+
+    def __init__(self, config):
+        context=config.get('gripper_command_context')
+        matched_state=config.get('state_dim')==8 and (
+            (not context and config.get('policy_input_dim',8)==8) or
+            (context==GRIPPER_CONTEXT and config.get('policy_input_dim')==9))
+        if (config.get('chunk_size') != 20 or not matched_state
+                or config.get('physical_state_dim',8)!=8
+                or config.get('action_dim') != 8
+                or config.get('task_scope') != 'complete_pick_carry_place_retreat'):
+>           raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+E           ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+executor/contract.py:18: ValueError
+____________________ test_cvae_encoder_and_prior_accept_15 _____________________
+
+    def test_cvae_encoder_and_prior_accept_15():
+        from training.train import FullTaskPolicy
+        torch.set_num_threads(1);torch.manual_seed(42)
+>       policy=FullTaskPolicy(config()).train()
+
+tests/test_visual_policy.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/train.py:93: in __init__
+    super().__init__(config)
+executor/model.py:94: in __init__
+    FullTaskContract(config)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <executor.contract.FullTaskContract object at 0x7577029f84d0>
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'alignment_offset': 0, 'artifact_dir': '/home/user/wq/nero_act_contact_recovery_20261018/training/run15_first_lift_recovery/artifacts', ...}
+
+    def __init__(self, config):
+        context=config.get('gripper_command_context')
+        matched_state=config.get('state_dim')==8 and (
+            (not context and config.get('policy_input_dim',8)==8) or
+            (context==GRIPPER_CONTEXT and config.get('policy_input_dim')==9))
+        if (config.get('chunk_size') != 20 or not matched_state
+                or config.get('physical_state_dim',8)!=8
+                or config.get('action_dim') != 8
+                or config.get('task_scope') != 'complete_pick_carry_place_retreat'):
+>           raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+E           ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+executor/contract.py:18: ValueError
+______________ test_frozen_worker_builds_the_same_15d_observation ______________
+
+    def test_frozen_worker_builds_the_same_15d_observation():
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from executor.policy_worker import FrozenAct
+        torch.set_num_threads(1);c=config();worker=object.__new__(FrozenAct)
+>       worker.config=c;worker.device='cpu';worker.stats=statistics(c);worker.model=BoundedActPolicy(c).eval()
+
+tests/test_visual_policy.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+executor/model.py:94: in __init__
+    FullTaskContract(config)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <executor.contract.FullTaskContract object at 0x7577051e7b90>
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'alignment_offset': 0, 'artifact_dir': '/home/user/wq/nero_act_contact_recovery_20261018/training/run15_first_lift_recovery/artifacts', ...}
+
+    def __init__(self, config):
+        context=config.get('gripper_command_context')
+        matched_state=config.get('state_dim')==8 and (
+            (not context and config.get('policy_input_dim',8)==8) or
+            (context==GRIPPER_CONTEXT and config.get('policy_input_dim')==9))
+        if (config.get('chunk_size') != 20 or not matched_state
+                or config.get('physical_state_dim',8)!=8
+                or config.get('action_dim') != 8
+                or config.get('task_scope') != 'complete_pick_carry_place_retreat'):
+>           raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+E           ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+executor/contract.py:18: ValueError
+____________ test_rebase_15d_initializer_keeps_physical_predictions ____________
+
+    def test_rebase_15d_initializer_keeps_physical_predictions():
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.rebase_initializer import paired_config,rebase_initializer
+        torch.set_num_threads(1);torch.manual_seed(42)
+        c=config();old=statistics(c);new=copy.deepcopy(old)
+        for name in ['qpos_std','action_std','geometry_std']:new[name]*=1.2
+        for name in ['qpos_mean','action_mean','geometry_mean']:new[name]+=.002
+        after_config=paired_config(c,new)
+>       a=BoundedActPolicy(c).eval();b=BoundedActPolicy(after_config).eval()
+
+tests/test_visual_policy.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+executor/model.py:94: in __init__
+    FullTaskContract(config)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <executor.contract.FullTaskContract object at 0x75770517bf80>
+config = {'action_dim': 8, 'action_representation': 'absolute_joint_position', 'alignment_offset': 0, 'artifact_dir': '/home/user/wq/nero_act_contact_recovery_20261018/training/run15_first_lift_recovery/artifacts', ...}
+
+    def __init__(self, config):
+        context=config.get('gripper_command_context')
+        matched_state=config.get('state_dim')==8 and (
+            (not context and config.get('policy_input_dim',8)==8) or
+            (context==GRIPPER_CONTEXT and config.get('policy_input_dim')==9))
+        if (config.get('chunk_size') != 20 or not matched_state
+                or config.get('physical_state_dim',8)!=8
+                or config.get('action_dim') != 8
+                or config.get('task_scope') != 'complete_pick_carry_place_retreat'):
+>           raise ValueError('Only the explicitly matched20x8 complete-task model is supported')
+E           ValueError: Only the explicitly matched20x8 complete-task model is supported
+
+executor/contract.py:18: ValueError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_policy.py::test_old_8_9_and_new_15_profiles_are_explicit
+FAILED tests/test_visual_policy.py::test_init_9_to_15_preserves_same_image_prediction
+FAILED tests/test_visual_policy.py::test_readout_uses_only_first_eight_channels
+FAILED tests/test_visual_policy.py::test_cvae_encoder_and_prior_accept_15 - V...
+FAILED tests/test_visual_policy.py::test_frozen_worker_builds_the_same_15d_observation
+FAILED tests/test_visual_policy.py::test_rebase_15d_initializer_keeps_physical_predictions
+6 failed, 6 passed, 1 warning in 3.18s

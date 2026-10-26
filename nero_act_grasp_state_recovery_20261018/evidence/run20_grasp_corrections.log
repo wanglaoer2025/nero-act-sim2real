@@ -1,0 +1,14 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+{"id": 3001, "case": "cup_+0_+0", "split": "train", "start_height": 0.060017401916552124, "success": true, "lift_m": 0.19307558275958192, "transfer_m": 0.17766803067853548, "replay_error": 0.0, "elapsed_s": 30.002294635982253}
+{"id": 3002, "case": "cup_+0_+0", "split": "train", "start_height": 0.05503528666085123, "success": true, "lift_m": 0.19307568614958848, "transfer_m": 0.17766807723042088, "replay_error": 0.0, "elapsed_s": 29.958490181947127}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_grasp_state_recovery_20261018/evidence/collect_grasp_corrections.py", line 84, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/wq/nero_act_grasp_state_recovery_20261018/evidence/collect_grasp_corrections.py", line 45, in main
+    if abs(heights[j]-height)>.0025:raise ValueError('No matching ACT-visited correction height')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: No matching ACT-visited correction height

@@ -1,0 +1,26 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+F
+======================================================================
+FAIL: test_real_data_preparation_never_rewrites_historical_sampling_audits (test_scoped_data_isolation.ScopedDataIsolationTests.test_real_data_preparation_never_rewrites_historical_sampling_audits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_preservation_scope_20261023/test_scoped_data_isolation.py", line 30, in test_real_data_preparation_never_rewrites_historical_sampling_audits
+    _, batches, _, _, _ = train_scoped.prepare_data(SimpleNamespace(config=payload['config']), payload['stats'])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_preservation_scope_20261023/train_scoped.py", line 26, in prepare_data
+    dataset, batches, manifest, scene, files = previous.prepare_data(policy, stats)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_dense_response_20261023/train_dense.py", line 23, in prepare_data
+    old, _, validation, scene, files = retained.prepare_data(policy, stats)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_sampling_retention_20261023/train_retained.py", line 63, in prepare_data
+    (ROOT/'sampling_audit.json').write_text(json.dumps(dict(pool_sizes={k:len(v) for k,v in pools.items()},
+  File "/home/user/wq/nero_act_preservation_scope_20261023/test_scoped_data_isolation.py", line 26, in protect_old_audits
+    self.fail('Preparing a new trial attempted to rewrite a historical sampling audit')
+AssertionError: Preparing a new trial attempted to rewrite a historical sampling audit
+
+----------------------------------------------------------------------
+Ran 1 test in 5.900s
+
+FAILED (failures=1)

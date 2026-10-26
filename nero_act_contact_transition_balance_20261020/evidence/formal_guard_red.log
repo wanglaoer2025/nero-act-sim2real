@@ -1,0 +1,54 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_balanced_contact_run_cannot_expand_into_formal_training _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-163/test_balanced_contact_run_cann0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76cd727274a0>
+
+    def test_balanced_contact_run_cannot_expand_into_formal_training(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'_require_seal',lambda data:{})
+        monkeypatch.setattr(module,'ROOT',tmp_path)
+        with pytest.raises(ValueError,match='pilot-only'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',dict(variant='B',stage='formal',
+                transition_sampling_profile='recovery_first5_quarter_v1'),tmp_path/'output')
+
+tests/test_transition_schedule.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/history.py:243: in train_history
+    gate_inputs=require_formal_gate(ROOT)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/tmp/pytest-of-user/pytest-163/test_balanced_contact_run_cann0')
+
+    def require_formal_gate(root)->list[Path]:
+        from simulation.history_mechanism import pilot_gate
+        root=Path(root);path=root/'evidence/pilot_decision.json'
+>       if not path.is_file():raise ValueError('Completed pilot mechanism decision required before formal training')
+E       ValueError: Completed pilot mechanism decision required before formal training
+
+executor/history_qualification.py:39: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-163/test_balanced_contact_run_cann0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76cd727274a0>
+
+    def test_balanced_contact_run_cannot_expand_into_formal_training(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'_require_seal',lambda data:{})
+        monkeypatch.setattr(module,'ROOT',tmp_path)
+>       with pytest.raises(ValueError,match='pilot-only'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'pilot-only'
+E        Input: 'Completed pilot mechanism decision required before formal training'
+
+tests/test_transition_schedule.py:41: AssertionError
+=============================== warnings summary ===============================
+tests/test_transition_schedule.py::test_balanced_contact_run_cannot_expand_into_formal_training
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_transition_schedule.py::test_balanced_contact_run_cannot_expand_into_formal_training
+1 failed, 1 warning in 2.08s

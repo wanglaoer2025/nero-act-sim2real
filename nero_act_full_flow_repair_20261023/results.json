@@ -1,0 +1,93 @@
+{
+  "request": "恢复起点后修复策略、检查现存问题并下发完整动作流程",
+  "verified_epoch_s": 1792723047.22871,
+  "overall_goal_complete": false,
+  "status": "Software diagnostics fixed; bounded policy repair trained and rejected after original gates/full-flow failure; full hardware task not sent",
+  "restored_start_verified": true,
+  "full_teacher_demos": 1,
+  "new_safe_visited_state_prefixes": 8,
+  "teacher_data_replay_and_contract_passed": true,
+  "actual_optimizer_updates": 1000,
+  "extra_rounds_run": 0,
+  "checkpoint_sha256": "d7ea212a49af015c581010a6b86e7c0a70e23460a89bc3d4ee599d3222afdcbd",
+  "frozen_parameters_unchanged": true,
+  "independent_review": {
+    "hash_bindings_checked": 564,
+    "changed_tensors": 52,
+    "approved_trainable_tensors": 70,
+    "frozen_tensors_changed": 0
+  },
+  "completed_software_fixes": [
+    "Pre-send failure saves actual measured health, command age, motion status and lead; reports specific rejection reason without changing thresholds",
+    "Training batches retain all8 task stages and new/old data while adding physical-teacher corrections at ACT-visited states"
+  ],
+  "tests": {
+    "new_sampling": 2,
+    "execution_entry": 8,
+    "inherited_objective": 6,
+    "total_passed": 16
+  },
+  "position_response": {
+    "before_direction_passed": 5,
+    "after_direction_passed": 5,
+    "total": 7,
+    "before_max_error_mm": 1.4919660267935846,
+    "after_max_error_mm": 3.3323972626569742,
+    "passed": false
+  },
+  "original_three_gripper_inputs": {
+    "prefix_errors_mm": [
+      0.023342669010162354,
+      0.019535422325134277,
+      0.025607645511627197
+    ],
+    "passed_individually": true
+  },
+  "original_423_preservation": {
+    "samples": 423,
+    "maximum_arm_prefix_change_mrad": 1.937776803970337,
+    "maximum_limit_mrad": 0.3,
+    "rms_arm_prefix_change_mrad": 0.24043534124598923,
+    "rms_limit_mrad": 0.1,
+    "passed": false
+  },
+  "full_flow": {
+    "passed": false,
+    "error": "RuntimeError: ACT descended below the original grasp region without confirmation",
+    "active_points": 1811,
+    "max_lift_mm": 0.0,
+    "events": [],
+    "closest_tcp_cup_xy_mm": 36.3114586022489,
+    "terminal_tcp_cup_xy_mm": 88.59560667289347,
+    "terminal_nominal_tcp_height_mm": 44.87170903207916
+  },
+  "calibration_verified": false,
+  "full_15d_motion_entry_qualified": false,
+  "manual_measurements_requested": false,
+  "hardware_motion_commands_this_request": 0,
+  "hardware_gripper_commands_this_request": 0,
+  "hardware_deployment_allowed": false,
+  "readiness_reasons": [
+    "ACT still fails XY alignment and descends without GRASP; full-flow guard blocked it",
+    "Position-response and original423 preservation checks fail",
+    "Independent TCP/camera geometry still unverified; legacy nominal parameters retained without promotion"
+  ],
+  "artifacts_sha256": {
+    "/home/user/wq/nero_act_full_flow_repair_20261023/repair_plan.json": "572a4c14106c9726f9c36934bcf244322c04c7ce07a42c7feccdbea0aaaf2799",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/data/manifest.json": "169762da54290089b37675b651cef401c4f0d024e4117c5517866e42a76d6095",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/trace_audit.json": "e257d96274f72f1feaa00ba4af84144e43d09e685cc9dd6d0bf1146a9af4ea52",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/weight_revision_diagnostics.json": "5d3c5b247fc28bcc151c51c104da50b534f6003cbaac11ef4a3d8a5f5a3f5acd",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/zero_update_preflight.json": "a8fdc86290d861876caebe543743ad990afe6aaf1ca62e2a4c33bbbd800151e0",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/training/pilot_A/integrity.json": "aa43d76f7c88f255adacf8a2b0292bc670ed3db84d6774fbb1b160b926cc1638",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/training/pilot_A/response_gate.json": "74824d9a1c8ff19af5bb24239d3518975ad4790d76b0e60fe4d8ecb65534f30d",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/results/full_flow_summary.json": "6ede462766e38c70048a9ed5122ee7ae14c84f2dc6257d0c3cc38b4c3d634064",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/original_gate_after.json": "8592292e3cfbddbe0defaed8431caf461290a2743a1690aa432963b801247759",
+    "/home/user/wq/nero_act_full_flow_repair_20261023/final_hardware_readonly.json": "5768fff1dd10896c32f78b6a804eb3e5501a325e6b787b11742637ad2b695fa8"
+  },
+  "final_hardware": {
+    "can_tx_packets": 6832,
+    "unchanged_since_restored_start": true,
+    "receive_only_driver_active": true,
+    "main_pid": 307984
+  }
+}

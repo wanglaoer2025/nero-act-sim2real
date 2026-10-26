@@ -1,0 +1,12 @@
+.......F                                                                 [100%]
+=================================== FAILURES ===================================
+_________ test_final_positions_exclude_every_selected_development_case _________
+
+    def test_final_positions_exclude_every_selected_development_case():
+>       from protocol import validate_final_positions,plan_positions
+E       ImportError: cannot import name 'validate_final_positions' from 'protocol' (/home/user/wq/nero_act_transfer_v2_20261025/protocol.py). Did you mean: 'validate_positions'?
+
+tests/test_review_regressions.py:94: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_review_regressions.py::test_final_positions_exclude_every_selected_development_case
+1 failed, 7 passed in 1.08s

@@ -1,0 +1,50 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+__ test_delayed_observation_uses_old_paired_physics_and_reset_requires_warmup __
+
+    def test_delayed_observation_uses_old_paired_physics_and_reset_requires_warmup():
+        m=api()
+>       assert hasattr(m,'ExposureHistory'), 'Actual delayed observation history missing'
+E       AssertionError: Actual delayed observation history missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.visual_evaluation' from '/home/user/wq/nero_act_visual_validation_20261019/simulation/visual_evaluation.py'>, 'ExposureHistory')
+
+tests/test_visual_evaluation.py:88: AssertionError
+___________ test_suite_and_cases_bind_xml_all_assets_and_statistics ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-72/test_suite_and_cases_bind_xml_0')
+
+    def test_suite_and_cases_bind_xml_all_assets_and_statistics(tmp_path):
+        m=api();root=tmp_path/'source';run=tmp_path/'run'
+        for directory in [root/'simulation/assets',root/'evaluation',run/'checkpoints']:
+            directory.mkdir(parents=True,exist_ok=True)
+        files=[root/'simulation/scene_template.xml',root/'simulation/assets/finger.obj',
+               root/'simulation/assets/cup.stl',root/'evaluation/protocol.json',
+               run/'checkpoints/policy_best_val.ckpt',run/'checkpoints/dataset_stats.pkl']
+        for f in files:f.write_bytes(b'original')
+>       assert hasattr(m,'evaluation_dependencies'), 'Shared physical dependency binding missing'
+E       AssertionError: Shared physical dependency binding missing
+E       assert False
+E        +  where False = hasattr(<module 'simulation.visual_evaluation' from '/home/user/wq/nero_act_visual_validation_20261019/simulation/visual_evaluation.py'>, 'evaluation_dependencies')
+
+tests/test_visual_evaluation.py:108: AssertionError
+____ test_already_completed_goals_still_require_current_health_and_deadline ____
+
+    def test_already_completed_goals_still_require_current_health_and_deadline():
+        m=api();calls=[];f=Future();f.set_result(SimpleNamespace(status=4,result=SimpleNamespace(error_code=0)))
+        session=SimpleNamespace(guard=lambda:calls.append('health'))
+        late=m.RosVisualTransport(session,[],clock=lambda:10.6)
+>       with pytest.raises(TimeoutError):late.complete([f,f],10.5)
+E       Failed: DID NOT RAISE <class 'TimeoutError'>
+
+tests/test_visual_dispatch.py:100: Failed
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_evaluation.py::test_delayed_observation_uses_old_paired_physics_and_reset_requires_warmup
+FAILED tests/test_visual_evaluation.py::test_suite_and_cases_bind_xml_all_assets_and_statistics
+FAILED tests/test_visual_dispatch.py::test_already_completed_goals_still_require_current_health_and_deadline
+3 failed, 13 deselected, 1 warning in 2.19s

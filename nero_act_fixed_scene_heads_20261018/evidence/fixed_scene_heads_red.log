@@ -1,0 +1,135 @@
+/home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-lzsfkw_j because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+test_cvae_training_rejects_missing_or_nonpositive_kl_regularization (tests.test_cvae_training.CvaeTrainingTests.test_cvae_training_rejects_missing_or_nonpositive_kl_regularization) ... ok
+test_legacy_training_keeps_zero_kl_and_identical_prior_predictions (tests.test_cvae_training.CvaeTrainingTests.test_legacy_training_keeps_zero_kl_and_identical_prior_predictions) ... ok
+test_padded_future_labels_do_not_influence_training_prediction (tests.test_cvae_training.CvaeTrainingTests.test_padded_future_labels_do_not_influence_training_prediction) ... ok
+test_rebased_cvae_preserves_physical_posterior_conditioning (tests.test_cvae_training.CvaeTrainingTests.test_rebased_cvae_preserves_physical_posterior_conditioning) ... ok
+test_supervised_training_reaches_posterior_and_backpropagates_kl (tests.test_cvae_training.CvaeTrainingTests.test_supervised_training_reaches_posterior_and_backpropagates_kl) ... ok
+test_validation_predictions_ignore_future_labels_and_match_runtime (tests.test_cvae_training.CvaeTrainingTests.test_validation_predictions_ignore_future_labels_and_match_runtime) ... ok
+test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) ... 
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'train_nonlinear_gripper_only': True}) ... FAIL
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'train_gripper_head_only': True}) ... FAIL
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'reset_action_head': True}) ... FAIL
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'nonlinear_gripper_head': False}) ... FAIL
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'freeze_backbone': False}) ... FAIL
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'arm_output_lr': 0.0}) ... FAIL
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'arm_output_lr': nan}) ... FAIL
+  test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'prior_gripper_loss_weight': 0.0}) ... FAIL
+test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor) ... FAIL
+test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent) ... FAIL
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'train_nonlinear_gripper_only': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'train_gripper_head_only': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'reset_action_head': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'nonlinear_gripper_head': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'freeze_backbone': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'arm_output_lr': 0.0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'arm_output_lr': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_conflicting_modes_and_nonpositive_learning_rates_are_rejected (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_conflicting_modes_and_nonpositive_learning_rates_are_rejected) (change={'prior_gripper_loss_weight': 0.0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 61, in test_conflicting_modes_and_nonpositive_learning_rates_are_rejected
+    with self.subTest(change=change), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 34, in test_optimizer_changes_seven_arm_rows_and_adapter_but_no_other_tensor
+    self.assertTrue(all(k.startswith('gripper_adapter.') or k in
+AssertionError: False is not true : ['model.transformer.encoder.layers.0.self_attn.in_proj_weight', 'model.transformer.encoder.layers.0.self_attn.in_proj_bias', 'model.transformer.encoder.layers.0.self_attn.out_proj.weight', 'model.transformer.encoder.layers.0.self_attn.out_proj.bias', 'model.transformer.encoder.layers.0.linear1.weight', 'model.transformer.encoder.layers.0.linear1.bias', 'model.transformer.encoder.layers.0.linear2.weight', 'model.transformer.encoder.layers.0.linear2.bias', 'model.transformer.encoder.layers.0.norm1.weight', 'model.transformer.encoder.layers.0.norm1.bias', 'model.transformer.encoder.layers.0.norm2.weight', 'model.transformer.encoder.layers.0.norm2.bias', 'model.transformer.encoder.layers.1.self_attn.in_proj_weight', 'model.transformer.encoder.layers.1.self_attn.in_proj_bias', 'model.transformer.encoder.layers.1.self_attn.out_proj.weight', 'model.transformer.encoder.layers.1.self_attn.out_proj.bias', 'model.transformer.encoder.layers.1.linear1.weight', 'model.transformer.encoder.layers.1.linear1.bias', 'model.transformer.encoder.layers.1.linear2.weight', 'model.transformer.encoder.layers.1.linear2.bias', 'model.transformer.encoder.layers.1.norm1.weight', 'model.transformer.encoder.layers.1.norm1.bias', 'model.transformer.encoder.layers.1.norm2.weight', 'model.transformer.encoder.layers.1.norm2.bias', 'model.transformer.decoder.layers.0.self_attn.in_proj_bias', 'model.transformer.decoder.layers.0.self_attn.out_proj.bias', 'model.transformer.decoder.layers.0.multihead_attn.in_proj_weight', 'model.transformer.decoder.layers.0.multihead_attn.in_proj_bias', 'model.transformer.decoder.layers.0.multihead_attn.out_proj.weight', 'model.transformer.decoder.layers.0.multihead_attn.out_proj.bias', 'model.transformer.decoder.layers.0.linear1.weight', 'model.transformer.decoder.layers.0.linear1.bias', 'model.transformer.decoder.layers.0.linear2.weight', 'model.transformer.decoder.layers.0.linear2.bias', 'model.transformer.decoder.layers.0.norm1.bias', 'model.transformer.decoder.layers.0.norm2.weight', 'model.transformer.decoder.layers.0.norm2.bias', 'model.transformer.decoder.layers.0.norm3.weight', 'model.transformer.decoder.layers.0.norm3.bias', 'model.transformer.decoder.norm.weight', 'model.transformer.decoder.norm.bias', 'model.encoder.layers.0.self_attn.in_proj_weight', 'model.encoder.layers.0.self_attn.in_proj_bias', 'model.encoder.layers.0.self_attn.out_proj.weight', 'model.encoder.layers.0.self_attn.out_proj.bias', 'model.encoder.layers.0.linear1.weight', 'model.encoder.layers.0.linear1.bias', 'model.encoder.layers.0.linear2.weight', 'model.encoder.layers.0.linear2.bias', 'model.encoder.layers.0.norm1.weight', 'model.encoder.layers.0.norm1.bias', 'model.encoder.layers.0.norm2.weight', 'model.encoder.layers.0.norm2.bias', 'model.encoder.layers.1.self_attn.in_proj_weight', 'model.encoder.layers.1.self_attn.in_proj_bias', 'model.encoder.layers.1.self_attn.out_proj.weight', 'model.encoder.layers.1.self_attn.out_proj.bias', 'model.encoder.layers.1.linear1.weight', 'model.encoder.layers.1.linear1.bias', 'model.encoder.layers.1.linear2.weight', 'model.encoder.layers.1.linear2.bias', 'model.encoder.layers.1.norm1.weight', 'model.encoder.layers.1.norm1.bias', 'model.encoder.layers.1.norm2.weight', 'model.encoder.layers.1.norm2.bias', 'model.action_head.weight', 'model.action_head.bias', 'model.query_embed.weight', 'model.input_proj.weight', 'model.input_proj.bias', 'model.input_proj_robot_state.bias', 'model.cls_embed.weight', 'model.encoder_action_proj.weight', 'model.encoder_action_proj.bias', 'model.encoder_joint_proj.bias', 'model.latent_proj.weight', 'model.latent_proj.bias', 'model.latent_out_proj.weight', 'model.latent_out_proj.bias', 'model.additional_pos_embed.weight', 'gripper_adapter.2.weight', 'gripper_adapter.2.bias']
+
+======================================================================
+FAIL: test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent (tests.test_fixed_scene_heads.FixedSceneHeadsTests.test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/tests/test_fixed_scene_heads.py", line 47, in test_train_and_eval_predictions_ignore_labels_and_use_runtime_zero_latent
+    torch.testing.assert_close(a['a_hat'], b['a_hat'], atol=0., rtol=0.)
+  File "/home/user/nero/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1530, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not equal!
+
+Mismatched elements: 160 / 160 (100.0%)
+Greatest absolute difference: 0.12003232538700104 at index (0, 17, 5)
+Greatest relative difference: 200.13084411621094 at index (0, 13, 5)
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.443s
+
+FAILED (failures=10)
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M
+number of parameters: 12.58M

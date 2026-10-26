@@ -1,0 +1,25 @@
+test_off_target_low_pose_requires_vertical_clearance_in_teacher (test_objective.PreservationBudgetTests.test_off_target_low_pose_requires_vertical_clearance_in_teacher) ... /home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+FAIL
+test_preservation_gradient_stays_below_half_the_task_gradient (test_objective.PreservationBudgetTests.test_preservation_gradient_stays_below_half_the_task_gradient) ... FAIL
+
+======================================================================
+FAIL: test_off_target_low_pose_requires_vertical_clearance_in_teacher (test_objective.PreservationBudgetTests.test_off_target_low_pose_requires_vertical_clearance_in_teacher)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_position_response_repair_20261023/test_objective.py", line 30, in test_off_target_low_pose_requires_vertical_clearance_in_teacher
+    self.assertGreaterEqual(goal[2], .20)
+AssertionError: np.float64(0.055) not greater than or equal to 0.2
+
+======================================================================
+FAIL: test_preservation_gradient_stays_below_half_the_task_gradient (test_objective.PreservationBudgetTests.test_preservation_gradient_stays_below_half_the_task_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_position_response_repair_20261023/test_objective.py", line 19, in test_preservation_gradient_stays_below_half_the_task_gradient
+    self.assertLessEqual(float((scale*unweighted).norm()), .5*float(task.norm())+1e-6)
+AssertionError: 186.97206115722656 not less than or equal to 0.2090664969215393
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.879s
+
+FAILED (failures=2)

@@ -1,0 +1,583 @@
+{
+  "commit": {
+    "sha": "bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3",
+    "node_id": "C_kwDOPP0J49oAKGJkZGQxYjI1NjM1YTExOTBkYzgxZDQ4ZGZhNGQ3YzUyZDFmNzhlYzM",
+    "commit": {
+      "author": {
+        "name": "A Norman Redlich",
+        "email": "anormanredlich@gmail.com",
+        "date": "2026-02-01T17:19:46Z"
+      },
+      "committer": {
+        "name": "A Norman Redlich",
+        "email": "anormanredlich@gmail.com",
+        "date": "2026-02-01T17:19:46Z"
+      },
+      "message": "Add multi tasks prompts; add saved images",
+      "tree": {
+        "sha": "805a0df8a7c1b29607020b3b967f5981a0664860",
+        "url": "https://api.github.com/repos/anredlich/lerobot/git/trees/805a0df8a7c1b29607020b3b967f5981a0664860"
+      },
+      "url": "https://api.github.com/repos/anredlich/lerobot/git/commits/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/anredlich/lerobot/commits/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3",
+    "html_url": "https://github.com/anredlich/lerobot/commit/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3",
+    "comments_url": "https://api.github.com/repos/anredlich/lerobot/commits/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/comments",
+    "author": {
+      "login": "anredlich",
+      "id": 220241259,
+      "node_id": "U_kgDODSCdaw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/220241259?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anredlich",
+      "html_url": "https://github.com/anredlich",
+      "followers_url": "https://api.github.com/users/anredlich/followers",
+      "following_url": "https://api.github.com/users/anredlich/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anredlich/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anredlich/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anredlich/subscriptions",
+      "organizations_url": "https://api.github.com/users/anredlich/orgs",
+      "repos_url": "https://api.github.com/users/anredlich/repos",
+      "events_url": "https://api.github.com/users/anredlich/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anredlich/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anredlich",
+      "id": 220241259,
+      "node_id": "U_kgDODSCdaw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/220241259?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anredlich",
+      "html_url": "https://github.com/anredlich",
+      "followers_url": "https://api.github.com/users/anredlich/followers",
+      "following_url": "https://api.github.com/users/anredlich/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anredlich/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anredlich/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anredlich/subscriptions",
+      "organizations_url": "https://api.github.com/users/anredlich/orgs",
+      "repos_url": "https://api.github.com/users/anredlich/repos",
+      "events_url": "https://api.github.com/users/anredlich/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anredlich/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "647b76276337310fca5d174ee6048f471053d0db",
+        "url": "https://api.github.com/repos/anredlich/lerobot/commits/647b76276337310fca5d174ee6048f471053d0db",
+        "html_url": "https://github.com/anredlich/lerobot/commit/647b76276337310fca5d174ee6048f471053d0db"
+      }
+    ],
+    "stats": {
+      "total": 51,
+      "additions": 47,
+      "deletions": 4
+    },
+    "files": [
+      {
+        "sha": "30d4fa78509b6cfcae0186573c689040a95cfb55",
+        "filename": "examples/evaluate_pretrained_trossen_ai_policy.py",
+        "status": "modified",
+        "additions": 6,
+        "deletions": 3,
+        "changes": 9,
+        "blob_url": "https://github.com/anredlich/lerobot/blob/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/examples%2Fevaluate_pretrained_trossen_ai_policy.py",
+        "raw_url": "https://github.com/anredlich/lerobot/raw/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/examples%2Fevaluate_pretrained_trossen_ai_policy.py",
+        "contents_url": "https://api.github.com/repos/anredlich/lerobot/contents/examples%2Fevaluate_pretrained_trossen_ai_policy.py?ref=bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3",
+        "patch": "@@ -60,8 +60,8 @@\n #pretrained_policy_path=Path(\"ANRedlich/trossen_ai_stationary_sim_act8\") #from train.py on sim ANRedlich/trossen_ai_stationary_sim_transfer_40mm_cube_08\n #pretrained_policy_path=Path(\"ANRedlich/trossen_ai_stationary_sim_act10\") #from train.py on sim ANRedlich/trossen_ai_stationary_sim_transfer_40mm_cube_10\n pretrained_policy_path=Path(\"ANRedlich/trossen_ai_stationary_sim_act13\") #from train.py on sim ANRedlich/trossen_ai_stationary_sim_transfer_40mm_cube_13\n-#this policy wasn learned from a real robot dataset. Used here to test real -> sim:\n-#pretrained_policy_path=Path(\"ANRedlich/trossen_ai_stationary_real_act2_3\") #from train.py on real ANRedlich/trossen_ai_stationary_transfer_40mm_cube_02\n+#this policy was learned from a real robot dataset. Used here to test real -> sim:\n+pretrained_policy_path=Path(\"ANRedlich/trossen_ai_stationary_real_act2_3\") #from train.py on real ANRedlich/trossen_ai_stationary_transfer_40mm_cube_02\n \n #these are additional local models, trained using train.py, however, not in the distribution\n #pretrained_policy_path=Path(\"lerobot/scripts/outputs/train/trossen_ai_stationary_act7/checkpoints/last/pretrained_model\") #from train.py on dataset.root=lerobot/scripts/dataset/eval7\n@@ -146,7 +146,10 @@\n     numpy_observation, info = env.reset(seed=41)\n elif env.unwrapped.task == 'trossen_ai_stationary_transfer_cube':\n     policy.reset()\n-    numpy_observation, info = env.reset(seed=1000) #2)\n+    if \"act2_3\" in pretrained_policy_path.name:\n+        numpy_observation, info = env.reset(seed=1002)\n+    else:\n+        numpy_observation, info = env.reset(seed=1000)\n \n if env.unwrapped.task == 'trossen_ai_stationary_transfer_cube_ee':\n     ts=dm_env.TimeStep(step_type=dm_env.StepType.FIRST,reward=None,discount=None,observation=info['raw_obs'])"
+      },
+      {
+        "sha": "935b07e134e45ec4e55cce623f1a9e5aaa237832",
+        "filename": "lerobot/common/robot_devices/control_utils.py",
+        "status": "modified",
+        "additions": 13,
+        "deletions": 0,
+        "changes": 13,
+        "blob_url": "https://github.com/anredlich/lerobot/blob/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fcommon%2Frobot_devices%2Fcontrol_utils.py",
+        "raw_url": "https://github.com/anredlich/lerobot/raw/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fcommon%2Frobot_devices%2Fcontrol_utils.py",
+        "contents_url": "https://api.github.com/repos/anredlich/lerobot/contents/lerobot%2Fcommon%2Frobot_devices%2Fcontrol_utils.py?ref=bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3",
+        "patch": "@@ -23,6 +23,7 @@\n from contextlib import nullcontext\n from copy import copy\n from functools import cache\n+import random\n \n import cv2\n import torch\n@@ -267,10 +268,14 @@ def control_loop(\n             frame = {**observation, **action, \"task\": single_task}\n             dataset.add_frame(frame)\n \n+        #save_dir = \"/home/trossen-ai/lerobot/lerobot/scripts/saved_images\"\n         if display_cameras and not is_headless():\n             image_keys = [key for key in observation if \"image\" in key]\n             for key in image_keys:\n                 cv2.imshow(key, cv2.cvtColor(observation[key].numpy(), cv2.COLOR_RGB2BGR))\n+                #save images\n+                #success = cv2.imwrite(f\"{save_dir}/{key}.jpg\", cv2.cvtColor(observation[key].numpy(), cv2.COLOR_RGB2BGR))\n+                #print(f\"Saved {key}: {success}\")\n             cv2.waitKey(1)\n \n         if fps is not None:\n@@ -354,3 +359,11 @@ def sanity_check_dataset_robot_compatibility(\n         raise ValueError(\n             \"Dataset metadata compatibility check failed with mismatches:\\n\" + \"\\n\".join(mismatches)\n         )\n+\n+def next_task(template, *lists):\n+    #example usage:\n+    #task_template = \"pick up {} cube and place in {} pan\"\n+    #cube_colors = ['red', 'yellow', 'blue']\n+    #pan_colors = ['green', 'black']\n+    #task = next_task(task_template, cube_colors, pan_colors)\n+    return template.format(*[random.choice(l) for l in lists])\n\\ No newline at end of file"
+      },
+      {
+        "sha": "4c09627a9086d3a24fc0968e81b9b4df8c84aede",
+        "filename": "lerobot/scripts/control_robot.py",
+        "status": "modified",
+        "additions": 28,
+        "deletions": 1,
+        "changes": 29,
+        "blob_url": "https://github.com/anredlich/lerobot/blob/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fcontrol_robot.py",
+        "raw_url": "https://github.com/anredlich/lerobot/raw/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fcontrol_robot.py",
+        "contents_url": "https://api.github.com/repos/anredlich/lerobot/contents/lerobot%2Fscripts%2Fcontrol_robot.py?ref=bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3",
+        "patch": "@@ -139,6 +139,7 @@\n import time\n from dataclasses import asdict\n from pprint import pformat\n+import random\n \n # from safetensors.torch import load_file, save_file\n from lerobot.common.datasets.lerobot_dataset import LeRobotDataset\n@@ -161,6 +162,7 @@\n     sanity_check_dataset_robot_compatibility,\n     stop_recording,\n     warmup_record,\n+    next_task,\n )\n from lerobot.common.robot_devices.robots.utils import Robot, make_robot_from_config\n from lerobot.common.robot_devices.utils import busy_wait, safe_disconnect\n@@ -285,13 +287,26 @@ def record(\n \n     listener, events = init_keyboard_listener()\n \n+    #anr hack: multi-tasking needs to be formalized and added to control_robot options\n+    multi_task_prompts=False\n+    if multi_task_prompts:\n+        random.seed(100)\n+        task_template = \"pick up {} cube and place in {} pan\"\n+        cube_colors = ['red', 'yellow', 'blue', 'brown', 'pink']\n+        pan_colors = ['yellow', 'silver']\n+        task=next_task(task_template, cube_colors, pan_colors) #anr hack\n+        #end anr hack\n+\n     # Execute a few seconds without recording to:\n     # 1. teleoperate the robot to move it in starting position if no policy provided,\n     # 2. give times to the robot devices to connect and start synchronizing,\n     # 3. place the cameras windows on screen\n     enable_teleoperation = policy is None\n     log_say(\"Starting warmup\", cfg.play_sounds)\n     time.sleep(2)\n+    if multi_task_prompts:\n+        log_say(f\"Setup for task {task}\", cfg.play_sounds) #anr\n+        time.sleep(2) #anr\n     warmup_record(robot, events, enable_teleoperation, cfg.warmup_time_s, cfg.display_cameras, cfg.fps)\n     log_say(\"Finished warmup\", cfg.play_sounds)\n     time.sleep(2)\n@@ -305,6 +320,12 @@ def record(\n             break\n \n         log_say(f\"Recording episode {dataset.num_episodes}\", cfg.play_sounds)\n+        single_task=cfg.single_task\n+        if multi_task_prompts:\n+            time.sleep(2) #anr\n+            log_say(f\"{task}\", cfg.play_sounds) #anr\n+            time.sleep(2) #anr\n+            single_task=task\n         record_episode(\n             robot=robot,\n             dataset=dataset,\n@@ -313,7 +334,7 @@ def record(\n             display_cameras=cfg.display_cameras,\n             policy=policy,\n             fps=cfg.fps,\n-            single_task=cfg.single_task,\n+            single_task=single_task, #cfg.single_task, anr\n         )\n         log_say(f\"Finished recording episode {dataset.num_episodes}\", cfg.play_sounds)\n         time.sleep(2)\n@@ -325,7 +346,13 @@ def record(\n         if not events[\"stop_recording\"] and (\n             (recorded_episodes < cfg.num_episodes - 1) or events[\"rerecord_episode\"]\n         ):\n+            if multi_task_prompts:\n+                task=next_task(task_template, cube_colors, pan_colors) #anr\n+                log_say(f\"Setup for task {task}\", cfg.play_sounds) #anr\n+                time.sleep(4) #anr\n             log_say(\"Reset the environment\", cfg.play_sounds)\n+            if multi_task_prompts:\n+                time.sleep(2) #anr\n             reset_environment(robot, events, cfg.reset_time_s, cfg.fps)\n             log_say(\"Stop resetting the environment\", cfg.play_sounds)\n             time.sleep(2)"
+      },
+      {
+        "sha": "c1a14ac12cb4379823d58cd01405cb1a3c72ebff",
+        "filename": "lerobot/scripts/saved_images/observation.images.cam_high.jpg",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/anredlich/lerobot/blob/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_high.jpg",
+        "raw_url": "https://github.com/anredlich/lerobot/raw/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_high.jpg",
+        "contents_url": "https://api.github.com/repos/anredlich/lerobot/contents/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_high.jpg?ref=bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3"
+      },
+      {
+        "sha": "dfdb0f234479f02d741391ac6c4073819b33014d",
+        "filename": "lerobot/scripts/saved_images/observation.images.cam_left_wrist.jpg",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/anredlich/lerobot/blob/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_left_wrist.jpg",
+        "raw_url": "https://github.com/anredlich/lerobot/raw/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_left_wrist.jpg",
+        "contents_url": "https://api.github.com/repos/anredlich/lerobot/contents/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_left_wrist.jpg?ref=bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3"
+      },
+      {
+        "sha": "8c33103d79c651d1dcd23c3e2ff560f9d7a1b845",
+        "filename": "lerobot/scripts/saved_images/observation.images.cam_low.jpg",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/anredlich/lerobot/blob/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_low.jpg",
+        "raw_url": "https://github.com/anredlich/lerobot/raw/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_low.jpg",
+        "contents_url": "https://api.github.com/repos/anredlich/lerobot/contents/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_low.jpg?ref=bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3"
+      },
+      {
+        "sha": "5ab9bbd02291012b52ef27252e45773127d28f97",
+        "filename": "lerobot/scripts/saved_images/observation.images.cam_right_wrist.jpg",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/anredlich/lerobot/blob/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_right_wrist.jpg",
+        "raw_url": "https://github.com/anredlich/lerobot/raw/bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_right_wrist.jpg",
+        "contents_url": "https://api.github.com/repos/anredlich/lerobot/contents/lerobot%2Fscripts%2Fsaved_images%2Fobservation.images.cam_right_wrist.jpg?ref=bddd1b25635a1190dc81d48dfa4d7c52d1f78ec3"
+      }
+    ]
+  },
+  "readme_history": [
+    {
+      "sha": "647b76276337310fca5d174ee6048f471053d0db",
+      "node_id": "C_kwDOPP0J49oAKDY0N2I3NjI3NjMzNzMxMGZjYTVkMTc0ZWU2MDQ4ZjQ3MTA1M2QwZGI",
+      "commit": {
+        "author": {
+          "name": "A Norman Redlich",
+          "email": "anormanredlich@gmail.com",
+          "date": "2025-11-30T03:11:02Z"
+        },
+        "committer": {
+          "name": "A Norman Redlich",
+          "email": "anormanredlich@gmail.com",
+          "date": "2025-11-30T03:11:02Z"
+        },
+        "message": "Update readme",
+        "tree": {
+          "sha": "6142a8b453f962d6cc7a68e76edb62893e4b4ba4",
+          "url": "https://api.github.com/repos/anredlich/lerobot/git/trees/6142a8b453f962d6cc7a68e76edb62893e4b4ba4"
+        },
+        "url": "https://api.github.com/repos/anredlich/lerobot/git/commits/647b76276337310fca5d174ee6048f471053d0db",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/anredlich/lerobot/commits/647b76276337310fca5d174ee6048f471053d0db",
+      "html_url": "https://github.com/anredlich/lerobot/commit/647b76276337310fca5d174ee6048f471053d0db",
+      "comments_url": "https://api.github.com/repos/anredlich/lerobot/commits/647b76276337310fca5d174ee6048f471053d0db/comments",
+      "author": {
+        "login": "anredlich",
+        "id": 220241259,
+        "node_id": "U_kgDODSCdaw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/220241259?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/anredlich",
+        "html_url": "https://github.com/anredlich",
+        "followers_url": "https://api.github.com/users/anredlich/followers",
+        "following_url": "https://api.github.com/users/anredlich/following{/other_user}",
+        "gists_url": "https://api.github.com/users/anredlich/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/anredlich/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/anredlich/subscriptions",
+        "organizations_url": "https://api.github.com/users/anredlich/orgs",
+        "repos_url": "https://api.github.com/users/anredlich/repos",
+        "events_url": "https://api.github.com/users/anredlich/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/anredlich/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "anredlich",
+        "id": 220241259,
+        "node_id": "U_kgDODSCdaw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/220241259?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/anredlich",
+        "html_url": "https://github.com/anredlich",
+        "followers_url": "https://api.github.com/users/anredlich/followers",
+        "following_url": "https://api.github.com/users/anredlich/following{/other_user}",
+        "gists_url": "https://api.github.com/users/anredlich/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/anredlich/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/anredlich/subscriptions",
+        "organizations_url": "https://api.github.com/users/anredlich/orgs",
+        "repos_url": "https://api.github.com/users/anredlich/repos",
+        "events_url": "https://api.github.com/users/anredlich/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/anredlich/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "068326fee6dfae3d8773404a3cdd5fa84cb4cd26",
+          "url": "https://api.github.com/repos/anredlich/lerobot/commits/068326fee6dfae3d8773404a3cdd5fa84cb4cd26",
+          "html_url": "https://github.com/anredlich/lerobot/commit/068326fee6dfae3d8773404a3cdd5fa84cb4cd26"
+        }
+      ]
+    },
+    {
+      "sha": "068326fee6dfae3d8773404a3cdd5fa84cb4cd26",
+      "node_id": "C_kwDOPP0J49oAKDA2ODMyNmZlZTZkZmFlM2Q4NzczNDA0YTNjZGQ1ZmE4NGNiNGNkMjY",
+      "commit": {
+        "author": {
+          "name": "A Norman Redlich",
+          "email": "anormanredlich@gmail.com",
+          "date": "2025-11-29T23:06:32Z"
+        },
+        "committer": {
+          "name": "A Norman Redlich",
+          "email": "anormanredlich@gmail.com",
+          "date": "2025-11-29T23:06:32Z"
+        },
+        "message": "evaluate and train updates and readme gifs",
+        "tree": {
+          "sha": "1e040bb77f5077f86e75b73f4220318f511219eb",
+          "url": "https://api.github.com/repos/anredlich/lerobot/git/trees/1e040bb77f5077f86e75b73f4220318f511219eb"
+        },
+        "url": "https://api.github.com/repos/anredlich/lerobot/git/commits/068326fee6dfae3d8773404a3cdd5fa84cb4cd26",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/anredlich/lerobot/commits/068326fee6dfae3d8773404a3cdd5fa84cb4cd26",
+      "html_url": "https://github.com/anredlich/lerobot/commit/068326fee6dfae3d8773404a3cdd5fa84cb4cd26",
+      "comments_url": "https://api.github.com/repos/anredlich/lerobot/commits/068326fee6dfae3d8773404a3cdd5fa84cb4cd26/comments",
+      "author": {
+        "login": "anredlich",
+        "id": 220241259,
+        "node_id": "U_kgDODSCdaw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/220241259?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/anredlich",
+        "html_url": "https://github.com/anredlich",
+        "followers_url": "https://api.github.com/users/anredlich/followers",
+        "following_url": "https://api.github.com/users/anredlich/following{/other_user}",
+        "gists_url": "https://api.github.com/users/anredlich/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/anredlich/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/anredlich/subscriptions",
+        "organizations_url": "https://api.github.com/users/anredlich/orgs",
+        "repos_url": "https://api.github.com/users/anredlich/repos",
+        "events_url": "https://api.github.com/users/anredlich/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/anredlich/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "anredlich",
+        "id": 220241259,
+        "node_id": "U_kgDODSCdaw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/220241259?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/anredlich",
+        "html_url": "https://github.com/anredlich",
+        "followers_url": "https://api.github.com/users/anredlich/followers",
+        "following_url": "https://api.github.com/users/anredlich/following{/other_user}",
+        "gists_url": "https://api.github.com/users/anredlich/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/anredlich/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/anredlich/subscriptions",
+        "organizations_url": "https://api.github.com/users/anredlich/orgs",
+        "repos_url": "https://api.github.com/users/anredlich/repos",
+        "events_url": "https://api.github.com/users/anredlich/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/anredlich/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "db1af521d1008f4963a41978fd124396b6649bdb",
+          "url": "https://api.github.com/repos/anredlich/lerobot/commits/db1af521d1008f4963a41978fd124396b6649bdb",
+          "html_url": "https://github.com/anredlich/lerobot/commit/db1af521d1008f4963a41978fd124396b6649bdb"
+        }
+      ]
+    },
+    {
+      "sha": "ae9c81ac391ba4c7c2238a10b51ec16d901603f3",
+      "node_id": "C_kwDOPP0J49oAKGFlOWM4MWFjMzkxYmE0YzdjMjIzOGExMGI1MWVjMTZkOTAxNjAzZjM",
+      "commit": {
+        "author": {
+          "name": "Yongjin Cho",
+          "email": "yongjin.cho@gmail.com",
+          "date": "2025-03-28T16:43:33Z"
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "date": "2025-03-28T16:43:33Z"
+        },
+        "message": "fix(docs): correct spelling of 'ffmpeg' in installation instructions (#914)",
+        "tree": {
+          "sha": "3c0577b72e62a60ac53be72aeb5337f9a628f115",
+          "url": "https://api.github.com/repos/anredlich/lerobot/git/trees/3c0577b72e62a60ac53be72aeb5337f9a628f115"
+        },
+        "url": "https://api.github.com/repos/anredlich/lerobot/git/commits/ae9c81ac391ba4c7c2238a10b51ec16d901603f3",
+        "comment_count": 0,
+        "verification": {
+          "verified": true,
+          "reason": "valid",
+          "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJn5tG1CRC1aQ7uu5UhlAAAbzwQAK7iSjtRUcH/pwnUtfC6uIVX\nLM+6ZVL9QnKtsHy5CXmSihmazQv0K4TjzWuzGNnFNmwn8yfYL1Q9eR5XzJaaDvYN\nJJLERWjzyu1zApTq6jfiFf+4OMyx8m38Yvh/6xY4IVwCeAEEDSIOvhTrXvUW4Jau\noIjsaPFkPYuBwjod8UJQoT+wM12FS3jecgoegZKdxKe/fDv2T4y2UcM/my1LgM6F\njInakh7Ekeg9aNjzfFU3JrWsvNnla8SnFmapx/fvfXNQN5rNyvzAho1iE8uRm7vw\nkgzlJMPby1vqsBRE6OOQM2jDbygaMkZu/D2hRAL2ZKGKcGWRKsqBkPUz2aZwuxJf\nmjke7ZPBdEClWctIFuCLi3shFAbT8sXVE2ywyaVV5tJ4yCsfzWDBrSIF+Vrt1RYS\nUNKing3URmFjUz4NMwtii3+YpsAW7OvMksRniZM9ezE0eDWrV3A20ELe5GUA7taa\n8IIYBizqUC6PZcI8zjmQiLChTVJuk+6f92ui88LEGcsILi8aUsuzpa1RKHYyzrdM\nwzcNCLuFqKo4E4mDRgzAn6Gg9P11KCc+ZOgF5UI1hSPO9PpFiPk7XlQu0p00hnxm\nYHO+mXuVRfdbwOfP+VAS3hrdq6Mp1BbgfXDlN7QthluJcfNuTZ3bPIN133jLYHWU\nUTtkNmd4vUA2Bu4nROjl\n=FEh0\n-----END PGP SIGNATURE-----\n",
+          "payload": "tree 3c0577b72e62a60ac53be72aeb5337f9a628f115\nparent 78fd1a1e04f87f3ec52428f72c29485124472fbc\nauthor Yongjin Cho <yongjin.cho@gmail.com> 1743180213 +0900\ncommitter GitHub <noreply@github.com> 1743180213 +0100\n\nfix(docs): correct spelling of 'ffmpeg' in installation instructions (#914)\n\n",
+          "verified_at": "2025-03-28T16:43:35Z"
+        }
+      },
+      "url": "https://api.github.com/repos/anredlich/lerobot/commits/ae9c81ac391ba4c7c2238a10b51ec16d901603f3",
+      "html_url": "https://github.com/anredlich/lerobot/commit/ae9c81ac391ba4c7c2238a10b51ec16d901603f3",
+      "comments_url": "https://api.github.com/repos/anredlich/lerobot/commits/ae9c81ac391ba4c7c2238a10b51ec16d901603f3/comments",
+      "author": {
+        "login": "yongjincho",
+        "id": 504255,
+        "node_id": "MDQ6VXNlcjUwNDI1NQ==",
+        "avatar_url": "https://avatars.githubusercontent.com/u/504255?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/yongjincho",
+        "html_url": "https://github.com/yongjincho",
+        "followers_url": "https://api.github.com/users/yongjincho/followers",
+        "following_url": "https://api.github.com/users/yongjincho/following{/other_user}",
+        "gists_url": "https://api.github.com/users/yongjincho/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/yongjincho/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/yongjincho/subscriptions",
+        "organizations_url": "https://api.github.com/users/yongjincho/orgs",
+        "repos_url": "https://api.github.com/users/yongjincho/repos",
+        "events_url": "https://api.github.com/users/yongjincho/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/yongjincho/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "web-flow",
+        "id": 19864447,
+        "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/web-flow",
+        "html_url": "https://github.com/web-flow",
+        "followers_url": "https://api.github.com/users/web-flow/followers",
+        "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+        "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+        "organizations_url": "https://api.github.com/users/web-flow/orgs",
+        "repos_url": "https://api.github.com/users/web-flow/repos",
+        "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/web-flow/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "78fd1a1e04f87f3ec52428f72c29485124472fbc",
+          "url": "https://api.github.com/repos/anredlich/lerobot/commits/78fd1a1e04f87f3ec52428f72c29485124472fbc",
+          "html_url": "https://github.com/anredlich/lerobot/commit/78fd1a1e04f87f3ec52428f72c29485124472fbc"
+        }
+      ]
+    },
+    {
+      "sha": "78fd1a1e04f87f3ec52428f72c29485124472fbc",
+      "node_id": "C_kwDOPP0J49oAKDc4ZmQxYTFlMDRmODdmM2VjNTI0MjhmNzJjMjk0ODUxMjQ0NzJmYmM",
+      "commit": {
+        "author": {
+          "name": "Steven Palma",
+          "email": "imstevenpmwork@ieee.org",
+          "date": "2025-03-27T08:55:06Z"
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "date": "2025-03-27T08:55:06Z"
+        },
+        "message": "chore(docs): update docs (#911)",
+        "tree": {
+          "sha": "121fcc6eb416b1f0221d44506e1106ee860f4bae",
+          "url": "https://api.github.com/repos/anredlich/lerobot/git/trees/121fcc6eb416b1f0221d44506e1106ee860f4bae"
+        },
+        "url": "https://api.github.com/repos/anredlich/lerobot/git/commits/78fd1a1e04f87f3ec52428f72c29485124472fbc",
+        "comment_count": 0,
+        "verification": {
+          "verified": true,
+          "reason": "valid",
+          "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJn5RJqCRC1aQ7uu5UhlAAA19QQAHX7lCEG0V8jKZiLLEMbS8lI\n2SPHtyNrAK1lX/+Yvco6/RZwymMmCK/Ic0Of3Vx0t+ErglBMh1e4xKlEWFI7jS02\nUHIEOT5QIxM4zzzbgB357v1+5kNFF3/2qOs3Ml3qgWZdK1qYjLUyYdXz1SbjK45d\noLi1a6FArjAQezt8kx4bRcTdGY2Gd9fINvt0cxyaP3F+VZ0rpSES/xZAs3Nq6UxA\nYn4FwHlxcLdQ2tE2NseZRMHH3Hh7KEmb26H6AvbHYzqzX+9jyXXwc+f8OlgLV4uJ\nMO0knheikPIIvnBsKC3FUTAcf4/xBZ0AmNeom+0W/IiHcC5/eOcc3L88SfSJ7YnR\nQeeVGaKDZLp6lQ/PJ8HDEthW5pTFu90H+90Fr0KVnZ/Ca9TgBRiH/R75gJMO5XsG\nXJcC0b/b830Aw1uIctYWFuXIWQ3Jp9ktPnD6gDEO5xtsmlxDGOTCfAFj1s+530tP\nzCizEwRQAKRJPbnXLXABAcqEY8MyElw6tLHN5ZFfw88omtZU9yPAEyeOBqP2zgto\n7kKV2IIK6+WwfVEpacNlFwYPPhquskdVqLwj6/5C4aWoWFfo8GjadYqhyUMmq79C\n28Fp9XilyZyA9leXDFgU7R7QoAxrGkrSW8mncTCzaRGZqhsh1vjqWE6+1715N4lF\nasgDnA5YMTODGjHPKPZy\n=TZnL\n-----END PGP SIGNATURE-----\n",
+          "payload": "tree 121fcc6eb416b1f0221d44506e1106ee860f4bae\nparent 90533e6b9fc50f495f150529b681697d880dfe59\nauthor Steven Palma <imstevenpmwork@ieee.org> 1743065706 +0100\ncommitter GitHub <noreply@github.com> 1743065706 +0100\n\nchore(docs): update docs (#911)\n\n",
+          "verified_at": "2025-03-27T08:55:09Z"
+        }
+      },
+      "url": "https://api.github.com/repos/anredlich/lerobot/commits/78fd1a1e04f87f3ec52428f72c29485124472fbc",
+      "html_url": "https://github.com/anredlich/lerobot/commit/78fd1a1e04f87f3ec52428f72c29485124472fbc",
+      "comments_url": "https://api.github.com/repos/anredlich/lerobot/commits/78fd1a1e04f87f3ec52428f72c29485124472fbc/comments",
+      "author": {
+        "login": "imstevenpmwork",
+        "id": 58737870,
+        "node_id": "MDQ6VXNlcjU4NzM3ODcw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/58737870?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/imstevenpmwork",
+        "html_url": "https://github.com/imstevenpmwork",
+        "followers_url": "https://api.github.com/users/imstevenpmwork/followers",
+        "following_url": "https://api.github.com/users/imstevenpmwork/following{/other_user}",
+        "gists_url": "https://api.github.com/users/imstevenpmwork/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/imstevenpmwork/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/imstevenpmwork/subscriptions",
+        "organizations_url": "https://api.github.com/users/imstevenpmwork/orgs",
+        "repos_url": "https://api.github.com/users/imstevenpmwork/repos",
+        "events_url": "https://api.github.com/users/imstevenpmwork/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/imstevenpmwork/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "web-flow",
+        "id": 19864447,
+        "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/web-flow",
+        "html_url": "https://github.com/web-flow",
+        "followers_url": "https://api.github.com/users/web-flow/followers",
+        "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+        "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+        "organizations_url": "https://api.github.com/users/web-flow/orgs",
+        "repos_url": "https://api.github.com/users/web-flow/repos",
+        "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/web-flow/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "90533e6b9fc50f495f150529b681697d880dfe59",
+          "url": "https://api.github.com/repos/anredlich/lerobot/commits/90533e6b9fc50f495f150529b681697d880dfe59",
+          "html_url": "https://github.com/anredlich/lerobot/commit/90533e6b9fc50f495f150529b681697d880dfe59"
+        }
+      ]
+    },
+    {
+      "sha": "90533e6b9fc50f495f150529b681697d880dfe59",
+      "node_id": "C_kwDOPP0J49oAKDkwNTMzZTZiOWZjNTBmNDk1ZjE1MDUyOWI2ODE2OTdkODgwZGZlNTk",
+      "commit": {
+        "author": {
+          "name": "Steven Palma",
+          "email": "imstevenpmwork@ieee.org",
+          "date": "2025-03-26T12:21:40Z"
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "date": "2025-03-26T12:21:40Z"
+        },
+        "message": "fix(docs): hot-fix updating installation instructions after #883 (#907)",
+        "tree": {
+          "sha": "35cf9862ac130781f26de68fcd4572e3208f9bd4",
+          "url": "https://api.github.com/repos/anredlich/lerobot/git/trees/35cf9862ac130781f26de68fcd4572e3208f9bd4"
+        },
+        "url": "https://api.github.com/repos/anredlich/lerobot/git/commits/90533e6b9fc50f495f150529b681697d880dfe59",
+        "comment_count": 0,
+        "verification": {
+          "verified": true,
+          "reason": "valid",
+          "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJn4/FUCRC1aQ7uu5UhlAAAnvoQAKMRcdFupx0EwG1XuUAOqt6m\n6vTUzazdO38hM5/Dj109zpOJOvCVyNdXJtA8YlJO8QERmPI6SLjuVhl/eTtIvkO0\nwBmTJAeWKuuQsSuJaVvwSmcMO9AUZRVyunUrerX0QEDLNY3F/iMqkArddaGTP4xr\nRDl/+qoie+w9NWDdjQmJF+61+lAIOKjZ9CIVLCYWJIg6aP6iinv5iBVBGkQoKVeW\nsWVMjQLve/f3QRnXI8Hv1pgDefChb//xqIZC1nUSJx1UnscqO1W6RqsbAMNRC+sN\nnsPEF2G1EeWFVHI/63NzKFxFp0km1Fum9/R3mHKnEVgme952Vq3T91naN5sFePSr\n4N241QdGwE7/ZXWwNmv0Kjg5LurTcgOKQ4T/mxTNU5yTp70l03G2C1UUXCbHhZBk\n/76dXaZVxpzNxM+yyiafvli1U6y3O0H7jw1YWvaUKjnvvKu+kCXpzPpAYhorjgup\n+nZa/htU0EfXjHivOJvU5FfxbYLxmVnuSzz7exYzcsX0i6S3pKXpavXagLr4WB4l\newZurX+cmyF5l1H+BUp6TPsU0lTgfu4v/lfSozP2yVrVAXXwN26Vrklzv8W3YaII\njNJoqGhy48X5BYlNzvMW0Yyatu19AWozZHs2Pr2Jus6B3HoT0IvMyHJdDU6FZBQe\nM7ZUKy7XjIldm2ieUWdy\n=sbfh\n-----END PGP SIGNATURE-----\n",
+          "payload": "tree 35cf9862ac130781f26de68fcd4572e3208f9bd4\nparent 2c22f7d76da3fcbd06ad8fbfd6baf1b13f5f0956\nauthor Steven Palma <imstevenpmwork@ieee.org> 1742991700 +0100\ncommitter GitHub <noreply@github.com> 1742991700 +0100\n\nfix(docs): hot-fix updating installation instructions after #883 (#907)\n\n",
+          "verified_at": "2025-03-26T12:21:42Z"
+        }
+      },
+      "url": "https://api.github.com/repos/anredlich/lerobot/commits/90533e6b9fc50f495f150529b681697d880dfe59",
+      "html_url": "https://github.com/anredlich/lerobot/commit/90533e6b9fc50f495f150529b681697d880dfe59",
+      "comments_url": "https://api.github.com/repos/anredlich/lerobot/commits/90533e6b9fc50f495f150529b681697d880dfe59/comments",
+      "author": {
+        "login": "imstevenpmwork",
+        "id": 58737870,
+        "node_id": "MDQ6VXNlcjU4NzM3ODcw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/58737870?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/imstevenpmwork",
+        "html_url": "https://github.com/imstevenpmwork",
+        "followers_url": "https://api.github.com/users/imstevenpmwork/followers",
+        "following_url": "https://api.github.com/users/imstevenpmwork/following{/other_user}",
+        "gists_url": "https://api.github.com/users/imstevenpmwork/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/imstevenpmwork/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/imstevenpmwork/subscriptions",
+        "organizations_url": "https://api.github.com/users/imstevenpmwork/orgs",
+        "repos_url": "https://api.github.com/users/imstevenpmwork/repos",
+        "events_url": "https://api.github.com/users/imstevenpmwork/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/imstevenpmwork/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "web-flow",
+        "id": 19864447,
+        "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/web-flow",
+        "html_url": "https://github.com/web-flow",
+        "followers_url": "https://api.github.com/users/web-flow/followers",
+        "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+        "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+        "organizations_url": "https://api.github.com/users/web-flow/orgs",
+        "repos_url": "https://api.github.com/users/web-flow/repos",
+        "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/web-flow/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "2c22f7d76da3fcbd06ad8fbfd6baf1b13f5f0956",
+          "url": "https://api.github.com/repos/anredlich/lerobot/commits/2c22f7d76da3fcbd06ad8fbfd6baf1b13f5f0956",
+          "html_url": "https://github.com/anredlich/lerobot/commit/2c22f7d76da3fcbd06ad8fbfd6baf1b13f5f0956"
+        }
+      ]
+    }
+  ]
+}

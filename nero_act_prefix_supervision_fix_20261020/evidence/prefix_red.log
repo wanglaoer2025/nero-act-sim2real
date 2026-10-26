@@ -1,0 +1,52 @@
+......FFF                                                                [100%]
+=================================== FAILURES ===================================
+_____ test_prefix_loss_uses_physical_units_and_only_first_two_valid_points _____
+
+    def test_prefix_loss_uses_physical_units_and_only_first_two_valid_points():
+>       from training.train import deployed_prefix_loss
+E       ImportError: cannot import name 'deployed_prefix_loss' from 'training.train' (/home/user/wq/nero_act_prefix_supervision_fix_20261020/training/train.py)
+
+tests/test_deployed_prefix_loss.py:7: ImportError
+_______ test_prefix_auxiliary_reaches_actual_zero_latent_arm_and_gripper _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7cd033e19b20>
+
+    def test_prefix_auxiliary_reaches_actual_zero_latent_arm_and_gripper(monkeypatch):
+        from training.train import FullTaskPolicy
+        from executor.model import BoundedActPolicy
+        fixture=CvaeTrainingTests();config=fixture.config(deployed_prefix_loss_weight=.01,prior_gripper_loss_weight=0.)
+        torch.set_num_threads(2);policy=FullTaskPolicy(config).train()
+        prior=torch.zeros(1,20,8,requires_grad=True);posterior=torch.zeros(1,20,8,requires_grad=True)
+        def forward(self,q,image,actions=None,is_pad=None,**kwargs):
+            if actions is not None:return dict(a_hat=posterior,kl=posterior.sum()*0)
+            return dict(a_hat=prior,unbounded_a_hat=prior) if kwargs.get('return_unbounded') else prior
+        monkeypatch.setattr(BoundedActPolicy,'forward',forward)
+        q,image,target,pad=fixture.inputs();out=policy(q,image,target,pad)
+>       assert out['deployed_prefix']>0
+E       KeyError: 'deployed_prefix'
+
+tests/test_deployed_prefix_loss.py:31: KeyError
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 12.58M
+_______________ test_prefix_weight_rejects_nonfinite_or_negative _______________
+
+    def test_prefix_weight_rejects_nonfinite_or_negative():
+        from training.train import FullTaskPolicy
+        fixture=CvaeTrainingTests()
+        for v in [-1.,float('nan'),float('inf')]:
+>           with pytest.raises(ValueError,match='prefix'):
+E           Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_deployed_prefix_loss.py:42: Failed
+----------------------------- Captured stdout call -----------------------------
+number of parameters: 12.58M
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_deployed_prefix_loss.py::test_prefix_loss_uses_physical_units_and_only_first_two_valid_points
+FAILED tests/test_deployed_prefix_loss.py::test_prefix_auxiliary_reaches_actual_zero_latent_arm_and_gripper
+FAILED tests/test_deployed_prefix_loss.py::test_prefix_weight_rejects_nonfinite_or_negative
+3 failed, 6 passed, 1 warning in 3.31s

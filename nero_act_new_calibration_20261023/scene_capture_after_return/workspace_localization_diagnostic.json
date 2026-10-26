@@ -1,0 +1,61 @@
+{
+  "diagnostic_only": true,
+  "runtime_qualified": false,
+  "hardware_commands_sent": false,
+  "modification": "Image-derived geometry only: ray/table intersection gate within existing teacher workspace XY; ACT RGB input remains full unmasked image",
+  "support_plane_z_m_assumed": 0,
+  "workspace_xy_m": [
+    [
+      -0.65,
+      0
+    ],
+    [
+      -0.3,
+      0.3
+    ]
+  ],
+  "hypothesis": "Display blue regions outside the table workspace cause full-image uniqueness rejection",
+  "blue_components_before": [
+    {
+      "area_px": 8337.0,
+      "bbox_xywh": [
+        635,
+        530,
+        115,
+        87
+      ],
+      "vertices": 4,
+      "inside_workspace_fraction": 1.0
+    },
+    {
+      "area_px": 648.5,
+      "bbox_xywh": [
+        334,
+        212,
+        70,
+        12
+      ],
+      "vertices": 4,
+      "inside_workspace_fraction": 0.0
+    },
+    {
+      "area_px": 829.0,
+      "bbox_xywh": [
+        360,
+        75,
+        99,
+        21
+      ],
+      "vertices": 5,
+      "inside_workspace_fraction": 0.0
+    }
+  ],
+  "passed": false,
+  "error": "ValueError: Unique visible cup and target required",
+  "existing_unique_blue_box_after_workspace_gate": [
+    636,
+    530,
+    749,
+    615
+  ]
+}

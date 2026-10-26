@@ -1,0 +1,14 @@
+test_training_updates_only_the_existing_action_head_and_preserves_frozen_buffers (test_head_finetune.HeadFinetuneTests.test_training_updates_only_the_existing_action_head_and_preserves_frozen_buffers) ... FAIL
+
+======================================================================
+FAIL: test_training_updates_only_the_existing_action_head_and_preserves_frozen_buffers (test_head_finetune.HeadFinetuneTests.test_training_updates_only_the_existing_action_head_and_preserves_frozen_buffers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_replay_ready_retest_20261019/tests/test_head_finetune.py", line 11, in test_training_updates_only_the_existing_action_head_and_preserves_frozen_buffers
+    self.assertIsNotNone(importlib.util.find_spec('training.head_finetune'))
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

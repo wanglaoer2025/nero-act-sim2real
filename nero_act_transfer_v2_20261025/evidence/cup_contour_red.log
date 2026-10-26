@@ -1,0 +1,105 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_carry_transition_uses_contour_constraints_when_bbox_fit_is_biased ____
+
+mask = array([[False, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False],
+      ...e, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False]], shape=(720, 1280))
+cylinder = <vendor.cylinder.NominalImageEstimator object at 0x7e3fdf342120>
+
+    def current_cup_component(mask, cylinder=None):
+        connected=cv2.morphologyEx(np.asarray(mask,np.uint8),cv2.MORPH_CLOSE,np.ones((3,3),np.uint8))
+        try:
+            # Preserve every previously accepted input/output exactly.
+>           return NominalImageEstimator.component(connected,15)[0]
+
+observer.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mask = array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], shape=(720, 1280), dtype=uint8)
+minimum = 15
+
+    @staticmethod
+    def component(mask, minimum):
+        count, labels, stats, centers = cv2.connectedComponentsWithStats(mask.astype(np.uint8))
+        indices = [i for i in range(1, count) if stats[i, cv2.CC_STAT_AREA] >= minimum]
+        if len(indices) != 1:
+>           raise ValueError('Unique visible cup and target required')
+E           ValueError: Unique visible cup and target required
+
+vendor/cylinder.py:46: ValueError
+
+During handling of the above exception, another exception occurred:
+
+    def test_carry_transition_uses_contour_constraints_when_bbox_fit_is_biased():
+        ob, _ = observer_and_image()
+        rgb = cv2.cvtColor(cv2.imread(str(FIXTURE / 'cup_split_carry_transition.png')), cv2.COLOR_BGR2RGB)
+        ob = UnifiedObserver(ob.cylinder.profile, rgb.shape[:2], tcp_from_q=lambda q: np.zeros(3))
+        ob.register([rgb] * 3)
+>       result = ob.measure(rgb, 1., 1, np.r_[np.zeros(7), .075])
+
+tests/test_cup_geometry.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observer.py:218: in measure
+    mask=current_cup_component((hsv[:,:,0]>=15)&(hsv[:,:,0]<=45)&
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mask = array([[False, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False],
+      ...e, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False]], shape=(720, 1280))
+cylinder = <vendor.cylinder.NominalImageEstimator object at 0x7e3fdf342120>
+
+    def current_cup_component(mask, cylinder=None):
+        connected=cv2.morphologyEx(np.asarray(mask,np.uint8),cv2.MORPH_CLOSE,np.ones((3,3),np.uint8))
+        try:
+            # Preserve every previously accepted input/output exactly.
+            return NominalImageEstimator.component(connected,15)[0]
+        except ValueError:
+            count,labels,stats,_=cv2.connectedComponentsWithStats(connected)
+            ids=[i for i in range(1,count) if stats[i,cv2.CC_STAT_AREA]>=15]
+            retained=np.isin(labels,ids)
+            enclosing=[]
+            for i in ids:
+                y,x=np.nonzero(labels==i)
+                hull=cv2.convexHull(np.c_[x,y].astype('int32'))
+                envelope=np.zeros_like(connected)
+                cv2.fillConvexPoly(envelope,hull,1)
+                if not (retained&~envelope.astype(bool)).any():enclosing.append(i)
+            # Every retained fragment must lie inside ONE observed body's hull;
+            # a second exterior object is never discarded or merged by distance.
+            if len(enclosing)==1:return retained
+            if cylinder is None or len(ids)<2:
+                raise ValueError('Unique visible cup and target required')
+            # A finger can split the visible outline itself. Associate fragments
+            # against the projected complete cup, never the largest blob alone.
+            y,x=np.nonzero(retained)
+            if min(x)==0 or max(x)==cylinder.width-1 or min(y)==0 or max(y)==cylinder.height-1:
+                raise ValueError('Cup clipped by image boundary')
+            bounds=np.array([min(x)-.5,min(y)-.5,max(x)+.5,max(y)+.5])
+            initial=cylinder.ray_at_table([(min(x)+max(x))/2,max(y)])
+            initial[2]=cylinder.profile['table_top_z_m']
+            def residual(bottom):
+                pixels=cylinder.project(cylinder.surface+bottom)
+                return np.r_[pixels.min(0),pixels.max(0)]-bounds
+            fit=least_squares(residual,np.clip(initial,[-.9,-.6,-.03],[-.15,.4,.42]),
+                              bounds=([-.9,-.6,-.03],[-.15,.4,.42]),max_nfev=30,diff_step=1e-4)
+            if not fit.success or np.sqrt(np.mean(fit.fun**2))>2.5:
+                raise ValueError('Fragments inconsistent with one nominal cup')
+            hull=cylinder.cup_hull(fit.x)
+            outline=cv2.convexHull(np.c_[x,y].astype('float32')).reshape(-1,2)
+            if any(cv2.pointPolygonTest(hull,tuple(point),True)<-2.5 for point in outline):
+>               raise ValueError('Exterior colour candidate outside projected cup')
+E               ValueError: Exterior colour candidate outside projected cup
+
+observer.py:51: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_cup_geometry.py::test_carry_transition_uses_contour_constraints_when_bbox_fit_is_biased
+1 failed in 0.68s

@@ -1,0 +1,62 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.0,
+  "maximum_horizontal_transfer_m": 1.725761712838851e-08,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.6286852068013178,
+      -0.025993112428489284,
+      0.04749668781092444
+    ],
+    "tcp_xyz": [
+      -0.5263574336631842,
+      -0.05777313556642726,
+      0.3396579171507357
+    ],
+    "cup_upright": 0.9999999999999742,
+    "cup_speed": 3.10696335459554e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.094999997877623,
+    "contract_valid": true
+  },
+  "scenario": {
+    "name": "noncontact_prefix_export_only",
+    "seed": 191899,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false
+  },
+  "frames": 404,
+  "active_policy_points": 400,
+  "queries": 200,
+  "error": "RuntimeError: Bounded_noncontact_export_end_after400_ACT_points",
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 1,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 0,
+  "runtime_s": 7.114861276000738,
+  "contact_arm_hold_points": 0,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": false,
+  "inference_latency_p95_ms": 6.1096705350792035,
+  "guard_diagnostic": null
+}

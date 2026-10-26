@@ -1,0 +1,39 @@
+{
+  "stage": "training_complete_evaluation_pending",
+  "complete": true,
+  "training_budget": {
+    "kind": "updates",
+    "limit": 1000
+  },
+  "actual_updates": 1000,
+  "actual_epochs": 0,
+  "selected_checkpoint": "policy_last.ckpt",
+  "last_metrics": {
+    "epoch": 0,
+    "actual_updates": 1000,
+    "train": {
+      "loss": 0.004773063958855346,
+      "l1": 0.00228860295569757,
+      "kl": 0.00022697223536670208,
+      "gripper_bce": 0.0,
+      "prefix_margin": 0.0,
+      "pose_position": 0.028207655570004136,
+      "pose_rotation": 0.019774367884267122,
+      "prior_gripper": 0.01702656352566555
+    },
+    "val": {
+      "loss": 0.008767895414466348,
+      "l1": 0.004140783751885853,
+      "kl": 0.0,
+      "gripper_bce": 0.0,
+      "prefix_margin": 0.0,
+      "pose_position": 0.06380671796850973,
+      "pose_rotation": 0.026753812263384358,
+      "prior_gripper": 0.01981700738574859
+    },
+    "elapsed_s": 46.19328426301945
+  },
+  "best_zero_latent_val_loss": 0.008767895414466348,
+  "elapsed_s": 50.85699636104982,
+  "hardware_deployment_allowed": false
+}

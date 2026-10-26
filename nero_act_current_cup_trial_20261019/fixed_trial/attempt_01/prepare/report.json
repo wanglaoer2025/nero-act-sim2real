@@ -1,0 +1,281 @@
+{
+  "mode": "fixed_trial_high_empty_gripper_preparation",
+  "success": true,
+  "execution_goal_submitted": true,
+  "arm_targets_held": true,
+  "force_limit_n": 1.0,
+  "automatic_retry": false,
+  "automatic_return": false,
+  "validation_service_calls": [
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 542378.409950028,
+      "duration_s": 0.060014420887455344
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 542378.57586759,
+      "duration_s": 0.002241399954073131
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 542378.683526985,
+      "duration_s": 0.004516168963164091
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 542385.505650704,
+      "duration_s": 0.002173541928641498
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 542385.509101267,
+      "duration_s": 0.002236908068880439
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 542385.514453484,
+      "duration_s": 0.002187234000302851
+    },
+    {
+      "service": "/get_planning_scene",
+      "started_monotonic_s": 542385.656326243,
+      "duration_s": 0.002153482986614108
+    }
+  ],
+  "actual_start": [
+    0.18331193133696444,
+    -0.12651891747706895,
+    0.10004227272431497,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.28173104785692465,
+    0.13102186694721432,
+    0.094913
+  ],
+  "driver": {
+    "arm_type": "nero",
+    "effector_type": "agx_gripper",
+    "can_port": "can0",
+    "fw_version": "v120",
+    "control_enabled": false,
+    "speed_percent": 5,
+    "auto_enable": false,
+    "use_sim_time": false
+  },
+  "moveit_parameters": {
+    "use_sim_time": false,
+    "allow_trajectory_execution": true
+  },
+  "groups": {
+    "arm": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "gripper": [
+      "gripper"
+    ]
+  },
+  "topic_publishers": {
+    "/feedback/joint_states": [
+      {
+        "name": "agx_arm_ctrl_single_node",
+        "namespace": "/"
+      }
+    ],
+    "/control/joint_states": [
+      {
+        "name": "joint_state_broadcaster",
+        "namespace": "/"
+      }
+    ],
+    "/control/gated_joint_states": [
+      {
+        "name": "control_gate",
+        "namespace": "/"
+      }
+    ]
+  },
+  "direct_command_publishers": {
+    "/control/move_j": 0,
+    "/control/move_js": 0,
+    "/control/move_p": 0,
+    "/control/move_l": 0,
+    "/control/move_c": 0,
+    "/control/move_cpv": 0,
+    "/control/move_mit": 0
+  },
+  "controllers": [
+    {
+      "name": "joint_state_broadcaster",
+      "state": "active",
+      "type": "joint_state_broadcaster/JointStateBroadcaster"
+    },
+    {
+      "name": "gripper_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    },
+    {
+      "name": "arm_controller",
+      "state": "active",
+      "type": "joint_trajectory_controller/JointTrajectoryController"
+    }
+  ],
+  "world_object_ids": [
+    "act_task_cup",
+    "nero_table"
+  ],
+  "observed_bridge_states": {
+    "/feedback/joint_states": {
+      "receipt": 542378.468592469,
+      "stamp": 1792340123.386598,
+      "q": [
+        0.1832246648743647,
+        -0.12651891747706895,
+        0.10004227272431497,
+        1.5707963267948966,
+        -0.02392846404484226,
+        0.28173104785692465,
+        0.13102186694721432,
+        0.094913
+      ]
+    },
+    "/control/joint_states": {
+      "receipt": 542378.469319102,
+      "stamp": 1792340123.386092,
+      "q": [
+        0.1832246631383896,
+        -0.12651892006397247,
+        0.10004227608442307,
+        1.5707963705062866,
+        -0.023928463459014893,
+        0.2816786766052246,
+        0.1310218721628189,
+        0.09491299837827682
+      ]
+    }
+  },
+  "geometry_scope": "running MoveIt scene only; operator must verify clear air locally",
+  "preflight_complete": true,
+  "bridge_discovery_wait_s": 0.0003122800262644887,
+  "execution_readiness_checks_passed": true,
+  "initial_scene": {
+    "capture_wall_s": 1792340129.93109,
+    "geometry_fit_passed": true,
+    "table_z_base_mm": 0.0,
+    "targets": {
+      "source_bottom_mm": [
+        -528.6413521260032,
+        16.55450154769321,
+        0.0
+      ],
+      "destination_mm": [
+        -524.7430757905182,
+        -162.05567896289506,
+        0.0
+      ]
+    },
+    "observations": [
+      {
+        "cup_xyz": [
+          -0.5286413521260032,
+          0.01655450154769321,
+          0.0
+        ],
+        "target_xyz": [
+          -0.5247430757905183,
+          -0.16205567896289505,
+          0.0
+        ],
+        "camera_monotonic_s": 542383.338247307,
+        "frame": "/home/user/wq/nero_act_current_cup_trial_20261019/fixed_trial/attempt_01/prepare/camera_inputs/camera_00000.png",
+        "fit_rmse_px": 1.5201222269213632
+      },
+      {
+        "cup_xyz": [
+          -0.5286413521260032,
+          0.01655450154769321,
+          0.0
+        ],
+        "target_xyz": [
+          -0.5247430757905183,
+          -0.16205567896289505,
+          0.0
+        ],
+        "camera_monotonic_s": 542384.509262638,
+        "frame": "/home/user/wq/nero_act_current_cup_trial_20261019/fixed_trial/attempt_01/prepare/camera_inputs/camera_00001.png",
+        "fit_rmse_px": 1.5201222269213632
+      },
+      {
+        "cup_xyz": [
+          -0.5286413521260032,
+          0.01655450154769321,
+          0.0
+        ],
+        "target_xyz": [
+          -0.5247430757905183,
+          -0.16205567896289505,
+          0.0
+        ],
+        "camera_monotonic_s": 542385.00948821,
+        "frame": "/home/user/wq/nero_act_current_cup_trial_20261019/fixed_trial/attempt_01/prepare/camera_inputs/camera_00002.png",
+        "fit_rmse_px": 1.5201222269213632
+      }
+    ],
+    "geometry_source": "current camera fit to accepted approximate table/TCP model"
+  },
+  "collision_check_counts": [
+    80
+  ],
+  "start": [
+    0.18331193133696444,
+    -0.12651891747706895,
+    0.10004227272431497,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.28173104785692465,
+    0.13102186694721432,
+    0.094913
+  ],
+  "target": [
+    0.18331193133696444,
+    -0.12651891747706895,
+    0.10004227272431497,
+    1.5707963267948966,
+    -0.02392846404484226,
+    0.28173104785692465,
+    0.13102186694721432,
+    0.095
+  ],
+  "duration_s": 4.0,
+  "physical_result": {
+    "success": true,
+    "actual_feedback_required": true,
+    "action_success": true,
+    "corridor_passed": true,
+    "last5_arm_error_rad": 6.981317007975774e-05,
+    "last5_gripper_error_m": 8.299999999999974e-05
+  },
+  "planned_gate_handoff_allowed": true,
+  "final_actual": [
+    0.18329447804444451,
+    -0.12650146418454902,
+    0.10004227272431497,
+    1.5707963267948966,
+    -0.023911010752322315,
+    0.28173104785692465,
+    0.13103932023973427,
+    0.094917
+  ],
+  "finished_wall_s": 1792340137.192523,
+  "cancel_requested_for_handles": 2,
+  "unresolved_goal_acknowledgements": 0,
+  "unresolved_cancellation_replies": 0,
+  "driver_gate_closed_for_abort": true
+}

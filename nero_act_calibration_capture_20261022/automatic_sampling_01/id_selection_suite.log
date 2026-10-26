@@ -1,0 +1,277 @@
+.............................................FF.............FF           [100%]
+=================================== FAILURES ===================================
+_____________________ test_reviewed_20mm_plan_is_arm_only ______________________
+
+    def test_reviewed_20mm_plan_is_arm_only():
+        m=api(); p=plan()
+>       m.validate_plan(p)
+
+tests/test_lower_for_board.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = {'camera_extrinsic_used': False, 'can_tx_after': 907, 'can_tx_before': 907, 'collision_check_complete': False, ...}
+
+    def validate_plan(plan):
+        drop=plan.get('drop_m',.020)
+        if (isinstance(drop,bool) or not isinstance(drop,(int,float)) or not np.isfinite(drop)
+                or not .002<=drop<=.020):
+            raise ValueError('Framing distance must be2–20mm')
+        start=np.asarray(plan['initial_state'],float)
+        rows=np.asarray(plan['waypoints_rad'],float)
+        poses=np.asarray(plan['flange_poses_fk'],float)
+        if (start.shape!=(8,) or rows.ndim!=2 or rows.shape[1]!=7 or not 1<=len(rows)<=26
+                or poses.shape!=(len(rows),6) or not np.isfinite(np.r_[start,rows.ravel(),poses.ravel()]).all()
+                or plan['speed_percent']!=1 or plan['gripper_commands']!=0
+                or not all(plan[k] is True for k in ['no_enable','no_reset','no_follower_transition'])):
+            raise ValueError('Reviewed arm-only1percent framing plan required')
+        if np.max(abs(np.diff(np.vstack([start[:7],rows]),axis=0)))>.006001:
+            raise ValueError('Framing joint step exceeds0.006rad')
+        if np.max(abs(rows-start[:7]))>.15:
+            raise ValueError('Framing total joint change exceeds0.15rad')
+        first=flange_transform(plan['initial_flange_fk'])
+        for pose in poses:
+            T=flange_transform(pose)
+            if (np.max(abs(T[:2,3]-first[:2,3]))>.0001 or not first[2,3]-drop-.0001<=T[2,3]<=first[2,3]+.0001
+                    or T[2,3]<.4 or Rotation.from_matrix(first[:3,:3].T@T[:3,:3]).magnitude()>.001):
+                raise ValueError('Framing path must remain vertical and preserve orientation above0.4m')
+        if abs(poses[-1,2]-(first[2,3]-drop))>.0001 or np.any(np.diff(poses[:,2])>.0001):
+            raise ValueError('Only the declared monotonic framing descent is accepted')
+        for source,digest in plan['source_sha256'].items():
+            if hashlib.sha256(Path(source).read_bytes()).hexdigest()!=digest:
+>               raise ValueError('Reviewed planning source changed: '+source)
+E               ValueError: Reviewed planning source changed: /home/user/wq/nero_act_calibration_capture_20261022/capture.py
+
+lower_for_board.py:43: ValueError
+_________ test_shorter_framing_adjustment_retains_the_20mm_upper_bound _________
+
+    def test_shorter_framing_adjustment_retains_the_20mm_upper_bound():
+        p=plan();p['drop_m']=.010
+        p['waypoints_rad']=p['waypoints_rad'][:8]
+        p['flange_poses_fk']=p['flange_poses_fk'][:8]
+        p['waypoint_count']=8
+>       api().validate_plan(p)
+
+tests/test_lower_for_board.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = {'camera_extrinsic_used': False, 'can_tx_after': 907, 'can_tx_before': 907, 'collision_check_complete': False, ...}
+
+    def validate_plan(plan):
+        drop=plan.get('drop_m',.020)
+        if (isinstance(drop,bool) or not isinstance(drop,(int,float)) or not np.isfinite(drop)
+                or not .002<=drop<=.020):
+            raise ValueError('Framing distance must be2–20mm')
+        start=np.asarray(plan['initial_state'],float)
+        rows=np.asarray(plan['waypoints_rad'],float)
+        poses=np.asarray(plan['flange_poses_fk'],float)
+        if (start.shape!=(8,) or rows.ndim!=2 or rows.shape[1]!=7 or not 1<=len(rows)<=26
+                or poses.shape!=(len(rows),6) or not np.isfinite(np.r_[start,rows.ravel(),poses.ravel()]).all()
+                or plan['speed_percent']!=1 or plan['gripper_commands']!=0
+                or not all(plan[k] is True for k in ['no_enable','no_reset','no_follower_transition'])):
+            raise ValueError('Reviewed arm-only1percent framing plan required')
+        if np.max(abs(np.diff(np.vstack([start[:7],rows]),axis=0)))>.006001:
+            raise ValueError('Framing joint step exceeds0.006rad')
+        if np.max(abs(rows-start[:7]))>.15:
+            raise ValueError('Framing total joint change exceeds0.15rad')
+        first=flange_transform(plan['initial_flange_fk'])
+        for pose in poses:
+            T=flange_transform(pose)
+            if (np.max(abs(T[:2,3]-first[:2,3]))>.0001 or not first[2,3]-drop-.0001<=T[2,3]<=first[2,3]+.0001
+                    or T[2,3]<.4 or Rotation.from_matrix(first[:3,:3].T@T[:3,:3]).magnitude()>.001):
+                raise ValueError('Framing path must remain vertical and preserve orientation above0.4m')
+        if abs(poses[-1,2]-(first[2,3]-drop))>.0001 or np.any(np.diff(poses[:,2])>.0001):
+            raise ValueError('Only the declared monotonic framing descent is accepted')
+        for source,digest in plan['source_sha256'].items():
+            if hashlib.sha256(Path(source).read_bytes()).hexdigest()!=digest:
+>               raise ValueError('Reviewed planning source changed: '+source)
+E               ValueError: Reviewed planning source changed: /home/user/wq/nero_act_calibration_capture_20261022/capture.py
+
+lower_for_board.py:43: ValueError
+____ test_entry_persists_send_intent_at_hardware_submission_boundary[speed] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-93/test_entry_persists_send_inten0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d2960ef2f00>
+boundary = 'speed'
+
+    @pytest.mark.parametrize('boundary',['speed','arm'])
+    def test_entry_persists_send_intent_at_hardware_submission_boundary(tmp_path,monkeypatch,boundary):
+        m=api();p=plan();plan_path=tmp_path/'plan.json'
+        plan_path.write_text(json.dumps(p))
+        onsite=tmp_path/'onsite.json'
+        onsite.write_text(json.dumps(dict(plan_sha256=hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+            confirmed_epoch_s=time.time(),stop_access=True,whole_arm_and_new_mount_clearance=True,no_other_controller=True)))
+        output=tmp_path/'execution'
+        calls=[]
+        class FakeSDK:
+            def fk(self,q):
+                for row,pose in zip(p['waypoints_rad'],p['flange_poses_fk']):
+                    if np.array_equal(q,row):return pose
+                raise AssertionError('Unexpected unreviewed FK target')
+            def set_speed_percent(self,speed):
+                saved=json.loads((output/'execution.json').read_text())
+                if boundary=='speed':assert saved.get('speed_setting_attempted') is True
+                calls.append('speed')
+                if boundary=='speed':raise RuntimeError('stop at speed boundary')
+            def move_j(self,q):
+                saved=json.loads((output/'execution.json').read_text())
+                assert saved['events'][0]['send_attempted'] is True
+                assert saved['events'][0]['send_returned'] is False
+                calls.append('arm')
+                raise RuntimeError('stop at arm boundary')
+        class FakeRobot:
+            def __init__(self,**_):
+                self.sdk=FakeSDK();self.allow_no_solution=True;self.max_age_s=.15
+            def connect(self):pass
+            def disconnect(self):pass
+            def stop_sending(self):pass
+            def read_health(self,**_):
+                h=copy.deepcopy(p['health_samples'][-1])
+                h['feedback_timestamps']=[time.time()]*19
+                return h
+        monkeypatch.syspath_prepend('/home/user/zyh/src')
+        import nero_pi05.robot
+        monkeypatch.setattr(nero_pi05.robot,'NeroRobot',FakeRobot)
+        read_text=Path.read_text
+        def local_read(path,*a,**kw):
+            return '907' if str(path)=='/sys/class/net/can0/statistics/tx_packets' else read_text(path,*a,**kw)
+        monkeypatch.setattr(Path,'read_text',local_read)
+        monkeypatch.setattr(sys,'argv',['lower_for_board','--plan',str(plan_path),'--output',str(output),
+            '--execute','--onsite-confirmation',str(onsite)])
+>       with pytest.raises(RuntimeError,match='stop at '+boundary+' boundary'):m.main()
+
+tests/test_lower_for_board.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+lower_for_board.py:60: in main
+    plan=json.loads(args.plan.read_text());validate_plan(plan)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = {'camera_extrinsic_used': False, 'can_tx_after': 907, 'can_tx_before': 907, 'collision_check_complete': False, ...}
+
+    def validate_plan(plan):
+        drop=plan.get('drop_m',.020)
+        if (isinstance(drop,bool) or not isinstance(drop,(int,float)) or not np.isfinite(drop)
+                or not .002<=drop<=.020):
+            raise ValueError('Framing distance must be2–20mm')
+        start=np.asarray(plan['initial_state'],float)
+        rows=np.asarray(plan['waypoints_rad'],float)
+        poses=np.asarray(plan['flange_poses_fk'],float)
+        if (start.shape!=(8,) or rows.ndim!=2 or rows.shape[1]!=7 or not 1<=len(rows)<=26
+                or poses.shape!=(len(rows),6) or not np.isfinite(np.r_[start,rows.ravel(),poses.ravel()]).all()
+                or plan['speed_percent']!=1 or plan['gripper_commands']!=0
+                or not all(plan[k] is True for k in ['no_enable','no_reset','no_follower_transition'])):
+            raise ValueError('Reviewed arm-only1percent framing plan required')
+        if np.max(abs(np.diff(np.vstack([start[:7],rows]),axis=0)))>.006001:
+            raise ValueError('Framing joint step exceeds0.006rad')
+        if np.max(abs(rows-start[:7]))>.15:
+            raise ValueError('Framing total joint change exceeds0.15rad')
+        first=flange_transform(plan['initial_flange_fk'])
+        for pose in poses:
+            T=flange_transform(pose)
+            if (np.max(abs(T[:2,3]-first[:2,3]))>.0001 or not first[2,3]-drop-.0001<=T[2,3]<=first[2,3]+.0001
+                    or T[2,3]<.4 or Rotation.from_matrix(first[:3,:3].T@T[:3,:3]).magnitude()>.001):
+                raise ValueError('Framing path must remain vertical and preserve orientation above0.4m')
+        if abs(poses[-1,2]-(first[2,3]-drop))>.0001 or np.any(np.diff(poses[:,2])>.0001):
+            raise ValueError('Only the declared monotonic framing descent is accepted')
+        for source,digest in plan['source_sha256'].items():
+            if hashlib.sha256(Path(source).read_bytes()).hexdigest()!=digest:
+>               raise ValueError('Reviewed planning source changed: '+source)
+E               ValueError: Reviewed planning source changed: /home/user/wq/nero_act_calibration_capture_20261022/capture.py
+
+lower_for_board.py:43: ValueError
+_____ test_entry_persists_send_intent_at_hardware_submission_boundary[arm] _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-93/test_entry_persists_send_inten1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d2960efa9f0>
+boundary = 'arm'
+
+    @pytest.mark.parametrize('boundary',['speed','arm'])
+    def test_entry_persists_send_intent_at_hardware_submission_boundary(tmp_path,monkeypatch,boundary):
+        m=api();p=plan();plan_path=tmp_path/'plan.json'
+        plan_path.write_text(json.dumps(p))
+        onsite=tmp_path/'onsite.json'
+        onsite.write_text(json.dumps(dict(plan_sha256=hashlib.sha256(plan_path.read_bytes()).hexdigest(),
+            confirmed_epoch_s=time.time(),stop_access=True,whole_arm_and_new_mount_clearance=True,no_other_controller=True)))
+        output=tmp_path/'execution'
+        calls=[]
+        class FakeSDK:
+            def fk(self,q):
+                for row,pose in zip(p['waypoints_rad'],p['flange_poses_fk']):
+                    if np.array_equal(q,row):return pose
+                raise AssertionError('Unexpected unreviewed FK target')
+            def set_speed_percent(self,speed):
+                saved=json.loads((output/'execution.json').read_text())
+                if boundary=='speed':assert saved.get('speed_setting_attempted') is True
+                calls.append('speed')
+                if boundary=='speed':raise RuntimeError('stop at speed boundary')
+            def move_j(self,q):
+                saved=json.loads((output/'execution.json').read_text())
+                assert saved['events'][0]['send_attempted'] is True
+                assert saved['events'][0]['send_returned'] is False
+                calls.append('arm')
+                raise RuntimeError('stop at arm boundary')
+        class FakeRobot:
+            def __init__(self,**_):
+                self.sdk=FakeSDK();self.allow_no_solution=True;self.max_age_s=.15
+            def connect(self):pass
+            def disconnect(self):pass
+            def stop_sending(self):pass
+            def read_health(self,**_):
+                h=copy.deepcopy(p['health_samples'][-1])
+                h['feedback_timestamps']=[time.time()]*19
+                return h
+        monkeypatch.syspath_prepend('/home/user/zyh/src')
+        import nero_pi05.robot
+        monkeypatch.setattr(nero_pi05.robot,'NeroRobot',FakeRobot)
+        read_text=Path.read_text
+        def local_read(path,*a,**kw):
+            return '907' if str(path)=='/sys/class/net/can0/statistics/tx_packets' else read_text(path,*a,**kw)
+        monkeypatch.setattr(Path,'read_text',local_read)
+        monkeypatch.setattr(sys,'argv',['lower_for_board','--plan',str(plan_path),'--output',str(output),
+            '--execute','--onsite-confirmation',str(onsite)])
+>       with pytest.raises(RuntimeError,match='stop at '+boundary+' boundary'):m.main()
+
+tests/test_lower_for_board.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+lower_for_board.py:60: in main
+    plan=json.loads(args.plan.read_text());validate_plan(plan)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = {'camera_extrinsic_used': False, 'can_tx_after': 907, 'can_tx_before': 907, 'collision_check_complete': False, ...}
+
+    def validate_plan(plan):
+        drop=plan.get('drop_m',.020)
+        if (isinstance(drop,bool) or not isinstance(drop,(int,float)) or not np.isfinite(drop)
+                or not .002<=drop<=.020):
+            raise ValueError('Framing distance must be2–20mm')
+        start=np.asarray(plan['initial_state'],float)
+        rows=np.asarray(plan['waypoints_rad'],float)
+        poses=np.asarray(plan['flange_poses_fk'],float)
+        if (start.shape!=(8,) or rows.ndim!=2 or rows.shape[1]!=7 or not 1<=len(rows)<=26
+                or poses.shape!=(len(rows),6) or not np.isfinite(np.r_[start,rows.ravel(),poses.ravel()]).all()
+                or plan['speed_percent']!=1 or plan['gripper_commands']!=0
+                or not all(plan[k] is True for k in ['no_enable','no_reset','no_follower_transition'])):
+            raise ValueError('Reviewed arm-only1percent framing plan required')
+        if np.max(abs(np.diff(np.vstack([start[:7],rows]),axis=0)))>.006001:
+            raise ValueError('Framing joint step exceeds0.006rad')
+        if np.max(abs(rows-start[:7]))>.15:
+            raise ValueError('Framing total joint change exceeds0.15rad')
+        first=flange_transform(plan['initial_flange_fk'])
+        for pose in poses:
+            T=flange_transform(pose)
+            if (np.max(abs(T[:2,3]-first[:2,3]))>.0001 or not first[2,3]-drop-.0001<=T[2,3]<=first[2,3]+.0001
+                    or T[2,3]<.4 or Rotation.from_matrix(first[:3,:3].T@T[:3,:3]).magnitude()>.001):
+                raise ValueError('Framing path must remain vertical and preserve orientation above0.4m')
+        if abs(poses[-1,2]-(first[2,3]-drop))>.0001 or np.any(np.diff(poses[:,2])>.0001):
+            raise ValueError('Only the declared monotonic framing descent is accepted')
+        for source,digest in plan['source_sha256'].items():
+            if hashlib.sha256(Path(source).read_bytes()).hexdigest()!=digest:
+>               raise ValueError('Reviewed planning source changed: '+source)
+E               ValueError: Reviewed planning source changed: /home/user/wq/nero_act_calibration_capture_20261022/capture.py
+
+lower_for_board.py:43: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_lower_for_board.py::test_reviewed_20mm_plan_is_arm_only - V...
+FAILED tests/test_lower_for_board.py::test_shorter_framing_adjustment_retains_the_20mm_upper_bound
+FAILED tests/test_lower_for_board.py::test_entry_persists_send_intent_at_hardware_submission_boundary[speed]
+FAILED tests/test_lower_for_board.py::test_entry_persists_send_intent_at_hardware_submission_boundary[arm]
+4 failed, 58 passed in 2.20s

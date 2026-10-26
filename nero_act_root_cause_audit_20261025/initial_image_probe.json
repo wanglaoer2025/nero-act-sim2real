@@ -1,0 +1,50 @@
+{
+  "scope": "read_only_two_RGB_probe_not_archived_runtime_image_recovery",
+  "same_numeric_input_for_both_CPU_probes": true,
+  "old_and_current_first_snapshot_qpos_equal": true,
+  "archived_teacher_joint_state_max_difference_rad": 3.975859919069791e-11,
+  "archived_teacher_position_features_exactly_match": true,
+  "RGB_sources_equal": false,
+  "RGB_mean_absolute_channel_difference": 1.0847916666666666,
+  "RGB_different_pixel_fraction": 0.4142708333333333,
+  "comparisons": {
+    "CPU_Mesa_to_recorded_current_CPU": {
+      "arm_all20_max_rad": 0.0,
+      "arm_prefix2_max_rad": 0.0,
+      "gripper_all20_max_m": 0.0
+    },
+    "CPU_archived_teacher_RGB_to_historical_GPU_runtime": {
+      "arm_all20_max_rad": 0.00116768479347229,
+      "arm_prefix2_max_rad": 0.00012063980102539062,
+      "gripper_all20_max_m": 0.0
+    },
+    "CPU_Mesa_to_historical_GPU_runtime": {
+      "arm_all20_max_rad": 0.0019442439079284668,
+      "arm_prefix2_max_rad": 0.0004938244819641113,
+      "gripper_all20_max_m": 0.0
+    },
+    "CPU_different_RGB_same_numeric": {
+      "arm_all20_max_rad": 0.0011002421379089355,
+      "arm_prefix2_max_rad": 0.0005218386650085449,
+      "gripper_all20_max_m": 0.0
+    }
+  },
+  "limitations": [
+    "Archived teacher frame0 is not proven to be the historical runtime RGB; cannot identify sole cause of3/7 to1/7.",
+    "CPU versus historical GPU cannot be fully isolated at the runtime first state without the original runtime RGB."
+  ],
+  "parameter_or_buffer_changes": [],
+  "optimizer_updates": 0,
+  "hardware_commands_sent": false,
+  "source_sha256": {
+    "/home/user/wq/nero_act_root_cause_audit_20261025/probe_initial_image.py": "f2a8c74985f9d014b94aee0673c37c79925df3370d13c4565aaebb97d7c7e1ca",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/experiment.py": "3085507f8da678e179539d659f351141dcb019f536ec8b643cdefb6be4ab4ff7",
+    "/home/user/wq/nero_act_real_visual_bridge_20261024/bridge.py": "b4541fafa38cddd16d3d81180af02f2ba99af3324b29296cdf4df96242a23eb0",
+    "/home/user/wq/nero_act_new_handeye_policy_repair_20261023/training/pilot_A/policy_last.ckpt": "1a28f4fddd3095791403028b639b99f9775b91caab45c950c2d0f518955bc0f0",
+    "/home/user/wq/nero_act_new_handeye_policy_repair_20261023/data/visual/episode_9000.hdf5": "249d9ce8086a6c6482127272629bead8e36b94117c60f50df53b02ea11cc607b",
+    "/home/user/wq/nero_act_contact_escape_fix_20261023/results/9000/rollout.npz": "6ea58269a92037f01b50e1fd99508c883cd741025b95abc3a140b263698c402c",
+    "/home/user/wq/nero_act_contact_escape_fix_20261023/results/9000/scene_configuration.json": "9e9c7a63ea2c886860ad3157e68cd02529e725bd255484a748204cfdfb69bc69",
+    "/home/user/wq/nero_act_contact_escape_fix_20261023/results/9000/physical_snapshots.json": "df91eb0d9df637401ac0f935c44fdc5bceb46e5bad2f0b2828bc1c9a02b14eca",
+    "/home/user/wq/nero_act_full_acceptance_20261024/run_01/9000/rollout.npz": "92eaa5827f966218ee2a3af1ef8ee6ddb679172c7fed17d13d8bb911b839e32e"
+  }
+}

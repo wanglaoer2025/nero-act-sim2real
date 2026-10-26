@@ -1,0 +1,17 @@
+test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait (tests.test_lift_recovery.LiftRecoveryTests.test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait) ... ERROR
+
+======================================================================
+ERROR: test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait (tests.test_lift_recovery.LiftRecoveryTests.test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_contact_recovery_20261018/tests/test_lift_recovery.py", line 11, in test_already_held_snapshot_recovery_starts_at_lift_without_unobservable_close_wait
+    self.assertEqual([x[0] for x in task_waypoints(config)],['lift','carry','place','release','retreat'])
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_contact_recovery_20261018/simulation/teacher.py", line 30, in task_waypoints
+    raise ValueError('Unknown explicitly labeled simulation continuation')
+ValueError: Unknown explicitly labeled simulation continuation
+
+----------------------------------------------------------------------
+Ran 1 test in 0.168s
+
+FAILED (errors=1)

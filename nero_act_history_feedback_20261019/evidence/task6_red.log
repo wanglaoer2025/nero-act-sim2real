@@ -1,0 +1,103 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_____________________ test_budget_999_cannot_finalize_1000 _____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-122/test_budget_999_cannot_finaliz0')
+
+    def test_budget_999_cannot_finalize_1000(tmp_path):
+>       m=api();checkpoint,protected=output_fixture(tmp_path)
+
+tests/test_history_training.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.history'), 'Paired history training interface missing'
+E       AssertionError: Paired history training interface missing
+E       assert None
+E        +  where None = <function find_spec at 0x7f800e7505e0>('training.history')
+E        +    where <function find_spec at 0x7f800e7505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_training.py:13: AssertionError
+________________ test_pilot_is_not_twenty_epochs_or_deployable _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-122/test_pilot_is_not_twenty_epoch0')
+
+    def test_pilot_is_not_twenty_epochs_or_deployable(tmp_path):
+>       m=api();checkpoint,protected=output_fixture(tmp_path)
+
+tests/test_history_training.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.history'), 'Paired history training interface missing'
+E       AssertionError: Paired history training interface missing
+E       assert None
+E        +  where None = <function find_spec at 0x7f800e7505e0>('training.history')
+E        +    where <function find_spec at 0x7f800e7505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_training.py:13: AssertionError
+_______________ test_same_batches_and_initial_physical_function ________________
+
+    def test_same_batches_and_initial_physical_function():
+>       m=api()
+
+tests/test_history_training.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.history'), 'Paired history training interface missing'
+E       AssertionError: Paired history training interface missing
+E       assert None
+E        +  where None = <function find_spec at 0x7f800e7505e0>('training.history')
+E        +    where <function find_spec at 0x7f800e7505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_training.py:13: AssertionError
+_____________________ test_full_ACT_groups_have_gradients ______________________
+
+    def test_full_ACT_groups_have_gradients():
+>       m=api();c,q,image,h=fixtures();c.update(train_nonlinear_gripper_only=False,train_arm_output_and_gripper_only=False)
+
+tests/test_history_training.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.history'), 'Paired history training interface missing'
+E       AssertionError: Paired history training interface missing
+E       assert None
+E        +  where None = <function find_spec at 0x7f800e7505e0>('training.history')
+E        +    where <function find_spec at 0x7f800e7505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_training.py:13: AssertionError
+_________ test_validation_and_test_data_do_not_select_pilot_checkpoint _________
+
+    def test_validation_and_test_data_do_not_select_pilot_checkpoint():
+>       m=api()
+
+tests/test_history_training.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('training.history'), 'Paired history training interface missing'
+E       AssertionError: Paired history training interface missing
+E       assert None
+E        +  where None = <function find_spec at 0x7f800e7505e0>('training.history')
+E        +    where <function find_spec at 0x7f800e7505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_history_training.py:13: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_training.py::test_budget_999_cannot_finalize_1000
+FAILED tests/test_history_training.py::test_pilot_is_not_twenty_epochs_or_deployable
+FAILED tests/test_history_training.py::test_same_batches_and_initial_physical_function
+FAILED tests/test_history_training.py::test_full_ACT_groups_have_gradients - ...
+FAILED tests/test_history_training.py::test_validation_and_test_data_do_not_select_pilot_checkpoint
+5 failed, 1 warning in 1.78s

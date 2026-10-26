@@ -1,0 +1,23 @@
+test_every_batch_retains_all_eight_task_stages_and_new_recovery (test_sampling.SamplingTests.test_every_batch_retains_all_eight_task_stages_and_new_recovery) ... FAIL
+test_missing_recovery_or_task_stage_prevents_training (test_sampling.SamplingTests.test_missing_recovery_or_task_stage_prevents_training) ... FAIL
+
+======================================================================
+FAIL: test_every_batch_retains_all_eight_task_stages_and_new_recovery (test_sampling.SamplingTests.test_every_batch_retains_all_eight_task_stages_and_new_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_flow_repair_20261023/test_sampling.py", line 17, in test_every_batch_retains_all_eight_task_stages_and_new_recovery
+    self.assertIsNotNone(make_batches,'Missing complete-flow balanced sampling')
+AssertionError: unexpectedly None : Missing complete-flow balanced sampling
+
+======================================================================
+FAIL: test_missing_recovery_or_task_stage_prevents_training (test_sampling.SamplingTests.test_missing_recovery_or_task_stage_prevents_training)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_flow_repair_20261023/test_sampling.py", line 28, in test_missing_recovery_or_task_stage_prevents_training
+    self.assertIsNotNone(make_batches,'Missing complete-flow balanced sampling')
+AssertionError: unexpectedly None : Missing complete-flow balanced sampling
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (failures=2)

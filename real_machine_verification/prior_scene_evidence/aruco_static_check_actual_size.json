@@ -1,0 +1,384 @@
+{
+  "status": "fiducial_independent_diagnostic_complete; full_extrinsic_requires_known_base_pose",
+  "capture_source": "aruco_static_check.json; actual-size re-solve from stored corners, no new camera or robot activity",
+  "actual_marker": {
+    "dictionary": "DICT_5X5_50",
+    "id": 0,
+    "black_square_side_mm": 110.0,
+    "board_surface_above_table_mm": 20.0,
+    "geometry_source": "user measurements; support height approximately 20 mm"
+  },
+  "legacy_marker_metadata": {
+    "dictionary": "DICT_4X4_50",
+    "id": 0,
+    "size_mm": 95.5
+  },
+  "user_lens_height_above_table_mm": 357.0,
+  "nominal_table_z_base_mm": -13.0,
+  "nominal_marker_plane_z_base_mm": 7.0,
+  "expected_camera_to_marker_plane_mm": 337.0,
+  "optical_plane_distance_median_mm": 343.98256018551047,
+  "optical_vs_expected_plane_distance_mm": 6.982560185510465,
+  "optical_vs_depth_center_distance_median_mm": 2.087020501277814,
+  "old_extrinsic_marker_normal_tilt_median_deg": 13.346135025124234,
+  "old_extrinsic_marker_center_z_median_mm": -72.49368803112381,
+  "old_extrinsic_z_minus_nominal_marker_z_mm": -79.49368803112381,
+  "max_reprojection_rms_px": 0.6203855276107788,
+  "base_marker_pose_known": false,
+  "replacement_extrinsic_written": false,
+  "interpretation": "Actual marker dimensions bring optical center measurement into close agreement with the ZED center depth at this marker. Existing camera-to-base transform still maps a nominally table-parallel marker normal about 13.3 degrees from base Z and its center far below expected marker height. Verify/recover the full camera-to-base transform using a known base-frame marker pose or independent reference correspondences. A table normal and camera height alone do not determine yaw and XY translation.",
+  "samples": [
+    {
+      "camera_center_mm": [
+        10.625107637484728,
+        -202.9215622267213,
+        457.1607701487332
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.9930330095991287,
+          -0.08517236707416004,
+          0.0814316261257339,
+          0.010625107637484728
+        ],
+        [
+          0.047287988508809,
+          0.3449294639230016,
+          0.9374366704266375,
+          -0.2029215622267213
+        ],
+        [
+          -0.10793186734828375,
+          0.9347562959428377,
+          -0.33849871374340246,
+          0.4571607701487332
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 344.1092265281975,
+      "optical_height_minus_expected_mm": 7.109226528197496,
+      "normal_tilt_using_old_extrinsic_deg": 13.33087499361681,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.9203446727529,
+        -94.30161389999334,
+        -72.5376730906545
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.5376730906545,
+      "optical_vs_depth_center_distance_mm": 1.9936091254949688,
+      "reprojection_rms_px": 0.6203855276107788
+    },
+    {
+      "camera_center_mm": [
+        10.630376396795882,
+        -202.93151107437487,
+        457.1725189231492
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.9930546245466929,
+          -0.0850981646396016,
+          0.08124540012454902,
+          0.010630376396795881
+        ],
+        [
+          0.0471608484323183,
+          0.3447274744425137,
+          0.9375173719668506,
+          -0.20293151107437488
+        ],
+        [
+          -0.10778852926712894,
+          0.9348375638256399,
+          -0.3383199110590034,
+          0.4571725189231492
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 344.0587137085779,
+      "optical_height_minus_expected_mm": 7.058713708577898,
+      "normal_tilt_using_old_extrinsic_deg": 13.343322605376189,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.9164627997685,
+        -94.29448358887026,
+        -72.5517749635801
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.5517749635801,
+      "optical_vs_depth_center_distance_mm": 1.9784625932686684,
+      "reprojection_rms_px": 0.6158885359764099
+    },
+    {
+      "camera_center_mm": [
+        10.622048347074944,
+        -202.88937400317008,
+        457.08996869113963
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.993059006838008,
+          -0.0850876030797937,
+          0.08120288627902662,
+          0.010622048347074944
+        ],
+        [
+          0.04714971976391889,
+          0.3445071207887215,
+          0.9375989268616134,
+          -0.2028893740031701
+        ],
+        [
+          -0.10775301788856294,
+          0.9349197524536534,
+          -0.3381040425784737,
+          0.45708996869113966
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 343.91028458956123,
+      "optical_height_minus_expected_mm": 6.910284589561229,
+      "normal_tilt_using_old_extrinsic_deg": 13.356744090287268,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.9611574566186,
+        -94.31475138665161,
+        -72.47271148270016
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.47271148270016,
+      "optical_vs_depth_center_distance_mm": 2.1134376700535165,
+      "reprojection_rms_px": 0.6057031750679016
+    },
+    {
+      "camera_center_mm": [
+        10.633508741831823,
+        -202.91046038990518,
+        457.1386412854568
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.9930412726237436,
+          -0.08512813560732559,
+          0.08137709379079884,
+          0.010633508741831823
+        ],
+        [
+          0.04726337089483405,
+          0.3448277196530528,
+          0.9374753423586846,
+          -0.20291046038990518
+        ],
+        [
+          -0.10786660575670785,
+          0.9347978627954261,
+          -0.3384047149134164,
+          0.4571386412854568
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 344.05610086408683,
+      "optical_height_minus_expected_mm": 7.0561008640868295,
+      "normal_tilt_using_old_extrinsic_deg": 13.337036485892027,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.9332071103481,
+        -94.29649399948214,
+        -72.51549516823803
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.51549516823803,
+      "optical_vs_depth_center_distance_mm": 2.030449771091615,
+      "reprojection_rms_px": 0.6079485416412354
+    },
+    {
+      "camera_center_mm": [
+        10.629172330173262,
+        -202.8820457796535,
+        457.0552275826306
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.9930430348178058,
+          -0.0851010323669278,
+          0.08138393754252397,
+          0.010629172330173261
+        ],
+        [
+          0.047302721668937994,
+          0.344622896384584,
+          0.9375486717020144,
+          -0.20288204577965352
+        ],
+        [
+          -0.10783312813116998,
+          0.9348758599822672,
+          -0.3381998564456572,
+          0.4570552275826306
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 343.92276099203673,
+      "optical_height_minus_expected_mm": 6.922760992036729,
+      "normal_tilt_using_old_extrinsic_deg": 13.34935857875288,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.986485893296,
+        -94.3122239631248,
+        -72.44695335696639
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.44695335696639,
+      "optical_vs_depth_center_distance_mm": 2.147132900218199,
+      "reprojection_rms_px": 0.5943379998207092
+    },
+    {
+      "camera_center_mm": [
+        10.619529989439691,
+        -202.89292057614196,
+        457.07799828421065
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.9930410273659778,
+          -0.08511796758494179,
+          0.08139072159731806,
+          0.01061952998943969
+        ],
+        [
+          0.047316482150128916,
+          0.34450899412886693,
+          0.9375898375522491,
+          -0.20289292057614197
+        ],
+        [
+          -0.10784557702965786,
+          0.9349162981564314,
+          -0.33808408267266143,
+          0.45707799828421064
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 343.8968049943951,
+      "optical_height_minus_expected_mm": 6.896804994395097,
+      "normal_tilt_using_old_extrinsic_deg": 13.356296346136748,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.9728746049808,
+        -94.31850882284985,
+        -72.4694249869155
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.4694249869155,
+      "optical_vs_depth_center_distance_mm": 2.105641349540455,
+      "reprojection_rms_px": 0.6010314226150513
+    },
+    {
+      "camera_center_mm": [
+        10.614191506152096,
+        -202.91995776529205,
+        457.1187531644299
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.993043347111678,
+          -0.08528827324182038,
+          0.08118387281143984,
+          0.010614191506152096
+        ],
+        [
+          0.04704721656031159,
+          0.3446459891512291,
+          0.9375530393401212,
+          -0.20291995776529206
+        ],
+        [
+          -0.10794197594616563,
+          0.9348502835264052,
+          -0.3382358307740879,
+          0.4571187531644299
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 344.000463211373,
+      "optical_height_minus_expected_mm": 7.000463211373017,
+      "normal_tilt_using_old_extrinsic_deg": 13.348947444872278,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.9535626446036,
+        -94.31756187643087,
+        -72.51466457954746
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.51466457954746,
+      "optical_vs_depth_center_distance_mm": 2.0758180110515094,
+      "reprojection_rms_px": 0.6000149250030518
+    },
+    {
+      "camera_center_mm": [
+        10.619165243325186,
+        -202.88925302656696,
+        457.07726888818166
+      ],
+      "camera_from_marker_m": [
+        [
+          -0.9930124410121458,
+          -0.0852283466235363,
+          0.08162365421198665,
+          0.010619165243325186
+        ],
+        [
+          0.047471758179916626,
+          0.34474234585276864,
+          0.9374962118063401,
+          -0.20288925302656696
+        ],
+        [
+          -0.10804038212819843,
+          0.934820220099966,
+          -0.33828749891452425,
+          0.4570772688881817
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_to_marker_plane_optical_mm": 343.9646571596479,
+      "optical_height_minus_expected_mm": 6.964657159647913,
+      "normal_tilt_using_old_extrinsic_deg": 13.341959622938372,
+      "marker_center_base_mm_using_old_extrinsic": [
+        -517.9714289981619,
+        -94.31914078282449,
+        -72.46601517376871
+      ],
+      "marker_z_minus_expected_base_z_mm": -79.46601517376871,
+      "optical_vs_depth_center_distance_mm": 2.0982229915041186,
+      "reprojection_rms_px": 0.5999469757080078
+    }
+  ]
+}

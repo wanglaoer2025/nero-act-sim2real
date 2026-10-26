@@ -1,0 +1,92 @@
+{
+  "hardware_commands_sent": false,
+  "diagnostic_only": true,
+  "runtime_qualified": false,
+  "masked_geometry_only": true,
+  "policy_RGB_not_masked": true,
+  "original_ACT_motion_controller_unchanged": true,
+  "cup_detection_source": "existing YOLO cup identity plus existing yellow silhouette refinement",
+  "target_detection_source": "existing unique convex blue quadrilateral within existing teacher workspace",
+  "assumed_cup_height_mm": 95,
+  "assumed_cup_diameter_mm": 75,
+  "assumed_table_z_m": 0,
+  "object_boxes_fully_inside_workspace": true,
+  "passed": true,
+  "localization": {
+    "source_bottom_mm": [
+      -516.7678268557341,
+      54.59807822381106,
+      0.0
+    ],
+    "destination_mm": [
+      -524.6546553369415,
+      -131.80778658855485,
+      0.0
+    ],
+    "fit_rmse_px": 3.969942988236939,
+    "observed_box_px": [
+      427.0,
+      457.0,
+      537.0,
+      605.0
+    ],
+    "projected_box_px": [
+      431.54611460922627,
+      460.7026549664723,
+      531.8618593051707,
+      603.4951785226868
+    ],
+    "edge_residual_px": [
+      4.546114609226265,
+      3.7026549664723234,
+      -5.138140694829303,
+      -1.5048214773131576
+    ],
+    "cup_height_mm": 95.0,
+    "cup_diameter_mm": 75.0,
+    "table_z_base_mm": 0.0,
+    "camera_matrix": [
+      [
+        527.3888549804688,
+        0.0,
+        647.1690063476562
+      ],
+      [
+        0.0,
+        527.3888549804688,
+        359.83807373046875
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "base_from_camera": [
+      [
+        0.02255291879948775,
+        0.4225301104135423,
+        0.9060682488905261,
+        -880.2533802903315
+      ],
+      [
+        0.9997455961233941,
+        -0.009830845906860024,
+        -0.020300184743869396,
+        -68.0567051197011
+      ],
+      [
+        0.0003299780346987363,
+        0.9062955700336817,
+        -0.4226443313849379,
+        383.1425643317474
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  }
+}

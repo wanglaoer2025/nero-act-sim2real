@@ -1,0 +1,189 @@
+{
+  "checked_at": "2026-10-21T18:12:21.508510+08:00",
+  "ros_domain_id": 42,
+  "can_interface": [
+    {
+      "ifindex": 3,
+      "ifname": "can0",
+      "flags": [
+        "NOARP",
+        "UP",
+        "LOWER_UP",
+        "ECHO"
+      ],
+      "mtu": 16,
+      "qdisc": "pfifo_fast",
+      "operstate": "UP",
+      "linkmode": "DEFAULT",
+      "group": "default",
+      "txqlen": 10,
+      "link_type": "can",
+      "promiscuity": 0,
+      "allmulti": 0,
+      "min_mtu": 0,
+      "max_mtu": 0,
+      "linkinfo": {
+        "info_kind": "can",
+        "info_data": {
+          "ctrlmode_supported": [
+            "LOOPBACK",
+            "LISTEN-ONLY",
+            "CC-LEN8-DLC"
+          ],
+          "state": "ERROR-ACTIVE",
+          "restart_ms": 0,
+          "bittiming": {
+            "bitrate": 1000000,
+            "sample_point": "0.750",
+            "tq": 62,
+            "prop_seg": 5,
+            "phase_seg1": 6,
+            "phase_seg2": 4,
+            "sjw": 2,
+            "brp": 3
+          },
+          "bittiming_const": {
+            "name": "gs_usb",
+            "tseg1": {
+              "min": 1,
+              "max": 16
+            },
+            "tseg2": {
+              "min": 1,
+              "max": 8
+            },
+            "sjw": {
+              "min": 1,
+              "max": 4
+            },
+            "brp": {
+              "min": 1,
+              "max": 1024
+            },
+            "brp_inc": 1
+          },
+          "clock": 48000000
+        }
+      },
+      "num_tx_queues": 1,
+      "num_rx_queues": 1,
+      "gso_max_size": 65536,
+      "gso_max_segs": 65535,
+      "tso_max_size": 65536,
+      "tso_max_segs": 65535,
+      "gro_max_size": 65536,
+      "parentbus": "usb",
+      "parentdev": "1-6:1.0"
+    }
+  ],
+  "joint_samples": 244,
+  "arm_status_samples": 243,
+  "arm_status_counts": {
+    "2": 243
+  },
+  "feedback_hz": 200.08069032052703,
+  "latest_joint_feedback": {
+    "header": {
+      "stamp": {
+        "sec": 1792577541,
+        "nanosec": 503640413
+      },
+      "frame_id": ""
+    },
+    "name": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "position": [
+      0.1832595714594046,
+      -0.12651891747706895,
+      0.0999724595542352,
+      1.5707788735023767,
+      -0.023945917337362205,
+      0.28166123468684495,
+      0.13107422682477415,
+      0.09491899999999999
+    ],
+    "velocity": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "effort": [
+      0.14177128679999998,
+      -2.6762717237256,
+      0.27741516000000005,
+      -3.525732,
+      -0.079073795367,
+      0.114217704419,
+      -0.4109210540736,
+      0.014
+    ]
+  },
+  "latest_arm_status": {
+    "ctrl_mode": 1,
+    "arm_status": 2,
+    "mode_feedback": 1,
+    "teach_status": 0,
+    "motion_status": 0,
+    "trajectory_num": 0,
+    "err_status": 0,
+    "joint_angle_limit": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "communication_status_joint": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "latest_gripper_status": {
+    "header": {
+      "stamp": {
+        "sec": 1792577541,
+        "nanosec": 500889778
+      },
+      "frame_id": ""
+    },
+    "width": 0.09491899999999999,
+    "force": 0.017,
+    "voltage_too_low": false,
+    "motor_overheating": false,
+    "driver_overcurrent": false,
+    "driver_overheating": false,
+    "sensor_status": false,
+    "driver_error_status": false,
+    "driver_enable_status": true,
+    "homing_status": false
+  },
+  "can_tx_before": 487,
+  "can_tx_after": 487,
+  "motion_sent": false,
+  "enable_sent": false,
+  "reset_sent": false,
+  "hardware_normal_for_motion": false,
+  "controller_status_semantics": "Installed NERO V120 SDK: 0 NORMAL; 2 NO_SOLUTION",
+  "ros_err_status_integer_validated": false,
+  "note": "ROS driver does not populate integer err_status; do not treat default0 as independently verified controller error code."
+}

@@ -1,0 +1,18 @@
+{
+  "request": "解决还存在的问题",
+  "confirmed_scope_gap": "The old gradient coefficient limited the position projection only; fixed initializer batches have decoder/arm rehearsal gradient fractions above0.5, up to2.551",
+  "bounded_fix": "Use the minimum coefficient satisfying the same0.5 fraction in each of the four already allowed trainable parameter groups",
+  "controlled_training": {
+    "updates": 1000,
+    "initializer_sha256": "06012db673881efc678ecdc5c4d4780f2d46c44bb52f18cbeb81b20b53d0ec47",
+    "identical_dataset_and_batch_order_to_dense_trial": true,
+    "architecture_stats_optimizer_learning_rates_and_frozen_parameters_unchanged": true,
+    "only_change": "preservation coefficient considers all four shared trainable scopes",
+    "checkpoint": "fixed_last"
+  },
+  "diagnostics": "Save each group norm and cosine; magnitude alone is not proof that rehearsal causes task failure",
+  "qualification": "Unchanged position,423,three gripper inputs,six mechanisms and guarded full current task",
+  "no_hardware_commands": true,
+  "calibration_verified": false,
+  "no_automatic_additional_training_after_failed_comparison": true
+}

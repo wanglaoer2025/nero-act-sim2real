@@ -1,0 +1,76 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_relative_positions_are_base_metric_and_current_tcp ____________
+
+    def test_relative_positions_are_base_metric_and_current_tcp():
+>       m=api()
+
+tests/test_visual_features.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_observation') is not None, 'Unified visual features and uncertainty checks missing'
+E       AssertionError: Unified visual features and uncertainty checks missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x74f3ef9ac5e0>('executor.visual_observation')
+E        +    where <function find_spec at 0x74f3ef9ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_features.py:11: AssertionError
+______________________ test_geometry_stats_use_train_only ______________________
+
+    def test_geometry_stats_use_train_only():
+>       m=api();features=np.array([[0.]*6,[.2]*6,[100.]*6])
+
+tests/test_visual_features.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_observation') is not None, 'Unified visual features and uncertainty checks missing'
+E       AssertionError: Unified visual features and uncertainty checks missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x74f3ef9ac5e0>('executor.visual_observation')
+E        +    where <function find_spec at 0x74f3ef9ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_features.py:11: AssertionError
+_____________ test_stale_invalid_or_wrong_calibration_is_rejected ______________
+
+    def test_stale_invalid_or_wrong_calibration_is_rejected():
+>       m=api();frame,geometry,paired,cal=valid_inputs()
+
+tests/test_visual_features.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_observation') is not None, 'Unified visual features and uncertainty checks missing'
+E       AssertionError: Unified visual features and uncertainty checks missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x74f3ef9ac5e0>('executor.visual_observation')
+E        +    where <function find_spec at 0x74f3ef9ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_features.py:11: AssertionError
+_________________ test_clearance_adds_errors_and_stop_distance _________________
+
+    def test_clearance_adds_errors_and_stop_distance():
+>       m=api();bounds=dict(tcp_m=.001,vision_m=.002,shape_m=.001,tracking_m=.001)
+
+tests/test_visual_features.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('executor.visual_observation') is not None, 'Unified visual features and uncertainty checks missing'
+E       AssertionError: Unified visual features and uncertainty checks missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x74f3ef9ac5e0>('executor.visual_observation')
+E        +    where <function find_spec at 0x74f3ef9ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_visual_features.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_visual_features.py::test_relative_positions_are_base_metric_and_current_tcp
+FAILED tests/test_visual_features.py::test_geometry_stats_use_train_only - As...
+FAILED tests/test_visual_features.py::test_stale_invalid_or_wrong_calibration_is_rejected
+FAILED tests/test_visual_features.py::test_clearance_adds_errors_and_stop_distance
+4 failed in 0.06s

@@ -1,0 +1,28 @@
+usage: run_act_real.py [-h] [--dry-run | --execute] [--config CONFIG]
+                       [--max-steps MAX_STEPS] [--speed-scale SPEED_SCALE]
+                       [--temporal-ensemble] [--adaptive-mpc]
+                       [--single-action-test] [--extended]
+                       [--device {auto,cpu,cuda}]
+                       [--source-base-xyz-mm SOURCE_BASE_XYZ_MM SOURCE_BASE_XYZ_MM SOURCE_BASE_XYZ_MM]
+                       [--destination-base-xyz-mm DESTINATION_BASE_XYZ_MM DESTINATION_BASE_XYZ_MM DESTINATION_BASE_XYZ_MM]
+                       [--save-model-inputs] [--save-model-input-every N]
+
+Run the trained NERO ACT policy with real camera/feedback and a safety gate.
+
+options:
+  -h, --help            show this help message and exit
+  --dry-run             完整推理但不发送任何运动命令（默认）
+  --execute             向机械臂发送经过 safety 的低速目标
+  --config CONFIG
+  --max-steps MAX_STEPS
+  --speed-scale SPEED_SCALE
+  --temporal-ensemble
+  --adaptive-mpc        在 ACT chunk 后启用目标感知、自适应短时域 MPC（默认关闭）
+  --single-action-test  只发送第一条实时预测关节目标，随后继续观察反馈
+  --extended            明确允许超过 10 step 的实机阶段
+  --device {auto,cpu,cuda}
+  --source-base-xyz-mm SOURCE_BASE_XYZ_MM SOURCE_BASE_XYZ_MM SOURCE_BASE_XYZ_MM
+  --destination-base-xyz-mm DESTINATION_BASE_XYZ_MM DESTINATION_BASE_XYZ_MM DESTINATION_BASE_XYZ_MM
+  --save-model-inputs   保存 step 0/50/100 真正送入 ACT 的缩放后 RGB tensor、PNG、统计量和哈希
+  --save-model-input-every N
+                        每 N 步保存一次真正送入 ACT 的双相机图像

@@ -1,0 +1,45 @@
+{
+  "verified_epoch_s": 1792720811.491647,
+  "real_motion_observed_from_SDK_and_ROS": true,
+  "completed_target_count": 23,
+  "planned_target_count": 90,
+  "full_segment_complete": false,
+  "full_pick_place_complete": false,
+  "arm_returned": 23,
+  "logged_pre_send_attempts": 24,
+  "last_rejected_index": 23,
+  "last_rejected_command_sent": false,
+  "stop_reason": "ValueError('ROS target expired or feedback changed after logging')",
+  "stop_reason_detail": "Combined pre-send guard; this run did not record which of age, stationary status or feedback lead caused rejection. Do not infer a controller error or model-grasp failure.",
+  "actual_joint_change_deg": [
+    -0.2639996180256866,
+    1.538000226075492,
+    -0.5460001996089417,
+    0.20500129774876272,
+    0.447000022684192,
+    -0.631000196282458,
+    -1.945999868598911
+  ],
+  "max_actual_joint_change_deg": 1.945999868598911,
+  "final_sdk_flange_height_mm": 472.294,
+  "initial_sdk_flange_height_mm": 479.42699999999996,
+  "final_gripper_width_mm": 94.92599964141846,
+  "gripper_commands": 0,
+  "enable_commands": 0,
+  "reset_commands": 0,
+  "can_tx_before": 6707,
+  "can_tx_after_motion": 6823,
+  "postflight_can_unchanged": true,
+  "final_feedback": {
+    "arm_status": 2,
+    "motion_status": 0,
+    "ctrl_mode": 1,
+    "err_code": 0
+  },
+  "sender_stopped": true,
+  "no_automatic_retry_or_return": true,
+  "source_sha256": {
+    "/home/user/wq/nero_motion_trial_20261023/execution_02/execution.json": "c31746952a12e05889cb965cc7458e0ad89c8f3da1eaaba1875932c085f299c4",
+    "/home/user/wq/nero_motion_trial_20261023/postflight_02/preflight_01/report.json": "f559d591bf59159563b19015268475a9cbc296993b34af70c0dd4d1bd444dfa1"
+  }
+}

@@ -1,0 +1,183 @@
+................................F....................................... [ 25%]
+................................F...sss........F........................ [ 51%]
+..................F...................F.................s..s............ [ 76%]
+....F.............................................................       [100%]
+=================================== FAILURES ===================================
+_ AlignmentPipelineTests.test_reusing_a_pipeline_never_overwrites_its_existing_status _
+
+self = <tests.test_alignment_pipeline.AlignmentPipelineTests testMethod=test_reusing_a_pipeline_never_overwrites_its_existing_status>
+
+    def test_reusing_a_pipeline_never_overwrites_its_existing_status(self):
+        source = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as tmp:
+            evidence = Path(tmp)/'evidence'
+            evidence.mkdir()
+            script = evidence/'run18_pipeline.py'
+>           shutil.copy2(source/'evidence/run18_pipeline.py', script)
+
+tests/test_alignment_pipeline.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/shutil.py:475: in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+src = PosixPath('/home/user/wq/nero_act_visual_validation_20261019/evidence/run18_pipeline.py')
+dst = PosixPath('/tmp/tmps8nsg5q0/evidence/run18_pipeline.py')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_validation_20261019/evidence/run18_pipeline.py'
+
+/usr/lib/python3.12/shutil.py:260: FileNotFoundError
+_ FixedSceneHeadsTests.test_cached_learning_probe_matches_complete_runtime_including_joint_anchor _
+
+self = <tests.test_fixed_scene_heads.FixedSceneHeadsTests testMethod=test_cached_learning_probe_matches_complete_runtime_including_joint_anchor>
+
+    def test_cached_learning_probe_matches_complete_runtime_including_joint_anchor(self):
+>       from evidence.probe_fixed_heads import cached_readout
+E       ModuleNotFoundError: No module named 'evidence.probe_fixed_heads'
+
+tests/test_fixed_scene_heads.py:65: ModuleNotFoundError
+_ GeneralizedTrainingTests.test_rebased_context_model_preserves_physical_predictions_with_new_statistics _
+
+self = <tests.test_generalized_training.GeneralizedTrainingTests testMethod=test_rebased_context_model_preserves_physical_predictions_with_new_statistics>
+
+    def test_rebased_context_model_preserves_physical_predictions_with_new_statistics(self):
+        self.assertIsNotNone(importlib.util.find_spec('training.rebase_initializer'))
+        from training.rebase_initializer import rebase_initializer,paired_config
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+>       config=json.loads((ROOT/'initializers/run13/training_config.json').read_text())
+
+tests/test_generalized_training.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_validation_20261019/initializers/run13/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_validation_20261019/initializers/run13/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ RecoveryEvaluationTests.test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed _
+
+self = <tests.test_recovery_evaluation.RecoveryEvaluationTests testMethod=test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed>
+
+    def test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed(self):
+        from simulation import evaluate_generalized as module
+        self.assertTrue(hasattr(module,'fresh_test_cases'),'a reused failed-case suite cannot be independent acceptance')
+        center=json.loads((ROOT/'scene/center.json').read_text())
+>       site=json.loads((ROOT/'evidence/site_snapshot.json').read_text())
+
+tests/test_recovery_evaluation.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_validation_20261019/evidence/site_snapshot.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_validation_20261019/evidence/site_snapshot.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_ RuntimeEntryTests.test_default_is_offline_and_execute_without_receipt_creates_no_attempt _
+
+self = <tests.test_runtime_entry.RuntimeEntryTests testMethod=test_default_is_offline_and_execute_without_receipt_creates_no_attempt>
+
+    def test_default_is_offline_and_execute_without_receipt_creates_no_attempt(self):
+        root = Path(__file__).resolve().parents[1]
+>       self.assertTrue((root/'run.py').exists())
+E       AssertionError: False is not true
+
+tests/test_runtime_entry.py:40: AssertionError
+_ TrainingReviewFixes.test_completed_epochs_alone_cannot_export_a_generalized_run _
+
+self = <tests.test_training_review_fixes.TrainingReviewFixes testMethod=test_completed_epochs_alone_cannot_export_a_generalized_run>
+
+    def test_completed_epochs_alone_cannot_export_a_generalized_run(self):
+        from training.export import export_model
+>       config=json.loads((ROOT/'initializers/run13/training_config.json').read_text())
+
+tests/test_training_review_fixes.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_validation_20261019/initializers/run13/training_config.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_validation_20261019/initializers/run13/training_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_alignment_pipeline.py::AlignmentPipelineTests::test_reusing_a_pipeline_never_overwrites_its_existing_status
+FAILED tests/test_fixed_scene_heads.py::FixedSceneHeadsTests::test_cached_learning_probe_matches_complete_runtime_including_joint_anchor
+FAILED tests/test_generalized_training.py::GeneralizedTrainingTests::test_rebased_context_model_preserves_physical_predictions_with_new_statistics
+FAILED tests/test_recovery_evaluation.py::RecoveryEvaluationTests::test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed
+FAILED tests/test_runtime_entry.py::RuntimeEntryTests::test_default_is_offline_and_execute_without_receipt_creates_no_attempt
+FAILED tests/test_training_review_fixes.py::TrainingReviewFixes::test_completed_epochs_alone_cannot_export_a_generalized_run
+6 failed, 271 passed, 5 skipped, 1 warning in 42.57s

@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_preparation_cannot_accept_incomplete_recoveries _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-118/test_preparation_cannot_accept0')
+
+    def test_preparation_cannot_accept_incomplete_recoveries(tmp_path):
+        m=api('training.history_data')
+>       assert hasattr(m,'prepare_history_data'), 'Complete combined history preparation entry missing'
+E       AssertionError: Complete combined history preparation entry missing
+E       assert False
+E        +  where False = hasattr(<module 'training.history_data' from '/home/user/wq/nero_act_history_feedback_20261019/training/history_data.py'>, 'prepare_history_data')
+
+tests/test_history_data.py:123: AssertionError
+=============================== warnings summary ===============================
+tests/test_history_data.py::test_preparation_cannot_accept_incomplete_recoveries
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_data.py::test_preparation_cannot_accept_incomplete_recoveries
+1 failed, 4 deselected, 1 warning in 2.08s

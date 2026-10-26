@@ -1,0 +1,146 @@
+{
+  "complete": false,
+  "readonly": true,
+  "hardware_commands_sent": false,
+  "absolute_accuracy_verified": false,
+  "hardware_deployment_allowed": false,
+  "filled_depth_allowed": false,
+  "depth_mode": "NEURAL_LIGHT",
+  "sdk_version": "5.4.1",
+  "capture_source_sha256": "e19d3be90d5db02d97e33d5c083f3bf1ccf72177c744ac0de412cd083ffe4562",
+  "local_neural_model_status_before": {
+    "downloaded": true,
+    "optimized": true
+  },
+  "serial_number": 39602891,
+  "camera_model": "ZED 2i",
+  "rectified_left_intrinsics": {
+    "fx": 527.3888549804688,
+    "fy": 527.3888549804688,
+    "cx": 647.1690063476562,
+    "cy": 359.83807373046875,
+    "distortion": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "raw_left_intrinsics": {
+    "fx": 533.5650024414062,
+    "fy": 533.4099731445312,
+    "cx": 650.7150268554688,
+    "cy": 352.1864929199219,
+    "distortion": [
+      -1.1508300304412842,
+      2.60903000831604,
+      0.0003237590135540813,
+      -0.00018040799477603287,
+      0.1002340018749237,
+      -1.0547499656677246,
+      2.4609599113464355,
+      0.2682119905948639,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "image_rotation_degrees": 180,
+  "xyz_vector_rotation_applied": false,
+  "xyz_coordinate_frame": "SDK_IMAGE_left_optical",
+  "coordinate_units": "metres",
+  "camera_robot_clock_alignment_verified": false,
+  "error": "RuntimeError: Repeated/nonmonotonic camera exposure timestamp",
+  "frames": [
+    {
+      "index": 0,
+      "device_exposure_ns": 1792767627360650286,
+      "received_monotonic_s": 297175.048530834,
+      "roi": {
+        "valid": true,
+        "components": 1,
+        "clipped_components_rejected": 1,
+        "method": "unique_complete_current_yellow_component_not_semantic_identity"
+      },
+      "depth_quality": {
+        "valid": true,
+        "roi_pixels": 11050,
+        "valid_points": 10067,
+        "valid_fraction": 0.9110407239819005,
+        "confidence_maximum": 50,
+        "median_surface_camera_xyz_m": [
+          0.1335894763469696,
+          -0.14831605553627014,
+          0.4567572772502899
+        ],
+        "measurement_kind": "visible_surface_points_not_object_centre",
+        "coordinate_frame": "ZED_IMAGE_left_optical_metres",
+        "absolute_accuracy_verified": false,
+        "hardware_deployment_allowed": false
+      }
+    },
+    {
+      "index": 1,
+      "device_exposure_ns": 1792767627994043286,
+      "received_monotonic_s": 297175.707584835,
+      "roi": {
+        "valid": true,
+        "components": 1,
+        "clipped_components_rejected": 1,
+        "method": "unique_complete_current_yellow_component_not_semantic_identity"
+      },
+      "depth_quality": {
+        "valid": true,
+        "roi_pixels": 11066,
+        "valid_points": 10096,
+        "valid_fraction": 0.9123441171154889,
+        "confidence_maximum": 50,
+        "median_surface_camera_xyz_m": [
+          0.13352873921394348,
+          -0.14836451411247253,
+          0.45686274766921997
+        ],
+        "measurement_kind": "visible_surface_points_not_object_centre",
+        "coordinate_frame": "ZED_IMAGE_left_optical_metres",
+        "absolute_accuracy_verified": false,
+        "hardware_deployment_allowed": false
+      }
+    },
+    {
+      "index": 2,
+      "device_exposure_ns": 1792767628060892286,
+      "received_monotonic_s": 297175.742052511,
+      "roi": {
+        "valid": true,
+        "components": 1,
+        "clipped_components_rejected": 1,
+        "method": "unique_complete_current_yellow_component_not_semantic_identity"
+      },
+      "depth_quality": {
+        "valid": true,
+        "roi_pixels": 11045,
+        "valid_points": 9767,
+        "valid_fraction": 0.8842915346310548,
+        "confidence_maximum": 50,
+        "median_surface_camera_xyz_m": [
+          0.13448895514011383,
+          -0.1478022187948227,
+          0.4566399157047272
+        ],
+        "measurement_kind": "visible_surface_points_not_object_centre",
+        "coordinate_frame": "ZED_IMAGE_left_optical_metres",
+        "absolute_accuracy_verified": false,
+        "hardware_deployment_allowed": false
+      }
+    }
+  ]
+}

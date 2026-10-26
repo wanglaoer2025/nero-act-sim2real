@@ -1,0 +1,68 @@
+{
+  "time_local": "2026-10-22T22:05:28.191769+08:00",
+  "measurement_file": "/home/user/wq/nero_act_calibration_capture_20261022/tcp_reference_guide_01/static_dimensions_30_94.json",
+  "model_source": "/home/user/wq/nero_pick_place_20261016/readonly_preflight/robot.urdf",
+  "model_sha256": "7b7824f9a22a1895ec251db9291203e766c0240c9c231079169cb7672761dcbe",
+  "model_mesh_bounds": {
+    "gripper_base": {
+      "bounds_in_gripper_base_mm": [
+        [
+          -42.01316833496094,
+          -82.01403170824051,
+          -0.0022205088043847354
+        ],
+        [
+          32.98286348581314,
+          82.06862211227417,
+          64.9978518486023
+        ]
+      ],
+      "mesh_sha256": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3"
+    },
+    "gripper_link1": {
+      "bounds_in_gripper_base_mm": [
+        [
+          -28.000000757087626,
+          -5.358979261061029e-07,
+          61.5000015376911
+        ],
+        [
+          28.000001748498995,
+          26.50000254073204,
+          138.0000001875643
+        ]
+      ],
+      "mesh_sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d"
+    },
+    "gripper_link2": {
+      "bounds_in_gripper_base_mm": [
+        [
+          -28.00000086426735,
+          -26.50000173688515,
+          61.5000015376911
+        ],
+        [
+          28.00000086426735,
+          5.4210108624275206e-15,
+          138.0000001875643
+        ]
+      ],
+      "mesh_sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606"
+    }
+  },
+  "model_nominal_TCP_axial_from_gripper_base_origin_mm": 115,
+  "conditional_check": {
+    "hypothesis": "If ruler seam R coincides with gripper_base origin and installed hardware matches CAD, A/B should lie inside finger axial mesh envelope. Both premises are unverified.",
+    "observed_A_mm": 30.0,
+    "observed_B_mm": 94.0,
+    "finger1_axial_model_mm": [
+      61.5000015376911,
+      138.0000001875643
+    ],
+    "A_inside_nominal_full_finger_axial_envelope_if_R_equals_base_origin": false,
+    "interpretation": "Unresolved physical datum or installed-geometry mismatch. Full mesh bounds do not identify the effective contact region. These readings do not establish a 53 mm TCP error or authorize a TCP replacement."
+  },
+  "runtime_config_modified": false,
+  "calibration_verified": false,
+  "motion_sent": false
+}

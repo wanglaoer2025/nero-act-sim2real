@@ -1,0 +1,42 @@
+Script started on 2026-10-14 23:23:48+08:00 [COMMAND="/usr/bin/env PYTHONDONTWRITEBYTECODE=1 /home/user/nero/bin/python -u run_short_test.py --execute --output logs/probe_001" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+{
+  "joint_index": 0,
+  "amplitude_rad": 0.005,
+  "speed_percent": 5,
+  "nominal_hz": 20,
+  "ramp_s": 1,
+  "hold_s": 2,
+  "return_ramp_and_observation_s": 3,
+  "tracking_tolerance_rad": 0.001,
+  "motion_sent": false,
+  "policy_used": false,
+  "freshness_scope": "SDK timestamp advancement; not device age"
+}
+
+操作：关节响应复测
+风险：确保SDK独占CAN、ROS驱动已停止、空夹爪悬空；最多6秒目标发送。异常保持当前位置，严重故障/中断电子急停；速度5%不自动恢复。
+输入 RESPONSE 继续，直接回车取消：RESPONSE
+{
+  "joint_index": 0,
+  "amplitude_rad": 0.005,
+  "speed_percent": 5,
+  "nominal_hz": 20,
+  "ramp_s": 1,
+  "hold_s": 2,
+  "return_ramp_and_observation_s": 3,
+  "tracking_tolerance_rad": 0.001,
+  "motion_sent": true,
+  "policy_used": false,
+  "freshness_scope": "SDK timestamp advancement; not device age",
+  "passed": true,
+  "error": null,
+  "outbound_tracking_passed": true,
+  "return_tracking_passed": true,
+  "positive_progress_rad": 0.005131268000863387,
+  "can_frames": 23266,
+  "observed_loop_hz": 19.98008025965611,
+  "loop_period_p95_s": 0.0502050449984381,
+  "ready_for_v9_execution": false
+}
+
+Script done on 2026-10-14 23:24:20+08:00 [COMMAND_EXIT_CODE="0"]

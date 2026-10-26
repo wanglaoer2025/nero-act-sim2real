@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "performed_on": "4090 source machine exported bundle, not the remote simulator machine",
+  "offline_test_total": 23,
+  "new_sdk_absence_tests": 3,
+  "sdk_absence_method": "fresh subprocess intercepts pyAgxArm/pyzed imports and raises ModuleNotFoundError; normal software dependencies remain installed",
+  "checks": [
+    "HDF5 roundtrip and 8D dataset loading without either hardware SDK",
+    "training module imports without either SDK",
+    "hardware creation still fails without SDK",
+    "default V120, explicit firmware including None and channel forwarded correctly",
+    "existing wrapper/dataset tests",
+    "train and run_act_real help/import checks"
+  ],
+  "code_review": "independent reviewer found no actionable issues",
+  "live_project_modified": false,
+  "hardware_commands_executed": false,
+  "simulation_task_or_training_verified": false
+}

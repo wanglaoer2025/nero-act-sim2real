@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "physical_success": false,
+  "max_lift_m": 0.0003492547170644289,
+  "maximum_horizontal_transfer_m": 0.18265068156387673,
+  "stable_released_frames": 145,
+  "lift_contact_frames": 0,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5221424348993051,
+      -0.1669457570577174,
+      0.04749668779991463
+    ],
+    "tcp_xyz": [
+      -0.5256240120598794,
+      -0.1625263948973568,
+      0.2550077042944559
+    ],
+    "cup_upright": 0.9999999999999557,
+    "cup_speed": 2.7805533836644513e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09499999877504955,
+    "contract_valid": true
+  },
+  "stages": [
+    {
+      "stage": "release",
+      "cup_xyz": [
+        -0.5221424343687491,
+        -0.16694575838114173,
+        0.04749668780047386
+      ],
+      "tcp_xyz": [
+        -0.5242418790116165,
+        -0.16653505490537596,
+        0.06196769027563492
+      ],
+      "cup_upright": 0.9999999999999493,
+      "cup_speed": 3.160657665684631e-07,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.09499999877452486,
+      "contract_valid": true
+    },
+    {
+      "stage": "retreat",
+      "cup_xyz": [
+        -0.522142431527774,
+        -0.16694575497256434,
+        0.04749668781069788
+      ],
+      "tcp_xyz": [
+        -0.5256189644741263,
+        -0.16253240579491088,
+        0.2549001498497881
+      ],
+      "cup_upright": 0.9999999999999706,
+      "cup_speed": 1.978803050052236e-06,
+      "bilateral": false,
+      "supported": true,
+      "unexpected_contact": false,
+      "unexpected_robot_contact": false,
+      "gripper_width": 0.09499999863784794,
+      "contract_valid": true
+    }
+  ],
+  "frames": 863,
+  "error": null,
+  "real_hardware_tested": false,
+  "task": "release_to_retreat_correction",
+  "full_task_verified": false
+}

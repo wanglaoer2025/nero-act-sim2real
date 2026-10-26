@@ -1,0 +1,2 @@
+    if stage=='formal' and settings.get('transition_sampling_profile','none')!='none':
+        raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')

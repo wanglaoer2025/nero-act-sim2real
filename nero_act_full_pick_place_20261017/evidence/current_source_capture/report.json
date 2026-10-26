@@ -1,0 +1,49 @@
+{
+  "mode": "read_only_live_capture",
+  "robot": "Nero single arm AGX gripper",
+  "joint_names": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "joint7",
+    "gripper"
+  ],
+  "arm_unit": "rad",
+  "gripper_unit": "m total width",
+  "joint_topic": "/feedback/joint_states",
+  "rgb_order": "RGB",
+  "image_rotation_applied_degrees": 180,
+  "image_already_upright": true,
+  "camera_configured_fps": 30,
+  "requested_sample_hz": 6.0,
+  "camera_metadata": {
+    "sdk_version": "5.4.1",
+    "native_width": 1280,
+    "native_height": 720,
+    "rectified_left_intrinsics_native": {
+      "fx": 527.345703125,
+      "fy": 527.345703125,
+      "cx": 647.1705322265625,
+      "cy": 359.8399353027344
+    },
+    "intrinsics_coordinate_frame": "raw ZED optical, before 180 degree image rotation",
+    "view": "LEFT rectified; distortion not reapplied",
+    "capture_width": 640,
+    "capture_height": 360
+  },
+  "achieved_sample_hz": 6.006395838517157,
+  "samples": 13,
+  "rejected": [],
+  "feedback_messages": 407,
+  "observed_feedback_receipt_hz": 174.73707267489738,
+  "feedback_age_gate": "host message receipt, not measured sensor age",
+  "hardware_synchronized": false,
+  "robot_sdk_connected": false,
+  "motion_sent": false,
+  "interrupted": false,
+  "failure": null,
+  "real_transfer_verified": false
+}

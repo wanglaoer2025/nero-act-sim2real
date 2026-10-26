@@ -1,0 +1,11 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/wq/nero_act_grasp_state_recovery_20261018/evidence/run20_pipeline.py", line 28, in <module>
+    run('grasp_corrections',['-u','-m','evidence.collect_grasp_corrections'])
+  File "/home/user/wq/nero_act_grasp_state_recovery_20261018/evidence/run20_pipeline.py", line 22, in run
+    if code:raise RuntimeError(f'{stage} failed ({code}); artifacts preserved')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: grasp_corrections failed (1); artifacts preserved

@@ -1,0 +1,63 @@
+{
+  "mode": "isolated_mock_state_initialization_only",
+  "physical_motion_command_sent": false,
+  "hardware_components": [
+    {
+      "name": "FakeSystem",
+      "plugin": "mock_components/GenericSystem",
+      "state": "active"
+    }
+  ],
+  "actual_start": [
+    0.1832595714594046,
+    -0.12651891747706895,
+    0.10000736613927509,
+    1.5707963267948966,
+    -0.023893557459802373,
+    0.28167868797936485,
+    0.13107422682477415,
+    0.060118
+  ],
+  "physical_gate_forwarder_stopped": true,
+  "gated_publishers": 0,
+  "driver_excluded_from_raw_state_topic": true,
+  "can_tx_packets_before": 3260,
+  "can_tx_packets_after": 3260,
+  "virtual_controller_results": [
+    {
+      "mock_controller": "arm_controller",
+      "status": 4,
+      "error_code": 0,
+      "target": [
+        0.1832595714594046,
+        -0.12651891747706895,
+        0.10000736613927509,
+        1.5707963267948966,
+        -0.023893557459802373,
+        0.28167868797936485,
+        0.13107422682477415
+      ]
+    },
+    {
+      "mock_controller": "gripper_controller",
+      "status": 4,
+      "error_code": 0,
+      "target": [
+        0.060118
+      ]
+    }
+  ],
+  "actual_after": [
+    0.1832246648743647,
+    -0.12651891747706895,
+    0.09990264638415543,
+    1.5707963267948966,
+    -0.023893557459802373,
+    0.28166123468684495,
+    0.13107422682477415,
+    0.060118
+  ],
+  "maximum_mock_real_difference_rad_or_m": 0.00010471975511966436,
+  "actual_samples_during_mock_setup": 812,
+  "success": true
+}

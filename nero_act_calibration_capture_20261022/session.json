@@ -1,0 +1,395 @@
+{
+  "time_local": "2026-10-22T21:49:42.229365+08:00",
+  "objective": "Collect real TCP/camera calibration evidence for the approved15D visual ACT migration",
+  "approved_plan": "/home/user/wq/docs/superpowers/plans/2026-10-19-nero-act-live-visual-feedback.md",
+  "operator_available": true,
+  "tools_reported": [
+    "calibration board",
+    "ruler"
+  ],
+  "board_reported_external_size_mm": [
+    110,
+    110
+  ],
+  "black_square_side_measured_mm": 95,
+  "detected_dictionary": "DICT_4X4_50",
+  "detected_id": 0,
+  "marker_visibility_passed_frames": 8,
+  "marker_visibility_total_frames": 8,
+  "camera_serial": "39602891",
+  "baseline_robot_feedback_samples": 5,
+  "tcp_fit_samples": 0,
+  "tcp_holdout_samples": 0,
+  "base_control_points_measured": 0,
+  "camera_holdout_samples": 0,
+  "board_base_pose_known": false,
+  "tcp_reference_fixture_ready": false,
+  "motion_sent": true,
+  "controller_reset_sent": false,
+  "can_tx_before": 907,
+  "can_tx_after": 1241,
+  "calibration_verified": false,
+  "pending": "No further manual measurement or calibration setup requests. Retained-version live ACT diagnostic10/10 prefixes; complete current-layout simulation blocked closure96.6mm off cup. Same model/current start succeeds in reference layout. Continue software position-adaptation analysis using these saved traces; no physical motion authorized by a failed simulation.",
+  "rulings": [
+    "Current baseline is not a TCP fit sample: no fixed-point contact was confirmed",
+    "110mm pose estimates are diagnostic scale hypotheses; no base extrinsic or verified TCP is published",
+    "Existing legacy calibration CLIs enable/enter drag and write live configuration; do not invoke them as receive-only sampling",
+    "Use native rectified optical pixels and actual per-open intrinsics; upright180-degree view is for display only",
+    "Operator confirmed black coding square95x95mm;110x110 is retained only as earlier board/external-size report. Static marker pose is recomputed from stored original pixels and per-open intrinsics; previous110mm diagnostics are immutable and were never deployed.",
+    "Mounted-board pairs are candidate hand-eye observations, not independent absolute metrology or an approved-v1 verified calibration bundle.",
+    "Repeated flange poses within1mm and1degree cannot count as distinct fit or pose-check samples across either role; later rank/coverage checks remain required.",
+    "Native rectified optical image/corners/K have rotation0; only the live preview is rotated180degrees. Configured camera serial39602891 is enforced.",
+    "Operator may position the arm with their existing controls; this capture process blocks all SDK sends. CAN counts can change from external operator actions and are retained without attributing them to this process.",
+    "Current user explicitly requested robot-height adjustment. A separate20mm noncontact framing entry reuses ControlledStart arm-only1percent guards; it cannot authorize ACT/cup contact, enable/reset, or publish ROS controls. Retained mesh checks exclude the new bracket, so onsite full swept-area clearance remains required and collision_check_complete staysfalse.",
+    "Final review: finite workspace validation regraded Important because NaN could disable a hardware boundary; fixed in the one RED7 to GREEN60 pass.",
+    "Final review declined physical clearance, clamp rigidity, stop accessibility, actual interpolation/runtime, exposure clock and ROS receive-only state; these require current physical checks, not offline assertions. Current route hard-limit margin~0.030rad exceeds0.012rad tracking guard.",
+    "Selecting unique requestedID0 while unrelated IDs exist implements marker identity; still reject duplicateID0/missing/out-of-frame/pose mismatch. Regression uses real stopped frame, fresh independent selector review clean.",
+    "Current offline height-test fixtures bind current source only in memory. Historical height plans remain immutable and reject changed capture SHA; production provenance checks were not weakened.",
+    "Measured start to next original target was0.006034rad; added1checked midpoint rather than relaxing0.006rad step. All remaining original endpoints preserved."
+  ],
+  "evidence_sha256": {
+    "/home/user/wq/nero_act_calibration_capture_20261022/baseline_01/baseline.json": "f12f5f7e8f403c14419510bf8e86572a195b0ac8b36b0eab0ad84b63cddae9fe",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_check_01/detections.json": "201f9d6ce89caf22e70681c45f54e0b59459942adcd55afcd81c44d6f32707af",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_check_02/detections.json": "62944a6e5939c56ec715da97545b82217ead19f04169d15414425d6fb021f38b",
+    "/home/user/wq/nero_act_calibration_capture_20261022/black_edge_measurement.png": "ebfbc289cc461224a82f973e96ab5112df4cad3bd1c48de5e1355eb54a1152d2",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_measured_95mm/marker_profile.json": "e7c6e62bf56b882621e27ff8cddc89950cd7e7f3ff1af14b496899d06a9ddfdb",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_measured_95mm/camera_marker_observations.json": "63eb7355a5a29cceb9ba1373c5fe556dca415564d9cbcf27fb7784a5ea9a6601",
+    "/home/user/wq/nero_act_calibration_capture_20261022/baseline_01/static_frame_diagnostic.json": "8ebda22ed56efe1c8065cf992e6113ea741d6f8df68445dfb2bc2e0c6ff6f18c",
+    "/home/user/wq/nero_act_calibration_capture_20261022/marker_check_02/subpixel_diagnostic.json": "5cb8f92220e4b9a3f35fcd507f093af25c4415bcdc83aa41abd96a7f0f847223",
+    "/home/user/wq/nero_act_calibration_capture_20261022/capture.py": "027822022df5ef386da6a51d80ff96e6c86198d51f9d0006144ddcd6aad49f10",
+    "/home/user/wq/nero_act_calibration_capture_20261022/tests/test_capture.py": "d1c25565ea1e50052c3bc871698f868e84d92c0cead9171c3f8c40a63ae90a04",
+    "/home/user/wq/nero_act_calibration_capture_20261022/sampler_suite.log": "4ee4883a0efea6d1a14874a3b87a14849036ac2ee469a55aad68f4882afeb3f0",
+    "/home/user/wq/nero_act_calibration_capture_20261022/sampler_review_red.log": "329e610d97123deb5057b6ad3c54371d82bbf437d0fc7bdc0d35aa5841f0fb38",
+    "/home/user/wq/nero_act_calibration_capture_20261022/sampler_smoke_01/manifest.json": "691caf6952cf5b88ad9afe384e255ad35988bf87aeb7055a352a6ec925894bbf",
+    "/home/user/wq/nero_act_calibration_capture_20261022/mount_check_01/report.json": "5d796d48f9b07d21dd5de5c5ca776c20815d46bcd0f5a3f9708728be84cb0bac",
+    "/home/user/wq/nero_act_calibration_capture_20261022/framing_complete/verification.json": "f4c84520c53d0d78561152776863cf17437055822de0079cb6a17a99f0136c42",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_01/report.json": "0143bef6afa640f327537bfa9349f9f0d03b4d785740ed7c38acd6f573672da0",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/report.json": "599ed1cc86a9ab8bca75616f1abc203682a14d24424ac809fb8d55598a6de7b4",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/plane_comparison.json": "047fc6a32cd1d89e3bf95cb8db50b3351103930c646e478e94a685eefc4a9d43",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/report.json": "8a131c24c28d5a606f8284f5f18240390bceb77eb741629a0f2a20df2c556e1b",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_03/two_position_comparison.json": "4a7d2b861668130095532e51e81e7034f3cdfdd17148152f4dbbf43a1a323f96",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/report.json": "738e5fd6dfa58553ed84b699a8925deaaac7cdc96069a95609681194519e33da",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/three_position_comparison.json": "7a17b8f8df2a80decd6b9bbfba6ad91eb8d0a592ce81e2490941dff7dc1f0bfd",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_plane_8mm_derivation.json": "bc408beedb9522c09edc92589ad52bae7ab58bc5853afbb63a9ba548dbf107d2",
+    "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/available_tools_camera_sampling_checkpoint.json": "96cb429e412528494691a4684a43de1dd707abcb73c1ba025c1a626231f35625",
+    "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/record_reuse_audit.json": "d2649def11d74afb9e071b4e82220e3d546c6c529fe757ce33e7a5dd2b60f5da",
+    "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/recomputed_20261014_handeye.json": "bad3d0608651d35fd3c3c947d15a98663c3c5749e793d683308e95184b80041b",
+    "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/reused_current_handeye_pairs.json": "fe9659638b46eb185f065bce54a23f9827830b8ea1ac97e6608dea81df6fb546",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/motion_readiness.json": "fb79367b66be0267233a031f96d3beacf15ad427400719cc9a790b848eb12788",
+    "/home/user/wq/nero_motion_request_20261022/preflight_01/actual_pick_place_progress.json": "cef70fc447051b8635f88d07a4fccd870e88fe0ac22a45aaeaa225b0575d5ee1",
+    "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/TCP_reference_and_next_measurement.json": "e5eca2285550a8ec10cbe1dec2219b75df9fc3ddd1e42da201ea79f1b27bc37f"
+  },
+  "black_square_dimensions_measured_mm": [
+    95,
+    95
+  ],
+  "dimension_source": "Operator ruler report: 黑边是95*95",
+  "marker_profile": "/home/user/wq/nero_act_calibration_capture_20261022/marker_measured_95mm/marker_profile.json",
+  "marker_camera_observations": "/home/user/wq/nero_act_calibration_capture_20261022/marker_measured_95mm/camera_marker_observations.json",
+  "board_rigid_mount_operator_confirmed": false,
+  "mount_rigidity_independently_validated": false,
+  "mounted_marker_visible_frames": 0,
+  "mounted_marker_total_frames": 5,
+  "live_sampler_directory": "/home/user/wq/nero_act_calibration_capture_20261022/live_session_04",
+  "live_sampler_service": "nero-act-calibration-preview-04-20261022.service",
+  "hand_eye_fit_samples": 1,
+  "hand_eye_pose_check_samples": 0,
+  "current_camera_pose_change_confirmed": false,
+  "framing_motion_directory": "/home/user/wq/nero_act_calibration_capture_20261022/height_adjust_01",
+  "operator_manual_jog_reported": false,
+  "framing_motion_complete": true,
+  "framing_actual_drop_mm": 77.99000000000001,
+  "framing_verification": "/home/user/wq/nero_act_calibration_capture_20261022/framing_complete/verification.json",
+  "auto_sampling_operator_selected": true,
+  "live_sampler_running": false,
+  "board_mount_location": "directly clamped between the two fingers",
+  "board_material_operator_report": "hard rigid calibration board",
+  "gripper_must_remain_untouched": true,
+  "automatic_sampling_plan": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/nominal_plan.json",
+  "automatic_sampling_software_review": "Complete;4 findings fixed,60 tests passed",
+  "automatic_sampling_actual_motion_sent": true,
+  "automatic_sampling_review_receipt": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/execution_review.json",
+  "automatic_sampling_onsite_confirmation": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/onsite_confirmation.json",
+  "automatic_sampling_running": false,
+  "automatic_sampling_service": "nero-act-calibration-auto-20261022.service",
+  "automatic_sampling_execution": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/execution_01",
+  "accepted_static_hand_eye_candidates": 3,
+  "current_can_tx": 6677,
+  "marker_false_stop_root_cause": {
+    "actual_ids": [
+      0,
+      17
+    ],
+    "physical_id0_corners_complete": true,
+    "unrelated_id17_size_pixels": 7,
+    "source": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/remainder_execution_01/vision_stop.json"
+  },
+  "accepted_distinct_hand_eye_candidates": 4,
+  "operator_confirmed_no_marker_or_camera_adjustment": true,
+  "latest_health": {
+    "state": [
+      0.18325957655906677,
+      -0.12651892006397247,
+      0.09998991340398788,
+      1.5707788467407227,
+      -0.0239110104739666,
+      0.2816961407661438,
+      0.1310218721628189,
+      0.09492400288581848
+    ],
+    "timestamp": 1792654457.2492566,
+    "monotonic": 184004.896766689,
+    "feedback_timestamps": [
+      1792654457.2435594,
+      1792654457.2438083,
+      1792654457.2440338,
+      1792654457.2442334,
+      1792654457.231409,
+      1792654457.2316346,
+      1792654457.2318592,
+      1792654457.2442334,
+      1792654457.2460587,
+      1792654457.2463586,
+      1792654457.2318592,
+      1792654457.2323587,
+      1792654457.2326095,
+      1792654457.2328088,
+      1792654457.233059,
+      1792654457.2333088,
+      1792654457.2335598,
+      1792654457.2337837,
+      1792654457.2460587
+    ],
+    "feedback": {
+      "arm_status": 2,
+      "motion_status": 0,
+      "ctrl_mode": 1,
+      "err_code": 0
+    },
+    "controller_errors": "ErrStatus:\n  joint_1_angle_limit: False\n  joint_2_angle_limit: False\n  joint_3_angle_limit: False\n  joint_4_angle_limit: False\n  joint_5_angle_limit: False\n  joint_6_angle_limit: False\n  joint_7_angle_limit: False\n  communication_status_joint_1: False\n  communication_status_joint_2: False\n  communication_status_joint_3: False\n  communication_status_joint_4: False\n  communication_status_joint_5: False\n  communication_status_joint_6: False\n  communication_status_joint_7: False",
+    "flange_pose": [
+      -0.21866,
+      -0.091442,
+      0.479425,
+      -1.5707614202098568,
+      -5.235987755982989e-05,
+      -3.1415402937122336
+    ],
+    "driver_state": [
+      "ArmMsgFeedbackLowSpd1:\n  vol: 23.5\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+      "ArmMsgFeedbackLowSpd2:\n  vol: 23.700000000000003\n  foc_temp: 39.0\n  motor_temp: 32.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+      "ArmMsgFeedbackLowSpd3:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 33.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+      "ArmMsgFeedbackLowSpd4:\n  vol: 23.8\n  foc_temp: 43.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+      "ArmMsgFeedbackLowSpd5:\n  vol: 23.5\n  foc_temp: 41.0\n  motor_temp: 37.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+      "ArmMsgFeedbackLowSpd6:\n  vol: 23.8\n  foc_temp: 40.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0",
+      "ArmMsgFeedbackLowSpd7:\n  vol: 23.5\n  foc_temp: 38.0\n  motor_temp: 35.0\n  foc_status:   MotorFocStatus:\n    voltage_too_low: False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    collision_status: False\n    driver_error_status: False\n    driver_enable_status: True\n    stall_status: False\n  bus_current: 0.0"
+    ],
+    "driver_details": [
+      {
+        "joint": 1,
+        "timestamp": 1792654457.2323587,
+        "flags": {
+          "voltage_too_low": false,
+          "motor_overheating": false,
+          "driver_overcurrent": false,
+          "driver_overheating": false,
+          "collision_status": false,
+          "driver_error_status": false,
+          "stall_status": false,
+          "driver_enable_status": true
+        }
+      },
+      {
+        "joint": 2,
+        "timestamp": 1792654457.2326095,
+        "flags": {
+          "voltage_too_low": false,
+          "motor_overheating": false,
+          "driver_overcurrent": false,
+          "driver_overheating": false,
+          "collision_status": false,
+          "driver_error_status": false,
+          "stall_status": false,
+          "driver_enable_status": true
+        }
+      },
+      {
+        "joint": 3,
+        "timestamp": 1792654457.2328088,
+        "flags": {
+          "voltage_too_low": false,
+          "motor_overheating": false,
+          "driver_overcurrent": false,
+          "driver_overheating": false,
+          "collision_status": false,
+          "driver_error_status": false,
+          "stall_status": false,
+          "driver_enable_status": true
+        }
+      },
+      {
+        "joint": 4,
+        "timestamp": 1792654457.233059,
+        "flags": {
+          "voltage_too_low": false,
+          "motor_overheating": false,
+          "driver_overcurrent": false,
+          "driver_overheating": false,
+          "collision_status": false,
+          "driver_error_status": false,
+          "stall_status": false,
+          "driver_enable_status": true
+        }
+      },
+      {
+        "joint": 5,
+        "timestamp": 1792654457.2333088,
+        "flags": {
+          "voltage_too_low": false,
+          "motor_overheating": false,
+          "driver_overcurrent": false,
+          "driver_overheating": false,
+          "collision_status": false,
+          "driver_error_status": false,
+          "stall_status": false,
+          "driver_enable_status": true
+        }
+      },
+      {
+        "joint": 6,
+        "timestamp": 1792654457.2335598,
+        "flags": {
+          "voltage_too_low": false,
+          "motor_overheating": false,
+          "driver_overcurrent": false,
+          "driver_overheating": false,
+          "collision_status": false,
+          "driver_error_status": false,
+          "stall_status": false,
+          "driver_enable_status": true
+        }
+      },
+      {
+        "joint": 7,
+        "timestamp": 1792654457.2337837,
+        "flags": {
+          "voltage_too_low": false,
+          "motor_overheating": false,
+          "driver_overcurrent": false,
+          "driver_overheating": false,
+          "collision_status": false,
+          "driver_error_status": false,
+          "stall_status": false,
+          "driver_enable_status": true
+        }
+      }
+    ],
+    "gripper_details": {
+      "timestamp": 1792654457.2460587,
+      "flags": {
+        "voltage_too_low": false,
+        "motor_overheating": false,
+        "driver_overcurrent": false,
+        "driver_overheating": false,
+        "sensor_status": false,
+        "driver_error_status": false,
+        "homing_status": false,
+        "driver_enable_status": true
+      },
+      "mode": "width",
+      "width_m": 0.094924,
+      "force_n": -0.005
+    }
+  },
+  "latest_scene_probe": "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/restart_scene_probe_01",
+  "operator_confirmed_restart_by_manual": true,
+  "operator_confirmed_marker_removed": true,
+  "latest_act_restart_preflight": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/restart_preflight.json",
+  "latest_table_marker_capture": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/report.json",
+  "table_marker_capture_qualified_frames": 24,
+  "table_board_thickness_mm": 8.0,
+  "latest_table_marker_capture_CAN": [
+    6677,
+    6677
+  ],
+  "table_marker_result": "Three positions72 valid repeated frames. With8mm operator height, table-normal distance365.447..371.350mm vs old315.211mm; cross-position5.903mm discrepancy persists. Camera/base and TCP unverified.",
+  "accepted_table_marker_distinct_positions": 3,
+  "latest_table_marker_comparison": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_04/three_position_comparison.json",
+  "table_marker_valid_repeated_frames_total": 72,
+  "table_marker_three_position_capture_complete": true,
+  "table_board_thickness_source": "Operator tabletop-to-black-surface height report:8mm; uncertainty unknown",
+  "latest_table_plane_thickness_derivation": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_plane_8mm_derivation.json",
+  "table_plane_distance_estimates_mm": [
+    365.9833418294451,
+    371.34989492180506,
+    365.4467723025534
+  ],
+  "available_calibration_tools_latest_report": "只有标定板、尺子和普通夹具",
+  "tcp_center_reference_fixture_available": false,
+  "latest_calibration_tools_checkpoint": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/available_tools_camera_sampling_checkpoint.json",
+  "user_requires_existing_records_before_any_new_capture": true,
+  "previous_static_remount_request_withdrawn": true,
+  "latest_record_reuse_review": "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/record_reuse_audit.json",
+  "historical_mount_photos_found": [
+    "/home/user/wq/nero_act_calibration_capture_20261022/framing_complete/verified_upright.png",
+    "/home/user/wq/nero_act_calibration_capture_20261022/mount_check_01/latest_upright.png",
+    "/home/user/wq/nero_act_calibration_capture_20261022/automatic_sampling_01/fixed_selector_execution_01/attempt_000/optical.png"
+  ],
+  "current_handeye_reused_pair_count": 4,
+  "archived_handeye_datasets_found": 15,
+  "latest_motion_request_preflight": "/home/user/wq/nero_motion_request_20261022/preflight_01/motion_readiness.json",
+  "latest_motion_request_sent_targets": 0,
+  "latest_driver_control_enabled": false,
+  "latest_motion_request_cup_detection_count": 0,
+  "latest_actual_pick_place_progress": "/home/user/wq/nero_motion_request_20261022/preflight_01/actual_pick_place_progress.json",
+  "operator_goal_actual_cup_transport_confirmed": true,
+  "latest_offline_generic_cup_confidence": 0.7723638415336609,
+  "latest_calibration_hypotheses_cup_disagreement_mm": [
+    100.9322028863459,
+    104.48706535756062,
+    102.17868089235428
+  ],
+  "latest_TCP_frame_reference_audit": "/home/user/wq/nero_act_calibration_capture_20261022/record_reuse_review_01/TCP_reference_and_next_measurement.json",
+  "tcp_reference_clarification": {
+    "time_local": "2026-10-22T21:59:32.469403+08:00",
+    "operator_reply": "参考点不清楚",
+    "status": "operator_dimensions_and_reference_confirmed_model_mapping_unresolved",
+    "guide": "/home/user/wq/nero_act_calibration_capture_20261022/tcp_reference_guide_01/measurement_reference.png",
+    "reference_R_verified_on_hardware": false,
+    "measurement_values_mm": {
+      "A": 30.0,
+      "B": 94.0
+    },
+    "motion_authorized_by_this_step": false,
+    "latest_time_local": "2026-10-22T22:00:40.355447+08:00",
+    "latest_operator_reply": "两项都从图中红线①后端接缝起量，包含夹爪本体",
+    "physical_seam_identified_by_operator": true,
+    "seam_to_software_frame_transform_verified": false
+  },
+  "tcp_static_dimension_request": {
+    "time_local": "2026-10-22T22:00:40.355447+08:00",
+    "operator_reply": "能清楚辨认",
+    "status": "dimensions_and_rear_seam_reference_confirmed_by_operator",
+    "physical_seam_identified_by_operator": true,
+    "seam_to_software_frame_transform_verified": false,
+    "reference": "Red seam R in tcp_reference_guide_01/measurement_reference.png, at rear of gripper body and mounting adapter interface",
+    "measurements_mm": {
+      "A": 30.0,
+      "B": 94.0
+    },
+    "scope": "Coarse axial geometry check only, not independent TCP acceptance",
+    "robot_connected": false,
+    "motion_sent": false,
+    "latest_time_local": "2026-10-22T22:09:17.733952+08:00",
+    "latest_operator_reply": "两项都从图中红线①后端接缝起量，包含夹爪本体",
+    "measurement_file": "/home/user/wq/nero_act_calibration_capture_20261022/tcp_reference_guide_01/static_dimensions_30_94.json",
+    "both_measurements_include_gripper_body": true,
+    "independent_metrology_verified": false
+  },
+  "latest_tcp_dimension_model_comparison": "/home/user/wq/nero_act_calibration_capture_20261022/tcp_reference_guide_01/static_dimensions_model_comparison.json",
+  "latest_tcp_dimension_audit": "/home/user/wq/nero_act_calibration_capture_20261022/tcp_reference_guide_01/confirmed_dimensions_and_model_audit.json",
+  "latest_model_identification_review": "/home/user/wq/nero_act_calibration_capture_20261022/model_identification_review_01/model_and_gripper_crosscheck.json",
+  "user_declines_additional_measurements": true,
+  "latest_existing_calibration_transfer": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01",
+  "latest_existing_calibration_transfer_results": "/home/user/wq/nero_motion_request_20261022/existing_calibration_transfer_01/execution_results.json"
+}

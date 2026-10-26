@@ -1,0 +1,33 @@
+{
+  "trainable_groups": [
+    {
+      "name": "position_projection",
+      "lr": 0.0001,
+      "parameters": 2048
+    },
+    {
+      "name": "action_decoder",
+      "lr": 1e-05,
+      "parameters": 925952
+    },
+    {
+      "name": "arm_output",
+      "lr": 0.0001,
+      "parameters": 1032
+    },
+    {
+      "name": "gripper_increment",
+      "lr": 3e-05,
+      "parameters": 9281
+    }
+  ],
+  "total_parameters": 12594507,
+  "geometry_weight_norm": 0.05614801123738289,
+  "unchanged_CVAE_hash": "151245d74b727bec1fd33fc4acba4b528233758d890c17f7b821007768a5629f",
+  "unchanged_visual_hash": "d9d73faf807fb714498fbe6600bffc8bec681c1349bca35486168bea5d556e9f",
+  "no_gradient_regression": {
+    "before": "AssertionError: position gradients are blocked by FrozenIncrementPolicy.encode no_grad/detach",
+    "after": "3 integration tests passed"
+  },
+  "hardware_commands_sent": false
+}

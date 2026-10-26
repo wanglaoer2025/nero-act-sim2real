@@ -1,0 +1,1390 @@
+{
+  "audit_scope": "Read-only supplemental inspection of earlier ACT evidence in the Git-ignored /home/user/projects/nero artifacts and logs; not a claim that these earlier candidates are the October 1a28 model.",
+  "generated_at_local": "2026-10-25T10:53:56.078261+08:00",
+  "read_only": true,
+  "old_files_modified": false,
+  "training_started": false,
+  "hardware_started": false,
+  "inventory": {
+    "external_listing_path": "/tmp/nero_project_external_logs_20261025.txt",
+    "external_listing_sha256": "1ae9b304a06a617247dfb6a425c2c4f4d21acee9ac58e569fc2e309c9c8eb088",
+    "external_listing_total": 429,
+    "act_json_files_read_and_parsed": 206,
+    "act_artifact_json_files": 33,
+    "act_runtime_summary_files": 173,
+    "status_passed": 137,
+    "status_passed_without_logged_gripper_events": 132,
+    "status_passed_with_logged_gripper_events": 5,
+    "passed_dry_run_filename_count": 22,
+    "passed_execute_filename_count": 115,
+    "passed_with_nonzero_commands_sent": 114,
+    "runtime_summary_with_top_level_task_or_success_fields": [],
+    "status_counts_by_directory": {
+      "act_day6": {
+        "cancelled": 2,
+        "failed": 11,
+        "passed": 13
+      },
+      "act_dual_day6": {
+        "passed": 12,
+        "failed": 1
+      },
+      "act_dual_fixed_destination_day6": {
+        "failed": 3,
+        "passed": 12
+      },
+      "act_dual_joint55_replay_day6": {
+        "passed": 14,
+        "failed": 6,
+        "cancelled": 1
+      },
+      "act_dual_xyz_compatible38_day6": {
+        "passed": 17,
+        "failed": 3
+      },
+      "act_dual_xyz_day6": {
+        "passed": 6
+      },
+      "act_dual_xyz_grasp_focus_day6": {
+        "passed": 6,
+        "failed": 1
+      },
+      "act_dual_xyz_latest_day6": {
+        "failed": 2,
+        "passed": 17,
+        "cancelled": 2
+      },
+      "act_dual_xyz_lead10_day6": {
+        "passed": 5
+      },
+      "act_dual_xyz_merged_day6": {
+        "passed": 17,
+        "cancelled": 2
+      },
+      "act_offset10_day6": {
+        "failed": 2,
+        "passed": 18
+      }
+    },
+    "count_limits": "The173 summaries have no top-level task_success (nor other top-level task/success fields).137 report status=passed, which is not a task success rate. All137 lack a top-level gripper_events field; the actual event field is position_diagnostics.gripper_events.71 passed summaries have that nested field:66 explicitly empty and5 nonempty. The other66 lack the nested field, so their event status is unknown. Commanded transitions do not establish physical grasp, support, placement, or full task acceptance.",
+    "gripper_event_field_path": "position_diagnostics.gripper_events",
+    "passed_with_top_level_gripper_events_field": 0,
+    "passed_with_nested_gripper_events_field": 71,
+    "passed_with_explicitly_empty_nested_gripper_events": 66,
+    "passed_missing_nested_gripper_events_field": 66,
+    "status_passed_without_logged_gripper_events_definition": "Composite count only:66 summaries explicitly record position_diagnostics.gripper_events=[] plus66 summaries lack that nested field. Do not report132 physically zero-event runs, or treat missing fields as empty observations.",
+    "passed_with_nonempty_nested_gripper_events": [
+      {
+        "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_150418_summary.json",
+        "field_path": "position_diagnostics.gripper_events",
+        "events": [
+          {
+            "event": "grasp",
+            "step": 621,
+            "timestamp": 1789455907.7031507,
+            "estimated_tcp_xyz_mm": [
+              -504.3469092162991,
+              283.7439506122767,
+              38.38429740824186
+            ],
+            "expected_tcp_xyz_mm": [
+              -511.43914461135864,
+              -188.2275640964508,
+              12.269288301467896
+            ],
+            "offset_xyz_mm": [
+              7.092235395059561,
+              471.9715147087275,
+              26.115009106773968
+            ],
+            "xy_error_mm": 472.0247986063333
+          }
+        ]
+      },
+      {
+        "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_150232_summary.json",
+        "field_path": "position_diagnostics.gripper_events",
+        "events": [
+          {
+            "event": "grasp",
+            "step": 672,
+            "timestamp": 1789455812.135186,
+            "estimated_tcp_xyz_mm": [
+              -548.1904070838282,
+              241.54923104202092,
+              5.083563569674938
+            ],
+            "expected_tcp_xyz_mm": [
+              -571.7094540596008,
+              -7.9369209706783295,
+              71.65941596031189
+            ],
+            "offset_xyz_mm": [
+              23.519046975772653,
+              249.48615201269925,
+              -66.57585239063695
+            ],
+            "xy_error_mm": 250.59226966678816
+          }
+        ]
+      },
+      {
+        "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_131618_summary.json",
+        "field_path": "position_diagnostics.gripper_events",
+        "events": [
+          {
+            "event": "grasp",
+            "step": 360,
+            "timestamp": 1789967811.6340497,
+            "estimated_tcp_xyz_mm": [
+              -588.3378879296198,
+              -163.54962226768123,
+              64.85543987229633
+            ],
+            "expected_tcp_xyz_mm": [
+              -608.235239982605,
+              -158.32172334194183,
+              77.23619788885117
+            ],
+            "offset_xyz_mm": [
+              19.897352052985184,
+              -5.227898925739396,
+              -12.380758016554836
+            ],
+            "xy_error_mm": 20.57268932099498
+          },
+          {
+            "event": "place",
+            "step": 363,
+            "timestamp": 1789967811.818243,
+            "estimated_tcp_xyz_mm": [
+              -589.8201251036036,
+              -164.534797822133,
+              62.82596589150409
+            ],
+            "expected_tcp_xyz_mm": [
+              -543.7878370285034,
+              6.202582269906998,
+              82.23619788885117
+            ],
+            "offset_xyz_mm": [
+              -46.032288075100155,
+              -170.73738009203998,
+              -19.410231997347076
+            ],
+            "xy_error_mm": 176.83388958602572
+          },
+          {
+            "event": "grasp",
+            "step": 364,
+            "timestamp": 1789967811.8792613,
+            "estimated_tcp_xyz_mm": [
+              -591.4547531397418,
+              -164.46695971217028,
+              67.06145684261362
+            ],
+            "expected_tcp_xyz_mm": [
+              -608.235239982605,
+              -158.32172334194183,
+              77.23619788885117
+            ],
+            "offset_xyz_mm": [
+              16.780486842863183,
+              -6.145236370228446,
+              -10.174741046237543
+            ],
+            "xy_error_mm": 17.870329284304834
+          }
+        ]
+      },
+      {
+        "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_132002_summary.json",
+        "field_path": "position_diagnostics.gripper_events",
+        "events": [
+          {
+            "event": "grasp",
+            "step": 468,
+            "timestamp": 1789968040.2106595,
+            "estimated_tcp_xyz_mm": [
+              -593.8208075538284,
+              -191.17170649881083,
+              75.93781391809186
+            ],
+            "expected_tcp_xyz_mm": [
+              -589.4373655319214,
+              -177.06970870494843,
+              80.89709281921387
+            ],
+            "offset_xyz_mm": [
+              -4.383442021907058,
+              -14.10199779386241,
+              -4.959278901122005
+            ],
+            "xy_error_mm": 14.767562620064318
+          }
+        ]
+      },
+      {
+        "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_185237_summary.json",
+        "field_path": "position_diagnostics.gripper_events",
+        "events": [
+          {
+            "event": "grasp",
+            "step": 423,
+            "timestamp": 1789469603.5317647,
+            "estimated_tcp_xyz_mm": [
+              -540.865022357915,
+              20.851981413303125,
+              20.086422868290477
+            ],
+            "expected_tcp_xyz_mm": [
+              -553.3546209335327,
+              -25.382446125149727,
+              66.55102968215942
+            ],
+            "offset_xyz_mm": [
+              12.48959857561772,
+              46.23442753845285,
+              -46.46460681386895
+            ],
+            "xy_error_mm": 47.891673205146205
+          }
+        ]
+      }
+    ]
+  },
+  "success_semantics": {
+    "finding": "Historical status=passed means the requested bounded control loop returned without an exception; it is not a full pick-carry-place-release-retreat acceptance.",
+    "runtime_source_path": "/home/user/projects/nero/src/act/run_act_real.py",
+    "runtime_source_lines": {
+      "command_threshold_events": 166,
+      "loop_completion_status_passed": 985
+    },
+    "event_definition": "grasp/place are derived from the commanded gripper crossing 0.0475 m, rather than an independently verified held object, support or complete task.",
+    "fifty_step_counterexample": {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_mpc_20260921_103331_summary.json",
+      "status": "passed",
+      "steps": 50,
+      "commands_sent": 50,
+      "gripper_events": [],
+      "closest_expected_grasp_distance_mm": 326.84634922598104,
+      "closest_expected_grasp_xy_error_mm": 226.1690120376291,
+      "adaptive_mpc_enabled": true,
+      "mpc_active_steps": 0,
+      "interpretation": "The passed execute run explicitly records position_diagnostics.gripper_events=[] and finishes326.846mm from the expected grasp. It is a bounded loop success, not a full physical task acceptance.",
+      "gripper_event_field_path": "position_diagnostics.gripper_events",
+      "gripper_event_field_present": true
+    },
+    "command_event_counterexample": {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_131618_summary.json",
+      "status": "passed",
+      "events": [
+        {
+          "event": "grasp",
+          "step": 360,
+          "timestamp": 1789967811.6340497,
+          "estimated_tcp_xyz_mm": [
+            -588.3378879296198,
+            -163.54962226768123,
+            64.85543987229633
+          ],
+          "expected_tcp_xyz_mm": [
+            -608.235239982605,
+            -158.32172334194183,
+            77.23619788885117
+          ],
+          "offset_xyz_mm": [
+            19.897352052985184,
+            -5.227898925739396,
+            -12.380758016554836
+          ],
+          "xy_error_mm": 20.57268932099498
+        },
+        {
+          "event": "place",
+          "step": 363,
+          "timestamp": 1789967811.818243,
+          "estimated_tcp_xyz_mm": [
+            -589.8201251036036,
+            -164.534797822133,
+            62.82596589150409
+          ],
+          "expected_tcp_xyz_mm": [
+            -543.7878370285034,
+            6.202582269906998,
+            82.23619788885117
+          ],
+          "offset_xyz_mm": [
+            -46.032288075100155,
+            -170.73738009203998,
+            -19.410231997347076
+          ],
+          "xy_error_mm": 176.83388958602572
+        },
+        {
+          "event": "grasp",
+          "step": 364,
+          "timestamp": 1789967811.8792613,
+          "estimated_tcp_xyz_mm": [
+            -591.4547531397418,
+            -164.46695971217028,
+            67.06145684261362
+          ],
+          "expected_tcp_xyz_mm": [
+            -608.235239982605,
+            -158.32172334194183,
+            77.23619788885117
+          ],
+          "offset_xyz_mm": [
+            16.780486842863183,
+            -6.145236370228446,
+            -10.174741046237543
+          ],
+          "xy_error_mm": 17.870329284304834
+        }
+      ],
+      "interpretation": "The passed log records grasp at360, place at363 and grasp at364; the place event has176.833889586mm XY error. These are command transitions, not proof of a carried and stably placed cup.",
+      "gripper_event_field_path": "position_diagnostics.gripper_events"
+    }
+  },
+  "separate_model_families": {
+    "earlier_physical_state_and_action_dims": [
+      8,
+      8
+    ],
+    "earlier_coordinate_conditioned_model_state_dim": 14,
+    "earlier_camera_names": [
+      "camera_0",
+      "camera_1"
+    ],
+    "earlier_six_coordinates": "fixed absolute source_base_xyz_mm and destination_base_xyz_mm, converted to metres; attributes are repeated over the episode, and startup-resolved coordinates are reused in the control loop.",
+    "earlier_sources": {
+      "dataset_path": "/home/user/projects/nero/src/act/nero_dataset.py",
+      "dataset_function": "_task_coordinates; __getitem__",
+      "runtime_path": "/home/user/projects/nero/src/act/run_act_real.py",
+      "runtime_functions": [
+        "resolve_task_coordinates",
+        "run_control_loop"
+      ],
+      "runtime_model_state_line": 530,
+      "training_config_paths": [
+        "/home/user/projects/nero/configs/act_nero_dual_fixed_destination_finetune_day5.yaml",
+        "/home/user/projects/nero/configs/act_nero_dual_joint55_replay_day5.yaml"
+      ]
+    },
+    "october15_model": "current8 measured state + causal previous submitted gripper-command delta +6 current image-derived relative coordinates [cup_bottom_base-TCP_base,target_base-TCP_base].",
+    "october_source": "/home/user/wq/nero_act_grouped_gripper_20261021/executor/model.py",
+    "boundary": "The earlier8D/14D dual-camera experiments are not the current15D relative-geometry1a28 candidate. No direct checkpoint identity or compatible input contract is inferred from similar ACT names."
+  },
+  "checkpoint_and_normalization_provenance": {
+    "fixed_destination": {
+      "training_summary": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/training_summary.json",
+      "init_checkpoint": "checkpoints/act_dual_xyz_compatible38_day5/policy_best_l1.ckpt",
+      "normalization_stats": "checkpoints/act_dual_xyz_compatible38_day5/dataset_stats.pkl",
+      "train_episodes": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "val_episodes": [
+        2,
+        7
+      ],
+      "best_l1_epoch": 20,
+      "best_val_l1": 0.0900213185697794,
+      "stopped_after_epoch": 30
+    },
+    "joint55": {
+      "training_summary": "/home/user/projects/nero/artifacts/act_dual_joint55_replay_day5/training_summary.json",
+      "init_checkpoint": "checkpoints/act_dual_xyz_compatible38_day5/policy_best_l1.ckpt",
+      "normalization_stats": "checkpoints/act_dual_xyz_compatible38_day5/dataset_stats.pkl",
+      "train_episode_count": 43,
+      "val_episode_count": 12
+    },
+    "fixed_destination_scratch_comparison": {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_scratch_day5/training_summary.json",
+      "train_episode_count": 7,
+      "val_episode_count": 2,
+      "best_val_l1": 0.23734611943364142,
+      "best_l1_epoch": 71
+    },
+    "boundary": "The lower fine-tune validation L1 is evidence on the9-episode offline split only. It does not establish task success, a specific cause of generalization failure, or that the October15D normalization is wrong."
+  },
+  "nine_episode_data_audit": {
+    "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/grasp_transition_audit/audit_summary.json",
+    "episode_count": 9,
+    "schema_valid_count": 9,
+    "protocol_compatible_count": 9,
+    "grasp_compatible_count": 0,
+    "trajectory_reason_counts": {
+      "side_approach": 9
+    },
+    "warning_counts": {
+      "vertical_sag_over_15mm": 6
+    },
+    "warning_ids": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tcp_offset_approximate": true,
+    "boundary": "All9 pass schema/protocol, but all9 are side_approach under that audit and6 have vertical_sag_over_15mm. These are trajectory/FK audit categories using an approximate TCP, not independent physical metrology or evidence of a current15D defect."
+  },
+  "action_label_contract": {
+    "recording_source": "/home/user/projects/nero/src/act/record_yolo_episode.py",
+    "action_construction_source": "/home/user/projects/nero/src/act/episode_io.py",
+    "recording_default_action_lead_ms": 0.0,
+    "metadata_action_semantics": "future_measured_qpos_plus_gripper_target",
+    "actual_default_semantics": "The seven joint labels come from same-cycle measured qpos; the eighth comes from the explicit gripper target. The recorder does not capture the actual submitted seven-joint command as its seven-joint action label.",
+    "training_joint_lookahead_steps": 8,
+    "recording_frequency_hz": 20,
+    "training_joint_lookahead_seconds": 0.4,
+    "lookahead_implementation_source": "/home/user/projects/nero/src/act/nero_dataset.py",
+    "lookahead_lines": [
+      224,
+      235
+    ],
+    "gripper_labels_shifted_by_joint_lookahead": false,
+    "boundary": "Advancing recorded measured joint positions by8steps is an offline proxy for targets, not recovery of the actual submitted command. These files cannot be silently treated as matching the October absolute-command and causal-context contract."
+  },
+  "additional_raw_distribution_shift_evidence": {
+    "path": "/home/user/projects/nero/artifacts/act_dual_xyz_compatible38_day5/rollout_diagnostics/execute_20260916_101344.json",
+    "outside_the_429_filename_filtered_listing": true,
+    "steps": 910,
+    "status": "failed",
+    "minimum_distance_mm": 83.6745325856923,
+    "final_tcp_offset_mm": [
+      42.258,
+      51.805,
+      -53.431
+    ],
+    "training_preclose_z_offset_within150mm": {
+      "samples": 1140,
+      "minimum_mm": -19.67217419810224,
+      "p01_mm": -14.565184533508367,
+      "p05_mm": -12.40958641226894,
+      "median_mm": -3.236514426905373,
+      "maximum_mm": 0.48620384230983404
+    },
+    "height_gate_candidate": {
+      "step": 818,
+      "distance_mm": 95.34860351796875,
+      "z_offset_mm": -25.480601590262772,
+      "tcp_xyz_mm": [
+        -560.2082366521646,
+        76.98634397177032,
+        58.14710684479582
+      ]
+    },
+    "boundary": "This is direct evidence that the earlier closed-loop candidate left its demonstrated grasp distribution. It is a historical analogue, not a same-checkpoint causal diagnosis of1a28."
+  },
+  "evidence_strength": {
+    "strong": "Raw status/step/event evidence plus current runtime source establish that historical passed is not task acceptance; raw configs and dataset/runtime source establish the incompatible14D versus15D coordinate contracts.",
+    "moderate": "Earlier trajectory audits and the saved910-step diagnostic support coverage and closed-loop distribution shift for that older family.",
+    "not_established": [
+      "complete autonomous pick-place success for any of these earlier candidates",
+      "unique causal explanation of October fine-tuning degradation from September logs",
+      "corruption or mismatched normalization in the current1a28 checkpoint",
+      "a direct checkpoint lineage connection from these earlier14D candidates to1a28"
+    ]
+  },
+  "primary_source_sha256": {
+    "fifty_step_counterexample": {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_mpc_20260921_103331_summary.json",
+      "sha256": "a4adc5393eea5be6dac9412d762b65a1687325e6e362a7989d3b07870d4fdc8c"
+    },
+    "false_task_events_counterexample": {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_131618_summary.json",
+      "sha256": "aa255a9fa85fd737776a102b78f8a50c2ebdac755dff7f72bd1ed18c649d7a06"
+    },
+    "fixed_destination_training": {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/training_summary.json",
+      "sha256": "6eed79ec6896817dbca48f3b0e96dc10d32a82c78a6d6a48b7c1365f10c48946"
+    },
+    "fixed_destination_scratch_training": {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_scratch_day5/training_summary.json",
+      "sha256": "bd3a2cb4a4037077b8b98bf098abf7366cc80a1226ff0950a303009d0daf8ae4"
+    },
+    "fixed_destination_data_audit": {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/grasp_transition_audit/audit_summary.json",
+      "sha256": "5deb92c613feb619bc14ffe38fbe7205d90d6c90c9744c7bed70e4a6fbfb2b1d"
+    },
+    "joint55_training": {
+      "path": "/home/user/projects/nero/artifacts/act_dual_joint55_replay_day5/training_summary.json",
+      "sha256": "2f32ea6009bf934b50ab599ba3be9d44aa59fb9d52b7c9f6da5742d868a107bc"
+    },
+    "old_rollout_distribution_diagnostic": {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_compatible38_day5/rollout_diagnostics/execute_20260916_101344.json",
+      "sha256": "009ec20729ba959a4f646001224aafdfaaee921fa0fffb760a502ab001593804"
+    },
+    "dataset_source": {
+      "path": "/home/user/projects/nero/src/act/nero_dataset.py",
+      "sha256": "df6182c23c46838bb52f382fa523151c2d8044986ac19af48fc4b92592cfd773"
+    },
+    "runtime_source": {
+      "path": "/home/user/projects/nero/src/act/run_act_real.py",
+      "sha256": "a603c11e92c828533b6b8706e6b21a0a3dd34905d20c5dc58a1f94b58708acef"
+    },
+    "recording_source": {
+      "path": "/home/user/projects/nero/src/act/record_yolo_episode.py",
+      "sha256": "fdc4fb252508904dfc40abc8e54811455672224f98cfefaa3840f6f0d3a69f7e"
+    },
+    "action_construction_source": {
+      "path": "/home/user/projects/nero/src/act/episode_io.py",
+      "sha256": "28fe0c9b92bdb17b9e7b1cb7e7de509cf14080beda1124233963abbe5256d10b"
+    },
+    "fixed_destination_training_config": {
+      "path": "/home/user/projects/nero/configs/act_nero_dual_fixed_destination_finetune_day5.yaml",
+      "sha256": "f113ca2e46aea2a1964fd24056760e9999baafe282f2c76ac768f2f94d56a5fc"
+    },
+    "joint55_training_config": {
+      "path": "/home/user/projects/nero/configs/act_nero_dual_joint55_replay_day5.yaml",
+      "sha256": "fad32ad41d481a62be7d45c651ea23dd0905ba330bd903ae525d65d0ee8f259b"
+    },
+    "repo_instructions": {
+      "path": "/home/user/projects/nero/AGENTS.md",
+      "sha256": "8b4e04530933e9ad2e1a0bbbd48b111e026c60e080497635deb20b6b99b1f0bc"
+    },
+    "current15_source": {
+      "path": "/home/user/wq/nero_act_grouped_gripper_20261021/executor/model.py",
+      "sha256": "0be5d6d12b2bfa6deeec8aa5a5f0d7086844d13ea8e5d2cd7ed5e3195fe729c7"
+    },
+    "current1a28_frozen_acceptance": {
+      "path": "/home/user/wq/nero_act_full_acceptance_20261024/run_01/acceptance.json",
+      "sha256": "614152b7b8662747b4e9295ec042dd73a0e387365bd29d8c8c0f53c798e15e0f"
+    }
+  },
+  "act_json_files_read": [
+    {
+      "path": "/home/user/projects/nero/artifacts/act_day5/safety_summary.json",
+      "sha256": "b50c11fcfce6f1ee5c64f301c8ff29d1188f1b176da54c741ad84e3bc6426b42"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_day5/training_summary.json",
+      "sha256": "d83e4168d7a8618b02b97867774032fc980a755d8f74c74ef205c65fcc243b85"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_day5/safety_summary.json",
+      "sha256": "8a75cf7a98edc1a6a1eaeb657a6fbd50478ab0bce57cd257503d2d47926007a9"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_day5/training_summary.json",
+      "sha256": "72e0b635d92c3672dad23c580b22e797e6d416e965f94b678c2a175b323b7784"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/grasp_transition_audit/audit_summary.json",
+      "sha256": "5deb92c613feb619bc14ffe38fbe7205d90d6c90c9744c7bed70e4a6fbfb2b1d"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/grasp_transition_audit/grasp_transition_summary.json",
+      "sha256": "2a97ab8c41bad67bf250d80b2a1ae40c3de1b3831ba0501427b6a24c40311052"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/safety_summary.json",
+      "sha256": "5034d0ae43b03932bea2c3349f885b758b4c38733889c88dd41a8fd7e5f2cd00"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_finetune_day5/training_summary.json",
+      "sha256": "6eed79ec6896817dbca48f3b0e96dc10d32a82c78a6d6a48b7c1365f10c48946"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_scratch_day5/safety_summary.json",
+      "sha256": "62fdb05c2646cf34de0c00f345da372e88458b610ab066f79669dc7f2c0f6294"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_fixed_destination_scratch_day5/training_summary.json",
+      "sha256": "bd3a2cb4a4037077b8b98bf098abf7366cc80a1226ff0950a303009d0daf8ae4"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_joint55_replay_day5/grasp_transition_test/grasp_transition_summary.json",
+      "sha256": "d2a8565796bb09b0a2bba34bd5b0954314a116e2cadd60ccc7c83efc094312c4"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_joint55_replay_day5/safety_summary.json",
+      "sha256": "4ffe5c2313fec101dab41b37f531d42498833e9c10eace092fea0d523014895d"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_joint55_replay_day5/training_summary.json",
+      "sha256": "2f32ea6009bf934b50ab599ba3be9d44aa59fb9d52b7c9f6da5742d868a107bc"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_compatible38_day5/grasp_transition_audit/audit_summary.json",
+      "sha256": "ba188d5c39fc6970070e009ac4afbd57656e3a9b1b22bd93d9f55d066dc1a268"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_compatible38_day5/grasp_transition_audit/grasp_transition_summary.json",
+      "sha256": "f6d44a1039a657156ebd811c6d0fe5ba14f3d1656e31758ed5b590fe12d83bda"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_compatible38_day5/safety_summary.json",
+      "sha256": "4e4e29be3295b5c5d51395deeaabf2aa79a6e6af1ab13bde3c0c4749d55811d6"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_compatible38_day5/training_summary.json",
+      "sha256": "bebd4109033bee63a422d17fedb6051ace3b8f8ff8d4677a00aeb6d575cd8361"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_day5/safety_summary.json",
+      "sha256": "b85898957b8cba403f73789ebd343d332b6d13f3218d1f356da310501e158818"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_day5/training_summary.json",
+      "sha256": "6e06eeaa57d9d3b57a75622f3ab27b40ca8de754497c0f5cd1f5adfbdc892a08"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_grasp_focus_day5/grasp_transition_audit/audit_summary.json",
+      "sha256": "9d3ed860a4bd0fee30beac4f3750dcd19b6eb8b64170072667c15a91fdf1625f"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_grasp_focus_day5/grasp_transition_audit/grasp_transition_summary.json",
+      "sha256": "8d07171ed2f20890076ac04b627e0691437b357da39558810a340826545e91b5"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_grasp_focus_day5/safety_summary.json",
+      "sha256": "65ca9021aa942dd3bdbd3b52550e07bc3cdc3cf92c0c3c7d07decfd4cd90ed64"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_grasp_focus_day5/training_summary.json",
+      "sha256": "b70f47c1e620a8bd653e258f439fd2d2d448eee5c36fc37b94157160186532db"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_latest_day5/safety_summary.json",
+      "sha256": "68cff86c7d708ef21b97870a5042100a4742f62dd7e7c73a71f85df827156ed3"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_latest_day5/safety_summary_best_l1.json",
+      "sha256": "68cff86c7d708ef21b97870a5042100a4742f62dd7e7c73a71f85df827156ed3"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_latest_day5/safety_summary_best_total.json",
+      "sha256": "74b2b559152a426f9ce5123624a2f85666db08aefa6814a4f8adc8159b97ef72"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_latest_day5/training_summary.json",
+      "sha256": "e13ed06ffac47ac54aed625e7e414192466ad42cee5011959f1e4f2d60bb35dc"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_lead10_day5/safety_summary.json",
+      "sha256": "ff18b90ef0f53737ede24d144bbd14b0611566d8bf0a6f136e6bece83dcba5d8"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_lead10_day5/training_summary.json",
+      "sha256": "1fa39c0c090973434790490e75001be7b0feb19d80bd9d52193e6efa57b3a8cb"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_merged_day5/safety_summary.json",
+      "sha256": "1a8c60f1f1b4c19519fdf92bcf5c2a81fa39af6ffab5ca3c45622c61169fdcad"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_dual_xyz_merged_day5/training_summary.json",
+      "sha256": "66f90e443daab378201bcb7d54f2cd79124901a4d7a84d58ea35a9c599bc465a"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_offset10/safety_summary.json",
+      "sha256": "48b735595d896115b10d25c60224bf3419d7c19af4ade1fb56157c25adc870a2"
+    },
+    {
+      "path": "/home/user/projects/nero/artifacts/act_offset10/training_summary.json",
+      "sha256": "9183807da9a7b9143f940dff282f0340f5ef8acb38a99b8a18a51b1b65e0ee12"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_dry_run_20260909_093403_summary.json",
+      "sha256": "1740843e0dadbe73c073e15643d60ff42d1105e5c3085e6c2e5286e0c6dc9474"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_dry_run_20260909_094004_summary.json",
+      "sha256": "d33ef1d524a144419aa83950c150e324f5d17e71e88e2807af82d70eb2da557d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_dry_run_20260909_095917_summary.json",
+      "sha256": "d33ef1d524a144419aa83950c150e324f5d17e71e88e2807af82d70eb2da557d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_dry_run_20260909_101122_summary.json",
+      "sha256": "fbbadcb39cfa6d591eac5b13a5e2474f8706268b8b22e5ffa5c913a1c9d8bd62"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_dry_run_20260909_101634_summary.json",
+      "sha256": "db84ee984981047c41aaafbc0802fe55e0e72d13cbfdbcac8c58fb652a5555d2"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_101728_summary.json",
+      "sha256": "1740843e0dadbe73c073e15643d60ff42d1105e5c3085e6c2e5286e0c6dc9474"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_101742_summary.json",
+      "sha256": "8ad8ab7a537343a091e78fb16054d62fe69343ea2132792bd0e3d3a7664b7b9e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_102628_summary.json",
+      "sha256": "42852aadaf797abaf51c02b310b28eb88d73a9dd0902adfaec94d6c5c76b4ab5"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_103139_summary.json",
+      "sha256": "a18e04f9d007381ea905aa726cdb86d76743bc4dde392688673d5b98ee6b3ea6"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_103244_summary.json",
+      "sha256": "26b75e901de71838f16bcd721074113940170275c7454f4115a41e48d7c7b908"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_105154_summary.json",
+      "sha256": "ef58e6cd6e565d56bb589fd01923fc6a8f6766aca56b0421899f4ca4eafc54f9"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_160409_summary.json",
+      "sha256": "482393434db435413a5112ac423d1605e5d3736fc77792009843d5e17043f324"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_160610_summary.json",
+      "sha256": "ce79e5987cac0c5e33051ab724fddb494c47b75d793e101831de253ec86b76fc"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_160930_summary.json",
+      "sha256": "65dd5b961c115e3cdf11ddb7255094f7023dab712b37f8262bf586a516f578b9"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_161125_summary.json",
+      "sha256": "706c90c5bc677b44ac0f62ded77c9e36c4263fe23e5f935421796a4ae9fc100f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_161815_summary.json",
+      "sha256": "dda582b0bab065357a23a7c04d92eee2c337b9446948df686d57face848aa249"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_162156_summary.json",
+      "sha256": "83dd0f888c04d7448f3a932ca640bd82519b36314e85dd02e72de6dce8273976"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_20260909_163315_summary.json",
+      "sha256": "4a764f46163a93aeb505ef85b5dc3aa9bcc72247d780751d85cfbb23a25c8f0f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260909_163547_summary.json",
+      "sha256": "9b10b9b516aeae7a286c76251a1c736855e21b9fe36057791d3dfc22b87e92e5"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260909_163627_summary.json",
+      "sha256": "257c4bbf13af26ca7b7380dca94d86143b4f184048055fb872ed0f60fb744912"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260909_165132_summary.json",
+      "sha256": "1ef3fe27cefb24e03746ecdcefc2bb88ca92814483645a446044fc1ce7af5691"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260909_170323_summary.json",
+      "sha256": "ebcb8f24e1130e549738ec443de00c8c3bcef79fd2651592eb3c796247efb96a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260909_170552_summary.json",
+      "sha256": "44609e3a71272227f34849e5d176c1ce8b5f431681cd30054dd5262d70da4111"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260909_170623_summary.json",
+      "sha256": "a9872ae8d0649f4f2efa819c56cbfc36fcdef238754eba60a825493696a2a0f5"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260909_170752_summary.json",
+      "sha256": "bff8b0706d745d7a437b5c7121b84f98fd8d5ceb0a4c02f3f53edf4fcbae2896"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_day6/act_day6_execute_temporal_20260910_113205_summary.json",
+      "sha256": "fa29ed0166c0a41fa294fb63abdca8796c534282078f1fb57540ed3b05ec1ca0"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_dry_run_20260910_202835_summary.json",
+      "sha256": "6991e4ab32b66ed42983184128e7bc3345e63bc0b1d1ab6739fd978e8a3270a5"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_dry_run_20260911_153239_summary.json",
+      "sha256": "9a40eb0a194c21bdd6316b69d444dbbb84095dd439770565d1eee317ce68e01d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_dry_run_20260911_155553_summary.json",
+      "sha256": "193aea478c45e50b08beea7a0bb53ecf06cd6204462f76c867a1dbb505798b96"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_dry_run_20260911_155631_summary.json",
+      "sha256": "1c75567fbcc674f5a58b9fb31fb5622efaa1ebd80f597e2f0b4556fee641cf80"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_dry_run_20260911_155707_summary.json",
+      "sha256": "b683b04cc84b00877e0fed3aa8504314daeefef625b7d9cf30502ce3cf2bea3e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_dry_run_20260911_155727_summary.json",
+      "sha256": "832ecd0efd84b2a81715c3ccd516394f0ae6bf55c76b3ce4c08cdb565353f8ea"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_execute_temporal_20260910_202943_summary.json",
+      "sha256": "fc38eac94320e29c0cbb6b07395cdc9ff7b0a3fea366a8f9fb4885832c6112a8"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_execute_temporal_20260910_203032_summary.json",
+      "sha256": "0b8f185ab38b759f658ec96b7703aa62dbe5f3bed7d479857fc35dfb25f3a925"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_execute_temporal_20260910_203132_summary.json",
+      "sha256": "503f65f48217fd30743809be984f614522bfce7d00aaa8de62ca52f7f9398bc0"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_execute_temporal_20260910_203641_summary.json",
+      "sha256": "e38d0629a52797637499efe1207cccbe9ef866a5d787a84ede092f2c1c47ad2d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_execute_temporal_20260911_150452_summary.json",
+      "sha256": "9b321ff3c7ec9c552b9fc1a15cd1026b482f9e2b1dcf4634b4bd994889e2fa2e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_execute_temporal_20260911_150538_summary.json",
+      "sha256": "80884982e20104edcd302bfb6130bb9a2d06aaf92777898b47f1d947ff4e0dce"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_day6/act_day6_execute_temporal_20260911_152849_summary.json",
+      "sha256": "8fa2add87d469919b22d3d877650158b8ace33a825b2d72f543897f54832618a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_dry_run_20260917_163309_summary.json",
+      "sha256": "d99c9a4291fae42fd3917d552a635d4d9afa8da0c0781733780cf90d29fed823"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_dry_run_20260917_163342_summary.json",
+      "sha256": "ed2d75d8372f69f5e2d5e78a26d9f7f1aa24d646666ecb78b2add2692d26bae1"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_dry_run_20260917_163429_summary.json",
+      "sha256": "88adcd93b60105ddef8a34b3fa23d7e6807009027628a0b3152c9c658eaaa905"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_dry_run_mpc_20260921_102344_summary.json",
+      "sha256": "43ed046f5811bec417a4ecaf66cff365f619c0d42a10e67ef4214c7f86778dde"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_dry_run_mpc_20260921_103016_summary.json",
+      "sha256": "1c121d688c3f49dc806b5d382430b6d6a29682d0d9b2a812c2ea75f26b547a2a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_20260917_163535_summary.json",
+      "sha256": "d304e9f8cbd22f8374655004d41527b07d5f8037e9834eb19f94009fcdd098d8"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_20260917_163631_summary.json",
+      "sha256": "28db5a1da9d36299303082405fca7bf0ac46d6b530b5030407f54404680d3fd2"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_20260917_164023_summary.json",
+      "sha256": "fc0e37c9b032e5574702d31065cc0a6ed8126b9169f7347b0c4557c3f989890f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_20260917_164054_summary.json",
+      "sha256": "bc0cbb4e4d5d8a54d502728eb3aeaedffc431a68a470c080ae7a2ec3c46fe962"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_20260921_100447_summary.json",
+      "sha256": "d92924373a4198445ccc1e67c328ac71b2caa82adc95e77cacc97f5da7c34d62"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_20260921_100533_summary.json",
+      "sha256": "40af7b7fecfceda9b9418100efdc1b018dfea27738206c3e583e8152d8b033b5"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_20260921_100559_summary.json",
+      "sha256": "8ca27288e29a73d742aabaa7d7ea53723b6f5a91565bc047de41bff6cbeb8396"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_mpc_20260921_103150_summary.json",
+      "sha256": "bb42ce6f1200f225aa540a006fcc6f238a48085f3ed29e77bc7f453ffa27e8c7"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_mpc_20260921_103331_summary.json",
+      "sha256": "a4adc5393eea5be6dac9412d762b65a1687325e6e362a7989d3b07870d4fdc8c"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_fixed_destination_day6/act_day6_execute_mpc_20260921_103416_summary.json",
+      "sha256": "22251f90f807b8937bf906bf369bd3ab3f5bef8d7804c3e38057aa4e8fc0003a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_dry_run_20260921_123623_summary.json",
+      "sha256": "0837da8212ec0fb5f96cf7c182d912a529f8d9870ed2e24d0d2c668546001f48"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_dry_run_20260921_123821_summary.json",
+      "sha256": "c46eb8ffce9e59966fa1e8e5cb6915af225f00399bc8d71fe207623bdc417fa3"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_dry_run_mpc_20260921_124603_summary.json",
+      "sha256": "9e4ca11ae7da36d81d8636723c94acebc5018c195ceb2bc6deb4affb310b73fc"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_dry_run_mpc_20260921_124813_summary.json",
+      "sha256": "835dc8f0ee927393acf49369098db874ae1fdd893528e51f5ba7f68929dd3bf7"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_dry_run_mpc_20260921_130244_summary.json",
+      "sha256": "55bbc04e155502e85d61e311886cb9466b4a2f665b6c96341f99195751d5ef14"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_20260921_124029_summary.json",
+      "sha256": "3224da1b2bd9fed483547ce414fa6cea1faad5e07d68749140a28a9b0e8b49a4"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_20260921_124208_summary.json",
+      "sha256": "3c58519dd07c457b16a3c261574ea6f4b1deeee7c40994bcd20f7726bab722d0"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_20260921_124251_summary.json",
+      "sha256": "569cdbc3c9ce80f693fd96a4510f6467ed9fbb7c8b0a35b717707b05a92c81e7"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_125244_summary.json",
+      "sha256": "df78b37ba406d339498ac7b68d178f96d80bc7d4514cfa66cb9d53bafcaca1a0"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_125324_summary.json",
+      "sha256": "d9b2c62891c5512bf8a536814ffff4f71bbcb816a0e249caff3572675d229fbc"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_125419_summary.json",
+      "sha256": "f2f9a485f8c242a4e1ff09b3c63f8be5491679ab89908d28330e8c142e9f8c31"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_130816_summary.json",
+      "sha256": "9fd8dadf5fc45299e730cf1821029f6089849a8be0eb5be8ddf606b2f9e25ea1"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_130948_summary.json",
+      "sha256": "9595e83dab512434e22db6d9375a6fbcdaa305b339ca5dc148ebc29400061b04"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_131618_summary.json",
+      "sha256": "aa255a9fa85fd737776a102b78f8a50c2ebdac755dff7f72bd1ed18c649d7a06"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_131743_summary.json",
+      "sha256": "04c4725cb91b83805d859dd31153f2f6b5c8a25591da633edb3d842c3ca06eee"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_132002_summary.json",
+      "sha256": "31cff62cd2e6297590b9c57dd8b33028f66c95072da436caea0d02654ec37e4e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_132146_summary.json",
+      "sha256": "4b60e301c718ce78f7ffbd68cb0a6b5d1a62ae5473a8cdce39b3bd7841a10672"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_132157_summary.json",
+      "sha256": "69687c58c4f06797860aa69b9ebe2f19a561c5c4ece36dc18d3084854a2fbaba"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_132300_summary.json",
+      "sha256": "b268bc9ba7abe731d9da0c9f8a12427d61fbbc2a29a5b09466f07a13bc603d55"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_132349_summary.json",
+      "sha256": "192da9872a97795b76f398519febf5dfa7f97ac17cd227064855e83c40756ca2"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_joint55_replay_day6/act_day6_execute_mpc_20260921_164631_summary.json",
+      "sha256": "f6e0ccbd2529629bf0a0c5bc5fa9a8002e9e0f7a8dd7efef289b1ca4c0b34b93"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_dry_run_20260916_092746_summary.json",
+      "sha256": "828013abfc09d0c677f9ebdf375d79c09928735324ddea8723546cfc7b275441"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_093200_summary.json",
+      "sha256": "7696cc11bfefd8c08a15e223de17e0a9c1c82baf7cb420560ca8b51dd994baad"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_093337_summary.json",
+      "sha256": "146ddae7260e1637e7e484a8669ebafea46a16518f18d077d19234914f85ff35"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_093418_summary.json",
+      "sha256": "8ff992c1aeb42ee79285c74934747d30a4b5de30dd8b89e9d5ae0c806cf94890"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_093443_summary.json",
+      "sha256": "41207a790b4a4a2699a393eb26941c1aef2df449b6e9f74b2d72422785a0f06e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_093535_summary.json",
+      "sha256": "5a30d9e3cb909ce613d0e7390412e939a62c3c024bef53d0a7efdcac0a81e80a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_093627_summary.json",
+      "sha256": "84df733534a89817c5fe7081ea1ec87f735531778204f5e11ae140ad539954cd"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_094102_summary.json",
+      "sha256": "d88ac92904e2b0a6a37b85d5c26eeeeac34054d4da690aaab1c2ddaebfcbfa8d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_094315_summary.json",
+      "sha256": "81c2f3e93c3a69127bfb3e6b5ac8ba843da8b3711a65063401febee7e331ce9a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_094545_summary.json",
+      "sha256": "ffa3f7f63cbd46a3c325b39538fce70f2fd0db0ab2ef38e8479626d6b65e865e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_095526_summary.json",
+      "sha256": "5e8b6f2ec89936e800a16bc3db30e48a4e1b5c6b7f2fe54a3c1b58af1118dd96"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_095753_summary.json",
+      "sha256": "26aded51a962b54ade3215a6998d0ddd47361c2adc1570a8c80df2efa43cacb2"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_100029_summary.json",
+      "sha256": "5a94c0698a67768893537da61dcca68d0829306b20afb04ef8d2fbf46bb52d3f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_100346_summary.json",
+      "sha256": "4853b77bf98a836dce9ab0d56fd4e04c7661f44b623da8e251803215ab22a4d8"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_100510_summary.json",
+      "sha256": "90d1c1c5c4c000d1cf0d884ef55d1edb667236cc62226eacb97e602ce0bf46f0"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_100628_summary.json",
+      "sha256": "fe84b8eec1c7abb07a9c9b45b86f1337236720128ec48454c5a7fb4a6aa32d3b"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_101142_summary.json",
+      "sha256": "da7524866a0cb1e0fe9380b23ca3ec14e91d0da9998e4f46dc2ebf7df8a24880"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_20260916_101344_summary.json",
+      "sha256": "a487fc8f6df4a7d81d69fd1e69938103b9dac7c7f732ac31e46228fba22f3b58"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_temporal_20260916_102547_summary.json",
+      "sha256": "88f680e3e691191a8870883b851bdbde5334ec240c27045be31190940141aae7"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_compatible38_day6/act_day6_execute_temporal_20260916_102752_summary.json",
+      "sha256": "9d3156f02b8712051165b2cf4cf3b1a6b077d8dcf3226266c6cd488caf170779"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_day6/act_day6_dry_run_20260911_163405_summary.json",
+      "sha256": "0d42da77979348cb195c7bd0d5cc4334ff78f0ab7b1621bf31e4a18f50582aa0"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_day6/act_day6_execute_temporal_20260911_163547_summary.json",
+      "sha256": "52f15778bcdeb1ae896bf2a66278ac90be3e069c036f7c00be86987a94202cf9"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_day6/act_day6_execute_temporal_20260911_163807_summary.json",
+      "sha256": "aa96dc089b3aa9dca55653db64e99650379a91663fa6e64079390c8a9aa25ef9"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_day6/act_day6_execute_temporal_20260911_164005_summary.json",
+      "sha256": "85b00ce686d364f8e069d941106a32560cf47f9912ccf3e42ff3afe6ba1ea4fb"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_day6/act_day6_execute_temporal_20260911_164109_summary.json",
+      "sha256": "6e875c5721e1f8af4bb9d730b5374428a23edeb4c236c7895c7fd9b6b7e8c1fe"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_day6/act_day6_execute_temporal_20260911_164139_summary.json",
+      "sha256": "e5e8e0e7d6be5a17225f303331219ba90e1d7c9d299f7b924540d9d4de5807ec"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_grasp_focus_day6/act_day6_dry_run_20260915_203257_summary.json",
+      "sha256": "6d219cddf3059c9b0271ffdb13ce910a8e9dc44f05a70017df08e6b4bde9473a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_grasp_focus_day6/act_day6_execute_temporal_20260915_203323_summary.json",
+      "sha256": "a377e5c3bf87660e1a9b0948df9df2bb3bb154b32ce1fd32c6f6114b1fe2b696"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_grasp_focus_day6/act_day6_execute_temporal_20260915_203416_summary.json",
+      "sha256": "927fee7d6cf64ff02a9c9c1acabeda03715138ef0643e6a71ba2675f8b246ce7"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_grasp_focus_day6/act_day6_execute_temporal_20260915_203457_summary.json",
+      "sha256": "a3d4b52db58213792bdfee6f7ff350875f45c9e5751f000f23dfe16efc6ab4d9"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_grasp_focus_day6/act_day6_execute_temporal_20260915_203549_summary.json",
+      "sha256": "10faf809c8bcb30aa7a4fb8721bf97f34bb6fc71b9028ba41621ffe772c1a796"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_grasp_focus_day6/act_day6_execute_temporal_20260915_203716_summary.json",
+      "sha256": "7707d521096a61c412b4af33b8f1389d09aa2d63de7b444f31eb748ebfe6d41d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_grasp_focus_day6/act_day6_execute_temporal_20260915_204727_summary.json",
+      "sha256": "c2273f8faa9f30c8cf77f832e15002fdd75988b1d312a133618f200c90431331"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_dry_run_20260915_171612_summary.json",
+      "sha256": "d3ce37d812b752198d4d36855c864b33826aaeedbd081a561fb57f098e78ba0a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_dry_run_20260915_172013_summary.json",
+      "sha256": "45f7ebb2c32558a4f4d77fe1ef14fc5a86d66d8597a9749c47f0ddd2cd7f8c8d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_dry_run_20260915_193044_summary.json",
+      "sha256": "649bf84e17f7f671f27a5ec46cb46fe62c25defec31bec835e4a96bade1644ff"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_172334_summary.json",
+      "sha256": "2f0bd14c83d3b11c0b3e4ff93c985326ae8f5a4b2a0b2caf2a2912357f35446b"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_172525_summary.json",
+      "sha256": "3c4d220d55c790bfb4148082c89f10dfbcebbfef49f4bcc3b95b13bbaafe8776"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_172612_summary.json",
+      "sha256": "b50cc97859f57eb60bc11085d97146a0d7795071e58116007148f605ab81658f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_172628_summary.json",
+      "sha256": "7eb5a415c8df01a2eaf5885577617ea16263251aa8c39e4589d29e79064da4e4"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_173047_summary.json",
+      "sha256": "0a794663eaa647cce7baf716157825822ca1079d1947ff3ffbcc66590e2bee86"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_173136_summary.json",
+      "sha256": "68c33837a90741c67b9da8912d5fbec96e25f39299394828f3eddfd12dd38a34"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_173233_summary.json",
+      "sha256": "e2bc12a119f24b9dc66ff87f8244fe2ed904721ec45de26b1fec61c1e6a5e244"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_184919_summary.json",
+      "sha256": "7b79d16cf0a39786dbcb3c84499eb008899f0b2d5c9fb91c2d028f6d7c96ca0e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_185011_summary.json",
+      "sha256": "1f76ca7fcf8b769de89b73b7c5cb8dcf2d7ee40f378627bc82fbb844467b4db4"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_185046_summary.json",
+      "sha256": "9d7a481762d50681026b998dd5700c973856c97bdecf0e3cf9b6a5c8e55f5a9d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_185140_summary.json",
+      "sha256": "90cf3dc126286fa66dba51d040bea697c13e68179cce3595c974d3419937652e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_20260915_185237_summary.json",
+      "sha256": "5b73af788edbb245eddcb4d86b246af7fa60ffd3b0861798eb96929bc0fbaa52"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_temporal_20260915_190931_summary.json",
+      "sha256": "a07956befa9c754a905217d14f2161538425550da162f14a362dc0d90a3f051f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_temporal_20260915_191353_summary.json",
+      "sha256": "f56fd850c47cd39e44dffef7051623868d63735606a6c5d03a08d178327e56ed"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_temporal_20260915_191447_summary.json",
+      "sha256": "c5f1201d05bc940d894381e4050d31e7faa3e54252a94069611cc57af89dd5de"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_temporal_20260915_191546_summary.json",
+      "sha256": "6a48600adcb294a116fac2d983c269cc3555970babfde909b653ee6c23eb98a6"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_temporal_20260915_193308_summary.json",
+      "sha256": "82722a63b4e419b0f3bb01b19c25163e243134b833397b4cf0c0b9e0488d3a25"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_latest_day6/act_day6_execute_temporal_20260915_193323_summary.json",
+      "sha256": "68a37aaf33357f0de03a1a8db67088efa72906844add1dcc207f47d6b91598e7"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_lead10_day6/act_day6_dry_run_20260911_170614_summary.json",
+      "sha256": "e44eadecbfb9595888ba847d825e2325fdb865ef0e3d174a365fedf3a6411946"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_lead10_day6/act_day6_execute_temporal_20260911_170654_summary.json",
+      "sha256": "d70ef7fe1dbd138248a1b64dc97d7aaee04f74d173fde0c31a0cca8efa14164d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_lead10_day6/act_day6_execute_temporal_20260911_170804_summary.json",
+      "sha256": "a820cebc4bf51cb8c371b0d0b60d26b43878ba92e7d92448d68fa0f1c8ea73be"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_lead10_day6/act_day6_execute_temporal_20260911_170947_summary.json",
+      "sha256": "a6772a2d85f4cd0669105d8ccd573d6d55a8c1dc352d3e370a58f53f4f04acc2"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_lead10_day6/act_day6_execute_temporal_20260911_171020_summary.json",
+      "sha256": "a6bbcd9d5b0548567c1de750f34950a94d00f734b4a801908047ea148d04d731"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_dry_run_20260915_114029_summary.json",
+      "sha256": "12dbb0d812f27c084348f11a843b42c8ea913f2b98edee122eb52a713751ec99"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_dry_run_20260915_152747_summary.json",
+      "sha256": "49ed7f1c3e5b5fb03e0586b682279a121d24247a2b316ceeb1ebfbc2c227b4f8"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_20260915_114113_summary.json",
+      "sha256": "b290b5e9296ded92bfc795c652a88f01a65b7c581f57cc3529f6a300cc2b14b4"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_20260915_114213_summary.json",
+      "sha256": "e9c99511619bf4b5311c8f1528eb07048ba2dedd55995cbd38f063718e89c2e5"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_20260915_114251_summary.json",
+      "sha256": "2c47e87c0fdd3a00627751329e80bd593d110c78793fe7fe9cedf3468ffd10ea"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_20260915_114325_summary.json",
+      "sha256": "75fb484ac4ea6428adccda34d74e01c4a7634b11370abad214209ad5ef10d6e7"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_20260915_114435_summary.json",
+      "sha256": "ed3d79898dd85075b2aab9729103d60a38c70d4fab41916c3072c4223cb856ee"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_20260915_140104_summary.json",
+      "sha256": "5ccc78bcc70b0c58f604a97b14c7f0c543162a61ee041bb58117fdc3253823c9"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_141140_summary.json",
+      "sha256": "58a37a31e807336dda6389ae2940fb0329074abbc73c32a94ce2bfc518b6c986"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_141714_summary.json",
+      "sha256": "5fc803461cc9fd2b015ca63d318920096a235de988d18f0677a79f40749eaa0f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_142324_summary.json",
+      "sha256": "d346ce78a868769a81553f9f9e7f932f0887243e15696d5cfe847320e1a8e775"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_142407_summary.json",
+      "sha256": "b50cc97859f57eb60bc11085d97146a0d7795071e58116007148f605ab81658f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_142649_summary.json",
+      "sha256": "5e0c889ac4e0c9d368dc29b83c3d5a883e3c97a67e5ca553479170da52956de8"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_144310_summary.json",
+      "sha256": "eac987322e1dd1cc194ff4f23185e1cdadbff007ade547b354c962244eaaca1c"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_145542_summary.json",
+      "sha256": "b50cc97859f57eb60bc11085d97146a0d7795071e58116007148f605ab81658f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_145558_summary.json",
+      "sha256": "1bb4438ac4558d5e60ad1097af645078c0a7f9033d2ecc07def51d36d8a22f4e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_145718_summary.json",
+      "sha256": "af1730e7b1c05ffa0b8d098f50d94422212b863cc6a95a39e80dfde4faf548b3"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_150232_summary.json",
+      "sha256": "d20dd118de40098dd60722a62651bbddcd80d0eb544f58151b1d9516d804b70a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_dual_xyz_merged_day6/act_day6_execute_temporal_20260915_150418_summary.json",
+      "sha256": "6dc6b1cd2b83345dc12967ac1a2f8df924f44a5a67210bbbe460a35b6d5e321a"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_20260909_174943_summary.json",
+      "sha256": "d3694cb85a766c741ca497bdd6fa87f87a5feda455a8cd301d670d8d20f60f6e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_20260909_175255_summary.json",
+      "sha256": "1293b883d594cea53c04916b86f8e84ed2e955e5f1efe0c727f809bc08210d81"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_20260909_175317_summary.json",
+      "sha256": "c43b1715ac8988a2e228191bd5c0e3c8c96b732dbc0b71bd580467c0d4624adf"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_20260909_175350_summary.json",
+      "sha256": "da50a3f7a8bce62f317ca2870a486adfa08c6da7e3f246bb3bfae9dc4dba0fe2"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_183004_summary.json",
+      "sha256": "5adc171070224b6330442b17c383b89c458a53009a58bf063c243f5f80e9cf2c"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_183037_summary.json",
+      "sha256": "71a149ed2ac47446f2141a68624cb105677e4874cd9455329e85e7c9dc27f8a1"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_183107_summary.json",
+      "sha256": "bb17f169904e439fe07dfa5a00bd43286625a0daeb1ed7e682b0da7353f0f173"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_183133_summary.json",
+      "sha256": "f040bcb5d8091bc9ae0f641d3a71faad75c89e466077bc947f3c951e78fd17d4"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_184108_summary.json",
+      "sha256": "b78814181a44bee712c70fde8dea127a3c213377975bb4caff78716497e5a07f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_184132_summary.json",
+      "sha256": "e37d49304211e8ae85b573b979a013606185ca90be18be685170d41477182ca6"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_184151_summary.json",
+      "sha256": "97e999aab73d3fe891aa8e05a80d5be5a2cda0e5151501690619579dbc6f6b5e"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260909_184221_summary.json",
+      "sha256": "7f2d241bcb40a9a4e7ee30d830b20ae521d9f18a75da0fe638cb2bb3b9e4d06b"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_110010_summary.json",
+      "sha256": "6a03d08a9e946a227b08f9d36eb1b6c7477bc1ffae485ea81c379302789cef73"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_110255_summary.json",
+      "sha256": "053f3568e40c567daa0be09bf58ab413e1efadaf775df2685f0a21839e93d99c"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_110918_summary.json",
+      "sha256": "d8c7c1528d1023af10f3fca224863ee640fdd0d1904f5ad39b99d0bedd140046"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_110955_summary.json",
+      "sha256": "65293409cb68cf64958181dc5269bc5cd72553c77c58e0a0bb58c7308cd6f47d"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_112309_summary.json",
+      "sha256": "118dfb7ddc5de27e676a0d25074194dbd2c1bbaaa14c82f404e6301df863256f"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_112338_summary.json",
+      "sha256": "bceaadb0fb776a7adaf5634a2ec68b6317a90c8685103de15d8c4ec3395d1206"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_112547_summary.json",
+      "sha256": "13869848719983a772ca208f8fb6f9d6c8385b5398cb28ef51d96b2868f6832b"
+    },
+    {
+      "path": "/home/user/projects/nero/logs/act_offset10_day6/act_day6_execute_temporal_20260910_112649_summary.json",
+      "sha256": "f4876d694386b9895de4a3627358f986a3465a4f109ae77edc027339143c3532"
+    }
+  ]
+}

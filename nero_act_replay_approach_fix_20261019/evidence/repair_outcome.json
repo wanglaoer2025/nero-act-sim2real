@@ -1,0 +1,80 @@
+{
+  "mode": "offline_fix_and_fresh_frozen_ACT_replay_candidate",
+  "failure": {
+    "operator_confirmed_cup_slid_or_rotated": true,
+    "failed_real_attempt_close_goal_submitted": false,
+    "observed_source_offset_mm": [
+      6.63,
+      8.33
+    ],
+    "existing_source_bound_mm": 5,
+    "old_approach_clearance": {
+      "minimum_gap_m": 0.0039356076558587985,
+      "required_gap_m": 0.005,
+      "passed": false,
+      "interpolated_states": 3302,
+      "closest_interpolated_state": 2980,
+      "scope": "nominal cylindrical cup and modeled fingers; protrusions and TCP remain unmeasured",
+      "hardware_connected": false
+    },
+    "confirmed_gap": "Nominal collision checks did not enforce the existing5mm cup-position clearance throughout approach",
+    "actual_contact_part_and_TCP_contribution_unresolved": true
+  },
+  "fixes": [
+    "Check full interpolated approach finger/cup gap before camera/driver handoff",
+    "Check every GRASP frame, cup and card, finite values, unchanged5mm bound",
+    "Retain collected GRASP observations when observation fails",
+    "Fresh frozen run11 ACT simulation at recorded post-stop cup position; no IK or teacher rewrite"
+  ],
+  "candidate": {
+    "checkpoint_sha256": "47e220e102aaede593004678b3941db99287b07a9a1bc3245bd1e16c3246b6f4",
+    "trace_sha256": "d6a28d21788d436e63bee2ae7201e44d5be82ee6fc798a9d5d43b777b357c79e",
+    "recorded_source_xy_m": [
+      -0.528298610038193,
+      0.00993258465659119
+    ],
+    "points": 2663,
+    "nominal_duration_s": 133.15,
+    "new_approach_clearance": {
+      "minimum_gap_m": 0.008180143058567783,
+      "required_gap_m": 0.005,
+      "passed": true,
+      "interpolated_states": 3306,
+      "closest_interpolated_state": 3303,
+      "scope": "nominal cylindrical cup and modeled fingers; protrusions and TCP remain unmeasured",
+      "hardware_connected": false
+    },
+    "model_retrained": false
+  },
+  "validation": {
+    "unit_tests_passed": 67,
+    "independent_review": "No Critical/Important/Minor findings after fixes",
+    "protected_physics_success": true,
+    "lift_mm": 199.45949147007346,
+    "transfer_mm": 171.0452324715874,
+    "stable_released_frames": 103,
+    "preclose_contact_checked_every_physics_step": true,
+    "maximum_approach_cup_drift_m": 5.288263550316418e-08,
+    "collision_checks": 15,
+    "collision_interpolated_states": 21784,
+    "collision_can_tx": [
+      626514,
+      626514
+    ],
+    "frozen_original_nominal": "1/1 complete and finalized",
+    "original_sealed_files_unchanged": 652
+  },
+  "hardware": {
+    "motion_sent_by_this_fix": false,
+    "current_authorization_created": false,
+    "automatic_retry": false,
+    "automatic_return": false,
+    "physical_retest_completed": false,
+    "fresh_scene_rechecked": false
+  },
+  "limits": [
+    "5mm gap is a nominal cylinder/finger model check, not a bound on total real error",
+    "Cup protrusions, approximate TCP/table, and real tracking remain unverified",
+    "Next physical attempt requires current image/feedback/start verification and fresh authorization bound to this trace"
+  ]
+}

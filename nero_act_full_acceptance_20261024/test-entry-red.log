@@ -1,0 +1,53 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_acceptance_loader_does_not_shadow_historical_experiment_module ______
+
+    def test_acceptance_loader_does_not_shadow_historical_experiment_module():
+        path = Path(__file__).with_name('run.py')
+        spec = importlib.util.spec_from_file_location('_tested_acceptance_entry', path)
+        entry = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(entry)
+
+nero_act_full_acceptance_20261024/test_entry.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+nero_act_full_acceptance_20261024/run.py:22: in <module>
+    spec.loader.exec_module(sealed)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+nero_act_contact_escape_fix_20261023/evaluate_escape.py:13: in <module>
+    import evaluate_dense
+nero_act_dense_response_20261023/evaluate_dense.py:12: in <module>
+    spec.loader.exec_module(evaluation)
+nero_act_full_flow_repair_20261023/evaluate_repair.py:11: in <module>
+    from train_repair import ROOT,load_initializer,require_unchanged,snapshot
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """One predeclared1000-update correction; no hardware or checkpoint selection."""
+    import json
+    from pathlib import Path
+    import sys
+    import time
+    
+    import h5py
+    import numpy as np
+    import torch
+    from torch.utils.data import DataLoader
+    
+    from sampling import STAGES,make_batches
+    
+    ROOT=Path(__file__).resolve().parent
+    SOURCE=ROOT.parent/'nero_act_paired_response_20261023'
+    sys.path.insert(0,str(SOURCE))
+>   from experiment import load_latest,prior,require_unchanged,snapshot
+E   ImportError: cannot import name 'load_latest' from 'experiment' (/home/user/wq/nero_act_real_visual_bridge_20261024/experiment.py)
+
+nero_act_full_flow_repair_20261023/train_repair.py:17: ImportError
+=========================== short test summary info ============================
+FAILED nero_act_full_acceptance_20261024/test_entry.py::test_acceptance_loader_does_not_shadow_historical_experiment_module
+1 failed in 0.94s

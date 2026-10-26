@@ -1,0 +1,44 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_ test_visible_corner_and_two_edges_support_partial_card_without_centroid_shift _
+
+    def test_visible_corner_and_two_edges_support_partial_card_without_centroid_shift():
+>       from observer import RegisteredCardObserver
+E       ModuleNotFoundError: No module named 'observer'
+
+tests/test_observer.py:20: ModuleNotFoundError
+_______ test_full_occlusion_and_single_edge_cannot_use_registered_target _______
+
+    def test_full_occlusion_and_single_edge_cannot_use_registered_target():
+>       from observer import RegisteredCardObserver
+E       ModuleNotFoundError: No module named 'observer'
+
+tests/test_observer.py:35: ModuleNotFoundError
+_____________ test_card_motion_with_static_background_is_rejected ______________
+
+    def test_card_motion_with_static_background_is_rejected():
+>       from observer import RegisteredCardObserver
+E       ModuleNotFoundError: No module named 'observer'
+
+tests/test_observer.py:46: ModuleNotFoundError
+____________ test_background_motion_and_repeated_frame_are_rejected ____________
+
+    def test_background_motion_and_repeated_frame_are_rejected():
+>       from observer import RegisteredCardObserver
+E       ModuleNotFoundError: No module named 'observer'
+
+tests/test_observer.py:56: ModuleNotFoundError
+_________ test_registration_requires_temporal_agreement_not_one_image __________
+
+    def test_registration_requires_temporal_agreement_not_one_image():
+>       from observer import RegisteredCardObserver
+E       ModuleNotFoundError: No module named 'observer'
+
+tests/test_observer.py:65: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_observer.py::test_visible_corner_and_two_edges_support_partial_card_without_centroid_shift
+FAILED tests/test_observer.py::test_full_occlusion_and_single_edge_cannot_use_registered_target
+FAILED tests/test_observer.py::test_card_motion_with_static_background_is_rejected
+FAILED tests/test_observer.py::test_background_motion_and_repeated_frame_are_rejected
+FAILED tests/test_observer.py::test_registration_requires_temporal_agreement_not_one_image
+5 failed in 0.11s

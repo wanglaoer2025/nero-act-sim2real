@@ -1,0 +1,68 @@
+{
+  "completed": 14,
+  "total": 48,
+  "latest": {
+    "id": 13,
+    "path": "/home/user/wq/nero_act_visual_feedback_20261019/training_data/visual_retained_v1/episode_13.hdf5",
+    "status": "valid",
+    "teacher_success": true,
+    "full_task_verified": true,
+    "split": "train",
+    "source_group": "scene_13",
+    "frames": 2835,
+    "replay": {
+      "frames": 2835,
+      "maximum_qpos_error": 0.0,
+      "passed": true
+    },
+    "prefix_contract_audit": {
+      "passed": true,
+      "windows": 284
+    },
+    "sha256": "bc0e1c065e7138ad8d198d273dfc4d7c2d470e01d728a581eabb4dd8c9d3d7b5",
+    "scenario": {
+      "index": 13,
+      "split": "train",
+      "source_group": "scene_13",
+      "seed": 180130,
+      "attempt": 0,
+      "source_offset_m": [
+        -0.018,
+        -0.005999999999999998
+      ],
+      "initial_translation_m": [
+        -0.011761531859541074,
+        -0.015196452332839163,
+        -0.009528330515201505
+      ],
+      "initial_rotation_rad": [
+        -0.04673572817948421,
+        0.024861329371146615,
+        0.03547730827281145
+      ],
+      "training_envelope_only": true
+    },
+    "elapsed_s": 34.3422917429707,
+    "requested": 328,
+    "valid": 328,
+    "rejected": {},
+    "stages_valid": {
+      "approach": 58,
+      "descend": 40,
+      "close": 25,
+      "lift": 58,
+      "carry": 31,
+      "place": 40,
+      "release": 25,
+      "retreat": 40,
+      "settle": 11
+    },
+    "image_estimator_error_m": {
+      "median": 0.00683809754756258,
+      "p95": 0.008186073193348156,
+      "max": 0.015089551191210889
+    },
+    "truth_used_as_policy_input": false,
+    "physical_labels_unchanged": true
+  }
+}

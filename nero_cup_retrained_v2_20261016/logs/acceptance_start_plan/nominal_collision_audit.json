@@ -1,0 +1,40 @@
+{
+  "mode": "offline_kinematic_collision_audit",
+  "mujoco_version": "3.15.0",
+  "planning_points": 110,
+  "interpolated_samples": 235,
+  "maximum_interpolation_rad": 0.005,
+  "robot_bodies_checked": [
+    "base_link",
+    "link1",
+    "link2",
+    "link3",
+    "link4",
+    "link5",
+    "link6",
+    "link7",
+    "flange_link",
+    "gripper_base",
+    "gripper_link1",
+    "gripper_link2"
+  ],
+  "all_robot_penetration_contacts": 0,
+  "first_robot_penetration_contacts": [],
+  "nominal_geometry_only": true,
+  "physical_collision_clearance_verified": false,
+  "current_scene_table_cup_parameters_physically_verified": false,
+  "motion_sent": false,
+  "note": "MuJoCo forward collision queries with fixed poses and package geometry; not a physical clearance certificate. No physics or hardware commands.",
+  "tcp_start_m": [
+    -0.588997611815493,
+    -0.05921032117986488,
+    0.15532959303046734
+  ],
+  "tcp_final_m": [
+    -0.3667266595149662,
+    -0.10125287395891391,
+    0.4754589155256915
+  ],
+  "tcp_minimum_z_m": 0.15532959303046734,
+  "table_top_z_m": -0.01
+}

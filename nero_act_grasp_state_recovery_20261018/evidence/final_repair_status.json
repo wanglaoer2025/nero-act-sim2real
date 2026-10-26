@@ -1,0 +1,36 @@
+{
+  "status": "not_fixed_for_original_nominal_scene",
+  "training_completed_epochs": 3,
+  "nominal_candidates": {
+    "validation_selected_epoch2": {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.0,
+      "maximum_horizontal_transfer_m": 1.1505669820922582e-07,
+      "unexpected_arm_cup_contact_frames": 1,
+      "execution_contract_failures": 0,
+      "error": "RuntimeError: Unexpected robot/environment/cup contact",
+      "frames": 1740,
+      "simulated_events": []
+    },
+    "final_epoch3": {
+      "success": false,
+      "physical_success": false,
+      "max_lift_m": 0.0,
+      "maximum_horizontal_transfer_m": 1.6889477678599397e-08,
+      "unexpected_arm_cup_contact_frames": 1,
+      "execution_contract_failures": 0,
+      "error": "RuntimeError: Unexpected robot/environment/cup contact",
+      "frames": 1580,
+      "simulated_events": []
+    }
+  },
+  "independent16_executed": false,
+  "reason_no_independent_evaluation": "nominal full workflow failed",
+  "verified_full_online_ACT_success": "run19 validation42 only; development evidence",
+  "production_sources_bit_identical_to_reviewed_run19": true,
+  "tests_passed": 133,
+  "hardware_connected": false,
+  "architecture_audit": "training_architecture_audit.json",
+  "further_fix_requires_architecture_discussion_after_three_unsuccessful_fix_approaches": true
+}

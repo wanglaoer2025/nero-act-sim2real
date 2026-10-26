@@ -1,0 +1,60 @@
+{
+  "status": "known_mount_and_camera_height; independent_visual_reference_validation_required",
+  "observed_table_proxy_base_z_mm": -76.89505729043381,
+  "table_proxy": "blue card depth median; card thickness and table-origin mapping unverified",
+  "user_measured_table_relative_mounting_plane_mm": -13.0,
+  "live_ros_tcp_offset_m_rad": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "firmware_vs_sdk_flange_position_difference_mm": [
+    0.013824963973924076,
+    0.00017956888719028452,
+    -0.001161355507373063
+  ],
+  "interpretation": "Actual marker dimensions bring optical center measurement into close agreement with the ZED center depth at this marker. Existing camera-to-base transform still maps a nominally table-parallel marker normal about 13.3 degrees from base Z and its center far below expected marker height. Verify/recover the full camera-to-base transform using a known base-frame marker pose or independent reference correspondences. A table normal and camera height alone do not determine yaw and XY translation.",
+  "source_and_destination_offsets_applied_mm": [
+    0,
+    0,
+    0
+  ],
+  "ready_as_real_arm_targets": false,
+  "ready_as_verified_sim_scene_coordinates": false,
+  "next_required_evidence": "Independent known base-frame reference points or a fiducial with known base pose; remeasure target locations after calibration validation and after the card is fixed in its intended place.",
+  "base_support_height_mm": 13.0,
+  "height_reference_assumption": "Support raises mounting plane above table; SDK base origin must be checked against mounting plane; blue card thickness is not measured",
+  "card_z_minus_nominal_table_z_mm": -63.89505729043381,
+  "optical_scale_diagnostic": {
+    "physical_card_dimensions_mm": [
+      100.0,
+      100.0
+    ],
+    "best_reprojection_rms_px": 0.8650416719654498,
+    "optical_camera_forward_depth_mm": 439.24501533531145,
+    "ZED_camera_forward_depth_mm": 421.83750915527344,
+    "optical_base_card_center_z_mm": -92.14775793232212,
+    "nominal_table_height_mm_if_base_origin_at_mounting_plane": -13.0,
+    "conditions": "Colored-edge dimensions and card coplanarity pending confirmation; diagnostic only, not accepted calibration"
+  },
+  "support_parallel_to_table": true,
+  "actual_left_lens_height_above_table_mm": 357.0,
+  "plane_checks": {
+    "multiple_region_normal_angle_degrees": [
+      15.53694647215113,
+      19.41109472036768,
+      16.736520399484224
+    ],
+    "multiple_region_camera_to_plane_distances_mm": [
+      348.89870410231765,
+      303.81947229584273,
+      338.3785685714589
+    ],
+    "interpretation": "Candidate tabletop regions show 15.5-19.4 degree normal mismatch using the existing extrinsic and differing depth-plane distances. This indicates a visual-coordinate consistency problem; depth quality, surface identity and extrinsic orientation cannot be separated conclusively by these samples alone.",
+    "reference": "multi_region_plane_check.json"
+  },
+  "actual_size_fiducial_diagnostic_reference": "aruco_static_check_actual_size.json"
+}

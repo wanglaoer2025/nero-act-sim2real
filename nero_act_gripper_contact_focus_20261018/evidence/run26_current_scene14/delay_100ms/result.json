@@ -1,0 +1,77 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.18836516889007393,
+  "maximum_horizontal_transfer_m": 0.1512225326030047,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 1622,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5243118066146397,
+      -0.15572556861922665,
+      0.04749668781056462
+    ],
+    "tcp_xyz": [
+      -0.5284788311100005,
+      -0.15568380470407236,
+      0.06303768234307296
+    ],
+    "cup_upright": 0.9999999999999619,
+    "cup_speed": 3.2434087093499045e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.08147889814933051,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 2,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false,
+    "name": "delay_100ms",
+    "seed": 350219
+  },
+  "frames": 4225,
+  "active_policy_points": 3900,
+  "queries": 420,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 1538,
+      "active_points": 1538,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 2814,
+      "active_points": 2693,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 4036,
+      "active_points": 3835,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 5,
+  "runtime_s": 37.11699018301442,
+  "contact_arm_hold_points": 230,
+  "guard_diagnostic": null
+}

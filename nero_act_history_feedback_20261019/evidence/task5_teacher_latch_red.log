@@ -1,0 +1,17 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_teacher_interruption_keeps_first_liftoff_transform_after_landing _____
+
+    def test_teacher_interruption_keeps_first_liftoff_transform_after_landing():
+        from types import SimpleNamespace
+        import simulation.history_teacher as teacher
+        from simulation.supported_attachment import SupportedAttachment
+>       assert hasattr(teacher,'update_teacher_attachment'), 'Teacher interruption omitted airborne transform tracking'
+E       AssertionError: Teacher interruption omitted airborne transform tracking
+E       assert False
+E        +  where False = hasattr(<module 'simulation.history_teacher' from '/home/user/wq/nero_act_history_feedback_20261019/simulation/history_teacher.py'>, 'update_teacher_attachment')
+
+tests/test_history_teacher.py:44: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_history_teacher.py::test_teacher_interruption_keeps_first_liftoff_transform_after_landing
+1 failed, 3 deselected in 1.77s

@@ -1,0 +1,227 @@
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+_ test_complete_revalidation_admits_but_original_limited_pilot_alone_does_not __
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_complete_revalidation_adm0')
+
+    def test_complete_revalidation_admits_but_original_limited_pilot_alone_does_not(tmp_path):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+_____ test_revalidation_refuses_incomplete_or_failed_checks[missing_group] _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_inco0')
+change = 'missing_group'
+
+    @pytest.mark.parametrize('change', ['missing_group', 'failed_direction', 'extra_updates', 'missing_gradient'])
+    def test_revalidation_refuses_incomplete_or_failed_checks(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+___ test_revalidation_refuses_incomplete_or_failed_checks[failed_direction] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_inco1')
+change = 'failed_direction'
+
+    @pytest.mark.parametrize('change', ['missing_group', 'failed_direction', 'extra_updates', 'missing_gradient'])
+    def test_revalidation_refuses_incomplete_or_failed_checks(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+_____ test_revalidation_refuses_incomplete_or_failed_checks[extra_updates] _____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_inco2')
+change = 'extra_updates'
+
+    @pytest.mark.parametrize('change', ['missing_group', 'failed_direction', 'extra_updates', 'missing_gradient'])
+    def test_revalidation_refuses_incomplete_or_failed_checks(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+___ test_revalidation_refuses_incomplete_or_failed_checks[missing_gradient] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_inco3')
+change = 'missing_gradient'
+
+    @pytest.mark.parametrize('change', ['missing_group', 'failed_direction', 'extra_updates', 'missing_gradient'])
+    def test_revalidation_refuses_incomplete_or_failed_checks(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+________ test_revalidation_refuses_changed_bound_artifacts[checkpoint] _________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_chan0')
+change = 'checkpoint'
+
+    @pytest.mark.parametrize('change', ['checkpoint', 'training_core', 'data', 'code_binding'])
+    def test_revalidation_refuses_changed_bound_artifacts(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+_______ test_revalidation_refuses_changed_bound_artifacts[training_core] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_chan1')
+change = 'training_core'
+
+    @pytest.mark.parametrize('change', ['checkpoint', 'training_core', 'data', 'code_binding'])
+    def test_revalidation_refuses_changed_bound_artifacts(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+___________ test_revalidation_refuses_changed_bound_artifacts[data] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_chan2')
+change = 'data'
+
+    @pytest.mark.parametrize('change', ['checkpoint', 'training_core', 'data', 'code_binding'])
+    def test_revalidation_refuses_changed_bound_artifacts(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+_______ test_revalidation_refuses_changed_bound_artifacts[code_binding] ________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-154/test_revalidation_refuses_chan3')
+change = 'code_binding'
+
+    @pytest.mark.parametrize('change', ['checkpoint', 'training_core', 'data', 'code_binding'])
+    def test_revalidation_refuses_changed_bound_artifacts(tmp_path, change):
+>       m, root, proof, data, binding, report = fixture(tmp_path)
+
+tests/test_pilot_revalidation.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pilot_revalidation.py:15: in fixture
+    module = api()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+>       assert importlib.util.find_spec('pilot_revalidate'), 'Full-data zero-update revalidation is missing'
+E       AssertionError: Full-data zero-update revalidation is missing
+E       assert None
+E        +  where None = <function find_spec at 0x77b20bbac5e0>('pilot_revalidate')
+E        +    where <function find_spec at 0x77b20bbac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_pilot_revalidation.py:10: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_pilot_revalidation.py::test_complete_revalidation_admits_but_original_limited_pilot_alone_does_not
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_incomplete_or_failed_checks[missing_group]
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_incomplete_or_failed_checks[failed_direction]
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_incomplete_or_failed_checks[extra_updates]
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_incomplete_or_failed_checks[missing_gradient]
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_changed_bound_artifacts[checkpoint]
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_changed_bound_artifacts[training_core]
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_changed_bound_artifacts[data]
+FAILED tests/test_pilot_revalidation.py::test_revalidation_refuses_changed_bound_artifacts[code_binding]
+9 failed in 0.05s

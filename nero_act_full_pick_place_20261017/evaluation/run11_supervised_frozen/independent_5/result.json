@@ -1,0 +1,76 @@
+{
+  "success": false,
+  "physical_success": false,
+  "max_lift_m": 0.19576053116258746,
+  "maximum_horizontal_transfer_m": 0.18150521190253047,
+  "stable_released_frames": 0,
+  "lift_contact_frames": 748,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5242677615541015,
+      -0.16419078619309263,
+      0.047676383505560874
+    ],
+    "tcp_xyz": [
+      -0.5218520538516277,
+      -0.16409450433420603,
+      0.061048337209284716
+    ],
+    "cup_upright": 0.9999844721718147,
+    "cup_speed": 4.698887648855828e-05,
+    "bilateral": true,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.07401146493840008,
+    "contract_valid": true
+  },
+  "scenario": {
+    "query_stride": 11,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": true,
+    "force": false,
+    "name": "independent_5",
+    "seed": 100105
+  },
+  "frames": 4624,
+  "active_policy_points": 4300,
+  "queries": 395,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_first_close_support_hold_v6",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 781,
+      "active_points": 781,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1399,
+      "active_points": 1278,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 2004,
+      "active_points": 1803,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": null,
+  "feedback_hold_points": 4,
+  "runtime_s": 36.34299835097045,
+  "contact_arm_hold_points": 2390
+}

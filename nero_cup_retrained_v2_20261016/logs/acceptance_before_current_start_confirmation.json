@@ -1,0 +1,200 @@
+{
+  "created_at": "2026-10-16T18:46:49.464876+08:00",
+  "requested_scope": "accept latest ACT v2 on real robot: approach, grasp, lift, hold",
+  "model_sha256": "23bffd16e3e93c2fbb1420eedd60603575d19c794e3c9362e57411402439aec3",
+  "status": "BLOCKED_BEFORE_MOTION",
+  "user_grasp_request_received": true,
+  "physical_grasp_attempted": false,
+  "real_grasp_verified": false,
+  "motion_goal_submitted": false,
+  "gripper_goal_submitted": false,
+  "enable_or_mode_change_sent": false,
+  "robot_sdk_connected": false,
+  "hardware_deployment_metadata_modified": false,
+  "checks": [
+    {
+      "id": "package_integrity",
+      "status": "PASS",
+      "checked_files": 251,
+      "source": "package_sha256.json"
+    },
+    {
+      "id": "bundled_offline_checks",
+      "status": "PASS",
+      "tests": 11,
+      "command": "/home/user/nero/bin/python -B -m unittest discover -s tests -v",
+      "scope": "artifact/statistics/record consistency; not hardware success"
+    },
+    {
+      "id": "live_observation_capture",
+      "status": "PASS",
+      "samples": 101,
+      "achieved_hz": 20.006395972850317,
+      "source": "logs/acceptance_live_capture/report.json"
+    },
+    {
+      "id": "new_model_live_input_inference",
+      "status": "PASS",
+      "samples": 3,
+      "shape": [
+        20,
+        8
+      ],
+      "scope": "saved fresh real observations; no live execution",
+      "source": "logs/acceptance_live_inference/report.json"
+    },
+    {
+      "id": "actual_matches_model_paired_start",
+      "status": "FAIL",
+      "arm_delta_deg": [
+        -4.804999661289889,
+        56.71000071863405,
+        -8.959999781182166,
+        -8.405005396375081,
+        5.529000086837211,
+        -11.071000264820777,
+        -48.31500026873257
+      ],
+      "gripper_delta_mm": 34.728001803159714
+    },
+    {
+      "id": "control_bridge_synchronized",
+      "status": "FAIL",
+      "max_arm_error_rad": 0.9897976890206337,
+      "gripper_error_mm": 34.75990891456604,
+      "existing_limits": {
+        "arm_rad": 0.001,
+        "gripper_m": 0.0005
+      }
+    },
+    {
+      "id": "live_moveit_environment_geometry",
+      "status": "FAIL",
+      "world_object_ids": [],
+      "scope": "No environment table/cup collision objects in current MoveIt world"
+    },
+    {
+      "id": "physical_contact_geometry",
+      "status": "UNVERIFIED",
+      "tcp_convention_discrepancy_mm": 29.004650946144775,
+      "table_top_z_mm_provisional": -10,
+      "source": "scene/alignment.json"
+    },
+    {
+      "id": "new_model_hardware_executor",
+      "status": "MISSING",
+      "new_action_chunk": [
+        20,
+        8
+      ],
+      "existing_executor_chunk": [
+        100,
+        8
+      ],
+      "existing_executor_scope": "bounded noncontact air trial",
+      "real_contact_aware_completion_observer": "not validated"
+    },
+    {
+      "id": "known_start_return_entry",
+      "status": "FAIL",
+      "existing_maximum_axis_return_rad": 0.05,
+      "required_maximum_axis_return_rad": 0.9897748078386788
+    },
+    {
+      "id": "advisory_return_plan",
+      "status": "PLAN_ONLY",
+      "points": 110,
+      "duration_s": 10.897748078,
+      "source": "logs/acceptance_start_plan/report.json",
+      "executable": false
+    },
+    {
+      "id": "nominal_return_collision_audit",
+      "status": "PASS_NOMINAL_ONLY",
+      "samples": 235,
+      "robot_bodies": 12,
+      "penetration_contacts": 0,
+      "physical_clearance_verified": false,
+      "source": "logs/acceptance_start_plan/nominal_collision_audit.json"
+    },
+    {
+      "id": "onsite_conditions",
+      "status": "AWAITING_USER",
+      "required": [
+        "operator present with emergency stop accessible",
+        "empty cup",
+        "no concurrent robot operation"
+      ]
+    },
+    {
+      "id": "physical_grasp_trial",
+      "status": "NOT_ATTEMPTED",
+      "success": null,
+      "note": "Pre-motion gates did not pass; do not classify this as a failed or successful physical grasp"
+    }
+  ],
+  "training_coverage": {
+    "train_episode_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "train_state_min": [
+      0.0370408296585083,
+      -0.11900848895311356,
+      -0.014014365151524544,
+      0.7051341533660889,
+      -0.018252352252602577,
+      0.021099423989653587,
+      0.14817574620246887,
+      0.06017899885773659
+    ],
+    "train_state_max": [
+      0.22546282410621643,
+      1.0027424097061157,
+      0.13574440777301788,
+      1.56522536277771,
+      0.02615515887737274,
+      0.2597983479499817,
+      1.5310217142105103,
+      0.09500570595264435
+    ],
+    "actual_below_train_min": [
+      0.0,
+      0.0,
+      0.007889516651630402,
+      0.0,
+      0.0,
+      0.0,
+      0.8414554297924042,
+      0.0
+    ],
+    "actual_above_train_max": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.05557861179113388,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "note": "Descriptive training coverage; no existing thresholds or permissions changed"
+  },
+  "proposed_task_acceptance": {
+    "measured_cup_lift_m": 0.06,
+    "continuous_hold_s": 5,
+    "object_observer": "must be validated on actual camera/real object; no simulator truth on hardware",
+    "current_status": "not executed"
+  },
+  "next_required_stages": [
+    "confirm onsite conditions and exclusive control",
+    "restore control-bridge software state from actual feedback without moving hardware; verify unchanged real position and gate closed",
+    "validate environmental geometry and a bounded supervised noncontact return/pregrasp path",
+    "provide and test an executor for this exact20x8 model with preserved limits, freshness and contact-aware gripper/hold checks",
+    "preview complete arm/gripper trajectory, obtain required onsite confirmation, then execute staged noncontact and empty-cup tests"
+  ]
+}

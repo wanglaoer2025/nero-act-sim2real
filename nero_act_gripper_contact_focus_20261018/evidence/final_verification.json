@@ -1,0 +1,167 @@
+{
+  "stage": "nominal_full_success_generalization_separately_reported",
+  "frozen_artifacts_and_sources_verified": true,
+  "frozen_adapter_audit": {
+    "passed": true,
+    "checkpoints": [
+      {
+        "checkpoint": "/home/user/wq/nero_act_gripper_contact_focus_20261018/training/run26_contact_focus/checkpoints/policy_best_l1.ckpt",
+        "epoch": 10,
+        "changed_parameters": [
+          "gripper_adapter.0.weight",
+          "gripper_adapter.0.bias",
+          "gripper_adapter.2.weight",
+          "gripper_adapter.2.bias"
+        ],
+        "all_pretrained_parameters_and_buffers_identical": true
+      },
+      {
+        "checkpoint": "/home/user/wq/nero_act_gripper_contact_focus_20261018/training/run26_contact_focus/checkpoints/policy_best_val.ckpt",
+        "epoch": 10,
+        "changed_parameters": [
+          "gripper_adapter.0.weight",
+          "gripper_adapter.0.bias",
+          "gripper_adapter.2.weight",
+          "gripper_adapter.2.bias"
+        ],
+        "all_pretrained_parameters_and_buffers_identical": true
+      },
+      {
+        "checkpoint": "/home/user/wq/nero_act_gripper_contact_focus_20261018/training/run26_contact_focus/checkpoints/policy_last.ckpt",
+        "epoch": 20,
+        "changed_parameters": [
+          "gripper_adapter.0.weight",
+          "gripper_adapter.0.bias",
+          "gripper_adapter.2.weight",
+          "gripper_adapter.2.bias"
+        ],
+        "all_pretrained_parameters_and_buffers_identical": true
+      }
+    ],
+    "hardware_connected": false,
+    "comparison": "all saved checkpoints vs paired zero-residual initializer"
+  },
+  "prior_gripper_fixed_input_report": "evidence/fixed_grasp_readout_comparison.json",
+  "outcomes": {
+    "nominal": {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.18904684323520216,
+      "maximum_horizontal_transfer_m": 0.17624639918788979,
+      "stable_released_frames": 104,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "error": null,
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1255,
+          "active_points": 1255,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 2316,
+          "active_points": 2195,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 3356,
+          "active_points": 3155,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 3619,
+          "active_points": 3295,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ]
+    },
+    "validation42": {
+      "success": true,
+      "physical_success": true,
+      "max_lift_m": 0.1928506442473834,
+      "maximum_horizontal_transfer_m": 0.17678970565156996,
+      "stable_released_frames": 109,
+      "unexpected_arm_cup_contact_frames": 0,
+      "execution_contract_failures": 0,
+      "constraint_attachment_used": false,
+      "teacher_free": true,
+      "real_hardware_tested": false,
+      "error": null,
+      "simulated_events": [
+        {
+          "kind": "GRASP",
+          "physics_step": 1023,
+          "active_points": 1023,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "CARRY",
+          "physics_step": 1705,
+          "active_points": 1584,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RELEASE",
+          "physics_step": 2395,
+          "active_points": 2194,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        },
+        {
+          "kind": "RETREAT",
+          "physics_step": 2568,
+          "active_points": 2244,
+          "simulated_permission_only": true,
+          "real_receipt": false
+        }
+      ]
+    }
+  },
+  "nominal_diagnosis": {
+    "closest_grasp_query": {
+      "query": 211,
+      "step": 1255,
+      "tcp_m": [
+        -0.5249657384344482,
+        0.01789608802328207,
+        0.05692443457321204
+      ],
+      "rotation_error_deg": 3.292795342397176,
+      "source_xy_error_m": 0.002312721518322593,
+      "bounded_width_first10_mm": [
+        94.63346099853516,
+        94.50434112548828,
+        94.45466613769531,
+        94.40560150146484,
+        94.30509185791016,
+        94.20774841308594,
+        94.11226654052734,
+        94.00389099121094,
+        93.90394592285156,
+        93.79624938964844
+      ]
+    },
+    "queries_in_unchanged_grasp_depth": 1,
+    "bounded_width_min_in_depth_mm": 93.79624938964844,
+    "bounded_width_max_in_depth_mm": 94.63346099853516,
+    "fk_independent_mujoco_error_m": 1.8735013540549517e-16,
+    "recorded_chunks_are_bounded_physical_predictions": true
+  },
+  "independent16_executed": false,
+  "hardware_connected": false,
+  "hardware_deployment_allowed": false,
+  "next_fix_requires_architectural_discussion": false
+}

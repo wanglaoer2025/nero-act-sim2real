@@ -1,0 +1,32 @@
+{
+  "source_report": "/home/user/wq/nero_aligned_air_sequence_20261016_onsite/logs/act_20261016_114521_159628204/report.json",
+  "reported_success": false,
+  "full_18_second_run_completed": false,
+  "stop_reason": "RuntimeError: block validation consumed freshness budget; no stale block sent",
+  "accepted_and_completed_block_count": 13,
+  "points_per_arm_and_gripper": 130,
+  "nominal_trajectory_seconds": 6.5,
+  "recorded_seconds_after_first_goal": 6.8520502529572695,
+  "J1_progress_rad": 0.03862413634663453,
+  "J1_progress_deg": 2.213000000000001,
+  "J3_progress_deg": 1.394000000000001,
+  "gripper_initial_peak_final_mm": [
+    60.117999999999995,
+    66.728,
+    60.23
+  ],
+  "endpoint_max_error_rad": 0.0012536906057258879,
+  "actual_block_submission_hz": 1.9085774300604024,
+  "successful_block_observation_age_at_send_min_max_s": [
+    0.16950398503104225,
+    0.22677353501785547
+  ],
+  "next_observation_to_tail_of_sent_block_age_budget_s": 0.75,
+  "pre_send_observation_age_limit_s": 0.25,
+  "last_inference_ms": 22.838418022729456,
+  "failed_validation_duration_measured_separately": false,
+  "failed_observation_age_recorded": false,
+  "interpretation": "Actual arm/gripper sequence progressed to near its endpoint. The full requested duration failed at a subsequent block because its observation age after state-validity checking exceeded 0.25 s. Inference time alone is not that total age. Keep success=false; passing geometric endpoint measures does not complete the requested duration or timing acceptance.",
+  "follow_up": "Instrument query, result-ready, validation-start/end and send times, then adjust query scheduling or shorten validation overhead while retaining the 0.25s send and 0.75s action-age bounds. Restore and verify the known start through an authorized path before another trial; do not auto-return or directly rerun at the endpoint.",
+  "physical_commands_sent_by_this_review": false
+}

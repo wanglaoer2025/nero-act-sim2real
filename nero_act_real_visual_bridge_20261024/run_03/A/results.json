@@ -1,0 +1,101 @@
+{
+  "updates": 200,
+  "initial_validation": {
+    "loss": 0.2775390148162842,
+    "joint_mae_deg": 0.7791638374328613,
+    "gripper_intent_mae_mm": 48.5679817199707,
+    "gripper_intent_accuracy": 0.5149999856948853,
+    "queries": 100
+  },
+  "train": {
+    "loss": 0.1408538967370987,
+    "joint_mae_deg": 0.5608484745025635,
+    "gripper_intent_mae_mm": 26.47970962524414,
+    "gripper_intent_accuracy": 0.8701351284980774,
+    "queries": 370
+  },
+  "validation": {
+    "loss": 0.12726910412311554,
+    "joint_mae_deg": 0.5647450089454651,
+    "gripper_intent_mae_mm": 21.208171844482422,
+    "gripper_intent_accuracy": 0.9054999947547913,
+    "queries": 100
+  },
+  "shuffled_validation": {
+    "loss": 0.12694409489631653,
+    "joint_mae_deg": 0.5648428201675415,
+    "gripper_intent_mae_mm": 21.255929946899414,
+    "gripper_intent_accuracy": 0.9070000052452087,
+    "queries": 100
+  },
+  "preservation": {
+    "maximum_arm_change_rad": 0.0,
+    "maximum_gripper_change_m": 0.0,
+    "records": [
+      {
+        "name": "multistage_current_camera",
+        "queries": 120,
+        "all20": true,
+        "maximum_arm_change_rad": 0.0,
+        "maximum_gripper_change_m": 0.0,
+        "stages": {
+          "approach": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          },
+          "carry": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          },
+          "close": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          },
+          "descend": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          },
+          "lift": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          },
+          "place": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          },
+          "release": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          },
+          "retreat": {
+            "queries": 15,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          }
+        }
+      },
+      {
+        "name": "visited_approach96",
+        "queries": 96,
+        "all20": true,
+        "maximum_arm_change_rad": 0.0,
+        "maximum_gripper_change_m": 0.0,
+        "stages": {
+          "visited_approach": {
+            "queries": 96,
+            "maximum_arm_change_rad": 0.0,
+            "maximum_gripper_change_m": 0.0
+          }
+        }
+      }
+    ]
+  },
+  "trainable_tensor_count": 4
+}

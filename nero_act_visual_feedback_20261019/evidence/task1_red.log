@@ -1,0 +1,18 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+_______________ test_baseline_uses_compact_complete_health_trace _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-40/test_baseline_uses_compact_com0')
+
+    def test_baseline_uses_compact_complete_health_trace(tmp_path):
+>       assert importlib.util.find_spec('executor.health_trace') is not None, 'Complete compact health storage missing'
+E       AssertionError: Complete compact health storage missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x736db93505e0>('executor.health_trace')
+E        +    where <function find_spec at 0x736db93505e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_isolated_baseline.py:30: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_isolated_baseline.py::test_baseline_uses_compact_complete_health_trace
+1 failed, 1 passed in 0.06s

@@ -1,0 +1,53 @@
+........................................................................ [ 37%]
+............F...sss.............................................F....... [ 74%]
+.......................s..s.......................                       [100%]
+=================================== FAILURES ===================================
+_ FixedSceneHeadsTests.test_cached_learning_probe_matches_complete_runtime_including_joint_anchor _
+
+self = <tests.test_fixed_scene_heads.FixedSceneHeadsTests testMethod=test_cached_learning_probe_matches_complete_runtime_including_joint_anchor>
+
+    def test_cached_learning_probe_matches_complete_runtime_including_joint_anchor(self):
+>       from evidence.probe_fixed_heads import cached_readout
+E       ModuleNotFoundError: No module named 'evidence.probe_fixed_heads'
+
+tests/test_fixed_scene_heads.py:65: ModuleNotFoundError
+_ RecoveryEvaluationTests.test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed _
+
+self = <tests.test_recovery_evaluation.RecoveryEvaluationTests testMethod=test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed>
+
+    def test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed(self):
+        from simulation import evaluate_generalized as module
+        self.assertTrue(hasattr(module,'fresh_test_cases'),'a reused failed-case suite cannot be independent acceptance')
+        center=json.loads((ROOT/'scene/center.json').read_text())
+>       site=json.loads((ROOT/'evidence/site_snapshot.json').read_text())
+
+tests/test_recovery_evaluation.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/wq/nero_act_visual_feedback_20261019/evidence/site_snapshot.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/wq/nero_act_visual_feedback_20261019/evidence/site_snapshot.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_fixed_scene_heads.py::FixedSceneHeadsTests::test_cached_learning_probe_matches_complete_runtime_including_joint_anchor
+FAILED tests/test_recovery_evaluation.py::RecoveryEvaluationTests::test_fresh_cases_change_actual_observations_and_dynamics_not_only_seed
+2 failed, 187 passed, 5 skipped, 1 warning in 41.25s

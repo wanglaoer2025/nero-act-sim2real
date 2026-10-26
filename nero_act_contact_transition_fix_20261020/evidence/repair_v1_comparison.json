@@ -1,0 +1,136 @@
+{
+  "complete": true,
+  "records": [
+    {
+      "run": "mechanism_A",
+      "passed": 3,
+      "total": 6,
+      "records": [
+        {
+          "name": "nominal_pre_close",
+          "passed": false,
+          "points": 320,
+          "error": "RuntimeError: Attached-cup model would cross the table"
+        },
+        {
+          "name": "nominal_hold_to_lift",
+          "passed": false,
+          "points": 28,
+          "error": "RuntimeError: Attached-cup model would cross the table"
+        },
+        {
+          "name": "heldout_pre_close",
+          "passed": false,
+          "points": 2876,
+          "error": null
+        },
+        {
+          "name": "heldout_hold_to_lift",
+          "passed": true,
+          "points": 46,
+          "error": null
+        },
+        {
+          "name": "heldout_support_release",
+          "passed": true,
+          "points": 386,
+          "error": null
+        },
+        {
+          "name": "heldout_release_retreat",
+          "passed": true,
+          "points": 324,
+          "error": null
+        }
+      ]
+    },
+    {
+      "run": "mechanism_B",
+      "passed": 3,
+      "total": 6,
+      "records": [
+        {
+          "name": "nominal_pre_close",
+          "passed": false,
+          "points": 400,
+          "error": null
+        },
+        {
+          "name": "nominal_hold_to_lift",
+          "passed": false,
+          "points": 4,
+          "error": "RuntimeError: ACT requested opening outside supported-placement region"
+        },
+        {
+          "name": "heldout_pre_close",
+          "passed": false,
+          "points": 2876,
+          "error": null
+        },
+        {
+          "name": "heldout_hold_to_lift",
+          "passed": true,
+          "points": 46,
+          "error": null
+        },
+        {
+          "name": "heldout_support_release",
+          "passed": true,
+          "points": 408,
+          "error": null
+        },
+        {
+          "name": "heldout_release_retreat",
+          "passed": true,
+          "points": 334,
+          "error": null
+        }
+      ]
+    },
+    {
+      "run": "old_B_runtime_only",
+      "passed": 3,
+      "total": 6,
+      "records": [
+        {
+          "name": "nominal_pre_close",
+          "passed": false,
+          "points": 400,
+          "error": null
+        },
+        {
+          "name": "nominal_hold_to_lift",
+          "passed": false,
+          "points": 6,
+          "error": "RuntimeError: ACT requested opening outside supported-placement region"
+        },
+        {
+          "name": "heldout_pre_close",
+          "passed": false,
+          "points": 2876,
+          "error": null
+        },
+        {
+          "name": "heldout_hold_to_lift",
+          "passed": true,
+          "points": 46,
+          "error": null
+        },
+        {
+          "name": "heldout_support_release",
+          "passed": true,
+          "points": 392,
+          "error": null
+        },
+        {
+          "name": "heldout_release_retreat",
+          "passed": true,
+          "points": 330,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "full_task_qualified": false,
+  "hardware_commands_sent": false
+}

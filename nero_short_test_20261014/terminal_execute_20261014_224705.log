@@ -1,0 +1,37 @@
+Script started on 2026-10-14 22:47:05+08:00 [COMMAND="/usr/bin/env PYTHONDONTWRITEBYTECODE=1 /home/user/nero/bin/python -u run_short_test.py --execute" TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+真实短测试：先停止 ROS CAN 驱动及其他控制程序，确保 CAN 只有一个控制者。
+空夹爪悬空，所选关节扫掠范围无人和障碍物；退出不会失能。
+20 Hz / 0.5 秒 / ±0.005 rad / 速度5%；随后回到测试起点。
+回位最长等待10秒；异常或Ctrl-C触发电子急停，需准备机械支撑。
+这不是v9策略测试。控制器速度设置5%不会自动恢复。
+确认独占CAN并检查现场后输入 SINGLE_CAN：SINGLE_CAN
+
+ACT Joint Stream 测试计划
+  模式：实机执行
+  关节索引：0（J1）
+  请求频率：20.0 Hz
+  持续时间：0.5 s
+  最大偏移：±0.0050 rad
+  控制器速度：5
+  qpos：未连接硬件；预期 shape=(7,), dtype=float32, unit=rad
+  J1 轨迹预览：[0.0, 0.005, 0.0, -0.005, -0.0]
+警告：应先用相同姿态和幅度成功完成 5 Hz 测试。
+
+操作：执行 ACT 单关节流式测试
+风险：机械臂将使能并小幅运动；请准备急停并确保扫掠范围无人和障碍物。
+输入 STREAM 继续，直接回车取消：STREAM
+
+测试统计
+  requested frequency：20.00 Hz
+  actual loop frequency：20.00 Hz
+  loop dt mean/P95/max：0.050007 / 0.050066 / 0.050097 s
+  move_j latency mean/max：0.000412 / 0.000687 s
+  feedback latency mean/max：0.000104 / 0.000149 s
+  tested joint |error| mean/P95/max：0.003078 / 0.004757 / 0.004757 rad
+  None feedback：0
+  errors：none
+  CSV 日志：/home/user/wq/nero_short_test_20261014/logs/act_joint_stream_20261014_224752.csv
+
+正在单次发送起始 qpos，并等待机械臂回位……
+
+Script done on 2026-10-14 22:47:52+08:00 [COMMAND_EXIT_CODE="0"]

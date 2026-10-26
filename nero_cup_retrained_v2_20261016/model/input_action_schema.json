@@ -1,0 +1,61 @@
+{
+  "task": "current yellow cup approach/close/lift/hold",
+  "training_revision": "v2_short_branch_physical_corrections_chunk20",
+  "state_order": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "joint7",
+    "gripper_total_width"
+  ],
+  "action_order": [
+    "absolute_joint1_target",
+    "absolute_joint2_target",
+    "absolute_joint3_target",
+    "absolute_joint4_target",
+    "absolute_joint5_target",
+    "absolute_joint6_target",
+    "absolute_joint7_target",
+    "gripper_total_width_target"
+  ],
+  "units": [
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "m"
+  ],
+  "action_chunk_shape": [
+    20,
+    8
+  ],
+  "all_predicted_steps_supervised": true,
+  "execution_prefix_points": 10,
+  "trajectory_point_hz": 20,
+  "maximum_arm_velocity_rad_s": 0.04,
+  "maximum_gripper_target_step_m": 0.0005,
+  "gripper_total_width_not_single_finger_displacement": true,
+  "joint_residual_anchor_is_inside_model": true,
+  "denormalized_output_is_absolute_not_delta": true,
+  "camera": "camera_0 RGB upright rotated180 once at capture; preprocess to90x160",
+  "normalization": "dataset_stats.pkl computed from train0..5 only",
+  "initial_state": [
+    0.2237861156463623,
+    -0.11719886213541031,
+    0.1344776153564453,
+    1.5639197826385498,
+    -0.014765485189855099,
+    0.25787240266799927,
+    0.14997614920139313,
+    0.06017899885773659
+  ],
+  "legacy100_step_entry_compatible": false,
+  "physical_hardware_verified": false,
+  "completion_monitor": "cup rise>60mm, bilateral stable1s; then freeze last target and verify continuous5s holding; simulator ground-truth monitor in evaluation; real observer not validated"
+}

@@ -1,0 +1,16 @@
+test_copied_or_reformatted_receipt_cannot_authorize_another_attempt (tests.test_runtime_entry.RuntimeEntryTests.test_copied_or_reformatted_receipt_cannot_authorize_another_attempt) ... FAIL
+test_default_is_offline_and_execute_without_receipt_creates_no_attempt (tests.test_runtime_entry.RuntimeEntryTests.test_default_is_offline_and_execute_without_receipt_creates_no_attempt) ... ok
+test_receipt_cannot_start_a_second_attempt_in_a_different_output (tests.test_runtime_entry.RuntimeEntryTests.test_receipt_cannot_start_a_second_attempt_in_a_different_output) ... ok
+
+======================================================================
+FAIL: test_copied_or_reformatted_receipt_cannot_authorize_another_attempt (tests.test_runtime_entry.RuntimeEntryTests.test_copied_or_reformatted_receipt_cannot_authorize_another_attempt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_runtime_entry.py", line 33, in test_copied_or_reformatted_receipt_cannot_authorize_another_attempt
+    with self.assertRaises(FileExistsError):
+AssertionError: FileExistsError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.377s
+
+FAILED (failures=1)

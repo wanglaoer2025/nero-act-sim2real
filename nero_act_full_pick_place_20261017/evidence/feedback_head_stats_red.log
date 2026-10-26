@@ -1,0 +1,14 @@
+test_feedback_head_rejects_unpaired_external_statistics (tests.test_model_output.ModelOutputTests.test_feedback_head_rejects_unpaired_external_statistics) ... FAIL
+
+======================================================================
+FAIL: test_feedback_head_rejects_unpaired_external_statistics (tests.test_model_output.ModelOutputTests.test_feedback_head_rejects_unpaired_external_statistics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_full_pick_place_20261017/tests/test_model_output.py", line 10, in test_feedback_head_rejects_unpaired_external_statistics
+    self.assertTrue(callable(getattr(model, 'verify_paired_readout_statistics', None)))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.631s
+
+FAILED (failures=1)

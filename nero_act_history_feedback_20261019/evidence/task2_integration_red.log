@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_rollout_checkpoint_resumes_the_same_next_prefix _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f0024b4eea0>
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-94/test_rollout_checkpoint_resume0')
+
+    def test_rollout_checkpoint_resumes_the_same_next_prefix(monkeypatch,tmp_path):
+        import inspect
+        import simulation.supervised_rollout as runtime
+>       assert 'capture_control' in inspect.signature(runtime.rollout).parameters, 'Runtime capture integration missing'
+E       AssertionError: Runtime capture integration missing
+E       assert 'capture_control' in mappingproxy(OrderedDict({'config': <Parameter "config">, 'policy': <Parameter "policy">, 'stats': <Parameter "stats">, 'scenario': <Parameter "scenario">, 'output': <Parameter "output">}))
+E        +  where mappingproxy(OrderedDict({'config': <Parameter "config">, 'policy': <Parameter "policy">, 'stats': <Parameter "stats">, 'scenario': <Parameter "scenario">, 'output': <Parameter "output">})) = <Signature (config, policy, stats, scenario, output)>.parameters
+E        +    where <Signature (config, policy, stats, scenario, output)> = <function signature at 0x7f002a80a020>(<function rollout at 0x7eff5d9a36a0>)
+E        +      where <function signature at 0x7f002a80a020> = <module 'inspect' from '/usr/lib/python3.12/inspect.py'>.signature
+E        +      and   <function rollout at 0x7eff5d9a36a0> = <module 'simulation.supervised_rollout' from '/home/user/wq/nero_act_history_feedback_20261019/simulation/supervised_rollout.py'>.rollout
+
+tests/test_runtime_checkpoint.py:81: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_runtime_checkpoint.py::test_rollout_checkpoint_resumes_the_same_next_prefix
+1 failed in 1.64s

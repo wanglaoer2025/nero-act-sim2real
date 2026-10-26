@@ -1,0 +1,79 @@
+{
+  "complete": true,
+  "review_date": "2026-10-21",
+  "verification_complete_not_task_success": true,
+  "tests_passed": 413,
+  "tests_skipped": 5,
+  "actual_updates": 1000,
+  "actual_epochs": 0,
+  "checkpoint_sha256": "380cca3a2e6699c4185c5b97d4dac5383cd772243efe82df5c3e77f1f020f537",
+  "changed_tensors": [
+    "model.action_head.weight",
+    "model.action_head.bias",
+    "gripper_adapter.0.weight",
+    "gripper_adapter.0.bias",
+    "gripper_adapter.2.weight",
+    "gripper_adapter.2.bias"
+  ],
+  "frozen_tensor_digests": 208,
+  "scalar_gripper_row_unchanged": true,
+  "source_files_unchanged": 163,
+  "data_files_unchanged": 335,
+  "approach_replay_samples": 423,
+  "approach_assessments": {
+    "before": {
+      "samples": 423,
+      "maximum_arm_prefix_change_rad": 0.0,
+      "rms_arm_prefix_change_rad": 0.0,
+      "maximum_gripper_prefix_change_m": 0.0,
+      "training_replay_not_independent_validation": true
+    },
+    "after": {
+      "samples": 423,
+      "maximum_arm_prefix_change_rad": 0.003259330987930298,
+      "rms_arm_prefix_change_rad": 0.0009605762874382292,
+      "maximum_gripper_prefix_change_m": 2.0265579223632812e-05,
+      "training_replay_not_independent_validation": true
+    }
+  },
+  "nominal": {
+    "before": {
+      "full_task_passed": false,
+      "active_points": 1822,
+      "first_GRASP_active_point": 780,
+      "error": "RuntimeError: Attached-cup model would cross the table",
+      "max_lift_mm": 0.008255584984150077,
+      "transfer_mm": 8.491023144834632,
+      "stable_released_frames": 0,
+      "events": [
+        "GRASP"
+      ]
+    },
+    "after": {
+      "full_task_passed": false,
+      "active_points": 2933,
+      "first_GRASP_active_point": null,
+      "error": "RuntimeError: Unexpected robot/environment/cup contact",
+      "max_lift_mm": 0.0,
+      "transfer_mm": 0.0006974123172273756,
+      "stable_released_frames": 0,
+      "events": []
+    }
+  },
+  "mechanism_passed": 4,
+  "mechanism_total": 6,
+  "formal_training_started": false,
+  "independent16_evaluated": false,
+  "hardware_commands_sent": false,
+  "verification_script_sha256": "37eedaa28e525ee0588e4ff4475f8f5e8ff569bf0039fdb55b753d7aaead439c",
+  "stage": "approach_preservation_experiment_complete_task_failed",
+  "implementation_complete": true,
+  "approach_preserved": false,
+  "nominal_full_task_passed": false,
+  "complete_task_qualification": false,
+  "hardware_deployment_allowed": false,
+  "report": "evidence/results.md",
+  "recovery_batch": "training_data/recoveries_v5",
+  "optimizer_budget": 1000,
+  "next_action": "Proposed smaller arm-head updates and learning-rate decay; not implemented or trained"
+}

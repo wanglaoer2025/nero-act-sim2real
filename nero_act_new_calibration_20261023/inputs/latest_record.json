@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "run_id": "NERO-MB-20261023-174244-06f896",
+  "started_at": "2026-10-23T17:42:44.777+08:00",
+  "ended_at": "2026-10-23T17:46:15.047+08:00",
+  "mode": "real supervised",
+  "synthetic": false,
+  "protocol": {
+    "id": "methylene_blue_reversible_v1",
+    "version": 1,
+    "approved": true
+  },
+  "experiment": {
+    "title": "亚甲基蓝可逆变色实验",
+    "abstract": "本流程利用碱性葡萄糖对氧化态亚甲基蓝的还原褪色，以及摇晃引入溶解氧后的氧化复蓝过程。设计流程包含三次预量取试剂转移和一次反应杯摇晃，并以反应杯 ROI 的 RGB、HSV 饱和度、Lab 和归一化blue_score 记录一次复蓝与两次褪色。报告结论仅来自本次运行事件和样本。",
+    "objective": "观察并记录亚甲基蓝体系的还原褪色、摇晃复蓝及再次褪色过程。",
+    "principle": "亚甲基蓝在还原与空气氧化条件间发生可逆颜色变化。",
+    "expected_observation": "蓝色逐渐褪去，摇晃接触空气后复蓝，随后再次褪色。",
+    "reagents": [
+      {
+        "role": "sodium_hydroxide",
+        "name": "氢氧化钠溶液",
+        "formula": "NaOH",
+        "planned_aliquot_ml": 40.0,
+        "concentration": "1.0 M"
+      },
+      {
+        "role": "glucose",
+        "name": "葡萄糖溶液",
+        "formula": "C₆H₁₂O₆",
+        "planned_aliquot_ml": 40.0,
+        "concentration": "0.2 M"
+      },
+      {
+        "role": "methylene_blue",
+        "name": "亚甲基蓝溶液",
+        "formula": "C₁₆H₁₈ClN₃S",
+        "planned_aliquot_ml": 40.0,
+        "concentration": "0.1 g/L"
+      }
+    ],
+    "planned_volume_ratio": "1:1:1",
+    "planned_total_volume_ml": 120.0,
+    "volume_basis": "体积依据：试剂杯预量取标签（非传感器实测）",
+    "chemical_mechanism": [
+      {
+        "stage": "碱性葡萄糖活化",
+        "equation": "CH + OH⁻ ⇌ C⁻ + H₂O",
+        "note": "CH 表示葡萄糖；C⁻ 表示其在碱性介质中的还原性形式。"
+      },
+      {
+        "stage": "摇晃复蓝（快速）",
+        "equation": "O₂ + MB(reduced) → MB(oxidized)",
+        "note": "空气中的氧气氧化无色还原态亚甲基蓝，恢复蓝色氧化态。"
+      },
+      {
+        "stage": "静置褪色（慢速）",
+        "equation": "MB(oxidized) + C⁻ → MB(reduced) + X⁻",
+        "note": "X⁻ 代表葡萄糖的多种氧化产物；因产物是混合物，不报告虚构的唯一总反应式。"
+      }
+    ],
+    "procedure": [
+      "实时定位并锁定四个烧杯",
+      "依次加入氢氧化钠溶液、葡萄糖溶液和亚甲基蓝溶液",
+      "采集最左侧反应杯的 RGB、HSV、Lab 与 blue_score",
+      "首次平滑饱和度低于复蓝门限后，仅自动摇晃复蓝一次",
+      "确认复蓝后继续监测；第二周期平滑饱和度低于报告门限后结束",
+      "从事件和颜色样本生成 JSON/HTML 报告"
+    ],
+    "equipment": [
+      {
+        "name": "机械臂与夹爪",
+        "purpose": "烧杯抓取、倾倒、摇晃与放回"
+      },
+      {
+        "name": "ZED 相机",
+        "purpose": "四杯定位与反应杯颜色成像"
+      },
+      {
+        "name": "YOLO 烧杯检测模型",
+        "purpose": "确定四杯位置与反应杯 ROI"
+      },
+      {
+        "name": "本地实验 UI 与 SQLite 记录",
+        "purpose": "状态展示、事件/样本存储与报告生成"
+      },
+      {
+        "name": "烧杯",
+        "purpose": "三个预量取试剂杯和一个反应杯",
+        "quantity": 4
+      }
+    ],
+    "measurement_method": "在加料前锁定最左侧反应杯的图像区域；监测时过滤过暗和过亮像素，每个采样周期计算有效像素的 RGB、HSV 饱和度/亮度与 Lab 中位数。blue_score 由本次运行采集的透明与深蓝 Lab 参考点归一化计算。",
+    "monitoring": {
+      "sample_interval_s": 1.0,
+      "smoothing_samples": 3,
+      "confirmation_samples": 2,
+      "reblue_trigger": "smoothed saturation < 40",
+      "report_trigger": "second-cycle smoothed saturation < 25",
+      "reblue_confirmation_blue_score": 0.8,
+      "reblue_confirmation_saturation_increase": 1.0
+    },
+    "motion": {
+      "shake_radius_mm": 20.0,
+      "orbital_turns_in_single_reblue_action": 5,
+      "shake_period_s": 1.5,
+      "planned_shake_duration_s": 7.5,
+      "adaptive_period": false,
+      "maximum_total_liquid_ml": 120.0
+    },
+    "risks": [
+      "NaOH 具有腐蚀性；需佩戴防飞溅护目镜并准备洗眼设施。",
+      "机械臂倾倒与摇晃可造成溶液飞溅；需使用耐碱托盘、挡板并保持急停可用。",
+      "试剂浓度取自操作员确认的试剂标签；实验前仍需核对容器标签。"
+    ],
+    "data_limitations": [
+      "本次仅采集相机颜色时序，不推断未测量的化学指标。",
+      "试剂浓度取自经操作员确认的协议配置标签。",
+      "本流程按试剂杯预量取标签记录体积，不使用流量或称量传感器。",
+      "相机颜色值受照明、反光和 ROI 遮挡影响。"
+    ],
+    "references": [
+      {
+        "title": "Royal Society of Chemistry: The blue bottle experiment",
+        "url": "https://edu.rsc.org/experiments/the-blue-bottle-experiment/729.article"
+      },
+      {
+        "title": "PubChem: Methylene blue",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Methylene-blue"
+      }
+    ]
+  },
+  "plan_source": "方案引擎：预设协议 v1",
+  "integrity_note": "事件哈希仅用于意外修改检测，不是数字签名。",
+  "input_mode": "text",
+  "final_state": "HOLD",
+  "final_status": "failed",
+  "step_results": {
+    "receive_instruction": "passed",
+    "generate_plan": "passed",
+    "locate_four_vessels": "passed",
+    "plan_paths": "passed",
+    "add_naoh": "passed",
+    "add_glucose": "passed",
+    "capture_clear_reference": "passed",
+    "add_methylene_blue": "passed",
+    "reduction_1": "failed",
+    "shake_blue": "skipped",
+    "reduction_2": "skipped",
+    "generate_report": "passed"
+  },
+  "cycle_timing": {
+    "1": {
+      "sample_count": 0,
+      "valid_sample_count": 0,
+      "duration_s": "not_measured",
+      "start_elapsed_s": "not_measured",
+      "end_elapsed_s": "not_measured",
+      "minimum_blue_score": "not_measured"
+    },
+    "2": {
+      "sample_count": 0,
+      "valid_sample_count": 0,
+      "duration_s": "not_measured",
+      "start_elapsed_s": "not_measured",
+      "end_elapsed_s": "not_measured",
+      "minimum_blue_score": "not_measured"
+    }
+  },
+  "milestones": {
+    "clear_1": "unknown",
+    "reblue": "unknown",
+    "clear_2": "unknown"
+  },
+  "result_summary": {
+    "sample_count": 0,
+    "valid_sample_count": 0,
+    "saturation_range": {
+      "minimum": "not_measured",
+      "maximum": "not_measured"
+    },
+    "blue_score_range": {
+      "minimum": "not_measured",
+      "maximum": "not_measured"
+    },
+    "first_valid_rgb": "not_measured",
+    "last_valid_rgb": "not_measured",
+    "reblue_action_count": 0,
+    "conclusion": "本次运行终态为 failed；仅报告终止前已记录的数据，不推断未完成阶段。"
+  },
+  "color_curve": [],
+  "color_analysis": {
+    "source": "not_measured",
+    "threshold_source": "not_measured",
+    "invalid_sample_count": 0
+  },
+  "warnings": [],
+  "errors": [
+    "受监督后端异常：透明与深蓝参考过于接近"
+  ],
+  "localization_diagnostics": {
+    "detected": 4,
+    "sampled_frames": 1,
+    "required_frames": 15,
+    "window_frames": 1,
+    "reason": null,
+    "vessels": [
+      {
+        "detection_id": "vessel-0",
+        "center_px": [
+          284.43604278564453,
+          522.9224548339844
+        ],
+        "bbox_px": [
+          221.6904754638672,
+          450.798095703125,
+          347.1816101074219,
+          595.0468139648438
+        ],
+        "bottom_center_base_mm": [
+          -503.10232306967464,
+          234.0993709563979,
+          0.0
+        ],
+        "detection_confidence": 0.7779688835144043,
+        "fit_rmse_px": 3.7277203096344897,
+        "fitted_bbox_px": [
+          224.40930498951866,
+          456.2115678405418,
+          344.0115698651632,
+          592.0741509974416
+        ],
+        "fit_edge_residual_px": [
+          2.718829525651472,
+          5.413472137416818,
+          -3.170040242258665,
+          -2.9726629674021297
+        ]
+      },
+      {
+        "detection_id": "vessel-1",
+        "center_px": [
+          459.2050476074219,
+          523.2148590087891
+        ],
+        "bbox_px": [
+          409.3367919921875,
+          456.3511657714844,
+          509.07330322265625,
+          590.0785522460938
+        ],
+        "bottom_center_base_mm": [
+          -505.6095528496309,
+          77.66117989192901,
+          0.0
+        ],
+        "detection_confidence": 0.6836039423942566,
+        "fit_rmse_px": 1.7055021103606813,
+        "fitted_bbox_px": [
+          411.4260515499027,
+          455.5172702916458,
+          506.7137461323159,
+          591.0820725300961
+        ],
+        "fit_edge_residual_px": [
+          2.089259557715195,
+          -0.8338954798385885,
+          -2.3595570903403313,
+          1.0035202840023203
+        ]
+      },
+      {
+        "detection_id": "vessel-2",
+        "center_px": [
+          615.343505859375,
+          536.5881500244141
+        ],
+        "bbox_px": [
+          563.837890625,
+          467.7287292480469,
+          666.84912109375,
+          605.4475708007812
+        ],
+        "bottom_center_base_mm": [
+          -526.1362594792167,
+          -62.17192722465294,
+          0.0
+        ],
+        "detection_confidence": 0.7790083885192871,
+        "fit_rmse_px": 6.935900713527603,
+        "fitted_bbox_px": [
+          573.477776340975,
+          466.8388787190405,
+          657.1786605068777,
+          607.7256920197617
+        ],
+        "fit_edge_residual_px": [
+          9.63988571597497,
+          -0.8898505290063667,
+          -9.67046058687231,
+          2.278121218980459
+        ]
+      },
+      {
+        "detection_id": "vessel-3",
+        "center_px": [
+          791.3834228515625,
+          541.2593383789062
+        ],
+        "bbox_px": [
+          736.9566650390625,
+          470.55810546875,
+          845.8101806640625,
+          611.9605712890625
+        ],
+        "bottom_center_base_mm": [
+          -534.8825294986997,
+          -211.85333561253975,
+          0.0
+        ],
+        "detection_confidence": 0.6962913870811462,
+        "fit_rmse_px": 3.9189829206908406,
+        "fitted_bbox_px": [
+          742.7750357767085,
+          470.4598663624434,
+          840.6798716840401,
+          613.0788509220098
+        ],
+        "fit_edge_residual_px": [
+          5.818370737645978,
+          -0.09823910630660748,
+          -5.1303089800223916,
+          1.1182796329472922
+        ]
+      }
+    ],
+    "diagnostic_path": "/home/user/projects/nero/data/methylene_blue/scene_replays/diagnostics/localization-svp1tk7r/localization.json",
+    "capture_settings": {
+      "stable_frames": 15,
+      "max_spread_mm": 5.0,
+      "min_scene_change_mm": 10.0,
+      "beaker_height_mm": 95.0,
+      "beaker_diameter_mm": 70.0,
+      "weights": "/home/user/projects/yolo/runs/detect/vessels_best/weights/best.pt",
+      "weights_sha256": "ca4ee5f17dffea4759ccfa27174b1836a7817cf970d7223c82babc1b292aa31b",
+      "camera_serial_number": 39602891,
+      "camera_matrix": [
+        [
+          527.5781860351562,
+          0.0,
+          647.1665649414062
+        ],
+        [
+          0.0,
+          527.5781860351562,
+          359.83575439453125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "transform_base_from_camera": [
+        [
+          0.02255291879948775,
+          0.4225301104135423,
+          0.9060682488905261,
+          -880.2533802903315
+        ],
+        [
+          0.9997455961233941,
+          -0.009830845906860024,
+          -0.020300184743869396,
+          -68.0567051197011
+        ],
+        [
+          0.0003299780346987363,
+          0.9062955700336817,
+          -0.4226443313849379,
+          383.14256433174734
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pixel_coordinates": "rectified_left_rotated_180",
+      "role_assignment": "left_to_right",
+      "mode": "zed_default_auto",
+      "image_size_px": [
+        1280,
+        720
+      ]
+    },
+    "raw_detection_count": 4,
+    "rejected_group_detections": []
+  },
+  "device_metrics": [
+    {
+      "action": "pour_sodium_hydroxide",
+      "status": "passed",
+      "device_feedback": {
+        "controller": "succeeded"
+      },
+      "holding_vessel": false,
+      "final_error_mm": "not_measured"
+    },
+    {
+      "action": "pour_glucose",
+      "status": "passed",
+      "device_feedback": {
+        "controller": "succeeded"
+      },
+      "holding_vessel": false,
+      "final_error_mm": "not_measured"
+    },
+    {
+      "action": "pour_methylene_blue",
+      "status": "passed",
+      "device_feedback": {
+        "controller": "succeeded"
+      },
+      "holding_vessel": false,
+      "final_error_mm": "not_measured"
+    }
+  ],
+  "scene_source": "live_camera",
+  "scene_snapshot": {
+    "captured_at": "2026-10-23T17:43:35.930+08:00",
+    "calibration_sha256": "b9874ae76258d6e804d40a3e6eca947c63ea0d33dacdd48335817b74ccbc4cb6",
+    "table_z_base_mm": 0.0,
+    "source": "live_camera",
+    "role_assignment": "left_to_right",
+    "synthetic": false,
+    "vessels": {
+      "sodium_hydroxide": {
+        "bottom_center_base_mm": [
+          -505.8334498190916,
+          77.66397152853754,
+          0.0
+        ],
+        "detection_confidence": 0.6410886645317078,
+        "spread_mm": 0.573,
+        "fit_rmse_px": 1.817331953692165,
+        "center_px": [
+          459.08154296875,
+          523.3551635742188
+        ],
+        "bbox_px": [
+          409.2102966308594,
+          456.39642333984375,
+          509.0081787109375,
+          590.3458862304688
+        ],
+        "position_index": 2
+      },
+      "glucose": {
+        "bottom_center_base_mm": [
+          -526.3609735138425,
+          -62.17724413413619,
+          0.0
+        ],
+        "detection_confidence": 0.7790083885192871,
+        "spread_mm": 3.405,
+        "fit_rmse_px": 7.693178884233759,
+        "center_px": [
+          615.3487854003906,
+          536.7074890136719
+        ],
+        "bbox_px": [
+          563.6889038085938,
+          467.70989990234375,
+          667.195068359375,
+          605.788818359375
+        ],
+        "position_index": 3
+      },
+      "methylene_blue": {
+        "bottom_center_base_mm": [
+          -534.9598392214166,
+          -211.99557557918885,
+          0.0
+        ],
+        "detection_confidence": 0.6649659872055054,
+        "spread_mm": 0.347,
+        "fit_rmse_px": 4.236154425992206,
+        "center_px": [
+          791.5796203613281,
+          541.3281555175781
+        ],
+        "bbox_px": [
+          736.9566650390625,
+          470.67694091796875,
+          846.1095581054688,
+          612.035400390625
+        ],
+        "position_index": 4
+      },
+      "reaction_vessel": {
+        "bottom_center_base_mm": [
+          -502.8741750527081,
+          234.36774606005773,
+          0.0
+        ],
+        "detection_confidence": 0.765533983707428,
+        "spread_mm": 0.989,
+        "fit_rmse_px": 3.979513925396806,
+        "center_px": [
+          284.2856140136719,
+          522.7876892089844
+        ],
+        "bbox_px": [
+          221.5592041015625,
+          450.74169921875,
+          346.92352294921875,
+          594.8336791992188
+        ],
+        "position_index": 1
+      }
+    }
+  },
+  "calibration_sha256": "b9874ae76258d6e804d40a3e6eca947c63ea0d33dacdd48335817b74ccbc4cb6",
+  "planning_preview": {
+    "planner": "moveit_stepwise",
+    "moveit_validated": false,
+    "execution_ready": true,
+    "collision_check": "moveit_robot_links_plus_overhead_vessel_clearance",
+    "task_count": 4,
+    "all_previews_ready": true,
+    "stage_d_acceptance": {
+      "status": "not_started",
+      "empty_gripper_check": "not_run",
+      "empty_cup_completed_cycles": 0,
+      "empty_cup_required_cycles": 10,
+      "blockers": [
+        "independent_base_center_ground_truth_missing",
+        "grasp_pour_and_shake_parameters_not_approved",
+        "moveit_paths_not_validated"
+      ]
+    }
+  },
+  "event_count": 201,
+  "sample_count": 0,
+  "generation_steps": [
+    {
+      "id": "aggregate_run_data",
+      "label": "汇总并校验事件与色彩样本",
+      "status": "passed",
+      "duration_ms": 1.29
+    },
+    {
+      "id": "render_report_formats",
+      "label": "生成 JSON、HTML 与颜色变化图表",
+      "status": "passed",
+      "duration_ms": 0.546
+    },
+    {
+      "id": "persist_report_artifacts",
+      "label": "写入本地报告产物",
+      "status": "passed",
+      "duration_ms": 2.654
+    }
+  ],
+  "chart_files": {
+    "rgb": "rgb_curve.svg",
+    "lab": "lab_curve.svg",
+    "reaction": "reaction_curve.svg"
+  }
+}

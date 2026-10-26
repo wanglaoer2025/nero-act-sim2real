@@ -1,0 +1,79 @@
+F...                                                                     [100%]
+=================================== FAILURES ===================================
+____________ test_finger_split_cup_uses_current_projected_geometry _____________
+
+mask = array([[False, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False],
+      ...e, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False]], shape=(720, 1280))
+
+    def current_cup_component(mask):
+        connected=cv2.morphologyEx(np.asarray(mask,np.uint8),cv2.MORPH_CLOSE,np.ones((3,3),np.uint8))
+        try:
+            # Preserve every previously accepted input/output exactly.
+>           return NominalImageEstimator.component(connected,15)[0]
+
+observer.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mask = array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], shape=(720, 1280), dtype=uint8)
+minimum = 15
+
+    @staticmethod
+    def component(mask, minimum):
+        count, labels, stats, centers = cv2.connectedComponentsWithStats(mask.astype(np.uint8))
+        indices = [i for i in range(1, count) if stats[i, cv2.CC_STAT_AREA] >= minimum]
+        if len(indices) != 1:
+>           raise ValueError('Unique visible cup and target required')
+E           ValueError: Unique visible cup and target required
+
+vendor/cylinder.py:46: ValueError
+
+During handling of the above exception, another exception occurred:
+
+    def test_finger_split_cup_uses_current_projected_geometry():
+        ob, rgb = observer_and_image()
+>       result = ob.measure(rgb, 1., 1, np.r_[np.zeros(7), .075])
+
+tests/test_cup_geometry.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+observer.py:197: in measure
+    mask=current_cup_component((hsv[:,:,0]>=15)&(hsv[:,:,0]<=45)&
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mask = array([[False, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False],
+      ...e, False, False, ..., False, False, False],
+       [False, False, False, ..., False, False, False]], shape=(720, 1280))
+
+    def current_cup_component(mask):
+        connected=cv2.morphologyEx(np.asarray(mask,np.uint8),cv2.MORPH_CLOSE,np.ones((3,3),np.uint8))
+        try:
+            # Preserve every previously accepted input/output exactly.
+            return NominalImageEstimator.component(connected,15)[0]
+        except ValueError:
+            count,labels,stats,_=cv2.connectedComponentsWithStats(connected)
+            ids=[i for i in range(1,count) if stats[i,cv2.CC_STAT_AREA]>=15]
+            retained=np.isin(labels,ids)
+            enclosing=[]
+            for i in ids:
+                y,x=np.nonzero(labels==i)
+                hull=cv2.convexHull(np.c_[x,y].astype('int32'))
+                envelope=np.zeros_like(connected)
+                cv2.fillConvexPoly(envelope,hull,1)
+                if not (retained&~envelope.astype(bool)).any():enclosing.append(i)
+            # Every retained fragment must lie inside ONE observed body's hull;
+            # a second exterior object is never discarded or merged by distance.
+>           if len(enclosing)!=1:raise ValueError('Unique visible cup and target required')
+E           ValueError: Unique visible cup and target required
+
+observer.py:30: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_cup_geometry.py::test_finger_split_cup_uses_current_projected_geometry
+1 failed, 3 passed in 0.77s

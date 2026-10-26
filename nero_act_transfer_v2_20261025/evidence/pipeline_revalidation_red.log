@@ -1,0 +1,17 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_limited_pilot_must_be_revalidated_without_another_training_budget ____
+
+    def test_limited_pilot_must_be_revalidated_without_another_training_budget():
+        from pipeline import next_stage
+        complete={'complete':True,'episodes':[{}]*150,'rejected':[]}
+        limited={'complete':True,'mechanism_passed':True,'admission_scope':'mechanism_pilot_only'}
+>       assert next_stage(complete,limited,None)=='revalidate_pilot'
+E       AssertionError: assert 'formal' == 'revalidate_pilot'
+E         - revalidate_pilot
+E         + formal
+
+tests/test_pipeline.py:20: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_pipeline.py::test_limited_pilot_must_be_revalidated_without_another_training_budget
+1 failed in 0.42s

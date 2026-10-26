@@ -1,0 +1,179 @@
+/home/user/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-h96paoh6 because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+FFFFFFFF                                                                 [100%]
+=================================== FAILURES ===================================
+_ test_preservation_penalizes_deployed_arm_and_gripper_changes_in_physical_units _
+
+    def test_preservation_penalizes_deployed_arm_and_gripper_changes_in_physical_units():
+>       from training.approach_preservation import prefix_preservation_loss
+E       ModuleNotFoundError: No module named 'training.approach_preservation'
+
+tests/test_approach_preservation.py:11: ModuleNotFoundError
+__ test_replay_gradient_restores_baseline_without_updating_frozen_parameters ___
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_replay_gradient_restores_0')
+
+    def test_replay_gradient_restores_baseline_without_updating_frozen_parameters(tmp_path):
+>       from training.approach_preservation import ApproachPreservation
+E       ModuleNotFoundError: No module named 'training.approach_preservation'
+
+tests/test_approach_preservation.py:36: ModuleNotFoundError
+___________ test_invalid_preservation_settings_fail_closed[change0] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_invalid_preservation_sett0')
+change = {'weight': 0.0}
+
+    @pytest.mark.parametrize('change',[{'weight':0.},{'weight':float('nan')},{'batch_size':0},{'arm_unit_rad':-1.},{'profile':'unknown'}])
+    def test_invalid_preservation_settings_fail_closed(tmp_path,change):
+>       from training.approach_preservation import ApproachPreservation
+E       ModuleNotFoundError: No module named 'training.approach_preservation'
+
+tests/test_approach_preservation.py:57: ModuleNotFoundError
+___________ test_invalid_preservation_settings_fail_closed[change1] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_invalid_preservation_sett1')
+change = {'weight': nan}
+
+    @pytest.mark.parametrize('change',[{'weight':0.},{'weight':float('nan')},{'batch_size':0},{'arm_unit_rad':-1.},{'profile':'unknown'}])
+    def test_invalid_preservation_settings_fail_closed(tmp_path,change):
+>       from training.approach_preservation import ApproachPreservation
+E       ModuleNotFoundError: No module named 'training.approach_preservation'
+
+tests/test_approach_preservation.py:57: ModuleNotFoundError
+___________ test_invalid_preservation_settings_fail_closed[change2] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_invalid_preservation_sett2')
+change = {'batch_size': 0}
+
+    @pytest.mark.parametrize('change',[{'weight':0.},{'weight':float('nan')},{'batch_size':0},{'arm_unit_rad':-1.},{'profile':'unknown'}])
+    def test_invalid_preservation_settings_fail_closed(tmp_path,change):
+>       from training.approach_preservation import ApproachPreservation
+E       ModuleNotFoundError: No module named 'training.approach_preservation'
+
+tests/test_approach_preservation.py:57: ModuleNotFoundError
+___________ test_invalid_preservation_settings_fail_closed[change3] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_invalid_preservation_sett3')
+change = {'arm_unit_rad': -1.0}
+
+    @pytest.mark.parametrize('change',[{'weight':0.},{'weight':float('nan')},{'batch_size':0},{'arm_unit_rad':-1.},{'profile':'unknown'}])
+    def test_invalid_preservation_settings_fail_closed(tmp_path,change):
+>       from training.approach_preservation import ApproachPreservation
+E       ModuleNotFoundError: No module named 'training.approach_preservation'
+
+tests/test_approach_preservation.py:57: ModuleNotFoundError
+___________ test_invalid_preservation_settings_fail_closed[change4] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_invalid_preservation_sett4')
+change = {'profile': 'unknown'}
+
+    @pytest.mark.parametrize('change',[{'weight':0.},{'weight':float('nan')},{'batch_size':0},{'arm_unit_rad':-1.},{'profile':'unknown'}])
+    def test_invalid_preservation_settings_fail_closed(tmp_path,change):
+>       from training.approach_preservation import ApproachPreservation
+E       ModuleNotFoundError: No module named 'training.approach_preservation'
+
+tests/test_approach_preservation.py:57: ModuleNotFoundError
+________________ test_caller_cannot_disable_sealed_preservation ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_caller_cannot_disable_sea0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x78ffc61aa870>
+
+    def test_caller_cannot_disable_sealed_preservation(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir()
+        declared=dict(adaptation_scope='output_heads_v1',train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003,
+            approach_preservation={'profile':'baseline_prefix_v1','weight':1.,'replay_path':'frozen.npz'})
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=copy.deepcopy(declared);caller.update(variant='A',stage='pilot');caller.pop('approach_preservation')
+        with pytest.raises(ValueError,match='preservation'):
+>           module.train_history(tmp_path/'data',tmp_path/'initializer',caller,tmp_path/'output')
+
+tests/test_approach_preservation.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/tmp/pytest-of-user/pytest-1/test_caller_cannot_disable_sea0/data')
+initializer = PosixPath('/tmp/pytest-of-user/pytest-1/test_caller_cannot_disable_sea0/initializer')
+config = {'adaptation_scope': 'output_heads_v1', 'arm_output_lr': 0.0001, 'gripper_adapter_lr': 0.0003, 'stage': 'pilot', ...}
+output = PosixPath('/tmp/pytest-of-user/pytest-1/test_caller_cannot_disable_sea0/output')
+
+    def train_history(data_dir:Path,initializer:Path,config:dict,output:Path)->dict:
+        import pickle
+        import time
+        from torch.utils.data import DataLoader
+        from training.history_dataset import HistoryReferenceDataset
+        from training.train import save_checkpoint
+        from training.pose_objective import fk_spec_from_scene
+        from executor.model import BoundedActPolicy,make_policy_observation,physical_actions
+        from training.integrity import require_finalized
+        data_dir,initializer,output=[Path(p).resolve() for p in [data_dir,initializer,output]]
+        sealed=_require_seal(data_dir)
+        if output.exists():raise FileExistsError(output)
+        settings=dict(config);variant=settings.pop('variant');stage=settings.pop('stage')
+        if variant not in ('A','B') or stage not in ('pilot','formal'):raise ValueError('Explicit paired stage/variant required')
+        declared=json.loads((ROOT/'config/history_experiment.json').read_text())
+        sampling_profile=declared.get('transition_sampling_profile','none')
+        scope=declared.get('adaptation_scope','full')
+        if settings.get('adaptation_scope','full')!=scope:
+            raise ValueError('Caller adaptation scope differs from the sealed declaration')
+        if scope=='output_heads_v1':
+            if stage!='pilot' or variant!='A':raise ValueError('Restricted heads are single-model A pilot only')
+            for key in ['train_arm_output_and_gripper_only','arm_output_lr','gripper_adapter_lr']:
+                if settings.get(key)!=declared.get(key):raise ValueError('Restricted setting differs from sealed declaration: '+key)
+    
+        if settings.get('deployed_prefix_loss_weight',0.)!=declared.get('deployed_prefix_loss_weight',0.):
+            raise ValueError('Caller deployed prefix weight differs from the sealed declaration')
+        additional=declared.get('additional_failure_episode_ids',[])
+        if settings.get('additional_failure_episode_ids',[])!=additional:
+            raise ValueError('Additional recovery IDs differ from the sealed experiment declaration')
+        if settings.get('transition_sampling_profile','none')!=sampling_profile:
+            raise ValueError('Caller sampling profile differs from the sealed experiment declaration')
+        if stage=='formal' and sampling_profile!='none':
+            raise ValueError('Balanced contact repair is pilot-only; formal budget requires a separately declared experiment')
+        gate_inputs=[]
+        if stage=='formal':
+            from executor.history_qualification import require_formal_gate
+            gate_inputs=require_formal_gate(ROOT)
+        budget=dict(kind='updates',limit=1000) if stage=='pilot' else dict(kind='epochs',limit=20)
+        validate_budget(budget)
+        if (settings.get('seed')!=42 or settings.get('batch_size')!=32 or settings.get('image_size')!=[180,320]
+                or settings.get('device')!='cuda'):
+>           raise ValueError('Approved seed42/batch32/320×180 CUDA experiment required')
+E           ValueError: Approved seed42/batch32/320×180 CUDA experiment required
+
+training/history.py:309: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-1/test_caller_cannot_disable_sea0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x78ffc61aa870>
+
+    def test_caller_cannot_disable_sealed_preservation(tmp_path,monkeypatch):
+        import training.history as module
+        monkeypatch.setattr(module,'ROOT',tmp_path);monkeypatch.setattr(module,'_require_seal',lambda path:{})
+        (tmp_path/'config').mkdir()
+        declared=dict(adaptation_scope='output_heads_v1',train_arm_output_and_gripper_only=True,arm_output_lr=.0001,gripper_adapter_lr=.0003,
+            approach_preservation={'profile':'baseline_prefix_v1','weight':1.,'replay_path':'frozen.npz'})
+        (tmp_path/'config/history_experiment.json').write_text(json.dumps(declared))
+        caller=copy.deepcopy(declared);caller.update(variant='A',stage='pilot');caller.pop('approach_preservation')
+>       with pytest.raises(ValueError,match='preservation'):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'preservation'
+E        Input: 'Approved seed42/batch32/320×180 CUDA experiment required'
+
+tests/test_approach_preservation.py:71: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_approach_preservation.py::test_preservation_penalizes_deployed_arm_and_gripper_changes_in_physical_units
+FAILED tests/test_approach_preservation.py::test_replay_gradient_restores_baseline_without_updating_frozen_parameters
+FAILED tests/test_approach_preservation.py::test_invalid_preservation_settings_fail_closed[change0]
+FAILED tests/test_approach_preservation.py::test_invalid_preservation_settings_fail_closed[change1]
+FAILED tests/test_approach_preservation.py::test_invalid_preservation_settings_fail_closed[change2]
+FAILED tests/test_approach_preservation.py::test_invalid_preservation_settings_fail_closed[change3]
+FAILED tests/test_approach_preservation.py::test_invalid_preservation_settings_fail_closed[change4]
+FAILED tests/test_approach_preservation.py::test_caller_cannot_disable_sealed_preservation
+8 failed, 1 warning in 3.07s

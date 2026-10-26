@@ -1,0 +1,20 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+{"id": 5000, "split": "train", "domain": "nominal", "success": true, "frames": 2156}
+{"id": 5001, "split": "train", "domain": "nominal", "success": true, "frames": 2156}
+{"id": 5002, "split": "val", "domain": "nominal", "success": true, "frames": 2156}
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/evidence/collect_fixed_data.py", line 110, in <module>
+    main()
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/evidence/collect_fixed_data.py", line 77, in main
+    result = collect_episode(config, raw)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/simulation/collect.py", line 85, in collect_episode
+    result['prefix_contract_audit'] = verify_action_contract(output)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/simulation/collect.py", line 101, in verify_action_contract
+    protected = guard.validate_prefix(raw, dict(state=states[index], age_s=.05),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_fixed_scene_heads_20261018/executor/contract.py", line 37, in validate_prefix
+    raise ValueError('Discontinuous raw arm prefix; no rebasing or large-jump clipping')
+ValueError: Discontinuous raw arm prefix; no rebasing or large-jump clipping

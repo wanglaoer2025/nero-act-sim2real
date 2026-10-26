@@ -1,0 +1,64 @@
+{
+  "requested_scope": "full ACT action sequence on the physical robot",
+  "full_motion_submitted": false,
+  "full_execution_ready": false,
+  "existing_entry_scope": "one projected displacement using action index 9; max projected joint displacement 0.005 rad; no gripper execution",
+  "last_actual_feedback_source": "/home/user/wq/nero_act_response_20261016_onsite/logs/act_20261016_102001_580248519/actual_feedback.json",
+  "last_recorded_actual_state": [
+    0.18481291449367956,
+    -0.12836896648418294,
+    0.10992083629060287,
+    1.5715293650807343,
+    -0.022689280275926284,
+    0.2777516971623776,
+    0.13554226970987962,
+    0.060118
+  ],
+  "raw_chunk_shape": [
+    100,
+    8
+  ],
+  "first_raw_action": [
+    0.4964759647846222,
+    -0.534468412399292,
+    2.186168670654297,
+    1.7124965190887451,
+    0.1754177212715149,
+    -0.5374678373336792,
+    1.048844337463379,
+    0.001637198030948639
+  ],
+  "tenth_raw_action": [
+    0.5161976218223572,
+    -0.5203354358673096,
+    2.1847574710845947,
+    1.710834264755249,
+    0.18060311675071716,
+    -0.523936927318573,
+    1.0660868883132935,
+    0.0014870278537273407
+  ],
+  "J3_raw_chunk_min_max_rad": [
+    2.1830854415893555,
+    2.1926419734954834
+  ],
+  "J3_tenth_action_delta_from_last_feedback_rad": 2.0748367309570312,
+  "J3_tenth_action_delta_from_last_feedback_deg": 118.87938786255857,
+  "tenth_action_gripper_total_width_mm": 1.487027883529663,
+  "outside_training_bounds_with_configured_margin": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint5",
+    "joint6",
+    "joint7"
+  ],
+  "blocking_reasons": [
+    "No full-chunk or continuous closed-loop execution mode in this response package",
+    "Current real posture is outside model training coverage; raw absolute output has a large discontinuity from actual posture",
+    "Gripper targets were not physically executed/validated in the response experiment",
+    "Contact scene and complete trajectory have not been validated for current setup"
+  ],
+  "required_next_step": "Align the simulation/model initial state with real feedback and provide a matching full-sequence closed-loop executor; preview complete arm/gripper trajectory before physical execution",
+  "no_limits_or_hardware_flags_modified": true
+}

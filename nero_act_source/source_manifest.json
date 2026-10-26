@@ -1,0 +1,868 @@
+{
+  "created_at_utc": "2026-10-13T11:35:38.189681+00:00",
+  "source_root": "/home/user/projects/nero",
+  "source_git_head": "538c8ba78ae85309fd6580eee170cc30d5b7d9c4",
+  "snapshot": "Original source-machine working-tree snapshot plus a documented offline SDK-import fix in the exported bundle",
+  "source_working_tree_status": [
+    " M AGENTS.md",
+    " M CONTRIBUTING.md",
+    " M README.md",
+    " M docs/act/README.md",
+    " M docs/act/dual-camera-recording.md",
+    " M docs/development.md",
+    " M docs/robot-troubleshooting.md",
+    " M src/act/dataset_stats.py",
+    " M src/act/eval_offline.py",
+    " M src/act/nero_dataset.py",
+    " M src/act/realtime_logger.py",
+    " M src/act/record_episode.py",
+    " M src/act/robot_wrapper.py",
+    " M src/act/run_act_real.py",
+    " M src/act/train.py",
+    " M src/act/train_smoke_test.py",
+    " M src/calibration/auto_hand_eye.py",
+    " D src/demo/gripper_demo.py",
+    " M src/demo/yolo_pick_place.py",
+    " M src/ui/methylene_blue/app.js",
+    " M src/ui/methylene_blue/index.html",
+    " M src/ui/methylene_blue/styles.css",
+    " M src/utils/methylene_blue.py",
+    " M src/utils/methylene_blue_ui.py",
+    " M src/utils/methylene_blue_vision.py",
+    " M src/voice/pick_place.py",
+    " M tests/test_act_day5.py",
+    " M tests/test_act_nero_dataset.py",
+    " M tests/test_act_real_inference.py",
+    " M tests/test_act_robot_wrapper.py",
+    " M tests/test_act_yolo_record.py",
+    " M tests/test_auto_hand_eye.py",
+    " M tests/test_methylene_blue_experiment.py",
+    " M tests/test_project_layout.py",
+    " M tests/test_yolo_pick_place.py",
+    "?? configs/act_nero_dual_fixed_destination_day6.yaml",
+    "?? configs/act_nero_dual_fixed_destination_finetune_day5.yaml",
+    "?? configs/act_nero_dual_fixed_destination_scratch_day5.yaml",
+    "?? configs/act_nero_dual_joint55_replay_day5.yaml",
+    "?? configs/act_nero_dual_joint55_replay_day6.yaml",
+    "?? configs/act_nero_dual_xyz_compatible38_day5.yaml",
+    "?? configs/act_nero_dual_xyz_compatible38_day6.yaml",
+    "?? configs/act_nero_dual_xyz_grasp_focus_day5.yaml",
+    "?? configs/act_nero_dual_xyz_grasp_focus_day6.yaml",
+    "?? configs/act_nero_dual_xyz_latest_day5.yaml",
+    "?? configs/act_nero_dual_xyz_latest_day6.yaml",
+    "?? configs/act_nero_dual_xyz_merged_day5.yaml",
+    "?? configs/act_nero_dual_xyz_merged_day6.yaml",
+    "?? src/act/adaptive_mpc.py",
+    "?? src/act/eval_saved_rollout.py",
+    "?? src/act/grasp_transition_audit.py",
+    "?? src/arm/gripper.py",
+    "?? src/ui/methylene_blue/ui_logic.js",
+    "?? tests/test_act_adaptive_mpc.py",
+    "?? tests/test_act_grasp_transition_audit.py",
+    "?? tests/test_arm_gripper.py"
+  ],
+  "requested_files": {
+    "runtime": "src/act/run_act_real.py",
+    "NeroRobotWrapper": "src/act/robot_wrapper.py",
+    "ZED_capture": "src/act/record_episode.py: ZedRgbCamera and ActRgbCameras",
+    "image_preprocessing": "src/act/nero_dataset.py: preprocess_images; src/act/nero_policy.py: ImageNet channel normalization",
+    "training": "src/act/train.py",
+    "data_loading": "src/act/nero_dataset.py; src/act/episode_io.py; src/act/dataset_stats.py",
+    "single_camera_training_reference": "configs/act_nero_day5.yaml",
+    "single_camera_runtime_reference": "configs/act_nero_day6.yaml"
+  },
+  "baseline_semantics": {
+    "state": "[joint1..joint7 angles rad, gripper total opening width m]",
+    "action": "8 absolute targets, not deltas or torques",
+    "camera_names": [
+      "camera_0"
+    ],
+    "capture": "ZED SDK LEFT, HD720@30; retrieved at width 640 (height 360); rotate 180 degrees; BGRA/BGR to RGB uint8",
+    "tensor_preprocessing": "RGB NHWC uint8 -> NCHW float32 /255 -> bilinear resize align_corners=False -> ImageNet mean/std in policy",
+    "single_camera_reference_image_size_hw": [
+      90,
+      160
+    ],
+    "execution_config_hz": 20,
+    "normalization": "Train-set qpos/action mean/std from dataset_stats.pkl; checkpoint embedded training config must match runtime",
+    "variant_note": "Other YAMLs include dual-camera and 14D coordinate-conditioned states; they are separate experiments, not the confirmed single-camera 8D baseline"
+  },
+  "handoff_limits": [
+    "Source snapshot for adaptation; not a trained policy or a verified real cup task",
+    "Checkpoint, dataset_stats.pkl, safety_summary.json, datasets and hardware SDK binaries are not included; YAML paths are historical source-machine references",
+    "Some manifest entries contain source-machine dataset paths; regenerate or rebase them on the simulator machine",
+    "Existing run_act_real --dry-run connects/enables the arm after CONNECT confirmation. Do not use it as an offline validation command",
+    "Source includes existing hardware control entrypoints; this handoff did not execute them",
+    "Offline data/training import no longer requires pyAgxArm; arm creation and ZED capture still require their respective external SDKs",
+    "Task regions and 13 mm base support (corrected mounting relationship) confirmed by user; exact base coordinates and independent calibration validation pending"
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 6849,
+      "sha256": "8b4e04530933e9ad2e1a0bbbd48b111e026c60e080497635deb20b6b99b1f0bc"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 6460,
+      "sha256": "fb9989760c33d147e132a0ff4a23d093f5a22e7c2fd93224f64f829577a18cc6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 49956,
+      "sha256": "a3a9452c65e328631fe79e33f22d82df95de8871b7ab4a45d857e7e25ad2c828"
+    },
+    {
+      "path": "configs/act_nero.yaml",
+      "bytes": 560,
+      "sha256": "5e8ed04c815f1516fd7739df03a479c957b0cd1ea9f506207ce87e6fcf84371e"
+    },
+    {
+      "path": "configs/act_nero_day5.yaml",
+      "bytes": 708,
+      "sha256": "2402ad2bed0d533ed507a6ecdacf7f608a4997c1f2c5ca2bbdc1556798dd3fb9"
+    },
+    {
+      "path": "configs/act_nero_day6.yaml",
+      "bytes": 1276,
+      "sha256": "49589fb53fcc477471f33a8d4967c8d6996db8af1ca6c7c7d4fcdc1042e1117d"
+    },
+    {
+      "path": "configs/act_nero_dual_day5.yaml",
+      "bytes": 790,
+      "sha256": "ef2e4e6d311409e81939da14404b51dffd301c338964a0927269c3c8453553c3"
+    },
+    {
+      "path": "configs/act_nero_dual_day6.yaml",
+      "bytes": 1434,
+      "sha256": "611fcb7e67ba93f5c0e04fa98fc349f6388e37576f15f3073dac34c2fdf4080c"
+    },
+    {
+      "path": "configs/act_nero_dual_fixed_destination_day6.yaml",
+      "bytes": 2864,
+      "sha256": "7c0795ebb49fbdbdc478700cd1d9f55273322a970814435724d85c62db00b811"
+    },
+    {
+      "path": "configs/act_nero_dual_fixed_destination_finetune_day5.yaml",
+      "bytes": 1443,
+      "sha256": "f113ca2e46aea2a1964fd24056760e9999baafe282f2c76ac768f2f94d56a5fc"
+    },
+    {
+      "path": "configs/act_nero_dual_fixed_destination_scratch_day5.yaml",
+      "bytes": 1275,
+      "sha256": "70fbae8124a3b56fff25f7d6981ad36afd2201bdc6fb2bccf05e062293e2a6b7"
+    },
+    {
+      "path": "configs/act_nero_dual_joint55_replay_day5.yaml",
+      "bytes": 1347,
+      "sha256": "fad32ad41d481a62be7d45c651ea23dd0905ba330bd903ae525d65d0ee8f259b"
+    },
+    {
+      "path": "configs/act_nero_dual_joint55_replay_day6.yaml",
+      "bytes": 2832,
+      "sha256": "38e2452773166aad8229ef4ff5cf53c964662b2d7d96604287f07afd1a1e9fbb"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_compatible38_day5.yaml",
+      "bytes": 1083,
+      "sha256": "4e3d5b3f431afe882d187a0789d1784a7a485f3240442b5494717d53b10e5fc2"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_compatible38_day6.yaml",
+      "bytes": 2288,
+      "sha256": "a3d88f7cd37f28469abf206cdb7ae44461937e6ee2632dcf978e1800acc887e4"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_day5.yaml",
+      "bytes": 833,
+      "sha256": "fc64a1ce4cb40122fb25adf35805e937c6407ff8a4c6b8069f5bf3d5ac54e775"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_day6.yaml",
+      "bytes": 1791,
+      "sha256": "937114972f1995be6b3b5b1800ff5e3d0e0abbf0d76f086772716a1487cde038"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_fixed_day5.yaml",
+      "bytes": 1376,
+      "sha256": "e465f0b0f9c2d23c0eef47ad9be00754ea7cd60ca5a163e7377c9944ab53de37"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_fixed_day6.yaml",
+      "bytes": 2090,
+      "sha256": "4406c363397ee997301e3d04c395c15ca4a1ddab774c75982025a04172b2d840"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_grasp_focus_day5.yaml",
+      "bytes": 1068,
+      "sha256": "cf04432b04592feba70de01775a93f78c38ab8eeb7c0d3cec9a3215d42d12d9e"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_grasp_focus_day6.yaml",
+      "bytes": 2240,
+      "sha256": "f82ff0d6cdb520ee35f6b03c372f37b9b0089630b0e49c45aaa1cc941dda3c53"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_latest_day5.yaml",
+      "bytes": 1067,
+      "sha256": "a838c67429d8396bcfc59b5c28161d92491fd0b1ed0992e9c430d37cf1255c1a"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_latest_day6.yaml",
+      "bytes": 2186,
+      "sha256": "a37e6e2ded86b96b8cb2e8c814564379b40981b2dfe65695945b4e8770d133d9"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_lead10_day5.yaml",
+      "bytes": 978,
+      "sha256": "d0d1ac2a054c2485fe89cba641d1268d0f59bba3e0ac132da5bdc5004a294615"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_lead10_day6.yaml",
+      "bytes": 1819,
+      "sha256": "45d8353275ce50db9b00dc62e460d214b0fca843270c277871e236eee22b98e9"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_merged_day5.yaml",
+      "bytes": 1116,
+      "sha256": "e8ef8bf37750f5b7325a5f7d01cb19ae90f44c6e895e73cf09212bee261312a9"
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_merged_day6.yaml",
+      "bytes": 2033,
+      "sha256": "659b8917d6e48c8010e73b86dea6319d90102cb2e5c4b519fdf5b9bffedcfdd8"
+    },
+    {
+      "path": "configs/act_nero_offset10.yaml",
+      "bytes": 763,
+      "sha256": "f1395c054a1bdbdb20638e28e58f4c324da23256454cf8e28806a75eb1e94757"
+    },
+    {
+      "path": "configs/act_nero_offset10_day6.yaml",
+      "bytes": 1297,
+      "sha256": "abbb04980651106fb6ed6ba8efcc4a2d06257a7654e937667c1cd3a033161c80"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 3813,
+      "sha256": "28ae1b011f63285c159cd0b7612c7c229155fe42e6f8bc4f61b11173bac6a760",
+      "original_source_sha256": "fe26c5d8d41d8b89f5ad2a3a50691a52a8cbb5e7dd54fd303401ccd75e6e0f3f",
+      "origin": "modified exported copy"
+    },
+    {
+      "path": "docs/act/README.md",
+      "bytes": 5154,
+      "sha256": "b0d7c2c5bba39c08a5f35b2c2b213514220011dc4f96ca4100c9a910f91654ff",
+      "original_source_sha256": "32f8ed2b6cf7f11190103b66b843f9a3f41bde80e1f83f17b7501c376ae3cd05",
+      "origin": "modified exported copy"
+    },
+    {
+      "path": "docs/act/act-day1-report.md",
+      "bytes": 11666,
+      "sha256": "fb036e91feb9a163f58423000ee5cca81e313287fe3e8019ac835379dae2a9e6"
+    },
+    {
+      "path": "docs/act/act-day2-report.md",
+      "bytes": 8937,
+      "sha256": "9ccf7674ed6e78c64430ef9dbc09146618a5e06d769e7a7479c980d5bf9d184f"
+    },
+    {
+      "path": "docs/act/act-day3-report.md",
+      "bytes": 7375,
+      "sha256": "b57167ca7bbf0bf8fc91f7572f964f221125bcf6151b368d76d634fbc068ae5d"
+    },
+    {
+      "path": "docs/act/act-day4-report.md",
+      "bytes": 9335,
+      "sha256": "45bb85054ecab06092123033bb3a5f16f6607f2599919014c828aee7477f166c"
+    },
+    {
+      "path": "docs/act/act-day5-report.md",
+      "bytes": 8114,
+      "sha256": "7c38966fd188f973b5a6e4fc163874b761911370da62f09529e1599e9eb4a0b5"
+    },
+    {
+      "path": "docs/act/act-day6-report.md",
+      "bytes": 12917,
+      "sha256": "935ab0025014326f229b8a1e75fdc941c758e50d01408331c59465c4ab878273"
+    },
+    {
+      "path": "docs/act/dual-camera-recording.md",
+      "bytes": 18648,
+      "sha256": "a5a903ac6ca0c109847535cb8531ef25092c024da266e9d551c8861d3a95455e"
+    },
+    {
+      "path": "docs/development.md",
+      "bytes": 11511,
+      "sha256": "0a3f37c869fcfba8084689d3348be744ca433f66431e24436cfadf5e2993ce83"
+    },
+    {
+      "path": "src/__init__.py",
+      "bytes": 60,
+      "sha256": "e824b724a356717942fcc4a5591d209f866a74350479a3bc3cab465bfd9b0764"
+    },
+    {
+      "path": "src/act/__init__.py",
+      "bytes": 127,
+      "sha256": "5d44dc52a5f36cfb23b151b466e04ab74e3205ed4116afe68fe40018fec18db4"
+    },
+    {
+      "path": "src/act/action_safety.py",
+      "bytes": 1531,
+      "sha256": "25e735fbd31b07b7487d587295f5b1d28705430a38b6c466ac48573841f7edd5"
+    },
+    {
+      "path": "src/act/adaptive_mpc.py",
+      "bytes": 12496,
+      "sha256": "47da594fe0f2918d41a729e9ba882969a48da3757ad26234c896bb36f85a7368"
+    },
+    {
+      "path": "src/act/dataset_stats.py",
+      "bytes": 5945,
+      "sha256": "4796e657895deb8e715cfb4b74636580bddf9b0fe43beca5a933b0833f0d0c47"
+    },
+    {
+      "path": "src/act/episode_inspect.py",
+      "bytes": 6872,
+      "sha256": "0f7435750f7c5e513a06b04dcd48f40c7a33d4aac68cf5a10c0e4cd04ed385c1"
+    },
+    {
+      "path": "src/act/episode_io.py",
+      "bytes": 8225,
+      "sha256": "28fe0c9b92bdb17b9e7b1cb7e7de509cf14080beda1124233963abbe5256d10b"
+    },
+    {
+      "path": "src/act/episode_plot.py",
+      "bytes": 2123,
+      "sha256": "9ba3215180343a046806c99d6c3e82d514091c1e61a9916bf3d6976b5f37e4ee"
+    },
+    {
+      "path": "src/act/eval_offline.py",
+      "bytes": 16387,
+      "sha256": "09dd9c53c731e2e2d0e0b9e9c4a0b8bb7896d95001a53a82cec0e7a1a1e971a8"
+    },
+    {
+      "path": "src/act/eval_saved_rollout.py",
+      "bytes": 6922,
+      "sha256": "8c35813e03109a0d3c98172f33c5531f6680f0d0782309223821bcb1d8fdd017"
+    },
+    {
+      "path": "src/act/grasp_transition_audit.py",
+      "bytes": 22619,
+      "sha256": "faf136e4f38b65d500cfe5697718e4ce0d24b0238204c6bec85f1a5671cb8d53"
+    },
+    {
+      "path": "src/act/nero_dataset.py",
+      "bytes": 11782,
+      "sha256": "df6182c23c46838bb52f382fa523151c2d8044986ac19af48fc4b92592cfd773"
+    },
+    {
+      "path": "src/act/nero_policy.py",
+      "bytes": 2944,
+      "sha256": "ba052fb87b85c649733e4d71831f40c01b23da348edb278cb36dc4813bf0d052"
+    },
+    {
+      "path": "src/act/realtime_logger.py",
+      "bytes": 5592,
+      "sha256": "9aca4303d8758e5fa161bf28c93c6aee8e06a78f60c823cddb349c99ac6ffb8a"
+    },
+    {
+      "path": "src/act/record_episode.py",
+      "bytes": 25515,
+      "sha256": "22bb191dc4a4528ad905f85842133bc77eb387b46d80ce7ba96d65e161a4d702"
+    },
+    {
+      "path": "src/act/record_yolo_episode.py",
+      "bytes": 9887,
+      "sha256": "fdc4fb252508904dfc40abc8e54811455672224f98cfefaa3840f6f0d3a69f7e"
+    },
+    {
+      "path": "src/act/replay_episode.py",
+      "bytes": 13025,
+      "sha256": "01e8593896a616a353a0e03c41c5e25098f197c9c0c67c4f1d0755a1cf7f3df0"
+    },
+    {
+      "path": "src/act/robot_wrapper.py",
+      "bytes": 10193,
+      "sha256": "0e401a1bfa54fa401b4db01863738bbd83ad942a26657fe3e7c24045232a6561"
+    },
+    {
+      "path": "src/act/run_act_real.py",
+      "bytes": 50401,
+      "sha256": "a603c11e92c828533b6b8706e6b21a0a3dd34905d20c5dc58a1f94b58708acef"
+    },
+    {
+      "path": "src/act/safety_filter.py",
+      "bytes": 6366,
+      "sha256": "f298370a1f9055704c26d1f9a7a3c638a7608d0ba05d6810ff34160000c9f6a2"
+    },
+    {
+      "path": "src/act/temporal_ensemble.py",
+      "bytes": 3688,
+      "sha256": "f4b8ff42423b75c10faebf09561180d2dcc0812e938f50140125c331bd456502"
+    },
+    {
+      "path": "src/act/test_joint_stream.py",
+      "bytes": 11147,
+      "sha256": "47d424095436710c8843ec3655f6045e0323bf74b2368587020207093638fd64"
+    },
+    {
+      "path": "src/act/train.py",
+      "bytes": 18907,
+      "sha256": "a09cc6724d0fb7c50bf8eb5897bc5629ff8576d46b951354dce6e37a3fc2aaed"
+    },
+    {
+      "path": "src/act/train_smoke_test.py",
+      "bytes": 9757,
+      "sha256": "1f3aa074b3cf24530c61465ee679e41410c8989fa4b17181d329eba787124126"
+    },
+    {
+      "path": "src/act/validate_episode.py",
+      "bytes": 10815,
+      "sha256": "7b4fb39d00fd8ae9b0b95458df4001445e43cdb2d55f5b214646bfff46abdc16"
+    },
+    {
+      "path": "src/arm/__init__.py",
+      "bytes": 42,
+      "sha256": "ddc6f003042d474d0ccfac97cae71b61d055d150244e1bef99f153f86cc4aff8"
+    },
+    {
+      "path": "src/arm/prepare.py",
+      "bytes": 2414,
+      "sha256": "b3c1560f2edbc4efad12601963460807d372ed4824c971d910c036f7beb0d47b"
+    },
+    {
+      "path": "src/demo/__init__.py",
+      "bytes": 73,
+      "sha256": "345cfcd7a7766cd8d1a8ad43d415f76f6c39c918d86fcdaf6b54db3783a87381"
+    },
+    {
+      "path": "src/demo/yolo_pick_place.py",
+      "bytes": 38321,
+      "sha256": "11a87213fe3256d9745ac5be59a456af62470f3b6951147171b59ff7eb398455"
+    },
+    {
+      "path": "src/utils/__init__.py",
+      "bytes": 46,
+      "sha256": "041281a55fbd14e6ba3496ace2e95402c11170bcb4ff5e48ef03a95156d492a7"
+    },
+    {
+      "path": "src/utils/arm.py",
+      "bytes": 27212,
+      "sha256": "50b53785a56a56eb50b5b24ef4506c130e1e9d4d23935dc43125d60eb18dfec1",
+      "original_source_sha256": "0cf4f4ad7e8b76af12073f75e2c68141ada1c26d6cf08685ee34d8c4d0f1d19e",
+      "origin": "modified exported copy"
+    },
+    {
+      "path": "src/utils/vision.py",
+      "bytes": 19897,
+      "sha256": "2c58da80838c2ea364694737bcd031405cc085be2e44a1180e9e3c13319cad71"
+    },
+    {
+      "path": "tests/test_act_nero_dataset.py",
+      "bytes": 8726,
+      "sha256": "7e6a1fd1872081e7004911b6281daedcbbc604ad6de2013cc62b5591f99fbc20"
+    },
+    {
+      "path": "tests/test_act_robot_wrapper.py",
+      "bytes": 8199,
+      "sha256": "de34ff7bd0ea2699c8e47c82704762f4b5ac03c0493f09717a0652304f071374"
+    },
+    {
+      "path": "third_party/__init__.py",
+      "bytes": 37,
+      "sha256": "8304b95ea43a245d928411824f57f19a7dbd65ccc78b223dd5668800dfbf2f76"
+    },
+    {
+      "path": "third_party/act/LICENSE",
+      "bytes": 1069,
+      "sha256": "4666c312da313e6c46929f6695d06cf98a2e7359b9c7dcbb0ea232d01b32cd42"
+    },
+    {
+      "path": "third_party/act/README.md",
+      "bytes": 445,
+      "sha256": "98a8a191e0cf9ab97d6e429d7f9f6f179d545814328bc96390f3c89070a7dda7"
+    },
+    {
+      "path": "third_party/act/__init__.py",
+      "bytes": 46,
+      "sha256": "d782b1f5f60188e1aa3d02c7e9c97bcaace1db00c76108d2b3c018c03ef232c8"
+    },
+    {
+      "path": "third_party/act/detr/LICENSE",
+      "bytes": 11354,
+      "sha256": "b208c52b00a2df2c8f4c3298c34407bf2bfe409968213372251c91fcc737a1a5"
+    },
+    {
+      "path": "third_party/act/detr/__init__.py",
+      "bytes": 35,
+      "sha256": "e78ac0eca34142588d25cf6b82fdd725e0ad7f0ebcaa116a8a07e7b5bf3be556"
+    },
+    {
+      "path": "third_party/act/detr/main.py",
+      "bytes": 5350,
+      "sha256": "f3bde9d1e1c3e9a7f895433952753649155c244a42407381802a5336fe5668c8"
+    },
+    {
+      "path": "third_party/act/detr/models/__init__.py",
+      "bytes": 279,
+      "sha256": "61cb75a7d8e99893e96ace4802a4c0a50181230f7f7a2c0262590cfc922007e9"
+    },
+    {
+      "path": "third_party/act/detr/models/backbone.py",
+      "bytes": 4489,
+      "sha256": "04c62f58a732604cda245f94a5d91543bbc9913559395c0bc11ded281bebd464"
+    },
+    {
+      "path": "third_party/act/detr/models/detr_vae.py",
+      "bytes": 12197,
+      "sha256": "3c29f5719a80573e23662826f6db86d3b353c427c8e14b8fd692a68dc170cbda"
+    },
+    {
+      "path": "third_party/act/detr/models/position_encoding.py",
+      "bytes": 3264,
+      "sha256": "851babd1dad8383699290163fde9049d6e30453308ac6cf84036d6fe96ef12ed"
+    },
+    {
+      "path": "third_party/act/detr/models/transformer.py",
+      "bytes": 12955,
+      "sha256": "75f5c4082815186b3d1dd62db805426f0406a26bf6f01199d3dd7bf886e1eeda"
+    },
+    {
+      "path": "tests/test_act_offline_imports.py",
+      "bytes": 3812,
+      "sha256": "83e2f067f52a0f6f19318745a6f1530413c6f3634c8802b166ebd6dc69c7bed2",
+      "origin": "new regression test"
+    }
+  ],
+  "config_index": [
+    {
+      "path": "configs/act_nero.yaml",
+      "camera_names": [
+        "camera_0"
+      ],
+      "state_dim": 8,
+      "action_dim": 8,
+      "coordinate_conditioning": false,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_day5.yaml",
+      "camera_names": [
+        "camera_0"
+      ],
+      "state_dim": 8,
+      "action_dim": 8,
+      "coordinate_conditioning": false,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_day6.yaml",
+      "camera_names": [
+        "camera_0"
+      ],
+      "state_dim": 8,
+      "action_dim": 8,
+      "coordinate_conditioning": false,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 8,
+      "action_dim": 8,
+      "coordinate_conditioning": false,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 8,
+      "action_dim": 8,
+      "coordinate_conditioning": false,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_fixed_destination_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_fixed_destination_finetune_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_fixed_destination_scratch_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_joint55_replay_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_joint55_replay_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_compatible38_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_compatible38_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_fixed_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_fixed_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_grasp_focus_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_grasp_focus_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_latest_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_latest_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_lead10_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_lead10_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_merged_day5.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_dual_xyz_merged_day6.yaml",
+      "camera_names": [
+        "camera_0",
+        "camera_1"
+      ],
+      "state_dim": 14,
+      "action_dim": 8,
+      "coordinate_conditioning": true,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    },
+    {
+      "path": "configs/act_nero_offset10.yaml",
+      "camera_names": [
+        "camera_0"
+      ],
+      "state_dim": 8,
+      "action_dim": 8,
+      "coordinate_conditioning": false,
+      "control_frequency_hz": null,
+      "command_frequency_hz": null
+    },
+    {
+      "path": "configs/act_nero_offset10_day6.yaml",
+      "camera_names": [
+        "camera_0"
+      ],
+      "state_dim": 8,
+      "action_dim": 8,
+      "coordinate_conditioning": false,
+      "control_frequency_hz": 20.0,
+      "command_frequency_hz": 20.0
+    }
+  ],
+  "export_changes": {
+    "created_at_utc": "2026-10-13T11:56:02.832319+00:00",
+    "scope": "exported bundle only; source machine live project unchanged",
+    "modified": [
+      "src/utils/arm.py",
+      "docs/act/README.md",
+      "docs/README.md"
+    ],
+    "added": [
+      "tests/test_act_offline_imports.py"
+    ],
+    "patch": "nero-act-offline-fix.patch",
+    "reason": "defer hardware SDK import until arm construction; allow offline ACT data and training imports without pyAgxArm/pyzed"
+  },
+  "task_mounting_height_update": {
+    "updated_at_utc": "2026-10-13T12:27:49.048906+00:00",
+    "base_support_height_mm": 13.0,
+    "source": "user clarification: base has a 1.3 cm support",
+    "interpretation": "Assume support raises the robot mounting plane 13 mm above the work surface; base-origin-to-mounting-plane relationship still unverified",
+    "previous_reported_mounting_height_difference_mm": 0.0
+  }
+}

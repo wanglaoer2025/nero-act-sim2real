@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "physical_success": true,
+  "max_lift_m": 0.19691956137852923,
+  "maximum_horizontal_transfer_m": 0.16872887646405815,
+  "stable_released_frames": 103,
+  "lift_contact_frames": 757,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.5264940168286573,
+      -0.16242518501085557,
+      0.04749668781040103
+    ],
+    "tcp_xyz": [
+      -0.5232102452613184,
+      -0.16575367787490608,
+      0.24743276821761973
+    ],
+    "cup_upright": 0.9999999999999727,
+    "cup_speed": 6.5218855533524e-07,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09499999877408877,
+    "contract_valid": true
+  },
+  "error": null,
+  "events": [
+    {
+      "phase": "approach",
+      "point": 0,
+      "contact": "open"
+    },
+    {
+      "phase": "close",
+      "point": 800,
+      "contact": "open"
+    },
+    {
+      "phase": "lift",
+      "point": 991,
+      "contact": "holding"
+    },
+    {
+      "phase": "carry_place",
+      "point": 1352,
+      "contact": "holding"
+    },
+    {
+      "phase": "release",
+      "point": 1962,
+      "contact": "holding"
+    },
+    {
+      "phase": "retreat",
+      "point": 2159,
+      "contact": "released"
+    }
+  ],
+  "frames": 2660,
+  "measured_contact_width_m": 0.07405073777551702,
+  "mode": "offline_physics_ACT_reference_replay",
+  "hardware_connected": false,
+  "real_receipt": false,
+  "execution_scene_sha256": "5c11c2ff28aa3d7c6c839277eda98fe793376468a8b8aa06e35af60ba829a020",
+  "trace_sha256": "cf8d81b26538588ca91f3522330e17ac0872bc3ffe56fff3436c1d70242f7205"
+}

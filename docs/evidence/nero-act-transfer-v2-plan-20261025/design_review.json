@@ -1,0 +1,18 @@
+{
+  "complete": true,
+  "reviewer": "transfer_v2_design_check",
+  "scope": "design_buildability_only",
+  "findings_resolved": [
+    {
+      "finding": "Static target registration cannot prove immobility under full occlusion",
+      "resolution": "Current identifiable card geometry plus independent background; full occlusion stops; historical full-route observability check before training"
+    },
+    {
+      "finding": "Pre-adaptation/final holdout order ambiguous",
+      "resolution": "Development gate admits adaptation; development-only candidate selection and regression; final candidate alone gets40 holdout trials; real reserve separate"
+    }
+  ],
+  "remaining_material_questions": [],
+  "training_started": false,
+  "hardware_commands_sent": false
+}

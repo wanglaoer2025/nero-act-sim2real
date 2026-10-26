@@ -1,0 +1,39 @@
+{
+  "checkpoint_sha256": "23bffd16e3e93c2fbb1420eedd60603575d19c794e3c9362e57411402439aec3",
+  "stats_sha256": "a327317b4398430b5c47a7b4d732717c065192e45a56117fc3c24748d95079b4",
+  "epoch": 74,
+  "teacher_free": true,
+  "diagnostic_only": true,
+  "not_in_primary_score": true,
+  "max_simulated_seconds": 120,
+  "runtime_geometry_closure_guard": false,
+  "control_hz": 20,
+  "chunk_size": 20,
+  "initial_qpos_or_object_reset_during_rollout": false,
+  "thresholds": {
+    "lift_m": 0.06,
+    "bilateral_frames": 10,
+    "final_xy_error_m": 0.02,
+    "upright_cosine": 0.95,
+    "final_speed": 0.05
+  },
+  "scenarios": [
+    [
+      "half_second_delay",
+      0,
+      11,
+      10,
+      false
+    ]
+  ],
+  "independent_cup_xy_jitter_m": 0.002,
+  "independent_initial_joint_jitter_rad": 0.002,
+  "feedback_noise_rad": 0.0002,
+  "real_hardware_tested": false,
+  "completion_monitor": {
+    "lift_m": 0.06,
+    "stable_grasp_seconds": 1,
+    "post_completion_frozen_goal_seconds": 5,
+    "goal_observation": "simulator cup pose/contact for evaluation termination only; not policy inputs; real monitoring not validated"
+  }
+}

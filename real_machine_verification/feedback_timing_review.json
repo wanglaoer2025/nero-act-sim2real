@@ -1,0 +1,113 @@
+{
+  "scope": "Freshly subscribed static-robot feedback; measured publication versus device timestamp updates",
+  "topics": {
+    "/feedback/joint_states": {
+      "sample_count": 991,
+      "observed_publisher_hz": 200.01339857673358,
+      "distinct_device_stamp_count": 834,
+      "distinct_stamp_frequency_hz": 168.29786353049982,
+      "repeated_stamp_count": 157,
+      "stamp_backwards_count": 0,
+      "age_p50_ms": 2.389669418334961,
+      "age_p95_ms": 7.481932640075684,
+      "age_max_ms": 8.228302001953125
+    },
+    "/feedback/tcp_pose": {
+      "sample_count": 990,
+      "observed_publisher_hz": 200.04293207947268,
+      "distinct_device_stamp_count": 248,
+      "distinct_stamp_frequency_hz": 50.00069200261106,
+      "repeated_stamp_count": 742,
+      "stamp_backwards_count": 0,
+      "age_p50_ms": 11.613249778747559,
+      "age_p95_ms": 18.825268745422363,
+      "age_max_ms": 23.889780044555664
+    },
+    "/feedback/gripper_status": {
+      "sample_count": 990,
+      "observed_publisher_hz": 200.04819945528118,
+      "distinct_device_stamp_count": 979,
+      "distinct_stamp_frequency_hz": 197.75725552301407,
+      "repeated_stamp_count": 11,
+      "stamp_backwards_count": 0,
+      "age_p50_ms": 4.298686981201172,
+      "age_p95_ms": 5.077910423278809,
+      "age_max_ms": 9.959936141967773
+    }
+  },
+  "state_names": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "joint7",
+    "gripper"
+  ],
+  "latest_state_position": [
+    0.18324211816688468,
+    -0.12646655759950912,
+    0.10002481943179502,
+    1.570935953135056,
+    -0.023823744289722597,
+    0.28167868797936485,
+    0.13116149328737386,
+    0.09491999999999999
+  ],
+  "observed_joint_peak_to_peak_rad": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "gripper_width_range_m": [
+    0.09491999999999999,
+    0.09491999999999999
+  ],
+  "real_positions_finite": true,
+  "control_gate_observation": {
+    "driver_control_enabled": false,
+    "gated_messages_received": 0,
+    "mock_command_order": [
+      "gripper",
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "real_state_order": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7",
+      "gripper"
+    ],
+    "mock_command_positions": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mock_vs_real_max_arm_difference_rad": 1.570935953135056,
+    "arm_sync_tolerance_rad": 0.05235987755982989,
+    "gripper_difference_m": 0.09491999999999999,
+    "gripper_sync_tolerance_m": 0.005,
+    "arm_currently_synchronized": false,
+    "gripper_currently_synchronized": false
+  },
+  "limitations": "Message timestamps may repeat because driver republishes cached device data. No movement commanded; no dynamic tracking or motion synchronization validated."
+}

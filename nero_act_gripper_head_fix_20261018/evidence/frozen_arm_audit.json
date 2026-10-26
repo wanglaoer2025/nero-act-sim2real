@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "checkpoints": [
+    {
+      "checkpoint": "/home/user/wq/nero_act_gripper_head_fix_20261018/training/run23_gripper_head_only/checkpoints/policy_best_l1.ckpt",
+      "epoch": 1,
+      "only_gripper_row_changed": [
+        "model.action_head.weight",
+        "model.action_head.bias"
+      ],
+      "all_other_weights_and_buffers_identical": true
+    },
+    {
+      "checkpoint": "/home/user/wq/nero_act_gripper_head_fix_20261018/training/run23_gripper_head_only/checkpoints/policy_best_val.ckpt",
+      "epoch": 3,
+      "only_gripper_row_changed": [
+        "model.action_head.weight",
+        "model.action_head.bias"
+      ],
+      "all_other_weights_and_buffers_identical": true
+    },
+    {
+      "checkpoint": "/home/user/wq/nero_act_gripper_head_fix_20261018/training/run23_gripper_head_only/checkpoints/policy_last.ckpt",
+      "epoch": 3,
+      "only_gripper_row_changed": [
+        "model.action_head.weight",
+        "model.action_head.bias"
+      ],
+      "all_other_weights_and_buffers_identical": true
+    }
+  ],
+  "comparison": "completed checkpoints vs paired rebased initializer",
+  "scope": "identical inputs preserve arm outputs; changed observations still require closed-loop tests",
+  "hardware_connected": false
+}

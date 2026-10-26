@@ -1,0 +1,28 @@
+...F                                                                     [100%]
+=================================== FAILURES ===================================
+______ test_measured_soft_limit_overshoot_is_preserved_but_not_a_command _______
+
+    def test_measured_soft_limit_overshoot_is_preserved_but_not_a_command():
+        from contract import make_observation,CommandHistory
+        stats=dict(qpos_mean=np.zeros(8),qpos_std=np.ones(8),geometry_mean=np.zeros(6),geometry_std=np.ones(6))
+>       obs=make_observation(np.r_[np.zeros(7),.09518],np.zeros(6),.095,stats)
+
+tests/test_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+contract.py:41: in make_observation
+    state = physical_state(state8)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = array([0.     , 0.     , 0.     , 0.     , 0.     , 0.     , 0.     ,
+       0.09518])
+
+    def physical_state(value):
+        value = np.asarray(value, dtype=np.float64)
+        if value.shape != (8,) or not np.isfinite(value).all() or not 0 <= value[7] <= .0950001:
+>           raise ValueError('Finite physical8 state/target and gripper0..95mm required')
+E           ValueError: Finite physical8 state/target and gripper0..95mm required
+
+contract.py:12: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_contract.py::test_measured_soft_limit_overshoot_is_preserved_but_not_a_command
+1 failed, 3 passed in 0.07s

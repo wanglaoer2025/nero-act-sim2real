@@ -1,0 +1,53 @@
+test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible (test_pose_objective.PoseObjectiveTests.test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible) ... FAIL
+test_padded_future_and_identical_targets_do_not_add_loss_or_nan_gradients (test_pose_objective.PoseObjectiveTests.test_padded_future_and_identical_targets_do_not_add_loss_or_nan_gradients) ... FAIL
+test_pose_fk_matches_mujoco_position_and_rotation_at_real_visited_states (test_pose_objective.PoseObjectiveTests.test_pose_fk_matches_mujoco_position_and_rotation_at_real_visited_states) ... FAIL
+test_pure_rotation_with_zero_tcp_error_is_penalized_with_correct_gradient (test_pose_objective.PoseObjectiveTests.test_pure_rotation_with_zero_tcp_error_is_penalized_with_correct_gradient) ... FAIL
+
+======================================================================
+FAIL: test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible (test_pose_objective.PoseObjectiveTests.test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 59, in test_actual_training_adapter_uses_pose_loss_and_keeps_inference_weights_compatible
+    module=self.module()
+           ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 12, in module
+    self.assertIsNotNone(importlib.util.find_spec('training.pose_objective'),
+AssertionError: unexpectedly None : the training objective must explicitly supervise end-effector orientation
+
+======================================================================
+FAIL: test_padded_future_and_identical_targets_do_not_add_loss_or_nan_gradients (test_pose_objective.PoseObjectiveTests.test_padded_future_and_identical_targets_do_not_add_loss_or_nan_gradients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 49, in test_padded_future_and_identical_targets_do_not_add_loss_or_nan_gradients
+    module=self.module()
+           ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 12, in module
+    self.assertIsNotNone(importlib.util.find_spec('training.pose_objective'),
+AssertionError: unexpectedly None : the training objective must explicitly supervise end-effector orientation
+
+======================================================================
+FAIL: test_pose_fk_matches_mujoco_position_and_rotation_at_real_visited_states (test_pose_objective.PoseObjectiveTests.test_pose_fk_matches_mujoco_position_and_rotation_at_real_visited_states)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 18, in test_pose_fk_matches_mujoco_position_and_rotation_at_real_visited_states
+    module=self.module()
+           ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 12, in module
+    self.assertIsNotNone(importlib.util.find_spec('training.pose_objective'),
+AssertionError: unexpectedly None : the training objective must explicitly supervise end-effector orientation
+
+======================================================================
+FAIL: test_pure_rotation_with_zero_tcp_error_is_penalized_with_correct_gradient (test_pose_objective.PoseObjectiveTests.test_pure_rotation_with_zero_tcp_error_is_penalized_with_correct_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 35, in test_pure_rotation_with_zero_tcp_error_is_penalized_with_correct_gradient
+    module=self.module()
+           ^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_pose_objective_fix_20261018/tests/test_pose_objective.py", line 12, in module
+    self.assertIsNotNone(importlib.util.find_spec('training.pose_objective'),
+AssertionError: unexpectedly None : the training objective must explicitly supervise end-effector orientation
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=4)

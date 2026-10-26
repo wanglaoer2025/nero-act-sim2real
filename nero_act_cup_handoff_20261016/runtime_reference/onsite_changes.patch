@@ -1,0 +1,785 @@
+--- original/README.md
++++ onsite/README.md
+@@ -6,11 +6,11 @@
+ 
+ ## 现场运行
+ 
+-保留已经验证的 ROS 驱动、桥接与 MoveIt 启动方式；驱动为唯一 CAN 控制方，不要同时启动 SDK 控制程序。默认 ROS Jazzy、工作区 `/home/user/projects/nero_ros2_ws`、ROS_DOMAIN_ID=42。机械臂空夹爪悬停，确认整个小幅运动范围没有障碍，实体急停可用。驱动应已使能，`control_enabled=true`、速度比例在 (0,5]，arm/gripper 控制器 active。入口不会替你启动驱动或修改这些参数。
++保留已经验证的 ROS 驱动、桥接与 MoveIt 启动方式；驱动为唯一 CAN 控制方，不要同时启动 SDK 控制程序。默认 ROS Jazzy、工作区 `/home/user/projects/nero_ros2_ws`、ROS_DOMAIN_ID=42。机械臂空夹爪悬停，确认整个小幅运动范围没有障碍，实体急停可用。驱动应已使能、速度比例在 (0,5]，arm/gripper 控制器 active。4090 的控制桥在空闲时关闭硬件命令转发，驱动启动参数 `control_enabled=false`；该参数不是实时门状态。现场副本要求驱动只订阅 gated 话题，并在同步动作执行时由现有控制桥开门。入口不会替你启动驱动或修改这些参数。
+ 
+ ```bash
+-tar -xzf nero_aligned_air_sequence_20261016.tar.gz
+-cd nero_aligned_air_sequence_20261016
++cd /home/user/wq/nero_aligned_air_sequence_20261016_onsite
++export ROS_DOMAIN_ID=42
+ bash run.sh --execute
+ ```
+ 
+@@ -31,8 +31,67 @@
+ - 10 条新仿真示教（8 训练、2 验证），训练 40 epoch，选中 epoch 35；统计仅由训练集计算。
+ - 冻结模型后 40/40 独立仿真闭环通过，包括反馈噪声、0.5 秒伺服延迟、启动等待和推理时间偏移。重复的历史实拍图仅用于外观压力测试，不是实机闭环证据。
+ - 40 条轨迹的 13,600 个控制点通过实际运行时过滤器重放核对；28 项软件/模型产物测试通过。
+-- 本机未连接真实机械臂，**尚未完成真机验收**。当前场景碰撞检查不能识别未建模现场障碍，需要现场确认空中通道。
++- 上述仿真验证来自来源电脑。4090 现场已完成下述 18 秒空中实验；当前场景碰撞检查仍不能识别未建模现场障碍，需要现场确认空中通道。
+ 
+ 新权重首个 J3 目标距保存起点约 0.0008 rad，首个夹爪目标约 60.5 mm，已消除旧模型在该输入上的约 119° 跳变与约 1.5 mm 闭爪问题；这不是所有现场输入都正确的保证。
+ 
+ 请使用本包 `run.sh`，不要把权重塞进旧 v5/v9 或单步响应入口。通用 `hardware_deployment_allowed=false` 保留；新模型单独标注 `experimental_air_trial_allowed=true`，只允许本包严格限制的空中实验。没有开放通用抓取或接触动作。完整训练数据、配置、仿真结果、轨迹和校验清单均随包提供，训练配置中的本机绝对路径仅作溯源，不是现场运行依赖。
++
++## 4090 现场副本的时序修复
++
++原包和权重保留不变。现场副本补齐了七轴、单夹爪、机械臂与夹爪同时执行时的八维 gated 消息校验，修复 ROS 初次发现等待和 ZED 原生日志混入 JSON 通道的问题。
++
++后续推理采样安排在每个 0.5 秒动作块的约 0.4 秒处，减少下一块发送时的观测年龄；动作客户端在第一次执行用观测之前完成初始化。发送前 250 ms、块内预测 750 ms、动作包络和夹爪范围保持不变。`report.json` 中的 `block_attempts` 记录每次校验及其观测年龄，即使失败也保留；`timing` 保留实际块频率和运行时长，`inference_timing.json` 与 `policy_predictions.json` 保存采样、请求、结果接收及推理耗时。
++
++一次无运动的现场计时预检测得推理往返约 33.9 ms、状态校验约 12.6 ms、校验后观测年龄约 54.8 ms。历史 11:45 运行完成了 13 个动作块后被时效检查中止；修复后的 12:07 实验见下文。已经生成的回位规划仅供复核；实际执行前须重新读取起点并重新规划，不能直接发送旧 JSON。
++
++## 恢复到本轮模型的准确起点
++
++普通复位程序可能回到旧起点，例如 J3 约 0.100 rad；本轮训练起点 J3 约 0.10992 rad。不能将它们视为相同姿态，ACT 的 0.005 rad 起点门槛保持不变。手动或 SDK 复位后，虚拟控制器也可能仍停在旧终点；必须先在硬件输出隔离的条件下将虚拟状态同步到真实反馈，不能直接打开控制门追踪旧终点。现场 12:01 已完成一次这样的虚拟同步，CAN TX 计数没有增加。
++
++新增独立恢复入口，默认仅按当前反馈重新规划并检查路径，不发送动作：
++
++```bash
++bash run.sh --return-to-start
++```
++
++确认现场回程通道及急停可用后，显式执行并输入 `RETURN_START`：
++
++```bash
++bash run.sh --return-to-start --execute
++```
++
++此入口只恢复七轴到 `model/runtime_metadata.json` 中的准确训练起点，夹爪保持当前开口，成功须有真实反馈到位。它是独立的 MoveIt 恢复操作，不是 ACT 推理；不自动衔接 ACT，不自动处理夹爪偏差，单轴距离超过 0.05 rad 会拒绝。恢复完成后再运行 ACT，按提示输入 `ACT_AIR`。
++
++## 4090 实测结果与准确 200 步入口
++
++`logs/act_20261016_120746_460129822/report.json` 记录修复后的 18 秒空中实验：33 块、330 点均完成，实际运行约 18.449 秒，末端最大关节误差 0.0008523 rad、夹爪开口跨度 6.852 mm。发送前观测年龄最大约 174 ms，未放宽 250 ms 门槛。实际块频率约 1.785 Hz，尚未验收严格的墙钟 20 Hz 连续执行，不代表抓杯已通过。
++
++需要准确执行 200 步时使用：
++
++```bash
++bash run.sh --return-to-start --execute
++# 现场输入 RETURN_START，成功后继续：
++bash run.sh --execute --steps 200
++# 现场输入 ACT_AIR
++```
++
++`--steps 200` 为 20 块、每块 10 个 20 Hz 轨迹点，机械臂和夹爪同时执行，不将两组相加计数；名义轨迹时长 10 秒，实际墙钟时间含校验与动作服务开销。只有两组动作均成功且真实反馈检查通过，才计入 `completed_step_count`。`submitted_step_count`、`completed_step_count`、`step_target_completed` 记录精确计数；未完成不能报告成功。200 步只验收这段动作，`sequence_completion_checked=false`，不据此声称约 13 秒训练序列的完整末端验收。
++
++原有范围、起点、碰撞、反馈和预测时效门槛保持不变。步数需为 10 的整数倍，最多 400，仍受 20 秒墙钟安全上限限制；服务开销可能使较大步数因超时中止。`--steps` 与 `--seconds` 不能同时使用；未指定时仍默认 18 秒。
++
++68 项本机离线回归通过。第一次准确 200 步真机尝试见 `logs/act_20261016_121413_533140256/report.json`：6 块、60 步实际完成，第 7 块校验耗时约 101 ms，使观测年龄达到 253.6 ms，被原有 250 ms 门槛拒绝，未发送该块。`success=false`、`step_target_completed=false`，不可据此声称 200 步通过。详细重算见同目录 `independent_200_step_review.json`。中止后的只读检查显示 ROS 同步正常、真实反馈稳定，但机械臂处于中间姿态、夹爪约 66.43 mm；下一轮必须恢复并检查七轴与夹爪起点，不可直接续发剩余 140 步。校验阶段内部各服务耗时尚未逐项记录，101 ms 延迟的底层原因未唯一确定。
++
++## 300 步现场复测（2026-10-16 16:24）
++
++针对上轮延迟，只读比较了各 30 轮校验：原来反复创建/发现/销毁服务客户端的整块耗时最大 352.8 ms，复用 `/get_planning_scene` 和 `/check_state_validity` 客户端后最大 13.1 ms。每个点仍发送独立状态校验请求，没有缓存校验结果；新增 `validation_service_calls` 记录逐项服务耗时。首次 DDS 发现可能先出现端点、再解析出节点名；原有最多 5 秒的发现等待现在也等待这类“未知名称”解析完成，重复或错误发布者仍拒绝，真实反馈仍需持续更新。
++
++新增独立空夹爪恢复入口 `bash run.sh --restore-gripper-start` 默认只做规划；显式加 `--execute` 并输入 `GRIPPER_START` 才执行。七轴保持，夹爪最多恢复 10 mm，每个 50 ms 轨迹点变化不超过 0.25 mm，路径和反馈必须位于原有空中包络。它是恢复操作，不是 ACT 动作，也不允许持物接触。恢复夹爪后，再按原入口恢复七轴，最后执行：
++
++```bash
++bash run.sh --execute --steps 300
++```
++
++78 项离线检查通过。16:24 实测见 `logs/act_20261016_162441_945928035/report.json`：**准确发送并完成 300 点、30 块**，实际墙钟 16.522 秒，`success=true`、`step_target_completed=true`、`sequence_completed=true`。末端最大关节误差 0.001079 rad，J1 实际前进 0.03903 rad，夹爪实际跨度 6.737 mm、末端开口误差 0.092 mm。发送前观测年龄最大 168.5 ms，块校验耗时最大 13.35 ms，250 ms 时效限制和全部动作包络保持不变。
++
++同目录 `independent_300_step_review.json` 独立核对了 3301 条执行中真实反馈、30 个不同策略预测块、准确点数和各项限制。严格墙钟 20 Hz 时序验收仍为 false；本轮证明该小幅非接触 ACT 空中序列的真机执行通过，未执行杯子抓取。
+--- original/async_runtime.py
++++ onsite/async_runtime.py
+@@ -2,6 +2,12 @@
+ import threading
+ import time
+ import numpy as np
++
++NEXT_QUERY_AFTER_S = .4
++
++
++def next_query_due(elapsed, already_queried):
++    return not already_queried and elapsed >= NEXT_QUERY_AFTER_S
+ 
+ 
+ class AsyncPolicyWorker:
+--- original/full_runtime.py
++++ onsite/full_runtime.py
+@@ -16,12 +16,33 @@
+ import time
+ 
+ import numpy as np
+-from async_runtime import AsyncPolicyWorker, ActionPrefix
++from async_runtime import AsyncPolicyWorker, ActionPrefix, next_query_due, NEXT_QUERY_AFTER_S
+ from full_core import FullGate
+ from ros_support import Session, ARM, NAMES
+ from trial_contract import air_trial_allowed
+ 
+ ROOT = Path(__file__).resolve().parent
++
++
++def execution_limits(seconds=None, steps=None):
++    if steps is not None:
++        if seconds is not None or type(steps) is not int or not 10 <= steps <= 400 or steps % 10:
++            raise ValueError('--steps requires a multiple of 10 in [10,400], without --seconds')
++        return 20., steps
++    seconds = 18. if seconds is None else seconds
++    if not 0 < seconds <= 20:
++        raise ValueError('--seconds must be finite and in (0,20]')
++    return seconds, None
++
++
++def execution_pending(seconds, steps, completed_steps, elapsed):
++    if steps is None:
++        return elapsed < seconds
++    if completed_steps >= steps:
++        return False
++    if elapsed + .5 > seconds:
++        raise TimeoutError('step target incomplete before air-trial time limit')
++    return True
+ 
+ 
+ def verify_distribution():
+@@ -85,10 +106,15 @@
+         return json.loads(line)
+ 
+     def predict(self, payload):
++        query_sent = time.monotonic()
+         self.process.stdin.write(json.dumps(payload)+'\n'); self.process.stdin.flush()
+         result = self.receive(10)
++        response_received = time.monotonic()
+         if result.get('type') != 'prediction':
+             raise RuntimeError('unexpected inference response')
++        result['details'].update(query_sent_monotonic_s=query_sent,
++            response_received_monotonic_s=response_received,
++            inference_round_trip_s=response_received-query_sent)
+         self.records.append(result)
+         return np.asarray(result['chunk'], dtype=float), result['details']
+ 
+@@ -103,6 +129,28 @@
+ 
+ 
+ class FullSession(Session):
++    def call(self, service, kind, request):
++        if service not in ('/get_planning_scene', '/check_state_validity'):
++            return super().call(service, kind, request)
++        if not hasattr(self, 'validation_clients'):
++            self.validation_clients = {}
++        started = time.monotonic()
++        key = (service, kind)
++        # Keep DDS discovery out of repeated point checks; every result remains fresh.
++        if key not in self.validation_clients:
++            client = self.node.create_client(kind, service)
++            if not client.wait_for_service(timeout_sec=3):
++                self.node.destroy_client(client)
++                raise RuntimeError(f'Service unavailable: {service}')
++            self.validation_clients[key] = client
++        client = self.validation_clients[key]
++        try:
++            return self.wait(client.call_async(request))
++        finally:
++            self.report.setdefault('validation_service_calls', []).append(
++                {'service': service, 'started_monotonic_s': started,
++                 'duration_s': time.monotonic()-started})
++
+     def display_chunk(self, chunk):
+         from moveit_msgs.msg import DisplayTrajectory, RobotTrajectory
+         from trajectory_msgs.msg import JointTrajectoryPoint
+@@ -212,6 +260,42 @@
+             raise TimeoutError('fresh live ACT prediction unavailable')
+ 
+ 
++def validate_fresh_block(session, rows, group, plan, report):
++    details = plan['details']
++    started = time.monotonic()
++    attempt = {'observation_step': plan['observation_step'],
++        'observation_wall_s': details['observation_wall_s'],
++        'validation_started_monotonic_s': started,
++        'observation_age_before_validation_s': started-details['observation_wall_s'],
++        'ready_prediction_wait_s': started-details.get('response_received_monotonic_s', started),
++        'inference_ms': details.get('inference_ms'), 'pre_send_age_limit_s': .25,
++        'freshness_passed': False}
++    report.setdefault('block_attempts', []).append(attempt)
++    try:
++        session.validate_block(rows, group)
++    finally:
++        finished = time.monotonic()
++        attempt.update(validation_finished_monotonic_s=finished,
++            validation_duration_s=finished-started,
++            observation_age_after_validation_s=finished-details['observation_wall_s'])
++    if attempt['observation_age_after_validation_s'] > .25:
++        raise RuntimeError('block validation consumed freshness budget; no stale block sent')
++    attempt['freshness_passed'] = True
++    return attempt
++
++
++def timing_summary(blocks, started, now):
++    periods = np.diff([block['sent_monotonic_s'] for block in blocks])
++    return {'trajectory_point_hz': 20, 'target_query_hz': 2,
++        'query_offset_within_block_s': NEXT_QUERY_AFTER_S,
++        'pre_send_age_limit_s': .25, 'maximum_action_observation_age_s': .75,
++        'execution_elapsed_s': now-started,
++        'actual_block_hz': float(1/np.mean(periods)) if len(periods) else None,
++        'maximum_block_interval_s': float(max(periods)) if len(periods) else None,
++        'physical_timing_acceptance_completed': False,
++        'scope': '20Hz trajectory points; actual block/service timing is recorded even on failure'}
++
++
+ def live(args, output, report):
+     directory = args.model_dir
+     meta = json.loads((directory/'runtime_metadata.json').read_text())
+@@ -226,8 +310,11 @@
+         raise RuntimeError('trial safety profile differs from checkpoint contract or duration exceeds scope')
+     report.update(execution_scope=meta['execution_scope'], trial_profile=meta['trial_profile'],
+                   formal_hardware_deployment_allowed=meta.get('hardware_deployment_allowed'),
+-                  experimental_air_trial_allowed=True, model_checkpoint_sha256=meta['checkpoint_sha256'])
++                  experimental_air_trial_allowed=True, model_checkpoint_sha256=meta['checkpoint_sha256'],
++                  requested_steps=args.steps, nominal_requested_duration_s=args.steps / 20 if args.steps else args.seconds,
++                  execution_time_limit_s=args.seconds, submitted_step_count=0, completed_step_count=0)
+     process = worker = session = None
++    execution_started = None
+     try:
+         process = PredictionProcess(args.policy_python, directory, output)
+         if process.ready['checkpoint_sha256'] != meta['checkpoint_sha256']:
+@@ -261,15 +348,16 @@
+         session.validate_block(first['chunk'].tolist(), group)
+         session.display_chunk(first['chunk'])
+         session.confirm_full(); session.ready(start)
++        clients = session.clients()
+         # Observation used for execution is refreshed after operator confirmation.
+         worker.submit(0, snapshot()); first = wait_plan(session, worker, 0)
+-        clients = session.clients()
+         prefix = ActionPrefix(10, 15, .75)
+         origin = first['details']['observation_wall_s']; previous = np.asarray(session.actual())
+         execution_started = time.monotonic()
+         next_control_step = 0; report['executed_blocks'] = []
+         begin = len(session.trace)
+-        while time.monotonic()-execution_started < args.seconds:
++        while execution_pending(args.seconds, args.steps, report['completed_step_count'],
++                                time.monotonic()-execution_started):
+             control_step = max(next_control_step, int((time.monotonic()-origin)/.05))
+             latest = worker.latest()
+             state = session.actual(); rows = []; selections = []; raw_rows = []
+@@ -280,16 +368,17 @@
+                 safe = gate.point(raw, state, previous)
+                 raw_rows.append(raw.tolist())
+                 rows.append(safe.tolist()); selections.append(selection); previous = safe
+-            session.validate_block(rows, group)
+-            # State-validity services may be slow: enforce observation age again.
+-            if time.monotonic()-latest['details']['observation_wall_s'] > .25:
+-                raise RuntimeError('block validation consumed freshness budget; no stale block sent')
++            attempt = validate_fresh_block(session, rows, group, latest, report)
+             gate.feedback_check(session.actual(), rows[0])
+             report['full_execution_ready'] = True
+             sent = time.monotonic()
+             before = session.actual()
+             futures = session.send_block(clients, rows)
++            attempt.update(sent_monotonic_s=sent,
++                observation_age_at_send_s=sent-latest['details']['observation_wall_s'],
++                goal_ack_duration_s=time.monotonic()-sent)
+             report['execution_goal_submitted'] = True
++            report['submitted_step_count'] += len(rows)
+             report['executed_blocks'].append({'sent_monotonic_s': sent, 'control_step': control_step,
+                 'observation_step': latest['observation_step'], 'points': rows, 'selection': selections,
+                 'raw_actions': raw_rows, 'observation_wall_s': latest['details']['observation_wall_s'],
+@@ -300,7 +389,7 @@
+                 elapsed = time.monotonic()-sent
+                 expected_index = min(9, max(0, int(elapsed/.05)))
+                 gate.feedback_check(session.actual(), rows[expected_index])
+-                if elapsed >= .3 and not queried:
++                if next_query_due(elapsed, queried):
+                     observation = snapshot()
+                     observed_step = int((observation['observed_monotonic_s']-origin)/.05)
+                     worker.submit(observed_step, observation); queried = True
+@@ -317,6 +406,8 @@
+             report['executed_blocks'][-1].update(actual_after=after,
+                 signed_dominant_axis_progress_rad=signed_progress,
+                 direction_response_verified=bool(abs(delta[axis]) > .0015 and signed_progress > .001))
++            attempt['block_completed_monotonic_s'] = time.monotonic()
++            report['completed_step_count'] += len(rows)
+             next_control_step = control_step+10
+         states = np.asarray([row['position'] for row in session.trace[begin:]])
+         displacement = np.max(np.abs(states[:, :7]-np.asarray(start[:7]))) if len(states) else 0.
+@@ -324,8 +415,9 @@
+         report['actual_motion_observed'] = bool(displacement > .001)
+         report['success'] = bool(displacement > .001 and any(
+             block.get('direction_response_verified') for block in report['executed_blocks']))
+-        report['sequence_completion_checked'] = args.seconds >= 15
+-        if args.seconds >= 15:
++        check_endpoint = (args.steps / 20 if args.steps else args.seconds) >= 15
++        report['sequence_completion_checked'] = check_endpoint
++        if check_endpoint:
+             endpoint = np.asarray(meta['trial_profile']['endpoint_state'])
+             final = np.asarray(session.actual())
+             metrics = {'endpoint_max_error_rad': float(np.max(abs(final[:7]-endpoint[:7]))),
+@@ -336,14 +428,13 @@
+                 and metrics['gripper_span_m'] >= .003 and metrics['end_gripper_error_m'] <= .004)
+             report.update(sequence_motion_metrics=metrics, sequence_completed=bool(completed))
+             report['success'] = bool(report['success'] and completed)
+-        sent_times = [block['sent_monotonic_s'] for block in report['executed_blocks']]
+-        periods = np.diff(sent_times)
+-        report['timing'] = {'trajectory_point_hz': 20, 'target_query_hz': 2,
+-            'actual_block_hz': float(1/np.mean(periods)) if len(periods) else None,
+-            'maximum_block_interval_s': float(max(periods)) if len(periods) else None,
+-            'physical_timing_acceptance_completed': False,
+-            'scope': 'ROS trajectory points are 20Hz; action submission/validity-service overhead is measured separately'}
+     finally:
++        if args.steps is not None:
++            report['step_target_completed'] = report.get('completed_step_count', 0) == args.steps
++            report['success'] = bool(report.get('success') and report['step_target_completed'])
++        if execution_started is not None:
++            report['timing'] = timing_summary(report.get('executed_blocks', []),
++                                             execution_started, time.monotonic())
+         if session:
+             session.cancel_all()
+         if worker:
+@@ -351,6 +442,7 @@
+                 worker.close()
+             except Exception as exc:
+                 report['worker_close_error'] = str(exc)
++            (output/'inference_timing.json').write_text(json.dumps(worker.records, indent=2))
+         if process:
+             (output/'policy_predictions.json').write_text(json.dumps(process.records, indent=2))
+             process.close()
+@@ -362,23 +454,41 @@
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('--execute', action='store_true')
++    recovery = parser.add_mutually_exclusive_group()
++    recovery.add_argument('--return-to-start', action='store_true',
++                        help='separate MoveIt return to trained start; default plan-only, execute requires RETURN_START')
++    recovery.add_argument('--restore-gripper-start', action='store_true',
++                          help='separate empty-gripper opening recovery; execute requires GRIPPER_START')
+     parser.add_argument('--model-dir', type=Path, default=ROOT/'model')
+     parser.add_argument('--state', type=Path, default=ROOT/'latest_reported_state.json')
+     parser.add_argument('--chunk', type=Path, default=ROOT/'reference_preview/raw_act_chunk.npy')
+     parser.add_argument('--policy-python', default='/home/user/nero/bin/python')
+-    parser.add_argument('--seconds', type=float, default=18.)
++    duration = parser.add_mutually_exclusive_group()
++    duration.add_argument('--seconds', type=float, help='wall-clock duration, default 18; maximum 20 seconds')
++    duration.add_argument('--steps', type=int,
++                          help='exact completed 20-Hz points, multiple of 10; 20-second wall-clock watchdog retained')
+     parser.add_argument('--group')
+     parser.add_argument('--output', type=Path, required=True)
+     args = parser.parse_args()
++    try:
++        args.seconds, args.steps = execution_limits(args.seconds, args.steps)
++    except ValueError as exc:
++        parser.error(str(exc))
++    if (args.return_to_start or args.restore_gripper_start) and args.steps is not None:
++        parser.error('--steps applies only to the ACT sequence, not recovery')
+     verify_distribution()
+-    if not 0 < args.seconds <= 20:
+-        parser.error('--seconds must be in (0,20]')
+     args.model_dir = args.model_dir.resolve()
+     args.output.mkdir(parents=True, exist_ok=False)
+     report = {'mode': 'full_loop_execute' if args.execute else 'full_chunk_preview', 'success': False, 'full_execution_ready': False,
+               'execution_goal_submitted': False, 'sdk_connected': False, 'scope': 'full arm/gripper trajectory framework; no raw-action rebasing'}
+     try:
+-        if args.execute:
++        if args.restore_gripper_start:
++            from restore_gripper import run_gripper_return
++            run_gripper_return(args, args.output, report, FullSession)
++        elif args.return_to_start:
++            from restore_start import run_return
++            run_return(args, args.output, report, FullSession)
++        elif args.execute:
+             live(args, args.output, report)
+         else:
+             report.update(preview(args.model_dir, args.state, args.chunk, args.output))
+--- original/ros_support.py
++++ onsite/ros_support.py
+@@ -143,7 +143,17 @@
+ 
+     def feedback(self, topic, msg):
+         try:
+-            q = ordered(msg.name, msg.position)
++            wanted = NAMES
++            if topic == '/control/gated_joint_states':
++                if set(msg.name) == set(NAMES):
++                    wanted = NAMES
++                elif set(msg.name) == set(ARM):
++                    wanted = ARM
++                elif list(msg.name) == ['gripper']:
++                    wanted = ['gripper']
++                else:
++                    raise ValueError('Unexpected gated command joint group')
++            q = ordered(msg.name, msg.position, wanted)
+             stamp = msg.header.stamp.sec + msg.header.stamp.nanosec*1e-9
+             now = time.monotonic()
+             if topic == '/feedback/joint_states':
+@@ -206,7 +216,10 @@
+     def inventory(self):
+         from controller_manager_msgs.srv import ListControllers
+         from rosidl_runtime_py.convert import message_to_ordereddict
+-        self.spin(1.2)
++        # Allow DDS discovery before applying the unchanged live-age checks.
++        discovery_deadline = time.monotonic() + 5.0
++        while len(self.trace) < 10 and time.monotonic() < discovery_deadline:
++            self.spin(.1)
+         actual = self.actual()
+         if len(self.trace) < 10: raise RuntimeError('Too few actual feedback samples')
+         if max(max(abs(row['position'][i]-actual[i]) for i in range(7))
+@@ -251,6 +264,27 @@
+             self.report['execution_blocker'] = str(exc)
+         return actual
+ 
++    def bridge_publishers(self):
++        started = time.monotonic()
++        while True:
++            owners = {t: [dict(name=p.node_name, namespace=p.node_namespace)
++                          for p in self.node.get_publishers_info_by_topic(t)]
++                      for t in self.report['topic_publishers']}
++            # DDS can discover the driver before the independent gate process.
++            # Wait only for absent endpoints; ambiguous publishers still fail.
++            identities_known = all(owners.values()) and not any(
++                p['name'] == '_NODE_NAME_UNKNOWN_' or p['namespace'] == '_NODE_NAMESPACE_UNKNOWN_'
++                for endpoints in owners.values() for p in endpoints)
++            if (identities_known or any(len(v) > 1 for v in owners.values()) or
++                    time.monotonic() - started >= 5.0):
++                self.report['bridge_discovery_wait_s'] = time.monotonic() - started
++                self.report['topic_publishers'] = owners
++                return owners
++            self.spin(.05)
++            self.actual()
++            if any(self.active_goals.values()):
++                raise RuntimeError('Another trajectory goal is active')
++
+     def ready(self, planned_start):
+         self.spin(.1)
+         if self.report.get('planned_monotonic_s') is not None and time.monotonic()-self.report['planned_monotonic_s'] > 60:
+@@ -264,8 +298,10 @@
+                                  ['arm_type', 'effector_type', 'control_enabled', 'speed_percent', 'use_sim_time'])
+         if driver['arm_type'] != 'nero' or driver['effector_type'] != 'agx_gripper':
+             raise RuntimeError('Running driver is not Nero with original gripper')
+-        if driver['use_sim_time'] is not False or driver['control_enabled'] is not True:
+-            raise RuntimeError('ROS driver is simulated or control_enabled is not true; no auto-enable')
++        # The installed gate opens only for a synchronized action; this
++        # parameter records startup configuration, not live gate state.
++        if driver['use_sim_time'] is not False or driver['control_enabled'] is not False:
++            raise RuntimeError('Driver must start in real time with idle control gate closed')
+         speed = driver['speed_percent']
+         if type(speed) not in (int, float) or not 0 < speed <= 5:
+             raise RuntimeError('Existing ROS driver speed_percent must be in (0,5]; script does not change it')
+@@ -276,15 +312,19 @@
+         active = {c['name'] for c in self.report['controllers'] if c['state'] == 'active'}
+         if 'arm_controller' not in active: raise RuntimeError('arm_controller is not active')
+         if any(self.active_goals.values()): raise RuntimeError('Another trajectory goal is active')
+-        owners = {t: [dict(name=p.node_name, namespace=p.node_namespace)
+-                      for p in self.node.get_publishers_info_by_topic(t)]
+-                  for t in self.report['topic_publishers']}
++        owners = self.bridge_publishers()
+         if len(owners['/feedback/joint_states']) != 1 or owners['/feedback/joint_states'][0]['name'] != 'agx_arm_ctrl_single_node':
+             raise RuntimeError('Actual feedback must have exactly one real driver publisher')
+         if len(owners['/control/joint_states']) != 1:
+             raise RuntimeError('Control bridge publisher is missing or ambiguous')
+         if len(owners['/control/gated_joint_states']) != 1 or owners['/control/gated_joint_states'][0]['name'] != 'control_gate':
+             raise RuntimeError('Expected the existing control_gate as the sole gated publisher')
++        def driver_subscribers(topic):
++            return [p for p in self.node.get_subscriptions_info_by_topic(topic)
++                    if p.node_name == 'agx_arm_ctrl_single_node' and p.node_namespace == '/']
++        if (len(driver_subscribers('/control/gated_joint_states')) != 1 or
++                driver_subscribers('/control/joint_states')):
++            raise RuntimeError('Real driver must subscribe only to gated commands, never raw bridge states')
+         if any(self.node.count_publishers(t) for t in self.report['direct_command_publishers']):
+             raise RuntimeError('Other direct ROS motion publishers are present')
+         item = self.latest.get('/control/joint_states')
+--- original/stream_worker.py
++++ onsite/stream_worker.py
+@@ -2,6 +2,7 @@
+ import contextlib
+ import hashlib
+ import json
++import os
+ from pathlib import Path
+ import pickle
+ import sys
+@@ -18,7 +19,15 @@
+ from src.act.nero_dataset import preprocess_images
+ 
+ 
++def isolate_protocol_stdout():
++    # ZED writes native logs to fd 1; keep a separate pipe for JSON replies.
++    protocol = os.fdopen(os.dup(sys.stdout.fileno()), 'w', buffering=1)
++    os.dup2(sys.stderr.fileno(), sys.stdout.fileno())
++    return protocol
++
++
+ def main():
++    protocol = isolate_protocol_stdout()
+     directory = Path(sys.argv[1])
+     output = Path(sys.argv[2])
+     frames = output/'camera_frames'
+@@ -47,7 +56,7 @@
+     trial_allowed = air_trial_allowed(bundle)
+     print(json.dumps({'type': 'ready', 'hardware_deployment_allowed': bundle.get('hardware_deployment_allowed') is True,
+         'experimental_air_trial_allowed': trial_allowed, 'trial_profile': bundle.get('trial_profile'),
+-        'checkpoint_sha256': hashlib.sha256((directory/'policy.ckpt').read_bytes()).hexdigest()}), flush=True)
++        'checkpoint_sha256': hashlib.sha256((directory/'policy.ckpt').read_bytes()).hexdigest()}), file=protocol, flush=True)
+     camera = None
+     try:
+         for line in sys.stdin:
+@@ -92,10 +101,11 @@
+                             'camera_received_monotonic_s': camera_received,
+                             'feedback_state': request['state'],
+                             'camera_frame': str(frame_file.relative_to(output)),
+-                            'inference_ms': (time.monotonic()-started)*1000}}), flush=True)
++                            'inference_ms': (time.monotonic()-started)*1000}}), file=protocol, flush=True)
+     finally:
+         if camera is not None:
+             camera.close()
++        protocol.close()
+ 
+ 
+ if __name__ == '__main__':
+--- original/restore_start.py
++++ onsite/restore_start.py
+@@ -0,0 +1,162 @@
++"""Separate, explicitly confirmed MoveIt return to this model's known start."""
++import copy
++import json
++import select
++import sys
++import time
++
++import numpy as np
++from ros_support import ARM, NAMES, ordered, retime_seconds
++from trial_contract import air_trial_allowed
++
++
++def return_target(state, profile):
++    state = np.asarray(state, dtype=float)
++    initial = np.asarray(profile['initial_state'], dtype=float)
++    if state.shape != (8,) or initial.shape != (8,) or not np.isfinite(np.r_[state, initial]).all():
++        raise ValueError('Return requires finite eight-dimensional states')
++    if np.max(abs(state[:7]-initial[:7])) > .05:
++        raise ValueError('Known-start return is limited to 0.05 rad per axis')
++    if abs(state[7]-initial[7]) > profile['initial_gripper_tolerance_m']:
++        raise ValueError('Restore gripper separately; this return never commands the gripper')
++    return [*initial[:7].tolist(), float(state[7])]
++
++
++def return_path(names, points, start, target):
++    if len(names) != 7 or set(names) != set(ARM):
++        raise ValueError('Return trajectory must contain only seven arm joints')
++    rows = [ordered(names, row, ARM) for row in points]
++    if len(rows) < 2 or max(abs(a-b) for a,b in zip(rows[0], start[:7])) > 1e-6:
++        raise ValueError('Return planner changed the measured start')
++    if max(abs(a-b) for a,b in zip(rows[-1], target[:7])) > .0005:
++        raise ValueError('Return planner did not reach the known start')
++    for row in rows:
++        if any(not min(start[i],target[i])-.0006 <= row[i] <= max(start[i],target[i])+.0006 for i in range(7)):
++            raise ValueError('Return planner left the endpoint corridor')
++    return rows
++
++
++def within_corridor(state, start, target):
++    return (len(state) == 8 and np.isfinite(state).all() and abs(state[7]-start[7]) <= .001
++        and all(min(start[i],target[i])-.002 <= state[i] <= max(start[i],target[i])+.002 for i in range(7)))
++
++
++def return_result(start, target, states, action_success):
++    if len(states) < 5:
++        raise ValueError('Insufficient physical return feedback')
++    error = max(abs(row[i]-target[i]) for row in states[-5:] for i in range(7))
++    return {'success': bool(action_success and error <= .0007 and
++                           all(within_corridor(row,start,target) for row in states)),
++            'last5_max_endpoint_error_rad': error, 'action_success': bool(action_success),
++            'maximum_gripper_drift_m': max(abs(row[7]-start[7]) for row in states),
++            'actual_feedback_required': True}
++
++
++def plan_return(session, start, target, group):
++    from moveit_msgs.srv import GetMotionPlan
++    from moveit_msgs.msg import Constraints, JointConstraint, DisplayTrajectory
++    from rosidl_runtime_py.convert import message_to_ordereddict
++    request = GetMotionPlan.Request(); req = request.motion_plan_request
++    req.group_name = group; req.num_planning_attempts = 1; req.allowed_planning_time = 3.
++    req.max_velocity_scaling_factor = req.max_acceleration_scaling_factor = .05
++    req.start_state = copy.deepcopy(session.scene().robot_state); req.start_state.is_diff = False
++    req.start_state.joint_state.name = NAMES; req.start_state.joint_state.position = start
++    req.start_state.joint_state.velocity = []; req.start_state.joint_state.effort = []
++    req.start_state.joint_state.header.stamp = session.node.get_clock().now().to_msg()
++    goal = Constraints()
++    for name,value in zip(ARM,target[:7]):
++        goal.joint_constraints.append(JointConstraint(joint_name=name,position=value,
++            tolerance_above=.0001,tolerance_below=.0001,weight=1.))
++    req.goal_constraints = [goal]
++    response = session.call('/plan_kinematic_path',GetMotionPlan,request).motion_plan_response
++    if response.error_code.val != 1:
++        raise RuntimeError(f'Return planning failed: {response.error_code.val}')
++    trajectory = response.trajectory
++    if trajectory.multi_dof_joint_trajectory.points:
++        raise ValueError('Unexpected multi-DOF return trajectory')
++    jt = trajectory.joint_trajectory
++    rows = return_path(jt.joint_names,[p.positions for p in jt.points],start,target)
++    session.validate_block([row+[start[7]] for row in rows],group)
++    times = retime_seconds(rows)
++    if times[-1] > 20:
++        raise ValueError('Return trajectory exceeds 20 seconds')
++    for point,seconds in zip(jt.points,times):
++        point.time_from_start.sec,point.time_from_start.nanosec = divmod(round(seconds*1e9),1000000000)
++        point.velocities = [0.]*7; point.accelerations = [0.]*7; point.effort = []
++    jt.header.stamp.sec = jt.header.stamp.nanosec = 0
++    (session.output/'return_trajectory.json').write_text(json.dumps(message_to_ordereddict(trajectory),indent=2))
++    session.report.update(plan_complete=True,planned_monotonic_s=time.monotonic(),
++                          duration_s=times[-1],return_target=target,gripper_command_sent=False)
++    publisher = session.node.create_publisher(DisplayTrajectory,'/display_planned_path',1)
++    session.spin(.3)
++    publisher.publish(DisplayTrajectory(trajectory_start=req.start_state,trajectory=[trajectory]))
++    session.spin(.1)
++    return trajectory
++
++
++def confirm_return(session, phrase='RETURN_START', message=None):
++    print(message or '仅回到本轮ACT训练起点；夹爪保持，不自动执行ACT。确认回程通道和急停后输入 RETURN_START：',end='',flush=True)
++    deadline = time.monotonic()+60
++    while time.monotonic() < deadline:
++        session.spin(.01); session.actual()
++        if select.select([sys.stdin],[],[],0)[0]:
++            if sys.stdin.readline().strip() != phrase:
++                raise RuntimeError('Return confirmation not given')
++            return
++    raise TimeoutError('Return confirmation expired; no goal submitted')
++
++
++def run_return(args, output, report, session_class):
++    from rclpy.action import ActionClient
++    from moveit_msgs.action import ExecuteTrajectory
++    meta = json.loads((args.model_dir/'runtime_metadata.json').read_text())
++    if not air_trial_allowed(meta):
++        raise ValueError('Unrecognized bounded training-start profile')
++    report.update(mode='return_start_execute' if args.execute else 'return_start_plan',
++                  scope='Separate MoveIt known-start return, not ACT inference',
++                  gripper_command_sent=False,plan_complete=False)
++    session = session_class(output,report)
++    try:
++        start = session.inventory()
++        if not report['execution_readiness_checks_passed']:
++            raise RuntimeError(report.get('execution_blocker'))
++        target = return_target(start,meta['trial_profile'])
++        if max(abs(a-b) for a,b in zip(start[:7],target[:7])) <= .0007:
++            report.update(success=True,already_at_trained_start=True,return_target=target)
++            return
++        groups = [g for g,joints in report['groups'].items() if set(joints) == set(ARM)]
++        if len(groups) != 1: raise ValueError('Return requires one exact seven-axis group')
++        trajectory = plan_return(session,start,target,groups[0])
++        if not args.execute:
++            report['success'] = True
++            return
++        client = ActionClient(session.node,ExecuteTrajectory,'/execute_trajectory')
++        if not client.wait_for_server(timeout_sec=3): raise RuntimeError('ExecuteTrajectory unavailable')
++        confirm_return(session); session.ready(start)
++        goal = ExecuteTrajectory.Goal(trajectory=trajectory)
++        if hasattr(goal,'controllers'): goal.controllers = ['arm_controller']
++        begin = len(session.trace); sent = time.monotonic()
++        report.update(execution_goal_submitted=True,goal_submission_index=begin,goal_submission_monotonic_s=sent)
++        session.pending_goal_futures = [client.send_goal_async(goal)]
++        session.block_handles = []
++        handle = session.wait(session.pending_goal_futures[0],timeout=3); session.block_handles.append(handle)
++        if not handle.accepted: raise RuntimeError('Return goal rejected')
++        report['execution_goal_accepted'] = True; future = handle.get_result_async()
++        while not future.done():
++            session.spin(.01)
++            if not within_corridor(session.actual(),start,target): raise RuntimeError('Actual return left safe corridor')
++            if time.monotonic()-sent > report['duration_s']+5: raise TimeoutError('Return execution timed out')
++        result = session.wait(future); deadline = time.monotonic()+1
++        while time.monotonic() < deadline:
++            session.spin(.01)
++            if not within_corridor(session.actual(),start,target): raise RuntimeError('Return settling left safe corridor')
++        physical = return_result(start,target,[s['position'] for s in session.trace[begin:]],
++                                 result.status == 4 and result.result.error_code.val == 1)
++        report['physical_result'] = physical
++        if not physical['success']: raise RuntimeError('Physical return acceptance failed')
++        report['success'] = True
++    finally:
++        if report.get('execution_goal_submitted') and not report.get('success'):
++            session.cancel_all()
++        (output/'actual_feedback.json').write_text(json.dumps(session.trace,indent=2))
++        session.node.destroy_node(); session.ros.shutdown()
+--- original/restore_gripper.py
++++ onsite/restore_gripper.py
+@@ -0,0 +1,87 @@
++"""Independent empty-gripper recovery to this air model's known opening."""
++import json
++import time
++import numpy as np
++
++from full_core import FullGate
++from restore_start import confirm_return
++from trial_contract import air_trial_allowed
++
++
++def gripper_rows(state, profile):
++    q = np.asarray(state, dtype=float)
++    target = profile['initial_state'][7]
++    if (q.shape != (8,) or not np.isfinite(q).all()
++        or np.any(q[:7] < profile['arm_lower_rad']) or np.any(q[:7] > profile['arm_upper_rad'])
++        or not profile['gripper_lower_m'] <= q[7] <= profile['gripper_upper_m']
++        or abs(target-q[7]) > .01):
++        raise ValueError('Gripper recovery requires current air envelope and at most 10 mm change')
++    count = max(20, int(np.ceil(abs(target-q[7])/.00025)))
++    return [[*q[:7].tolist(), float(q[7]+(target-q[7])*i/count)] for i in range(1,count+1)]
++
++
++def gripper_result(start, target, states, action_success):
++    q = np.asarray(states, dtype=float)
++    if q.ndim != 2 or q.shape[1] != 8 or len(q) < 5 or not np.isfinite(q).all():
++        raise ValueError('Insufficient finite actual gripper recovery feedback')
++    drift = float(np.max(abs(q[:,:7]-np.asarray(start[:7]))))
++    error = float(np.max(abs(q[-5:,7]-target)))
++    corridor = bool(np.all(q[:,7] >= min(start[7],target)-.001)
++                    and np.all(q[:,7] <= max(start[7],target)+.001))
++    return dict(success=bool(action_success and drift <= .0007 and error <= .0005 and corridor),
++                maximum_arm_drift_rad=drift, last5_width_error_m=error,
++                actual_feedback_required=True, action_success=bool(action_success))
++
++
++def run_gripper_return(args, output, report, session_class):
++    meta = json.loads((args.model_dir/'runtime_metadata.json').read_text())
++    summary = json.loads((args.model_dir/'safety_summary.json').read_text())
++    if not air_trial_allowed(meta) or summary.get('trial_profile') != meta['trial_profile']:
++        raise ValueError('Unrecognized bounded air profile')
++    gate = FullGate(summary, True)
++    report.update(mode='gripper_start_execute' if args.execute else 'gripper_start_plan',
++                  scope='Separate known empty-gripper recovery, not ACT inference',
++                  gripper_command_sent=False)
++    s = session_class(output,report)
++    try:
++        start = s.inventory()
++        if not report['execution_readiness_checks_passed']:
++            raise RuntimeError(report.get('execution_blocker'))
++        gate.state(start)
++        rows = gripper_rows(start,meta['trial_profile']); target = rows[-1][7]
++        report.update(gripper_start_m=start[7],gripper_target_m=target,duration_s=len(rows)/20)
++        if abs(start[7]-target) <= .0005:
++            report.update(success=True,already_at_gripper_start=True)
++            return
++        groups = [g for g,j in report['groups'].items() if len(j)==7 and set(j)=={f'joint{i}' for i in range(1,8)}]
++        if len(groups)!=1: raise ValueError('One exact seven-axis arm group required')
++        for row in rows: gate.state(row)
++        s.validate_block(rows,groups[0]);s.display_chunk(rows)
++        (output/'gripper_start_trajectory.json').write_text(json.dumps(rows,indent=2)+'\n')
++        report.update(plan_complete=True,planned_monotonic_s=time.monotonic())
++        if not args.execute:
++            report['success']=True
++            return
++        clients=s.clients()
++        confirm_return(s,'GRIPPER_START','仅恢复空夹爪至训练开口，七轴保持；确认无接触及急停后输入 GRIPPER_START：')
++        s.ready(start);begin=len(s.trace);sent=time.monotonic()
++        report['execution_goal_submitted']=True
++        futures=s.send_block(clients,rows);report['gripper_command_sent']=True
++        while not all(f.done() for f in futures):
++            s.spin(.005);q=s.actual()
++            if max(abs(a-b) for a,b in zip(q[:7],start[:7])) > .0007:
++                raise RuntimeError('Arm drift during gripper recovery')
++            if not min(start[7],target)-.001 <= q[7] <= max(start[7],target)+.001:
++                raise RuntimeError('Gripper recovery left endpoint corridor')
++            if time.monotonic()-sent > len(rows)/20+3:
++                raise TimeoutError('Gripper recovery timed out')
++        results=[s.wait(f) for f in futures];s.spin(.5)
++        physical=gripper_result(start,target,[x['position'] for x in s.trace[begin:]],
++                                all(r.status==4 and r.result.error_code==0 for r in results))
++        report['physical_result']=physical
++        if not physical['success']: raise RuntimeError('Actual gripper recovery failed')
++        report['success']=True
++    finally:
++        if report.get('execution_goal_submitted') and not report.get('success'):s.cancel_all()
++        (output/'actual_feedback.json').write_text(json.dumps(s.trace,indent=2)+'\n')
++        s.node.destroy_node();s.ros.shutdown()

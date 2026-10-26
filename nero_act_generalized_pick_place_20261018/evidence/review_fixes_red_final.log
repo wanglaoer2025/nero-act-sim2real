@@ -1,0 +1,80 @@
+test_changed_training_source_or_input_fails_integrity_verification (tests.test_training_review_fixes.TrainingReviewFixes.test_changed_training_source_or_input_fails_integrity_verification) ... FAIL
+test_completed_epochs_alone_cannot_export_a_generalized_run (tests.test_training_review_fixes.TrainingReviewFixes.test_completed_epochs_alone_cannot_export_a_generalized_run) ... FAIL
+test_filename_id_must_match_manifest_id_before_split_selection (tests.test_training_review_fixes.TrainingReviewFixes.test_filename_id_must_match_manifest_id_before_split_selection) ... /home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+FAIL
+test_interrupted_candidate_consumes_its_slot_without_blocking_next_candidate (tests.test_training_review_fixes.TrainingReviewFixes.test_interrupted_candidate_consumes_its_slot_without_blocking_next_candidate) ... FAIL
+test_verified_hdf_and_canonical_copy_recover_after_manifest_commit_was_interrupted (tests.test_training_review_fixes.TrainingReviewFixes.test_verified_hdf_and_canonical_copy_recover_after_manifest_commit_was_interrupted) ... FAIL
+
+======================================================================
+FAIL: test_changed_training_source_or_input_fails_integrity_verification (tests.test_training_review_fixes.TrainingReviewFixes.test_changed_training_source_or_input_fails_integrity_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_training_review_fixes.py", line 59, in test_changed_training_source_or_input_fails_integrity_verification
+    self.assertIsNotNone(importlib.util.find_spec('training.integrity'))
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_completed_epochs_alone_cannot_export_a_generalized_run (tests.test_training_review_fixes.TrainingReviewFixes.test_completed_epochs_alone_cannot_export_a_generalized_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_training_review_fixes.py", line 54, in test_completed_epochs_alone_cannot_export_a_generalized_run
+    with self.assertRaises(ValueError):export_model(ckpt,root/'exported')
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_filename_id_must_match_manifest_id_before_split_selection (tests.test_training_review_fixes.TrainingReviewFixes.test_filename_id_must_match_manifest_id_before_split_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_training_review_fixes.py", line 43, in test_filename_id_must_match_manifest_id_before_split_selection
+    with self.assertRaises(ValueError):validate_manifest(dict(episodes=rows,rejected=[]),dict(train=list(range(36)),val=list(range(36,48))),check_files=False)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_interrupted_candidate_consumes_its_slot_without_blocking_next_candidate (tests.test_training_review_fixes.TrainingReviewFixes.test_interrupted_candidate_consumes_its_slot_without_blocking_next_candidate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_training_review_fixes.py", line 16, in test_interrupted_candidate_consumes_its_slot_without_blocking_next_candidate
+    try:result=collect_one({},0,out)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/simulation/collect_generalized.py", line 15, in collect_one
+    folder.mkdir(parents=True,exist_ok=False);path=folder/f'episode_{index}.hdf5'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/tmp/tmph_u_k7xs/attempts/scene_00_candidate_0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_training_review_fixes.py", line 17, in test_interrupted_candidate_consumes_its_slot_without_blocking_next_candidate
+    except FileExistsError:self.fail('Interrupted candidate blocks safe resume')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Interrupted candidate blocks safe resume
+
+======================================================================
+FAIL: test_verified_hdf_and_canonical_copy_recover_after_manifest_commit_was_interrupted (tests.test_training_review_fixes.TrainingReviewFixes.test_verified_hdf_and_canonical_copy_recover_after_manifest_commit_was_interrupted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_training_review_fixes.py", line 32, in test_verified_hdf_and_canonical_copy_recover_after_manifest_commit_was_interrupted
+    try:result=collect_one({},0,out)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/simulation/collect_generalized.py", line 15, in collect_one
+    folder.mkdir(parents=True,exist_ok=False);path=folder/f'episode_{index}.hdf5'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/tmp/tmpce7oy460/attempts/scene_00_candidate_0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/wq/nero_act_generalized_pick_place_20261018/tests/test_training_review_fixes.py", line 33, in test_verified_hdf_and_canonical_copy_recover_after_manifest_commit_was_interrupted
+    except FileExistsError:self.fail('Verified completed output cannot recover its manifest entry')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Verified completed output cannot recover its manifest entry
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.961s
+
+FAILED (failures=5)

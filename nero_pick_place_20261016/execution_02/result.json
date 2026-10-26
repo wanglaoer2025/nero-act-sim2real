@@ -1,0 +1,39 @@
+{
+  "mode": "execute",
+  "motion_sent": true,
+  "success": false,
+  "task_success": "unreviewed",
+  "confirmations": [
+    {
+      "token": "PICK",
+      "wall_s": 1792165696.4048805
+    },
+    {
+      "action": "移动到杯子正上方",
+      "token": "NEXT",
+      "wall_s": 1792165734.852379
+    },
+    {
+      "action": "在杯子上方打开夹爪",
+      "token": "NEXT",
+      "wall_s": 1792165852.0548992
+    }
+  ],
+  "stages": [],
+  "tcp_source": "/home/user/wq/nero_pick_place_20261016/model_tcp_candidate.json",
+  "model_tcp_comparison_only": false,
+  "actual_start": {
+    "joint1": 0.1832595714594046,
+    "joint2": -0.12651891747706895,
+    "joint3": 0.10000736613927509,
+    "joint4": 1.5707963267948966,
+    "joint5": -0.023858650874762483,
+    "joint6": 0.2816961412718848,
+    "joint7": 0.13102186694721432,
+    "gripper": 0.064985
+  },
+  "error": "ValueError: Target changed by more than the existing 5mm stability bound",
+  "gate_closed_for_cancel": true,
+  "cancel_requested": true,
+  "finished_wall_s": 1792165887.9313943
+}

@@ -1,0 +1,16 @@
+{
+  "epochs": 20,
+  "seed": 42,
+  "initializer": "run21_cvae_posterior",
+  "same72data": true,
+  "adapter_lr": 0.001,
+  "prior_gripper_weight": 0.05,
+  "sampling": "equal_mass_direct_grasp_close_other_close_first20_release_first20_background",
+  "only_adapter_trainable": true,
+  "validation": "same_four_role_zero_latent_selection",
+  "original_nominal_not_independent": true,
+  "independent16_untouched": true,
+  "stop_if_nominal_fails": true,
+  "no_fourth_adjustment_without_discussion": true,
+  "hardware_connected": false
+}

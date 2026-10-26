@@ -1,0 +1,20 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______ test_missing_rendered_frames_cannot_be_called_complete_visibility _______
+
+    def test_missing_rendered_frames_cannot_be_called_complete_visibility():
+>       from visibility_audit import summarize_visibility
+E       ModuleNotFoundError: No module named 'visibility_audit'
+
+tests/test_visibility.py:2: ModuleNotFoundError
+_______ test_one_rejected_release_frame_invalidates_complete_visibility ________
+
+    def test_one_rejected_release_frame_invalidates_complete_visibility():
+>       from visibility_audit import summarize_visibility
+E       ModuleNotFoundError: No module named 'visibility_audit'
+
+tests/test_visibility.py:8: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_visibility.py::test_missing_rendered_frames_cannot_be_called_complete_visibility
+FAILED tests/test_visibility.py::test_one_rejected_release_frame_invalidates_complete_visibility
+2 failed in 0.02s

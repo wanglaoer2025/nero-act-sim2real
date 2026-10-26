@@ -1,0 +1,91 @@
+{
+  "success": true,
+  "physical_success": true,
+  "max_lift_m": 0.1835102532312885,
+  "maximum_horizontal_transfer_m": 0.1856397614005135,
+  "stable_released_frames": 101,
+  "lift_contact_frames": 950,
+  "unexpected_arm_cup_contact_frames": 0,
+  "execution_contract_failures": 0,
+  "premature_release_before_support": false,
+  "constraint_attachment_used": false,
+  "last_observation": {
+    "cup_xyz": [
+      -0.539888769533792,
+      -0.1359989608102542,
+      0.04749668780385905
+    ],
+    "tcp_xyz": [
+      -0.5304684048560058,
+      -0.1347208654377749,
+      0.24613838938159038
+    ],
+    "cup_upright": 0.999999999999953,
+    "cup_speed": 1.8095994815783273e-06,
+    "bilateral": false,
+    "supported": true,
+    "unexpected_contact": false,
+    "unexpected_robot_contact": false,
+    "gripper_width": 0.09499999877611667,
+    "contract_valid": true
+  },
+  "scenario": {
+    "name": "contact_escape_9006",
+    "seed": 191899,
+    "query_stride": 2,
+    "servo_delay_steps": 0,
+    "observation_age_s": 0.05,
+    "jitter": false,
+    "force": false
+  },
+  "frames": 3268,
+  "active_policy_points": 2739,
+  "queries": 1404,
+  "error": null,
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "supervision_failures": 0,
+  "supervised_contact_protocol": "physics_pauses_fine_grasp_support_hold_v7",
+  "simulated_events": [
+    {
+      "kind": "GRASP",
+      "physics_step": 955,
+      "active_points": 951,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "CARRY",
+      "physics_step": 1753,
+      "active_points": 1623,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RELEASE",
+      "physics_step": 2438,
+      "active_points": 2223,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    },
+    {
+      "kind": "RETREAT",
+      "physics_step": 2697,
+      "active_points": 2353,
+      "simulated_permission_only": true,
+      "real_receipt": false
+    }
+  ],
+  "post_completion_freeze_step": 3167,
+  "feedback_hold_points": 5,
+  "runtime_s": 89.11761134897824,
+  "contact_arm_hold_points": 272,
+  "observation_schema": "visual_relative_base_v1",
+  "maximum_ACT_prefix_points": 2,
+  "geometry_truth_policy_input": false,
+  "nominal_geometry_only": true,
+  "attachment_safety_source": "current_physics_pose_until_first_liftoff_then_frozen",
+  "attachment_airborne_transform_frozen": true,
+  "inference_latency_p95_ms": 6.364520368515514,
+  "guard_diagnostic": null
+}

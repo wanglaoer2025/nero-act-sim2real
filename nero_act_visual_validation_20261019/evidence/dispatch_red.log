@@ -1,0 +1,123 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+____ test_ros_adapter_sends_only_current_two_points_and_advances_after_ack _____
+
+    def test_ros_adapter_sends_only_current_two_points_and_advances_after_ack():
+>       m=api(); core,raw,frame,geometry,paired=controller(); clock=[10.02]; transport=Transport(clock)
+
+tests/test_visual_dispatch.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_dispatch') is not None, 'Visual live dispatch/ROS transport missing'
+E       AssertionError: Visual live dispatch/ROS transport missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7209115ac5e0>('executor.visual_dispatch')
+E        +    where <function find_spec at 0x7209115ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_dispatch.py:13: AssertionError
+___________ test_camera_failure_or_late_collision_check_never_sends ____________
+
+    def test_camera_failure_or_late_collision_check_never_sends():
+>       m=api()
+
+tests/test_visual_dispatch.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_dispatch') is not None, 'Visual live dispatch/ROS transport missing'
+E       AssertionError: Visual live dispatch/ROS transport missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7209115ac5e0>('executor.visual_dispatch')
+E        +    where <function find_spec at 0x7209115ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_dispatch.py:13: AssertionError
+_____________ test_cleanup_restores_readonly_even_if_cancel_throws _____________
+
+    def test_cleanup_restores_readonly_even_if_cancel_throws():
+>       m=api();core,*_=controller();transport=Transport([10.02])
+
+tests/test_visual_dispatch.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_dispatch') is not None, 'Visual live dispatch/ROS transport missing'
+E       AssertionError: Visual live dispatch/ROS transport missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7209115ac5e0>('executor.visual_dispatch')
+E        +    where <function find_spec at 0x7209115ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_dispatch.py:13: AssertionError
+_____ test_health_runs_while_inference_is_pending_and_failure_latches_stop _____
+
+    def test_health_runs_while_inference_is_pending_and_failure_latches_stop():
+>       m=api();core,*_=controller();clock=[10.02];transport=Transport(clock)
+
+tests/test_visual_dispatch.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_dispatch') is not None, 'Visual live dispatch/ROS transport missing'
+E       AssertionError: Visual live dispatch/ROS transport missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7209115ac5e0>('executor.visual_dispatch')
+E        +    where <function find_spec at 0x7209115ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_dispatch.py:13: AssertionError
+_ test_unqualified_nominal_training_and_failed_rollout_deny_before_ros_construction _
+
+    def test_unqualified_nominal_training_and_failed_rollout_deny_before_ros_construction():
+>       m=api()
+
+tests/test_visual_dispatch.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_dispatch') is not None, 'Visual live dispatch/ROS transport missing'
+E       AssertionError: Visual live dispatch/ROS transport missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7209115ac5e0>('executor.visual_dispatch')
+E        +    where <function find_spec at 0x7209115ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_dispatch.py:13: AssertionError
+________ test_ros_transport_waits_for_both_results_and_checks_failures _________
+
+    def test_ros_transport_waits_for_both_results_and_checks_failures():
+>       m=api();calls=[]
+
+tests/test_visual_dispatch.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def api():
+        import importlib.util
+>       assert importlib.util.find_spec('executor.visual_dispatch') is not None, 'Visual live dispatch/ROS transport missing'
+E       AssertionError: Visual live dispatch/ROS transport missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7209115ac5e0>('executor.visual_dispatch')
+E        +    where <function find_spec at 0x7209115ac5e0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.12/importlib/__init__.py'>.util
+
+tests/test_visual_dispatch.py:13: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_visual_dispatch.py::test_ros_adapter_sends_only_current_two_points_and_advances_after_ack
+FAILED tests/test_visual_dispatch.py::test_camera_failure_or_late_collision_check_never_sends
+FAILED tests/test_visual_dispatch.py::test_cleanup_restores_readonly_even_if_cancel_throws
+FAILED tests/test_visual_dispatch.py::test_health_runs_while_inference_is_pending_and_failure_latches_stop
+FAILED tests/test_visual_dispatch.py::test_unqualified_nominal_training_and_failed_rollout_deny_before_ros_construction
+FAILED tests/test_visual_dispatch.py::test_ros_transport_waits_for_both_results_and_checks_failures
+6 failed, 1 warning in 1.85s

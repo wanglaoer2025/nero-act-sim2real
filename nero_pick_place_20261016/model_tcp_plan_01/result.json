@@ -1,0 +1,69 @@
+{
+  "mode": "plan",
+  "motion_sent": false,
+  "success": false,
+  "task_success": "unreviewed",
+  "confirmations": [],
+  "stages": [
+    {
+      "name": "pregrasp_high_pose",
+      "points": 41,
+      "duration_s": 3.917772116
+    },
+    {
+      "name": "grasp_pose",
+      "points": 120,
+      "duration_s": 11.820054362
+    },
+    {
+      "name": "lift_pose",
+      "points": 120,
+      "duration_s": 11.821561156
+    },
+    {
+      "name": "carry_pose",
+      "points": 28,
+      "duration_s": 2.610708497
+    },
+    {
+      "name": "place_pose",
+      "points": 114,
+      "duration_s": 11.228730708
+    }
+  ],
+  "tcp_source": "/home/user/wq/nero_pick_place_20261016/model_tcp_candidate.json",
+  "model_tcp_comparison_only": true,
+  "actual_start": {
+    "joint1": 0.1832595714594046,
+    "joint2": -0.12651891747706895,
+    "joint3": 0.10002481943179502,
+    "joint4": 1.5707963267948966,
+    "joint5": -0.023945917337362205,
+    "joint6": 0.28171359456440476,
+    "joint7": 0.13112658670233399,
+    "gripper": 0.064985
+  },
+  "cup_sweep_checks": [
+    {
+      "stage": "lift_pose",
+      "fk_samples": 735,
+      "minimum_cup_bottom_mm": -1.2953327299669581e-07
+    },
+    {
+      "stage": "carry_pose",
+      "fk_samples": 450,
+      "minimum_cup_bottom_mm": 199.99999998281837
+    },
+    {
+      "stage": "place_pose",
+      "fk_samples": 708,
+      "minimum_cup_bottom_mm": -1.6947088871122062e-07
+    }
+  ],
+  "retreat_start_collision_check": {
+    "valid": true,
+    "contacts": []
+  },
+  "error": "RuntimeError: 步骤=retreat_pose；MoveIt PTP 规划失败：current=FAILURE (99999), centered=FAILURE (99999), wrist_centered=FAILURE (99999), elbow_positive=FAILURE (99999), elbow_negative=FAILURE (99999)；IK 已找到 5 种互异姿态，但均未生成轨迹；目标 base XYZ=[-374.2, -181.1, 255.0] mm，RPY=[-90.0, 0.0, 180.0]°；起点关节=[joint1=21.6°, joint2=60.9°, joint3=1.8°, joint4=89.1°, joint5=19.0°, joint6=12.3°, joint7=-62.4°]；首个目标姿态 current=[joint1=22.1°, joint2=34.3°, joint3=1.1°, joint4=86.7°, joint5=11.9°, joint6=19.9°, joint7=-33.2°]",
+  "finished_wall_s": 1792164503.4458873
+}

@@ -1,0 +1,250 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NERO ACT 历史失败根因核查</title><style>
+:root {color-scheme: light; --ink:#182633; --muted:#536575; --line:#d4dfe7; --accent:#165b86;}
+* {box-sizing:border-box} html {scroll-behavior:smooth}
+body {margin:0;background:#eef2f5;color:var(--ink);font:16px/1.85 "Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;}
+.export-bar {max-width:1240px;margin:22px auto 0;padding:12px 24px;color:var(--muted);font-size:14px;}
+main {max-width:1240px;margin:0 auto 36px;padding:36px 54px;background:white;box-shadow:0 2px 18px #1b364014;}
+nav {padding:14px 22px;background:#f3f7fa;border:1px solid var(--line);margin-bottom:32px;}
+nav summary {cursor:pointer;font-weight:700;color:var(--accent)}
+nav ol {columns:2;column-gap:36px;padding-left:24px} nav li {break-inside:avoid;padding:3px 0;font-size:14px;}
+h1 {font-size:30px;line-height:1.5;margin:0 0 24px} h2 {font-size:23px;line-height:1.6;border-bottom:2px solid var(--line);padding-bottom:8px;margin-top:42px;scroll-margin-top:18px;}
+h3 {font-size:19px;margin-top:27px;scroll-margin-top:18px} p {margin:14px 0}
+a {color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+table {display:block;width:100%;border-collapse:collapse;font-size:14px;overflow-x:auto;margin:20px 0;}
+th,td {border:1px solid var(--line);padding:10px 12px;vertical-align:top;min-width:110px;}
+th {background:#edf3f7;text-align:left} tr:nth-child(even) {background:#fafcfd;}
+pre {padding:16px 20px;background:#f1f4f6;border:1px solid var(--line);overflow-x:auto;font-size:13px;line-height:1.7;}
+code {font-family:"Noto Sans Mono","Consolas",monospace;font-size:.9em;overflow-wrap:anywhere;background:#f1f4f6;padding:1px 4px;}
+pre code {background:none;padding:0;font-size:inherit;overflow-wrap:normal;}
+blockquote {border-left:4px solid var(--accent);margin:20px 0;padding:2px 20px;background:#f3f7fa;}
+li {margin:5px 0} strong {font-weight:700}
+@media(max-width:760px) {main {padding:24px 18px} h1 {font-size:25px} h2 {font-size:21px} nav ol {columns:1} .export-bar {padding:10px 18px}}
+@media print {@page {size:A4;margin:16mm 13mm} body {background:white;font-size:10pt;line-height:1.65} main {margin:0;padding:0;max-width:none;box-shadow:none} .export-bar,nav {display:none} h1 {font-size:19pt} h2 {font-size:15pt} h3 {font-size:12pt} h1,h2,h3 {break-after:avoid} table {font-size:8pt;overflow:visible} th,td {padding:5px 6px;min-width:0} tr {break-inside:avoid} pre {white-space:pre-wrap;overflow:visible;font-size:8pt} a {color:inherit}}
+
+img {max-width:100%;height:auto;}
+</style></head><body><div class="export-bar">核查截至 2026-10-25 · <a href="README.md">Markdown 原文</a> · 可打印为PDF</div><main><nav><details open><summary>目录 · 12 节</summary><ol><li><a href="#heading-2">1 本轮核查了什么</a></li><li><a href="#heading-3">2 最强根因证据及当前状态</a></li><li><a href="#heading-4">3 早期不闭爪的一个直接根因是重查询抵消了推进</a></li><li><a href="#heading-5">4 为什么修闭爪或输出层会把接近练坏</a></li><li><a href="#heading-6">5 为什么局部六项通过仍走不完整段</a></li><li><a href="#heading-7">6 视觉和几何确实有问题，但不是唯一根因</a></li><li><a href="#heading-8">7 最新四个附着杯拒绝属于什么</a></li><li><a href="#heading-9">8 最近3/7变1/7能查到哪一层</a></li><li><a href="#heading-10">9 真机执行还有独立时序问题</a></li><li><a href="#heading-11">10 排除或收窄的历史猜测</a></li><li><a href="#heading-12">11 工程流程为什么让问题反复出现</a></li><li><a href="#heading-13">12 后续应怎样按因果关系修正</a></li></ol></details></nav><article><h1 id="heading-1">NERO ACT 历史失败根因核查</h1>
+<p>核查日期：2026年10月25日。结论是：<strong>最有力的共同问题在于局部监督与完整闭环行为脱节，修复某个输出又改变了其他阶段；视觉有效域、名义接触几何和真实发送时序还构成独立失败链。</strong> 历史记录不支持把全部失败归为渲染差异、闭爪训练次数不足或权重文件损坏。</p>
+<p>这不意味着只有一个尚未修好的软件错误。早期夹爪重查询停滞有直接机制证据，并已被命令增量头部分修复；当前主要困难转移到了七轴接近/起抬、运行时视觉和接触检查。把不同时期的症状继续混称“没有闭爪”，会让后续训练针对错问题。</p>
+<p><a href="conclusions.json">机器可读结论及36项关键来源</a> · <a href="historical_log_index.json">工作区日志索引</a> · <a href="external_project_log_index.json">原仓库补充索引</a> · <a href="initial_image_probe.json">新的RGB输入对照</a></p>
+<h2 id="heading-2">1 本轮核查了什么</h2>
+<p>在工作区105个顶层目录组读取1,953份候选（663份JSON、1,290份文本），再以不受Git忽略规则影响的检索补扫原始<code>/home/user/projects/nero</code>仓库429份（209份JSON、220份文本）。合计<strong>2,382份候选、872份JSON、1,510份文本，26,131,360字节</strong>，全部候选读取、JSON解析成功。索引保留路径、大小、SHA、JSON关键终态及文本异常签名。范围包括<code>.log/.out/.err/stdout/stderr</code>和结果、摘要、诊断、门禁、审计、状态、就绪检查JSON；不是把所有普通配置JSON都当作日志。<a href="external_project_log_index.json">原仓库补充索引</a></p>
+<p>针对主要因果链，进一步核对原始JSON、源码和成对工况，训练审计覆盖33个实验目录，执行审计重点覆盖15个目录；这些目录有交集，不能相加成独立实验数。直接复算68份HDF5的180,934帧命令时间与上一命令选择、三个旧夹爪轨迹、最新四个接触拒绝的逐插值FK，并用冻结CPU模型做两张RGB的受控输入对照。没有逐帧人工观看全部录像，也没有遍读所有图像/HDF5载荷。</p>
+<p>历史实验文件保持只读。新增文件仅在本目录及主复盘文档；本轮优化更新0次，没有启动ROS/CAN、硬件采集或真机动作。</p>
+<h2 id="heading-3">2 最强根因证据及当前状态</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>支持它的直接证据</th>
+<th>当前判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练出的块内动作不能跨重新查询累计推进</td>
+<td>旧闭爪块内第二点相对第一点−0.411175毫米，但两点相对上一命令仅−0.000312924毫米；增量头后原失败输入0/3→3/3</td>
+<td>已证明历史机制，后续部分修复，不能继续解释全部现状</td>
+</tr>
+<tr>
+<td>微调共享输出层破坏已有整段行为</td>
+<td>同场景基线780点进入GRASP，1000步后2710点仍无GRASP；另一严格配对旧模型完整成功、新模型3900点无GRASP</td>
+<td>已证明行为退化，冻结主干不能保证接近保持</td>
+</tr>
+<tr>
+<td>局部/专家输入通过不能保证策略自己走完全段</td>
+<td>局部六项6/6后，完整高位仍818点碰杯或2574点未GRASP；事件示教探针前后5/5，完整回归却2/3→0/3</td>
+<td>已证明评估目标脱节；各训练因素贡献仍需隔离</td>
+</tr>
+<tr>
+<td>视觉与几何检查不能覆盖全部运行状态</td>
+<td>模型约7～10毫米净空时现场仍碰杯；训练与执行蓝卡观察器有效域不同；有精确杯位诊断仍无法完成</td>
+<td>独立上游和运行时问题，不能靠加闭爪权重解决</td>
+</tr>
+<tr>
+<td>模型、刚体附着和物理接触的允许范围不一致</td>
+<td>最新有真实向下的名义预测，也有全部扫掠变浅、仅28.8纳米局部反向而被拒绝的情形</td>
+<td>必须逐例分辨策略错误和保守拒绝，不能统一删保护</td>
+</tr>
+<tr>
+<td>发送时序可以独立中止试验</td>
+<td>第67点命令381.648毫秒超过250毫秒，实际只发66/319点、夹爪命令0条</td>
+<td>已证明独立工程阻断，不是这一轮没学会闭爪</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heading-4">3 早期不闭爪的一个直接根因是重查询抵消了推进</h2>
+<p>ACT输出20点，但当前视觉执行通常只使用前两点，然后用新的反馈重新推理。旧绝对夹爪头会在一个块内先偏离上一命令，再向正确方向移动；看起来第二点“正在闭爪”，两点执行完却几乎回到上一命令。下一次查询重复这个过程，闭合或释放就无法累计。</p>
+<p>从三个原轨迹末尾各99个完整两点查询重新计算：</p>
+<table>
+<thead>
+<tr>
+<th>旧失败输入</th>
+<th style="text-align:right">块内第二点−第一点，毫米</th>
+<th style="text-align:right">第二点−上一已发命令，毫米</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名义闭爪</td>
+<td style="text-align:right">−0.411175</td>
+<td style="text-align:right">−0.000312924</td>
+</tr>
+<tr>
+<td>承托释放</td>
+<td style="text-align:right">+0.378087</td>
+<td style="text-align:right">−0.0000819564</td>
+</tr>
+<tr>
+<td>留出闭爪</td>
+<td style="text-align:right">+0.076942</td>
+<td style="text-align:right">−0.0000149012</td>
+</tr>
+</tbody>
+</table>
+<p>这解释了为什么绝对误差不大、梯度也可能看似合理，机器人却一直停留在近似开口。随后将夹爪改为围绕上一已发命令预测小增量，原三个失败输入由0/3变为3/3，六项由2/6变为5/6，七轴保持RMS约2.86e−8 rad。该干预还改变了头初始化和损失参数化，因此不是完美单变量试验，但原NPZ净推进复算提供了直接机制支持。<a href="training_readonly_rechecks.json">本轮复算</a>、<a href="../nero_act_command_increment_20261021/results/qualification/summary.json">原增量验收</a></p>
+<p><strong>它已经不是所有当前失败的解释。</strong> 最新多个失败场景已经闭爪、形成双边接触，之后才因七轴起抬或观察器停止；重复增加闭爪权重会避开真正的后续问题。</p>
+<h2 id="heading-5">4 为什么修闭爪或输出层会把接近练坏</h2>
+<p>冻结视觉编码、CVAE或大部分网络，只保证那些参数不变。共享七轴输出层一旦改变，所有阶段的动作都可能受影响。小范围更新不等于小范围行为变化。</p>
+<p>两份明确的成对记录：</p>
+<ul>
+<li>受限输出层1000步：同起点、同首查询反馈与位置特征，基线780点进入GRASP；微调后2710点仍无GRASP，最后越过原物理输出界限。仅6个张量更新，208份冻结摘要未变；首目标最大已经改变0.472859 mrad。<a href="../nero_act_restricted_heads_20261020/evidence/before_after_comparison.json">前后对比</a></li>
+<li>固定场景、同seed360118：旧模型3848点完整通过，末端Z约246.357毫米；输出层和夹爪adapter微调后3900点未GRASP，末端仍约65.273毫米。<a href="../nero_act_fixed_scene_heads_20261018/evidence/paired_previous_policy/report.json">严格配对</a></li>
+</ul>
+<p>优化尺度还曾把不同目标强行绑在一起：四批保持梯度范数约12,588～274,430，普通监督约9.86～10.81，全局0.1裁剪系数落到3.64e−7～7.94e−6。七轴大梯度会压缩夹爪有效更新；加强保持后夹爪漂移虽变小，七轴RMS反而从0.247增至0.961 mrad。降低七轴学习率后保持改善，但原六项仍4/6，说明修好优化尺度没有自动修好任务。<a href="../nero_act_optimizer_control_20261021/evidence/optimizer_diagnostics.json">原梯度诊断</a></p>
+<p>这是真实的训练退化证据，发生在同一运行环境，不能用后来CPU/Mesa的渲染变化来解释。</p>
+<h2 id="heading-6">5 为什么局部六项通过仍走不完整段</h2>
+<p>保存的抓前、抓后、释放后中间状态，可以帮助定位一个动作是否可学习，却不能验证策略会从高位起点走到这些状态。</p>
+<table>
+<thead>
+<tr>
+<th>局部指标</th>
+<th>同轮完整结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>短历史修复B六项6/6</td>
+<td>从高位运行818点碰杯，无完整抓放</td>
+</tr>
+<tr>
+<td>接近恢复A六项6/6</td>
+<td>高位2574点触发关节限制，无GRASP</td>
+</tr>
+<tr>
+<td>新事件示教首起抬探针前后均5/5、近似冲突4→0</td>
+<td>原三场景回归2/3→0/3，两个新位置0/2</td>
+</tr>
+</tbody>
+</table>
+<p>事件微调的基线三个场景在同一封存运行时中，状态、已发目标、预测块、查询步、反馈及视觉特征六类数组均精确重现，因此这次训练退化有可比较基线。<a href="../nero_act_event_finetune_20261024/results/summary.json">完整回归</a>、<a href="../nero_act_event_finetune_20261024/baseline_reproduction.json">基线复现</a></p>
+<p>数据中还有近别名过渡：8条新手眼示教有7条在闭爪末点和首起抬点之间，相隔50毫秒，RGB最大差仅0或1，七轴状态差≤1.43e−6 rad，上一夹爪命令差仅约2～3e−8米，几何差约3e−7米；监督首目标却改变约0.00137～0.00146 rad。当前单帧15维模型需要从近乎不变的观测判断“继续等”还是“现在抬”，这是对小扰动敏感的训练条件。<a href="../nero_act_observation_repair_20261023/transition_audit.json">过渡审计</a></p>
+<p>这支持表征与过渡监督存在困难，尚不证明严格数学不可辨识，也不证明加历史一定解决。历史A/B均有失败，不能把“增加历史”当成已经验证有效的答案。</p>
+<p>同样，不能把全部问题都说成“没有见过失败输入”：contact_prefix原三个失败状态实际被采样114、38、53次，图像、15维输入及前两点目标与旧资料一致，仍然失败。<strong>样本覆盖、目标可执行性和优化能否学到必须分别检查。</strong></p>
+<h2 id="heading-7">6 视觉和几何确实有问题，但不是唯一根因</h2>
+<p>10月19日现场确认夹指碰杯或推动时，模型在相同反馈状态下仍报约7.09～9.99毫米净空，说明名义模型没有覆盖实际误差。它不能进一步区分TCP、杯沿/杯把、视觉定位和跟踪误差各占多少；没有证据把尺量基准直接换算成“TCP差53毫米”。</p>
+<p>视觉也曾出现“拟合很好、位置仍错”：9005杯位误差11.894毫米时，bbox残差仅0.181像素。另一方面，替换精确杯位的五场景诊断完整成功仍为0，oracle_9301仍未对中就下降。最新9301末帧杯位误差约1.119毫米，但实际TCP水平偏差约21.797毫米，策略仍要求下降。这反驳了“只要标定更准就一定能完成”的单因解释。<a href="execution_visual_audit.json">执行/视觉证据</a></p>
+<p>当前训练用<code>NominalImageEstimator</code>，执行用<code>CardEdgesEstimator</code>。后者要求可见蓝色几何满足100±6毫米跨度及足够的角点/边；训练前端没有完全相同的拒绝域。策略在专家样本上的动作正确，也可能在放置遮挡时根本拿不到有效运行输入。有效域不同已证实；它对训练权重退化的独立贡献尚未量化。</p>
+<p>相机新标定15个拟合样本的RMSE约4.586毫米、0.673°，仍是候选拟合结果，不是独立任务空间误差界。RGB-D候选开发有效率12/14、p95约641毫秒，也尚不能承担实时替代。不能用未经验证的深度前端填补当前拒绝。</p>
+<h2 id="heading-8">7 最新四个附着杯拒绝属于什么</h2>
+<p>对封存目标重新做逐插值FK，没有重新积分物理或发送动作：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th style="text-align:right">当前名义最低杯边，毫米</th>
+<th style="text-align:right">扫掠最低点，毫米</th>
+<th>核查结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9000</td>
+<td style="text-align:right">−0.037057</td>
+<td style="text-align:right">−0.053587</td>
+<td>预测继续加深，首目标TCP也向下</td>
+</tr>
+<tr>
+<td>9201</td>
+<td style="text-align:right">−0.032606</td>
+<td style="text-align:right">−0.080713</td>
+<td>预测继续加深</td>
+</tr>
+<tr>
+<td>9005</td>
+<td style="text-align:right">−0.005463</td>
+<td style="text-align:right">−0.005940</td>
+<td>TCP向上，杯最低边仍因姿态先下降</td>
+</tr>
+<tr>
+<td>9300</td>
+<td style="text-align:right">−0.005395</td>
+<td style="text-align:right">−0.005333</td>
+<td>全扫掠比起始浅，但28.8纳米局部反向未满足严格单调例外</td>
+</tr>
+</tbody>
+</table>
+<p>所以“TCP向上”不足以证明整只杯子安全；同时，例外不满足也不等于实物已经穿桌。9300特别显示名义模型和严格单调条件对极小局部变化敏感。应校验刚体附着、接触支撑和数值条件的组合，不能直接把全部拒绝计成网络错误，也不能因此删掉地板保护。<a href="execution_latest_contact_fk.json">逐插值复算</a></p>
+<h2 id="heading-9">8 最近3/7变1/7能查到哪一层</h2>
+<p>历史301项与本轮265项来源有261项重合，重合源没有变化；历史301项现存文件也全部与其封存SHA一致。<a href="runtime_source_comparison.json">来源对照</a></p>
+<p>同1a28的中心首查询，机器人状态、6维位置特征和模拟曝光时间相同，但首两点七轴输出最大差0.000494 rad，整个20点块最大差0.001944 rad。当前GPU驱动不可用，计算与渲染后端同时改变，历史首个运行RGB未保存，所以仍不能把整段3/7→1/7隔离归因于CPU或渲染。</p>
+<p>本轮增加了只读受控探针：固定同一CPU模型、同一15维数值输入，仅将RGB从当前重渲染运行状态换成归档教师首帧。两张图平均每通道差1.085/255，首两点七轴输出最大改变0.000522 rad，整个20点块改变0.001100 rad。当前重渲染RGB的预测与本轮记录精确一致，参数及buffer无变化。<a href="initial_image_probe.json">新探针</a></p>
+<p>这证明RGB来源变化本身可以改变动作，即使显式位置特征相同；不能证明归档教师帧就是历史运行帧，也不能证明此变化足以造成某个终态失败。若要归因最近下降，必须补做同一运行RGB的计算后端对照，以及固定计算后端的渲染对照。</p>
+<p>近期真实RGB8辅助训练也没有证明视觉能力改善：A/B各200次更新，B相对A留出损失仅改善0.010631%，低于5%门槛。辅助头先全局平均视觉特征，图像排列后的损失约0.12726→0.12803，状态排列后约0.31523，更依赖状态条件。这个结论只适用于辅助任务；不能推广为主ACT忽略视觉。B没有采用，不能拿它解释此次1a28分数下降。</p>
+<h2 id="heading-10">9 真机执行还有独立时序问题</h2>
+<p>10月17日有255个接触保持块仍输出92.736～95毫米，确实是策略未闭爪。但10月19日某次在闭爪前已经因心跳150.858毫秒超过150毫秒停止；另一次健康采样缺口190.902毫秒时，反馈本身仍只有1.496毫秒旧。这是控制链和采样窗口问题，不应写成同一种策略错误。</p>
+<p>最近319点真机演示实际只发送66点；第67点命令年龄381.648毫秒超过250毫秒，夹爪命令0条。代码顺序包含完整报告dump、健康读取和发送前过期检查，约377.968毫秒位于该日志/反馈窗口。具体I/O、SDK和调度各占多少尚未隔离，不能宣称只需换一个日志函数就已解决。<a href="../nero_act_transfer_demo_20261023/results.json">最近实机结果</a></p>
+<h2 id="heading-11">10 排除或收窄的历史猜测</h2>
+<table>
+<thead>
+<tr>
+<th>猜测</th>
+<th>本轮结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全部是仿真渲染与真实画面的差异</td>
+<td>不能成立为统一解释；同一仿真运行时已有训练前后退化和增量头改善</td>
+</tr>
+<tr>
+<td>闭爪再多训一些就能结束</td>
+<td>当前已有双边夹持后的七轴/视觉失败，且失败输入被采到仍学不对</td>
+</tr>
+<tr>
+<td>权重文件损坏或冻结失效</td>
+<td>多轮严格加载、来源哈希及冻结审计不支持此说；共享可训练输出层本来就能改变行为</td>
+</tr>
+<tr>
+<td>当前上一命令用了未来数据</td>
+<td>68份HDF5、180934帧重算，未来/当前命令被选作previous为0次，初始previous缺失0</td>
+</tr>
+<tr>
+<td>当前所有问题仍是CVAE没训练</td>
+<td>后验分支曾漏训，但修复后31/31张量变化，名义任务仍失败；后续冻结后验是明确设计</td>
+</tr>
+<tr>
+<td>旧79份真实数据的同帧标签导致1a28失败</td>
+<td>这79份RGB8资料没有直接训练当前15维1a28，不能作直接原因</td>
+</tr>
+<tr>
+<td>软件测试/局部六项通过说明能整段抓放</td>
+<td>已被多份完整运行反例否定</td>
+</tr>
+<tr>
+<td>最近两个小分数证明训练持续变差</td>
+<td>部分轮次seed、相机、输入维数、前缀、运行器和预算都变了，必须找同条件配对</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heading-12">11 工程流程为什么让问题反复出现</h2>
+<p>原仓库还存在明显的成功口径混淆：173份ACT运行摘要没有顶层完整任务验收字段，其中137份<code>status=passed</code>。真实事件字段是<code>position_diagnostics.gripper_events</code>：137份里66份明确为空、5份非空、另66份缺字段而未知；不能把缺字段当成“没有动作”。一个直接反例是50步、50条已发命令、事件明确为空、距期望抓取点仍326.846毫米的运行，也记为<code>passed</code>。另一个<code>passed</code>仅3～4步内连续记录grasp→place→grasp，所谓place时XY误差176.834毫米；事件来自夹爪命令越过阈值，不是夹住、离桌和落桌的物理证明。10月16日确有完整实物成功，但它明确<code>act_policy_used_for_this_grasp=false</code>。<a href="external_project_acceptance_audit.json">外仓库补审</a></p>
+<p>旧项目物理state/action虽均8维，部分模型却是8＋6位置条件的14维双RGB；6维位置从HDF5属性或启动配置取固定base绝对坐标，运行循环复用，不是当前15维的逐曝光相对杯位和因果夹爪上下文。旧9条固定目标微调离线L1为0.0900，低于scratch的0.2373；但按旧近似TCP的轨迹审计，9/9归为侧向、0/9判为目标抓姿、6/9标注超过15毫米下探。这些是名义FK分类，不是独立实物测量；离线损失优势不能替代任务/几何验收，也不证明这些旧候选就是当前1a28。</p>
+<p>若把每轮的“某个指标更好”当成向完整任务迈进，就会不断修改一个尚未稳定的系统。日志显示：接近保持主要覆盖423个抓前输入或96个当前相机抓前输入；输出层却仍决定抬升、搬运和释放。六项保存中间状态又被反复用于修复，已经是开发资料。它们能定位问题，不能承担独立泛化验收。</p>
+<p>研发初始化还沿用了未过完整行为门禁的候选：<code>5196 → 3dfc → 06012 → 9dd36 → 1a28</code>等链条都有明确来源，相关integrity明示<code>position_response_gate_passed=false</code>或<code>full_task_passed=false</code>。这不是错加载或篡改，但训练完成与SHA一致只证明身份，不能证明作为新基线的行为合格。多个1000步目录又是从共同初始化重新训练的分支，不能把它们相加成同一个模型“已经累计训练很多步”。</p>
+<p>历史也有有效修复的反例：run25→run26在同seed450004、同场景、同统计、同初始化212个张量、同运行源码下，改用连续实际抓取恢复采样后由无GRASP变成完整成功。它说明针对实际失败机制的数据改动可以有效；但只支持那个开发场景，不能推广为全部位置成功。run26的独立16项仅执行1项即中断，不能写成16项完整通过。</p>
+<p><strong>反复出现、部分环节已获干预支持的失败链是：不完全匹配执行节奏/过渡状态的监督与动作表示 → 局部优化改变共享七轴和夹爪行为 → 策略进入专家/保持输入之外的状态 → 视觉有效域或接触检查拒绝。</strong> 并非每次失败都经过全部环节，几何和发送时序也可独立阻断。早期动作表示、某些梯度尺度已经改善；当前需要针对剩余链条验证，而不是把已经修过的问题重新当作统一根因。</p>
+<h2 id="heading-13">12 后续应怎样按因果关系修正</h2>
+<p>先固定一个完整运行基线及其原始RGB、数值输入、权重、归一化、运行器和计算后端，保留成功及实际失败查询。然后分别验证起抬目标是否真能在接触约束下持续向上、蓝卡观察器是否在训练与执行共享有效域，以及输出层更新是否保持所有阶段。只有这些对照成立，才有依据选择下一轮训练目标。</p>
+<p>需要用实际访问状态做恢复监督，但不能只增加样本数：已有采到仍失败的例子，必须同时检查执行前缀的净推进和联合梯度。短历史、CVAE或视觉辅助头都应作为受控备选，而不是预设答案。真机几何误差界与发送时效需单独验收，不能用离线成功替代。</p>
+<p>本轮交付的是根因证据和范围划分，没有声称上述后续修正已完成，也没有新增训练或真机动作。</p>
+</article></main></body></html>

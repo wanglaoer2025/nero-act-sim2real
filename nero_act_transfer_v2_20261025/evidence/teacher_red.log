@@ -1,0 +1,20 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_physical_teacher_exits_close_after_measured_stable_contact ________
+
+    def test_physical_teacher_exits_close_after_measured_stable_contact():
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'vendor'))
+        from simulation.teacher import run_teacher
+        source=Path('/home/user/wq/nero_act_new_handeye_policy_repair_20261023/data/physical/episode_9000.hdf5')
+        with h5py.File(source) as f:scene=json.loads(f.attrs['scene_config'])
+        result=run_teacher(scene)
+        assert result['full_task_verified'],result['error']
+>       assert result.get('teacher_transition_profile')=='measured_event_v2'
+E       AssertionError: assert None == 'measured_event_v2'
+E        +  where None = <built-in method get of dict object at 0x71dca0067cc0>('teacher_transition_profile')
+E        +    where <built-in method get of dict object at 0x71dca0067cc0> = {'constraint_attachment_used': False, 'error': None, 'execution_contract_failures': 0, 'frames': 3002, ...}.get
+
+tests/test_teacher_transition.py:14: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_teacher_transition.py::test_physical_teacher_exits_close_after_measured_stable_contact
+1 failed in 29.55s

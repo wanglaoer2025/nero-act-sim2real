@@ -1,0 +1,36 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__ test_protocol_frozen_before_optimizer_includes_history_runtime_and_assets ___
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-126/test_protocol_frozen_before_op0')
+
+    def test_protocol_frozen_before_optimizer_includes_history_runtime_and_assets(tmp_path):
+        m=api()
+>       assert hasattr(m,'freeze_history_protocol'), 'Pre-optimization protocol seal missing'
+E       AssertionError: Pre-optimization protocol seal missing
+E       assert False
+E        +  where False = hasattr(<module 'training.history' from '/home/user/wq/nero_act_history_feedback_20261019/training/history.py'>, 'freeze_history_protocol')
+
+tests/test_history_training.py:95: AssertionError
+_________ test_train_entry_rejects_missing_seal_before_creating_a_run __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-126/test_train_entry_rejects_missi0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7757f4e6f0>
+
+    def test_train_entry_rejects_missing_seal_before_creating_a_run(tmp_path,monkeypatch):
+        m=api()
+>       assert hasattr(m,'train_history'), 'Paired training entry missing'
+E       AssertionError: Paired training entry missing
+E       assert False
+E        +  where False = hasattr(<module 'training.history' from '/home/user/wq/nero_act_history_feedback_20261019/training/history.py'>, 'train_history')
+
+tests/test_history_training.py:110: AssertionError
+=============================== warnings summary ===============================
+../../nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63
+  Warning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_history_training.py::test_protocol_frozen_before_optimizer_includes_history_runtime_and_assets
+FAILED tests/test_history_training.py::test_train_entry_rejects_missing_seal_before_creating_a_run
+2 failed, 5 deselected, 1 warning in 1.79s

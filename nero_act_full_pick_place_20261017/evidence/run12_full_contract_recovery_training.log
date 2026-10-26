@@ -1,0 +1,136 @@
+/home/user/nero/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+ACT Day5：device=cuda epochs=20 joint target lead=recorded action steps；trim=0 stride=10；不会连接机械臂
+number of parameters: 12.58M
+已加载初始化权重：/home/user/wq/nero_act_full_pick_place_20261017/training/run11_release_deadband/checkpoints/policy_best_val.ckpt
+epoch 1/20 train=0.0049/0.0049 val=0.0067/0.0067 best_loss=0.0067@1 best_l1=0.0067@1
+epoch 2/20 train=0.0045/0.0045 val=0.0070/0.0070 best_loss=0.0067@1 best_l1=0.0067@1
+epoch 3/20 train=0.0043/0.0043 val=0.0065/0.0065 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 4/20 train=0.0039/0.0039 val=0.0066/0.0066 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 5/20 train=0.0039/0.0039 val=0.0065/0.0065 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 6/20 train=0.0039/0.0039 val=0.0071/0.0071 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 7/20 train=0.0037/0.0037 val=0.0070/0.0070 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 8/20 train=0.0035/0.0035 val=0.0065/0.0065 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 9/20 train=0.0034/0.0034 val=0.0068/0.0068 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 10/20 train=0.0034/0.0034 val=0.0066/0.0066 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 11/20 train=0.0033/0.0033 val=0.0068/0.0068 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 12/20 train=0.0033/0.0033 val=0.0072/0.0072 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 13/20 train=0.0033/0.0033 val=0.0076/0.0076 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 14/20 train=0.0032/0.0032 val=0.0066/0.0066 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 15/20 train=0.0033/0.0033 val=0.0066/0.0066 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 16/20 train=0.0032/0.0032 val=0.0070/0.0070 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 17/20 train=0.0030/0.0030 val=0.0067/0.0067 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 18/20 train=0.0030/0.0030 val=0.0070/0.0070 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 19/20 train=0.0031/0.0031 val=0.0069/0.0069 best_loss=0.0065@3 best_l1=0.0065@3
+epoch 20/20 train=0.0029/0.0029 val=0.0075/0.0075 best_loss=0.0065@3 best_l1=0.0065@3
+{
+  "best_epoch": 3,
+  "best_val_loss": 0.006477315923354572,
+  "best_l1_epoch": 3,
+  "best_val_l1": 0.006477315923354572,
+  "best_metrics": {
+    "epoch": 3,
+    "train_loss": 0.004280112385749817,
+    "train_l1": 0.004280112385749817,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.006477315923354572,
+    "val_l1": 0.006477315923354572,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 68.17092838702956
+  },
+  "last_metrics": {
+    "epoch": 20,
+    "train_loss": 0.0029026927017116537,
+    "train_l1": 0.0029026927017116537,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.0075231679542110495,
+    "val_l1": 0.0075231679542110495,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 449.65400057903025
+  },
+  "best_l1_metrics": {
+    "epoch": 3,
+    "train_loss": 0.004280112385749817,
+    "train_l1": 0.004280112385749817,
+    "train_kl": 0.0,
+    "train_gripper_bce": 0.0,
+    "val_loss": 0.006477315923354572,
+    "val_l1": 0.006477315923354572,
+    "val_kl": 0.0,
+    "val_gripper_bce": 0.0,
+    "lr": 0.0001,
+    "elapsed_s": 68.17092838702956
+  },
+  "train_episodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    70,
+    71,
+    73,
+    74,
+    82,
+    83,
+    86,
+    87,
+    100,
+    101,
+    102,
+    103,
+    106,
+    108,
+    110,
+    111,
+    114,
+    115,
+    116,
+    117,
+    118,
+    122,
+    123,
+    30,
+    31,
+    32,
+    33
+  ],
+  "val_episodes": [
+    8,
+    9,
+    72,
+    75,
+    84,
+    88,
+    104,
+    105,
+    107,
+    112,
+    119,
+    120,
+    121,
+    34,
+    35
+  ],
+  "train_windows": 13725,
+  "training_stride_steps": 10,
+  "trim_start_steps": 0,
+  "trim_start_steps_by_parent": null,
+  "trim_after_gripper_open_steps": null,
+  "grasp_focus_before_close_steps": 0,
+  "grasp_focus_repeats": 1,
+  "post_grasp_repeats": 1,
+  "init_checkpoint": "/home/user/wq/nero_act_full_pick_place_20261017/training/run11_release_deadband/checkpoints/policy_best_val.ckpt",
+  "normalization_stats": "/home/user/wq/nero_act_full_pick_place_20261017/training/run12_full_contract_recovery/training_only_stats.pkl",
+  "joint_target_lead_steps": null,
+  "elapsed_s": 449.9777475509909
+}

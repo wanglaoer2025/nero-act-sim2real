@@ -1,0 +1,150 @@
+{
+  "checkpoint_sha256": "db819c4a5896f435dc5b5e09ef330c7129e22b94c9459e9cc59e1ea62d10586d",
+  "selected_epoch": 73,
+  "task_scope": "complete_pick_carry_place_retreat",
+  "source_sha256": {
+    "executor/model.py": "53eaadd9d0527ec971a93ca0c949368dabbdc9441b91dd91457656ce2aeafa6b",
+    "executor/contract.py": "ea05e05392e2cf325d58a38578e9c463c248158fe87789f6dd0ab55d8b8b1b66",
+    "simulation/evaluate.py": "036a1da7fa967e3090e8da7d03d9e08e5c4f75290f1fee677fdf682bbe2f9ac0",
+    "simulation/scene.py": "05ff4e11d90326028fdc717dfb8569497cfd7b8f44cd6b84bbae53da9babf325",
+    "simulation/teacher.py": "f29b717805cc916ce4c7a3abf5c89622b7fc46976bbba162edf01b8f22e361c3",
+    "simulation/outcome.py": "34509d83cccfa7240cefecced226de5ebcb32fd7879abdbf9f36cccde06d78e7",
+    "scene/config.json": "bd16a93490eff3e0bc3d6727b3e21fc9acea07275e64cdb77149858ed81ca42f",
+    "policy_source/src/act/nero_policy.py": "33cdfd4dc048623664072d2d7c9ca1eda96fb9cf4474eb91a1043ba8c738bba3",
+    "policy_source/src/act/nero_dataset.py": "6c3d0b98e790f5ac9f2732b4476f8220ea45f705c9404d8364b9059d91bf820d"
+  },
+  "scenarios": [
+    {
+      "query_stride": 10,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "nominal",
+      "seed": 90000
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_0",
+      "seed": 90100
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_1",
+      "seed": 90101
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_2",
+      "seed": 90102
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_3",
+      "seed": 90103
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_4",
+      "seed": 90104
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_5",
+      "seed": 90105
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_6",
+      "seed": 90106
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": true,
+      "force": false,
+      "name": "independent_7",
+      "seed": 90107
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.17,
+      "jitter": false,
+      "force": false,
+      "name": "cadence_11",
+      "seed": 90200
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 2,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_100ms",
+      "seed": 90201
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 10,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": false,
+      "name": "delay_500ms",
+      "seed": 90202
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_0",
+      "seed": 90300
+    },
+    {
+      "query_stride": 11,
+      "servo_delay_steps": 0,
+      "observation_age_s": 0.05,
+      "jitter": false,
+      "force": true,
+      "name": "force_1",
+      "seed": 90301
+    }
+  ],
+  "teacher_free": true,
+  "real_hardware_tested": false,
+  "reach_deadline_steps": 3200,
+  "post_completion_hold_steps": 100,
+  "observation_policy": "fresh rendered RGB and measured8D state per query",
+  "hardware_deployment_allowed": false
+}

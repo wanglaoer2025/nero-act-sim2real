@@ -1,0 +1,46 @@
+{
+  "time_local": "2026-10-22T20:52:09.674784+08:00",
+  "mode": "offline_comparison_only",
+  "source_report": "/home/user/wq/nero_act_calibration_capture_20261022/act_restart_without_marker_01/table_marker_position_02/report.json",
+  "source_sha256": "599ed1cc86a9ab8bca75616f1abc203682a14d24424ac809fb8d55598a6de7b4",
+  "raw_images_and_capture_source_hashes_verified": true,
+  "independent_physical_board_positions": 1,
+  "repeated_frames": 24,
+  "native_span_s": 0.866873,
+  "native_first_time_local": "2026-10-22T20:50:23.033110+08:00",
+  "board_plane_distance_mm": 357.9833418294451,
+  "board_thickness_mm": null,
+  "table_plane_distance_mm": null,
+  "within_position_distance_peak_to_peak_mm": 1.775178226376184,
+  "within_position_max_normal_deviation_deg": 0.09584697317518666,
+  "reprojection_rmse_px_median": 0.19059021908164045,
+  "reprojection_rmse_px_max": 0.22742592696363811,
+  "old_nominal_camera_to_table_plane_mm": 315.2114291079937,
+  "board_plane_minus_old_table_plane_mm": 42.77191272145142,
+  "normal_vs_old_deg": 5.747888404050098,
+  "earlier_stereo_comparison": [
+    {
+      "earlier_frame": 0,
+      "board_minus_depth_plane_mm": -24.894580006644958,
+      "normal_difference_deg": 1.7482462938227359
+    },
+    {
+      "earlier_frame": 1,
+      "board_minus_depth_plane_mm": -26.859673974485872,
+      "normal_difference_deg": 2.101463622016329
+    },
+    {
+      "earlier_frame": 2,
+      "board_minus_depth_plane_mm": -20.73722379988851,
+      "normal_difference_deg": 1.7573692481622272
+    }
+  ],
+  "interpretation": "One flat-board position provides camera-to-board-top plane evidence and repeatability only. Table plane remains unknown without board thickness; earlier stereo estimate contains outliers and is not contemporaneous. Multiple distinct flat-board positions are required for consistency. No full base extrinsic or TCP accepted.",
+  "calibration_verified": false,
+  "hardware_deployment_allowed": false,
+  "motion_sent": false,
+  "can_tx": [
+    6677,
+    6677
+  ]
+}
